@@ -211,7 +211,7 @@ Part 2a being the torque required to sustain the reaction torque stemming from t
 
 ![Total torques experienced by the plattform and gimbal motor due to a single CMG in a SPCMG (same simulation as @Fig:cmg-torque-components-plot)](./figures/cmg-torque-totals-plot.svg){ #fig:cmg-torque-totals-plot }
 
-The various components and their relationships are illustrated in @Fig:cmg-torque-components-plot and @Fig:cmg-torque-totals-plot.
+The various components and their relationships are illustrated in @Fig:cmg-torque-components-plot and @Fig:cmg-torque-totals-plot for our 2D pendulum model with a SPCMG used for pendulum dampening (see @Sec:2dpendulum and @Sec:spcmg-steering).
 Note the following:
 
 - reaction torque due to gimbal rotation is negligble
@@ -222,6 +222,12 @@ Note the following:
 - gyro reaction torque dominates the gimbal motor torque
 
 TBD?: $\frac{\omega_{gimbal}}{\omega_{system}} = \frac{\tau_{system}}{\tau_{gimbal}}$
+
+## Steering of CMGs
+
+- basic principles
+- refer to @LeveSpacecraftMomentumControl2015
+- see @Sec:spcmg-steering
 
 ## Sizing of CMGs
 

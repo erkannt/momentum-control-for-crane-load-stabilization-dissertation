@@ -20,26 +20,30 @@ Conclusions:
 
 ## Pendulum-Motion and CMGs
 
-### Swinging and Torque
+### 2D Pendulum
 
-- comparison of basic and compoun model
+- comparison of basic and compound model
 - various crane params
-- how does swinging work?
 - tests of basic control appraoch
-- abstract model > compare with simulink model > validate with demonstrator
+  - overlay frequencies in lower pendulum
+- validation on demonstrator
 
-### Passive Stabilization through CMGs
+### 3D Pendulum
 
-- diff between modelling applied base torque and full CMG model
-- impact of current orientation of CMG inertia on stabilization >>> impact on steering law
-- abstract model > compare with simulink model > validate with demonstrator
-- rotation from rotation of crane vs. rotation from pendulum motion
+- what changes???
 
-### Study of Base Rates
+### Pendulum CMG Interaction
 
 - base rates vs. pendulum length vs. gyro inertia
 - reaction torque vs. array design vs. CMG orientation
+- explain why passive stabilisation is not possible
+- explain how roof angle impacts gimbal sizing due to reaction torque
+  - consequences for steering law???
 
-## Gimbal dynamics
+## Part Rotation
 
-- validation of gimbal model in simulink (appendix?)
+- test performance of inertia estimation
+
+## Process Compensation
+
+- HIL setup (real robot attached to virtual model)
