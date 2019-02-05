@@ -139,35 +139,7 @@ The subsequent section covers the few terrestrial fields of application and serv
   - locomotion @RomanishinMblocksMomentumdrivenMagnetic2013, @GajamohanCubliCubeThat2012
     - actually reaction wheels but well known examples
   
-## Sizing of CMGs
-
-- main factors in space: @LeveSpacecraftMomentumControl2015
-  1. agility (slewrate)
-  2. workspace (Nms)
-  3. interaction with system dynamics
-  4. engineering considerations (weight, power, bearings, vibrations)
-- further/differing factors for stabilisation applications:
-  1. produced torque (Nm)
-  2. agility (Nm/s)
-
-### Torque, Agility and Workspace
-
-- max torque simply $\omega \cdot h$
-- agility in spacecraft is slewrate i.e. how fast can I turn my satellite
-  - interesting note: shift in derivative between gimbal and spacecraft
-  - can be used as key factor for sizing spacecraft momentum control systems
-- workspace
-  - why Nms?
-  - saturation: simple example SPCMG
-  - saturation for arrays
-  - what does a workspace shape mean?
-  - example workspaces
-  - shaping of roof workspaces (see appendix for code)
-- agility of stabilisation systems
-  - why Nm/s
-  - do any of the publications go into this???
-
-### Dynamics of CMGs
+## Dynamics of CMGs
 
 With the number of spinning parts involved in a CMG the dynamics exhibit a certain complexity.
 To be able to size and control the CMGs for our application we need to understand and model these dynamics.
@@ -250,6 +222,34 @@ Note the following:
 - gyro reaction torque dominates the gimbal motor torque
 
 TBD?: $\frac{\omega_{gimbal}}{\omega_{system}} = \frac{\tau_{system}}{\tau_{gimbal}}$
+
+## Sizing of CMGs
+
+- main factors in space: @LeveSpacecraftMomentumControl2015
+  1. agility (slewrate)
+  2. workspace (Nms)
+  3. interaction with system dynamics
+  4. engineering considerations (weight, power, bearings, vibrations)
+- further/differing factors for stabilisation applications:
+  1. produced torque (Nm)
+  2. agility (Nm/s)
+
+### Torque, Agility and Workspace
+
+- max torque simply $\omega \cdot h$
+- agility in spacecraft is slewrate i.e. how fast can I turn my satellite
+  - interesting note: shift in derivative between gimbal and spacecraft
+  - can be used as key factor for sizing spacecraft momentum control systems
+- workspace
+  - why Nms?
+  - saturation: simple example SPCMG
+  - saturation for arrays
+  - what does a workspace shape mean?
+  - example workspaces
+  - shaping of roof workspaces (see appendix for code)
+- agility of stabilisation systems
+  - why Nm/s
+  - do any of the publications go into this???
 
 ## Applicability to our Usecase
 
