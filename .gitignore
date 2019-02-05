@@ -1,2 +1,5 @@
 .DS_Store
 output/*
+figures/*.pdf
+figures/*.svg
+figures/*.png

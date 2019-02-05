@@ -3,7 +3,7 @@
 ## Author : Alex Dumitrache <alex@cimr.pub.ro>
 ## License: GPL
 
-input{lib/defaults.sk}
+input{./sketch-lib/defaults.sk}
 
 def L1 5
 def J1 -15
@@ -24,7 +24,7 @@ put{scale(0.8)}{
 put {scale(0.5)}
 {
     def style [cull=false, fill=lightgray]
-        input{lib/objects.sk}
+        input{./sketch-lib/objects.sk}
     # base
     put {scale(1)}
     {

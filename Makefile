@@ -20,9 +20,10 @@ help:
 	@echo 'get local templates with: pandoc -D latex/html/etc	  				  '
 	@echo 'or generic ones from: https://github.com/jgm/pandoc-templates		  '
 
+all: figures html pdf
+
 pdf:
 	rsync -a --delete $(BASEDIR)/$(TEXTDIR) $(OUTPUTDIR)/
-	rsync -a --delete $(BASEDIR)/$(FIGDIR) $(OUTPUTDIR)/
 	sed -i "" 's/\.svg/\.png/g' $(OUTPUTDIR)/$(TEXTDIR)/*.md
 	pandoc "$(OUTPUTDIR)"/$(TEXTDIR)/*.md \
 		-o "$(OUTPUTDIR)/thesis.pdf" \
@@ -41,7 +42,6 @@ pdf:
 	cat $(OUTPUTDIR)/*-pdf.log | grep -i warning
 
 html:
-	rsync -a --delete $(BASEDIR)/$(FIGDIR) $(OUTPUTDIR)/
 	pandoc "$(TEXTDIR)"/*.md \
 		-o "$(OUTPUTDIR)/thesis.html" \
 		--mathml \
@@ -56,7 +56,13 @@ html:
 		--verbose
 	cat $(OUTPUTDIR)/*-html.log | grep -i warning || true
 
-clean:
-	rm -r output/*
+figures:
+	./tools/plots.sh
+	rsync -a --delete $(BASEDIR)/$(FIGDIR) $(OUTPUTDIR)/
+	ls $(OUTPUTDIR)/$(FIGDIR)/*.sk | xargs -n1 ./tools/sk2png
+	ls $(OUTPUTDIR)/$(FIGDIR)/*.tex | xargs -n1 ./tools/tex2png
 
-.PHONY: help pdf html clean
+clean:
+	rm -r ./output/*
+
+.PHONY: help all pdf html figures clean
