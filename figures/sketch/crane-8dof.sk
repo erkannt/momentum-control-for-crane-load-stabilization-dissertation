@@ -1,0 +1,85 @@
+## An example of kinematics diagram for a 6-DOF robot arm
+##
+## Author : Alex Dumitrache <alex@cimr.pub.ro>
+## License: GPL
+
+input{lib/defaults.sk}
+
+def L1 5
+def J1 -15
+def L2 3
+def J2 -15
+
+def arrowarc
+{
+put{scale(0.8)}{
+    sweep [style=thick]{215, rotate(1, [Z])} (1,0)
+    def p1 (1,0) then rotate(210, [Z])
+    def p2 (1,0) then rotate(210+30, [Z])
+    line [style=thick, style=->] (p1)(p2)
+}
+}
+
+% The main drawing
+put {scale(0.5)}
+{
+    def style [cull=false, fill=lightgray]
+        input{lib/objects.sk}
+    # base
+    put {scale(1)}
+    {
+        put{scale([2,2,0.5])}{box}
+        put{scale([3,3,-0.1]) * translate([0,0,0])}
+        {
+            {coordsys}
+            special |\path #2 node[below] {$X_0$}
+                           #3 node[right] {$Y_0$};|(z)(x)(y)(o)
+        }
+
+
+        # link1
+        line [style=dashed] (0,0,0)(0,0,-L1)
+        line [style=dashed] (0,-4,0)(0,0,0)
+        put {translate([0,-4,0]) * rotate(90, [X])}{arrowarc}
+        special|\node[right] at #1 {$\theta_{11}$};|(-0.3,-4,-0.6)
+        put {translate([0,0,-L1]) * rotate(135, [Z])}{arrowarc}
+        special|\node[right] at #1 {$\theta_{12}$};|(-2,0,-L1+0.5)
+        put {rotate(J1, [Y]) * translate([0,0,-L1])}
+        {
+            put{scale([0.3,0.3,0.6])}{box}
+            line [style=solid] (0,0,0)(0,0,L1)
+            special|\node[right] at #1 {$l_1$};|(0,0,L1*0.5)
+
+                # link2
+                put{rotate(-J2, [Y])}
+                {
+                line [style=dashed] (0,3,0)(0,0,0)
+                put {translate([0,3,0]) * rotate(90, [X])}{arrowarc}
+                special|\node[right] at #1 {$\theta_{21}$};|(-0.3,3,-0.6)
+                line [style=dashed] (0,0,0)(0,0,-L1)
+                put {translate([0,0,-L1]) * rotate(135, [Z])}{arrowarc}
+                special|\node[right] at #1 {$\theta_{22}$};|(-2,0,-L1+0.5)
+                }
+                put {rotate(J2, [Y]) * translate([0,0,-L2])}
+                {
+                    put{scale([0.6,0.6,0.6]) * rotate(50, [Z])}{box}
+                    line [style=solid] (0,0,0)(0,0,L2)
+                    line [style=dashed] (0,0,0)(0,0,-2)
+                    put {translate([0,0,-2]) * rotate(100, [Z])}{arrowarc}
+                    special|\node[right] at #1 {$\theta_{23}$};|(0.3,0,-1.2)
+
+                }
+
+        }
+
+    }
+}
+
+
+
+global
+{
+    language tikz
+    camera rotate(0, (1,0,0)) * view((1.5,2,1),(0,0,0),[0,0,1]) * rotate(110, (0,0,1))
+}
+

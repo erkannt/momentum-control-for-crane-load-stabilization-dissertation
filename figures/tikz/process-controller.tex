@@ -1,0 +1,86 @@
+\documentclass[tikz, 14pt, border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,positioning,calc}
+
+\begin{document}
+
+\tikzset{
+block/.style = {draw, fill=white, rectangle, minimum height=3em, minimum width=6em},
+tmp/.style  = {coordinate}, 
+sum/.style= {draw, fill=white, circle, inner sep=0pt},
+joint/.style= {inner sep=-2pt},
+input/.style = {coordinate},
+output/.style= {coordinate},
+pinstyle/.style = {pin edge={to-,thin,black}
+}
+}
+
+\begin{tikzpicture}[auto, node distance=9em,>=latex']
+\draw[help lines,gray!20] (-2,-2.4) grid[step=2mm] (22,5);
+\draw[help lines] (-0.5,0) -- +(-0.6,0);
+\draw[help lines] (-0.5,-1) -- +(-0.6,0);
+\draw[help lines,<->] (-0.8,0) -- node[fill=white] {\tiny 1cm} (-0.8,-1);
+
+    \node [input, name=rinput] (rinput) {};
+    \node at (3.5, 0) [sum] (sum1) {$-$};
+    \node [block, right=30mm of sum1.center, align=center] (damp-controller) {Dampening\\ Controller};
+    \node [block, above=18mm of damp-controller.south, align=center] (robot-model) {Robot\\ Model};
+    \node [input, above=3mm of robot-model.west] (robot-model-in1) {};
+    \node [input, above=0mm of robot-model.west] (robot-model-in2) {};
+    \node [input, above=-3mm of robot-model.west] (robot-model-in3) {};
+    \node [block, above=18mm of robot-model.south, align=center] (robot-controller) {Robot\\ Controller};
+    \node [joint, right=5mm of robot-controller.east] (joint2) {\textbullet};
+    \node at (3.5, 3.6) [sum] (sum4) {$-$};
+    \node [block, left of=sum4, align=center] (robot-path) {Robot\\ Path Planning};
+    \node [sum, right of=damp-controller] (sum2) {$-$};
+    \node [block, right of=sum2, align=center] (cmg-controller) {CMGs\\ \footnotesize{incl. Controller}};
+    \node [sum, right of=cmg-controller] (sum3) {$+$};
+    \node [block, above=18mm of cmg-controller.south] (robot) {Robot};
+    \node [output, above right =3mm and 10mm of robot.east] (robot-out1) {};
+    \node [output, above=0mm of robot.east] (robot-out2) {};
+    \node [output, above=-3mm of robot.east] (robot-out3) {};
+    \node [block, above=30mm of robot.south, align=center] (coord-model) {Pendulum + Robot\\ Coordinate Model};
+    \node [input, above=0mm of coord-model.east] (coord-model-in1) {};
+    \node [input, above=-3mm of coord-model.east] (coord-model-in2) {};
+    \node [block, right of=sum3] (pendulum) {Pendulum};
+    \node [input, above left=3mm and 5mm of pendulum.west] (pendulum-in1) {};
+    \node [block, below=18mm of pendulum.north, align=center] (sensor1) {Pendulum\\ Sensor};
+    \node [block, above=48mm of pendulum.south, align=center] (sensor2) {Pendulum\\ Sensor};
+    \node [joint, right=5mm of pendulum.east] (joint1) {\textbullet};
+    \node [output, right=15mm of joint1, node distance=1.5cm] (output) {};
+    \node [tmp, left=35mm of sensor1.west] (tmp1) {};
+    \node [tmp, left=5mm of robot.west] (tmp2) {};
+    \node [tmp, above left=9mm and 5mm of robot-model.west] (tmp3) {};
+    \node at (4.2,4.8) [joint] (joint3) {\textbullet};
+    \node at (4.2,-1.8) [joint] (joint4) {\textbullet};
+
+% Pendulum Control Loop
+    \draw [->] (rinput) -- node{$P_W = \theta_i, \dot{\theta}_i = 0$} (sum1);
+    \draw [->] (sum1) -- node{$P_E$} (damp-controller);
+    \draw [->] (damp-controller) -- (sum2);
+    \draw [->] (sum2) -- node{$\tau_W$} (cmg-controller);
+    \draw [->] (cmg-controller) -- (sum3);
+    \draw [->] (sum3) -- node{$\tau_Y$} (pendulum);
+    \draw [->] (pendulum) -- (joint1) -- node{$P_Y$} (output);
+    \draw [->] (joint1) |- (sensor1);
+    \draw [->] (sensor1) -- node{$P_M$} (tmp1) -| (sum1);
+    \draw [->] (joint1) |- (sensor1);
+
+% Robot Control Loop
+    \draw [->] (robot-path) -- node{$R_W$} (sum4);
+    \draw [->] (sum4) -- (robot-controller);
+    \draw [->] (robot-controller) -| (tmp2) -- (robot);
+    \draw [->] (joint2) |- (tmp3) |- (robot-model-in1);
+    \draw [->] (robot-model) -| (sum2);
+    \draw [->] (joint1) |- (sensor2);
+    \draw [->] (sensor2) -- (coord-model-in1);
+    \draw [->] (robot.east |- robot-out1) -- (robot-out1) |- (coord-model-in2);
+    \draw [->] (robot-out2) -| (pendulum-in1) -- (pendulum-in1 -| pendulum.west);
+    \draw [->] (robot-out3) -| (sum3);
+    \draw [->] (coord-model) -| (sum4);
+    \draw [->] (joint3) |- node{$R_M$} (robot-model-in2);
+    \draw [->] (joint4) |- node{$P_M$} (robot-model-in3);
+
+\end{tikzpicture}
+
+\end{document}

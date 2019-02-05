@@ -1,0 +1,5 @@
+Name;Height [m];Reach [m];max Load [kg];max Load at Tip [kg];Translational Speed [m/min];Rotational Speed [rpm];Hook;Hook Weight[kg]
+L1-24 (230V);19;25;2500;900;22;0.5;C.0.05.0022;
+71 EC-B 5;45;50;4220;1000;63;0.8;;
+380 EC-B 16;83;75;15660;3000;95;0.8;0.5 x Packgewicht Laufkatze und Haken;550
+1000 EC-B 125;96;31.5;125000;24600;100;0.6;;6000
