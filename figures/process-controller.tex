@@ -16,18 +16,19 @@ pinstyle/.style = {pin edge={to-,thin,black}
 }
 
 \begin{tikzpicture}[auto, node distance=9em,>=latex']
-\draw[help lines,gray!20] (-2,-2.4) grid[step=2mm] (22,5);
-\draw[help lines] (-0.5,0) -- +(-0.6,0);
-\draw[help lines] (-0.5,-1) -- +(-0.6,0);
-\draw[help lines,<->] (-0.8,0) -- node[fill=white] {\tiny 1cm} (-0.8,-1);
+%%% Grid to help with debugging
+%\draw[help lines,gray!20] (-2,-2.4) grid[step=2mm] (22,5);
+%\draw[help lines] (-0.5,0) -- +(-0.6,0);
+%\draw[help lines] (-0.5,-1) -- +(-0.6,0);
+%\draw[help lines,<->] (-0.8,0) -- node[fill=white] {\tiny 1cm} (-0.8,-1);
+%%%
 
-    \node [input, name=rinput] (rinput) {};
+    \node [input, name=rinput] (rinput) {test};
     \node at (3.5, 0) [sum] (sum1) {$-$};
     \node [block, right=30mm of sum1.center, align=center] (damp-controller) {Dampening\\ Controller};
     \node [block, above=18mm of damp-controller.south, align=center] (robot-model) {Robot\\ Model};
-    \node [input, above=3mm of robot-model.west] (robot-model-in1) {};
-    \node [input, above=0mm of robot-model.west] (robot-model-in2) {};
-    \node [input, above=-3mm of robot-model.west] (robot-model-in3) {};
+    \node [input, above=2mm of robot-model.west] (robot-model-in1) {};
+    \node [input, above=-2mm of robot-model.west] (robot-model-in2) {};
     \node [block, above=18mm of robot-model.south, align=center] (robot-controller) {Robot\\ Controller};
     \node [joint, right=5mm of robot-controller.east] (joint2) {\textbullet};
     \node at (3.5, 3.6) [sum] (sum4) {$-$};
@@ -51,7 +52,6 @@ pinstyle/.style = {pin edge={to-,thin,black}
     \node [tmp, left=35mm of sensor1.west] (tmp1) {};
     \node [tmp, left=5mm of robot.west] (tmp2) {};
     \node [tmp, above left=9mm and 5mm of robot-model.west] (tmp3) {};
-    \node at (4.2,4.8) [joint] (joint3) {\textbullet};
     \node at (4.2,-1.8) [joint] (joint4) {\textbullet};
 
 % Pendulum Control Loop
@@ -68,18 +68,17 @@ pinstyle/.style = {pin edge={to-,thin,black}
 
 % Robot Control Loop
     \draw [->] (robot-path) -- node{$R_W$} (sum4);
-    \draw [->] (sum4) -- (robot-controller);
-    \draw [->] (robot-controller) -| (tmp2) -- (robot);
+    \draw [->] (sum4) -- node{$R_E$} (robot-controller);
+    \draw [->] (robot-controller) -| node[pos=0.2]{$R_S$} (tmp2) -- (robot);
     \draw [->] (joint2) |- (tmp3) |- (robot-model-in1);
+    \draw [->] (joint4) |- node[pos=0.7, below]{$P_M$} (robot-model-in2);
     \draw [->] (robot-model) -| (sum2);
     \draw [->] (joint1) |- (sensor2);
-    \draw [->] (sensor2) -- (coord-model-in1);
-    \draw [->] (robot.east |- robot-out1) -- (robot-out1) |- (coord-model-in2);
-    \draw [->] (robot-out2) -| (pendulum-in1) -- (pendulum-in1 -| pendulum.west);
+    \draw [->] (sensor2) -- node{$P_M$} (coord-model-in1);
+    \draw [->] (coord-model) -| node[pos=0.1, above]{$R_M'$} (sum4);
+    \draw [->] (robot.east |- robot-out1) -- node{$R_M$} (robot-out1) |- (coord-model-in2);
+    \draw [->] (robot-out2) -| node[pos=0.4]{$F_Y$} (pendulum-in1) -- (pendulum-in1 -| pendulum.west);
     \draw [->] (robot-out3) -| (sum3);
-    \draw [->] (coord-model) -| (sum4);
-    \draw [->] (joint3) |- node{$R_M$} (robot-model-in2);
-    \draw [->] (joint4) |- node{$P_M$} (robot-model-in3);
 
 \end{tikzpicture}
 
