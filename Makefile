@@ -20,7 +20,7 @@ help:
 	@echo 'get local templates with: pandoc -D latex/html/etc	  				  '
 	@echo 'or generic ones from: https://github.com/jgm/pandoc-templates		  '
 
-all: figures html pdf
+all: plots figures html pdf
 
 pdf:
 	rsync -a --delete $(BASEDIR)/$(TEXTDIR) $(OUTPUTDIR)/
@@ -56,8 +56,10 @@ html:
 		--verbose
 	cat $(OUTPUTDIR)/*-html.log | grep -i warning || true
 
-figures:
+plots:
 	./tools/plots.sh
+
+figures:
 	rsync -a --delete $(BASEDIR)/$(FIGDIR) $(OUTPUTDIR)/
 	ls $(OUTPUTDIR)/$(FIGDIR)/*.sk | xargs -n1 ./tools/sk2png
 	ls $(OUTPUTDIR)/$(FIGDIR)/*.tex | xargs -n1 ./tools/tex2png
@@ -65,4 +67,4 @@ figures:
 clean:
 	rm -r ./output/*
 
-.PHONY: help all pdf html figures clean
+.PHONY: help all pdf html plots figures clean
