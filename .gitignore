@@ -3,3 +3,5 @@ output/*
 figures/*.pdf
 figures/*.svg
 figures/*.png
+*.log
+*.aux
