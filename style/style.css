@@ -91,6 +91,10 @@ p span.removed {
 
 }
 
+.current-nav {
+    font-weight: bolder;
+}
+
 #title-page {
     padding: 80px 0;
 }
