@@ -139,7 +139,7 @@ The subsequent section covers the few terrestrial fields of application and serv
   - locomotion @RomanishinMblocksMomentumdrivenMagnetic2013, @GajamohanCubliCubeThat2012
     - actually reaction wheels but well known examples
   
-## Dynamics of CMGs
+## Dynamics of CMGs {#sec:cmg-dynamics}
 
 With the number of spinning parts involved in a CMG the dynamics exhibit a certain complexity.
 To be able to size and control the CMGs for our application we need to understand and model these dynamics.
