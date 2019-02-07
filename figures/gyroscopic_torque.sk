@@ -1,0 +1,56 @@
+## An example of kinematics diagram for a 6-DOF robot arm
+##
+## Author : Alex Dumitrache <alex@cimr.pub.ro>
+## License: GPL
+
+input{./sketch-lib/defaults.sk}
+
+def arrowarc
+{
+put{scale(0.7)}{
+    sweep [style=thick]{215, rotate(1, [0, 0, -1])} (1,0)
+    put{translate([1,0])}
+    {
+        line [style=thick, style=->] (o)(0,0.5)
+    }
+}
+}
+
+def L 3
+def L2 4
+
+% The main drawing
+put {scale(0.5)}
+{
+    # omega
+    line [style=thick, style=->] (o)(0,0,L)
+    put {translate([0,0,L/2]) * rotate(270, [Z])}{arrowarc}
+    special|\node[right] at #1 {$\omega$};|(0,0,L)
+    # h
+    put {rotate(310, [Z])}
+    {
+        line [style=thick, style=->] (o)(0,-L2,0)
+        special|\node[above] at #1 {$h$};|(0,-L2*0.5,0)
+    }
+    # h'
+    put {rotate(0, [Z])}
+    {
+        line [style=thick, style=->] (o)(0,-L2,0)
+        special|\node[right] at #1 {$h'$};|(0.2,-L2*0.7,0)
+    }
+    # delta h
+    put {translate([0,-L2,0]) * rotate(-115, [Z])}
+    {
+        line [style=thick, style=<-, style=dashed] (o)(0,-0.82*L2,0)
+    }
+    special|\node[left] at #1 {$\Delta h$};|(-0.5,-L2*1.1,0)
+}
+
+
+
+global
+{
+    language tikz
+    camera rotate(0, (1,0,0)) * view((1.5,2,1),(0,0,0),[0,0,1]) * rotate(110, (0,0,1))
+}
+
