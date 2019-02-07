@@ -71,9 +71,7 @@ Two models used: 2D and 3D
 - base rates from yaw motions of CMG
 - yaw control of tranported parts (biggest use case outside of robot stabilisation)
 
-### The 2D Model { #sec:2dpendulum }
-
-#### Point-Mass Double Pendulum
+### Basic Double Pendulum { #sec:2dpendulum }
 
 Most rudimentary model: double pendulum modelled as massless rods with point masses.
 Equations of motion commonly known e.g. @HillLearningScientificProgramming2016:

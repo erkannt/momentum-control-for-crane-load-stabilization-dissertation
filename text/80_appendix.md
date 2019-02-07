@@ -1,9 +1,9 @@
 
-# Appendix{.unnumbered}
+# Appendix
 
 ## Scissored Pair CMGs
 
-### SPCMG Steering Law { #sec:spcmg-steering }
+### SPCMG Steering Law {#sec:spcmg-steering}
 
 The SPCMG is tasked with producing the torque we wish to apply to the lower link of the double pendulum.
 Since the control input of the SPCMG is the speed of its gimbal motors we require a steering law to translate the desired torque in to a gimbal speed.
