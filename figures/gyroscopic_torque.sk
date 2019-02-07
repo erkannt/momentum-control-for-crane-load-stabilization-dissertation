@@ -1,8 +1,3 @@
-## An example of kinematics diagram for a 6-DOF robot arm
-##
-## Author : Alex Dumitrache <alex@cimr.pub.ro>
-## License: GPL
-
 input{./sketch-lib/defaults.sk}
 
 def arrowarc
