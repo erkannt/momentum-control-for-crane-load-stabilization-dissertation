@@ -78,7 +78,7 @@ Two models used: 2D and 3D
 Most rudimentary model: double pendulum modelled as massless rods with point masses.
 Equations of motion commonly known e.g. @HillLearningScientificProgramming2016:
 
-![2D double pendulum as point masses on rigid, massless rods. Taken from @HillLearningScientificProgramming2016](./figures/double-pendulum-geometry.png){ heigh=4cm }
+![2D double pendulum as point masses on rigid, massless rods.](./figures/2d-pendulum.png)
 
 The Langrian ($\mathcal{L} = KE - PE$) being
 

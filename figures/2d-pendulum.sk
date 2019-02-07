@@ -1,0 +1,67 @@
+
+input{./sketch-lib/defaults.sk}
+
+def L1 5
+def J1 -20
+def L2 3
+def J2 -25
+
+def hash {
+    line[style=thin] (o)(0.2,0.2)
+}
+
+% The main drawing
+put {scale(0.5)}
+{
+    def style [cull=false, fill=lightgray]
+    input{./sketch-lib/objects.sk}
+    # base
+    put {scale(1)}
+    {
+        put {translate([-L2,0])} {
+            line (o)(L2*2,0)
+            repeat {2*L2/0.2+1, translate([0.2,0,0])} {hash}
+        }
+        special|\fill[black] (0,0) circle (0.1);| (o)
+        special|\draw[->, thick] (0,0) -- node[below, pos=1]{X} (1,0);|(o)
+        special|\draw[->, thick] (0,0) -- node[right, pos=1]{Y} (0,0.7);|(o)
+        line [style=dashed] (0,0,0)(0,-L1,0)
+        sweep [style=->] {19, rotate(1, [Z])} (0,-L1*0.8)
+        special|\node[right] at #1 {$\theta_{1}$};|(-1.2, -L1*0.8)
+
+        # link1
+        put {rotate(-J1, [Z]) * translate([0,-L1,0])}
+        {
+           line [style=thick] (0,0,0)(0,L1,0) 
+           put {rotate(J1, [Z])}
+           {
+               line [style=dashed] (0,0,0)(0,-L1,0)
+               sweep [style=->] {24, rotate(1, [Z])} (0,-L1*0.95)
+               special|\node[right] at #1 {$\theta_{2}$};|(-1.2, -L1*0.95)
+               special|\node[right] at #1 {$m_1$};|(0.4, 0.4)
+           }
+           put{scale([0.5,0.5,0.5])}{cylinder}
+
+           # link2
+           put {rotate(-J2+J1, [Z]) * translate([0,-L2,0])}
+           {
+            line [style=thick] (0,0,0)(0,L2,0) 
+            line [style=dashed] (0,0,0)(0,-L1+L2,0) 
+            put {rotate(J2-J1, [Z])}
+            {
+                special|\node[right] at #1 {$m_2$};|(0.4, 0.4)
+            }
+            put{scale([0.5,0.5,0.5])}{cylinder}
+           }
+        }
+
+    }
+}
+
+
+
+global
+{
+    language tikz
+}
+
