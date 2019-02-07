@@ -16,7 +16,7 @@ The final part of this chapter describes these differences and motivates the sub
 Dealing with gyroscopes can make your head spin.
 Their behaviour often runs counter to our intuitions or as Randall Munroe put it when asked if there was anything is couldn't explain in simple english :
 
-![Randal Munroe on gyroscopes in Time Magazine @GrossmanQuestionsRandallMunroe](./figures/munroe-6a.jpg){ height=4cm }
+![Randal Munroe on gyroscopes in Time Magazine @GrossmanQuestionsRandallMunroe](./figures/munroe-6a.jpg)
 
 Fundamental to understanding gyroscopes is that angular momentum ($\bm{h}$) is a conserved quantity i.e. it remains constant unless a torque ($\bm{\tau}$) is applied to the system.
 Furthermore it helps to remember that therfore a change in angular momentum is a torque ($\bm{\tau} = \frac{d\bm{h}}{dt}$).
@@ -29,13 +29,13 @@ Since no component of the torque is in line with the angular momentum its size a
 Therefore the change in angular momentum takes the form of a change in the orientation of the angular momentum.
 This is illustrated in @Fig:gyroscopic_torque.
 
-![Illustration of a torque that lies orthogonal to an angular momentum corresponds to a rotation of the angular momentums orientation instead of a change in its size.](./figures/gyroscopic_torque.png){#fig:gyroscopic_torque height=4cm }
+![Illustration of a torque that lies orthogonal to an angular momentum corresponds to a rotation of the angular momentums orientation instead of a change in its size.](./figures/gyroscopic_torque.png){#fig:gyroscopic_torque }
 
 It is this change in orientation in the form of a rotation and its relation to the torque via the size of the angular momentum that lets us understand everything from simple toys (@Fig:precession) to the momentum control systems of the International Space Station (@Fig:iss).
 
-![Precession of a gyroscope. (Public Domain, taken from Wikimedia)](./figures/Gyroscope_precession.gif){#fig:precession height=4cm }
+![Precession of a gyroscope. (Public Domain, taken from Wikimedia)](./figures/Gyroscope_precession.gif){#fig:precession }
 
-![Astronaut Dave Williams replacing a CMG on the ISS (Public Domain, NASA Photo ID: S118-E-06998)](./figures/ISS-CMG.jpg){#fig:iss height=4cm }
+![Astronaut Dave Williams replacing a CMG on the ISS (Public Domain, NASA Photo ID: S118-E-06998)](./figures/ISS-CMG.jpg){#fig:iss }
 
 Before proceeding I would like to emphasise several points:
 
@@ -46,7 +46,7 @@ Before proceeding I would like to emphasise several points:
 The last point is key to understanding CMGs where we do the inverse: rotate an angular momentum and thereby create a reaction torque.
 This is illustrated in @Fig:CMG_principle.
 
-![Principle of a CMG. By rotating a gyroscope orthogonally to its spin axis we create a reaction torque orthogonal to the gimbal axis and the gyroscopes spin axis.](./figures/CMG_principle.png){#fig:CMG_principle height=4cm }
+![Principle of a CMG. By rotating a gyroscope orthogonally to its spin axis we create a reaction torque orthogonal to the gimbal axis and the gyroscopes spin axis.](./figures/CMG_principle.png){#fig:CMG_principle }
 
 The torque produced by such a gimbal rotation is described by:
 
