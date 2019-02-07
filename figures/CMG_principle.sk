@@ -1,0 +1,78 @@
+input{./sketch-lib/defaults.sk}
+
+def arrowarc
+{
+put{scale(0.5) * rotate(30, [Z])}{
+    sweep [style=thick]{215, rotate(1, [0, 0, -1])} (1,0)
+    put{translate([1,0])}
+    {
+        line [style=thick, style=->] (o)(0,0.7)
+    }
+}
+}
+
+def arrowarcshort
+{
+put{scale(0.5) * rotate(30, [Z])}{
+    sweep [style=thick]{90, rotate(1, [0, 0, -1])} (2.5,0)
+    put{translate([2.5,0])}
+    {
+        line [style=thick, style=->] (o)(0,0.7)
+    }
+}
+}
+
+def Lomega 3
+def Lgimbal 2
+def Ltau 2
+def Lh 2
+def R 1.5
+
+% The main drawing
+put {scale(0.5)}
+{
+    def style [cull=false, fill=lightgray]
+    input{./sketch-lib/objects.sk}
+    
+    # omega
+    line [style=thick, style=->] (0, 0.3, 0)(0, Lomega, 0)
+    put {translate([0,Lomega/2,0]) * rotate(-90, [X]) * rotate(-40, [Z])}{arrowarc}
+
+    # gimbal
+    line (0, -Lgimbal)(o)(Lgimbal, 0)(Lgimbal,3*Lgimbal)(0.3,3*Lgimbal)
+    line (0, -Lgimbal, 0.3)(0,0,0.3)
+    repeat {Lgimbal/0.2+1, translate([0,-0.2,0])}
+    {
+        line (0,0,0.3)(0,-0.2,0.5)
+    }
+    line (0, -Lgimbal, -0.3)(0,0,-0.3)
+    repeat {Lgimbal/0.2+1, translate([0,-0.2,0])}
+    {
+        line (0,0,-0.3)(0,0.2,-0.5)
+    }
+    special|\node[above] at #1 {$\dot{\omega}$};|(0, 0, 0.6)
+
+    # gyro
+    put {translate([0,3*Lgimbal]) * rotate(90, [Y])}
+    {
+        put {scale([R,R,0.3]) * translate([0,0,-0.5])}{cylinder}
+        put {translate([-R*0.01,0,0.1]) * rotate(-180, [Z])}{arrowarcshort}
+    }
+    line [style=thick, style=->] (Lgimbal+0.3,3*Lgimbal,0)(Lgimbal+Lh+0.3,3*Lgimbal,0)
+    special|\node[above] at #1 {$h$};|(Lgimbal+0.7*Lh, 3*Lgimbal, 0)
+    special|\node[above] at #1 {$\Omega$};|(0.3, 3*Lgimbal, 0.1)
+
+    # tau
+    line [style=thick, style=->] (0.3,3*Lgimbal,0)(0.3,3*Lgimbal,-Ltau)
+    put {translate([0.3,3*Lgimbal,-Ltau]) * rotate(180, [Y]) * rotate(90, [Z])}{arrowarc}
+    special|\node[right] at #1 {$\tau$};|(0.3, 3*Lgimbal, -Ltau*0.7)
+}
+
+
+
+global
+{
+    language tikz
+    camera rotate(0, (1,0,0)) * view((1.5,2,0.7),(0,0,0),[0,0,1]) * rotate(110, (0,0,1))
+}
+
