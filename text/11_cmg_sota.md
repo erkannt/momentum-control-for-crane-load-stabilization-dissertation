@@ -138,7 +138,39 @@ The subsequent section covers the few terrestrial fields of application and serv
     - why instead of props?
   - locomotion @RomanishinMblocksMomentumdrivenMagnetic2013, @GajamohanCubliCubeThat2012
     - actually reaction wheels but well known examples
-  
+
+### Crane Applications
+
+Given that there have been significant efforts to automate construction in Japan and Korea dating back to the 1980s, it is unsurprising that one can find some research into the actuation of cranes from these countries.
+
+- CMG vibration control of gondola @KankiDevelopmentCMGActive1994
+  - passenger gondola
+  - SPCMG rotated to counter the wind direction
+  - validated in the field with two 30kg flywheels
+- Motorized Hook patent @gimseoghoHukeuhoejeonjojeongiGaneunghanKeureinyong1997
+- Field tested single CMG device @InouePracticalDevelopmentSuspender1998
+  - mention of previous devices using fans
+  - analysis of assembly times and reduction of dangerous work
+  - discuss use of active control and passive stabilisation
+- Single CMG Beam Stabilisation work by Yi et al @YiImplementationGyroActuator1999, @YiAttitudeControlStabilization2000, @SaAttitudeControlStabilization2001
+  - @YiImplementationGyroActuator1999 controller design for rotating mass hanging from wire
+  - @YiAttitudeControlStabilization2000 only abstract in english, addition of IMU for sensing, note that active use of gyro is needed for stabilisation of slow rotation drift since slow speeds since gear ratio of gimbal means that slow speeds can't create suitable reaction torque
+  - @SaAttitudeControlStabilization2001 add clutch to be able to use reaction torque for stabilisation without overloading motor, mention inertia estimation in outlook, lengthy experiments and discussion about what essentially boils down to slew rate
+- @LeeAnalysisFieldApplicability2012 test of motorized hook
+  - authors also hold two patents regarding powering of rotating hooks
+    - @gimseoghoHukeuhoejeonjojeongiGaneunghanKeureinyong1997 (not by authors) uses electrical motor
+    - use of a clock spring
+    - use of vertical hook travel to power rotation device
+  - paper uses electric motor to rotate hook
+  - discuss @InouePracticalDevelopmentSuspender1998 incorrectly, stating that they only used passive control
+  - performed measurements of traditional method on construction site
+  - rotated beams with device off site
+- @KodaniTransportingRotatingControl2017 single CMG on jib crane
+  - only control yaw
+  - run into singularity of CMG
+  - while yaw is controlled this would also occur simply due to passive stabilisation
+- beam with propellors??? seen in Bock slides, haven't been able to find reference
+
 ## Dynamics of CMGs {#sec:cmg-dynamics}
 
 With the number of spinning parts involved in a CMG the dynamics exhibit a certain complexity.
