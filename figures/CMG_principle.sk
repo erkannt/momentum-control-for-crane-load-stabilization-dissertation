@@ -50,7 +50,7 @@ put {scale(0.5)}
     {
         line (0,0,-0.3)(0,0.2,-0.5)
     }
-    special|\node[above] at #1 {$\dot{\omega}$};|(0, 0, 0.6)
+    special|\node[above] at #1 {${\omega}$};|(0, 0, 0.6)
 
     # gyro
     put {translate([0,3*Lgimbal]) * rotate(90, [Y])}
