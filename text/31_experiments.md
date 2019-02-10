@@ -46,4 +46,11 @@ Conclusions:
 
 ## Process Compensation
 
+- simulated base forces and torques
 - HIL setup (real robot attached to virtual model)
+- deviation from path
+- additional torques caused by compensation attempts
+
+![Comparison of the base torques for the same path performed and two different speeds. At low speeds the longer time spent out of balance require a larger momentum envelope while higher robot speeds require greater gimbal agility to achieve the momentum dynamics.](./figures./robot-load-speedcomparison-plot.jpg){#fig:robot-load-speedcomparison-plot}
+
+![KR3 Robot used for HIL testing.](./figures/KR3.jpg){#fig:kr3-hil}

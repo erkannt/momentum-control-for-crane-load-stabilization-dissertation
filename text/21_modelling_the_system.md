@@ -43,8 +43,17 @@ To understand the interaction of a CMG array with crane we will model it as a do
 ## Requirements from Robot Tasks
 
 - design paths with GH/KUKA prc
+  - lift against wall
+  - array below/beside robot
+  - single path below/beside robot
 - use mxA for recording
 - execute on real robot >>> obtain axis values >>> simulate base torques and forces
+
+![Robot paths programmed using the KUKA|prc plugin for Rhino/Grasshopper.](./figures/robot-path-planning.jpg){#fig:robot-path-planning}
+
+![Axis values simulated by KUKA|prc. Note the sharp corners resulting from unlimited accelleration/jerk values making these values ill-suited to simulate the forces and torques at the robot base.](./figures/kuka-prc-axis-values.jpg){#fig:robot-axis-values}
+
+![Body simulation of the KR3. The masses of the axes have been estimated from the total mass of the robot and the volume of the respective axes.](./figures/kr3-simmechanics-vis.jpg){#fig:kr3-simmechanics}
 
 ## Double Pendulum
 

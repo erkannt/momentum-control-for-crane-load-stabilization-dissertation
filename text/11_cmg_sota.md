@@ -105,6 +105,8 @@ The subsequent section covers the few terrestrial fields of application and serv
     - how does one deal with forces???
     - idea of second robot >> mirror moves...
 
+![Rendering of the ETS VII research satellite used to evaluate the use of robot arms to manipulate other satellits. CitationNeeded](./figures/ets-vii-space-robot.jpg){#fig:ets-vii-space-robot}
+
 ### Terrestrial Applications
 
 - most common application: stabilisation
@@ -260,6 +262,20 @@ TBD?: $\frac{\omega_{gimbal}}{\omega_{system}} = \frac{\tau_{system}}{\tau_{gimb
 - basic principles
 - refer to @LeveSpacecraftMomentumControl2015
 - see @Sec:spcmg-steering
+
+## CMG Workspaces
+
+- momentum envelope and momentum dynamics (Nms and Nm/s)
+- outer and inner singularities
+- configurations and why we choose roof config
+
+![Various configuration options for singe gimbal CMGs. Taken from CitationNeeded.](./figures/sg-cmg-configurations.jpg){#fig:sg-cmg-configurations}
+
+![Example of a momentum envelope. Taken from CitationNeeded.](./figures/cmg-momentum-envelope.jpg){#fig:cmg-momentum-envelope}
+
+![Outer (green) and inner (orange) singularities for a four CMG roof array with a roof angle of 45°.](./figures/roof-array-workspace-45deg.jpg){#fig:roof-array-workspace-45deg}
+
+![Outer (green) and inner (orange) singularities for a four CMG roof array with a roof angle of 30°.](./figures/roof-array-workspace-30deg.jpg){#fig:roof-array-workspace-30deg}
 
 ## Sizing of CMGs
 
