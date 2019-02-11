@@ -16,6 +16,7 @@ rcParams['text.latex.preamble'] = [
     r'\usepackage{siunitx}',    # micro symbols
     r'\sisetup{detect-all}',    # force siunitx to use the fonts
 ]  
+rcParams['figure.figsize'] = 9,5
 sns.set()
 sns.set_style("ticks")
 sns.set_context("paper")
