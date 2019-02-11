@@ -82,8 +82,14 @@ p span.removed {
     color: #364149;
     transition: 0.3s;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 1.5rem;
+    text-align: right;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+.textBtnClose {
+    font-size: 3rem;
+    display: inline-block;
 }
 
 .textBtn a:hover {
@@ -117,6 +123,7 @@ p span.removed {
     font-size: 15px;
     line-height: 30px;
     transition: 0.4s;
+    padding-top: 1rem;
 }
 ::-webkit-scrollbar {
     width: 8px;
@@ -157,4 +164,45 @@ figure img {
     max-width: 95%;
     max-height: 60vh;
 }
+
+figure:hover {
+    opacity: 70%;
+}
+
+figure {
+    cursor: pointer;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 3vh; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+.modal img {
+    max-width: 95%;
+    max-height: 85vh;
+    display: table;
+    margin: 0 auto;
+    background-size: 100% 100%;
+}
+
+.modal figcaption {
+    background-color: #f1f1f1;
+    max-width: 95%;
+    display: table;
+    margin: 0 auto;
+    margin-top: 2em;
+    padding: 1em;
+}
+
 </style>

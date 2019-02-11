@@ -84,6 +84,24 @@
         document.addEventListener('scroll', function() {
             highlightCurrentHeadingInTOC();
         });
+
+        /* Fullscreen Modal for figures */
+        window.onload = function () {
+            var figures = document.getElementsByTagName('figure');
+            for(var i = 0; i < figures.length; i++) {
+                var fig = figures[i];
+                fig.onclick = function() {
+                    var modal = document.getElementById('figureModal');
+                    var modalcontent = modal.getElementsByClassName('modal-content')[0];
+                    modal.style.display = "block";
+                    modalcontent.innerHTML = this.innerHTML;
+                }
+            }
+        }
+        function closeModal() {
+            var modal = document.getElementById('figureModal');
+            modal.style.display = "none";
+        }
     </script>
 </head>
 
@@ -94,7 +112,7 @@
             TOC
         </a>
         <div id="$idprefix$TOC">
-            <a href="javascript:void(0)" class="textBtn" onclick="closeTOC()">X</a>
+            <a href="javascript:void(0)" class="textBtn textBtnClose" onclick="closeTOC()">&times</a>
             $toc$
         </div>
     </nav>
@@ -134,6 +152,11 @@
         $include-after$
         $endfor$
     </main>
+
+    <!-- The Modal -->
+    <div id="figureModal" class="modal" onclick="closeModal()">
+        <div class="modal-content"></div>
+    </div>
 </body>
 
 </html>
