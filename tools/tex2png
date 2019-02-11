@@ -11,7 +11,7 @@ png=${1%.*}.png
 
 pdflatex -output-directory $outputdir -interaction=nonstopmode $tex
 pdfcrop $pdf $pdf -margins "5 5 5 5"
-pdftoppm -r 300 $pdf $name
+pdftoppm -r 1200 $pdf $name
 convert $ppm $png
 
 echo "Removing temporary files..."
