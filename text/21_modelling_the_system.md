@@ -40,6 +40,15 @@ To understand the interaction of a CMG array with crane we will model it as a do
 - capability of control engineering for swing prevention (Lastpendeldämpfung)
 - base rates due to pendulum motion
 
+![Cranes used to estimate parameter space of construction cranes. From left to right (increasing payload): L1-24, 71 EC-B, 380 EC-B, 1000 EC-B. ](./figures/cranes.png)
+
+| Name          |  Height [m]|  Reach [m]|  max Load [kg]|  max Load at Tip [kg]|  Translational Speed [m/min]|  Rotational Speed [rpm]|
+|---------------|------------|-----------|---------------|----------------------|-----------------------------|------------------------|
+| L1-24 (230V)  | 19         | 25        | 2500          | 900                  | 22                          | 0.5                    |
+| 71 EC-B 5     | 45         | 50        | 4220          | 1000                 | 63                          | 0.8                    |
+| 380 EC-B 16   | 83         | 75        | 15660         | 3000                 | 95                          | 0.8                    |
+| 1000 EC-B 125 | 96         | 31.5      | 125000        | 24600                | 100                         | 0.6                    |
+
 ## Requirements from Robot Tasks
 
 - design paths with GH/KUKA prc
