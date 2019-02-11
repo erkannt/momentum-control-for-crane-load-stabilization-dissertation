@@ -61,7 +61,7 @@ The controller applies a proportional gain of the difference in angle between th
 
 ![Behaviour of the singularity avoidance mechanism for the scissored pair configuration. Note that the speed of the gyroscopes and the maximum accelleration of the gimbals have been set to extremly low values to better illustrate the singularity avoidance.](./figures/spcmg-avoidance-1000rpm-plot.svg){ #fig:spcmg-avoidance-1000rpm-plot }
 
-![Singularity avoidance mechanism for the scissored pair configuration at higher gyroscope speed. Note that the maximum accelleration of the gimbals lower than the maximum attainable with our prototype. This not only helps illustrate the singularity avoidance mechanism but also reduces the out of axis torque introduced by the gimballing motion (see discussion in @Sec:cmg-dynamics)figures/spcmg-avoidance-5000rpm-plot.svg){ #fig:spcmg-avoidance-5000rpm-plot }
+![Singularity avoidance mechanism for the scissored pair configuration at higher gyroscope speed. Note that the maximum accelleration of the gimbals lower than the maximum attainable with our prototype. This not only helps illustrate the singularity avoidance mechanism but also reduces the out of axis torque introduced by the gimballing motion (see discussion in @Sec:cmg-dynamics)]figures/spcmg-avoidance-5000rpm-plot.svg){ #fig:spcmg-avoidance-5000rpm-plot }
 
 ## CMG Variables
 
