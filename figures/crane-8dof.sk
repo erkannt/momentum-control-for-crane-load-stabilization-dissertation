@@ -46,7 +46,7 @@ put {scale(0.5)}
         special|\node[right] at #1 {$\theta_{12}$};|(-2,0,-L1+0.5)
         put {rotate(J1, [Y]) * translate([0,0,-L1])}
         {
-            put{scale([0.3,0.3,0.6])}{box}
+            put{scale([0.15,0.15,0.15])}{sphere}
             line [style=solid] (0,0,0)(0,0,L1)
             special|\node[right] at #1 {$l_1$};|(0,0,L1*0.5)
 
@@ -64,6 +64,7 @@ put {scale(0.5)}
                 {
                     put{scale([0.6,0.6,0.6]) * rotate(50, [Z])}{box}
                     line [style=solid] (0,0,0)(0,0,L2)
+		    special|\node[right] at #1 {$l_2$};|(0,0,L2*0.6)
                     line [style=dashed] (0,0,0)(0,0,-2)
                     put {translate([0,0,-2]) * rotate(100, [Z])}{arrowarc}
                     special|\node[right] at #1 {$\theta_{23}$};|(0.3,0,-1.2)
