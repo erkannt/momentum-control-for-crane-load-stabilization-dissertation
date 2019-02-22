@@ -134,6 +134,30 @@ to be continued ...
 
 ![Model of a double pendulum in three dimensions with a fixed point of suspension. Note that the upper link is modelled as having only two degrees of freedom.](./figures/crane-8dof.png){ #fig:crane-8dof }
 
+In the 3D model of the double pendulum (@Fig:crane-8dof) $\theta_{i1}$ are the polar angles and $\theta_{i2}$ the azimuthal angles.
+Since we are only modelling the mass of the second link as a distributed mass, we only have third rotational angle for the second mass.
+This model can be extended to include basic crane dynamics by making the $x_0$ and $y_0$ coordinates of the suspension point as well as $l1$ variable.
+
+To convert to carthesian coordinates:
+
+\begin{align}
+x_0 &= 0 \\
+y_0 &= 0 \\
+z_0 &= 0 \\
+\\
+
+x_1 &= l_1 \cdot \sin(\theta_{11}) \cdot \cos(\theta_{12}) \\
+y_1 &= l_1 \cdot \sin(\theta_{11}) \cdot \sin(\theta_{12}) \\
+z_1 &= l_1 \cdot \cos(\theta_{11}) \\
+\\
+
+x_2 &= x_1 + l_2 \cdot \sin(\theta_{21}) \cdot \cos(\theta_{22}) \\
+y_2 &= y_1 + l_2 \cdot \sin(\theta_{21}) \cdot \sin(\theta_{22}) \\
+z_2 &= z_1 + l_2 \cdot \cos(\theta_{21}) \\
+\end{align}
+
+This conversion does not take the rotation of the second mass around the axis of the link $\theta_{23}$ into account.
+
 ## Adding the CMGs
 
 Given the equations of motion with regard to $\ddot{\theta}_i$ we can apply control torque $\tau$ as follows:
