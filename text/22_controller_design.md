@@ -56,8 +56,10 @@ This is why we feed the measured position of the robot ($R_M$) and the pendulum 
 This position is subtracted from the target position coming from the path planning, so that the robot controller may attempt to compensate the error.
 
 The above diagrams also show how these three different control tasks can be easily integrated with each other.
-By adding the estimator from the dampening controller to the process controller we can achieve a single control loop for all our applications.
+By adding the estimator from the dampening controller to the process controller we can achieve a single control loop for all our applications (@Fig:integrated-controller).
 What remains is the challenge of implementing the dampening/rotation controller in a manner that actually produces stable behaviour for all application scenarios and ideally under a wide range of parameters and uncertainties.
+
+![Integrated controller](./figures/integrated-controller.png){ #fig:integrated-controller }
 
 ## Review of Controller Designs
 
