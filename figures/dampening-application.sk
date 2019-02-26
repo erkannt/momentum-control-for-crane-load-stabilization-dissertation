@@ -1,0 +1,73 @@
+## Abstract depiction of dampening application
+##
+
+input{./sketch-lib/defaults.sk}
+
+def L1 7
+def J1 -15
+def R1 20
+def A1 22
+
+def arrowarc
+{
+put{scale(0.8)}{
+    put{rotate(360-30, [Z])}{sweep [style=thick]{210, rotate(1, [Z])} (1,0)}
+    def p1 (-1,0)
+    def p2 (-1,-0.9)
+    line [style=thick, style=->] (p1)(p2)
+}
+}
+
+% The main drawing
+put {scale(0.5)}
+{
+    def style [cull=false, fill=lightgray]
+        input{./sketch-lib/objects.sk}
+    # base
+    put {scale(1)}
+    {
+        put{scale([1.5,1.5,0.5])}{box}
+        put{scale([3,3,-0.1]) * translate([0,0,0])}{coordsys}
+
+	put {rotate(360-5, [Y]) * translate([R1,0,0]) * rotate(180-A1, [Y])}{
+	    sweep [style=thick]{A1, rotate(1, [Y])} (R1,0)
+	}
+
+        # Platform
+        put {rotate(J1, [Y]) * translate([0,0,-L1])}
+        {
+            # Crane Tendon Label
+            special|\draw [<->] #1 -- node[above, sloped]{} #2;|(0,0.2,0.4*L1)(0,0.2,0.6*L1)
+            # CMGs
+            put{translate([0,0,-0.35])}{
+		line [style=densely dotted] (0,0,0)(3,0,0)
+		line [style=densely dotted] (0,0,0)(0,3,0)
+		line [style=densely dotted] (0,0,0)(0,0,2)
+                put{scale(0.5)} {
+			put{translate(4*[X]) * rotate(90, [Y])} {
+				put {rotate(60, [Z])} {arrowarc}
+			}
+			put{translate(4*[Y]) * rotate(270, [X])} {
+				put {rotate(130, [Z])} {arrowarc}
+			}
+			put{translate(3*[Z]) * rotate(190, [Z])} {arrowarc}
+                }
+            }
+            put{translate([0,0,-0.35]) * scale([0.7,0.7,0.7])}{box}
+
+	    # Load
+            put{translate([0,0,-1.7]) * scale([3,0.2,2])}{box}
+
+        }
+
+    }
+}
+
+
+
+global
+{
+    language tikz
+    camera rotate(0, (1,0,0)) * view((1.5,2,1),(0,0,0),[0,0,1]) * rotate(110, (0,0,1))
+}
+
