@@ -1,0 +1,132 @@
+\documentclass[tikz, 14pt, border=10pt]{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,positioning,calc}
+
+\begin{document}
+
+\tikzset{
+block/.style = {draw, fill=white, rectangle, minimum height=3em, minimum width=6em, on grid},
+tmp/.style  = {coordinate, on grid}, 
+sum/.style= {draw, fill=white, circle, inner sep=0pt, on grid},
+joint/.style= {inner sep=-2pt, on grid},
+input/.style = {coordinate},
+output/.style= {coordinate},
+pinstyle/.style = {pin edge={to-,thin,black}
+}
+}
+
+\begin{tikzpicture}[auto,
+    node distance=15mm and 35mm,
+    >=latex']
+%\draw [help lines, step=0.5] (-1,-7) grid (23,7);
+
+
+%%% Nodes
+% Process Nodes
+    % Input
+    \node [block, align=center] (orientation-input) {Orientation\\ Input};
+    \node at (2, 0) [sum] (orientation-sum) {$+$};
+    \node at (3.5, 0) [sum] (pe-sum) {$-$};
+    % Platform Controller
+    \node [block, right=of pe-sum, align=center] (plattform-controller) {Platform\\ Controller};
+    \node [input, below left=2mm and 5mm of plattform-controller.west] (plattform-controller-in2) {};
+    \node [sum, right=of plattform-controller] (feedforward-sum) {$-$};
+    % Robot Model
+    \node [block, above=of plattform-controller, align=center] (robot-model) {Process\\ Model};
+    \node [input, above=2mm of robot-model.west] (robot-model-in1) {};
+    \node [input, below=2mm of robot-model.west] (robot-model-in2) {};
+    \node [tmp, above left=7.5mm and 5mm of robot-model.west] (rc-routing) {};
+    % Robot Controller
+    \node [block, above=of robot-model, align=center] (robot-controller) {Process\\ Controller};
+    \node [joint, right=20mm of robot-controller] (rc-joint) {\textbullet};
+    % Robot Input
+    \node [sum, left=of robot-controller] (re-sum) {$-$};
+    \node [block, left=of re-sum, align=center] (robot-path) {Process\\ Path Input};
+    % CMGs incl Controller
+    \node [block, right=of feedforward-sum, align=center] (cmg-controller) {CMGs\\ \footnotesize{incl. Controller}};
+    \node [sum, right=of cmg-controller] (torque-sum) {$+$};
+    \node [joint, right=20mm of cmg-controller] (cmg-joint) {\textbullet};
+    % Robot
+    \node [block, above=of cmg-controller] (robot) {Process};
+    \node [input, left=5mm of robot.west] (robot-in) {};
+    \node [output, above right =3mm and 10mm of robot.east] (robot-out1) {};
+    \node [output, above=0mm of robot.east] (robot-out2) {};
+    \node [output, above=-3mm of robot.east] (robot-out3) {};
+    % PnR Coordinate Model
+    \node [block, above=25mm of robot, align=center] (coord-model) {Platform + Process\\ Coordinate Model};
+    \node [input, above=0mm of coord-model.east] (coord-model-in1) {};
+    \node [input, above=-3mm of coord-model.east] (coord-model-in2) {};
+    % Crane, Sensors and Output
+    \node [block, right=of torque-sum] (pendulum) {Platform};
+    \node [input, above left=3mm and 5mm of pendulum.west] (pendulum-in1) {};
+    \node [input, below left=3mm and 5mm of pendulum.west] (pendulum-in2) {};
+    \node [block, below=25mm of pendulum, align=center] (sensor1) {Platform\\ Sensors};
+    \node [block, above=40mm of pendulum.south, align=center] (sensor2) {Platform\\ Sensors};
+    \node [joint, right=20mm of pendulum] (output-joint) {\textbullet};
+    \node [output, right=15mm of output-joint, node distance=1.5cm] (output) {};
+    \node [joint, below right=25mm and 5mm of pe-sum] (pm-joint) {\textbullet};
+    \node [joint, below=25mm of feedforward-sum] (pm-joint2) {\textbullet};
+
+% Inertia Estimation Nodes
+    \node [block, below=of plattform-controller, align=center] (inertia) {Inertia\\ Estimator};
+    \node [input, above=2mm of inertia.east] (inertia-in1) {};
+    \node [input, below=2mm of inertia.east] (inertia-in2) {};
+% Inertia Estimation Loop
+    \draw [->] (inertia) -| (plattform-controller-in2) -- (plattform-controller-in2 -| plattform-controller.west);
+    \draw [->] (cmg-joint) |- (inertia-in1);
+    \draw [->] (pm-joint2) |- (inertia-in2);
+
+% Crane Nodes
+    \node [block, below=20mm of inertia, align=center] (crane-controller) {Crane\\ Controller};
+    \node [input, above=3mm of crane-controller.west] (crane-controller-in1) {};
+    \node [block, right=of crane-controller, align=center] (crane-drives) {Crane\\ Drives};
+    \node [block, right=of crane-drives, align=center] (crane) {Crane};
+    \node [joint, right=20mm of crane] (crane-joint1) {\textbullet};
+    \node [sum, left=of crane-controller] (ce-sum) {$-$};
+    \node [joint, left=15mm of ce-sum] (crane-joint2) {\textbullet};
+    \node [block, left=of ce-sum, align=center] (crane-input) {Crane\\ Path Input};
+    \node [block, below=of crane, align=center] (crane-sensor) {Crane\\ Sensors};
+%Crane Loop
+    \draw [->] (crane-input) -- (crane-joint2) -- node{$C_W$} (ce-sum);
+    \draw [->] (ce-sum) -- node[below]{$C_E$} (crane-controller);
+    \draw [->] (crane-controller) -- node{$C_S$} (crane-drives);
+    \draw [->] (crane-drives) -- (crane);
+    \draw [->] (crane) -- (crane-joint1) |- (crane-sensor);
+    \draw [->] (crane-sensor) -| node[pos=0.1]{$C_M$} (ce-sum);
+    \draw [->] (crane-joint1) -| node[below, pos=0.1]{$C_Y$} (pendulum-in2) -- (pendulum-in2 -| pendulum.west);
+    \draw [->] (pm-joint) |- (crane-controller-in1);
+    \draw [->] (crane-joint2) -- (orientation-sum);
+
+
+%%% Paths
+% Pendulum Control Loop
+    \draw [->] (orientation-input) -- (orientation-sum);
+    \draw [->] (orientation-sum) -- node{$P_W$} (pe-sum);
+    \draw [->] (pe-sum) -- node{$P_E$} (plattform-controller);
+    \draw [->] (plattform-controller) -- (feedforward-sum);
+    \draw [->] (feedforward-sum) -- node{$\tau_W$} (cmg-controller);
+    \draw [->] (cmg-controller) -- (torque-sum);
+    \draw [->] (torque-sum) -- node{$\tau_Y$} (pendulum);
+    \draw [->] (pendulum) -- (output-joint) -- node{$P_Y$} (output);
+    \draw [->] (output-joint) |- (sensor1);
+    \draw [->] (sensor1) -- node[above, pos=0.95]{$P_M$} (pm-joint) -| (pe-sum);
+    \draw [->] (output-joint) |- (sensor1);
+
+% Robot Control Loop
+    \draw [->] (robot-path) -- node{$R_W$} (re-sum);
+    \draw [->] (re-sum) -- node{$R_E$} (robot-controller);
+    \draw [->] (robot-controller) -| node[pos=0.2]{$R_S$} (robot-in) -- (robot);
+    \draw [->] (rc-joint) |- (rc-routing) |- (robot-model-in1);
+    \draw [->] (pm-joint) |- node[pos=0.7, above]{$P_M$} (robot-model-in2);
+    \draw [->] (robot-model) -| (feedforward-sum);
+    \draw [->] (output-joint) |- (sensor2);
+    \draw [->] (sensor2) -- node{$P_M$} (coord-model-in1);
+    \draw [->] (coord-model) -| node[pos=0.1, above]{$R_M'$} (re-sum);
+    \draw [->] (robot.east |- robot-out1) -- node{$R_M$} (robot-out1) |- (coord-model-in2);
+    \draw [->] (robot-out2) -| node[pos=0.4]{$F_Y$} (pendulum-in1) -- (pendulum-in1 -| pendulum.west);
+    \draw [->] (robot-out3) -| (torque-sum);
+
+\end{tikzpicture}
+
+\end{document}
