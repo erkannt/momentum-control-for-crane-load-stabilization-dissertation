@@ -1,0 +1,78 @@
+## Abstract depiction of disturbances
+##
+
+input{./sketch-lib/defaults.sk}
+
+def L1 7
+def J1 -15
+def R1 20
+def A1 22
+
+def arrowarc
+{
+put{scale(0.8)}{
+    put{rotate(360-30, [Z])}{sweep [style=thick]{210, rotate(1, [Z])} (1,0)}
+    def p1 (-1,0)
+    def p2 (-1,-0.3)
+    line [style=thick, style=->] (p1)(p2)
+}
+}
+
+% The main drawing
+put {scale(1)}
+{
+    def style [cull=false, fill=lightgray]
+        input{./sketch-lib/objects.sk}
+    # base
+    put {scale(1)}
+    {
+        put{scale([1.5,1.5,0.5])}{box}
+	line [style=dashed] (-2,0,0)(2,0,0)
+	line [style=dashed] (0,-2,0)(0,2,0)
+	line [style=dashed] (0,0,-1.5)(0,0,1)
+	special|\draw [<->] #1 -- node[above, sloped]{\tiny Crane Elasticity} #2;| (2.1,0,0)(3,0,0)
+	line [style=<->] (0,2.1,0)(0,3,0)
+	line [style=<->] (0,0,1.1)(0,0,2)
+
+	put {rotate(360-5, [Y]) * translate([R1,0,0]) * rotate(180-A1, [Y])}{
+	    sweep {A1, rotate(1, [Y])} (R1,0)
+	}
+        line [style=dashed] (0,0,-1.1*L1)(0,0,-0.4*L1)
+
+        # Platform
+        put {rotate(J1, [Y]) * translate([0,0,-L1])}
+        {
+            # Crane Tendon Label
+            special|\draw [<->] #1 -- node[above, sloped]{\tiny Rope Stretch} #2;|(0,0.2,0.4*L1)(0,0.2,0.6*L1)
+            special|\draw [<->] #1 -- node[above, sloped]{\tiny Rope Flex} #2;|(-0.2,0,0)(-1.8,0,0)
+            # Hook
+            put{translate([0.1,0,-0.6]) * scale([0.3,0.3,0.3])}{box}
+
+	    # Load
+            put{translate([0.1,0,-1.75])} {
+                       put{scale([3,0.2,2])}{box}
+		       special|\draw [->] #1 -- node[above, sloped]{\tiny Inertia} #2;|(-1.7,0,0)(-2.7,0,0)
+		       put{translate(-0.15*[Y]) * rotate(-90, [X])} {
+				put {rotate(180, [Z]) * scale(0.5)} {arrowarc}
+                       }
+                       line [style=dashed] (0,-2.3,0)(0,0,0)
+		       special|\draw [->] #1 -- node[above, sloped]{\tiny Wind} #2;|(0,-4,0)(0,-2.5,0)
+		       special|\path #1 -- node[above, sloped]{\tiny Rot. Inertia} #2;|(-1.5,0,0.4)(1.5,0,0.4)
+                       line [style=dashed] (0,-2.3,0)(0,0,0)
+                       put{rotate(15, [Y])} {
+			       special|\draw [->] #1 -- node[above, sloped]{\tiny Gravity} #2;|(0,0,-1.3)(0,0,-3)
+                       }
+	    }
+        }
+
+    }
+}
+
+
+
+global
+{
+    language tikz
+    camera rotate(0, (1,0,0)) * view((1.5,2,1),(0,0,0),[0,0,1]) * rotate(110, (0,0,1))
+}
+

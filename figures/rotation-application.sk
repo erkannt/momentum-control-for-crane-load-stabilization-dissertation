@@ -1,0 +1,59 @@
+## Abstract depiction of positioning application
+##
+
+input{./sketch-lib/defaults.sk}
+
+def L1 7
+
+def arrowarc
+{
+put{scale(0.8)}{
+    put{rotate(360-30, [Z])}{sweep [style=thick]{210, rotate(1, [Z])} (1,0)}
+    def p1 (-1,0)
+    def p2 (-1,-0.9)
+    line [style=thick, style=->] (p1)(p2)
+}
+}
+
+% The main drawing
+put {scale(1)}
+{
+    def style [cull=false, fill=lightgray]
+        input{./sketch-lib/objects.sk}
+    # base
+    put {scale(1)}
+    {
+        put{scale([1.5,1.5,0.5])}{box}
+        put{scale([3,3,-0.1]) * translate([0,0,0])}{coordsys}
+        line [style=thick] (0,0,0)(0,0,-L1)
+
+        # Platform
+        put {translate([0,0,-L1])}
+        {
+            # Crane Tendon Label
+            special|\draw [<->] #1 -- node[above, sloped]{} #2;|(0,0.4,0.3*L1)(0,0.4,0.5*L1)
+            # CMGs
+            put{translate([0,0,-0.35])}{
+		line [style=densely dotted] (0,0,0)(0,0,-3.5)
+                put{scale(0.5)} {
+			put{translate(-6*[Z]) * rotate(140, [Z])} {arrowarc}
+                }
+            }
+            put{translate([0,0,-0.35]) * scale([0.7,0.7,0.7])}{box}
+
+	    # Load
+            put{translate([0,0,-1.7]) * scale([3,0.2,2])}{box}
+
+        }
+
+    }
+}
+
+
+
+global
+{
+    language tikz
+    camera rotate(0, (1,0,0)) * view((1.5,2,1),(0,0,0),[0,0,1]) * rotate(110, (0,0,1))
+}
+
