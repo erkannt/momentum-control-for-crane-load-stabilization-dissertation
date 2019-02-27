@@ -11,7 +11,7 @@ def hash {
 }
 
 % The main drawing
-put {scale(0.5)}
+put {scale(1)}
 {
     def style [cull=false, fill=lightgray]
     input{./sketch-lib/objects.sk}

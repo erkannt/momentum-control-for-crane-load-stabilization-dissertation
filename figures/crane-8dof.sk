@@ -12,7 +12,7 @@ def J2 -15
 
 def arrowarc
 {
-put{scale(0.8)}{
+put{scale(0.5)}{
     sweep [style=thick]{215, rotate(1, [Z])} (1,0)
     def p1 (1,0) then rotate(210, [Z])
     def p2 (1,0) then rotate(210+30, [Z])
@@ -21,7 +21,7 @@ put{scale(0.8)}{
 }
 
 % The main drawing
-put {scale(0.5)}
+put {scale(1)}
 {
     def style [cull=false, fill=lightgray]
         input{./sketch-lib/objects.sk}
@@ -46,7 +46,7 @@ put {scale(0.5)}
         special|\node[right] at #1 {$\theta_{12}$};|(-2,0,-L1+0.5)
         put {rotate(J1, [Y]) * translate([0,0,-L1])}
         {
-            put{scale([0.15,0.15,0.15])}{sphere}
+            put{scale([0.1,0.1,0.1])}{sphere}
             line [style=solid] (0,0,0)(0,0,L1)
             special|\node[right] at #1 {$l_1$};|(0,0,L1*0.5)
 
