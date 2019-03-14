@@ -184,7 +184,7 @@ def comp_small_exitation():
 def angle_issues():
   """ Illustrate Issue of Angle Wrap Around """
   fig, axs = plt.subplots(3, 1, sharex=True)
-  fig.suptitle('Issues with Use of Cenventional Description of Rotations')
+  fig.suptitle('Issues with Use of Conventional Description of Rotations')
   time = data['3d-small']['t']
 
   axs[0].set_title("Polar Angles", loc='left')

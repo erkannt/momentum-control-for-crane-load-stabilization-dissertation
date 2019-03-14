@@ -169,9 +169,16 @@ KE = & ^1/_2 \cdot m_1 \cdot \dot{x}_1^2 + \dot{y}_1^2 + \dot{z}_1^2 + \\
 \mathcal{L} = & KE - PE
 \end{align}
 
-From this we can obtain the Euler-Lagrange equations for $theta_{ij}$ and subsequently solve them for $\dot{\theta}_{ij}$.
+From this we can obtain the Euler-Lagrange equations for $\theta_{ij}$ and subsequently solve them for $\dot{\theta}_{ij}$.
 Given their complexity this is done using a computer algebra system.
 See appendix @Sec:3d-pointmass-eom for the resulting equations and SymPy code used to obtain them.
+
+Sadly the use of spherical coordinates to describe the kinematic contraints of the system leads to numerical issues during simulation.
+The issues arise due to the fact that we can arrive at the same coordinates, if we flip the azimuthal angle by 180° and flip the sign of the polar angle (@Fig:3d-model-angle-issues).
+While such jumps do not cause issues regarding the position of the pendulum, the spikes in angular velocity that they cause incorrectly represent the kinetic energy in the system.
+The effect of this can vary depending of the exitation/inital conditions of the simulation (see @Fig:2d-3d-comparison-large-exitation and @Fig:2d-3d-comparison-small-exitation in the appendix).
+
+![Comparison of 2D and 3D double pendulum, under small 2D exitation illustrating the issues of the use of multiple angles. Note how  $\theta_{i2}$ jumps in steps of 180° causing $\theta_{i1}$ to remain negative as well as major spikes in angular velocity. These cause an erronous dampening of the pendulum.](./figures/3d-model-angle-issues.svg){ #fig:3d-model-angle-issues }
 
 ## Adding the CMGs
 
