@@ -64,7 +64,7 @@ To understand the interaction of a CMG array with crane we will model it as a do
 
 ![Body simulation of the KR3. The masses of the axes have been estimated from the total mass of the robot and the volume of the respective axes.](./figures/kr3-simmechanics-vis.jpg){#fig:kr3-simmechanics}
 
-## Double Pendulum
+## Modelling the Crane
 
 Two models used: 2D and 3D
 
@@ -88,6 +88,8 @@ Two models used: 2D and 3D
 - role of roof angle re: reaction torque
 - base rates from yaw motions of CMG
 - yaw control of tranported parts (biggest use case outside of robot stabilisation)
+
+### Review of Available Crane Models
 
 ### Basic Double Pendulum { #sec:2dpendulum }
 
@@ -126,11 +128,11 @@ to be continued ...
 
 ![Oscillations of a double pendulum at small angles and velocities.](./figures/dp-oscillations-animation.gif){ #fig:dp-oscillations-animation }
 
-![Oscillations of a double pendulum at small angles and velocities showing a) how the position for such parameters comes close to and simple pendulum and b) how the two parts of the pendulum interact.](./figures/dp-oscillations.svg){ #fig:dp-oscillations }
+![Oscillations of a double pendulum at small angles and velocities showing a) how the position for such parameters comes close to a simple pendulum and b) how the two parts of the pendulum interact.](./figures/dp-oscillations.svg){ #fig:dp-oscillations }
 
 ### Pendulum with Distributed Mass
 
-### The 3D Model
+### The 3D Model { #sec:3d-pendulum }
 
 ![Model of a double pendulum in three dimensions with a fixed point of suspension. Note that the upper link is modelled as having only two degrees of freedom.](./figures/crane-8dof.png){ #fig:crane-8dof }
 
@@ -141,22 +143,35 @@ This model can be extended to include basic crane dynamics by making the $x_0$ a
 To convert to carthesian coordinates:
 
 \begin{align}
-x_0 &= 0 \\
-y_0 &= 0 \\
-z_0 &= 0 \\
+x_0 = & 0 \\
+y_0 = & 0 \\
+z_0 = & 0 \\
 \\
 
-x_1 &= l_1 \cdot \sin(\theta_{11}) \cdot \cos(\theta_{12}) \\
-y_1 &= l_1 \cdot \sin(\theta_{11}) \cdot \sin(\theta_{12}) \\
-z_1 &= l_1 \cdot \cos(\theta_{11}) \\
+x_1 = & l_1 \cdot \sin(\theta_{11}) \cdot \cos(\theta_{12}) \\
+y_1 = & l_1 \cdot \sin(\theta_{11}) \cdot \sin(\theta_{12}) \\
+z_1 = & -l_1 \cdot \cos(\theta_{11}) \\
 \\
 
-x_2 &= x_1 + l_2 \cdot \sin(\theta_{21}) \cdot \cos(\theta_{22}) \\
-y_2 &= y_1 + l_2 \cdot \sin(\theta_{21}) \cdot \sin(\theta_{22}) \\
-z_2 &= z_1 + l_2 \cdot \cos(\theta_{21}) \\
+x_2 = & x_1 + l_2 \cdot \sin(\theta_{21}) \cdot \cos(\theta_{22}) \\
+y_2 = & y_1 + l_2 \cdot \sin(\theta_{21}) \cdot \sin(\theta_{22}) \\
+z_2 = & z_1 - l_2 \cdot \cos(\theta_{21}) \\
 \end{align}
 
 This conversion does not take the rotation of the second mass around the axis of the link $\theta_{23}$ into account.
+
+The Langrangian can once again be determined from the kinetic and potential energies:
+
+\begin{align}
+PE = & m_1 \cdot g \cdot z_1 + m_2 \cdot g \cdot z_2 \\
+KE = & ^1/_2 \cdot m_1 \cdot \dot{x}_1^2 + \dot{y}_1^2 + \dot{z}_1^2 + \\
+     & ^1/_2 \cdot m_2 \cdot \dot{x}_2^2 + \dot{y}_2^2 + \dot{z}_2^2  \\
+\mathcal{L} = & KE - PE
+\end{align}
+
+From this we can obtain the Euler-Lagrange equations for $theta_{ij}$ and subsequently solve them for $\dot{\theta}_{ij}$.
+Given their complexity this is done using a computer algebra system.
+See appendix @Sec:3d-pointmass-eom for the resulting equations and SymPy code used to obtain them.
 
 ## Adding the CMGs
 

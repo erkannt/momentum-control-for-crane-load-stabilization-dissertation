@@ -91,6 +91,20 @@ Some useful conversions to SI-Units:
 \text{g}/\text{cm}^3 \cdot 1000 &= \text{kg}/\text{s}
 \end{align}
 
+## 2D Pointmass Double Pendulum { #sec:2d-pointmass-eom}
+
+!include code/double-pendulum-2d-lagrangian.py
+
+![Validation of the equations of motion generated using the above SymPy code against those taken from @HillLearningScientificProgramming2016.](figures/cas-lit-comparison.svg){ #fig:cas-lit-comparison }
+
+## 3D Pointmass Double Pendulum { #sec:3d-pointmass-eom}
+
+!include code/double-pendulum-3d-lagrangian.py
+
+![Comparison of 2D and 3D double pointmass pendulum given a large 2D exitation. Note how they are identical until for roughly the first five seconds and then begin to strongly deviate as the 3D pendulum begins to leave the plane of exitation. This is due to the issues discussed in @Sec:3d-pendulum.](figures/2d-3d-comparison-large-exitation.svg){ #fig:2d-3d-comparison-large-exitation }
+
+![Comparison of 2D and 3D double pointmass pendulum given a small 2D exitation. Here the deviations are more subtle in effect but it is easier to see the cause. As also discussed in @Sec:3d-pendulum the description of the kinematics using angles leads to the model flipping between nearly identical solutions that cause major steps in the azimuthal angle. While the position of the pendulum is not visibly affected this does lead very high azimuthal angular velocities. The kinetic energy associated with these leads to the dampening of the oscillation we can observe in this plot. Note that the signs of $\theta_{1j}$ have been flipped where $|\theta_{2j}| > \frac{\pi}{10}$ to ease comparison of the two models.](figures/2d-3d-comparison-small-exitation.svg){ #fig:2d-3d-comparison-small-exitation }
+
 
 ## Other Stuff Looking for a Home
 

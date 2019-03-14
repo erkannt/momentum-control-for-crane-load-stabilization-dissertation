@@ -24,7 +24,7 @@ sns.set_context("paper")
 colors = ['C0', 'C1', 'C2', 'C3']
 linetypes = ['-', '--', '-.', ':']
 outputtypes = ['pdf', 'svg', 'png']
-outputfolder = "../../output/figures/"
+outputfolder = "../../figures/"
 
 datafiles = {
   '2d-large': "pointmass-double-pendulum-large_exitation-2d.npz",
