@@ -47,6 +47,7 @@ html:
 		--mathml \
 		--standalone \
 		-F pandoc-crossref \
+		-F pandoc-include \
 		--template="$(STYLEDIR)/template.html" \
 		--bibliography="$(BIBFILE)"  &>$(OUTPUTDIR)/pandoc-html.log \
 		--csl="$(STYLEDIR)/ref_format.csl" \

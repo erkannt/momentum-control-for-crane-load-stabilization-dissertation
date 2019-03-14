@@ -4,6 +4,8 @@
 
 - pandoc
 - pandoc-crossref
+- pandoc-citeproc
+- pandoc-include (the python version)
 - xelatex
 - python3
 
