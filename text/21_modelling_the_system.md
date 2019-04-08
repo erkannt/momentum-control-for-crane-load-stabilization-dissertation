@@ -91,6 +91,23 @@ Two models used: 2D and 3D
 
 ### Review of Available Crane Models
 
+- crane in essence a pendulum but:
+  - tendon is flexible
+  - suspension point also exhibits dynamics
+  - load exhibits own dynamics
+- for this work we shall ignore:
+  - flexibility of tendon
+  - crane structure dynamics
+  - stretch and varying length of tendon
+- and instead inlude:
+  - load/CMGs as distributed mass with dynamics
+  - ergo we need a double pendulum, since otherwise the torque would act at suspension point of the tendon which is way to unrealistic
+
+The following sections will develop this model from a two-dimensional double pendulum to a three-dimensional double pendulum and subsequently go from two point masses to a point mass and a distributed mass.
+The generation of equations of motion and subsequent numerical integration are achieved using Python.
+The code builds on the educational example of Christian Hill @HillLearningScientificProgramming2016, the three-dimensional model extends the work of O'Conner and Habibi @OConnorGantryCraneControl2013.
+I hope that this extended discussion and availability of source code will aid others in extending the model to their needs, espescially when coming from other disciplines.
+
 ### Basic Double Pendulum { #sec:2dpendulum }
 
 Most rudimentary model: double pendulum modelled as massless rods with point masses.
@@ -124,20 +141,16 @@ The second point can already be illustrated by the mass-point model.
 In @Fig:dp-oscillations-animation and @Fig:dp-oscillations we can see how for small angles and velocities the double pendulums position is close to a regular pendulum.
 But looking at the velocity and especially the acceleartion we can see the interaction between the two parts of the pendulum.
 
-to be continued ...
-
 ![Oscillations of a double pendulum at small angles and velocities.](./figures/dp-oscillations-animation.gif){ #fig:dp-oscillations-animation }
 
 ![Oscillations of a double pendulum at small angles and velocities showing a) how the position for such parameters comes close to a simple pendulum and b) how the two parts of the pendulum interact.](./figures/dp-oscillations.svg){ #fig:dp-oscillations }
 
-### Pendulum with Distributed Mass
-
 ### The 3D Model { #sec:3d-pendulum }
 
-![Model of a double pendulum in three dimensions with a fixed point of suspension. Note that the upper link is modelled as having only two degrees of freedom.](./figures/crane-8dof.png){ #fig:crane-8dof }
+![Model of a pointmass double pendulum in three dimensions with a fixed point of suspension.](./figures/crane-8dof.png){ #fig:crane-spherical }
 
-In the 3D model of the double pendulum (@Fig:crane-8dof) $\theta_{i1}$ are the polar angles and $\theta_{i2}$ the azimuthal angles.
-Since we are only modelling the mass of the second link as a distributed mass, we only have third rotational angle for the second mass.
+If we extend our pointmass model to three dimension we require two angles to describe the location of each point.
+In the 3D model of the double pendulum (@Fig:crane-spherical) $\theta_{i1}$ are the polar angles and $\theta_{i2}$ the azimuthal angles.
 This model can be extended to include basic crane dynamics by making the $x_0$ and $y_0$ coordinates of the suspension point as well as $l1$ variable.
 
 To convert to carthesian coordinates:
@@ -158,8 +171,6 @@ y_2 = & y_1 + l_2 \cdot \sin(\theta_{21}) \cdot \sin(\theta_{22}) \\
 z_2 = & z_1 - l_2 \cdot \cos(\theta_{21}) \\
 \end{align}
 
-This conversion does not take the rotation of the second mass around the axis of the link $\theta_{23}$ into account.
-
 The Langrangian can once again be determined from the kinetic and potential energies:
 
 \begin{align}
@@ -179,6 +190,29 @@ While such jumps do not cause issues regarding the position of the pendulum, the
 The effect of this can vary depending of the exitation/inital conditions of the simulation (see @Fig:2d-3d-comparison-large-exitation and @Fig:2d-3d-comparison-small-exitation in the appendix).
 
 ![Comparison of 2D and 3D double pendulum, under small 2D exitation illustrating the issues of the use of multiple angles. Note how  $\theta_{i2}$ jumps in steps of 180° causing $\theta_{i1}$ to remain negative as well as major spikes in angular velocity. These cause an erronous dampening of the pendulum.](./figures/3d-model-angle-issues.svg){ #fig:3d-model-angle-issues }
+
+To alleviate this we can change the description of the kinematic constraints to use projected angles instead of spherical coordinates.
+This approach follows that of @OConnorGantryCraneControl2013, where the authors derive the equations of motion for a double pendulum with an attached distributed mass.
+
+![Model of a pointmass double pendulum in three dimensions with a fixed point of suspension, using projected angles instead of spherical coordinates.](./figures/crane-model-projected-angles.png){ #fig:crane-projected-angles }
+
+Given the use of projected angles the cartesian expressions become:
+
+\begin{align}
+x_0 = & 0 \\
+y_0 = & 0 \\
+z_0 = & 0 \\
+\\
+
+x_1 = &  l_1 \cdot \sin(\theta_{11}) \\
+y_1 = &  l_1 \cdot \cos(\theta_{11}) \cdot \sin(\theta_{12}) \\
+z_1 = & -l_1 \cdot \cos(\theta_{11}) \cdot \cos(\theta_{12}) \\
+\\
+
+x_2 = & x_1 + l_2 \cdot \sin(\theta_{21}) \\
+y_2 = & y_1 + l_2 \cdot \cos(\theta_{21}) \cdot \sin(\theta_{22}) \\
+z_2 = & z_1 - l_2 \cdot \cos(\theta_{21}) \cdot \cos(\theta_{22}) \\
+\end{align}
 
 ## Adding the CMGs
 
