@@ -28,6 +28,7 @@ outputfolder = "../../figures/"
 
 datafiles = {
   '2d-large': "pointmass-double-pendulum-large_exitation-2d.npz",
+  '2d-large-lit': "pointmass-double-pendulum-large_exitation-2d-literature_eom.npz",
   '2d-small': "pointmass-double-pendulum-small_exitation-2d.npz",
   '3d-large': "pointmass-double-pendulum-large_exitation-3d.npz",
   '3d-small': "pointmass-double-pendulum-small_exitation-3d.npz"}
@@ -39,6 +40,55 @@ labels = {
   '3ddot': [r'$\dot{\theta}_{11}$', r'$\dot{\theta}_{12}$', r'$\dot{\theta}_{21}$', r'$\dot{\theta}_{22}$'],
   '2d3d': [r'$\theta_{1}-\theta_{11}$', r'$\theta_{2}-\theta_{21}$']}
 
+
+def cas_lit_comp():
+  """ CAS Lit Comparison """
+  fig, axs = plt.subplots(3, 1, sharex=True)
+  fig.suptitle('Equations of Motion from Computer Algebra System and Literature')
+  time = data['2d-large']['t']
+
+  # CAS
+  ax = axs[0]
+  for i in range(4):
+    ax.plot(time, data['2d-large']['y'][:,i] * 180/pi,
+      linetypes[i],
+      color=colors[i],
+      label=labels['2d'][i],
+      linewidth='0.85')
+  ax.set_title("EoM from CAS", loc='left')
+
+  # Lit
+  ax = axs[1]
+  for i in range(4):
+    ax.plot(time, data['2d-large-lit']['y'][:,i] * 180/pi,
+      linetypes[i],
+      color=colors[i],
+      label=labels['2d'][i],
+      linewidth='0.85')
+  ax.set_title("EoM from Literature", loc='left')
+
+  # Diff
+  ax = axs[2]
+  for i in range(4):
+    ax.plot(time, (data['2d-large-lit']['y'][:,i] - data['2d-large-lit']['y'][:,i])* 180/pi,
+      linetypes[i],
+      color=colors[i],
+      label=labels['2d'][i],
+      linewidth='0.85')
+  ax.set_title("Difference", loc='left')
+  for ax in axs:
+    ax.legend(loc=1, framealpha=1)
+    ax.grid(axis='y')
+  sns.despine(trim=True, offset=2)
+  for ax in axs[0:-1]:
+    ax.get_xaxis().set_visible(False)
+    ax.spines['bottom'].set_visible(False)
+    plt.xlabel('Time [s]')
+    plt.tight_layout()
+  fig.subplots_adjust(hspace=0.6)
+  for ftype in outputtypes:
+    plt.savefig('%s/cas-lit-comparison.%s' % (outputfolder, ftype))
+
 def comp_large_exitation():
   """ 2D-3D Comparison Large Exitation """
   fig, axs = plt.subplots(3, 1, sharex=True)
@@ -48,7 +98,7 @@ def comp_large_exitation():
   # 2D
   ax = axs[0]
   for i in range(0,4,2):
-    ax.plot(time, ((data['2d-large']['y'][:,i] + pi) % (2*pi) - pi) * 180/pi,
+    ax.plot(time, data['2d-large']['y'][:,i] * 180/pi,
       linetypes[i],
       color=colors[i],
       label=labels['2d'][i],
@@ -58,7 +108,7 @@ def comp_large_exitation():
   # 3D
   ax = axs[1]
   for i in range(4):
-    ax.plot(time, ((data['3d-large']['y'][i*2,:] + pi) % (2*pi) - pi) * 180/pi,
+    ax.plot(time, data['3d-large']['y'][i*2,:] * 180/pi,
       linetypes[i],
       color=colors[i],
       label=labels['3d'][i],
@@ -68,8 +118,7 @@ def comp_large_exitation():
   # Diff
   ax = axs[2]
   for i in range(2):
-    ax.plot(time, ( ((data['2d-large']['y'][:,i*2] + pi) % (2*pi) - pi) -
-                    ((data['3d-large']['y'][i*4,:] + pi) % (2*pi) - pi) ) * 180/pi,
+    ax.plot(time, (data['2d-large']['y'][:,i*2] - data['3d-large']['y'][i*4,:])* 180/pi,
       linetypes[i*2],
       color=colors[i*2],
       label=labels['2d3d'][i],
@@ -86,7 +135,7 @@ def comp_large_exitation():
     plt.tight_layout()
   fig.subplots_adjust(hspace=0.6)
   for ftype in outputtypes:
-    plt.savefig('%s/2d-3d-comparison-large-exitation.%s' % (outputfolder, ftype))
+    plt.savefig('%s/2d-3d-comparison-large-exitation-spherical-coords.%s' % (outputfolder, ftype))
 
 def comp_small_exitation():
   """ 2D-3D Comparison Small Exitation """
@@ -121,6 +170,7 @@ def comp_small_exitation():
   for ax in axs:
     ax.legend(loc=1, framealpha=1)
     ax.grid(axis='y')
+    ax.set_ylim((-30,30))
   sns.despine(trim=True, offset=2)
   for ax in axs[0:-1]:
     ax.get_xaxis().set_visible(False)
@@ -129,16 +179,16 @@ def comp_small_exitation():
     plt.tight_layout()
   fig.subplots_adjust(hspace=0.6)
   for ftype in outputtypes:
-    plt.savefig('%s/2d-3d-comparison-small-exitation.%s' % (outputfolder, ftype))
+    plt.savefig('%s/2d-3d-comparison-small-exitation-spherical-coords.%s' % (outputfolder, ftype))
 
 def angle_issues():
-  """ For comparison with spherical coords"""
+  """ Illustrate Issue of Angle Wrap Around """
   fig, axs = plt.subplots(3, 1, sharex=True)
-  fig.suptitle('Projected Angles avoid Ambiguity of Spherical Coordinates')
+  fig.suptitle('Issues with Use of Spherical Coordinate Description of Rotations')
   time = data['3d-small']['t']
 
-  axs[0].set_title("Angles in XZ-Plane", loc='left')
-  axs[1].set_title("Angles in YZ-Plane", loc='left')
+  axs[0].set_title("Polar Angles", loc='left')
+  axs[1].set_title("Azimuthal Angles", loc='left')
   axs[2].set_title("Angular Velocites", loc='left')
   for i in range(0,8,4):
     polar = data['3d-small']['y'][i,:]
@@ -154,7 +204,7 @@ def angle_issues():
       label=labels['3d'][i//2+1],
       linewidth='0.85')
   for i, j in zip(range(1,8,2), range(4)):
-    axs[2].plot(time, data['3d-small']['y'][i,:] * 180/pi,
+    axs[2].semilogy(time, data['3d-small']['y'][i,:] * 180/pi,
       linetypes[j],
       color=colors[j],
       label=labels['3ddot'][j],
@@ -172,8 +222,9 @@ def angle_issues():
     plt.tight_layout()
   fig.subplots_adjust(hspace=0.6)
   for ftype in outputtypes:
-    plt.savefig('%s/3d-model-angle-issues-solution.%s' % (outputfolder, ftype))
+    plt.savefig('%s/3d-model-angle-issues.%s' % (outputfolder, ftype))
 
+cas_lit_comp()
 comp_large_exitation()
 comp_small_exitation()
 angle_issues()
