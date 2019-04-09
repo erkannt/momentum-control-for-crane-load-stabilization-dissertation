@@ -29,8 +29,14 @@ To automatically reload HTML you can use the `reload-brower` script from the ent
 
 Requires [gifify](https://github.com/vvo/gifify)
 
+Only converts if gif doesn't already exist.
+
 ````
 for f in $(find ./data -name "*.mp4"); do
-gifify $f -o ${f/%.mp4/.gif}
+  if [ ! -f ${f/%.mp4/.gif} ]; then
+    echo $f 
+    gifify $f --resize '800:-1' -o ${f/%.mp4/.gif}
+  fi
+  cp ${f/%.mp4/.gif} ./figures/ 
 done
 ````
