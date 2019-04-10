@@ -173,6 +173,13 @@ figure {
     cursor: pointer;
 }
 
+.sourceCode {
+    overflow: scroll;
+    max-height: 30vh;
+    padding: 0.3rem;
+    background-color: #FFFCEB;
+}
+
 /* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
