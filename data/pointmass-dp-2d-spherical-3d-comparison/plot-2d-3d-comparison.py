@@ -113,7 +113,7 @@ def comp_large_exitation():
       color=colors[i],
       label=labels['3d'][i],
       linewidth='0.85')
-  ax.set_title("3D Model", loc='left')
+  ax.set_title("3D Model, Spherical Coordinates", loc='left')
 
   # Diff
   ax = axs[2]
@@ -144,7 +144,7 @@ def comp_small_exitation():
   time = data['2d-small']['t']
 
   axs[0].set_title("2D Model", loc='left')
-  axs[1].set_title("3D Model", loc='left')
+  axs[1].set_title("3D Model, Spherical Coordinates", loc='left')
   axs[2].set_title("Difference", loc='left')
   for i in range(0,8,4):
     angles2d = (data['2d-small']['y'][:,i//2] + pi) % (2 * pi ) - pi
@@ -170,7 +170,7 @@ def comp_small_exitation():
   for ax in axs:
     ax.legend(loc=1, framealpha=1)
     ax.grid(axis='y')
-    ax.set_ylim((-30,30))
+  axs[2].set_ylim((-15,15))
   sns.despine(trim=True, offset=2)
   for ax in axs[0:-1]:
     ax.get_xaxis().set_visible(False)
@@ -189,7 +189,7 @@ def angle_issues():
 
   axs[0].set_title("Polar Angles", loc='left')
   axs[1].set_title("Azimuthal Angles", loc='left')
-  axs[2].set_title("Angular Velocites", loc='left')
+  axs[2].set_title("Angular Velocities", loc='left')
   for i in range(0,8,4):
     polar = data['3d-small']['y'][i,:]
     azimuth = data['3d-small']['y'][i+2,:]

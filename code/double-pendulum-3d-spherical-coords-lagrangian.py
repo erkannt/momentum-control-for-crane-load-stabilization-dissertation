@@ -29,12 +29,12 @@ substitutions = [(theta11.diff(t).diff(t), udot11),
                 ]
 
 """ Define Kinematic Relations """
-x1 = l1 * sin(theta11)
-y1 = l1 * cos(theta11) * sin(theta12)
-z1 = -l1 * cos(theta11) * cos(theta12)
-x2 = x1 + l2 * sin(theta21)
-y2 = y1 + l2 * cos(theta21) * sin(theta22)
-z2 = z1 - l2 * cos(theta21) * cos(theta22)
+x1 = l1 * sin(theta11) * cos(theta12)
+y1 = l1 * sin(theta11) * sin(theta12)
+z1 = -l1 * cos(theta11)
+x2 = x1 + l2 * sin(theta21) * cos(theta22)
+y2 = y1 + l2 * sin(theta21) * sin(theta22)
+z2 = z1 - l2 * cos(theta21)
 
 """ Langrangian """
 Pot = m1 * g * z1 + m2 * g * z2
