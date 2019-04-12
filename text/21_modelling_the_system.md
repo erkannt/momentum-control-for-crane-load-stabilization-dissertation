@@ -192,7 +192,8 @@ The effect of this can vary depending of the exitation/inital conditions of the 
 ![3D double pendulum using spherical coordinates, under small 2D exitation, illustrating the issues of the use of spherical coordinates. Note how  $\theta_{i2}$ jumps in steps of 180° causing $\theta_{i1}$ to remain negative as well as major spikes in angular velocity. These cause an erronous dampening of the pendulum.](./figures/3d-model-angle-issues.svg){ #fig:3d-model-angle-issues }
 
 To alleviate this we can change the description of the kinematic constraints to use projected angles instead of spherical coordinates.
-This approach follows that of @OConnorGantryCraneControl2013, where the authors derive the equations of motion for a double pendulum with an attached distributed mass.
+This approach follows that of @OConnorGantryCraneControl2013, where the authors derive the equations of motion for a double pendulum with an attached distributed mass that has two degrees of rotational freedom.
+The following extends this to a full three degrees of freedom, to not only closer model realistic crane load motion but also to accomodate our usecase of load rotation.
 
 ![Model of a pointmass double pendulum in three dimensions with a fixed point of suspension, using projected angles instead of spherical coordinates.](./figures/crane-model-projected-angles.png){ #fig:crane-projected-angles }
 
@@ -213,6 +214,80 @@ x_2 = & x_1 + l_2 \cdot \sin(\theta_{21}) \\
 y_2 = & y_1 + l_2 \cdot \cos(\theta_{21}) \cdot \sin(\theta_{22}) \\
 z_2 = & z_1 - l_2 \cdot \cos(\theta_{21}) \cdot \cos(\theta_{22}) \\
 \end{align}
+
+Assuming a pointmass pendulum the Langrangian would be the same as before:
+
+\begin{align}
+PE = & m_1 \cdot g \cdot z_1 + m_2 \cdot g \cdot z_2 \\
+KE = & ^1/_2 \cdot m_1 \cdot \dot{x}_1^2 + \dot{y}_1^2 + \dot{z}_1^2 + \\
+     & ^1/_2 \cdot m_2 \cdot \dot{x}_2^2 + \dot{y}_2^2 + \dot{z}_2^2  \\
+\mathcal{L} = & KE - PE
+\end{align}
+
+Since we want to model the lower mass (our platform and load) as a distributed mass we have to add the kinetic energy of the rotating mass to our Langrangian.
+For this we need to express the rotational velocities and inertias of the mass in a common reference frame.
+We define this to be the center of gravity hanging a distance $l_2$ from our pointmass $m_1$.
+Should the center of gravity change due to e.g. robot motion this difference will be modelled as an external torque acting upon the platform.
+The inertia tensor in this reference frame then is:
+
+\begin{align}
+  I_{m2} =
+    \begin{bmatrix}
+      I_{xx} & 0 & 0 \\
+      0 & I_{yy} & 0 \\
+      0 & 0 & I_{zz} \\
+    \end{bmatrix}
+    _{X_3Y_3Z_3}
+\end{align}
+
+The rotations required to transform the reference frame $X_2Y_2Z_2$ that is aligned with our world axes to the reference frame $X_3Y_3Z_3$ also let us obtain the rotational velocities $\omega_{X_3Y_3Z_3}$ from our projected angle velocities $\dot{\theta}_{2j}$.
+
+![Sequence of rotations to transform the world aligned reference frame to the reference frame of our distributed mass.](./figures/cog-rotations.png){ #fig:cog-rotations }
+
+The rotations illustrated in @Fig:cog-rotations can be expressed as:
+
+\begin{align}
+R_{2 \rightarrow 3} = & R_Y(\theta_{21})R_X(\theta_{22})R_Z(\theta_{23}) \\
+= &
+\left[\begin{matrix}\cos{\left (\theta_{21} \right )} & 0 & - \sin{\left (\theta_{21} \right )}\\0 & 1 & 0\\\sin{\left (\theta_{21} \right )} & 0 & \cos{\left (\theta_{21} \right )}\end{matrix}\right]
+\left[\begin{matrix}1 & 0 & 0\\0 & \cos{\left (\theta_{22} \right )} & - \sin{\left (\theta_{22} \right )}\\0 & \sin{\left (\theta_{22} \right )} & \cos{\left (\theta_{22} \right )}\end{matrix}\right]
+\left[\begin{matrix}\cos{\left (\theta_{23} \right )} & - \sin{\left (\theta_{23} \right )} & 0\\\sin{\left (\theta_{23} \right )} & \cos{\left (\theta_{23} \right )} & 0\\0 & 0 & 1\end{matrix}\right]
+\end{align}
+
+This lets us express the required rotational velocities as follows. Note that we use $-\theta_{21}$ as its direction is opposite to that of the right-hand-rule.
+
+\begin{align}
+  \omega_3 = & R \cdot \omega_X_2 + R \cdot \omega_Y_2 + \omega_Z_3 \\
+  = & R \cdot 
+    \begin{bmatrix}
+      \dot\theta_{22} \\ 0 \\ 0
+    \end{bmatrix} +
+  R \cdot 
+    \begin{bmatrix}
+      0 \\ -\dot\theta_{21} \\ 0
+    \end{bmatrix} +
+  \begin{bmatrix}
+    0 \\ 0\\ \dot\theta_{23}
+  \end{bmatrix} \\
+  \omega_X_3 = &
+    -\dot{\theta}_{21} ( -\sin{\theta_{21}} \sin{\theta_{22}} \cos{\theta_{23}} - \sin{\theta_{23}} \cos{\theta_{21}} ) + \\
+    & \dot{\theta}_{22} (-\sin{\theta_{21}} \sin{\theta_{22}} \sin{\theta_{23}} + \cos{\theta_{21}} \cos{\theta_{23}})\\
+  \omega_Y_3 = & -\dot{\theta}_{21} \cos{\theta_{22}} \cos{\theta_{23}} + \\
+    & \dot{\theta}_{22} \sin{\theta_{23}} \cos{\theta_{22}}\\
+  \omega_Z_3 = & -\dot{\theta}_{21} (-\sin{\theta_{21}} \sin{\theta_{23}} + \sin{\theta_{22}} \cos{\theta_{21}} \cos{\theta_{23}}) + \\
+    & \dot{\theta}_{22} (\sin{\theta_{21}} \cos{\theta_{23}} + \sin{\theta_{22}} \sin{\theta_{23}} \cos{\theta_{21}}) + \\
+    & \dot{\theta}_{23}
+\end{align}
+
+The Lagrangian then becomes:
+
+\begin{align}
+\mathcal{L} = & (KE + KE_\omega) - PE \\
+KE_\omega = & ^1/_2 \cdot \omega_3 \cdot I_{m2} \cdot \omega_3 \\
+= & ^1/_2 ( I_{XX} \cdot \omega^2_{X_3} + I_{YY} \cdot \omega^2_{Y_3} + I_{ZZ} \cdot \omega^2_{Z_3}) \\
+\end{align}
+
+The equations of motion can then once again be obtained from our computer algebra system (see @Sec:distributed-mass-eom).
 
 ## Adding the CMGs
 
