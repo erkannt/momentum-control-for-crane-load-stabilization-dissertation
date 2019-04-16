@@ -5,6 +5,11 @@ python $f
 done
 
 for f in $(find ./figures -name "*.svg"); do
-sed -i 's/width.*pt\"//g' $f
-sed -i 's/height.*pt\"//g' $f
+  if [[ "$OSTYPE" == "darwin"* ]]; then
+    sed -i "" 's/width.*pt\"//g' $f
+    sed -i "" 's/height.*pt\"//g' $f
+  else
+    sed -i 's/width.*pt\"//g' $f
+    sed -i 's/height.*pt\"//g' $f
+  fi
 done
