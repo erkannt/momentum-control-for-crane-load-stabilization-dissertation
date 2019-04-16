@@ -21,22 +21,4 @@ find ./text ./figures ./style ./ -type f | entr make pdf
 To automatically reload the PDF use [Skim](https://skim-app.sourceforge.io/) on Mac.  
 Under Linux entr recommends mupdf, since it can be told to reload from the commandline.
 
-To automatically reload HTML you can use the `reload-brower` script from the entr project.
-
-## Other useful commands
-
-### Convert all mp4 to gif
-
-Requires [gifify](https://github.com/vvo/gifify)
-
-Only converts if gif doesn't already exist.
-
-````
-for f in $(find ./data -name "*.mp4"); do
-  if [ ! -f ${f/%.mp4/.gif} ]; then
-    echo $f 
-    gifify $f --resize '800:-1' -o ${f/%.mp4/.gif}
-  fi
-  cp ${f/%.mp4/.gif} ./figures/ 
-done
-````
+To automatically reload HTML you can use the `reload-browser` script from the entr project.
