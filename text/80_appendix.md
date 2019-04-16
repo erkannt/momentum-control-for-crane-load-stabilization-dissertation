@@ -129,6 +129,18 @@ Some useful conversions to SI-Units:
 
 ![Large out of plane exitation of double pendulum modelled with equations of motion derived using projected angles. From left to right: front, side and top view. Note how the small inaccuracies cause motion outside of the original plane of exitation. These deviations quickly become chaotic for larger exitations.](figures/double_pendulum_3d_Large_Exitation-diagonal.gif){ #fig:3d-projected-large-exitation-diagonal }
 
+## 3D Distributed Mass Pendulum{ #sec:distributed-mass-eom }
+
+!include code/double-pendulum-3d-distmass-lagrangian.py
+
+!include code/double-pendulum-eom-3d-distmass.txt
+
+!include code/cog-rotations.py
+
+!include code/double-pendulum-3d-distmass-simulation.py
+
+!include code/gh-data-import.py
+
 ## Other Stuff Looking for a Home
 
 - Workspace of a Roof-Array
