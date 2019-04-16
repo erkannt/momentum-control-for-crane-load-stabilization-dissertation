@@ -23,7 +23,6 @@ help:
 all: plots figures html pdf
 
 pdf:
-	rsync -a --delete $(BASEDIR)/$(FIGDIR) $(OUTPUTDIR)/
 	rsync -a --delete $(BASEDIR)/$(TEXTDIR) $(OUTPUTDIR)/
 	sed -i "" 's/\.svg/\.png/g' $(OUTPUTDIR)/$(TEXTDIR)/*.md
 	pandoc "$(OUTPUTDIR)"/$(TEXTDIR)/*.md \
@@ -43,7 +42,6 @@ pdf:
 	cat $(OUTPUTDIR)/*-pdf.log | grep -i warning
 
 html:
-	rsync -a --delete $(BASEDIR)/$(FIGDIR) $(OUTPUTDIR)/
 	pandoc "$(TEXTDIR)"/*.md \
 		-o "$(OUTPUTDIR)/thesis.html" \
 		--mathml \
@@ -63,8 +61,9 @@ plots:
 	./tools/plots.sh
 
 figures:
-	ls $(OUTPUTDIR)/$(FIGDIR)/*.sk | xargs -n1 ./tools/sk2png
-	ls $(OUTPUTDIR)/$(FIGDIR)/*.tex | xargs -n1 ./tools/tex2png
+	rsync -a --delete $(BASEDIR)/$(FIGDIR) $(OUTPUTDIR)/
+	find $(OUTPUTDIR)/$(FIGDIR) -name "*.sk" | xargs -n1 ./tools/sk2png
+	find $(OUTPUTDIR)/$(FIGDIR) -name "*.tex" | xargs -n1./tools/tex2png
 
 clean:
 	rm -r ./output/*
