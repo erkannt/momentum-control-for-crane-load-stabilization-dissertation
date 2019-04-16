@@ -287,7 +287,13 @@ KE_\omega = & ^1/_2 \cdot \omega_3 \cdot I_{m2} \cdot \omega_3 \\
 = & ^1/_2 ( I_{XX} \cdot \omega^2_{X_3} + I_{YY} \cdot \omega^2_{Y_3} + I_{ZZ} \cdot \omega^2_{Z_3}) \\
 \end{align}
 
-The equations of motion can then once again be obtained from our computer algebra system (see @Sec:distributed-mass-eom).
+The equations of motion can then once again be obtained from our computer algebra system.
+These can be used for the numerical simulation.
+Since the 3D plotting of matplotlib is slightly limited I switched to Rhino/Grasshopper for visualisation (@Fig:distmass-sim-gh).
+For this the statevectors of the simulation are transformed to cartesian points for the masses as well as an X- and Y-vector for the reference frame of our mass.
+See the appendix (@Sec:distributed-mass-eom) for equations of motion and all code.
+
+![Visualisation of simulated 3D double pendulum with the lower mass as a distributed mass. The lower mass begins with a small angular velocity around the link axis. Visualised using Rhino/Grasshopper.](./figures/distmass-sim-gh.gif){ #fig:distmass-sim-gh }
 
 ## Adding the CMGs
 
