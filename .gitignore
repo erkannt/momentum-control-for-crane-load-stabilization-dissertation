@@ -5,3 +5,4 @@ figures/*.svg
 figures/*.png
 *.log
 *.aux
+*.un~
