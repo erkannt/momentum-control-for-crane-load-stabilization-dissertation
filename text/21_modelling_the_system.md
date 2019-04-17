@@ -183,7 +183,7 @@ See appendix @Sec:3d-pointmass-eom for the resulting equations and SymPy code us
 Sadly the use of spherical coordinates to describe the kinematic contraints of the system leads to numerical issues during simulation.
 The issues arise due to the fact that we can arrive at the same coordinates, if we flip the azimuthal angle by 180° and flip the sign of the polar angle (@Fig:3d-model-angle-issues).
 While such jumps do not cause issues regarding the position of the pendulum, the spikes in angular velocity that they cause incorrectly represent the kinetic energy in the system.
-The effect of this can vary depending of the exitation/inital conditions of the simulation (see @Fig:2d-3d-comparison-large-exitation and @Fig:2d-3d-comparison-small-exitation in the appendix).
+The effect of this can vary depending of the exitation/inital conditions of the simulation (see @Fig:2d-3d-comparison-large-exitation-spherical and @Fig:2d-3d-comparison-small-exitation in the appendix).
 
 ![3D double pendulum using spherical coordinates, under small 2D exitation, illustrating the issues of the use of spherical coordinates. Note how  $\theta_{i2}$ jumps in steps of 180° causing $\theta_{i1}$ to remain negative as well as major spikes in angular velocity. These cause an erronous dampening of the pendulum.](./figures/3d-model-angle-issues.svg){ #fig:3d-model-angle-issues }
 

@@ -27,7 +27,7 @@ We will see in the experiments performed with our physical prototype that sensor
 ![Control flow for part rotation](./figures/rotation-controller.png){ #fig:rotation-controller }
 
 In @Fig:rotation-controller we have a similar setup to our dampening control loop.
-Here the desired state is a certain rotational position around the Z-axis or yaw-axis ($\theta_{23}$, see @Fig:crane-8dof)
+Here the desired state is a certain rotational position around the yaw-axis of the platform/load.
 This would be the case e.g. when the rotation of the part is a programmed action.
 Alternatively one could also use a certain rotational velocity as a desired state ($\dot{\theta_{23}}$).
 This would be the case in a remote control scenario, where an operator would control the rotation manually.
