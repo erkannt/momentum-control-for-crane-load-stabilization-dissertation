@@ -25,7 +25,8 @@ all: plots figures html pdf
 pdf:
 	rsync -a --delete $(BASEDIR)/$(TEXTDIR) $(OUTPUTDIR)/
 	sed -i "" 's/\.svg/\.png/g' $(OUTPUTDIR)/$(TEXTDIR)/*.md
-	pandoc "$(OUTPUTDIR)"/$(TEXTDIR)/*.md \
+	cd $(OUTPUTDIR)
+	pandoc $(TEXTDIR)/*.md \
 		-o "$(OUTPUTDIR)/thesis.pdf" \
 		-H "$(STYLEDIR)/preamble.tex" \
 		-F pandoc-crossref \
