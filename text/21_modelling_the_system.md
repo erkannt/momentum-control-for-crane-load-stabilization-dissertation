@@ -159,13 +159,9 @@ To convert to carthesian coordinates:
 x_0 = & 0 \\
 y_0 = & 0 \\
 z_0 = & 0 \\
-\\
-
 x_1 = & l_1 \cdot \sin(\theta_{11}) \cdot \cos(\theta_{12}) \\
 y_1 = & l_1 \cdot \sin(\theta_{11}) \cdot \sin(\theta_{12}) \\
 z_1 = & -l_1 \cdot \cos(\theta_{11}) \\
-\\
-
 x_2 = & x_1 + l_2 \cdot \sin(\theta_{21}) \cdot \cos(\theta_{22}) \\
 y_2 = & y_1 + l_2 \cdot \sin(\theta_{21}) \cdot \sin(\theta_{22}) \\
 z_2 = & z_1 - l_2 \cdot \cos(\theta_{21}) \\
@@ -203,13 +199,9 @@ Given the use of projected angles the cartesian expressions become:
 x_0 = & 0 \\
 y_0 = & 0 \\
 z_0 = & 0 \\
-\\
-
 x_1 = &  l_1 \cdot \sin(\theta_{11}) \\
 y_1 = &  l_1 \cdot \cos(\theta_{11}) \cdot \sin(\theta_{12}) \\
 z_1 = & -l_1 \cdot \cos(\theta_{11}) \cdot \cos(\theta_{12}) \\
-\\
-
 x_2 = & x_1 + l_2 \cdot \sin(\theta_{21}) \\
 y_2 = & y_1 + l_2 \cdot \cos(\theta_{21}) \cdot \sin(\theta_{22}) \\
 z_2 = & z_1 - l_2 \cdot \cos(\theta_{21}) \cdot \cos(\theta_{22}) \\
@@ -257,7 +249,7 @@ R_{2 \rightarrow 3} = & R_Y(\theta_{21})R_X(\theta_{22})R_Z(\theta_{23}) \\
 This lets us express the required rotational velocities as follows. Note that we use $-\theta_{21}$ as its direction is opposite to that of the right-hand-rule.
 
 \begin{align}
-  \omega_3 = & R \cdot \omega_X_2 + R \cdot \omega_Y_2 + \omega_Z_3 \\
+  \omega_3 = & R \cdot \omega_{X_{2}} + R \cdot \omega_{Y_{2}} + \omega_{Z_{3}} \\
   = & R \cdot 
     \begin{bmatrix}
       \dot\theta_{22} \\ 0 \\ 0
@@ -269,12 +261,12 @@ This lets us express the required rotational velocities as follows. Note that we
   \begin{bmatrix}
     0 \\ 0\\ \dot\theta_{23}
   \end{bmatrix} \\
-  \omega_X_3 = &
+  \omega_{X_{3}} = &
     -\dot{\theta}_{21} ( -\sin{\theta_{21}} \sin{\theta_{22}} \cos{\theta_{23}} - \sin{\theta_{23}} \cos{\theta_{21}} ) + \\
     & \dot{\theta}_{22} (-\sin{\theta_{21}} \sin{\theta_{22}} \sin{\theta_{23}} + \cos{\theta_{21}} \cos{\theta_{23}})\\
-  \omega_Y_3 = & -\dot{\theta}_{21} \cos{\theta_{22}} \cos{\theta_{23}} + \\
+  \omega_{Y_{3}} = & -\dot{\theta}_{21} \cos{\theta_{22}} \cos{\theta_{23}} + \\
     & \dot{\theta}_{22} \sin{\theta_{23}} \cos{\theta_{22}}\\
-  \omega_Z_3 = & -\dot{\theta}_{21} (-\sin{\theta_{21}} \sin{\theta_{23}} + \sin{\theta_{22}} \cos{\theta_{21}} \cos{\theta_{23}}) + \\
+  \omega_{Z_{3}} = & -\dot{\theta}_{21} (-\sin{\theta_{21}} \sin{\theta_{23}} + \sin{\theta_{22}} \cos{\theta_{21}} \cos{\theta_{23}}) + \\
     & \dot{\theta}_{22} (\sin{\theta_{21}} \cos{\theta_{23}} + \sin{\theta_{22}} \sin{\theta_{23}} \cos{\theta_{21}}) + \\
     & \dot{\theta}_{23}
 \end{align}
