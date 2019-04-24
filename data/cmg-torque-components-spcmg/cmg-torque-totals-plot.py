@@ -4,9 +4,10 @@ import matplotlib.pyplot as plt
 from matplotlib import rcParams
 import scipy.io
 from math import pi
-import os
+import os, sys
 
 workdir, _ = os.path.split(os.path.abspath(__file__))
+outputdir = os.path.abspath(sys.argv[1])
 os.chdir(workdir)
 
 plt.rc('text', usetex=True)
@@ -24,27 +25,24 @@ sns.set_context("paper")
 
 colors = ['C0', 'C1', 'C2', 'C3']
 linetypes = ['-', '--', '-.', ':']
+outputtypes = ['pdf', 'svg', 'png']
 
 torquecomponents = {'matfile' : '165ad54_pmdpspcm_24-Jan-2019_13-32-16__convertedTimeseries.mat',
-             'title' : 'Torque Components of Single CMG',
-             'svgname' : '../../figures/cmg-torque-components-plot'}
+             'title' : 'Torque Totals of a Single CMG',
+             'svgname' : 'cmg-torque-totals-plot'}
 datasets = [torquecomponents]
 
-titles = [r'CMG Torque Component Magnitude [Nm]',
-          r'Gimbal Torque Components Magnitude [Nm]',
-          r'System Motion [deg]',
+titles = [r'Base Torque [Nm]',
+          r'Motor Torque [Nm]',
          ]
-varnames = [['tau_cmg_norm', 'tau_reaction_norm'],
-            ['tau_gimbal_norm', 'tau_reaction_gimbal_norm'],
-            ['theta2', 'delta'],
+varnames = [['tau_base_x', 'tau_base_y', 'tau_base_z', 'tau_W'],
+            ['tau_motor_1', 'tau_motor_gimbal', 'tau_motor_reaction', 'tau_motor_reaction_gimbal'],
            ]
-labels = [[r'CMG Output (Gyro x Gimbalrate)', r'Reaction Torque (Gyro x Baserate)'],
-          ['Rotation Torque (Gimbalassembly Inertia)', 'Reaction Torque (Gimbal x Baserate)'],
-          [r'Plattform Angle $\theta_2$', r'Gimbal Angle $\delta$'],
+labels = [['X', 'Y', 'Z', 'Target Z'],
+          ['Total', 'Gimbal Inertia', 'Gyro Reaction', 'Gimbal Reaction'],
          ]
-ylims = [[],
-         [0, 0.1],
-         [-100, 100],
+ylims = [[-2, 2],
+         [],
         ]
 xlims = [0, 15]
 
@@ -56,16 +54,14 @@ for ds in datasets:
     time = mat['time']
     for radval in ['theta1', 'theta2', 'delta']:
         mat[radval] *= 180 / pi
-    for tauval in ['tau_cmg',
-                   'tau_reaction',
-                   'tau_reaction_gimbal',
-                   'tau_gimbal']:
-        mat[tauval+'_norm'] = np.linalg.norm(mat[tauval][:,0,:], axis=0)
     for i, ax in enumerate(['x', 'y', 'z']):
         mat['tau_base_'+ax] = mat['tau_base_i'][i, 0, :].T
     mat['tau_motor_1'] = mat['tau_motor'][:,0,:].T
-    mat['delta_neg'] = mat['delta'] * -1
     mat['tau_W'] /= 2
+    g_ax = [0, 1, 0]
+    for component in ['gimbal', 'reaction', 'reaction_gimbal']:
+        mat['tau_motor_'+component] =  np.dot(g_ax,
+				        mat['tau_'+component][:, 0, :])
 
 
     for i, ax in enumerate(axs):
@@ -89,9 +85,11 @@ for ds in datasets:
         ax.get_xaxis().set_visible(False)
         ax.spines['bottom'].set_visible(False)
     plt.xlabel('Time [s]')
-    suptitle = fig.suptitle(ds['title'], y=1.02)
     plt.tight_layout()
+    fig.suptitle(ds['title'])
 
-    plt.savefig(ds['svgname']+'.svg', bbox_extra_artists=(suptitle,), bbox_inches="tight")
-    plt.savefig(ds['svgname']+'.pdf', bbox_extra_artists=(suptitle,), bbox_inches="tight")
-    plt.savefig(ds['svgname']+'.png', bbox_extra_artists=(suptitle,), bbox_inches="tight")
+    plt.savefig(os.path.join(outputdir, ds['svgname']+'.svg'))
+    plt.savefig(os.path.join(outputdir, ds['svgname']+'.pdf'))
+    plt.savefig(os.path.join(outputdir, ds['svgname']+'.png'))
+    for ftype in outputtypes:
+        plt.savefig('%s/%s.%s' % (outputdir, ds['svgname'], ftype))

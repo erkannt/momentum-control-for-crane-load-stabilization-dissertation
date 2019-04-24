@@ -6,67 +6,38 @@ OUTPUTDIR=$(BASEDIR)/output
 STYLEDIR=$(BASEDIR)/style
 
 TEXTDIR=text
-FIGDIR=figures
 BIBFILE=$(BASEDIR)/$(TEXTDIR)/references.bib
 
-help:
-	@echo ' 																	  '
-	@echo 'Makefile for the Markdown thesis                                       '
-	@echo '                                                                       '
-	@echo 'Usage:                                                                 '
-	@echo '   make html                        generate a web version             '
-	@echo '   make pdf                         generate a PDF file  			  '
-	@echo ' 																	  '
-	@echo 'get local templates with: pandoc -D latex/html/etc	  				  '
-	@echo 'or generic ones from: https://github.com/jgm/pandoc-templates		  '
+# Build directory.
+build = _build
 
-all: plots figures html pdf
+plots_py := $(wildcard data/*/*plot.py)
+plots_name := $(basename $(notdir $(plots_py)))
+plots_pdf := $(plots_name:%=$(build)/figures/%.pdf)
+plots_svg := $(plots_name:%=$(build)/figures/%.svg)
 
-pdf:
-	rsync -a --delete $(BASEDIR)/$(TEXTDIR) $(OUTPUTDIR)/
-	sed -i "" 's/\.svg/\.png/g' $(OUTPUTDIR)/$(TEXTDIR)/*.md
-	cd $(OUTPUTDIR)
-	pandoc $(TEXTDIR)/*.md \
-		-o "$(OUTPUTDIR)/thesis.pdf" \
-		-H "$(STYLEDIR)/preamble.tex" \
-		-F pandoc-crossref \
-		--template="$(STYLEDIR)/template.tex" \
-		--bibliography="$(BIBFILE)" &>$(OUTPUTDIR)/pandoc-pdf.log \
-		--csl="$(STYLEDIR)/ref_format.csl" \
-		--highlight-style pygments \
-		-V fontsize=12pt \
-		-V papersize=a4paper \
-		-V documentclass=article \
-		-N \
-		--pdf-engine=xelatex \
-		--verbose &>$(OUTPUTDIR)/latex-pdf.log
-	cat $(OUTPUTDIR)/*-pdf.log | grep -i warning
+VPATH := $(wildcard data/*)
 
-html:
-	pandoc "$(TEXTDIR)"/*.md \
-		-o "$(OUTPUTDIR)/thesis.html" \
-		--mathml \
-		--standalone \
-		-F pandoc-crossref \
-		-F pandoc-include \
-		--template="$(STYLEDIR)/template.html" \
-		--bibliography="$(BIBFILE)"  &>$(OUTPUTDIR)/pandoc-html.log \
-		--csl="$(STYLEDIR)/ref_format.csl" \
-		--include-in-header="$(STYLEDIR)/style.css" \
-		--toc \
-		--number-sections \
-		--verbose
-	cat $(OUTPUTDIR)/*-html.log | grep -i warning || true
+test:
+	@echo "plots:			$(plots_svg)"
+	@echo "vpath:			$(VPATH)"
 
-plots:
-	./tools/plots.sh
+$(build):
+	mkdir -p $(build)
 
-figures:
-	rsync -a --delete $(BASEDIR)/$(FIGDIR) $(OUTPUTDIR)/
-	find $(OUTPUTDIR)/$(FIGDIR) -name "*.sk" | xargs -n1 ./tools/sk2png
-	find $(OUTPUTDIR)/$(FIGDIR) -name "*.tex" | xargs -n1./tools/tex2png
+$(build)/figures: 
+	mkdir -p $(build)/figures
+
+$(build)/figures/%.svg: %.py | $(build)/figures
+	python $< $(build)/figures
+	sed -i "" 's/width.*pt\"//g' $@
+	sed -i "" 's/height.*pt\"//g' $@
+
+$(build)/figures/%.pdf: %.py | $(build)/figures
+	python $<
+
+html: $(plots_svg) | $(build)
+	@echo "fake build html"
 
 clean:
-	rm -r ./output/*
-
-.PHONY: help all pdf html plots figures clean
+	rm -r $(build)
