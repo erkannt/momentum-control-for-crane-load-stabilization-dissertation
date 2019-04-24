@@ -11,6 +11,8 @@ BIBFILE=$(BASEDIR)/$(TEXTDIR)/references.bib
 # Build directory.
 build = _build
 
+text := $(wildcard text/*.md)
+
 plots_py := $(wildcard data/*/*plot.py)
 plots_name := $(basename $(notdir $(plots_py)))
 plots_pdf := $(plots_name:%=$(build)/figures/%.pdf)
@@ -26,12 +28,14 @@ tikz_name := $(basename $(notdir $(tikz)))
 tikz_pdf := $(tikz_name:%=$(build)/figures/%.pdf)
 tikz_png := $(tikz_name:%=$(build)/figures/%.png)
 
-VPATH := $(wildcard data/*):figures
+VPATH := $(wildcard data/*):figures:text
 
 test:
-	@echo "plots:			$(plots_svg)"
 	@echo "vpath:			$(VPATH)"
-	@echo "sketches:	$(sketches_pdf)"
+	@echo "plots:			$(plots_name)"
+	@echo "sketches:	$(sketches_name)"
+	@echo "tikz:			$(tikz_name)"
+	@echo "text:			$(text)"
 
 $(build):
 	mkdir -p $(build)
@@ -61,10 +65,40 @@ staticfigs:
 
 $(build)/figures/%.png: %.pdf | $(build)/figures
 	pdfcrop $< $< -margins "5 5 5 5"
-	convert -density 300 -define profile:skip=ICC $< -quality 90 $@
+	convert -flatten -density 300 -define profile:skip=ICC $< -quality 90 $@
 
-html: $(plots_svg) $(sketches_png) $(tikz_png) staticfigs | $(build)
-	@echo "fake build html"
+html-figures: $(plots_svg) $(sketches_png) $(tikz_png) staticfigs | $(build)/figures
+
+html: html-figures | $(build)
+	pandoc "$(TEXTDIR)"/*.md \
+		-o "$(build)/thesis.html" \
+		--mathml \
+		--standalone \
+		-F pandoc-crossref \
+		-F pandoc-include \
+		--template="$(STYLEDIR)/template.html" \
+		--bibliography="$(BIBFILE)" \
+		--csl="$(STYLEDIR)/ref_format.csl" \
+		--include-in-header="$(STYLEDIR)/style.css" \
+		--toc \
+		--number-sections \
+		--verbose 
+
+%.html: %.md html-figures
+	pandoc $< \
+		-o "$(build)/$@" \
+		-M title="$(basename $@)" \
+		--mathml \
+		--standalone \
+		-F pandoc-crossref \
+		-F pandoc-include \
+		--template="$(STYLEDIR)/template.html" \
+		--bibliography="$(BIBFILE)" \
+		--csl="$(STYLEDIR)/ref_format.csl" \
+		--include-in-header="$(STYLEDIR)/style.css" \
+		--toc \
+		--number-sections \
+		--verbose 
 
 clean:
 	rm -r $(build)
