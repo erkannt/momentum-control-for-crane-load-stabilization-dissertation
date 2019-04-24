@@ -22,3 +22,8 @@ To automatically reload the PDF use [Skim](https://skim-app.sourceforge.io/) on 
 Under Linux entr recommends mupdf, since it can be told to reload from the commandline.
 
 To automatically reload HTML you can use the `reload-browser` script from the entr project.
+
+## latexrun fails to extract name from log
+
+You need to adjust latex log settings to avoid line wraps.
+See [this](https://tex.stackexchange.com/questions/52988/avoid-linebreaks-in-latex-console-log-output-or-increase-columns-in-terminal) tex.se post.
