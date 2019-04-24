@@ -48,6 +48,9 @@ $(build)/figures/%.svg: %.py | $(build)/figures
 $(build)/figures/%.pdf: %.py | $(build)/figures
 	python $< $@
 
+staticfigs:
+	rsync -a --exclude="*.sk" --exclude="*.tex" figures/ $(build)/figures
+
 %.tex: %.sk
 	@echo $@ $<
 	sketch -Te $< -o $@
@@ -60,7 +63,7 @@ $(build)/figures/%.png: %.pdf | $(build)/figures
 	pdfcrop $< $< -margins "5 5 5 5"
 	convert -density 300 -define profile:skip=ICC $< -quality 90 $@
 
-html: $(plots_svg) $(sketches_png) $(tikz_png) | $(build)
+html: $(plots_svg) $(sketches_png) $(tikz_png) staticfigs | $(build)
 	@echo "fake build html"
 
 clean:
