@@ -7,7 +7,7 @@ from math import pi
 import os, sys
 
 workdir, _ = os.path.split(os.path.abspath(__file__))
-outputdir = os.path.abspath(sys.argv[1])
+output = os.path.abspath(sys.argv[1])
 os.chdir(workdir)
 
 plt.rc('text', usetex=True)
@@ -88,8 +88,4 @@ for ds in datasets:
     plt.tight_layout()
     fig.suptitle(ds['title'])
 
-    plt.savefig(os.path.join(outputdir, ds['svgname']+'.svg'))
-    plt.savefig(os.path.join(outputdir, ds['svgname']+'.pdf'))
-    plt.savefig(os.path.join(outputdir, ds['svgname']+'.png'))
-    for ftype in outputtypes:
-        plt.savefig('%s/%s.%s' % (outputdir, ds['svgname'], ftype))
+    plt.savefig(output)

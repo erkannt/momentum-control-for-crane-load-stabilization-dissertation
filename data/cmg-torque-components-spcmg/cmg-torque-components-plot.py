@@ -7,7 +7,7 @@ from math import pi
 import os, sys
 
 workdir, _ = os.path.split(os.path.abspath(__file__))
-outputdir = os.path.abspath(sys.argv[1])
+output = os.path.abspath(sys.argv[1])
 os.chdir(workdir)
 
 plt.rc('text', usetex=True)
@@ -25,7 +25,6 @@ sns.set_context("paper")
 
 colors = ['C0', 'C1', 'C2', 'C3']
 linetypes = ['-', '--', '-.', ':']
-outputtypes = ['pdf', 'svg', 'png']
 
 torquecomponents = {'matfile' : '165ad54_pmdpspcm_24-Jan-2019_13-32-16__convertedTimeseries.mat',
              'title' : 'Torque Components of Single CMG',
@@ -94,6 +93,5 @@ for ds in datasets:
     suptitle = fig.suptitle(ds['title'], y=1.02)
     plt.tight_layout()
 
-    for ftype in outputtypes:
-        plt.savefig('%s/%s.%s' % (outputdir, ds['svgname'], ftype),
-                    bbox_extra_artists=(suptitle,), bbox_inches="tight")
+    plt.savefig(output,
+        bbox_extra_artists=(suptitle,), bbox_inches="tight")
