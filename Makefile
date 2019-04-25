@@ -9,6 +9,7 @@ BIBFILE := $(abspath text/references.bib)
 build = _build
 
 text := $(wildcard text/*.md)
+images := $(wildcard figures/*.png) $(wildcard figures/*.jpg)
 
 plots_py := $(wildcard data/*/*.py)
 plots_name := $(basename $(notdir $(plots_py)))
@@ -25,21 +26,14 @@ tikz_name := $(basename $(notdir $(tikz)))
 tikz_pdf := $(tikz_name:%=$(build)/figures/%.pdf)
 tikz_png := $(tikz_name:%=$(build)/figures/%.png)
 
-gifs := $(wildcard figures/*.gif)
-gif_names := $(basename $(notdir $(gifs)))
-gifaspng := $(gif_names:%=$(build)/figures/%.png)
+mov := $(wildcard figures/*.mp4)
+mov := $(basename $(notdir $(mov)))
+gif := $(mov:%=$(build)/figures/%.gif)
 
 VPATH := $(wildcard data/*):figures:text
 
 test:
-	@echo "vpath:			$(VPATH)"
-	@echo "plots:			$(plots_name)"
-	@echo "sketches:	$(sketches_name)"
-	@echo "tikz:			$(tikz_name)"
-	@echo "text:			$(text)"
-	@echo "gifs:			$(gifs)"
-	@echo "gifs:			$(gif_names)"
-	@echo "gifs:			$(gifaspng)"
+	@echo "images:			$(images)"
 
 $(build):
 	mkdir -p $(build)
@@ -56,8 +50,14 @@ $(build)/figures/%.svg: %.py | $(build)/figures
 $(build)/figures/%.pdf: %.py | $(build)/figures
 	python $< $@
 
-staticfigs:
-	rsync -a --exclude="*.sk" --exclude="*.tex" figures/ $(build)/figures
+$(build)/figures/%.png: %.png | $(build)/figures
+	cp $< $@
+
+$(build)/figures/%.jpg: %.jpg | $(build)/figures
+	cp $< $@
+
+$(build)/figures/%.mp4: %.mp4 | $(build)/figures
+	cp $< $@
 
 %.tex: %.sk
 	@echo $@ $<
@@ -83,7 +83,10 @@ $(build)/figures/%.png: %.pdf | $(build)/figures
 $(build)/figures/%.png: %.gif | $(build)/figures
 	convert '$<[0]' $@
 
-html-figures: $(plots_svg) $(sketches_png) $(tikz_png) staticfigs | $(build)/figures
+$(build)/figures/%.gif: %.mp4 | $(build)/figures
+	gifify $< --resize '800:-1' -o $@
+
+html-figures: $(plots_svg) $(sketches_png) $(tikz_png) $(gif) $(images) | $(build)/figures
 
 html: html-figures | $(build)
 	pandoc text/*.md \
@@ -116,7 +119,7 @@ html: html-figures | $(build)
 		--number-sections \
 		--verbose 
 
-pdf-figures: $(plots_pdf) $(sketches_pdf) $(tikz_pdf) $(gifaspng) staticfigs | $(build)/figures
+pdf-figures: $(plots_pdf) $(sketches_pdf) $(tikz_pdf) $(gifaspng) $(images) | $(build)/figures
 
 pdf: pdf-figures $(build)/diss-haarhoff.pdf | $(build)
 
