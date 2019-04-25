@@ -4,9 +4,10 @@ import matplotlib.pyplot as plt
 from matplotlib import rcParams
 import scipy.io
 from math import pi
-import os
+import os, sys
 
 workdir, _ = os.path.split(os.path.abspath(__file__))
+output = os.path.abspath(sys.argv[1])
 os.chdir(workdir)
 
 plt.rc('text', usetex=True)
@@ -22,70 +23,61 @@ sns.set()
 sns.set_style("ticks")
 sns.set_context("paper")
 
-colors = ['C0', 'C1', 'C2', 'C3']
-linetypes = ['-', '--', '-.', ':']
+slowgyros = {'matfile' : 'Gimbal-Limit-1000rpm--f4a4f2c_17-Dec-2018_12-03-03__convertedTimeseries.mat',
+             'title' : 'SPCMG Singularity Avoidance w. 1000 rpm Gyros'}
 
-torquecomponents = {'matfile' : '165ad54_pmdpspcm_24-Jan-2019_13-32-16__convertedTimeseries.mat',
-             'title' : 'Torque Totals of a Single CMG',
-             'svgname' : '../../figures/cmg-torque-totals-plot'}
-datasets = [torquecomponents]
+datasets = [slowgyros]
 
-titles = [r'Base Torque [Nm]',
-          r'Motor Torque [Nm]',
+titles = [r'Pendulum Angle $\theta$ [deg]',
+          r'CMG Torque $\tau$ [Nm]',
+          r'Gimbal Velocity [rad/s]',
+          r'Gimbal Position $\delta$ [deg]',
          ]
-varnames = [['tau_base_x', 'tau_base_y', 'tau_base_z', 'tau_W'],
-            ['tau_motor_1', 'tau_motor_gimbal', 'tau_motor_reaction', 'tau_motor_reaction_gimbal'],
+varnames = [['theta1', 'theta2'],
+            ['tau_W', 'tau'],
+            ['ddelta_W', 'ddelta_Wprime', 'ddelta'],
+            ['delta', 'delta_neg'],
            ]
-labels = [['X', 'Y', 'Z', 'Target Z'],
-          ['Total', 'Gimbal Inertia', 'Gyro Reaction', 'Gimbal Reaction'],
+labels = [[r'$\theta_1$', r'$\theta_2$'],
+          ['Target', 'Achieved'],
+          ['Initial Target', 'Set Target', 'Achieved'],
+          [r'$\delta_1$', r'$\delta_2$'],
          ]
-ylims = [[-2, 2],
-         [],
-        ]
-xlims = [0, 15]
+colors = ['C0', 'C1', 'C2']
+linetypes = ['-', '--', '-.']
+ylims = [[-20, 20], [-3, 3], [-10, 10], [-100, 100]]
 
 for ds in datasets:
-    fig, axs = plt.subplots(len(titles), 1, sharex=True)
+    fig, axs = plt.subplots(4, 1, sharex=True)
     fig.subplots_adjust(hspace=0.6)
 
     mat = scipy.io.loadmat(ds['matfile'])
     time = mat['time']
     for radval in ['theta1', 'theta2', 'delta']:
         mat[radval] *= 180 / pi
-    for i, ax in enumerate(['x', 'y', 'z']):
-        mat['tau_base_'+ax] = mat['tau_base_i'][i, 0, :].T
-    mat['tau_motor_1'] = mat['tau_motor'][:,0,:].T
-    mat['tau_W'] /= 2
-    g_ax = [0, 1, 0]
-    for component in ['gimbal', 'reaction', 'reaction_gimbal']:
-        mat['tau_motor_'+component] =  np.dot(g_ax,
-				        mat['tau_'+component][:, 0, :])
-
+    mat['delta_neg'] = mat['delta'] * -1
 
     for i, ax in enumerate(axs):
         for j, varname in enumerate(varnames[i]):
             ax.plot(time, mat[varname],
-                    linetypes[j],
-                    color=colors[j],
+                    linetypes[len(varnames[i])-j-1],
+                    color=colors[len(varnames[i])-j-1],
                     label=labels[i][j],
                     linewidth='0.85')
 
         if len(ylims[i]) == 2:
             ax.set_ylim(ylims[i])
-        ax.set_xlim(xlims)
+        ax.set_xlim([0, 15])
         ax.set_title(titles[i], loc='left')
         ax.legend(loc=1, framealpha=1)
         ax.grid(axis='y')
 
     #sns.despine(trim=True, offset={'left':2,'right':2,'top':2,'bottom':2})
-    sns.despine(trim=True, offset=2)
+    sns.despine(trim=True, offset=5)
     for ax in axs[0:-1]:
         ax.get_xaxis().set_visible(False)
         ax.spines['bottom'].set_visible(False)
     plt.xlabel('Time [s]')
-    plt.tight_layout()
     fig.suptitle(ds['title'])
 
-    plt.savefig(ds['svgname']+'.svg')
-    plt.savefig(ds['svgname']+'.pdf')
-    plt.savefig(ds['svgname']+'.png')
+    plt.savefig(output)

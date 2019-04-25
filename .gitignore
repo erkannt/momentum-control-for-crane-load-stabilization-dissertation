@@ -1,5 +1,7 @@
 .DS_Store
 output/*
+_build/*
+figures/_build/*
 *.log
 *.aux
 *.un~

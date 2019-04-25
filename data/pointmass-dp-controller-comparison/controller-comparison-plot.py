@@ -3,9 +3,10 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from matplotlib import rcParams
 import scipy.io
-import os
+import os, sys
 
 workdir, _ = os.path.split(os.path.abspath(__file__))
+output = os.path.abspath(sys.argv[1])
 os.chdir(workdir)
 
 plt.rc('text', usetex=True)
@@ -53,6 +54,4 @@ for ax in axs[0:3]:
     ax.spines['bottom'].set_visible(False)
 plt.xlabel('Time [s]')
 
-plt.savefig("../../figures/controller-comparison-plot.svg")
-plt.savefig("../../figures/controller-comparison-plot.pdf")
-plt.savefig("../../figures/controller-comparison-plot.png")
+plt.savefig(output)
