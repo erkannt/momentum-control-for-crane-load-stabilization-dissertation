@@ -4,9 +4,10 @@ import matplotlib.pyplot as plt
 from matplotlib import rcParams
 import scipy.io
 from math import pi
-import os
+import os, sys
 
 workdir, _ = os.path.split(os.path.abspath(__file__))
+output = os.path.abspath(sys.argv[1])
 os.chdir(workdir)
 
 plt.rc('text', usetex=True)
@@ -56,6 +57,4 @@ for ax in axs[0:2]:
     ax.spines['bottom'].set_visible(False)
 plt.xlabel('Time [s]')
 
-plt.savefig("../../figures/dp-oscillations.svg")
-plt.savefig("../../figures/dp-oscillations.pdf")
-plt.savefig("../../figures/dp-oscillations.png")
+plt.savefig(output)

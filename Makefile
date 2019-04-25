@@ -13,7 +13,7 @@ build = _build
 
 text := $(wildcard text/*.md)
 
-plots_py := $(wildcard data/*/*plot.py)
+plots_py := $(wildcard data/*/*.py)
 plots_name := $(basename $(notdir $(plots_py)))
 plots_pdf := $(plots_name:%=$(build)/figures/%.pdf)
 plots_svg := $(plots_name:%=$(build)/figures/%.svg)

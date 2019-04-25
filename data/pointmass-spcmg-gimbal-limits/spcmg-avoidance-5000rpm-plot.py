@@ -4,9 +4,10 @@ import matplotlib.pyplot as plt
 from matplotlib import rcParams
 import scipy.io
 from math import pi
-import os
+import os, sys
 
 workdir, _ = os.path.split(os.path.abspath(__file__))
+output = os.path.abspath(sys.argv[1])
 os.chdir(workdir)
 
 plt.rc('text', usetex=True)
@@ -22,14 +23,10 @@ sns.set()
 sns.set_style("ticks")
 sns.set_context("paper")
 
-slowgyros = {'matfile' : 'Gimbal-Limit-1000rpm--f4a4f2c_17-Dec-2018_12-03-03__convertedTimeseries.mat',
-             'title' : 'SPCMG Singularity Avoidance w. 1000 rpm Gyros',
-             'svgname' : '../../figures/spcmg-avoidance-1000rpm-plot'}
 fastgyros = {'matfile' : 'Gimbal-Limit-5000rpm--f4a4f2c_17-Dec-2018_12-01-43__convertedTimeseries',
-             'title' : 'SPCMG Singularity Avoidance w. 5000 rpm Gyros',
-             'svgname' : '../../figures/spcmg-avoidance-5000rpm-plot'}
+             'title' : 'SPCMG Singularity Avoidance w. 5000 rpm Gyros'}
 
-datasets = [slowgyros, fastgyros]
+datasets = [fastgyros]
 
 titles = [r'Pendulum Angle $\theta$ [deg]',
           r'CMG Torque $\tau$ [Nm]',
@@ -83,6 +80,4 @@ for ds in datasets:
     plt.xlabel('Time [s]')
     fig.suptitle(ds['title'])
 
-    plt.savefig(ds['svgname']+'.svg')
-    plt.savefig(ds['svgname']+'.pdf')
-    plt.savefig(ds['svgname']+'.png')
+    plt.savefig(output)
