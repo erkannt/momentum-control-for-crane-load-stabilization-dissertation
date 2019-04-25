@@ -1,7 +1,42 @@
 \documentclass[$if(fontsize)$$fontsize$,$endif$$if(lang)$$lang$,$endif$$if(papersize)$$papersize$,$endif$$for(classoption)$$classoption$$sep$,$endfor$]{$documentclass$}
-\usepackage{helvet}
 \usepackage{palatino}
-\renewcommand{\familydefault}{\sfdefault}
+
+\KOMAoptions{BCOR=12mm, DIV=12}
+
+% === Spacing before and after headings
+\RedeclareSectionCommand[
+  beforeskip=-1sp,
+  font=\huge,
+  tocindent=0pt,
+  afterskip=1.0\baselineskip]{chapter}
+\RedeclareSectionCommand[
+  beforeskip=-2\baselineskip,
+  tocindent=0pt,
+  afterskip=.5\baselineskip]{section}
+\RedeclareSectionCommand[
+  beforeskip=-1\baselineskip,
+  tocindent=0pt,
+  afterskip=.5\baselineskip]{subsection}
+\RedeclareSectionCommand[
+  beforeskip=-1\baselineskip,
+  tocindent=0pt,
+  afterskip=0.25\baselineskip]{subsubsection}
+% === Hack to remove spacing added after heading by parskip
+% https://tex.stackexchange.com/questions/300528/set-parskip-but-not-for-headings
+\usepackage{xpatch}
+\xapptocmd{\sectionlinesformat}{\vspace*{-\parskip}}{}{}
+
+% === Fancy Chapter numbers
+\renewcommand*\chapterformat{%
+    \smash{\textcolor{ctcolorchapterline}{\rule[-5pt]{2pt}{90pt}}}%
+    \enspace
+    \textcolor{ctcolorchapternum}{\fontsize{60pt}{60pt}\selectfont\thechapter}%
+}%
+\renewcommand*\chapterlinesformat[3]{%
+    \parbox[b]{\dimexpr\textwidth-1pt\relax}{\raggedchapter #3}%
+    \hfill
+    \makebox[0pt][l]{#2}%
+}
 
 % Overwrite \begin{figure}[htbp] with \begin{figure}[H]
 \usepackage{float}
@@ -168,6 +203,7 @@ $include-before$
 
 $endfor$
 $if(toc)$
+\cleardoubleoddpage
 {
 \hypersetup{linkcolor=black}
 \setcounter{tocdepth}{$toc-depth$}
@@ -175,11 +211,14 @@ $if(toc)$
 }
 $endif$
 $if(lot)$
+\cleardoubleoddpage
 \listoftables
 $endif$
 $if(lof)$
+\cleardoubleoddpage
 \listoffigures
 $endif$
+\cleardoubleoddpage
 $body$
 
 $if(natbib)$

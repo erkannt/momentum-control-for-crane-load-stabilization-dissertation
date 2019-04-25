@@ -28,10 +28,7 @@ pandoc-tex-flags = --verbose \
 	-H "$(stylefolder)/preamble.tex" \
 	--template="$(stylefolder)/template.tex" \
 	--bibliography="$(bibfile)" \
-	-V fontsize=12pt \
-	-V papersize=a4paper \
-	-V documentclass=report \
-	-N \
+	--number-sections \
 	--csl="$(stylefolder)/ref_format.csl"
 
 # Where make looks for source files
@@ -50,6 +47,7 @@ tex-style := $(wildcard $(stylefolder)/*.tex)
 ref-style = $(stylefolder)/ref_format.csl
 
 # Target collections
+text4tex := $(text:%=$(build)/%)
 static := $(images:%=$(build)/%) $(mov:%=$(build)/%)
 
 plots_name := $(basename $(notdir $(plots_py)))
@@ -93,19 +91,23 @@ $(build)/$(name).standalone.html: $(build)/$(name).html
 	$(SINGLEPAGE) $(name).html > $(name).standalone.html
 
 # TeX Target
-$(build)/$(name).tex: $(text) $(tex-style) $(ref-style)
-	rsync -av --delete text/ $(build)/text
-	sed -i "" 's/\.svg/\.pdf/g' $(build)/text/*.md
-	sed -i "" 's/\.gif/\.png/g' $(build)/text/*.md
+$(build)/$(name).tex: $(text4tex) $(tex-style) $(ref-style)
 	pandoc $(build)/text/*.md -o "$(build)/$(name).tex" $(pandoc-tex-flags)
+
+$(build)/text/%.md: %.md | $(build)/text
+	cp $< $@
+	sed -i "" 's/\.svg/\.pdf/g' $@
+	sed -i "" 's/\.gif/\.png/g' $@
 
 # Required folders
 $(build):
 	mkdir -p $(build)
-	mkdir -p $(build)/logs
 
 $(build)/figures: 
 	mkdir -p $(build)/figures
+
+$(build)/text: 
+	mkdir -p $(build)/text
 
 # Plots from python scripts
 $(build)/figures/%.svg: %.py | $(build)/figures
@@ -159,6 +161,3 @@ $(build)/figures/%.gif: %.mp4 | $(build)/figures
 
 clean:
 	rm -r $(build)
-
-test:
-	@echo "images:		$(static)"
