@@ -1,6 +1,7 @@
 .DS_Store
 output/*
 _build/*
+figures/_build/*
 figures/*.pdf
 figures/*.svg
 figures/*.png
