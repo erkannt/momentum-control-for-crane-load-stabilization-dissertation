@@ -88,9 +88,11 @@ $(build)/figures/%.gif: %.mp4 | $(build)/figures
 
 html-figures: $(plots_svg) $(sketches_png) $(tikz_png) $(gif) $(images) | $(build)/figures
 
-html: html-figures | $(build)
+html: diss-haarhoff.html
+
+diss-haarhoff.html: html-figures | $(build)
 	pandoc text/*.md \
-		-o "$(build)/thesis.html" \
+		-o "$(build)/diss-haarhoff.html" \
 		--mathml \
 		--standalone \
 		-F pandoc-crossref \
@@ -139,6 +141,13 @@ $(build)/diss-haarhoff.tex: $(text) style/preamble.tex style/template.tex
 	-V documentclass=report \
 	-N \
 	--csl="$(STYLEDIR)/ref_format.csl" \
+
+standalone: diss-haarhoff.standalone.html
+
+diss-haarhoff.standalone.html: diss-haarhoff.html
+	cd $(build) && \
+	singlepage diss-haarhoff.html > diss-haarhoff.standalone.html
+
 
 clean:
 	rm -r $(build)
