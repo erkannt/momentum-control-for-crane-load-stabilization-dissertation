@@ -94,7 +94,7 @@ $(build)/$(name).standalone.html: $(build)/$(name).html
 
 # TeX Target
 $(build)/$(name).tex: $(text) $(tex-style) $(ref-style)
-	cp -r text $(build)/text
+	rsync -av --delete text/ $(build)/text
 	sed -i "" 's/\.svg/\.pdf/g' $(build)/text/*.md
 	sed -i "" 's/\.gif/\.png/g' $(build)/text/*.md
 	pandoc $(build)/text/*.md -o "$(build)/$(name).tex" $(pandoc-tex-flags)
