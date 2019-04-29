@@ -91,7 +91,7 @@ $(build)/$(name).standalone.html: $(build)/$(name).html
 	$(SINGLEPAGE) $(name).html > $(name).standalone.html
 
 # TeX Target
-$(build)/$(name).tex: $(text4tex) $(tex-style) $(ref-style)
+$(build)/$(name).tex: pdf-figures $(text4tex) $(tex-style) $(ref-style)
 	pandoc $(build)/text/*.md -o "$(build)/$(name).tex" $(pandoc-tex-flags)
 
 $(build)/text/%.md: %.md | $(build)/text
