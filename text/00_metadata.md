@@ -9,8 +9,7 @@ lang: english
 documentclass: scrbook
 fontsize: 11pt
 papersize: a4
-classoptions:
-- headings=big
+classoption:
 - twoside
 - openright
 - toc=flat
