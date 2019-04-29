@@ -65,17 +65,9 @@ The controller applies a proportional gain of the difference in angle between th
 
 ## CMG Variables
 
-The SPCMG used in this work has the following properties:
+@Fig:cmg-data lists the properties of the SPCMG used in this work.
 
-Property                       Symbol                  Size   Unit
-----------------------------  --------------------- -------   -----
-Density of Gyroscope Disc      $\rho_{gyro}$          7,9      $\text{g}/\text{cm}^3$
-Gyroscope Speed                $\omega_{gyro}$        5000       rpm
-Inner Gyro Radius              $r_1$                  4          cm
-Outer Gyro Radius              $r_2$                  7          cm
-Gyro Thickness                 $d$                    3          cm
-Max. Gimbal Speed              $\dot{\delta}_{max}$   400         rpm
-Max. Gimbal Accelleration      $\ddot{\delta}_{max}$  42494       rpm/s
+![Properties of the SPCMG with associated symbols and units.](./figures/cmg-data.png){ #fig:cmg-data }
 
 The angular momentum of the gyroscope can be determined as follows:
 
