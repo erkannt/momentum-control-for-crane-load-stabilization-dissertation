@@ -4,6 +4,9 @@
 
 \newpage
 
+\listoftodos
+\newpage
+
 \pagenumbering{arabic}
 \setcounter{page}{1}
 
