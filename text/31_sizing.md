@@ -1,7 +1,7 @@
 
-# Bigger Faster Stronger // Sizing CMGs for Cranes
+# Sizing CMGs for Cranes
 
-## Workflow for Sizing Crane CMGs
+## Input Parameters
 
 - determine Nms
   - duration of robot tasks
@@ -15,7 +15,7 @@
   - from reaction torques
 - tradeoff between passive stabilisation and gimbal sizing???
 
-## Example Sizing
+## Sizing Workflow
 
 ## Feasability Analysis
 

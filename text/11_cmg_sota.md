@@ -1,5 +1,5 @@
 
-# State of the Art re: Control Moment Gyroscopes
+# Control Moment Gyroscopes 101
 
 Control moment gyroscopes are an established technology in spacecraft design and have also seen some terrestrial application.
 In this chapter I hope to provide a basic understanding of gyroscopic reaction torque before giving an overview of its use in momentum control devices as well as existing sizing guidelines.

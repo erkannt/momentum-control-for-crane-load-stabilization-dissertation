@@ -1,5 +1,5 @@
 
-# Modelling the CMG-Crane System
+# Modelling the Crane-CMG-Application Systems
 
 ## What needs to be modelled
 
@@ -48,21 +48,6 @@ To understand the interaction of a CMG array with crane we will model it as a do
 | 71 EC-B 5     | 45         | 50        | 4220          | 1000                 | 63                          | 0.8                    |
 | 380 EC-B 16   | 83         | 75        | 15660         | 3000                 | 95                          | 0.8                    |
 | 1000 EC-B 125 | 96         | 31.5      | 125000        | 24600                | 100                         | 0.6                    |
-
-## Requirements from Robot Tasks
-
-- design paths with GH/KUKA prc
-  - lift against wall
-  - array below/beside robot
-  - single path below/beside robot
-- use mxA for recording
-- execute on real robot >>> obtain axis values >>> simulate base torques and forces
-
-![Robot paths programmed using the KUKA|prc plugin for Rhino/Grasshopper.](./figures/robot-path-planning.jpg){#fig:robot-path-planning}
-
-![Axis values simulated by KUKA|prc. Note the sharp corners resulting from unlimited accelleration/jerk values making these values ill-suited to simulate the forces and torques at the robot base.](./figures/kuka-prc-axis-values.jpg){#fig:robot-axis-values}
-
-![Body simulation of the KR3. The masses of the axes have been estimated from the total mass of the robot and the volume of the respective axes.](./figures/kr3-simmechanics-vis.jpg){#fig:kr3-simmechanics}
 
 ## Modelling the Crane
 
@@ -343,3 +328,19 @@ Note how this encompasses _all_ torques produced by the CMG, thereby cleanly sep
       \right )\\
 \ddot{\theta}_{23}' = & \ddot{\theta}_{23} + \tau_{Z} 
 \end{align}
+
+## Simulating Applications
+
+- design paths with GH/KUKA prc
+  - lift against wall
+  - array below/beside robot
+  - single path below/beside robot
+- use mxA for recording
+- execute on real robot >>> obtain axis values >>> simulate base torques and forces
+
+![Robot paths programmed using the KUKA|prc plugin for Rhino/Grasshopper.](./figures/robot-path-planning.jpg){#fig:robot-path-planning}
+
+![Axis values simulated by KUKA|prc. Note the sharp corners resulting from unlimited accelleration/jerk values making these values ill-suited to simulate the forces and torques at the robot base.](./figures/kuka-prc-axis-values.jpg){#fig:robot-axis-values}
+
+![Body simulation of the KR3. The masses of the axes have been estimated from the total mass of the robot and the volume of the respective axes.](./figures/kr3-simmechanics-vis.jpg){#fig:kr3-simmechanics}
+
