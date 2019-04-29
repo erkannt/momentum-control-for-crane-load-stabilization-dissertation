@@ -161,3 +161,8 @@ $(build)/figures/%.gif: %.mp4 | $(build)/figures
 
 clean:
 	rm -r $(build)
+
+clean-pdf:
+	rm -r $(build)/text
+	rm  $(build)/*.tex
+	rm  $(build)/*.pdf
