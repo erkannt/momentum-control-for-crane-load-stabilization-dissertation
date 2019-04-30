@@ -5,7 +5,7 @@
 \newpage
 
 \listoftodos
-\newpage
+\cleardoublepage
 
 \pagenumbering{arabic}
 \setcounter{page}{1}
