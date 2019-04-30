@@ -355,11 +355,16 @@ Note how this encompasses _all_ torques produced by the CMG, thereby cleanly sep
 
 ## Payload Inertia
 
-- needed for part rotation sizing
-- example loads for cranes
-  - concrete panel
-  - lightweight panel
-  - turbine blade
+The payload inertia is of relevance to all of our applications.
+For our models we will therefore create a set of example inertias that follow the parameter space set forth by our selected example cranes.
+
+For each crane we will model a slab of concrete whose weight matches the maximum load of the the crane.
+The proportions of the slabs will be constant.
+Let us assume the density of concrete as 2,400 kg/m$^3$ and the slab proportions as 5, 0.1, 2 in X, Y, Z respectively.
+Since the center of gravity of the payload wont lie in the point of rotation (the hook) we assume an offset equal to the size in Z.
+Using the parallel axis theorem this gives us the inertias listed in @Fig:inertia-data.
+
+![Example payload inertias assuming constant density (2,400 kg/m^3), proportions (5, 0.1, 2) and with a weight stemming from the max load of the associated crane. We also assume the CoG to be offset by the Z-size from the point of rotation.](./figures/inertia-data.png){ #fig:inertia-data }
 
 ## Process Torques and Forces
 
