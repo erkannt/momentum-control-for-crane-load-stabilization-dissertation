@@ -368,16 +368,36 @@ Using the parallel axis theorem this gives us the inertias listed in @Fig:inerti
 
 ## Process Torques and Forces
 
-- design paths with GH/KUKA prc
-  - lift against wall
-  - array below/beside robot
-  - single path below/beside robot
-- use mxA for recording
-- execute on real robot >>> obtain axis values >>> simulate base torques and forces
+Given the initial motivation of this work to hang a robot from a crane, we use a robot as the model for a process generating torques and forces to be compensated by the CMGs.
+Since a robot is a generic motion provider than can provide a wide set of movements, we create several paths in an attempt to create a representative set.
+These paths are:
+
+- random motion in a plane below the robot
+- vertical rectangle next to the robot
+- points next to the robot incl. approach and retraction
+
+These should roughly correspond to positioning/compensation, a continuous task (e.g. spray-painting) and a joining task (e.g. nailgun) respectively.
+The tasks were programmed using the Rhino/Grasshopper plugin KUKA|prc for a small KUKA KR industrial robot (see @Fig:robot-path-planning).
+Since the programs are parametric one can easily scale them to larger robots.
+
+The KUKA|prc plug-in can output the required axis values for a programmed path .
+This inverse kinematic simulation is useful for solving singularity issues in the paths but does not limit the axis accelerations.
+This is obvious when looking at the axis values produced by KUKA|prc in @Fig:robot-axis-values, which have very sharp corners where the robot changes direction.
+
+While more realistic robot simulation packages exist, for our project we can simply use real axis values.
+These can be easily obtained using the mxA functionality of the plugin-in, mxA being a UDP based interface for KUKA controllers.
+With mxA we can stream the robot path to the controller and receive back the actual axis values.
+By recording these with a timestamp we can use them as input for a multibody simulation.
+
+The multibody simulation is set up using the Simmechanics package in Simulink.
+The CAD files from the robot manufacturer are imported in to SolidWorks and rotational joints programmed into the assembly.
+From this a Simmechanics file can be exported and adapted to receive the recorded axis values and output the torques and forces experienced at the robot base (see @Fig:kr3-simmechanics).
+The inertia of the robots axes are estimated by distributing the robots mass according the volume of each axis and assumes a homogenous density of the robot.
+
+\missingfigure{videos of the paths used}
 
 ![Robot paths programmed using the KUKA|prc plugin for Rhino/Grasshopper.](./figures/robot-path-planning.jpg){#fig:robot-path-planning}
 
 ![Axis values simulated by KUKA|prc. Note the sharp corners resulting from unlimited acceleration/jerk values making these values ill-suited to simulate the forces and torques at the robot base.](./figures/kuka-prc-axis-values.jpg){#fig:robot-axis-values}
 
-![Body simulation of the KR3. The masses of the axes have been estimated from the total mass of the robot and the volume of the respective axes.](./figures/kr3-simmechanics-vis.jpg){#fig:kr3-simmechanics}
-
+![Body simulation of the KR3. The masses of the axes have been estimated from the total mass of the robot and the volume of the respective axes.](./figures/kr3-simmechanics-vis.png){ #fig:kr3-simmechanics }
