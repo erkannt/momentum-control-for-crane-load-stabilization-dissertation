@@ -40,7 +40,7 @@ pinstyle/.style = {pin edge={to-,thin,black}
     \draw [->] (joint1) |- (sensor) -| node{$P_M$} (sum1);
     \draw [->] (estimator) -| (rotation-controller-in2) -- (rotation-controller-in2 -| rotation-controller.west);
     \draw [->] (joint2) |- (estimator-in1);
-    \draw [->] (joint3) |- node[pos=0.8]{$\dot{\theta}_{23}$} (estimator-in2);
+    \draw [->] (joint3) |- node[pos=0.8]{$\ddot{\theta}_{23}$} (estimator-in2);
 
 \end{tikzpicture}
 

@@ -35,7 +35,7 @@ Alternatively one could also use a certain rotational velocity as a desired stat
 This would be the case in a remote control scenario, where an operator would control the rotation manually.
 
 As also pointed out in @LeeAnalysisFieldApplicability2012 the inertia of the part to be rotated obviously has a major impact on the torque required to perform the rotation.
-Therefore this control loop utilizes our knowledge regarding the torque output by the CMGs and the measured rotation speed to estimate the inertia of the part.
+Therefore this control loop utilizes our knowledge regarding the torque output by the CMGs and the measured rotational accelleration to estimate the inertia of the part.
 This should improve the performance of the controller when used for programmed rotations but also ensure a consistent remote control experience for the operator as their speed control will be similar, regardless of the part being handled.
 
 ![Control flow for the compensation of process torques](./figures/process-controller.png){ #fig:process-controller }
@@ -67,16 +67,45 @@ What remains is the challenge of implementing the dampening/rotation controller 
 
 ## Review of Controller Designs
 
-- for cranes in general
-- underactuated systems
-- parameter estimation / uncertainty
+Control of cranes as been a long running endeavor, which is obvious from the amount of publications but also commercially available systems.
+Most cranes these days can be fitted with or have as standard systems to reduce oscillations.
+Given the price and complexity of sensors capable of tracking a hooks position these mostly use predetermined actuation paths to reduce the creation of oscillations.
+This of course if particularly well suited to cranes that perform programmed motions, but can also benefit manual control of cranes.
+
+Given flexible connection between actuators and end effector (the hook), lack of sensors and inherit flex of the cranes structure, they make for interesting control engineering problems.
+Therefor one can find a lot of publications focussing on the creation of controllers that remain robust given parameter and system uncertainty.
+
+Once one models the crane and its payload as a double pendulum, the problems become even more interesting as it becomes highly under actuated.
+Under actuation simply means that we have a less actuators than degrees of freedom (see @Fig:crane-8dof).
+This makes such crane models interesting to researchers dealing with such systems.
+It also means that controllers for other under actuated systems are of particular interest to us.
+
+\todo{add literature and maybe discuss in greater detail}
+
+![Illustration of the under actuation of a crane. Modeled as a double pendulum of a point mass and distributed mass, adjustable rope length and a suspension point movable in a plane the crane has eight degrees of freedom. Conventionally we only have three actors to control this. By adding the CMGs we drastically reduce the under actuation.](./figures/crane-8dof.png){ #fig:crane-8dof }
 
 ## Dampening Controller { #sec:dampening-controller }
 
-We design a controller for the basic 2D pendulum model (see @Sec:2dpendulum) using the scheme proposed by @HoangSimpleEnergybasedController2014 for underactuated mechanical systems.
+Having reviewed the existing research, we design a controller for the basic 2D pendulum model (see @Sec:2dpendulum) using the scheme proposed by @HoangSimpleEnergybasedController2014 for under actuated mechanical systems.
+With the target of both parts of the pendulum hanging vertical ($\theta_{[12]}=0$) this means creating a PD-controller where the error of the two angles is combined as follows:
 
-The difference between a uncontrolled system, proportional control, PD-control and PD-control that is informed by the state of both the upper and lower link is illustrated in @Fig:controller-comparison-animation and @Fig:controller-comparison-plot.
+\begin{equation}
+E = \theta_2 + \alpha \theta_1
+\end{equation}
 
-![Comparison of various control regimes for a douple pendulum with a control torque applied to its lower link. From left to right: a) no control torque b) $k_P  = 10$ c) $k_P = 1, k_D = 4$ d) $k_P = 1, k_D = 4, \alpha = 0.5$](./figures/controller-comparison-animation.gif){ #fig:controller-comparison-animation }
+The efficacy of this approach can be seen in @Fig:controller-comparison-animation and @Fig:controller-comparison-plot where we compare an uncontrolled system, proportional control, PD-control and PD-control that is informed by the state of both the upper and lower link.
+
+![Comparison of various control regimes for a double pendulum with a control torque applied to its lower link. From left to right: a) no control torque b) $k_P  = 10, k_D = 0$ c) $k_P = 1, k_D = 4$ d) $k_P = 1, k_D = 4, \alpha = 0.5$](./figures/controller-comparison-animation.gif){ #fig:controller-comparison-animation }
 
 ![Swing angles (in degrees) of the two links ($\theta_1$ and $\theta_2$) of double pendulum with various control regimes applied.](./figures/controller-comparison-plot.svg){ #fig:controller-comparison-plot }
+
+## Rotation Controller
+
+- estimate inertia around Z of CoG from torque and current acceleration
+- use state observer
+- torque ramp based on error and estimate or PD-controller scaled by estimate
+
+## Applying Control to 3d Model
+
+- estimate euler angle
+- state observer used to scale $k_{[PD]}$ 
