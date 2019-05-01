@@ -1,8 +1,6 @@
 
 # Modeling the Crane-CMG-Application Systems
 
-## What needs to be modeled
-
 To develop sizing guidelines we need to develop two types of models that let us:
 
 1. derive abstracted inputs to our sizing
@@ -65,7 +63,7 @@ h_{\text{max}} =& \frac{mv^2}{2mg} \\
 
 With $v$ being the translational speed of the hook, $N_T$ the trolley speed in m/min, $N_R$ the jib's rotational speed in rpm, $r$ the reach of the jib, $\omega=\dot\theta$ the angular velocity of the pendulum i.e. base rate of the hook, $l$ the length of the pendulum, $h$ the elevation of the hook relative to its lowest position and $\theta$ the angle of the pendulum.
 
-\missingfigure{Plot of the base rates resulting from the example cranes parameters}
+\missingfigure{Plot or table of the base rates resulting from the example cranes parameters}
 
 Note that all of the above assumes a regular pendulum.
 As we will see in the following section it might be necessary to model the crane as a double pendulum.
@@ -125,12 +123,19 @@ Equations of motion commonly known e.g. @HillLearningScientificProgramming2016:
 
 The Langrangian ($\mathcal{L} = KE - PE$) being
 
-$\mathcal{L} =  \tfrac{1}{2}(m_1+m_2)l_1^2\dot{\theta}_1^2 + \tfrac{1}{2}m_2l_2^2\dot{\theta}_2^2 + m_1l_1l_2\dot{\theta}_1\dot{\theta}_2\cos(\theta_1 - \theta_2) + (m_1+m_2)l_1g\cos\theta_1 + m_2gl_2\cos\theta_2.$
+\begin{align}
+\mathcal{L} = & \tfrac{1}{2}(m_1+m_2)l_1^2\dot{\theta}_1^2 + \tfrac{1}{2}m_2l_2^2\dot{\theta}_2^2 + m_1l_1l_2\dot{\theta}_1\dot{\theta}_2\cos(\theta_1 - \theta_2) \\
+& + (m_1+m_2)l_1g\cos\theta_1 + m_2gl_2\cos\theta_2
+\end{align}
 
-the following equations of motion can be obtained from the Euler-Langrange Equations ($\frac{\mathrm{d}}{\mathrm{d}t}\left(\frac{\partial\mathcal{L}}{\partial \dot{q}_i}\right) - \frac{\partial \mathcal{L}}{\partial q_i} = 0$):
+the following equations of motion can be obtained from the Euler-Langrange Equations:
 
-$$\ddot{\theta}_1 = \frac{m_2g\sin\theta_2\cos(\theta_1-\theta_2) - m_2\sin(\theta_1 - \theta_2)(l_1\dot{\theta}_1^2\cos(\theta_1 - \theta_2) + l_2\dot{\theta}_2^2) - (m_1+m_2)g\sin\theta_1}{l_1(m_1 + m_2\sin^2(\theta_1-\theta_2))},$$  
-$$\ddot{\theta}_2 = \frac{(m_1+m_2)(l_1\dot{\theta}_1^2\sin(\theta_1-\theta_2) - g\sin\theta_2 + g\sin\theta_1\cos(\theta_1-\theta_2))+m_2l_2\dot{\theta}_2^2\sin(\theta_1-\theta_2)\cos(\theta_1-\theta_2)}{l_2(m_1 + m_2\sin^2(\theta_1-\theta_2))}$$
+\begin{align}
+0 = & \frac{\mathrm{d}}{\mathrm{d}t}\left(\frac{\partial\mathcal{L}}{\partial \dot{q}_i}\right) - \frac{\partial \mathcal{L}}{\partial q_i} \\
+\ddot{\theta}_1 = & \frac{{m_2g\sin\theta_2\cos(\theta_1-\theta_2) - m_2\sin(\theta_1 - \theta_2)(l_1\dot{\theta}_1^2\cos(\theta_1 - \theta_2) + l_2\dot{\theta}_2^2)}{ - (m_1+m_2)g\sin\theta_1}}
+    {l_1(m_1 + m_2\sin^2(\theta_1-\theta_2))}  \\
+\ddot{\theta}_2 = & \frac{{(m_1+m_2)(l_1\dot{\theta}_1^2\sin(\theta_1-\theta_2) - g\sin\theta_2}{ + g\sin\theta_1\cos(\theta_1-\theta_2))+m_2l_2\dot{\theta}_2^2\sin(\theta_1-\theta_2)\cos(\theta_1-\theta_2)}}{l_2(m_1 + m_2\sin^2(\theta_1-\theta_2))}
+\end{align}
 
 When solving these through numerical integration one obtains the known chaotic motion @Fig:chaotic-dp.
 
@@ -180,8 +185,8 @@ The Langrangian can once again be determined from the kinetic and potential ener
 
 \begin{align}
 PE = & m_1 \cdot g \cdot z_1 + m_2 \cdot g \cdot z_2 \\
-KE = & ^1/_2 \cdot m_1 \cdot \dot{x}_1^2 + \dot{y}_1^2 + \dot{z}_1^2 + \\
-     & ^1/_2 \cdot m_2 \cdot \dot{x}_2^2 + \dot{y}_2^2 + \dot{z}_2^2  \\
+KE = & ^1/_2 \cdot m_1 \cdot \dot{x}_1^2 + \dot{y}_1^2 + \dot{z}_1^2 \\
+     & + ^1/_2 \cdot m_2 \cdot \dot{x}_2^2 + \dot{y}_2^2 + \dot{z}_2^2  \\
 \mathcal{L} = & KE - PE
 \end{align}
 
@@ -201,6 +206,8 @@ This approach follows that of @OConnorGantryCraneControl2013, where the authors 
 The following extends this to a full three degrees of freedom, to not only closer model realistic crane load motion but also to accommodate our use-case of load rotation.
 
 ![Model of a point-mass double pendulum in three dimensions with a fixed point of suspension, using projected angles instead of spherical coordinates.](./figures/crane-model-projected-angles.png){ #fig:crane-projected-angles }
+
+\todo{Projected angle double pendulum figure}
 
 Given the use of projected angles the cartesian expressions become:
 
@@ -245,6 +252,8 @@ The rotations required to transform the reference frame $X_2Y_2Z_2$ that is alig
 
 ![Sequence of rotations to transform the world aligned reference frame to the reference frame of our distributed mass.](./figures/cog-rotations.png){ #fig:cog-rotations }
 
+\todo{CoG rotations figure}
+
 The rotations illustrated in @Fig:cog-rotations can be expressed as:
 
 \begin{align}
@@ -271,13 +280,13 @@ This lets us express the required rotational velocities as follows. Note that we
     0 \\ 0\\ \dot\theta_{23}
   \end{bmatrix} \\
   \omega_{X_{3}} = &
-    -\dot{\theta}_{21} ( -\sin{\theta_{21}} \sin{\theta_{22}} \cos{\theta_{23}} - \sin{\theta_{23}} \cos{\theta_{21}} ) + \\
-    & \dot{\theta}_{22} (-\sin{\theta_{21}} \sin{\theta_{22}} \sin{\theta_{23}} + \cos{\theta_{21}} \cos{\theta_{23}})\\
-  \omega_{Y_{3}} = & -\dot{\theta}_{21} \cos{\theta_{22}} \cos{\theta_{23}} + \\
-    & \dot{\theta}_{22} \sin{\theta_{23}} \cos{\theta_{22}}\\
-  \omega_{Z_{3}} = & -\dot{\theta}_{21} (-\sin{\theta_{21}} \sin{\theta_{23}} + \sin{\theta_{22}} \cos{\theta_{21}} \cos{\theta_{23}}) + \\
-    & \dot{\theta}_{22} (\sin{\theta_{21}} \cos{\theta_{23}} + \sin{\theta_{22}} \sin{\theta_{23}} \cos{\theta_{21}}) + \\
-    & \dot{\theta}_{23}
+    -\dot{\theta}_{21} ( -\sin{\theta_{21}} \sin{\theta_{22}} \cos{\theta_{23}} - \sin{\theta_{23}} \cos{\theta_{21}} ) \\
+    & + \dot{\theta}_{22} (-\sin{\theta_{21}} \sin{\theta_{22}} \sin{\theta_{23}} + \cos{\theta_{21}} \cos{\theta_{23}})\\
+  \omega_{Y_{3}} = & -\dot{\theta}_{21} \cos{\theta_{22}} \cos{\theta_{23}} \\
+    & + \dot{\theta}_{22} \sin{\theta_{23}} \cos{\theta_{22}}\\
+  \omega_{Z_{3}} = & -\dot{\theta}_{21} (-\sin{\theta_{21}} \sin{\theta_{23}} + \sin{\theta_{22}} \cos{\theta_{21}} \cos{\theta_{23}}) \\
+    & + \dot{\theta}_{22} (\sin{\theta_{21}} \cos{\theta_{23}} + \sin{\theta_{22}} \sin{\theta_{23}} \cos{\theta_{21}}) \\
+    & + \dot{\theta}_{23}
 \end{align}
 
 The Lagrangian then becomes:
