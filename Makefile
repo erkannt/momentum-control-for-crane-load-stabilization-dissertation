@@ -1,3 +1,12 @@
+# OS specific sed
+UNAME := $(shell uname)
+ifeq ($(UNAME), Linux)
+SED=sed -i 
+endif
+ifeq ($(UNAME), Darwin)
+SED=sed -i "" 
+endif
+
 # Required executables
 PYTHON=python3
 PANDOC=pandoc
@@ -96,8 +105,8 @@ $(build)/$(name).tex: pdf-figures $(text4tex) $(tex-style) $(ref-style)
 
 $(build)/text/%.md: %.md | $(build)/text
 	cp $< $@
-	sed -i "" 's/\.svg/\.pdf/g' $@
-	sed -i "" 's/\.gif/\.png/g' $@
+	$(SED) 's/\.svg/\.pdf/g' $@
+	$(SED) 's/\.gif/\.png/g' $@
 
 # Required folders
 $(build):
@@ -112,8 +121,8 @@ $(build)/text:
 # Plots from python scripts
 $(build)/figures/%.svg: %.py | $(build)/figures
 	$(PYTHON) $< $@
-	sed -i "" 's/width.*pt\"//g' $@
-	sed -i "" 's/height.*pt\"//g' $@
+	$(SED) 's/width.*pt\"//g' $@
+	$(SED) 's/height.*pt\"//g' $@
 
 $(build)/figures/%.pdf: %.py | $(build)/figures
 	$(PYTHON) $< $@
