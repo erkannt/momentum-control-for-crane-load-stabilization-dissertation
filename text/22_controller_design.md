@@ -3,8 +3,11 @@
 
 \todo{implement Sigrid's feedback into the control diagrams}
 
-To design a control system for our cmg-crane system we will look at the flow of information for the three application scenarios previously described.
-From these we will analyze possible controllers for the various scenarios and how one might integrate the various control strategies.
+To design a control system for our crane-cmg-robot system we will look at the flow of information for the three application scenarios previously described.
+By understanding the interdependencies of the system we can create an integrated control approach.
+
+We will then discuss existing dampening control strategies for cranes and choose one suited for our system.
+We will then see how as we extend the crane model to three dimensions the rotational controller naturally emerges from the considerations made in the overall controller design.
 
 ## Overall Flow of Information
 
@@ -15,6 +18,8 @@ Let us look at the three applications in ascending control complexity:
 3. process compensation
 
 ![Control flow for pendulum dampening](./figures/dampening-controller.png){ #fig:dampening-controller width=100% }
+
+\todo{update control flow diagrams to reflect use of inertia estimation}
 
 In @Fig:dampening-controller we have a very straightforward control loop.
 The desired state of the pendulum ($P_W$) is that all angles are zero.
@@ -38,10 +43,13 @@ As also pointed out in @LeeAnalysisFieldApplicability2012 the inertia of the par
 Therefore this control loop utilizes our knowledge regarding the torque output by the CMGs and the measured rotational accelleration to estimate the inertia of the part.
 This should improve the performance of the controller when used for programmed rotations but also ensure a consistent remote control experience for the operator as their speed control will be similar, regardless of the part being handled.
 
+If we recall that the rotational inertia also scales the impact of our CMG torques during dampening it becomes clear that an estimation of the rotational inertia would also benefit our dampening controller.
+Note how if we were to extend the target input in @Fig:rotation-controller to also include the other rotational positions it covers both the dampening and rotation taks.
+
 ![Control flow for the compensation of process torques](./figures/process-controller.png){ #fig:process-controller }
 
 Finally @Fig:process-controller shows the more complex flow of information for the compensation of process torques.
-At its base lies the basic dampening controller, which is needed to compensate any oscillations that result from torques and forces that the CMG was not able to compensate.
+At its base lies the dampening controller, which is needed to compensate any oscillations that result from torques and forces that the CMG was not able to compensate.
 
 In addition to the desired pendulum state $P_W$ we now also have a desired robot state $R_W$.
 The robot could be an actual industrial robot or any other form of kinematic attached to the CMG platform.
@@ -57,8 +65,8 @@ Since our CMGs won't be perfect and in any case can't compensate forces, we have
 This is why we feed the measured position of the robot ($R_M$) and the pendulum ($P_M'$) into a second simple model that provides us with the actual position of the robot end effector ($R_M'$).
 This position is subtracted from the target position coming from the path planning, so that the robot controller may attempt to compensate the error.
 
-The above diagrams also show how these three different control tasks can be easily integrated with each other.
-By adding the estimator from the dampening controller to the process controller we can achieve a single control loop for all our applications (@Fig:integrated-controller).
+The above diagrams also show how these three different control tasks can be integrated with each other.
+By adding the estimator to the dampening controller of the process controller we can achieve an integrated control flow for all our applications (@Fig:integrated-controller).
 Note that other external forces such as wind may also act of the platform and introduce additional error.
 The sensors and controllers might be sufficient to deal with such influences, but one could also imagine additional sensors and predictive model that modify the target torques of CMGs to further increase system performance.
 What remains is the challenge of implementing the dampening/rotation controller in a manner that actually produces stable behavior for all application scenarios and ideally under a wide range of parameters and uncertainties.
@@ -99,13 +107,47 @@ The efficacy of this approach can be seen in @Fig:controller-comparison-animatio
 
 ![Swing angles (in degrees) of the two links ($\theta_1$ and $\theta_2$) of double pendulum with various control regimes applied.](./figures/controller-comparison-plot.svg){ #fig:controller-comparison-plot }
 
-## Rotation Controller
+## Inertia Estimation Controller
 
-- estimate inertia around Z of CoG from torque and current acceleration
-- use state observer
-- torque ramp based on error and estimate or PD-controller scaled by estimate
+As one cannot directly measure the rotational inertia of an object our goal is to use values from our inertial measurement unit (or other sensor tracking rotation).
+Together with the current speed and position of the gimbals we then can obtain the rotational acceleration and torque experienced by the system.
+Thereby we have all parts needed to calculate the rotational inertia:
 
-## Applying Control to 3d Model
+\begin{equation}
+\dot\omega \tau = I
+\end{equation}
 
-- estimate euler angle
-- state observer used to scale $k_{[PD]}$ 
+Since sensors are noisy and we want to avoid unnecessary jumps and hence jerks in our torque it would make sense to use some kind of state observer.
+These come in various ilks, but generally take an estimate of the measurement variance as well as the historic variance of the estimation into account.
+
+The above calculation of inertia assumes that we are trying to measure the inertia of our payload and platform around the Z-axis, while the pendulum is hanging still.
+As soon as the pendulum isn't still we have to make adjustments to way the inertia is estimated.
+This is because as soon as the pendulum kinetic or potential energy are not zero the acceleration it experiences also depends on said energies in addition to the torque exerted by our CMGs.
+Luckily we have already developed a model of the system that can provide us with an estimate of the amount acceleration caused by these energies.
+This estimate can be utilized by certain classes of estimator more complex than the ones suited for our estimation at rest.
+
+The benefits of included such an estimator are twofold:
+For one it allows for a unification of the dampening and rotation controller.
+More importantly it would make the controller robust to changes in the inertia of the platform/payload.
+This is critical to making such a system useful and usable in the real world, as it creates a flexibility in application.
+Furthermore it creates a more consistent user experience as operator inputs result in similar motions as the estimator adjusts the control response.
+
+
+## Considerations for the 3d Case
+
+The move from a 2d model to a 3d model brings many challenges.
+While most of these lie outside the scope of this work, there are a few considerations that can already be made at this stage.
+
+One of these is how to move the dampening controller from 2d to 3d.
+While the principle control approach will most likely hold true for the move, the question arises as to the target and calculation of the error.
+For the 2d case the target at error are simply $\theta_i = 0$ and $\theta_i$, respectively.
+In the 3d case we have the reference frame/coordinate system at the center of mass of the payload which is also the reference frame for our CMGs torque.
+Given the current reference frame as determined by the sensors and a target reference frame (and maybe rotational velocities at that frame) one needs to find a measure of the error between the two and how to process them in the controller.
+
+This is luckily covered by what is known as *attitude control* for air- and spacecraft.
+Given that CMGs are not uncommon in spacecraft, some attitude control systems (ACS) might even make special considerations for CMGs.
+It will be interesting to see how one might combine attitude control techniques with those for crane control.
+Especially since certain issues in ACS, such as singularities arising from the chosen error indicator disappear given the kinematic constraints of the crane-cmg system.
+Furthermore, since the inertia of spacecraft might also vary with time as they e.g. deploy their solar panels, a decent body of work exists that deals with the estimation of inertia and design of inertia-free controllers.
+
+\todo{cite: Comparative study of attitude control methods based on Euler angles, quaternions, angle–axis pairs and orientation matrices, inertia-free control}
