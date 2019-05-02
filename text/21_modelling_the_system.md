@@ -128,7 +128,7 @@ The Langrangian ($\mathcal{L} = KE - PE$) being
 & + (m_1+m_2)l_1g\cos\theta_1 + m_2gl_2\cos\theta_2
 \end{align}
 
-the following equations of motion can be obtained from the Euler-Langrange Equations:
+the following equations of motion can be obtained from the Euler-Lagrange Equations:
 
 \begin{align}
 0 = & \frac{\mathrm{d}}{\mathrm{d}t}\left(\frac{\partial\mathcal{L}}{\partial \dot{q}_i}\right) - \frac{\partial \mathcal{L}}{\partial q_i} \\
@@ -233,7 +233,7 @@ KE = & ^1/_2 \cdot m_1 \cdot \dot{x}_1^2 + \dot{y}_1^2 + \dot{z}_1^2 + \\
 \end{align}
 
 Since we want to model the lower mass (our platform and load) as a distributed mass we have to add the kinetic energy of the rotating mass to our Langrangian.
-For this we need to express the rotational velocities and inertias of the mass in a common reference frame.
+For this we need to express the rotational velocities and inertia of the mass in a common reference frame.
 We define this to be the center of gravity hanging a distance $l_2$ from our point-mass $m_1$.
 Should the center of gravity change due to e.g. robot motion this difference will be modeled as an external torque acting upon the platform.
 The inertia tensor in this reference frame then is:
@@ -366,15 +366,15 @@ Note how this encompasses _all_ torques produced by the CMG, thereby cleanly sep
 ## Payload Inertia
 
 The payload inertia is of relevance to all of our applications.
-For our models we will therefore create a set of example inertias that follow the parameter space set forth by our selected example cranes.
+For our models we will therefore create a set of example inertia that follow the parameter space set forth by our selected example cranes.
 
 For each crane we will model a slab of concrete whose weight matches the maximum load of the the crane.
 The proportions of the slabs will be constant.
 Let us assume the density of concrete as 2,400 kg/m$^3$ and the slab proportions as 5, 0.1, 2 in X, Y, Z respectively.
 Since the center of gravity of the payload wont lie in the point of rotation (the hook) we assume an offset equal to the size in Z.
-Using the parallel axis theorem this gives us the inertias listed in @Fig:inertia-data.
+Using the parallel axis theorem this gives us the inertia listed in @Fig:inertia-data.
 
-![Example payload inertias assuming constant density (2,400 kg/m^3), proportions (5, 0.1, 2) and with a weight stemming from the max load of the associated crane. We also assume the CoG to be offset by the Z-size from the point of rotation.](./figures/inertia-data.png){ #fig:inertia-data }
+![Example payload inertia assuming constant density (2,400 kg/m^3), proportions (5, 0.1, 2) and with a weight stemming from the max load of the associated crane. We also assume the CoG to be offset by the Z-size from the point of rotation.](./figures/inertia-data.png){ #fig:inertia-data }
 
 ## Process Torques and Forces
 
@@ -386,7 +386,7 @@ These paths are:
 - vertical rectangle next to the robot
 - points next to the robot incl. approach and retraction
 
-These should roughly correspond to positioning/compensation, a continuous task (e.g. spray-painting) and a joining task (e.g. nailgun) respectively.
+These should roughly correspond to positioning/compensation, a continuous task (e.g. spray-painting) and a joining task (e.g. nail gun) respectively.
 The tasks were programmed using the Rhino/Grasshopper plugin KUKA|prc for a small KUKA KR industrial robot (see @Fig:robot-path-planning).
 Since the programs are parametric one can easily scale them to larger robots.
 
@@ -397,12 +397,12 @@ This is obvious when looking at the axis values produced by KUKA|prc in @Fig:rob
 While more realistic robot simulation packages exist, for our project we can simply use real axis values.
 These can be easily obtained using the mxA functionality of the plugin-in, mxA being a UDP based interface for KUKA controllers.
 With mxA we can stream the robot path to the controller and receive back the actual axis values.
-By recording these with a timestamp we can use them as input for a multibody simulation.
+By recording these with a time stamp we can use them as input for a multi-body simulation.
 
-The multibody simulation is set up using the Simmechanics package in Simulink.
+The multi-body simulation is set up using the Simmechanics package in Simulink.
 The CAD files from the robot manufacturer are imported in to SolidWorks and rotational joints programmed into the assembly.
 From this a Simmechanics file can be exported and adapted to receive the recorded axis values and output the torques and forces experienced at the robot base (see @Fig:kr3-simmechanics).
-The inertia of the robots axes are estimated by distributing the robots mass according the volume of each axis and assumes a homogenous density of the robot.
+The inertia of the robots axes are estimated by distributing the robots mass according the volume of each axis and assumes a homogeneous density of the robot.
 
 \missingfigure{videos of the paths used}
 
