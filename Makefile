@@ -1,5 +1,5 @@
 # Required executables
-PY=python
+PYTHON=python3
 PANDOC=pandoc
 LATEXRUN := $(abspath tools/latexrun)
 LATEX=pdflatex
@@ -81,10 +81,10 @@ pdf-figures: $(plots_pdf) $(sketches_pdf) $(tikz_png) $(gifaspng) $(static) | $(
 
 # HTML Targets
 $(build)/$(name).html: $(text) $(html-style) $(ref-style) | $(build)
-	pandoc text/*.md -o $@ $(pandoc-html-flags)
+	$(PANDOC) text/*.md -o $@ $(pandoc-html-flags)
 
 %.html: %.md  $(html-style) $(ref-style) html-figures | $(build)
-	pandoc $< -o "$@" -M title="$(basename $@)" $(pandoc-html-flags)
+	$(PANDOC) $< -o "$@" -M title="$(basename $@)" $(pandoc-html-flags)
 
 $(build)/$(name).standalone.html: $(build)/$(name).html
 	cd $(build) && \
@@ -92,7 +92,7 @@ $(build)/$(name).standalone.html: $(build)/$(name).html
 
 # TeX Target
 $(build)/$(name).tex: pdf-figures $(text4tex) $(tex-style) $(ref-style)
-	pandoc $(build)/text/*.md -o "$(build)/$(name).tex" $(pandoc-tex-flags)
+	$(PANDOC) $(build)/text/*.md -o "$(build)/$(name).tex" $(pandoc-tex-flags)
 
 $(build)/text/%.md: %.md | $(build)/text
 	cp $< $@
@@ -111,12 +111,12 @@ $(build)/text:
 
 # Plots from python scripts
 $(build)/figures/%.svg: %.py | $(build)/figures
-	python $< $@
+	$(PYTHON) $< $@
 	sed -i "" 's/width.*pt\"//g' $@
 	sed -i "" 's/height.*pt\"//g' $@
 
 $(build)/figures/%.pdf: %.py | $(build)/figures
-	python $< $@
+	$(PYTHON) $< $@
 
 # Static files that need to be copied
 $(build)/figures/%.png: %.png | $(build)/figures
