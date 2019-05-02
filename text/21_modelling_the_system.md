@@ -159,6 +159,22 @@ We can expect the impact of the lower pendulum to increase as we move to a distr
 
 ![Oscillations of a double pendulum at small angles and velocities showing a) how the position for such parameters comes close to a simple pendulum and b) how the two parts of the pendulum interact.](./figures/dp-oscillations.svg){ #fig:dp-oscillations }
 
+Until now the model has been using a point mass for both links.
+When we replace the lower mass with a distributed mass, we need to add a term to the kinetic energy to capture the rotational energy of the moving mass:
+
+\begin{equation}
+KW_{\omega} = \tfrac{1}{2} I \omega^2
+\end{equation}
+
+Since our point of rotation does not lie in the center of mass of our distributed mass (picture the platform hanging below the hook), the rotational inertia is not simply that of the mass.
+Instead we must apply the parallel axis theorem also known as Huygens-Steiner theorem:
+
+\begin{equation}
+I = I_{CoM} + mr^2
+\end{equation}
+
+With $I_{CoM}$ being the inertia of our mass around its center of mass, $r$ the distance from this center of mass to the axis of rotation and $m$ the mass of our object.
+
 ### The 3D Model { #sec:3d-pendulum }
 
 ![Model of a point-mass double pendulum in three dimensions with a fixed point of suspension.](./figures/crane-spherical.png){ #fig:crane-spherical }
