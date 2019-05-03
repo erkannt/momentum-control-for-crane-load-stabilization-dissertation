@@ -163,7 +163,7 @@ $(build)/figures/%.png: %.pdf | $(build)/figures
 	convert -flatten -density 300 -define profile:skip=ICC $< -quality 90 $@
 
 $(build)/figures/%.png: %.mp4 | $(build)/figures
-	ffmpeg -ss 00:00:00 -i $< -vframes 1 -q:v 2 -vf scale=1024:-2 $@ && \
+	ffmpeg -y -ss 00:00:00 -i $< -vframes 1 -q:v 2 -vf scale=1024:-2 $@ && \
 	width=`identify -format %w $@`; \
   convert -background Orange -fill Black -gravity center -size `identify -format %w $@`x60 \
           caption:'This should be a video. Please see HTML-version of this document.' \
