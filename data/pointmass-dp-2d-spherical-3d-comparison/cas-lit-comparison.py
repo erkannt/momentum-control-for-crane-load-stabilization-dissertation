@@ -70,7 +70,7 @@ def cas_lit_comp():
   # Diff
   ax = axs[2]
   for i in range(4):
-    ax.plot(time, (data['2d-large-lit']['y'][:,i] - data['2d-large-lit']['y'][:,i])* 180/pi,
+    ax.plot(time, (data['2d-large-lit']['y'][:,i] - data['2d-large']['y'][:,i])* 180/pi,
       linetypes[i],
       color=colors[i],
       label=labels['2d'][i],
