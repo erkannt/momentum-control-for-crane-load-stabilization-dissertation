@@ -83,13 +83,21 @@ Some useful conversions to SI-Units:
 \text{g}/\text{cm}^3 \cdot 1000 &= \text{kg}/\text{s}
 \end{align}
 
-## 2D Pointmass Double Pendulum { #sec:2d-pointmass-eom}
+## EoM of 2D Pointmass Double Pendulum using CAS{ #sec:2d-pointmass-eom}
+
+Prior to obtaining the equations of motion for more complex cases, I obtained those of a pointmass double pendulum.
+The following code uses the SymPy Python library which allows us to perform symbolic calculations.
+The code also validates our results against known equations of motion.
 
 !include code/double-pendulum-2d-lagrangian.py
 
-![Validation of the equations of motion generated using the above SymPy code against those taken from @HillLearningScientificProgramming2016.](figures/cas-lit-comparison.svg){ #fig:cas-lit-comparison }
+Subsequently we can copy the resulting equations into a second program to simulate the pendulum.
+Note how even though we are using symbolically identical equations, the simulation results begin to differ after a while.
+This is a lovely example of numerical inaccuracy in computers and also how minimal changes in a chaotic system  like a double pendulum can cause increasingly large differences in behavior.
 
 !include code/double-pendulum-2d-simulation.py
+
+![Validation of the equations of motion generated using the above SymPy code against those taken from @HillLearningScientificProgramming2016. Note how symbolically equal equations can lead to different result due to numerical inaccuracies in computers.](figures/cas-lit-comparison.svg){ #fig:cas-lit-comparison }
 
 ## 3D Pointmass Double Pendulum { #sec:3d-pointmass-eom}
 
