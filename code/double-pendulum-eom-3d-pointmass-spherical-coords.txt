@@ -1,7 +1,745 @@
 ```python
-udot21 1.0*(-m2*(m1 + m2)*(sin(theta11(t))*cos(theta12(t) - theta22(t))*cos(theta21(t)) - sin(theta21(t))*cos(theta11(t)))*(l1*u11**2*sin(theta12(t) - theta22(t))*sin(theta11(t)) - 2*l1*u11*u12*cos(theta12(t) - theta22(t))*cos(theta11(t)) + l1*u12**2*sin(theta12(t) - theta22(t))*sin(theta11(t)) - 2*l2*u21*u22*cos(theta21(t)))*sin(theta12(t) - theta22(t))*sin(theta11(t)) - (m1 + m2)*(-m1 + m2*sin(theta12(t) - theta22(t))**2*cos(theta11(t))**2 + m2*cos(theta12(t) - theta22(t))**2 - m2)*(-1.0*g*sin(theta21(t)) + 1.0*l1*u11**2*sin(theta11(t))*cos(theta12(t) - theta22(t))*cos(theta21(t)) - 1.0*l1*u11**2*sin(theta21(t))*cos(theta11(t)) + 2.0*l1*u11*u12*sin(theta12(t) - theta22(t))*cos(theta11(t))*cos(theta21(t)) + 1.0*l1*u12**2*sin(theta11(t))*cos(theta12(t) - theta22(t))*cos(theta21(t)) + 0.5*l2*u22**2*sin(2*theta21(t))) + (-m1*cos(theta21(t)) - m2*sin(theta11(t))**2*cos(theta21(t)) + m2*sin(theta11(t))*sin(theta21(t))*cos(theta12(t) - theta22(t))*cos(theta11(t)))*(2*l1*m1*u11*u12*cos(theta11(t)) + 2*l1*m2*u11*u12*cos(theta11(t)) + l2*m2*u21**2*sin(theta12(t) - theta22(t))*sin(theta21(t)) + 2*l2*m2*u21*u22*cos(theta12(t) - theta22(t))*cos(theta21(t)) + l2*m2*u22**2*sin(theta12(t) - theta22(t))*sin(theta21(t)))*sin(theta12(t) - theta22(t)) - (m2*(sin(theta11(t))*sin(theta21(t)) + cos(theta12(t) - theta22(t))*cos(theta11(t))*cos(theta21(t)))*cos(theta12(t) - theta22(t))**2 + m2*sin(theta12(t) - theta22(t))**2*cos(theta12(t) - theta22(t))*cos(theta11(t))*cos(theta21(t)) - (m1 + m2)*(sin(theta11(t))*sin(theta21(t)) + cos(theta12(t) - theta22(t))*cos(theta11(t))*cos(theta21(t))))*(1.0*g*m1*sin(theta11(t)) + 1.0*g*m2*sin(theta11(t)) - 0.5*l1*m1*u12**2*sin(2*theta11(t)) - 0.5*l1*m2*u12**2*sin(2*theta11(t)) + 1.0*l2*m2*u21**2*sin(theta11(t))*cos(theta21(t)) - 1.0*l2*m2*u21**2*sin(theta21(t))*cos(theta12(t) - theta22(t))*cos(theta11(t)) + 2.0*l2*m2*u21*u22*sin(theta12(t) - theta22(t))*cos(theta11(t))*cos(theta21(t)) - 1.0*l2*m2*u22**2*sin(theta21(t))*cos(theta12(t) - theta22(t))*cos(theta11(t))))/(l2*m1*(m1 + m2*sin(theta11(t))**2*sin(theta12(t))**2*sin(theta21(t))**2 - 2*m2*sin(theta11(t))**2*sin(theta12(t))*sin(theta21(t))**2*sin(theta22(t))*cos(theta12(t) - theta22(t)) + m2*sin(theta11(t))**2*sin(theta21(t))**2*sin(theta22(t))**2 - 2*m2*sin(theta11(t))**2*sin(theta21(t))**2 + m2*sin(theta11(t))**2 - 2*m2*sin(theta11(t))*sin(theta21(t))*cos(theta12(t) - theta22(t))*cos(theta11(t))*cos(theta21(t)) + m2*sin(theta21(t))**2))
-udot22 1.0*(16.0*g*m1*cos(2*theta11(t) - theta12(t) + theta22(t)) - 16.0*g*m1*cos(2*theta11(t) + theta12(t) - theta22(t)) + 16.0*g*m2*cos(2*theta11(t) - theta12(t) + theta22(t)) - 16.0*g*m2*cos(2*theta11(t) + theta12(t) - theta22(t)) + 32.0*l1*m1*u11**2*cos(theta11(t) - theta12(t) + theta22(t)) - 32.0*l1*m1*u11**2*cos(theta11(t) + theta12(t) - theta22(t)) + 24.0*l1*m1*u12**2*cos(theta11(t) - theta12(t) + theta22(t)) - 24.0*l1*m1*u12**2*cos(theta11(t) + theta12(t) - theta22(t)) - 8.0*l1*m1*u12**2*cos(3*theta11(t) - theta12(t) + theta22(t)) + 8.0*l1*m1*u12**2*cos(3*theta11(t) + theta12(t) - theta22(t)) + 32.0*l1*m2*u11**2*cos(theta11(t) - theta12(t) + theta22(t)) - 32.0*l1*m2*u11**2*cos(theta11(t) + theta12(t) - theta22(t)) + 24.0*l1*m2*u12**2*cos(theta11(t) - theta12(t) + theta22(t)) - 24.0*l1*m2*u12**2*cos(theta11(t) + theta12(t) - theta22(t)) - 8.0*l1*m2*u12**2*cos(3*theta11(t) - theta12(t) + theta22(t)) + 8.0*l1*m2*u12**2*cos(3*theta11(t) + theta12(t) - theta22(t)) - 128.0*l2*m1*u21*u22*cos(theta21(t)) + 8.0*l2*m2*u21**2*cos(-2*theta12(t) + theta21(t) + 2*theta22(t)) - 8.0*l2*m2*u21**2*cos(2*theta12(t) + theta21(t) - 2*theta22(t)) + 4.0*l2*m2*u21**2*cos(2*theta11(t) - 2*theta12(t) - theta21(t) + 2*theta22(t)) - 4.0*l2*m2*u21**2*cos(2*theta11(t) - 2*theta12(t) + theta21(t) + 2*theta22(t)) + 8.0*l2*m2*u21**2*cos(2*theta11(t) - theta12(t) - theta21(t) + theta22(t)) + 8.0*l2*m2*u21**2*cos(2*theta11(t) - theta12(t) + theta21(t) + theta22(t)) - 8.0*l2*m2*u21**2*cos(2*theta11(t) + theta12(t) - theta21(t) - theta22(t)) - 8.0*l2*m2*u21**2*cos(2*theta11(t) + theta12(t) + theta21(t) - theta22(t)) - 4.0*l2*m2*u21**2*cos(2*theta11(t) + 2*theta12(t) - theta21(t) - 2*theta22(t)) + 4.0*l2*m2*u21**2*cos(2*theta11(t) + 2*theta12(t) + theta21(t) - 2*theta22(t)) + 12.0*l2*m2*u21*u22*cos(2*theta11(t) - 3*theta21(t)) + 20.0*l2*m2*u21*u22*cos(2*theta11(t) - theta21(t)) + 20.0*l2*m2*u21*u22*cos(2*theta11(t) + theta21(t)) + 12.0*l2*m2*u21*u22*cos(2*theta11(t) + 3*theta21(t)) + 4.0*l2*m2*u21*u22*cos(-2*theta12(t) + theta21(t) + 2*theta22(t)) - 4.0*l2*m2*u21*u22*cos(-2*theta12(t) + 3*theta21(t) + 2*theta22(t)) + 4.0*l2*m2*u21*u22*cos(2*theta12(t) + theta21(t) - 2*theta22(t)) - 4.0*l2*m2*u21*u22*cos(2*theta12(t) + 3*theta21(t) - 2*theta22(t)) + 2.0*l2*m2*u21*u22*cos(2*theta11(t) - 2*theta12(t) - 3*theta21(t) + 2*theta22(t)) - 2.0*l2*m2*u21*u22*cos(2*theta11(t) - 2*theta12(t) - theta21(t) + 2*theta22(t)) - 2.0*l2*m2*u21*u22*cos(2*theta11(t) - 2*theta12(t) + theta21(t) + 2*theta22(t)) + 2.0*l2*m2*u21*u22*cos(2*theta11(t) - 2*theta12(t) + 3*theta21(t) + 2*theta22(t)) + 8.0*l2*m2*u21*u22*cos(2*theta11(t) - theta12(t) - 3*theta21(t) + theta22(t)) + 8.0*l2*m2*u21*u22*cos(2*theta11(t) - theta12(t) - theta21(t) + theta22(t)) - 8.0*l2*m2*u21*u22*cos(2*theta11(t) - theta12(t) + theta21(t) + theta22(t)) - 8.0*l2*m2*u21*u22*cos(2*theta11(t) - theta12(t) + 3*theta21(t) + theta22(t)) + 8.0*l2*m2*u21*u22*cos(2*theta11(t) + theta12(t) - 3*theta21(t) - theta22(t)) + 8.0*l2*m2*u21*u22*cos(2*theta11(t) + theta12(t) - theta21(t) - theta22(t)) - 8.0*l2*m2*u21*u22*cos(2*theta11(t) + theta12(t) + theta21(t) - theta22(t)) - 8.0*l2*m2*u21*u22*cos(2*theta11(t) + theta12(t) + 3*theta21(t) - theta22(t)) + 2.0*l2*m2*u21*u22*cos(2*theta11(t) + 2*theta12(t) - 3*theta21(t) - 2*theta22(t)) - 2.0*l2*m2*u21*u22*cos(2*theta11(t) + 2*theta12(t) - theta21(t) - 2*theta22(t)) - 2.0*l2*m2*u21*u22*cos(2*theta11(t) + 2*theta12(t) + theta21(t) - 2*theta22(t)) + 2.0*l2*m2*u21*u22*cos(2*theta11(t) + 2*theta12(t) + 3*theta21(t) - 2*theta22(t)) - 72.0*l2*m2*u21*u22*cos(theta21(t)) + 8.0*l2*m2*u21*u22*cos(3*theta21(t)) + 6.0*l2*m2*u22**2*cos(-2*theta12(t) + theta21(t) + 2*theta22(t)) - 2.0*l2*m2*u22**2*cos(-2*theta12(t) + 3*theta21(t) + 2*theta22(t)) - 6.0*l2*m2*u22**2*cos(2*theta12(t) + theta21(t) - 2*theta22(t)) + 2.0*l2*m2*u22**2*cos(2*theta12(t) + 3*theta21(t) - 2*theta22(t)) - 1.0*l2*m2*u22**2*cos(2*theta11(t) - 2*theta12(t) - 3*theta21(t) + 2*theta22(t)) + 3.0*l2*m2*u22**2*cos(2*theta11(t) - 2*theta12(t) - theta21(t) + 2*theta22(t)) - 3.0*l2*m2*u22**2*cos(2*theta11(t) - 2*theta12(t) + theta21(t) + 2*theta22(t)) + 1.0*l2*m2*u22**2*cos(2*theta11(t) - 2*theta12(t) + 3*theta21(t) + 2*theta22(t)) - 2.0*l2*m2*u22**2*cos(2*theta11(t) - theta12(t) - 3*theta21(t) + theta22(t)) + 2.0*l2*m2*u22**2*cos(2*theta11(t) - theta12(t) - theta21(t) + theta22(t)) + 2.0*l2*m2*u22**2*cos(2*theta11(t) - theta12(t) + theta21(t) + theta22(t)) - 2.0*l2*m2*u22**2*cos(2*theta11(t) - theta12(t) + 3*theta21(t) + theta22(t)) + 2.0*l2*m2*u22**2*cos(2*theta11(t) + theta12(t) - 3*theta21(t) - theta22(t)) - 2.0*l2*m2*u22**2*cos(2*theta11(t) + theta12(t) - theta21(t) - theta22(t)) - 2.0*l2*m2*u22**2*cos(2*theta11(t) + theta12(t) + theta21(t) - theta22(t)) + 2.0*l2*m2*u22**2*cos(2*theta11(t) + theta12(t) + 3*theta21(t) - theta22(t)) + 1.0*l2*m2*u22**2*cos(2*theta11(t) + 2*theta12(t) - 3*theta21(t) - 2*theta22(t)) - 3.0*l2*m2*u22**2*cos(2*theta11(t) + 2*theta12(t) - theta21(t) - 2*theta22(t)) + 3.0*l2*m2*u22**2*cos(2*theta11(t) + 2*theta12(t) + theta21(t) - 2*theta22(t)) - 1.0*l2*m2*u22**2*cos(2*theta11(t) + 2*theta12(t) + 3*theta21(t) - 2*theta22(t)))/(l2*(64*m1*sin(theta21(t)) + 6*m2*sin(2*theta11(t) - 3*theta21(t)) - 2*m2*sin(2*theta11(t) - theta21(t)) + 2*m2*sin(2*theta11(t) + theta21(t)) - 6*m2*sin(2*theta11(t) + 3*theta21(t)) - 6*m2*sin(-2*theta12(t) + theta21(t) + 2*theta22(t)) + 2*m2*sin(-2*theta12(t) + 3*theta21(t) + 2*theta22(t)) - 6*m2*sin(2*theta12(t) + theta21(t) - 2*theta22(t)) + 2*m2*sin(2*theta12(t) + 3*theta21(t) - 2*theta22(t)) + m2*sin(2*theta11(t) - 2*theta12(t) - 3*theta21(t) + 2*theta22(t)) - 3*m2*sin(2*theta11(t) - 2*theta12(t) - theta21(t) + 2*theta22(t)) + 3*m2*sin(2*theta11(t) - 2*theta12(t) + theta21(t) + 2*theta22(t)) - m2*sin(2*theta11(t) - 2*theta12(t) + 3*theta21(t) + 2*theta22(t)) + 4*m2*sin(2*theta11(t) - theta12(t) - 3*theta21(t) + theta22(t)) - 4*m2*sin(2*theta11(t) - theta12(t) - theta21(t) + theta22(t)) - 4*m2*sin(2*theta11(t) - theta12(t) + theta21(t) + theta22(t)) + 4*m2*sin(2*theta11(t) - theta12(t) + 3*theta21(t) + theta22(t)) + 4*m2*sin(2*theta11(t) + theta12(t) - 3*theta21(t) - theta22(t)) - 4*m2*sin(2*theta11(t) + theta12(t) - theta21(t) - theta22(t)) - 4*m2*sin(2*theta11(t) + theta12(t) + theta21(t) - theta22(t)) + 4*m2*sin(2*theta11(t) + theta12(t) + 3*theta21(t) - theta22(t)) + m2*sin(2*theta11(t) + 2*theta12(t) - 3*theta21(t) - 2*theta22(t)) - 3*m2*sin(2*theta11(t) + 2*theta12(t) - theta21(t) - 2*theta22(t)) + 3*m2*sin(2*theta11(t) + 2*theta12(t) + theta21(t) - 2*theta22(t)) - m2*sin(2*theta11(t) + 2*theta12(t) + 3*theta21(t) - 2*theta22(t)) + 44*m2*sin(theta21(t)) - 4*m2*sin(3*theta21(t))))
-udot12 1.0*(-m2*(-sin(theta11(t))*cos(theta21(t)) + sin(theta21(t))*cos(theta12(t) - theta22(t))*cos(theta11(t)))*(1.0*g*m1*sin(theta11(t)) + 1.0*g*m2*sin(theta11(t)) - 0.5*l1*m1*u12**2*sin(2*theta11(t)) - 0.5*l1*m2*u12**2*sin(2*theta11(t)) + 1.0*l2*m2*u21**2*sin(theta11(t))*cos(theta21(t)) - 1.0*l2*m2*u21**2*sin(theta21(t))*cos(theta12(t) - theta22(t))*cos(theta11(t)) + 2.0*l2*m2*u21*u22*sin(theta12(t) - theta22(t))*cos(theta11(t))*cos(theta21(t)) - 1.0*l2*m2*u22**2*sin(theta21(t))*cos(theta12(t) - theta22(t))*cos(theta11(t)))*sin(theta12(t) - theta22(t))*sin(theta21(t)) - m2*(-m1*cos(theta21(t)) - m2*sin(theta11(t))**2*cos(theta21(t)) + m2*sin(theta11(t))*sin(theta21(t))*cos(theta12(t) - theta22(t))*cos(theta11(t)))*(-1.0*g*sin(theta21(t)) + 1.0*l1*u11**2*sin(theta11(t))*cos(theta12(t) - theta22(t))*cos(theta21(t)) - 1.0*l1*u11**2*sin(theta21(t))*cos(theta11(t)) + 2.0*l1*u11*u12*sin(theta12(t) - theta22(t))*cos(theta11(t))*cos(theta21(t)) + 1.0*l1*u12**2*sin(theta11(t))*cos(theta12(t) - theta22(t))*cos(theta21(t)) + 0.5*l2*u22**2*sin(2*theta21(t)))*sin(theta12(t) - theta22(t)) + m2*(m2*(sin(theta11(t))*sin(theta21(t)) + cos(theta12(t) - theta22(t))*cos(theta11(t))*cos(theta21(t)))**2*cos(theta12(t) - theta22(t)) + m2*(sin(theta11(t))*sin(theta21(t)) + cos(theta12(t) - theta22(t))*cos(theta11(t))*cos(theta21(t)))*sin(theta12(t) - theta22(t))**2*cos(theta11(t))*cos(theta21(t)) - (m1 + m2)*cos(theta12(t) - theta22(t)))*(l1*u11**2*sin(theta12(t) - theta22(t))*sin(theta11(t)) - 2*l1*u11*u12*cos(theta12(t) - theta22(t))*cos(theta11(t)) + l1*u12**2*sin(theta12(t) - theta22(t))*sin(theta11(t)) - 2*l2*u21*u22*cos(theta21(t))) + (-m1 + m2*(sin(theta11(t))*sin(theta21(t)) + cos(theta12(t) - theta22(t))*cos(theta11(t))*cos(theta21(t)))**2 + m2*sin(theta12(t) - theta22(t))**2*cos(theta11(t))**2 - m2)*(2*l1*m1*u11*u12*cos(theta11(t)) + 2*l1*m2*u11*u12*cos(theta11(t)) + l2*m2*u21**2*sin(theta12(t) - theta22(t))*sin(theta21(t)) + 2*l2*m2*u21*u22*cos(theta12(t) - theta22(t))*cos(theta21(t)) + l2*m2*u22**2*sin(theta12(t) - theta22(t))*sin(theta21(t))))/(l1*m1*(m1 + m2*sin(theta11(t))**2*sin(theta12(t))**2*sin(theta21(t))**2 - 2*m2*sin(theta11(t))**2*sin(theta12(t))*sin(theta21(t))**2*sin(theta22(t))*cos(theta12(t) - theta22(t)) + m2*sin(theta11(t))**2*sin(theta21(t))**2*sin(theta22(t))**2 - 2*m2*sin(theta11(t))**2*sin(theta21(t))**2 + m2*sin(theta11(t))**2 - 2*m2*sin(theta11(t))*sin(theta21(t))*cos(theta12(t) - theta22(t))*cos(theta11(t))*cos(theta21(t)) + m2*sin(theta21(t))**2)*sin(theta11(t)))
-udot11 1.0*(-m2*(-sin(theta11(t))*cos(theta21(t)) + sin(theta21(t))*cos(theta12(t) - theta22(t))*cos(theta11(t)))*(2*l1*m1*u11*u12*cos(theta11(t)) + 2*l1*m2*u11*u12*cos(theta11(t)) + l2*m2*u21**2*sin(theta12(t) - theta22(t))*sin(theta21(t)) + 2*l2*m2*u21*u22*cos(theta12(t) - theta22(t))*cos(theta21(t)) + l2*m2*u22**2*sin(theta12(t) - theta22(t))*sin(theta21(t)))*sin(theta12(t) - theta22(t))*sin(theta21(t)) + m2*(-m1*cos(theta11(t)) + m2*sin(theta11(t))*sin(theta21(t))*cos(theta12(t) - theta22(t))*cos(theta21(t)) - m2*sin(theta21(t))**2*cos(theta11(t)))*(l1*u11**2*sin(theta12(t) - theta22(t))*sin(theta11(t)) - 2*l1*u11*u12*cos(theta12(t) - theta22(t))*cos(theta11(t)) + l1*u12**2*sin(theta12(t) - theta22(t))*sin(theta11(t)) - 2*l2*u21*u22*cos(theta21(t)))*sin(theta12(t) - theta22(t)) + m2*(m2*(sin(theta11(t))*sin(theta21(t)) + cos(theta12(t) - theta22(t))*cos(theta11(t))*cos(theta21(t)))*cos(theta12(t) - theta22(t))**2 + m2*sin(theta12(t) - theta22(t))**2*cos(theta12(t) - theta22(t))*cos(theta11(t))*cos(theta21(t)) - (m1 + m2)*(sin(theta11(t))*sin(theta21(t)) + cos(theta12(t) - theta22(t))*cos(theta11(t))*cos(theta21(t))))*(-1.0*g*sin(theta21(t)) + 1.0*l1*u11**2*sin(theta11(t))*cos(theta12(t) - theta22(t))*cos(theta21(t)) - 1.0*l1*u11**2*sin(theta21(t))*cos(theta11(t)) + 2.0*l1*u11*u12*sin(theta12(t) - theta22(t))*cos(theta11(t))*cos(theta21(t)) + 1.0*l1*u12**2*sin(theta11(t))*cos(theta12(t) - theta22(t))*cos(theta21(t)) + 0.5*l2*u22**2*sin(2*theta21(t))) + (-m1 + m2*sin(theta12(t) - theta22(t))**2*cos(theta21(t))**2 + m2*cos(theta12(t) - theta22(t))**2 - m2)*(1.0*g*m1*sin(theta11(t)) + 1.0*g*m2*sin(theta11(t)) - 0.5*l1*m1*u12**2*sin(2*theta11(t)) - 0.5*l1*m2*u12**2*sin(2*theta11(t)) + 1.0*l2*m2*u21**2*sin(theta11(t))*cos(theta21(t)) - 1.0*l2*m2*u21**2*sin(theta21(t))*cos(theta12(t) - theta22(t))*cos(theta11(t)) + 2.0*l2*m2*u21*u22*sin(theta12(t) - theta22(t))*cos(theta11(t))*cos(theta21(t)) - 1.0*l2*m2*u22**2*sin(theta21(t))*cos(theta12(t) - theta22(t))*cos(theta11(t))))/(l1*m1*(m1 + m2*sin(theta11(t))**2*sin(theta12(t))**2*sin(theta21(t))**2 - 2*m2*sin(theta11(t))**2*sin(theta12(t))*sin(theta21(t))**2*sin(theta22(t))*cos(theta12(t) - theta22(t)) + m2*sin(theta11(t))**2*sin(theta21(t))**2*sin(theta22(t))**2 - 2*m2*sin(theta11(t))**2*sin(theta21(t))**2 + m2*sin(theta11(t))**2 - 2*m2*sin(theta11(t))*sin(theta21(t))*cos(theta12(t) - theta22(t))*cos(theta11(t))*cos(theta21(t)) + m2*sin(theta21(t))**2))
+udot21 = (
+    1.0
+    * (
+        -m2
+        * (m1 + m2)
+        * (
+            sin(theta11(t)) * cos(theta12(t) - theta22(t)) * cos(theta21(t))
+            - sin(theta21(t)) * cos(theta11(t))
+        )
+        * (
+            l1 * u11 ** 2 * sin(theta12(t) - theta22(t)) * sin(theta11(t))
+            - 2 * l1 * u11 * u12 * cos(theta12(t) - theta22(t)) * cos(theta11(t))
+            + l1 * u12 ** 2 * sin(theta12(t) - theta22(t)) * sin(theta11(t))
+            - 2 * l2 * u21 * u22 * cos(theta21(t))
+        )
+        * sin(theta12(t) - theta22(t))
+        * sin(theta11(t))
+        - (m1 + m2)
+        * (
+            -m1
+            + m2 * sin(theta12(t) - theta22(t)) ** 2 * cos(theta11(t)) ** 2
+            + m2 * cos(theta12(t) - theta22(t)) ** 2
+            - m2
+        )
+        * (
+            -1.0 * g * sin(theta21(t))
+            + 1.0
+            * l1
+            * u11 ** 2
+            * sin(theta11(t))
+            * cos(theta12(t) - theta22(t))
+            * cos(theta21(t))
+            - 1.0 * l1 * u11 ** 2 * sin(theta21(t)) * cos(theta11(t))
+            + 2.0
+            * l1
+            * u11
+            * u12
+            * sin(theta12(t) - theta22(t))
+            * cos(theta11(t))
+            * cos(theta21(t))
+            + 1.0
+            * l1
+            * u12 ** 2
+            * sin(theta11(t))
+            * cos(theta12(t) - theta22(t))
+            * cos(theta21(t))
+            + 0.5 * l2 * u22 ** 2 * sin(2 * theta21(t))
+        )
+        + (
+            -m1 * cos(theta21(t))
+            - m2 * sin(theta11(t)) ** 2 * cos(theta21(t))
+            + m2
+            * sin(theta11(t))
+            * sin(theta21(t))
+            * cos(theta12(t) - theta22(t))
+            * cos(theta11(t))
+        )
+        * (
+            2 * l1 * m1 * u11 * u12 * cos(theta11(t))
+            + 2 * l1 * m2 * u11 * u12 * cos(theta11(t))
+            + l2 * m2 * u21 ** 2 * sin(theta12(t) - theta22(t)) * sin(theta21(t))
+            + 2 * l2 * m2 * u21 * u22 * cos(theta12(t) - theta22(t)) * cos(theta21(t))
+            + l2 * m2 * u22 ** 2 * sin(theta12(t) - theta22(t)) * sin(theta21(t))
+        )
+        * sin(theta12(t) - theta22(t))
+        - (
+            m2
+            * (
+                sin(theta11(t)) * sin(theta21(t))
+                + cos(theta12(t) - theta22(t)) * cos(theta11(t)) * cos(theta21(t))
+            )
+            * cos(theta12(t) - theta22(t)) ** 2
+            + m2
+            * sin(theta12(t) - theta22(t)) ** 2
+            * cos(theta12(t) - theta22(t))
+            * cos(theta11(t))
+            * cos(theta21(t))
+            - (m1 + m2)
+            * (
+                sin(theta11(t)) * sin(theta21(t))
+                + cos(theta12(t) - theta22(t)) * cos(theta11(t)) * cos(theta21(t))
+            )
+        )
+        * (
+            1.0 * g * m1 * sin(theta11(t))
+            + 1.0 * g * m2 * sin(theta11(t))
+            - 0.5 * l1 * m1 * u12 ** 2 * sin(2 * theta11(t))
+            - 0.5 * l1 * m2 * u12 ** 2 * sin(2 * theta11(t))
+            + 1.0 * l2 * m2 * u21 ** 2 * sin(theta11(t)) * cos(theta21(t))
+            - 1.0
+            * l2
+            * m2
+            * u21 ** 2
+            * sin(theta21(t))
+            * cos(theta12(t) - theta22(t))
+            * cos(theta11(t))
+            + 2.0
+            * l2
+            * m2
+            * u21
+            * u22
+            * sin(theta12(t) - theta22(t))
+            * cos(theta11(t))
+            * cos(theta21(t))
+            - 1.0
+            * l2
+            * m2
+            * u22 ** 2
+            * sin(theta21(t))
+            * cos(theta12(t) - theta22(t))
+            * cos(theta11(t))
+        )
+    )
+    / (
+        l2
+        * m1
+        * (
+            m1
+            + m2 * sin(theta11(t)) ** 2 * sin(theta12(t)) ** 2 * sin(theta21(t)) ** 2
+            - 2
+            * m2
+            * sin(theta11(t)) ** 2
+            * sin(theta12(t))
+            * sin(theta21(t)) ** 2
+            * sin(theta22(t))
+            * cos(theta12(t) - theta22(t))
+            + m2 * sin(theta11(t)) ** 2 * sin(theta21(t)) ** 2 * sin(theta22(t)) ** 2
+            - 2 * m2 * sin(theta11(t)) ** 2 * sin(theta21(t)) ** 2
+            + m2 * sin(theta11(t)) ** 2
+            - 2
+            * m2
+            * sin(theta11(t))
+            * sin(theta21(t))
+            * cos(theta12(t) - theta22(t))
+            * cos(theta11(t))
+            * cos(theta21(t))
+            + m2 * sin(theta21(t)) ** 2
+        )
+    )
+)
+udot22 = (
+    1.0
+    * (
+        16.0 * g * m1 * cos(2 * theta11(t) - theta12(t) + theta22(t))
+        - 16.0 * g * m1 * cos(2 * theta11(t) + theta12(t) - theta22(t))
+        + 16.0 * g * m2 * cos(2 * theta11(t) - theta12(t) + theta22(t))
+        - 16.0 * g * m2 * cos(2 * theta11(t) + theta12(t) - theta22(t))
+        + 32.0 * l1 * m1 * u11 ** 2 * cos(theta11(t) - theta12(t) + theta22(t))
+        - 32.0 * l1 * m1 * u11 ** 2 * cos(theta11(t) + theta12(t) - theta22(t))
+        + 24.0 * l1 * m1 * u12 ** 2 * cos(theta11(t) - theta12(t) + theta22(t))
+        - 24.0 * l1 * m1 * u12 ** 2 * cos(theta11(t) + theta12(t) - theta22(t))
+        - 8.0 * l1 * m1 * u12 ** 2 * cos(3 * theta11(t) - theta12(t) + theta22(t))
+        + 8.0 * l1 * m1 * u12 ** 2 * cos(3 * theta11(t) + theta12(t) - theta22(t))
+        + 32.0 * l1 * m2 * u11 ** 2 * cos(theta11(t) - theta12(t) + theta22(t))
+        - 32.0 * l1 * m2 * u11 ** 2 * cos(theta11(t) + theta12(t) - theta22(t))
+        + 24.0 * l1 * m2 * u12 ** 2 * cos(theta11(t) - theta12(t) + theta22(t))
+        - 24.0 * l1 * m2 * u12 ** 2 * cos(theta11(t) + theta12(t) - theta22(t))
+        - 8.0 * l1 * m2 * u12 ** 2 * cos(3 * theta11(t) - theta12(t) + theta22(t))
+        + 8.0 * l1 * m2 * u12 ** 2 * cos(3 * theta11(t) + theta12(t) - theta22(t))
+        - 128.0 * l2 * m1 * u21 * u22 * cos(theta21(t))
+        + 8.0 * l2 * m2 * u21 ** 2 * cos(-2 * theta12(t) + theta21(t) + 2 * theta22(t))
+        - 8.0 * l2 * m2 * u21 ** 2 * cos(2 * theta12(t) + theta21(t) - 2 * theta22(t))
+        + 4.0
+        * l2
+        * m2
+        * u21 ** 2
+        * cos(2 * theta11(t) - 2 * theta12(t) - theta21(t) + 2 * theta22(t))
+        - 4.0
+        * l2
+        * m2
+        * u21 ** 2
+        * cos(2 * theta11(t) - 2 * theta12(t) + theta21(t) + 2 * theta22(t))
+        + 8.0
+        * l2
+        * m2
+        * u21 ** 2
+        * cos(2 * theta11(t) - theta12(t) - theta21(t) + theta22(t))
+        + 8.0
+        * l2
+        * m2
+        * u21 ** 2
+        * cos(2 * theta11(t) - theta12(t) + theta21(t) + theta22(t))
+        - 8.0
+        * l2
+        * m2
+        * u21 ** 2
+        * cos(2 * theta11(t) + theta12(t) - theta21(t) - theta22(t))
+        - 8.0
+        * l2
+        * m2
+        * u21 ** 2
+        * cos(2 * theta11(t) + theta12(t) + theta21(t) - theta22(t))
+        - 4.0
+        * l2
+        * m2
+        * u21 ** 2
+        * cos(2 * theta11(t) + 2 * theta12(t) - theta21(t) - 2 * theta22(t))
+        + 4.0
+        * l2
+        * m2
+        * u21 ** 2
+        * cos(2 * theta11(t) + 2 * theta12(t) + theta21(t) - 2 * theta22(t))
+        + 12.0 * l2 * m2 * u21 * u22 * cos(2 * theta11(t) - 3 * theta21(t))
+        + 20.0 * l2 * m2 * u21 * u22 * cos(2 * theta11(t) - theta21(t))
+        + 20.0 * l2 * m2 * u21 * u22 * cos(2 * theta11(t) + theta21(t))
+        + 12.0 * l2 * m2 * u21 * u22 * cos(2 * theta11(t) + 3 * theta21(t))
+        + 4.0 * l2 * m2 * u21 * u22 * cos(-2 * theta12(t) + theta21(t) + 2 * theta22(t))
+        - 4.0
+        * l2
+        * m2
+        * u21
+        * u22
+        * cos(-2 * theta12(t) + 3 * theta21(t) + 2 * theta22(t))
+        + 4.0 * l2 * m2 * u21 * u22 * cos(2 * theta12(t) + theta21(t) - 2 * theta22(t))
+        - 4.0
+        * l2
+        * m2
+        * u21
+        * u22
+        * cos(2 * theta12(t) + 3 * theta21(t) - 2 * theta22(t))
+        + 2.0
+        * l2
+        * m2
+        * u21
+        * u22
+        * cos(2 * theta11(t) - 2 * theta12(t) - 3 * theta21(t) + 2 * theta22(t))
+        - 2.0
+        * l2
+        * m2
+        * u21
+        * u22
+        * cos(2 * theta11(t) - 2 * theta12(t) - theta21(t) + 2 * theta22(t))
+        - 2.0
+        * l2
+        * m2
+        * u21
+        * u22
+        * cos(2 * theta11(t) - 2 * theta12(t) + theta21(t) + 2 * theta22(t))
+        + 2.0
+        * l2
+        * m2
+        * u21
+        * u22
+        * cos(2 * theta11(t) - 2 * theta12(t) + 3 * theta21(t) + 2 * theta22(t))
+        + 8.0
+        * l2
+        * m2
+        * u21
+        * u22
+        * cos(2 * theta11(t) - theta12(t) - 3 * theta21(t) + theta22(t))
+        + 8.0
+        * l2
+        * m2
+        * u21
+        * u22
+        * cos(2 * theta11(t) - theta12(t) - theta21(t) + theta22(t))
+        - 8.0
+        * l2
+        * m2
+        * u21
+        * u22
+        * cos(2 * theta11(t) - theta12(t) + theta21(t) + theta22(t))
+        - 8.0
+        * l2
+        * m2
+        * u21
+        * u22
+        * cos(2 * theta11(t) - theta12(t) + 3 * theta21(t) + theta22(t))
+        + 8.0
+        * l2
+        * m2
+        * u21
+        * u22
+        * cos(2 * theta11(t) + theta12(t) - 3 * theta21(t) - theta22(t))
+        + 8.0
+        * l2
+        * m2
+        * u21
+        * u22
+        * cos(2 * theta11(t) + theta12(t) - theta21(t) - theta22(t))
+        - 8.0
+        * l2
+        * m2
+        * u21
+        * u22
+        * cos(2 * theta11(t) + theta12(t) + theta21(t) - theta22(t))
+        - 8.0
+        * l2
+        * m2
+        * u21
+        * u22
+        * cos(2 * theta11(t) + theta12(t) + 3 * theta21(t) - theta22(t))
+        + 2.0
+        * l2
+        * m2
+        * u21
+        * u22
+        * cos(2 * theta11(t) + 2 * theta12(t) - 3 * theta21(t) - 2 * theta22(t))
+        - 2.0
+        * l2
+        * m2
+        * u21
+        * u22
+        * cos(2 * theta11(t) + 2 * theta12(t) - theta21(t) - 2 * theta22(t))
+        - 2.0
+        * l2
+        * m2
+        * u21
+        * u22
+        * cos(2 * theta11(t) + 2 * theta12(t) + theta21(t) - 2 * theta22(t))
+        + 2.0
+        * l2
+        * m2
+        * u21
+        * u22
+        * cos(2 * theta11(t) + 2 * theta12(t) + 3 * theta21(t) - 2 * theta22(t))
+        - 72.0 * l2 * m2 * u21 * u22 * cos(theta21(t))
+        + 8.0 * l2 * m2 * u21 * u22 * cos(3 * theta21(t))
+        + 6.0 * l2 * m2 * u22 ** 2 * cos(-2 * theta12(t) + theta21(t) + 2 * theta22(t))
+        - 2.0
+        * l2
+        * m2
+        * u22 ** 2
+        * cos(-2 * theta12(t) + 3 * theta21(t) + 2 * theta22(t))
+        - 6.0 * l2 * m2 * u22 ** 2 * cos(2 * theta12(t) + theta21(t) - 2 * theta22(t))
+        + 2.0
+        * l2
+        * m2
+        * u22 ** 2
+        * cos(2 * theta12(t) + 3 * theta21(t) - 2 * theta22(t))
+        - 1.0
+        * l2
+        * m2
+        * u22 ** 2
+        * cos(2 * theta11(t) - 2 * theta12(t) - 3 * theta21(t) + 2 * theta22(t))
+        + 3.0
+        * l2
+        * m2
+        * u22 ** 2
+        * cos(2 * theta11(t) - 2 * theta12(t) - theta21(t) + 2 * theta22(t))
+        - 3.0
+        * l2
+        * m2
+        * u22 ** 2
+        * cos(2 * theta11(t) - 2 * theta12(t) + theta21(t) + 2 * theta22(t))
+        + 1.0
+        * l2
+        * m2
+        * u22 ** 2
+        * cos(2 * theta11(t) - 2 * theta12(t) + 3 * theta21(t) + 2 * theta22(t))
+        - 2.0
+        * l2
+        * m2
+        * u22 ** 2
+        * cos(2 * theta11(t) - theta12(t) - 3 * theta21(t) + theta22(t))
+        + 2.0
+        * l2
+        * m2
+        * u22 ** 2
+        * cos(2 * theta11(t) - theta12(t) - theta21(t) + theta22(t))
+        + 2.0
+        * l2
+        * m2
+        * u22 ** 2
+        * cos(2 * theta11(t) - theta12(t) + theta21(t) + theta22(t))
+        - 2.0
+        * l2
+        * m2
+        * u22 ** 2
+        * cos(2 * theta11(t) - theta12(t) + 3 * theta21(t) + theta22(t))
+        + 2.0
+        * l2
+        * m2
+        * u22 ** 2
+        * cos(2 * theta11(t) + theta12(t) - 3 * theta21(t) - theta22(t))
+        - 2.0
+        * l2
+        * m2
+        * u22 ** 2
+        * cos(2 * theta11(t) + theta12(t) - theta21(t) - theta22(t))
+        - 2.0
+        * l2
+        * m2
+        * u22 ** 2
+        * cos(2 * theta11(t) + theta12(t) + theta21(t) - theta22(t))
+        + 2.0
+        * l2
+        * m2
+        * u22 ** 2
+        * cos(2 * theta11(t) + theta12(t) + 3 * theta21(t) - theta22(t))
+        + 1.0
+        * l2
+        * m2
+        * u22 ** 2
+        * cos(2 * theta11(t) + 2 * theta12(t) - 3 * theta21(t) - 2 * theta22(t))
+        - 3.0
+        * l2
+        * m2
+        * u22 ** 2
+        * cos(2 * theta11(t) + 2 * theta12(t) - theta21(t) - 2 * theta22(t))
+        + 3.0
+        * l2
+        * m2
+        * u22 ** 2
+        * cos(2 * theta11(t) + 2 * theta12(t) + theta21(t) - 2 * theta22(t))
+        - 1.0
+        * l2
+        * m2
+        * u22 ** 2
+        * cos(2 * theta11(t) + 2 * theta12(t) + 3 * theta21(t) - 2 * theta22(t))
+    )
+    / (
+        l2
+        * (
+            64 * m1 * sin(theta21(t))
+            + 6 * m2 * sin(2 * theta11(t) - 3 * theta21(t))
+            - 2 * m2 * sin(2 * theta11(t) - theta21(t))
+            + 2 * m2 * sin(2 * theta11(t) + theta21(t))
+            - 6 * m2 * sin(2 * theta11(t) + 3 * theta21(t))
+            - 6 * m2 * sin(-2 * theta12(t) + theta21(t) + 2 * theta22(t))
+            + 2 * m2 * sin(-2 * theta12(t) + 3 * theta21(t) + 2 * theta22(t))
+            - 6 * m2 * sin(2 * theta12(t) + theta21(t) - 2 * theta22(t))
+            + 2 * m2 * sin(2 * theta12(t) + 3 * theta21(t) - 2 * theta22(t))
+            + m2
+            * sin(2 * theta11(t) - 2 * theta12(t) - 3 * theta21(t) + 2 * theta22(t))
+            - 3
+            * m2
+            * sin(2 * theta11(t) - 2 * theta12(t) - theta21(t) + 2 * theta22(t))
+            + 3
+            * m2
+            * sin(2 * theta11(t) - 2 * theta12(t) + theta21(t) + 2 * theta22(t))
+            - m2
+            * sin(2 * theta11(t) - 2 * theta12(t) + 3 * theta21(t) + 2 * theta22(t))
+            + 4 * m2 * sin(2 * theta11(t) - theta12(t) - 3 * theta21(t) + theta22(t))
+            - 4 * m2 * sin(2 * theta11(t) - theta12(t) - theta21(t) + theta22(t))
+            - 4 * m2 * sin(2 * theta11(t) - theta12(t) + theta21(t) + theta22(t))
+            + 4 * m2 * sin(2 * theta11(t) - theta12(t) + 3 * theta21(t) + theta22(t))
+            + 4 * m2 * sin(2 * theta11(t) + theta12(t) - 3 * theta21(t) - theta22(t))
+            - 4 * m2 * sin(2 * theta11(t) + theta12(t) - theta21(t) - theta22(t))
+            - 4 * m2 * sin(2 * theta11(t) + theta12(t) + theta21(t) - theta22(t))
+            + 4 * m2 * sin(2 * theta11(t) + theta12(t) + 3 * theta21(t) - theta22(t))
+            + m2
+            * sin(2 * theta11(t) + 2 * theta12(t) - 3 * theta21(t) - 2 * theta22(t))
+            - 3
+            * m2
+            * sin(2 * theta11(t) + 2 * theta12(t) - theta21(t) - 2 * theta22(t))
+            + 3
+            * m2
+            * sin(2 * theta11(t) + 2 * theta12(t) + theta21(t) - 2 * theta22(t))
+            - m2
+            * sin(2 * theta11(t) + 2 * theta12(t) + 3 * theta21(t) - 2 * theta22(t))
+            + 44 * m2 * sin(theta21(t))
+            - 4 * m2 * sin(3 * theta21(t))
+        )
+    )
+)
+udot12 = (
+    1.0
+    * (
+        -m2
+        * (
+            -sin(theta11(t)) * cos(theta21(t))
+            + sin(theta21(t)) * cos(theta12(t) - theta22(t)) * cos(theta11(t))
+        )
+        * (
+            1.0 * g * m1 * sin(theta11(t))
+            + 1.0 * g * m2 * sin(theta11(t))
+            - 0.5 * l1 * m1 * u12 ** 2 * sin(2 * theta11(t))
+            - 0.5 * l1 * m2 * u12 ** 2 * sin(2 * theta11(t))
+            + 1.0 * l2 * m2 * u21 ** 2 * sin(theta11(t)) * cos(theta21(t))
+            - 1.0
+            * l2
+            * m2
+            * u21 ** 2
+            * sin(theta21(t))
+            * cos(theta12(t) - theta22(t))
+            * cos(theta11(t))
+            + 2.0
+            * l2
+            * m2
+            * u21
+            * u22
+            * sin(theta12(t) - theta22(t))
+            * cos(theta11(t))
+            * cos(theta21(t))
+            - 1.0
+            * l2
+            * m2
+            * u22 ** 2
+            * sin(theta21(t))
+            * cos(theta12(t) - theta22(t))
+            * cos(theta11(t))
+        )
+        * sin(theta12(t) - theta22(t))
+        * sin(theta21(t))
+        - m2
+        * (
+            -m1 * cos(theta21(t))
+            - m2 * sin(theta11(t)) ** 2 * cos(theta21(t))
+            + m2
+            * sin(theta11(t))
+            * sin(theta21(t))
+            * cos(theta12(t) - theta22(t))
+            * cos(theta11(t))
+        )
+        * (
+            -1.0 * g * sin(theta21(t))
+            + 1.0
+            * l1
+            * u11 ** 2
+            * sin(theta11(t))
+            * cos(theta12(t) - theta22(t))
+            * cos(theta21(t))
+            - 1.0 * l1 * u11 ** 2 * sin(theta21(t)) * cos(theta11(t))
+            + 2.0
+            * l1
+            * u11
+            * u12
+            * sin(theta12(t) - theta22(t))
+            * cos(theta11(t))
+            * cos(theta21(t))
+            + 1.0
+            * l1
+            * u12 ** 2
+            * sin(theta11(t))
+            * cos(theta12(t) - theta22(t))
+            * cos(theta21(t))
+            + 0.5 * l2 * u22 ** 2 * sin(2 * theta21(t))
+        )
+        * sin(theta12(t) - theta22(t))
+        + m2
+        * (
+            m2
+            * (
+                sin(theta11(t)) * sin(theta21(t))
+                + cos(theta12(t) - theta22(t)) * cos(theta11(t)) * cos(theta21(t))
+            )
+            ** 2
+            * cos(theta12(t) - theta22(t))
+            + m2
+            * (
+                sin(theta11(t)) * sin(theta21(t))
+                + cos(theta12(t) - theta22(t)) * cos(theta11(t)) * cos(theta21(t))
+            )
+            * sin(theta12(t) - theta22(t)) ** 2
+            * cos(theta11(t))
+            * cos(theta21(t))
+            - (m1 + m2) * cos(theta12(t) - theta22(t))
+        )
+        * (
+            l1 * u11 ** 2 * sin(theta12(t) - theta22(t)) * sin(theta11(t))
+            - 2 * l1 * u11 * u12 * cos(theta12(t) - theta22(t)) * cos(theta11(t))
+            + l1 * u12 ** 2 * sin(theta12(t) - theta22(t)) * sin(theta11(t))
+            - 2 * l2 * u21 * u22 * cos(theta21(t))
+        )
+        + (
+            -m1
+            + m2
+            * (
+                sin(theta11(t)) * sin(theta21(t))
+                + cos(theta12(t) - theta22(t)) * cos(theta11(t)) * cos(theta21(t))
+            )
+            ** 2
+            + m2 * sin(theta12(t) - theta22(t)) ** 2 * cos(theta11(t)) ** 2
+            - m2
+        )
+        * (
+            2 * l1 * m1 * u11 * u12 * cos(theta11(t))
+            + 2 * l1 * m2 * u11 * u12 * cos(theta11(t))
+            + l2 * m2 * u21 ** 2 * sin(theta12(t) - theta22(t)) * sin(theta21(t))
+            + 2 * l2 * m2 * u21 * u22 * cos(theta12(t) - theta22(t)) * cos(theta21(t))
+            + l2 * m2 * u22 ** 2 * sin(theta12(t) - theta22(t)) * sin(theta21(t))
+        )
+    )
+    / (
+        l1
+        * m1
+        * (
+            m1
+            + m2 * sin(theta11(t)) ** 2 * sin(theta12(t)) ** 2 * sin(theta21(t)) ** 2
+            - 2
+            * m2
+            * sin(theta11(t)) ** 2
+            * sin(theta12(t))
+            * sin(theta21(t)) ** 2
+            * sin(theta22(t))
+            * cos(theta12(t) - theta22(t))
+            + m2 * sin(theta11(t)) ** 2 * sin(theta21(t)) ** 2 * sin(theta22(t)) ** 2
+            - 2 * m2 * sin(theta11(t)) ** 2 * sin(theta21(t)) ** 2
+            + m2 * sin(theta11(t)) ** 2
+            - 2
+            * m2
+            * sin(theta11(t))
+            * sin(theta21(t))
+            * cos(theta12(t) - theta22(t))
+            * cos(theta11(t))
+            * cos(theta21(t))
+            + m2 * sin(theta21(t)) ** 2
+        )
+        * sin(theta11(t))
+    )
+)
+udot11 = (
+    1.0
+    * (
+        -m2
+        * (
+            -sin(theta11(t)) * cos(theta21(t))
+            + sin(theta21(t)) * cos(theta12(t) - theta22(t)) * cos(theta11(t))
+        )
+        * (
+            2 * l1 * m1 * u11 * u12 * cos(theta11(t))
+            + 2 * l1 * m2 * u11 * u12 * cos(theta11(t))
+            + l2 * m2 * u21 ** 2 * sin(theta12(t) - theta22(t)) * sin(theta21(t))
+            + 2 * l2 * m2 * u21 * u22 * cos(theta12(t) - theta22(t)) * cos(theta21(t))
+            + l2 * m2 * u22 ** 2 * sin(theta12(t) - theta22(t)) * sin(theta21(t))
+        )
+        * sin(theta12(t) - theta22(t))
+        * sin(theta21(t))
+        + m2
+        * (
+            -m1 * cos(theta11(t))
+            + m2
+            * sin(theta11(t))
+            * sin(theta21(t))
+            * cos(theta12(t) - theta22(t))
+            * cos(theta21(t))
+            - m2 * sin(theta21(t)) ** 2 * cos(theta11(t))
+        )
+        * (
+            l1 * u11 ** 2 * sin(theta12(t) - theta22(t)) * sin(theta11(t))
+            - 2 * l1 * u11 * u12 * cos(theta12(t) - theta22(t)) * cos(theta11(t))
+            + l1 * u12 ** 2 * sin(theta12(t) - theta22(t)) * sin(theta11(t))
+            - 2 * l2 * u21 * u22 * cos(theta21(t))
+        )
+        * sin(theta12(t) - theta22(t))
+        + m2
+        * (
+            m2
+            * (
+                sin(theta11(t)) * sin(theta21(t))
+                + cos(theta12(t) - theta22(t)) * cos(theta11(t)) * cos(theta21(t))
+            )
+            * cos(theta12(t) - theta22(t)) ** 2
+            + m2
+            * sin(theta12(t) - theta22(t)) ** 2
+            * cos(theta12(t) - theta22(t))
+            * cos(theta11(t))
+            * cos(theta21(t))
+            - (m1 + m2)
+            * (
+                sin(theta11(t)) * sin(theta21(t))
+                + cos(theta12(t) - theta22(t)) * cos(theta11(t)) * cos(theta21(t))
+            )
+        )
+        * (
+            -1.0 * g * sin(theta21(t))
+            + 1.0
+            * l1
+            * u11 ** 2
+            * sin(theta11(t))
+            * cos(theta12(t) - theta22(t))
+            * cos(theta21(t))
+            - 1.0 * l1 * u11 ** 2 * sin(theta21(t)) * cos(theta11(t))
+            + 2.0
+            * l1
+            * u11
+            * u12
+            * sin(theta12(t) - theta22(t))
+            * cos(theta11(t))
+            * cos(theta21(t))
+            + 1.0
+            * l1
+            * u12 ** 2
+            * sin(theta11(t))
+            * cos(theta12(t) - theta22(t))
+            * cos(theta21(t))
+            + 0.5 * l2 * u22 ** 2 * sin(2 * theta21(t))
+        )
+        + (
+            -m1
+            + m2 * sin(theta12(t) - theta22(t)) ** 2 * cos(theta21(t)) ** 2
+            + m2 * cos(theta12(t) - theta22(t)) ** 2
+            - m2
+        )
+        * (
+            1.0 * g * m1 * sin(theta11(t))
+            + 1.0 * g * m2 * sin(theta11(t))
+            - 0.5 * l1 * m1 * u12 ** 2 * sin(2 * theta11(t))
+            - 0.5 * l1 * m2 * u12 ** 2 * sin(2 * theta11(t))
+            + 1.0 * l2 * m2 * u21 ** 2 * sin(theta11(t)) * cos(theta21(t))
+            - 1.0
+            * l2
+            * m2
+            * u21 ** 2
+            * sin(theta21(t))
+            * cos(theta12(t) - theta22(t))
+            * cos(theta11(t))
+            + 2.0
+            * l2
+            * m2
+            * u21
+            * u22
+            * sin(theta12(t) - theta22(t))
+            * cos(theta11(t))
+            * cos(theta21(t))
+            - 1.0
+            * l2
+            * m2
+            * u22 ** 2
+            * sin(theta21(t))
+            * cos(theta12(t) - theta22(t))
+            * cos(theta11(t))
+        )
+    )
+    / (
+        l1
+        * m1
+        * (
+            m1
+            + m2 * sin(theta11(t)) ** 2 * sin(theta12(t)) ** 2 * sin(theta21(t)) ** 2
+            - 2
+            * m2
+            * sin(theta11(t)) ** 2
+            * sin(theta12(t))
+            * sin(theta21(t)) ** 2
+            * sin(theta22(t))
+            * cos(theta12(t) - theta22(t))
+            + m2 * sin(theta11(t)) ** 2 * sin(theta21(t)) ** 2 * sin(theta22(t)) ** 2
+            - 2 * m2 * sin(theta11(t)) ** 2 * sin(theta21(t)) ** 2
+            + m2 * sin(theta11(t)) ** 2
+            - 2
+            * m2
+            * sin(theta11(t))
+            * sin(theta21(t))
+            * cos(theta12(t) - theta22(t))
+            * cos(theta11(t))
+            * cos(theta21(t))
+            + m2 * sin(theta21(t)) ** 2
+        )
+    )
+)
 
 ```
