@@ -205,8 +205,8 @@ def check_energy_conservation(y, y0):
 
 # Do the numerical integration of the equations of motion
 y = odeint(deriv, y0, t, args=(l1, l2, m1, m2))
-y_cas = odeint(deriv, y0, t, args=(l1, l2, m1, m2))
-y_cas_small = odeint(deriv, y0_small, t, args=(l1, l2, m1, m2))
+y_cas = odeint(deriv_cas, y0, t, args=(l1, l2, m1, m2))
+y_cas_small = odeint(deriv_cas, y0_small, t, args=(l1, l2, m1, m2))
 
 check_energy_conservation(y, y0)
 check_energy_conservation(y_cas, y0)
