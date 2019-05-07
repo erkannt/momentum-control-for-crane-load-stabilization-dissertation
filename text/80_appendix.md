@@ -138,10 +138,6 @@ Note that this assumes that the rotational inertia `I2` is provided relative to 
 
 ![Comparison of 2D and 3D model (projected angles) of double pendulum with small planar exitation. Note the stark decrease in difference and lack of dampening when compared with the spherical coordinate model.](figures/2d-3d-comparison-small-exitation.svg){ #fig:2d-3d-comparison-small-exitation }
 
-![Large exitation of double pendulum modelled with equations of motion derived using projected angles. From left to right: front, side and top view. Note how the path begins to differ strongly when compared to the simulation using the 2D model. This is a prime example of how minor changes can cause large differences in chaotic systems like a double pendulum.](figures/double_pendulum_3d_large_exitation.gif){ #fig:3d-projected-large-exitation }
-
-![Large out of plane exitation of double pendulum modelled with equations of motion derived using projected angles. From left to right: front, side and top view. Note how the small inaccuracies cause motion outside of the original plane of exitation. These deviations quickly become chaotic for larger exitations.](figures/double_pendulum_3d_Large_Exitation-diagonal.gif){ #fig:3d-projected-large-exitation-diagonal }
-
 ## 3D Distributed Mass Pendulum{ #sec:distributed-mass-eom }
 
 !include code/double-pendulum-3d-distmass-lagrangian.py

@@ -3,24 +3,32 @@
 
 ## Pendulum Simulation
 
-### 2D Pendulum
+### 2d Model
 
 We've already seen some of the interaction that occurs with a double pendulum in @Sec:2dpendulum, with the lower pendulum causing higher frequency oscillations to be overlaid.
-Now let us look at how the parameters of the system affect its behavior.
+In @Fig:distmass-impact-animation and @Fig:distmass-impact-plot we can see how the rotational inertia of the lower mass changes the interaction of the two part of the pendulum.
 
-\missingfigure{Comparison of double pendulum with different rotational inertias.}
+![Difference between an double pendulum with two point masses and one where the lower mass is modeled as a distributed mass.](./figures/impact-of-rotational-inertia.gif){ #fig:distmass-impact-animation }
 
-\missingfigure{Comparison of different pendulum lengths.}
+![Angles and angular velocity comparison of point mass and distributed mass pendulum.](./figures/dp-2d-distmass-inertias.svg){ #fig:distmass-impact-plot }
 
-\missingfigure{Double pendulums using the selected crane parameters and those of our prototype}
+### 3d Model
 
-### 3D Pendulum
+Now lets look at some simulations of our 3d pendulum.
+Just to validate the model let us create some 2d excitations.
+In @fig:3d-projected-large-exitation we see that the motion remains in the plane of excitation as we would expect.
+Note that the movement is not identical to that of the 2d model, due to the fact that minuscule numerical errors lead to noticeable changes in a chaotic system such as a double pendulum (see discussion in appendix @sec:2d-pointmass-eom).
+This is also most likely the reason that once we rotate the plane of excitation (@Fig:3d-projected-large-exitation-diagonal) the motion breaks out of the plane at some point.
 
-\missingfigure{2d excitation of 3d pendulum}
+![Large exitation of double pendulum modelled with equations of motion derived using projected angles. From left to right: front, side and top view. Note how the path begins to differ strongly when compared to the simulation using the 2D model. This is a prime example of how minor changes can cause large differences in chaotic systems like a double pendulum.](figures/double_pendulum_3d_large_exitation.gif){ #fig:3d-projected-large-exitation }
 
-\missingfigure{2d excitation with rotating mass}
+![Large out of plane exitation of double pendulum modelled with equations of motion derived using projected angles. From left to right: front, side and top view. Note how the small inaccuracies cause motion outside of the original plane of exitation. These deviations quickly become chaotic for larger exitations.](figures/double_pendulum_3d_Large_Exitation-diagonal.gif){ #fig:3d-projected-large-exitation-diagonal }
 
-- gyroscopic reaction causes rotation as we have no friction
+As we move to the 3d model with distributed mass another effect occurs.
+In @Fig:distmass-sim-gh the pendulum was given a 2d excitation but also the mass was given an angular velocity around the axis of suspension.
+The break from the 2d plane occurs immediately, which is most likely due to the impact of gyroscopic reaction due to the pendulum motion and the inertia around the axis of suspension.
+
+![Simulation of a distributed mass hanging from a point mass. Initial excitation lies in a plane, but the mass is also given an angular velocity. Note how the pendulum breaks out the of the plane. Most likely due to gyroscopic effects.](./figures/distmass-sim-gh.gif){ #fig:distmass-sim-gh }
 
 ### Dampening Controller
 

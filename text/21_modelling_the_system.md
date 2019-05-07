@@ -316,11 +316,11 @@ KE_\omega = & ^1/_2 \cdot \omega_3 \cdot I_{m2} \cdot \omega_3 \\
 
 The equations of motion can then once again be obtained from our computer algebra system.
 These can be used for the numerical simulation.
-Since the 3D plotting of Matplotlib is slightly limited I switched to Rhino/Grasshopper for visualization (@Fig:distmass-sim-gh).
+Since the 3D plotting of Matplotlib is slightly limited I switched to Rhino/Grasshopper for visualization (@Fig:sim-gh).
 For this the state-vectors of the simulation are transformed to cartesian points for the masses as well as an X- and Y-vector for the reference frame of our mass.
 See the appendix (@Sec:distributed-mass-eom) for equations of motion and all code.
 
-![Visualization of simulated 3D double pendulum with the lower mass as a distributed mass. The lower mass begins with a small angular velocity around the link axis. Visualized using Rhino/Grasshopper.](./figures/gh-screenrecording.gif){ #fig:distmass-sim-gh }
+![Visualization of simulated 3D double pendulum with the lower mass as a distributed mass. The lower mass begins with a small angular velocity around the link axis. Visualized using Rhino/Grasshopper.](./figures/gh-screenrecording.gif){ #fig:sim-gh }
 
 This process can be continued to add further aspects like wind or a movable point of suspension.
 In the following section we will see that certain aspects can be added relatively easy by modifying the state of the the system.
