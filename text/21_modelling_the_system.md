@@ -63,7 +63,7 @@ h_{\text{max}} =& \frac{mv^2}{2mg} \\
 
 With $v$ being the translational speed of the hook, $N_T$ the trolley speed in m/min, $N_R$ the jib's rotational speed in rpm, $r$ the reach of the jib, $\omega=\dot\theta$ the angular velocity of the pendulum i.e. base rate of the hook, $l$ the length of the pendulum, $h$ the elevation of the hook relative to its lowest position and $\theta$ the angle of the pendulum.
 
-\missingfigure{Plot or table of the base rates resulting from the example cranes parameters}
+![Base rates and maximum excitation of the selected example cranes L1-24, 71 EC-B, 380 EC-B, 1000 EC-B from the above derivations.](./figures/crane-base-rates.png){ #fig:crane-base-rates }
 
 Note that all of the above assumes a regular pendulum.
 As we will see in the following section it might be necessary to model the crane as a double pendulum.
