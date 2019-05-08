@@ -1,38 +1,42 @@
-"""Distributed Mass Double-Pendulum at different Inertias
+"""Distributed Mass Double-Pendulum with PDalpha Controller
 """
+import os, sys
+from math import pi, sin, cos
 import numpy as np
-from math import isclose, sin, cos
 from scipy.integrate import solve_ivp
 import matplotlib.pyplot as plt
-from matplotlib import rcParams
-import matplotlib.animation as animation
-from matplotlib.patches import Circle
 import seaborn as sns
-from math import pi
-import os, sys
+from matplotlib import rcParams
 
 """ Simulation Setup """
-# Pendulum rod lengths (m), bob masses (kg).
-l1, l2 = 1, 1
-m1 = 1
-m2 = [1, 10, 100]
-r2 = 0.3 * l2
+lab_setup = [5, 1,  # l1, l2
+             1, 10,  # m1, m2
+             1/2 * 10 * 0.3**2 + 10 * 1**2,  # I2
+             ]
+l1_24 = [19, 2,  # l1, l2
+             50, 2500,  # m1, m2
+             16484,  # I2
+             ]
+ecb380 = [83, 3.7,  # l1, l2
+             300, 15660,  # m1, m2
+             350877,  # I2
+             ]
+# PDalpha Controller Values
+kp, kd, kalpha = 1.0, 4.0, 0.5
 # The gravitational acceleration (m.s-2).
-g = 9.81
+GRAVITY = 9.81
 # Maximum time, time point spacings and the time grid (all in s).
-tmax, dt = 30, 0.01
-t = np.arange(0, tmax + dt, dt)
+TMAX, DT = 40, 0.01
+TIMESTEPS = np.arange(0, TMAX + DT, DT)
 # Initial conditions: theta1, dtheta1/dt, theta2, dtheta2/dt.
-y0_small = np.array(
-    [np.pi / 8, 0, np.pi / 8, 0]  #  theta1  # dtheta1  #  theta2  # dtheta2
-)
+y0_small = np.array([np.pi / 18,  # theta1
+                      0,  # dtheta1
+                      np.pi / 18,  # theta2
+                      0,  # dtheta2
+                      0]  # tau
+                   )
 
-""" Plot Stuff """
-# Plot settings
-r = 0.1  # bob circle radius
-fps = 25
-di = int(1 / fps / dt)
-
+""" Use passed args as savepath, otherwise only show plots """
 workdir, _ = os.path.split(os.path.abspath(__file__))
 if len(sys.argv) == 1:
     output = False
@@ -40,22 +44,16 @@ else:
     output = os.path.abspath(sys.argv[1])
 os.chdir(workdir)
 
-colors = ["C0", "C1", "C2", "C3"]
-linetypes = ["-", "--", "-.", ":"]
 
-labels2d = [
-    r"$\theta_{1} [^\circ]$",
-    r"$\dot{\theta}_{1} [\frac{rad}{s}]$",
-    r"$\theta_{2} [^\circ]$",
-    r"$\dot{\theta}_{2} [\frac{rad}{s}]$",
-]
-
-
-def deriv(t, y, l1, l2, m1, m2, I2):
+def deriv(t, y, l1, l2, m1, m2, I2, kp, kd, kalpha):
     """Return the first derivatives of y = theta1, z1, theta2, z2."""
-    theta1, z1, theta2, z2 = y
-
-    c, s = cos(theta1 - theta2), sin(theta1 - theta2)
+    kp *= I2
+    kd *= I2
+    theta1, z1, theta2, z2, tauprev = y
+    error = (0 - theta2) + (0 - theta1) * kalpha
+    errordot = (0 - z2) + (0 - z1) * kalpha
+    tau = kp * error + kd * errordot
+    taudot = (tau - tauprev) / DT
 
     theta1dot = z1
     theta2dot = z2
@@ -64,12 +62,12 @@ def deriv(t, y, l1, l2, m1, m2, I2):
         * (
             -l2 ** 2
             * m2 ** 2
-            * (g * sin(theta2) - l1 * z1 ** 2 * sin(theta1 - theta2))
+            * (GRAVITY * sin(theta2) - l1 * z1 ** 2 * sin(theta1 - theta2))
             * cos(theta1 - theta2)
             + (I2 + l2 ** 2 * m2)
             * (
-                g * m1 * sin(theta1)
-                + g * m2 * sin(theta1)
+                GRAVITY * m1 * sin(theta1)
+                + GRAVITY * m2 * sin(theta1)
                 + l2 * m2 * z2 ** 2 * sin(theta1 - theta2)
             )
         )
@@ -86,10 +84,10 @@ def deriv(t, y, l1, l2, m1, m2, I2):
         * l2
         * m2
         * (
-            (m1 + m2) * (g * sin(theta2) - l1 * z1 ** 2 * sin(theta1 - theta2))
+            (m1 + m2) * (GRAVITY * sin(theta2) - l1 * z1 ** 2 * sin(theta1 - theta2))
             - (
-                g * m1 * sin(theta1)
-                + g * m2 * sin(theta1)
+                GRAVITY * m1 * sin(theta1)
+                + GRAVITY * m2 * sin(theta1)
                 + l2 * m2 * z2 ** 2 * sin(theta1 - theta2)
             )
             * cos(theta1 - theta2)
@@ -99,7 +97,8 @@ def deriv(t, y, l1, l2, m1, m2, I2):
             - (I2 + l2 ** 2 * m2) * (m1 + m2)
         )
     )
-    return theta1dot, z1dot, theta2dot, z2dot
+    z2dot += tau / I2
+    return theta1dot, z1dot, theta2dot, z2dot, taudot
 
 
 def slugify(value):
@@ -110,9 +109,21 @@ def slugify(value):
     return value
 
 
-def plot_motion(t, y, title="", save=False):
-    # Unpack z and theta as a function of time
-    theta1, theta2 = y[0, :], y[2, :]
+def animated_pendulum(data, params, title="", save=False, show=True):
+    import matplotlib.pyplot as plt
+    import matplotlib.animation as animation
+    from matplotlib.patches import Circle
+
+    # Unpack data and params
+    t = data["t"]
+    theta1 = data["theta1"]
+    theta2 = data["theta2"]
+    l1, l2 = params[0:2]
+
+    # Plot settings
+    r = 0.1 * l2  # bob circle radius
+    fps = 25
+    di = int(1 / fps / DT)
 
     # Convert to Cartesian coordinates of the two bob positions.
     x1 = l1 * np.sin(theta1)
@@ -162,7 +173,7 @@ def plot_motion(t, y, title="", save=False):
         c1.center = (thisx[1], thisy[1])
         c2.center = (thisx[2], thisy[2])
         trail.set_data(x2[1:i], y2[1:i])
-        time_text.set_text(time_template % (i * dt))
+        time_text.set_text(time_template % (i * DT))
         return line, time_text, c1, c2, trail
 
     ani = animation.FuncAnimation(
@@ -180,28 +191,58 @@ def plot_motion(t, y, title="", save=False):
         ani.save(
             "%s.mp4" % slugify(title), animation.writers["ffmpeg"](fps=fps), dpi=300
         )
-    plt.show()
+    if show:
+        plt.show()
 
 
-def plot_comp(data, time, titles, suptitle):
-    fig, axs = plt.subplots(len(data), 1, sharex=True)
-    fig.suptitle(suptitle)
+def solve(init_cond, params):
+    sol = solve_ivp(
+        lambda t, y: deriv(t, y, *params), (0, TMAX), init_cond, t_eval=TIMESTEPS
+    )
+    data = {
+        "t": sol.t,
+        "theta1": sol.y[0, :],
+        "theta2": sol.y[2, :],
+        "dtheta1": sol.y[1, :],
+        "dtheta2": sol.y[3, :],
+        "tau": sol.y[4, :],
+    }
+    return data
 
-    for ax, y, title in zip(axs, data, titles):
-        for i in range(4):
-            ax.plot(
-                time,
-                y[i, :] * 180 / pi,
-                linetypes[i],
-                color=colors[i],
-                label=labels2d[i],
-                linewidth="0.85",
-            )
+
+def plot_pos_vel(data, ax, title=""):
+    colors = ["C0", "C1", "C2", "C3"]
+    linetypes = ["-", "--", "-.", ":"]
+    labels2d = [
+        r"$\theta_{1} [^\circ]$",
+        r"$\dot{\theta}_{1} [\frac{rad}{s}]$",
+        r"$\theta_{2} [^\circ]$",
+        r"$\dot{\theta}_{2} [\frac{rad}{s}]$",
+    ]
+    varnames = ["theta1", "dtheta1", "theta2", "dtheta2"]
+    for i, vn in enumerate(varnames):
+        ax.plot(
+            data["t"],
+            data[vn] * 180 / pi,
+            linetypes[i],
+            color=colors[i],
+            label=labels2d[i],
+            linewidth="0.85",
+        )
+    if title:
         ax.set_title(title, loc="left")
 
+
+def plot_torque(data, ax, title=""):
+    ax.plot(data["t"], data["tau"], label=r"$\tau [Nm]$", linewidth="1.0")
+    if title:
+        ax.set_title(title, loc="left")
+
+
+def output_figure(fig, axs, output):
     for ax in axs:
-        ax.legend(loc=1, framealpha=1)
         ax.grid(axis="y")
+    axs[0].legend(loc=1, framealpha=1)
     sns.despine(trim=True, offset=2)
     for ax in axs[0:-1]:
         ax.get_xaxis().set_visible(False)
@@ -216,33 +257,16 @@ def plot_comp(data, time, titles, suptitle):
         plt.show()
 
 
-zero_inertia = solve_ivp(
-    lambda t, y: deriv(t, y, l1, l2, m1, m2[0], 0), (0, tmax), y0_small, t_eval=t
-)
-solutions = [zero_inertia]
+""" Run Simulations """
+cranes = [lab_setup, l1_24, ecb380]
+crane_names = ['Lab Setup (5m, 10kg)', 'L1-24 (19m, 2400kg)', '380EC-B16 (83m, 15660kg)']
+crane_sol = []
+for c, name in zip(cranes, crane_names):
+    params = (*c, kp, kd, kalpha)
+    sol = solve(y0_small, params)
+    crane_sol.append(sol)
 
-for m2i in m2:
-    I2 = 1 / 2 * m2i * r2 ** 2 + m2i * l2 ** 2
-    sol = solve_ivp(
-        lambda t, y: deriv(t, y, l1, l2, m1, m2i, I2), (0, tmax), y0_small, t_eval=t
-    )
-    solutions.append(sol)
-data = [sol.y for sol in solutions]
-
-if not output:
-    save_animations = False
-    plot_motion(
-        t, data[0], title="Point Mass (no rotational inertia)", save=save_animations
-    )
-    plot_motion(
-        t,
-        data[1],
-        title="Point Mass (upper), Distributed Mass (lower)",
-        save=save_animations,
-    )
-    # plot_motion(t, data[2], title="inertia-10", save=save_animations)
-    # plot_motion(t, data[3], title="inertia-100", save=save_animations)
-
+""" Set up Seaborn Plots """
 plt.rc("text", usetex=True)
 rcParams["text.latex.preamble"] = [
     r"\usepackage{tgheros}",  # helvetica font
@@ -256,9 +280,9 @@ sns.set()
 sns.set_style("ticks")
 sns.set_context("paper")
 
-plot_comp(
-    data[0:2],
-    t,
-    ["Mass = 1, Inertia = 0", "Mass = 1", "Mass = 10", "Mass=100"][0:2],
-    "Double Pendulum with different Inertias",
-)
+""" Make Plots """
+fig, axs = plt.subplots(3, 1, sharex=True)
+fig.suptitle("Torque Used for Dampening of Selected Cranes")
+for sol, name, ax in zip(crane_sol, crane_names, axs):
+    plot_torque(sol, ax, title=name)
+output_figure(fig, axs, output)

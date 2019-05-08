@@ -32,9 +32,14 @@ The break from the 2d plane occurs immediately, which is most likely due to the 
 
 ### Dampening Controller
 
-\missingfigure{Dampening of different inertias, PD values}
+In @Sec:dampening-controller we saw that a rudimentary PD$\alpha$ controller was able to dampen our double pendulum.
+In 
 
-\missingfigure{Different lengths with same PD values}
+![Dampening of three different model cranes using the same PD$\alpha$ controller. From left to right: approximate dimensions of our lab setup, a small fast deployment crane and a fairly large tower crane. The parameters are taken from @Fig:crane-data and @Fig:inertia-data. Controller setting: $k_P=1.0 \cdot I_2, k_D=4.0 \cdot I_2, \alpha=0.5$. Initial excitation is 10°, approximating the determined base rates (see @Fig:crane-base-rates)](./figures/crane-dampening-comparison.gif){ #fig:crane-dampening-comparison-animation }
+
+![Angles and velocities of the cranes of the dampening comparison.](./figures/dp-2d-distmass-controller.svg){ #fig:crane-dampening-comparison-plot }
+
+![Torque used in dampening of the above cranes.](./figures/dp-2d-distmass-controller-torques.svg){ #fig:crane-dampening-comparison-torques }
 
 ### Pendulum-CMG Interaction
 
