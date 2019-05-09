@@ -1,6 +1,7 @@
 """Distributed Mass Double-Pendulum with PDalpha Controller
 """
-import os, sys
+import os
+import sys
 from math import pi, sin, cos
 import numpy as np
 from scipy.integrate import solve_ivp
@@ -10,23 +11,24 @@ from matplotlib import rcParams
 
 """ Simulation Setup """
 lab_setup = [5, 1,  # l1, l2
-             1, 10,  # m1, m2
-             1/2 * 10 * 0.3**2 + 10 * 1**2,  # I2
-             ]
-l1_24 = [19, 2,  # l1, l2
+            1, 10,  # m1, m2
+            1/2 * 10 * 0.4**2 + 10 * 1**2,  # I2
+            ]
+l1_24 = [19, 2*2,  # l1, l2
              50, 2500,  # m1, m2
              16484,  # I2
              ]
-ecb380 = [83, 3.7,  # l1, l2
+ecb380 = [83, 3.7*2,  # l1, l2
              300, 15660,  # m1, m2
              350877,  # I2
              ]
+load_dims = [(0.4, 0.4), (5.1, 2.0), (9.3, 3.7)]
 # PDalpha Controller Values
 kp, kd, kalpha = 1.0, 4.0, 0.5
 # The gravitational acceleration (m.s-2).
 GRAVITY = 9.81
 # Maximum time, time point spacings and the time grid (all in s).
-TMAX, DT = 40, 0.01
+TMAX, DT = 25, 0.01
 TIMESTEPS = np.arange(0, TMAX + DT, DT)
 # Initial conditions: theta1, dtheta1/dt, theta2, dtheta2/dt.
 y0_small = np.array([np.pi / 18,  # theta1
@@ -109,7 +111,7 @@ def slugify(value):
     return value
 
 
-def animated_pendulum(data, params, title="", save=False, show=True):
+def animated_pendulum(data, params, dims, title="", save=False, show=True):
     import matplotlib.pyplot as plt
     import matplotlib.animation as animation
     from matplotlib.patches import Circle
@@ -119,6 +121,7 @@ def animated_pendulum(data, params, title="", save=False, show=True):
     theta1 = data["theta1"]
     theta2 = data["theta2"]
     l1, l2 = params[0:2]
+    w, h = dims
 
     # Plot settings
     r = 0.1 * l2  # bob circle radius
@@ -142,16 +145,28 @@ def animated_pendulum(data, params, title="", save=False, show=True):
         xlim=(-pltsize * 0.5, pltsize * 0.5),
     )
 
+    def load_vertices(x, y, theta):
+        vx0 = np.array([-w, +w, +w, -w, -w])
+        vy0 = np.array([-h, -h, +h, +h, -h])
+        vx = vx0 * cos(theta) - vy0 * sin(theta)
+        vy = vx0 * sin(theta) + vy0 * cos(theta)
+        return vx + x, vy + y
+
     # Trail
     trail, = ax.plot(
         [], [], c="r", solid_capstyle="butt", lw=2, alpha=0.4, linestyle=":"
     )
     # The pendulum rods.
-    line, = ax.plot([], [], c="k", lw=2)
+    line, = ax.plot([], [], c="k", lw=1.5)
     # Circles representing the anchor point of rod 1, and bobs 1 and 2.
     c0 = Circle((0, 0), r / 2, fc="k", zorder=10)
     c1 = Circle((0, 0), r, fc="b", ec="b", zorder=10)
     c2 = Circle((0, 0), r, fc="r", ec="r", zorder=10)
+    # Box representing the load
+    load, = ax.plot([], [], c='r', lw=2)
+    # Scale Bar
+    ax.plot([-pltsize*0.2, -pltsize*0.2], [0, -5], c='gray', lw=5)
+    ax.text(-pltsize*0.2+pltsize*0.01, -5, "3m")
     # Time label
     time_template = "time = %.1fs"
     time_text = ax.text(0.05, 0.9, "", transform=ax.transAxes)
@@ -162,19 +177,23 @@ def animated_pendulum(data, params, title="", save=False, show=True):
         ax.add_patch(c1)
         ax.add_patch(c2)
         trail.set_data([], [])
+        load.set_data([], [])
         time_text.set_text("")
-        return line, time_text, c0, c1, c2
+        return line, time_text, c0, c1, c2, load
 
     def animation_func(i):
         thisx = [0, x1[i], x2[i]]
         thisy = [0, y1[i], y2[i]]
+        thistheta = theta2[i]
+        vx, vy = load_vertices(x2[i], y2[i], thistheta)
 
         line.set_data(thisx, thisy)
         c1.center = (thisx[1], thisy[1])
         c2.center = (thisx[2], thisy[2])
+        load.set_data(vx, vy)
         trail.set_data(x2[1:i], y2[1:i])
         time_text.set_text(time_template % (i * DT))
-        return line, time_text, c1, c2, trail
+        return line, time_text, c1, c2, trail, load
 
     ani = animation.FuncAnimation(
         fig,
@@ -233,23 +252,31 @@ def plot_pos_vel(data, ax, title=""):
         ax.set_title(title, loc="left")
 
 
-def plot_torque(data, ax, title=""):
-    ax.plot(data["t"], data["tau"], label=r"$\tau [Nm]$", linewidth="1.0")
-    if title:
-        ax.set_title(title, loc="left")
+def plot_torque(data, axs, cid, title=""):
+    colors = ["C0", "C1", "C2", "C3"]
+    trim_data = 5
+    t = data["t"][trim_data:]
+    tau = data["tau"][trim_data:]
+    dyn = np.gradient(tau)
+    workspace = np.cumsum(tau) * DT
+    for ax, y in zip(axs, [tau, dyn, workspace]):
+        ax.plot(t, y, label=title,
+                color=colors[cid], linewidth="0.85")
 
 
-def output_figure(fig, axs, output):
+def fmt_axcol(axs):
     for ax in axs:
         ax.grid(axis="y")
-    axs[0].legend(loc=1, framealpha=1)
-    sns.despine(trim=True, offset=2)
     for ax in axs[0:-1]:
         ax.get_xaxis().set_visible(False)
         ax.spines["bottom"].set_visible(False)
-        plt.xlabel("Time [s]")
-        plt.tight_layout()
+    axs[-1].set_xlabel("Time [s]")
+    axs[0].legend(loc=1, framealpha=1)
     # fig.subplots_adjust(hspace=0.6)
+
+
+def output_figure(output):
+    sns.despine(trim=True, offset=2)
     plt.tight_layout()
     if output:
         plt.savefig(output)
@@ -258,13 +285,21 @@ def output_figure(fig, axs, output):
 
 
 """ Run Simulations """
+saveanim = False
+showanim = not saveanim
 cranes = [lab_setup, l1_24, ecb380]
 crane_names = ['Lab Setup (5m, 10kg)', 'L1-24 (19m, 2400kg)', '380EC-B16 (83m, 15660kg)']
 crane_sol = []
-for c, name in zip(cranes, crane_names):
+for c, name, dims in zip(cranes, crane_names, load_dims):
     params = (*c, kp, kd, kalpha)
     sol = solve(y0_small, params)
     crane_sol.append(sol)
+
+    # Create animation when run without args
+    # Run before switching on seaborn to avoid slow animation
+    if not output:
+        animated_pendulum(sol, params, dims, title=name,
+                          save=saveanim, show=showanim)
 
 """ Set up Seaborn Plots """
 plt.rc("text", usetex=True)
@@ -280,9 +315,14 @@ sns.set()
 sns.set_style("ticks")
 sns.set_context("paper")
 
-""" Make Plots """
-fig, axs = plt.subplots(3, 1, sharex=True)
-fig.suptitle("Torque Used for Dampening of Selected Cranes")
-for sol, name, ax in zip(crane_sol, crane_names, axs):
-    plot_torque(sol, ax, title=name)
-output_figure(fig, axs, output)
+""" Make Torque Plots """
+fig, axs = plt.subplots(3, 3, sharex=True)
+crane_names = ['Lab Setup', 'L1-24', '380EC-B16']
+for sol, name, axcol, cid in zip(crane_sol, crane_names, axs.T, range(3)):
+    plot_torque(sol, axcol, cid, title=name)
+    fmt_axcol(axcol)
+labels = ["[Nm]", "[Nm/s]", "[Nms]"]
+for ax, lbl in zip(axs.T[0], labels):
+    ax.set_ylabel(lbl, rotation='horizontal')
+    ax.yaxis.set_label_coords(-0.1,1.02)
+output_figure(output)

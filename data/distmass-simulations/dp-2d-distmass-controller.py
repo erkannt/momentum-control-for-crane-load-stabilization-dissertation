@@ -252,23 +252,31 @@ def plot_pos_vel(data, ax, title=""):
         ax.set_title(title, loc="left")
 
 
-def plot_torque(data, ax, title=""):
-    ax.plot(data["t"], data["tau"], label=r"$\tau [Nm]$", linewidth="1.0")
-    if title:
-        ax.set_title(title, loc="left")
+def plot_torque(data, axs, cid, title=""):
+    colors = ["C0", "C1", "C2", "C3"]
+    trim_data = 5
+    t = data["t"][trim_data:]
+    tau = data["tau"][trim_data:]
+    dyn = np.gradient(tau)
+    workspace = np.cumsum(tau) * DT
+    for ax, y in zip(axs, [tau, dyn, workspace]):
+        ax.plot(t, y, label=title,
+                color=colors[cid], linewidth="0.85")
 
 
-def output_figure(fig, axs, output):
+def fmt_axcol(axs):
     for ax in axs:
         ax.grid(axis="y")
-    axs[0].legend(loc=1, framealpha=1)
-    sns.despine(trim=True, offset=2)
     for ax in axs[0:-1]:
         ax.get_xaxis().set_visible(False)
         ax.spines["bottom"].set_visible(False)
-        plt.xlabel("Time [s]")
-        plt.tight_layout()
+    axs[-1].set_xlabel("Time [s]")
+    axs[0].legend(loc=1, framealpha=1)
     # fig.subplots_adjust(hspace=0.6)
+
+
+def output_figure(output):
+    sns.despine(trim=True, offset=2)
     plt.tight_layout()
     if output:
         plt.savefig(output)
@@ -277,7 +285,7 @@ def output_figure(fig, axs, output):
 
 
 """ Run Simulations """
-saveanim = True
+saveanim = False
 showanim = not saveanim
 cranes = [lab_setup, l1_24, ecb380]
 crane_names = ['Lab Setup (5m, 10kg)', 'L1-24 (19m, 2400kg)', '380EC-B16 (83m, 15660kg)']
@@ -307,9 +315,10 @@ sns.set()
 sns.set_style("ticks")
 sns.set_context("paper")
 
-""" Make Plots """
+""" Make Angle and Velocity Plots """
 fig, axs = plt.subplots(3, 1, sharex=True)
 fig.suptitle("Dampening of Selected Cranes")
 for sol, name, ax in zip(crane_sol, crane_names, axs):
     plot_pos_vel(sol, ax, title=name)
-output_figure(fig, axs, output)
+fmt_axcol(axs)
+output_figure(output)
