@@ -25,6 +25,7 @@ pandoc-html-flags = --verbose \
 	-F pandoc-include \
 	--bibliography="$(bibfile)" \
 	--include-in-header="$(stylefolder)/style.css" \
+	--include-after-body=$(stylefolder)/anchors.js \
 	--template="$(stylefolder)/template.html" \
 	--mathml \
 	--standalone \
@@ -51,7 +52,7 @@ plots_py := $(wildcard data/*/*.py)
 sketches := $(wildcard figures/*.sk)
 tikz := $(wildcard figures/*.tex)
 
-html-style := $(wildcard $(stylefolder)/*.html) $(wildcard $(stylefolder)/*.css)
+html-style := $(wildcard $(stylefolder)/*.html) $(wildcard $(stylefolder)/*.js) $(wildcard $(stylefolder)/*.css)
 tex-style := $(wildcard $(stylefolder)/*.tex)
 ref-style = $(stylefolder)/ref_format.csl
 
