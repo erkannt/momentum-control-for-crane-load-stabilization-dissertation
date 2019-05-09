@@ -86,6 +86,8 @@ Some useful conversions to SI-Units:
 ## Equations of Motion and Simulation using Python
 
 \todo{improve docstrings in python code}
+\todo{move to better code include pandoc filter}
+\todo{fit 70chars onto A4 page (reduce fixed font size)}
 
 ### 2D Pointmass Double Pendulum { #sec:2d-pointmass-eom}
 
@@ -111,6 +113,14 @@ Note that this assumes that the rotational inertia `I2` is provided relative to 
 !include code/double-pendulum-2d-distmass-lagrangian.py
 
 !include code/double_pendulum-2d-distmass-eom.txt
+
+### 2d Double Pendulum with Controller { #sec:2d-dp-wcontroller }
+
+The following code extends the python simulation to include the PD$\alpha$ controller by including it in the equations of motion.
+It also allows for the visualization of the load as a moving and rotating box.
+The code was also cleaned up in comparison to the other simulation code.
+
+!include code/dp-2d-distmass-controller.py
 
 ## 3D Pointmass Double Pendulum { #sec:3d-pointmass-eom}
 
