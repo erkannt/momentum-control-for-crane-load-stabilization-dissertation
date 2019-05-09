@@ -117,17 +117,19 @@ The subsequent section covers the few terrestrial fields of application and serv
   - ship stabilisation: @LeveSpacecraftMomentumControl2015, CitationNeeded
     - actually sailed
     - biggest CMGs ever built
-    - working principle???
-    - why not more common???
+    - precession vs. driven stabilisation
 - current commercial applications:
-  - sea keeper for yacht stabilisation @AdamsGyroscopicRollStabilizer2005
+  - sea keeper, gyromarine and veem for yacht stabilisation @AdamsGyroscopicRollStabilizer2005
     - approx. torque??? price???
     - patents of bearing cooling point towards engineering challenges @AdamsCoolingBearingsMotors2009
-  - LitMotors @KimElectronicControlSystem2013
-    - vaporware startup with two wheeled car
-    - vibration and noise show up as issue
-    - supposedly SPCMG but does look like that in videos of prototype
-    - points towards issues regarding viability of high speed stabilisation
+    - utilize rotor as energybuffer
+  - vehicle stabilisation, see @SpryGyroscopicStabilisationUnstable2008 for review
+    - authors also extend to two gyros
+    - LitMotors @KimElectronicControlSystem2013
+      - vaporware startup with two wheeled car
+      - vibration and noise show up as issue
+      - looks like passive to gyro system?
+      - points towards issues regarding viability of high speed stabilisation
 - research applications
   - heart stabilisation @GagneGyroLockStabilizingHeart2012, @GagneCardiacMotionCompensation2009
     - why did they use CMG???
@@ -172,6 +174,13 @@ Given that there have been significant efforts to automate construction in Japan
   - run into singularity of CMG
   - while yaw is controlled this would also occur simply due to passive stabilisation
 - beam with propellors??? seen in Bock slides, haven't been able to find reference
+
+- issue between CMGs and passive Gyros
+  - motors try to block precession
+  - see use of clutch in CitationNeeded
+- mixture most likely possible with good gimbal controllers
+- unlike roll stabilisation we have 3dof to take into account and therefore more complex singularity avoidance necessitating driven CMG
+
 
 ## Dynamics of CMGs {#sec:cmg-dynamics}
 

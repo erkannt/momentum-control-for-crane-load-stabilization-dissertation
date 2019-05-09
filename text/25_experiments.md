@@ -165,11 +165,9 @@ The torque required to overcome the gimbal assemblies inertia might be on the lo
 For one we are not taking bearing and gearing friction into account, but more importantly the dampening control doesn't require highly dynamic gimbal motions.
 As previously noted the reaction torque due to gimbal rotation in negligible, so we will not include it in our sizing considerations.
 
-
 ## Robot Tasks
 
 \missingfigure{selected robot task}
-
 
 ![Comparison of the base torques for the same path performed and two different speeds. At low speeds the longer time spent out of balance require a larger momentum envelope while higher robot speeds require greater gimbal agility to achieve the momentum dynamics.](./figures/robot-load-speedcomparison-plot.jpg){#fig:robot-load-speedcomparison-plot}
 
