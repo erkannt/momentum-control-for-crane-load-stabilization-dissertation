@@ -48,9 +48,11 @@ The load capacity at the tip is significantly lower than the maximum load (see @
 
 These models are then each excited by 10°, which is an approximation of the various base-rate estimates (see @Fig:crane-base-rates).
 In @Fig:crane-dampening-comparison-animation and @Fig:crane-dampening-comparison-plot we can see how the controller proves effective for each crane, dampening the motion in the course of a few oscillations.
-This is predominantly due to the fact that we are scaling the control gains with the inertia of the lower link.
+This is predominantly due to the fact that we are scaling the control gains with the inertia of the lower link (see @Fig:crane-dampening-comparison-torques).
+
 This results in up to 50.000 Nm of torque being applied to dampen the largest crane.
 While probably possible, it is questionable whether this is economically sensible.
+We can also see that the requirements with regard to torque dynamics and workspace scale with the torque requirements.
 
 ![Dampening of three different model cranes using the same PD$\alpha$ controller. From left to right: approximate dimensions of our lab setup, a small fast deployment crane and a fairly large tower crane. The parameters are taken from @Fig:crane-data and @Fig:inertia-data. Controller setting: $k_P=1.0 \cdot I_2, k_D=4.0 \cdot I_2, \alpha=0.5$. Initial excitation is 10°, approximating the determined base rates (see @Fig:crane-base-rates)](./figures/crane-dampening-comparison.gif){ #fig:crane-dampening-comparison-animation }
 
@@ -65,9 +67,6 @@ As the crane oscillates back and forth the torque required to dampen it changes 
 So recalling the nature of the torque work space of a CMG array we can see that the CMGs will try to provide the desired torque until they reach the edge of the workspace i.e. saturate.
 As the pendulum begins to swing back the direction of the target torque reverses and the CMG array has its entire workspace in front of itself and can provide torque again.
 This is part of the behavior that we will look into in the following section.
-
-\todo{update torque plot to include sum and gradient}
-\todo{discuss Nms and Nm/s in context of dampening}
 
 The code used for the above simulations can be found in the appendix in @Sec:2d-dp-wcontroller.
 
