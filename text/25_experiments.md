@@ -117,7 +117,7 @@ The conditional tests for two factors:
 
 The latter condition is important, since we might have a case where the gimbal speed set by the steering law moves us away from the singularity and it wouldn't make sense to override this speed with zero.
 
-### SPCMGs Steering Dampening
+### SPCMGs Steering during Dampening
 
 First let us validate the steering law and singularity avoidance.
 In @Fig:spcmg-avoidance-animation we see a double pendulum approximating our lab setup.
@@ -136,13 +136,35 @@ This points to some interesting questions regarding control optimized to positio
 
 ![Behavior of the singularity avoidance mechanism for the scissored pair configuration. Note that the speed of the gyroscopes and the maximum acceleration of the gimbals have been set to extremely low values to better illustrate the singularity avoidance.](./figures/spcmg-avoidance-1000rpm-plot.svg){ #fig:spcmg-avoidance-1000rpm-plot }
 
-![Singularity avoidance mechanism for the scissored pair configuration at higher gyroscope speed. Note that the maximum acceleration of the gimbals lower than the maximum attainable with our prototype. This not only helps illustrate the singularity avoidance mechanism but also reduces the out of axis torque introduced by the gimbaling motion (see discussion in @Sec:cmg-dynamics)](figures/spcmg-avoidance-5000rpm-plot.svg){ #fig:spcmg-avoidance-5000rpm-plot }
+![Singularity avoidance mechanism for the scissored pair configuration at higher gyroscope speed. Note that the maximum acceleration of the gimbals lower than the maximum attainable with our prototype. This not only helps illustrate the singularity avoidance mechanism but also reduces the out of axis torque introduced by the gimbaling motion (see discussion in following section)](figures/spcmg-avoidance-5000rpm-plot.svg){ #fig:spcmg-avoidance-5000rpm-plot }
 
 ### Dynamics of CMG attached to Pendulum
 
-- base rates vs. pendulum length vs. gyro inertia
-- reaction torque vs. array design vs. CMG orientation
-- explain why passive stabilization is not possible
+Recalling the various components of the CMG's torque discussed in @Sec:cmg-dynamics we can plot these components (@Fig:cmg-torque-components-plot) and totals (@Fig:cmg-torque-totals-plot ) for our 2d pendulum simulations.
+
+![Components of torque produced by a single CMG in a SPCMG array dampening the motion of a double pointmass pendulum.](./figures/cmg-torque-components-plot.svg){ #fig:cmg-torque-components-plot }
+
+![Total torques experienced by the platform and gimbal motor due to a single CMG in a SPCMG (same simulation as @Fig:cmg-torque-components-plot)](./figures/cmg-torque-totals-plot.svg){ #fig:cmg-torque-totals-plot }
+
+There a several observations that can be made from the above plots.
+First there are a few fairly SPCMG specific behaviors.
+In our model the desired torque output should be produced around the Z-axis.
+As the gyroscopes rotations are mirrored the output torque in Z is the sum of the respective output of the two CMGs.
+The gimbal rotates around the Y-axis, ergo this is where the gimbal motor torque acts.
+As the CMGs move from their center position towards the singularities, the torque being produces increasingly acts around the X-axis instead of the desired Z-axis.
+This is why as we approach the singularity the gimbals speed up to maintain the Z-output.
+Inversely the reaction torque stemming from the baserate of the lower link interacting with the gyroscopes inertia is strongest when the CMGs are in the center position and goes to zero as they approach the singularity.
+Note how the maximum reaction torque occurs as the pendulum passes through vertical the second time, where the baserate is highest and also the CMGs are roughly in their center position.
+
+In the case of the SPCMG both the motor torques and reaction torques cancel out, which is why we only are looking at a single CMG.
+In other arrays the interactions will be more complex, but similar in principle.
+
+We can also make several observations of relevance to sizing and arranging our CMGs.
+Regarding the gimbal motor sizing the reaction torque due to the base rate dominates the torque requirements for the gimbal motor.
+The torque required to overcome the gimbal assemblies inertia might be on the low side.
+For one we are not taking bearing and gearing friction into account, but more importantly the dampening control doesn't require highly dynamic gimbal motions.
+As previously noted the reaction torque due to gimbal rotation in negligible, so we will not include it in our sizing considerations.
+
 
 ## Robot Tasks
 

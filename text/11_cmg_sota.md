@@ -241,22 +241,6 @@ Depending on the required fidelity of the simulation and whether the model is us
 Aside from providing us with the means to simulate the behaviour of our CMGs the parts 2b and 3a describe the requirements for gimbal motor sizing.
 Part 2a being the torque required to sustain the reaction torque stemming from the rotation of the spacecraft and part 3a being the torque required to provide the desired torque dynamics.
 
-![Components of torque produced by a single CMG in a SPCMG array dampening the motion of a double poin-tmass pendulum.](./figures/cmg-torque-components-plot.svg){ #fig:cmg-torque-components-plot }
-
-![Total torques experienced by the plattform and gimbal motor due to a single CMG in a SPCMG (same simulation as @Fig:cmg-torque-components-plot)](./figures/cmg-torque-totals-plot.svg){ #fig:cmg-torque-totals-plot }
-
-The various components and their relationships are illustrated in @Fig:cmg-torque-components-plot and @Fig:cmg-torque-totals-plot for our 2D pendulum model with a SPCMG used for pendulum dampening (see @Sec:2dpendulum and @Sec:spcmg-steering).
-Note the following:
-
-- reaction torque due to gimbal rotation is negligble
-- in SPCMG array:
-  - desired torque is around Z-axis
-  - gimbal rotates around Y-axis, hence motor torque acts here
-  - torque around X- and Y-axis is mirrored by second CMG and cancels out
-- gyro reaction torque dominates the gimbal motor torque
-
-TBD?: $\frac{\omega_{gimbal}}{\omega_{system}} = \frac{\tau_{system}}{\tau_{gimbal}}$
-
 ## Steering of CMGs
 
 - basic principles

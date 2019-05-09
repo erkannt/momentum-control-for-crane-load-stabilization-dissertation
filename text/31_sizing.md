@@ -17,6 +17,8 @@
 
 ## Sizing Workflow
 
+TBD?: $\frac{\omega_{gimbal}}{\omega_{system}} = \frac{\tau_{system}}{\tau_{gimbal}}$
+
 ## Feasability Analysis
 
 - gimbal torques
