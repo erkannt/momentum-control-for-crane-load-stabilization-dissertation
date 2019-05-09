@@ -12,6 +12,13 @@ In @Fig:distmass-impact-animation and @Fig:distmass-impact-plot we can see how t
 
 ![Angles and angular velocity comparison of point mass and distributed mass pendulum.](./figures/dp-2d-distmass-inertias.svg){ #fig:distmass-impact-plot }
 
+We can see a strong impact of the rotational inertia of the lower link, which changes the movement of the system.
+Of note is how the lower link now pushes the upper link a lot more, instead of only hanging below it.
+This is important as a rope cannot transmit such a force.
+So the CMG platform should probably use rods, instead of ropes to attach to the hook of the crane.
+Also, this points to a limitation of the model, as the upper link is modeled as a rod, not a flexible rope.
+In strong oscillations we should therefore expect to see a difference in behavior between our model and the real world.
+
 ### 3d Model
 
 Now lets look at some simulations of our 3d pendulum.
@@ -33,7 +40,17 @@ The break from the 2d plane occurs immediately, which is most likely due to the 
 ### Dampening Controller
 
 In @Sec:dampening-controller we saw that a rudimentary PD$\alpha$ controller was able to dampen our double pendulum.
-In 
+We now apply the same controller to a selection of models whose parameters have been set to reflect our lab setup, a small fast deployment crane and a large tower crane.
+The lower links are modeled as having a load attached to them according to our inertia estimates (see @Fig:inertia-data).
+Note that this is quite a worst case scenario, as we are assuming the maximum crane load and also the largest excitation.
+The largest excitation estimate does not stem from the maximum load, but instead from a jib rotation as maximum speed with the load attached at the very tip of the crane.
+The load capacity at the tip is significantly lower than the maximum load (see @Fig:crane-data).
+
+These models are then each excited by 10°, which is an approximation of the various base-rate estimates (see @Fig:crane-base-rates).
+In @Fig:crane-dampening-comparison-animation and @Fig:crane-dampening-comparison-plot we can see how the controller proves effective for each crane, dampening the motion in the course of a few oscillations.
+This is predominantly due to the fact that we are scaling the control gains with the inertia of the lower link.
+This results in up to 50.000 Nm of torque being applied to dampen the largest crane.
+While probably possible, it is questionable whether this is economically sensible.
 
 ![Dampening of three different model cranes using the same PD$\alpha$ controller. From left to right: approximate dimensions of our lab setup, a small fast deployment crane and a fairly large tower crane. The parameters are taken from @Fig:crane-data and @Fig:inertia-data. Controller setting: $k_P=1.0 \cdot I_2, k_D=4.0 \cdot I_2, \alpha=0.5$. Initial excitation is 10°, approximating the determined base rates (see @Fig:crane-base-rates)](./figures/crane-dampening-comparison.gif){ #fig:crane-dampening-comparison-animation }
 
@@ -41,7 +58,20 @@ In
 
 ![Torque used in dampening of the above cranes.](./figures/dp-2d-distmass-controller-torques.svg){ #fig:crane-dampening-comparison-torques }
 
-### Pendulum-CMG Interaction
+What would happen if equip a CMG-array that is capable of providing the desired torque?
+Of course the dampening will become less effective, but importantly it will still work.
+This is due to the oscillating nature of our problem.
+As the crane oscillates back and forth the torque required to dampen it changes direction.
+So recalling the nature of the torque work space of a CMG array we can see that the CMGs will try to provide the desired torque until they reach the edge of the workspace i.e. saturate.
+As the pendulum begins to swing back the direction of the target torque reverses and the CMG array has its entire workspace in front of itself and can provide torque again.
+This is part of the behavior that we will look into in the following section.
+
+\todo{update torque plot to include sum and gradient}
+\todo{discuss Nms and Nm/s in context of dampening}
+
+The code used for the above simulations can be found in the appendix in @Sec:2d-dp-wcontroller.
+
+## Pendulum-CMG Interaction
 
 \missingfigure{Illustration of SPCMG limits during dampening}
 
