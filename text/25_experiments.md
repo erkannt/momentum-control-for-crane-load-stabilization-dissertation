@@ -166,31 +166,51 @@ As previously noted the reaction torque due to gimbal rotation in negligible, so
 
 ## Robot Tasks
 
+As described in the modeling chapter we have a set of robot paths and can use both the inverse kinematics as well as a real robot to obtain axis values for the paths.
+Having run the paths at several different speeds, we can feed the axis values into the multi body simulation of the robot to obtain the torques and forces acting at the base of the robot.
+
+\todo{rerun and check robot sims; produce nicer plots}
+
 ![Multi-body robot simulation of the four corners task using values from KUKA|prc. Note how the unlimited acceleration in the inverse solution leads to unrealistically high forces and torques.](./figures/robot-sim-prc.png){ #fig:robot-sim-prc }
 
 ![Multi-body robot simulation of the four corners task using values of a real robot obtained via mxA.](./figures/robot-sim-mxa.png){ #fig:robot-sim-mxa }
 
+In @Fig:robot-sim-prc we see the axis values, base forces and torques as well as the torque dynamics and workspace for a simulation using the values from KUKAprc.
+As previously noted, the axis values produced by KUKAprc can't be used for our simulations as they assume unlimited acceleration.
+Moving to the simulations based on the real axis values (@Fig:robot-sim-mxa) we can immediately see the much smoother axis values.
+
 ![Comparison of the base torques for the same path performed at two different speeds. At low speeds the longer time spent out of balance require a larger momentum envelope while higher robot speeds require greater gimbal agility to achieve the momentum dynamics.](./figures/robot-load-speedcomparison-plot.jpg){#fig:robot-load-speedcomparison-plot}
 
-We can distinguish between three types of torque:
+Comparing the values of the same path run at different speeds (@Fig:robot-load-speedcomparison-plot) we can make several observations.
+We have to deal with two types of torque from the robot: the torque caused by its movement and that caused by its center of mass moving out from underneath the base.
+This is why we see lower Nms values for the faster robot, as it spends less time out of balance.
+On the other hand the faster robot motion leads to higher torques and more importantly higher torque dynamics.
+So this is one area where one might optimize robot paths to accommodate the capabilities of the CMGs.
 
-- torque from robot motion and its own inertia
-- process forces transmitted from the tool to the base
-- torque from imbalance
+Should one have processes that cause the robot, load or kinematic in general to be out of balance for a longer duration, it might make sense to add a sliding or pivoting weight to the platform.
+This would not only reduce the workspace requirements of the CMGs, but could also be used to desaturate the CMGs, as it would provide a unagile but infinite source of torque. 
 
-Conclusions:
-
-- trade off between Nm/s and Nms due to time spent out of balance
-- it might make sense to add sliding weight to keep COG inline with rope
+Remember that the CMGs will not be able to compensate the forces acting at the robot's base.
+Also, the above model and simulations to do not include forces and torques produced by the process itself.
+So for instance the force needed to press a drill into a wall is not included.
 
 ## Simulated Process Compensation
 
 \missingfigure{Video of spcmg with robot underneath, with and without forces}
+![Simulation of the SPCMG compensating the motion of a KR3 robot. The pendulum is constrained to 2d motion.](https://via.placeholder.com/800x200?Video+of+SPCMG+compensating+the+robot)
 
 \missingfigure{path deviation due to forces of robot}
+![Deviation of the robots endeffector with and without the SPCMG compensation.](https://via.placeholder.com/800x200?Plot+of+path+error+of+robot)
 
-- simulated base forces and torques
-- deviation from path
+Depending on the settings for the gyroscope's speed and gimbals maximum acceleration the SPCMG is able to perfectly match the torques acting at the robots base.
+Give the inaccuracies of our model, signal as well as processing delays and the all the inaccuracies of the physical setup a perfect compensation is highly unlikely.
+The imperfections in the torque compensation act in addition to the forces (which we can't compensate using CMGs) and cause the robot to swing.
+Here the previously discussed dampening controller kicks in and begins to assist in the dampening of the robot.
+
+Given that we will never be able to compensate the forces with the CMGs and most likely will have errors in the torque compensation it makes sense to consider additional compensation mechanisms for processes.
+Aside from adding thrusters to create compensating forces, one might be able to improve the process path accuracy by using the robot/kinematic to compensate the error.
+This would take careful control engineering so as not to exacerbate the error by introducing further forces and highly dynamic torques.
+Given the availability of the crane and robot model one could imagine a predictive controller that compensates the pendulum motion in coordination with the dampening control of the CMGs or even the crane.
 
 ## Hardware Experiments
 
