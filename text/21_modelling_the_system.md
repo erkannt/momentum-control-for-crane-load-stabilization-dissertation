@@ -412,6 +412,7 @@ These paths are:
 - vertical rectangle next to the robot
 - points next to the robot incl. approach and retraction
 
+See @Fig:robot-toolpaths for animations of the toolpaths.
 These should roughly correspond to positioning/compensation, a continuous task (e.g. spray-painting) and a joining task (e.g. nail gun) respectively.
 The tasks were programmed using the Rhino/Grasshopper plugin KUKA|prc for a small KUKA KR industrial robot (see @Fig:robot-path-planning).
 Since the programs are parametric one can easily scale them to larger robots.
@@ -434,9 +435,9 @@ The CAD files from the robot manufacturer are imported in to SolidWorks and rota
 From this a Simmechanics file can be exported and adapted to receive the recorded axis values and output the torques and forces experienced at the robot base (see @Fig:kr3-simmechanics).
 The inertia of the robots axes are estimated by distributing the robots mass according the volume of each axis and assumes a homogeneous density of the robot.
 
-\missingfigure{videos of the paths used}
+![Three robot paths used in our experiments.](./figures/robot-toolpaths.gif){#fig:robot-toolpaths}
 
-![Robot paths programmed using the KUKA|prc plugin for Rhino/Grasshopper.](./figures/robot-path-planning.jpg){#fig:robot-path-planning}
+![Parametric robot paths programmed using the KUKA|prc plugin for Rhino/Grasshopper.](./figures/robot-path-planning.jpg){#fig:robot-path-planning}
 
 ![Axis values simulated by KUKA|prc. Note the sharp corners resulting from unlimited acceleration/jerk values making these values ill-suited to simulate the forces and torques at the robot base.](./figures/kuka-prc-axis-values.jpg){#fig:robot-axis-values}
 
