@@ -166,9 +166,11 @@ As previously noted the reaction torque due to gimbal rotation in negligible, so
 
 ## Robot Tasks
 
-\missingfigure{selected robot task}
+![Multi-body robot simulation of the four corners task using values from KUKA|prc. Note how the unlimited acceleration in the inverse solution leads to unrealistically high forces and torques.](./figures/robot-sim-prc.png)( #fig:robot-sim-prc )
 
-![Comparison of the base torques for the same path performed and two different speeds. At low speeds the longer time spent out of balance require a larger momentum envelope while higher robot speeds require greater gimbal agility to achieve the momentum dynamics.](./figures/robot-load-speedcomparison-plot.jpg){#fig:robot-load-speedcomparison-plot}
+![Multi-body robot simulation of the four corners task using values of a real robot obtained via mxA.](./figures/robot-sim-mxa.png)( #fig:robot-sim-mxa )
+
+![Comparison of the base torques for the same path performed at two different speeds. At low speeds the longer time spent out of balance require a larger momentum envelope while higher robot speeds require greater gimbal agility to achieve the momentum dynamics.](./figures/robot-load-speedcomparison-plot.jpg){#fig:robot-load-speedcomparison-plot}
 
 
 We can distinguish between three types of torque:
