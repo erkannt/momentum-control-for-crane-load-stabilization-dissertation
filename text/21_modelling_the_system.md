@@ -1,6 +1,8 @@
 
 # Modeling the Crane-CMG-Application Systems
 
+> "The problem is, we don't understand the problem." -- Paul MacCready
+
 To develop sizing guidelines we need to develop two types of models that let us:
 
 1. derive abstracted inputs to our sizing

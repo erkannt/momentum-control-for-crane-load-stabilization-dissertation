@@ -1,6 +1,8 @@
 
 # The Cow is a Sphere // Outlook
 
+> "When its time for helicopters, you get helicopters. Everywhere." -- Cory Doctorow
+
 - cow is a sphere
   - ropes are flexible
   - no drag
