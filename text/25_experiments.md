@@ -216,24 +216,40 @@ Given the availability of the crane and robot model one could imagine a predicti
 
 ### Prototype Setup
 
-![CMGs used in the hardware prototype. The Design has only two custom parts (gyro wheel, mounting flange) with the rest begin off the shelf components (incl. made to measure shafts).](./figures/CMG-sidebyside.jpg){ #fig:cmg-plans }
+Development of a first hardware prototype began early on an accompanied most of the project.
+The hope was to rapidly validate our theoretical work to avoid dead ends.
+The size of the prototype was supposed to be large enough to handle the torques of our smaller robots and otherwise as compact as possible to limit the budget.
+
+The plan was to begin with a SPCMG array that could be suspended so as to limit the motion to a single plane i.e. 2d motion.
+Later it should be possible to extend the array to a four CMG roof.
+Also given the youth of the chair and lack of facilities we designed the prototype to use as many off the shelf and low cost components as possible.
 
 ![Hardware SPCMG prototype with robot attached to it. Gyros are in the aluminum cases with the gyro motors mounted on their sides. The gimbal motors hang underneath the gyros. The motor controller and power supply are mounted underneath the platform. The gyro controller, IMU and communication interface for these are mounted on top. Note that the rope suspension was rotated by 90° for the picture.](./figures/KR3_seitlich.jpg){ #fig:prototype-sideview }
 
+![CMGs used in the hardware prototype. The Design has only two custom parts (gyro wheel, mounting flange) with the rest begin off the shelf components (incl. made to measure shafts).](./figures/CMG-sidebyside.jpg){ #fig:cmg-plans }
+
+In @Fig:prototype-sideview we can see the completed SPCMG prototype with the KR3 robot hanging underneath.
+The gyroscopes are housed in the aluminum cases and have their motors attached the to side with risers to accommodate the couplings.
+The gimbal assembly consists of a single bearing block that holds the axle that is clamped into a block attached to the inside of the gyroscope case (see @Fig:cmg-plans).
+This setup leads to only two parts per CMG having to be machined: the gyroscopes rotor and the mounting bracket for the gimbal.
+
+The gimbal motors are the same as the gyroscopes motors, but geared down to provide higher torque.
+We need position readings of the gimbals and also need accurate velocity control.
+Therefore the gimbal motors have optical encoders attached and are attached to EPOS-70 controllers.
+The controllers are programmable via a USB interface and are controlled via CAN bus from a PC running Simulink Desktop Realtime using a USB-CAN adapter.
+See @Fig:hw-list for the main components used in the prototype.
+
+The gyroscopes require only a fairly simple speed controller as they shouldn't experience any dynamic loads.
+Therefore we use DEC-40 development boards attached to a custom PCB with an ATTiny microcontroller (see @Fig:cmg-pcb) that lets us set speed and direction over a USB serial interface.
+The same PCB and interface provide us with communication to the BNO055 inertial measurement unit.
+
+\missingfigure{List of hardware components}
+
+The CMGs are attached to a welded steel frame that was sized to also later accommodate four CMGs.
+The controller and power supplies are mounted to a board inside the frame.
+The frame is suspended from two hooks in the ceiling.
+
 \missingfigure{Image of custom PCB, case and controllers}
-
-\missingfigure{gyro motor alignment mount}
-
-- CMG Design
-- Array
-- performance values
-- Motor Control
-- Sensors
-  - filters
-- Issues
-- Recommendations
-
-### Scissor Constraint
 
 For the SPCMG to work as intended we need to maintain the symmetry between the two giros.
 This is usually achieved by linking the two gimbals mechanically and using a single actuator.
@@ -241,6 +257,52 @@ The use of a mechanical linkage is simple to implement and offers the added bene
 
 Given that our prototype should later be extended to a four CMG roof array we opted to enforce the SPCMG symmetry with a control loop.
 The controller applies a proportional gain of the difference in angle between the two gimbals to the desired gimbal velocity.
+
+### Hardware Issues and Recommendations
+
+The following is a list of issues we encountered as well as recommendation for improving the setup (if we could do things over ...).
+
+The attempt at creating a fast-spinning piece of hardware with little to no machining kind of worked.
+The CMGs are very loud and a recent reassembly showed that some of the gyroscope bearing have suffered somewhat and started to stick.
+This is partially due to the axle having the wrong thread cut (typo in our order), leading to the locknut not being able to fit.
+Slight changes to the axle should also create more space in the case.
+As we are currently running to rotors per gyro it is a tight squeeze and when the axle comes loose we grind up against the case.
+
+We managed to break two of our couplings.
+This is mostly likely due to misalignment of the motor and gyroscope axis.
+Having acquired a 3d-printer we have reworked the gyroscope motor mount to ease with alignment (@Fig:gyro-mount).
+The sticky bearings and misaligned axis are also the most likely culprits for the gyroscopes taking different amounts of time to reach their set speed.
+The speed readout via the microcontroller has been invaluable in ensuring sensible test runs.
+The custom PCB has also provided us with a much more reliable prototype due to the addition of high quality plugs.
+These not only make disassembly much easier, but also reduce the uncertainty from loose/unreliable connections, making debugging a lot easier.
+
+\missingfigure{gyro motor alignment mount}
+
+The speed controllers are not able to bring the motors to their maximum velocity put forth by the datasheet.
+We also had to adjust the velocity measurement by validating the velocities with a tachometer.
+
+The CAN communication with the gimbals is nice, once it is set up.
+It required a lot of datasheet digging to set up the required commands though.
+One major issue is the ability to interface with CAN from Simulink.
+The various CAN adapters supported by Simulink do not have driver support for all modes of Simulink (Desktop Realtime, Realtime) and can quickly get pricey or require a dedicated target PC if you also wish to monitor sensor values simultaneously.
+We have lost multiple days to Simulink driver issues.
+
+Given these issues and pricepoints attached to the industrial motors and Mathworks products it might make sense to look elsewhere for solutions.
+Since the start of the project opensource hardware solutions such as the ODrive have emerged.
+With an ODrive one can combine much lower cost hobby brushless motors, that have become very powerful ubiquioutus due to drones, e-scooters etc., with encoders to create highspeed/highpower servors for a fraction of industrial solutions.
+Together with beltdrives or cycloidal gears one would be able to produce backlash free drives to a project like ours, using mostly 3d-printed parts.
+
+Generally speaking, the ubiquity of low-cost 3d-printers is a game changer and our prototype could probably be replicated at lower if one were to make greater use of printed parts.
+
+Alternatives to Simulink and specialized target PCs for projects like our are also emerging.
+Even the microcontroller on our custom PCB is most likely enough to create a UDP to CAN bridge.
+It as been shown that UDP is sufficient for most realtime communication and is supported by nearly every software and hardware platform.
+As such our reworked PCB also accommodates an ethernet as well as CAN connector.
+The interested reader is pointed towards:
+
+- Modelica / xcos
+- TUB thing
+- Nerves and Grispr
 
 ### Tuning Controller on Hardware
 
