@@ -24,3 +24,7 @@ TBD?: $\frac{\omega_{gimbal}}{\omega_{system}} = \frac{\tau_{system}}{\tau_{gimb
 - gimbal torques
 - gyro speeds and inertias
 - size and weight of setup
+
+## Other Stuff
+
+- spinup times

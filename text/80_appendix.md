@@ -98,12 +98,7 @@ The code was also cleaned up in comparison to the other simulation code.
 
 !include code/gh-data-import.py
 
-## Other Stuff Looking for a Home
+## Roof Array Workspace
 
-- Workspace of a Roof-Array
-- spin up times
-- robot tasks and their forces
-- gimbal simulation model and validation
-- physical demonstrator
-- simulink model re: steering law
-- IMU sensor
+\todo{add code for roofarray calculation}
+

@@ -139,6 +139,8 @@ This points to some interesting questions regarding control optimized to positio
 
 ### Dynamics of CMG attached to Pendulum
 
+\todo{add Gimbal model and validation}
+
 Recalling the various components of the CMG's torque discussed in @Sec:cmg-dynamics we can plot these components (@Fig:cmg-torque-components-plot) and totals (@Fig:cmg-torque-totals-plot ) for our 2d pendulum simulations.
 
 ![Components of torque produced by a single CMG in a SPCMG array dampening the motion of a double pointmass pendulum.](./figures/cmg-torque-components-plot.svg){ #fig:cmg-torque-components-plot }
