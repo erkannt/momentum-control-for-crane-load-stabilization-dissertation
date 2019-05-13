@@ -196,11 +196,9 @@ So for instance the force needed to press a drill into a wall is not included.
 
 ## Simulated Process Compensation
 
-\missingfigure{Video of spcmg with robot underneath, with and without forces}
-![Simulation of the SPCMG compensating the motion of a KR3 robot. The pendulum is constrained to 2d motion.](https://via.placeholder.com/800x200?Video+of+SPCMG+compensating+the+robot)
+\missingfigure{Simulation of the SPCMG compensating the motion of a KR3 robot. The pendulum is constrained to 2d motion.}
 
-\missingfigure{path deviation due to forces of robot}
-![Deviation of the robots endeffector with and without the SPCMG compensation.](https://via.placeholder.com/800x200?Plot+of+path+error+of+robot)
+\missingfigure{Deviation of the robots endeffector with and without the SPCMG compensation.}
 
 Depending on the settings for the gyroscope's speed and gimbals maximum acceleration the SPCMG is able to perfectly match the torques acting at the robots base.
 Give the inaccuracies of our model, signal as well as processing delays and the all the inaccuracies of the physical setup a perfect compensation is highly unlikely.
