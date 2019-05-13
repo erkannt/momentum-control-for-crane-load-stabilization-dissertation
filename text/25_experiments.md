@@ -298,9 +298,9 @@ It as been shown that UDP is sufficient for most realtime communication and is s
 As such our reworked PCB also accommodates an ethernet as well as CAN connector.
 The interested reader is pointed towards:
 
-- Modelica / xcos
-- TUB thing
-- Nerves and Grispr
+- [Modelica](https://www.modelica.org/), [xcos](https://www.scilab.org/software/xcos) and [X2C](https://x2c.lcm.at/)
+- [OpenRTDynamics](https://openrtdynamics.github.io/)
+- [GRiSP](https://www.grisp.org/) and [Nerves](https://nerves-project.org/)
 
 ### Tuning Controller on Hardware
 
