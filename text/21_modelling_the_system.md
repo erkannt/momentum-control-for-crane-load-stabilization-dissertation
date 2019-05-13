@@ -24,7 +24,7 @@ To understand the basic input parameters we will use industry guidelines, norms 
 The process loads produced by a robot will be determined using real robot motions and multi-physics simulation packages.
 To understand the interaction of a CMG array with crane we will model it as a double pendulum system, apply the formulation of CMG dynamics (see @Sec:cmg-dynamics) to it and create interfaces to apply outside forces.
 
-## Parameter Space of Construction Cranes
+## Parameter Space of Construction Cranes { #sec:crane-params }
 
 Given the construction focus of this work and the fact that their parameter spaces have a large overlap with other crane designs we will only consider tower cranes for crane parameter space.
 @Fig:lbc-cranes shows a selection of tower cranes manufactured by Liebherr.
