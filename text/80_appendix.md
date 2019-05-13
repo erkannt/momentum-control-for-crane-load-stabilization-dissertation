@@ -60,6 +60,14 @@ The code was also cleaned up in comparison to the other simulation code.
 
 !include code/dp-2d-distmass-controller.py
 
+### 2d Double Pendulum with Controller and Momentum Limit{ #sec:2d-dp-wcontroller-limit }
+
+The following is a crude extension of the equations of motion to include a momentum envelope limit.
+This is useful for simulating the effect of different sized CMGs on dampening.
+Note that these equations do not limit the torque dynamics. 
+
+!include code/dp-2d-distmass-limited-momentum.py
+
 ## 3D Pointmass Double Pendulum { #sec:3d-pointmass-eom}
 
 !include code/double-pendulum-3d-simulation.py
@@ -98,12 +106,7 @@ The code was also cleaned up in comparison to the other simulation code.
 
 !include code/gh-data-import.py
 
-## Other Stuff Looking for a Home
+## Roof Array Workspace
 
-- Workspace of a Roof-Array
-- spin up times
-- robot tasks and their forces
-- gimbal simulation model and validation
-- physical demonstrator
-- simulink model re: steering law
-- IMU sensor
+\todo{add code for roofarray calculation}
+

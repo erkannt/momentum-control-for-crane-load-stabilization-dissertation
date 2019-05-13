@@ -139,6 +139,8 @@ This points to some interesting questions regarding control optimized to positio
 
 ### Dynamics of CMG attached to Pendulum
 
+\todo{add Gimbal model and validation}
+
 Recalling the various components of the CMG's torque discussed in @Sec:cmg-dynamics we can plot these components (@Fig:cmg-torque-components-plot) and totals (@Fig:cmg-torque-totals-plot ) for our 2d pendulum simulations.
 
 ![Components of torque produced by a single CMG in a SPCMG array dampening the motion of a double pointmass pendulum.](./figures/cmg-torque-components-plot.svg){ #fig:cmg-torque-components-plot }
@@ -196,11 +198,9 @@ So for instance the force needed to press a drill into a wall is not included.
 
 ## Simulated Process Compensation
 
-\missingfigure{Video of spcmg with robot underneath, with and without forces}
-![Simulation of the SPCMG compensating the motion of a KR3 robot. The pendulum is constrained to 2d motion.](https://via.placeholder.com/800x200?Video+of+SPCMG+compensating+the+robot)
+\missingfigure{Simulation of the SPCMG compensating the motion of a KR3 robot. The pendulum is constrained to 2d motion.}
 
-\missingfigure{path deviation due to forces of robot}
-![Deviation of the robots endeffector with and without the SPCMG compensation.](https://via.placeholder.com/800x200?Plot+of+path+error+of+robot)
+\missingfigure{Deviation of the robots endeffector with and without the SPCMG compensation.}
 
 Depending on the settings for the gyroscope's speed and gimbals maximum acceleration the SPCMG is able to perfectly match the torques acting at the robots base.
 Give the inaccuracies of our model, signal as well as processing delays and the all the inaccuracies of the physical setup a perfect compensation is highly unlikely.
@@ -300,9 +300,9 @@ It as been shown that UDP is sufficient for most realtime communication and is s
 As such our reworked PCB also accommodates an ethernet as well as CAN connector.
 The interested reader is pointed towards:
 
-- Modelica / xcos
-- TUB thing
-- Nerves and Grispr
+- [Modelica](https://www.modelica.org/), [xcos](https://www.scilab.org/software/xcos) and [X2C](https://x2c.lcm.at/)
+- [OpenRTDynamics](https://openrtdynamics.github.io/)
+- [GRiSP](https://www.grisp.org/) and [Nerves](https://nerves-project.org/)
 
 ### Tuning Controller on Hardware
 
