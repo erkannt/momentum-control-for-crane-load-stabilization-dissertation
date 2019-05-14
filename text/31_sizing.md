@@ -84,24 +84,64 @@ Nevertheless an estimation of the path accuracy without such additional compensa
 The interaction with additional robot based compensation might lead to an increase in the torque dynamics requirements, but the torque and envelope requirements should remain similar.
 
 
-The various requirements and means for their determination are illustrated in @Fig:ref-needed.
-
-\missingfigure{Illustration of requirement derivation of the three applications}
-
 
 ## Sizing of CMGs
 
 ### Parameter Relationships
 
-TBD?: $\frac{\omega_{gimbal}}{\omega_{system}} = \frac{\tau_{system}}{\tau_{gimbal}}$
+The various requirements and means for their determination are illustrated in @Fig:ref-needed.
+Having determined the requirements we can move on to understanding the relationships between the various parameters of the CMG array.
+These are illustrated in @fig:ref-needed.
 
-- derive gimbal torque requirements:
-  - from dynamics
-  - from reaction torques
-- moment of inertia of gyro/gimbal
-- gyro motors
-    - spinup times
-    - friction, alignment
+\missingfigure{Illustration of requirement derivation of the three applications}
+
+\missingfigure{Illustration of relationship between the various CMG array parameters.}
+
+Beginning with the gyroscopes we have the moment of inertia of the rotor.
+This can be affected by the density of the material as well as the shape and size of the rotor.
+The simplest for are cylinders or for better mass utilization as close to a cylindrical shell as possible.
+Another common design are spherical rotors which have a side benefit of causing less changes to the moment of inertia of the array/platform/spacecraft when rotated about their gimbal axis.
+At high velocities rotors can experience significant forces, which needs to be taken into consideration when selecting the material and sizing the rotor.
+
+The moment of inertia and rotor speed give us the momentum for each gyroscope in the array.
+A naive approximation of the size of the momentum envelope can be obtained by summing the moments of all gyroscopes of the array.
+The actual envelope shape depends on the the chosen array type and parameters.
+As discussed in the section on CMG envelopes we create asymmetric envelopes to match asymmetric torque requirements.
+An array tasked predominantly with large part rotation could be designed to have its largest extend in the Z-axis whereas an array tasked with dampening would do the inverse.
+
+The size of the gyroscope motor is governed by the required velocity, desired spin up time and amount of friction in the system.
+If one is patient with the spin up and creates a low friction system (large gyroscopes often run inside of a vacuum to reduce drag) the gyroscopes motor can be very modest.
+
+The moment of inertia of the rotor around the gimbal axis can also be used as an approximation for the sizing of the gimbal motors.
+While the gimbal motor also has to overcome the moment of inertia of the housing etc. the gyroscopes rotor will be the major contribution to the gimbals inertia.
+As we saw in the simulations of the SPCMG during a dampening operation the sizing of the gimbal motors torque is dominated by two factors:
+
+- required torque agility
+- reaction torque caused by the baserate
+
+The required torque agility $\dot\tau_{B}$ depends on the momentum of CMG array, the inertia of the gimbal assembly and the torque of the gimbal drive:
+
+\begin{equation}
+\dot\tau_B \approx \h_{Array} \cdot \frac{I_{Gimbal}}/\tau_{Gimbal}
+\end{equation}
+
+The reaction torque depends on the momentum of the gyroscope and baserate i.e. the angular velocity experienced by the platform.
+Since our CMG arrays should operate in three dimension under diverse loads we must assume the worst case i.e. that the momentum vector of the gyroscope will lie orthogonal to the angular velocity.
+This is particularly true for the dampening case which is most likely where the array will experience the highest angular velocities.
+If the momentum vector were to lie parallel to the velocity their steering to rotate them toward an orthogonal orientation to produce the torque necessary for dampening, though it might be possible to conceive a controller that tries to avoid orthogonality during velocity peaks.
+
+Since the torque produced by the CMG also depends on the momentum of the gyroscope and the gimbal velocity (instead of the base rate) the following relationship hold true (see @citation-needed) for full discussion): 
+
+\begin{equation}
+\frac{\omega_{gimbal}}{\omega_{system}} = \frac{\tau_{system}}{\tau_{gimbal}}
+\end{equation}
+
+In spacecraft this relationship is highly critical as the torque of a motor is strongly linked to its weight.
+As a terrestrial application we have more flexibility regarding weight.
+Furthermore as discussed previously unlike space applications in our case the baserate is (apart from part rotation) not what we desire to produce with the CMG.
+Instead the baserate originates from the oscillatory nature of the crane as a pendulum.
+Aside from limiting the baserate through limits on windspeed during operation or slower slewing speeds we might also be able to create hybrid dampening controllers where the gimbal motor doesn't try to resist the reaction torque but instead uses it to produce the desired gimbal velocities.
+The impact of such a concept on the sizing of the gimbal motors most likely depends on the chosen CMG steering laws and how they desire to position the CMGs during a dampening operation.
 
 ### Feasability Analysis
 
