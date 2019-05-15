@@ -181,20 +181,14 @@ Given the requirements for dampening and process compensation previously discuss
 Obviously the size of the envelope is governed by the momentum of the gyroscopes.
 So given a certain baserate we will always have to deal with a large amount of reaction torque compared to the gimbal torque requirements resulting from torque and torque dynamics requirements.
 To make CMGs feasible for an application in cranes, we must therefore find ways to alleviate the baserate or to be more precise: its impact on our gimbal motor sizing.
-The following solutions come to mind:
+This is the key issue confronting us and the following solutions come to mind:
 
 - limit CMG operations to certain wind loads and crane movement speeds
 - introduce a clutch mechanism to the gimbals
 - align the gyroscopes momentum with the baserate's axis
 
-As we can see in our simulations of the SPCMG during dampening ()
-
-
-Things to note:
-
- - distinction between dynamics at rest and with worse case base rate
- - degrees to max speed as indicator if top speed is actually reachable
- - friction, gimbal hardware, shape of envelope not taken into account!
- - for dampening Nms more critical than Nm, but this is not taken into account in the usual sizing relationship!
- - need to ensure alignment of gimbal axis with base rate axis to avoid reaction torque
- - this is the key problem of combining dampening with compensation
+As we can see in our simulations of the SPCMG during dampening (@Fig:spcmg-avoidance-animation), the momentum vector of the gyroscopes passes through a configuration parallel to the axis of rotation of the platform as it is dampened.
+It should therefore be possible to add a switching behavior or otherwise modify the controller to ensure a certain amount of alignment in relation to the current baserate and its acceleration.
+This could lead to a stark reduction in the experienced reaction torque in comparison to the worst case scenario.
+Combined with limits to winds and crane movements this ought to reduce the gimbal torque requirements significantly.
+Nevertheless I would recommend adding dedicated points of failure for gimbal motor coupling and perhaps even means to mechanically arrest the gimbals motion should a failure of the coupling occur.
