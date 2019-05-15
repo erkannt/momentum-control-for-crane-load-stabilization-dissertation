@@ -132,7 +132,7 @@ If the momentum vector were to lie parallel to the velocity their steering to ro
 
 Since the torque produced by the CMG also depends on the momentum of the gyroscope and the gimbal velocity (instead of the base rate) the following relationship hold true (see @citation-needed) for full discussion): 
 
-\begin{equation}
+\begin{equation}{ #eqn:torque-velocity-relation}
 \frac{\omega_{gimbal}}{\omega_{system}} = \frac{\tau_{system}}{\tau_{gimbal}}
 \end{equation}
 
@@ -140,16 +140,55 @@ In spacecraft this relationship is highly critical as the torque of a motor is s
 As a terrestrial application we have more flexibility regarding weight.
 Furthermore as discussed previously unlike space applications in our case the baserate is (apart from part rotation) not what we desire to produce with the CMG.
 Instead the baserate originates from the oscillatory nature of the crane as a pendulum.
-Aside from limiting the baserate through limits on windspeed during operation or slower slewing speeds we might also be able to create hybrid dampening controllers where the gimbal motor doesn't try to resist the reaction torque but instead uses it to produce the desired gimbal velocities.
-The impact of such a concept on the sizing of the gimbal motors most likely depends on the chosen CMG steering laws and how they desire to position the CMGs during a dampening operation.
-
-### Feasability Analysis
+The relevance of this difference can be intuitively grasped once one tries to size a CMG to match the requirements of dampening and process compensation in addition to the more spacecraft like requirement of rotation.
 
 The parameters, system characteristics and requirements create connected graph.
 To make sizing easier we can place all equations involved in a spreadsheet (see @Fig:cmg-sizing).
 This way one can quickly run through various parameters.
 
 ![Spreadsheet of the most relevant CMG parameters including the equations that link them together.](./figures/cmg-sizing.png){ #fig:cmg-sizing }
+
+The spreadsheet makes a distinction between torque dynamics at rest and those during the worst case.
+In such a case the momentum of the gyroscopes would be aligned with the axis of rotation of the array/base and we would be trying to move the gimbal in the opposite direction of the precession caused by the gyroscopic reaction.
+This would lead to the gimbal motor having to overcome the entire reaction torque prior to being able to produce any of the desired torque.
+To illustrate this the spreadsheet subtracts the reaction torque from the maximum torque of the gimbal motor.
+
+To provide a better intuition of the characteristics of the CMGs the spreadsheet also calculates the angle of rotation required by the gimbal motor to reach its maximum speed from a standstill.
+In an SPCMG array one will run into a singularity after 90° when starting from a neutral position and after 180° at the latest, this value gets highlighted yellow once it goes above 90°.
+In other arrays the singularities will be different, but one will most likely struggle to achieve the maximum gimbal velocity if one requires more than 90° to reach it.
+
+The spreadsheet does not take friction or the exact shape of the momentum envelope into account.
+The actual inertia of a gimbal assembly will of course also be higher than the inertia of just the gyroscopes rotor.
+All of this can most likely be roughly taken into account with scaling factors, once one has some prototypes to base them off.
+
+### Sizing CMGs for Cranes
+
+The challenge of sizing CMGs for cranes is the unique combination of requirements arising from the three application cases we have identified in this work.
+While commercial applications and sizing experience exist for spacecraft control (similar to our part rotation) and roll stabilization (similar to our dampening) the addition of process compensation as well as the need to operate around three axis creates novel challenges.
+The core challenge is the high base rate that our CMGs experience when they are attached to a swinging crane.
+
+In a spacecraft the baserate is dictated by the agility requirements, which in turn leads to requirements regarding the output torque of the CMGs.
+From this well known relations ship of torques and velocities (@eqn:torque-velocity-relation) lead the sizing of the gimbal and gyroscope motor.
+Unlike the case of crane dampening, the reaction torque here is self inflicted.
+Also, since most maneuvers will produce a net change in the CMG array's momentum of zero, the size requirements regarding the envelope are much smaller than in our cases where we have to soak up external influences.
+
+While the base rate in ship stabilization is more akin to our base rate, we can't imitate their solutions.
+In ship stabilization the base rate i.e. the roll is actually utilized, as the precession causes exactly the gimbal movement necessary to produce torque counteracting the roll of the ship.
+Gimbal actuation is only used to assist the gyroscope in overcoming friction, limit the response and avoid hitting the singularities.
+In our case though we also want to be able to use the same CMGs to provide torque compensation while at the same time dampening oscillations!
+
+Given the requirements for dampening and process compensation previously discussed, unlike in sizing for spacecraft the size of the momentum envelope is paramount to the usefulness of the CMGs for crane applications.
+Obviously the size of the envelope is governed by the momentum of the gyroscopes.
+So given a certain baserate we will always have to deal with a large amount of reaction torque compared to the gimbal torque requirements resulting from torque and torque dynamics requirements.
+To make CMGs feasible for an application in cranes, we must therefore find ways to alleviate the baserate or to be more precise: its impact on our gimbal motor sizing.
+The following solutions come to mind:
+
+- limit CMG operations to certain wind loads and crane movement speeds
+- introduce a clutch mechanism to the gimbals
+- align the gyroscopes momentum with the baserate's axis
+
+As we can see in our simulations of the SPCMG during dampening ()
+
 
 Things to note:
 
