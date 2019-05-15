@@ -61,7 +61,7 @@ See chapter ??? of @citationneeded for a in depth discussion of this and how the
 While the optimization of these relationships is over relevance to spacecraft design, for the part rotation the sizing requirements regarding part rotation can be boiled down to:
 
 \begin{equation}
-\omega = \frac{h}{I} [rad/s]
+\omega = \frac{h}{I}
 \end{equation}
 
 Where $\omega$ is the desired rotation speed of the platform/load/part, $I$ its moment of inertia about the axis in line with the lower link and $h$ the combined angular momentum of the gyroscopes in the CMG array.
@@ -122,7 +122,7 @@ As we saw in the simulations of the SPCMG during a dampening operation the sizin
 The required torque agility $\dot\tau_{B}$ depends on the momentum of CMG array, the inertia of the gimbal assembly and the torque of the gimbal drive:
 
 \begin{equation}
-\dot\tau_B \approx \h_{Array} \cdot \frac{I_{Gimbal}}/\tau_{Gimbal}
+\dot\tau_B \approx h_{Array} \cdot \frac{I_{Gimbal}}{\tau_{Gimbal}}
 \end{equation}
 
 The reaction torque depends on the momentum of the gyroscope and baserate i.e. the angular velocity experienced by the platform.
@@ -145,6 +145,17 @@ The impact of such a concept on the sizing of the gimbal motors most likely depe
 
 ### Feasability Analysis
 
-- gimbal torques
-- gyro speeds and inertias
-- size and weight of setup
+The parameters, system characteristics and requirements create connected graph.
+To make sizing easier we can place all equations involved in a spreadsheet (see @Fig:cmg-sizing).
+This way one can quickly run through various parameters.
+
+![Spreadsheet of the most relevant CMG parameters including the equations that link them together.](./figures/cmg-sizing.png){ #fig:cmg-sizing }
+
+Things to note:
+
+ - distinction between dynamics at rest and with worse case base rate
+ - degrees to max speed as indicator if top speed is actually reachable
+ - friction, gimbal hardware, shape of envelope not taken into account!
+ - for dampening Nms more critical than Nm, but this is not taken into account in the usual sizing relationship!
+ - need to ensure alignment of gimbal axis with base rate axis to avoid reaction torque
+ - this is the key problem of combining dampening with compensation
