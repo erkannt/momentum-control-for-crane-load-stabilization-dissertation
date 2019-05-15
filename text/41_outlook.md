@@ -1,32 +1,47 @@
 
-# The Cow is a Sphere // Outlook
+# Outlook and Conclusion
 
-> "When its time for helicopters, you get helicopters. Everywhere." -- Cory Doctorow
+> "Once the conditions for helicopters are in place, it’s helicopter time, and so you get helicopters, everywhere, all at once." -- Cory Doctorow @citation-needed
+
+## Limits of Current Models
 
 - cow is a sphere
   - ropes are flexible
   - no drag
   - no wind
-- taking 2D to 3D
-  - identify euler angle
-  - apply torque
-  - for sizing modelling workspace without internal singularities sufficient
-- robot paths can be optimised
-  - remain in torque workspace
-  - limited Nm/s
-  - limit Nm
-  - minize Base Forces
-- desaturation strategies
-  - push off agains wall
-  - desaturate using conventional pendulum dampening
-- steering laws for crane CMG
-  - 3DoF steering laws suited for application
-  - optimize gimbal angle during trolley movement
-- untilize not only predicted robot torque but also force in controller
-- link pendulum to a gantry model
-- apply higher performance control techniques
-- engineering challenges
-  - power at hook
-  - high speed parts in construction suited package
-  - vibrations
-  - sensing hook and platform position
+  - forces of robot not taken into account
+  - no process forces or torques
+
+## Next Steps for Development
+
+- include external forces in equations of motion
+- 3d model that includes CMG array
+- translation of CMG state into 3d torque requirement
+- implementation of 3d steering law (prereq for controller validation)
+- controller for axis alignment in dampening
+- integrated simulation loop as prereq to robot path opt
+
+## Other Work Required
+
+- desaturation/CoG compensation with moving weight
+- 3d hardware prototype
+  - improve realtime capabilities/controller validation workflow
+  - improve gyro quality
+  - higher torque gimbal motors to ensure sufficient headroom
+- optimization of robot paths (look to space work)
+- desaturation during dampening
+- add crane movement
+- collect real crane motion for validation
+- power requirements for operation
+- construction site suitable hardware design
+- sensor(s) and filtering
+    - implementation of the inertia estimation
+    - dealing with vibrations
+- validation of controller under more simulated and hw scenarios
+- add controller for robot utilizing compensation
+
+## Conclusion
+
+- sota regarding space and ships
+- developed understanding of the problem
+- basic toolset for simulation, validation and sizing
