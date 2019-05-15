@@ -1,6 +1,10 @@
 
 # Control Moment Gyroscopes 101
 
+![](./figures/munroe-6a.jpg)
+
+> Randal Munroe @GrossmanQuestionsRandallMunroe
+
 Control moment gyroscopes are an established technology in spacecraft design and have also seen some terrestrial application.
 In this chapter I hope to provide a basic understanding of gyroscopic reaction torque before giving an overview of its use in momentum control devices as well as existing sizing guidelines.
 
@@ -14,9 +18,8 @@ The final part of this chapter describes these differences and motivates the sub
 ## Gyroscopic Reaction Torque
 
 Dealing with gyroscopes can make your head spin.
-Their behaviour often runs counter to our intuitions or as Randall Munroe put it when asked if there was anything is couldn't explain in simple english :
+Their behavior often runs counter to our intuitions due the relationship between torque, angular velocity and momentum involving the cross product of their vector, leading to everything constantly being rotated 90°.
 
-![Randal Munroe on gyroscopes in Time Magazine @GrossmanQuestionsRandallMunroe](./figures/munroe-6a.jpg)
 
 Fundamental to understanding gyroscopes is that angular momentum ($\bm{h}$) is a conserved quantity i.e. it remains constant unless a torque ($\bm{\tau}$) is applied to the system.
 Furthermore it helps to remember that therfore a change in angular momentum is a torque ($\bm{\tau} = \frac{d\bm{h}}{dt}$).
