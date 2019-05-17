@@ -53,25 +53,36 @@ The extension of the models to include external forces as would be experienced a
 
 \todo{read up on how the input to the CMG steering is shaped}
 
-
 ## Other Work Required
 
-- desaturation/CoG compensation with moving weight
-- 3d hardware prototype
-  - improve realtime capabilities/controller validation workflow
-  - improve gyro quality
-  - higher torque gimbal motors to ensure sufficient headroom
-- optimization of robot paths (look to space work)
-- desaturation during dampening
-- add crane movement
-- collect real crane motion for validation
-- power requirements for operation
-- construction site suitable hardware design
-- sensor(s) and filtering
-    - implementation of the inertia estimation
-    - dealing with vibrations
-- validation of controller under more simulated and hw scenarios
-- add controller for robot utilizing compensation
+Beyond these critical next steps resides a plethora of interesting research and engineering challenges.
+
+Once the pendulum, CMG and robot-multibody models have become more tightly integrated one could begin with the development and validation not only of control strategies that utilize the robot to compensate positional errors from pendulum oscillations.
+By integrating the models into robot path planning and by using either the real robot as a hardware-in-the-loop system or a more realistic robot simulator, one could also begin finding optimization strategies that increase the process accuracy through changes to robot paths and execution speeds/accelerations.
+
+In a similar vein, by extending the models to include motion of the suspension point i.e. gantry motion or trolley and gib motion, it becomes possible create control systems that utilize information and actors of both the crane and CMG array.
+This should open up novel control opportunities for dampening and controlled movement as well as better input to the reaction torque reduction and ways to desaturate the CMGs.
+Desaturation goals could also be met by adjusting the control during dampening of large oscillations.
+Furthermore the use of an adjustable weight as a source of low agility would require extensions to the CMG steering laws, which should provide fascinating research questions to people minded to such things.
+
+Such adjustable weights would be added to the long list of engineering challenges involved in bringing CMGs to the construction site and other cranes.
+Prior to on-site suitability there is also some work to be done in bringing the lab prototype to 3d dimensional application.
+The gyroscopes will should be improved with regard to their rotational accuracy and mounting to reduce wear, spin up times, noise and vibrations.
+To ease and accelerate the controller design process the realtime capabilities need to be increased to allow for signal analysis during experiments and rapid modification of parameters without recompiling.
+By moving the control loops to an embedded target the round trip times from controller to motors and back should also become shorter and most importantly more reliable.
+Given the risk of high reaction torques one should look into stronger gimbal motors and couplings or dedicated points of failure.
+
+The current sole sensor should be extended, to also allow measurement of the upper link.
+It might also be useful to add external optical tracking to allow for validation of the onboard sensors.
+The implementation of the inertia estimation should hopefully be straightforward, but is also a required development.
+
+Looking towards more realistic implementations of the CMG array the power use needs to be taken into account.
+While it is possible to provide power at the crane hook, given the advances in battery technology models and experiments regarding the power consumption of the array during operation will be interesting.
+Note that the gyroscopes of CMGs have been used as additional energy storage to handle short higher loads in both marine application and spacecraft experiments @citation-needed.
+
+As with all research continuing and ever more extensive validation will be required.
+The collection of real crane motion data for instance would be valuable to validate the crane parameter estimations and dampening requirements.
+As the simulation tools are improved more realistic and diverse processes will emerge that utilize the crane-CMG system and provide valuable input regarding the compensation and rotation requirements.
 
 ## Conclusion
 
