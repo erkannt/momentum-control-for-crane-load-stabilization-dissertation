@@ -192,3 +192,5 @@ It should therefore be possible to add a switching behavior or otherwise modify 
 This could lead to a stark reduction in the experienced reaction torque in comparison to the worst case scenario.
 Combined with limits to winds and crane movements this ought to reduce the gimbal torque requirements significantly.
 Nevertheless I would recommend adding dedicated points of failure for gimbal motor coupling and perhaps even means to mechanically arrest the gimbals motion should a failure of the coupling occur.
+
+\todo{discuss: dampening + rotation envelope can be flat, allowing higher rotation speeds}
