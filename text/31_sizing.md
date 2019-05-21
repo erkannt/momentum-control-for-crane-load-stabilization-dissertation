@@ -132,7 +132,8 @@ If the momentum vector were to lie parallel to the velocity their steering to ro
 
 Since the torque produced by the CMG also depends on the momentum of the gyroscope and the gimbal velocity (instead of the base rate) the following relationship hold true (see @citation-needed) for full discussion): 
 
-\begin{equation}{ #eqn:torque-velocity-relation}
+{ #eqn:torque-velocity-relation}
+\begin{equation}
 \frac{\omega_{gimbal}}{\omega_{system}} = \frac{\tau_{system}}{\tau_{gimbal}}
 \end{equation}
 
