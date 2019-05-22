@@ -106,7 +106,7 @@ Note that these equations do not limit the torque dynamics.
 
 !include code/gh-data-import.py
 
-## Roof Array Workspace
+## Roof Array Workspace { #sec:roof-array-workspace}
 
 \todo{add code for roofarray calculation}
 
