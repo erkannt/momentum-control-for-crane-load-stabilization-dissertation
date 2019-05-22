@@ -321,11 +321,21 @@ The hull or envelope of this momentum depends on the configuration of the array.
 If one imagines each CMG having a momentum vector that can be gimbaled 360°, the result is a circle lying on the plane orthogonal to the gimbals axis.
 The envelope then is the set of points defined by the sum multiple of such vectors through their rotation (see @Fig:cmg-momentum-envelope for a very nice illustration of envelope of a roof array taken from @citation-needed).
 
+To develop a more intuitive understanding of the momentum envelope one can picture the gyroscopes being gimbaled to move the momentum vector through the volume enclosed by the envelope.
+Remembering that a change in momentum is a torque we can picture how the velocity of the point moving through the momentum space is the output torque of the array.
+So if we want to produce a certain torque the point begins moving in a certain direction.
+At some point the point reaches the envelope and the array simply cannot produce any more torque around that axis.
+The time this takes i.e. the duration which we can sustain a given torque ergo depends on the velocity of the point i.e. the magnitude of the torque.
+So if our velocity in momentum space is in Nm and the distance travelled corresponds to time then it becomes understandable why our envelope is measured in Nms.
+
+Note that close to singularities the gimbals will have to move greater amounts to achieve the same travel in momentum space just like a robots axis have to rotate further close to singularities to achieve the same travel in cartesian space.
+Hence given a limited gimbal velocity and acceleration the torque dynamics will change throughout the momentum envelope.
+
 ![Example of a momentum envelope. Taken from @CitationNeeded.](./figures/cmg-momentum-envelope.jpg){#fig:cmg-momentum-envelope}
 
 It is important to understand that the envelope is not a convex hull i.e. it intersects itself and can have additional internal surfaces.
 These are the internal singularities that the steering law must avoid or be able to pass through.
-See @Fig:array-envelopes for an illustration of singularities of different array types taken from @LeveSpacecraftMomentumControl2015.
+See @Fig:array-envelopes for an illustration of singularities of different array types taken from @LeveSpacecraftMomentumControl2015 where one can also find a more in depth discussion of the various types of singularities and how the different steering laws are able to take them into account.
 
 \missingfigure{envelopes of pyramid, box and roof arrays}
 
@@ -339,42 +349,22 @@ See @Fig:roof-array-workspace-45deg and @Fig:roof-array-workspace-30deg for a co
 
 ![Outer (green) and inner (orange) singularities for a four CMG roof array with a roof angle of 30°.](./figures/roof-array-workspace-30deg.jpg){#fig:roof-array-workspace-30deg}
 
-\todo{add add discuss our roof array workspace code}
-
 ## Sizing of CMGs
 
-- main factors in space: @LeveSpacecraftMomentumControl2015
-  1. agility (slewrate)
-  2. workspace (Nms)
-  3. interaction with system dynamics
-  4. engineering considerations (weight, power, bearings, vibrations)
-- further/differing factors for stabilisation applications:
-  1. produced torque (Nm)
-  2. agility (Nm/s)
+Once again Leve et al. provide a good overview regarding the sizing of spacecraft CMG @LeveSpacecraftMomentumControl2015.
+For terrestrial systems the literature is quite barren, but in their wearable SPCMG Chiu et al. do detail their sizing process @ChiuDesignWearableScissoredPair2014.
+Generally speaking though, we can note that the main characteristics of a CMG array are the torque it can produce (Nm), the agility of the torque production i.e. its acceleration (Nm/s) and then the amount of torque it can sustain i.e. its momentum envelope (Nms).
+The magnitude of these requirements of course depends on the application for which the CMGs are being sized.
+This application will also pose constraints for instance on torque accuracy, weight, size, vibrations and power requirements.
 
-### Torque, Agility and Workspace
+Looking at the sizing methods used for spacecraft, the requirements usually stem from the agility demanded of the spacecraft, also called slewrate.
+Given the moment of inertia of the spacecraft, the slewrate requirement will provide a required torque and duration that it must be provided.
+The given slewrate also results in a base rate whose reaction torque must be handled by the gimbal motors.
+From this the sizing of the CMGs can proceed and will subsequently be controlled by the harsh constraints of of spaceflight hardware. 
 
-- max torque simply $\omega \cdot h$
-- agility in spacecraft is slewrate i.e. how fast can I turn my satellite
-  - interesting note: shift in derivative between gimbal and spacecraft
-  - can be used as key factor for sizing spacecraft momentum control systems
-- workspace
-  - why Nms?
-  - saturation: simple example SPCMG
-  - saturation for arrays
-  - what does a workspace shape mean?
-  - example workspaces
-  - shaping of roof workspaces (see appendix for code)
-- agility of stabilisation systems
-  - why Nm/s
-  - do any of the publications go into this???
-
-## Applicability to our Usecase
-
-- weight, power and computational power is a limited issue
-- worst case assumption regarding rotation along torque axis needs to be examined
-- slewrate is next to useless in sizing
-- different speeds when it comes to stabilisation of robots
-- no sizing info available regarding seakeeper and lit motors
-- understanding of usecase required to inform workspace and agility
-- crane introduces own set of dynamics
+This in particular is where our sizing process will diverge from spacecraft CMG design.
+Weight, size power and computational resources are of much smaller concern when the goal is hanging the CMGs from a crane.
+Some crane hooks have added weights which are required to ensure that the unloaded hook can overcome the rope friction in the pulley system.
+Furthermore, the slewrate or in our case the rotation speed of loads is only one concern.
+We must also account for the compensation of the robots motion and deal with the oscillations of the crane.
+Hence, as already alluded to during the review of existing applications, we must first develop an understanding of our crane-cmg-robot system, a process discussed in the following chapter.
