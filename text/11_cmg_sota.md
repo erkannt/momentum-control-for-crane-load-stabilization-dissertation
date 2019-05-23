@@ -142,8 +142,6 @@ Others have proposed using CMGs as the actuators of the arm to create kinematics
 
 ### Terrestrial Applications
 
-\todo{add images and videos of terrestrial applications}
-
 Looking to terrestrial applications we mostly see CMGs being used to stabilize vehicles.
 Attitude control with CMGs simply doesn't make sense on earth as most vehicles need to rotate at velocities that aren't feasible for CMG based control, given the high reaction torques that would have to be sustained by the gimbal motors.
 As we have the ground, water and air to push off from we usually can simply use wheel, fins and wings instead.
@@ -166,17 +164,21 @@ Low speeds of motors available back then as well as the much simpler solution of
 There were subsequent attempts at producing gyro cars.
 In the late sixties a team around Thomas Summers who had worked on guidance gyroscopes in the war and the car designer Alex Tremulis, built the Gyro-X prototype.
 The goal was to increase road capacity and improve aerodynamics by slimming a car to two wheels, but the team went bankrupt before they were able to solve the engineering challenges involved in actually keeping the car stable.
-A recent startup called Lit Motors also attempted to produce a two wheeled car in a similar vein and filed multiple patents @KimElectronicControlSystem2013.
+A recent startup called Lit Motors also attempted to produce a two wheeled car in a similar vein and filed multiple patents @KimElectronicControlSystem2013 (see also @Fig:litmotors).
 News surrounding the company went silent after an initially flurry of coverage around 2012 and some speculate that they weren't able to reduce noise and vibrations sufficiently to create a usable consumer experience, but they have recently relaunched their [website](https://www.litmotors.com).
 For a discussion as well as a derivation of equations of motion and control system for stabilization of two wheeled vehicles see @SpryGyroscopicStabilisationUnstable2008.
 In this paper the authors also extend the equations of motion to use two gyroscopes of opposite spin direction and show how this benefits control performance.
 
-While roll stabilizing gyroscopes went out of fashion for ships as hull and fin designs improved, they have become a commercial product offered by multiple companies.
+![Prototype of the Lit Motors C1 gyro-stabilized vehicle being driven on the webseries _Spark_ produced by Maker Studios](./figures/litmotors.gif){ #fig:litmotors }
+
+While roll stabilizing gyroscopes went out of fashion for ships as hull and fin designs improved, they have become a commercial product offered by multiple companies (see @Fig:seakeeper for an example).
 Their target audience are yachts as well as commercial vessels, where roll stabilization at rest or slow speeds is of greater import.
 The CMGs here are the the largest CMGs commercially available, since satellites require much lower torques.
 It is therefore unsurprising that a naval CMG was used in the recent resurrection of the Gyro-X at the Lane Motor Museum.
 It is also worth pointing out that some naval CMGs use the energy stored in the spinning gyroscope to provide additional electrical power during high peaks (caused by the actuation).
 This was also considered for spacecraft, but as spacecraft batteries have reached a similar energy density to high speed flywheels the added weight of the required electronics and challenges of high velocity gyroscopes in space have lead to this idea being scrapped.
+
+![Marketing video for a ship stabilizing gyroscope, taken from @SeakeeperGyroStabilizers. The left boat is being stabilized, the right one is not.](./figures/seakeeper.gif){ #fig:seakeeper }
 
 The gyroscopes used in naval CMGs are large enough to warrant running in a vacuum to reduce friction and are actuated using hydraulic systems.
 Filed patent point towards interesting engineering challenges @AdamsGyroscopicRollStabilizer2005 for instance regarding the cooling of the gyroscope bearings @AdamsCoolingBearingsMotors2009.
@@ -215,6 +217,8 @@ The authors also filed to patents with regard to ways of powering such a hook, o
 They incorrectly discuss @InouePracticalDevelopmentSuspender1998, stating that the author were only using passive stabilization.
 More recently researchers have once again used a single CMG to stabilize the yaw of a load attached to a model of a jib crane @KodaniTransportingRotatingControl2017.
 The author run into issues with the singularity and changing orientation of the output torque.
+
+\missingfigure{crane stabilisation papers}
 
 ### Summary
 
