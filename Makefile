@@ -31,6 +31,7 @@ pandoc-html-flags = --verbose \
 	--standalone \
 	--csl="$(stylefolder)/ref_format.csl" \
 	--toc \
+	--metadata date="`date "+%B %e, %Y"`" \
 	--number-sections
 pandoc-tex-flags = --verbose \
 	-F pandoc-crossref \
@@ -39,6 +40,7 @@ pandoc-tex-flags = --verbose \
 	--template="$(stylefolder)/template.tex" \
 	--bibliography="$(bibfile)" \
 	--number-sections \
+	--metadata date="`date "+%B %e, %Y"`" \
 	--csl="$(stylefolder)/ref_format.csl"
 
 # Where make looks for source files
