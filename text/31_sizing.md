@@ -56,7 +56,7 @@ The sizing is fairly straightforward and we can look the the spacecraft literatu
 For satellite as with part rotation the speed of rotation is usually not the core interest, instead we are interested in how long it will take us to rotate to the desired position.
 This of course also depends on the rotation speed, but also on the maximum acceleration and maximum jerk (derivative of acceleration).
 This is particularly true for short rotations where one might not reach the maximum speed before having to begin breaking.
-See chapter ??? of @citationneeded for a in depth discussion of this and how the duration of the jerk- and acceleration-limited regime can be derived from the relattionships between ???.
+See section 3.1 of @LeveSpacecraftMomentumControl2015 for an in depth discussion of this and how the duration of the jerk- and acceleration-limited regime can be derived from the relationship between max jerk, accelleration and velocity.
 
 While the optimization of these relationships is over relevance to spacecraft design, for the part rotation the sizing requirements regarding part rotation can be boiled down to:
 
@@ -66,7 +66,7 @@ While the optimization of these relationships is over relevance to spacecraft de
 
 Where $\omega$ is the desired rotation speed of the platform/load/part, $I$ its moment of inertia about the axis in line with the lower link and $h$ the combined angular momentum of the gyroscopes in the CMG array.
 When selecting the desired rotation speed remember to take into account that small rotation angles will fall into the jerk- or acceleration regime.
-Assuming a bang-bang-jerk control one can use the equation in @citationneeded mentioned above to determine these from the gimbal parameters obtained in the later sizing stages.
+Assuming a bang-bang-jerk control one can use the equations in chapter 3.1 of @LeveSpacecraftMomentumControl2015 mentioned above to determine these from the gimbal parameters obtained in the later sizing stages.
 This and and subsequent adjustment of the CMGs sizing should only be necessary when rotation performance is central to the chosen crane-cmg application.
 Given the relatively slow movement speeds of cranes with loads attached I would assume that this gives one ample time to perform rotations and that high rotation agility will be a rare requirement. 
 
@@ -130,7 +130,7 @@ Since our CMG arrays should operate in three dimension under diverse loads we mu
 This is particularly true for the dampening case which is most likely where the array will experience the highest angular velocities.
 If the momentum vector were to lie parallel to the velocity their steering to rotate them toward an orthogonal orientation to produce the torque necessary for dampening, though it might be possible to conceive a controller that tries to avoid orthogonality during velocity peaks.
 
-Since the torque produced by the CMG also depends on the momentum of the gyroscope and the gimbal velocity (instead of the base rate) the following relationship hold true (see @citation-needed) for full discussion): 
+Since the torque produced by the CMG also depends on the momentum of the gyroscope and the gimbal velocity (instead of the base rate) the following relationship holds true (see section 3.2.6 of @LeveSpacecraftMomentumControl2015) for full discussion): 
 
 { #eqn:torque-velocity-relation}
 \begin{equation}

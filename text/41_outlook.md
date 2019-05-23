@@ -1,7 +1,7 @@
 
 # Outlook and Conclusion
 
-> "Once the conditions for helicopters are in place, it’s helicopter time, and so you get helicopters, everywhere, all at once." -- Cory Doctorow @citation-needed
+> "Once the conditions for helicopters are in place, it’s helicopter time, and so you get helicopters, everywhere, all at once." -- Cory Doctorow @locusmagCoryDoctorowTerra2019
 
 Prior to summing up this work I would like to discuss the assumptions and associated limits of the currently used models.
 Given these limits and some of the insights gained through our experiments I will then make recommendations regarding the acute developments needed to progress this work but also some ideas regarding questions and areas that need to be covered to make CMGs a useful tool for cranes in general and the construction site in particular.
@@ -78,7 +78,7 @@ The implementation of the inertia estimation should hopefully be straightforward
 
 Looking towards more realistic implementations of the CMG array the power use needs to be taken into account.
 While it is possible to provide power at the crane hook, given the advances in battery technology models and experiments regarding the power consumption of the array during operation will be interesting.
-Note that the gyroscopes of CMGs have been used as additional energy storage to handle short higher loads in both marine application and spacecraft experiments @citation-needed.
+As previously noted gyroscopes of CMGs have been used as additional energy storage to handle short higher loads in marine application but abandoned in spacecraft research due to batteries having a similar energy density while posing less engineering challenges.
 
 As with all research continuing and ever more extensive validation will be required.
 The collection of real crane motion data for instance would be valuable to validate the crane parameter estimations and dampening requirements.

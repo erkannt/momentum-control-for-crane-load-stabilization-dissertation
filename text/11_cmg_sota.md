@@ -112,7 +112,7 @@ Since redundancy is a must in spaceflight the arrays usually start with four CMG
 The three common arrays are box, pyramid and roof (see @fig:sg-cmg-configurations).
 Leve et. al recommend roof arrays due to their simpler and easier to avoid internal singularities.
 
-![Various configuration options for single gimbal CMGs. Taken from CitationNeeded.](./figures/sg-cmg-configurations.jpg){#fig:sg-cmg-configurations}
+![Various configuration options for single gimbal CMGs. Taken from an extensive treatise on the geometric theory of single gimbal CMGs @KurokawaGeometricStudySingle1998.](./figures/sg-cmg-configurations.jpg){#fig:sg-cmg-configurations}
 
 Momentum control devices like reaction wheels, CMGs or magneto-torquers enable spacecraft to adjust and control their orientation without expending fuel.
 This makes them invaluable given weight and volume constraints in spaceflight.
@@ -122,20 +122,23 @@ While the ISS has a remote controlled arm, the control of this arm is not couple
 The ACS simply continues to try and maintain the ISS in the desired orientation.
 This is most likely possible due to the very large moment of inertia that the ISS possesses.
 
-The only other robot arm that has operated in space is that of the ETS VII research satellite (see @Fig:ets-vii-space-robot and @citation-needed).
+The only other robot arm that has operated in space is that of the ETS VII research satellite (see @Fig:ets-vii-space-robot and @OdaSummaryNASDAETSVII2000).
 The goal of the this research was to study how one satellite might capture another spacecraft for repairs or even just removal of space debris.
-For this mission the torques produced by the robot where simulated in advance to ensure that the ACS would be able to compensate them.
-If not, the robot programming was adjusted.
+The missions experiments were performed using both programmed motion and remote control operation with the speed limited 2mm/s.
+Such low speeds were necessary so that the ACS of the spacecraft could maintain its orientation.
+Using the ETS VII satellite Yoshida et al. were able to show the efficacy of reactionless motionplanning using so called reaction-null-space @yoshida_zero_2001.
+These are sets of movement that in theory produce zero reaction torque at the base of the robot.
 Note that the movements would feel ridiculous in the context of earth, as they took over 20 minutes to move less than 50cm.
 
-While the ETS VII is the only such system to actually fly there has been a lot of research into robot arms in space.
-These include the idea of adding a second robot to compensate the torques of the first robot @citation-needed.
+While the ETS VII is the only such system to actually fly there has been a lot of research into robot arms in space (see @ReintsemaDLRAdvancedTelerobotic2007 for a review), with the first robot arm flying as an experiment aboard the space shuttle Columbia @HirzingerROTEXtheFirstRemotely1994.
+These include the idea of adding a second robot to compensate the torques of the first robot @yoshida_dual_1991.
 This proved to be a waste of payload as one is in essence creating a low efficiency momentum control device, since the second arm cannot be used as an arm while it is compensating.
-Other works have studied optimization techniques to ensure that an ACS can compensate the torques of the arm @citation-needed.
-Others have proposed using CMGs as the actuators of the arm to create kinematics capable of moving in space without exerting torques on their host spacecraft.
-\todo{proposals for dealing with forces produced by robots}
+Other works have studied the use of CMG based ACS and optimization techniques to ensure that these can compensate the torques of the arm @li_motion_2013.
+Others have proposed using CMGs as the actuators of the arm to create kinematics capable of moving in space without exerting torques on their host spacecraft @carpenter_reducing_2009.
 
-![Rendering of the ETS VII research satellite used to evaluate the use of robot arms to manipulate other satellites. @Citation-Needed](./figures/ets-vii-space-robot.jpg){#fig:ets-vii-space-robot}
+\todo{proposals for dealing with forces produced by robots, can't we just model them as torques?}
+
+![Artists rendition of the ETS VII research satellite used to evaluate the use of robot arms to manipulate other satellites (bottom right, taken from JAXA @JAXAEngineeringTest). The satellite during ground tests (left, taken from ESA Bulletin @VisentinTestingSpaceRobotics1999) and overview of its robot setup (top right, taken from @OdaSummaryNASDAETSVII2000)](./figures/ets-collage.png){#fig:ets-vii-space-robot}
 
 ### Terrestrial Applications
 
@@ -147,9 +150,12 @@ As we have the ground, water and air to push off from we usually can simply use 
 
 So CMGs find terrestrial application where such systems don't work: two wheeled vehicles that should remain upright at slow speeds or a standstill and roll stabilization for ships at rest.
 Looking back there are early examples of both applications.
-For ground vehicles there is a gyrocar commissioned in 1912 by Pyotr Petrovich Shilovsky who also built a monorail and wrote a book on the uses of gyroscopes in 1924 @citation-needed.
-Ships of the same period saw the construction of the largest CMGs to date aboard the ??? @citation-needed.
+For ground vehicles there is a gyrocar commissioned in 1912 by Pyotr Petrovich Shilovsky who also built a monorail and wrote a book on the uses of gyroscopes in 1924 @ShilovskiiGyroscopeItsPractical1924.
+Ships of the same period saw the construction of probably the largest CMGs with the first deployment to a large passenger liner, the Conte di Savoia in 1931 @RexConteDi
+The gyroscope weighed in 175t and spun at 910 rpm (see @Fig:conte-gyro).
 Given that control engineering or cybernetics hadn't come about yet it is obvious that these systems must have operated on a passive control principle.
+
+![Gyro stabilizer aboard the Conte di Savoia passenger liner launched in 1934.](./figures/conte-di-savoia.jpg){ #fig:conte-gyro }
 
 The way that such passive stabilization with gyroscopes works is as follows:
 The tipping vehicle exerts a torque orthogonal to the gyroscopes momentum and the gimbals axis.
@@ -161,7 +167,7 @@ There were subsequent attempts at producing gyro cars.
 In the late sixties a team around Thomas Summers who had worked on guidance gyroscopes in the war and the car designer Alex Tremulis, built the Gyro-X prototype.
 The goal was to increase road capacity and improve aerodynamics by slimming a car to two wheels, but the team went bankrupt before they were able to solve the engineering challenges involved in actually keeping the car stable.
 A recent startup called Lit Motors also attempted to produce a two wheeled car in a similar vein and filed multiple patents @KimElectronicControlSystem2013.
-As of late news surrounding the company has gone silent and some speculate that they weren't able to reduce noise and vibrations sufficiently to create a usable consumer experience @citation-needed.
+News surrounding the company went silent after an initially flurry of coverage around 2012 and some speculate that they weren't able to reduce noise and vibrations sufficiently to create a usable consumer experience, but they have recently relaunched their [website](https://www.litmotors.com).
 For a discussion as well as a derivation of equations of motion and control system for stabilization of two wheeled vehicles see @SpryGyroscopicStabilisationUnstable2008.
 In this paper the authors also extend the equations of motion to use two gyroscopes of opposite spin direction and show how this benefits control performance.
 
@@ -319,7 +325,7 @@ We can think of this of the workspace of the array whose axes are angular moment
 
 The hull or envelope of this momentum depends on the configuration of the array.
 If one imagines each CMG having a momentum vector that can be gimbaled 360°, the result is a circle lying on the plane orthogonal to the gimbals axis.
-The envelope then is the set of points defined by the sum multiple of such vectors through their rotation (see @Fig:cmg-momentum-envelope for a very nice illustration of envelope of a roof array taken from @citation-needed).
+The envelope then is the set of points defined by the sum multiple of such vectors through their rotation (see @Fig:cmg-momentum-envelope).
 
 To develop a more intuitive understanding of the momentum envelope one can picture the gyroscopes being gimbaled to move the momentum vector through the volume enclosed by the envelope.
 Remembering that a change in momentum is a torque we can picture how the velocity of the point moving through the momentum space is the output torque of the array.
