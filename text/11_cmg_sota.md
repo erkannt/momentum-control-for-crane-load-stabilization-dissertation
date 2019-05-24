@@ -189,12 +189,14 @@ The actuation is required to ensure that the gyroscope doesn't reach a singulari
 Given the size of the gyroscopes and bearings involved the actuation is also required to assist the gyroscope in overcoming friction.
 This is important during small excitations where the friction might introduce a significant time delay in the systems reaction.
 
-Researchers have also proposed other applications for CMGs.
+Researchers have also proposed other applications for CMGs (see @Fig:other-terrestrial).
 The weirdest is most likely the use of a CMG to stabilize a beating heart during surgery [@GagneCardiacMotionCompensation2009; @GagneGyroLockStabilizingHeart2012].
 Several researchers have built CMGs into devices aimed at stabilizing human gait to e.g. assist the elderly [@ChiuDesignWearableScissoredPair2014; @LiGyroscopicAssistanceHuman2012].
-Others have suggested using CMGs to orient underwater robots to allow for more precise movements and efficient use of thrusters [@YimeDesignCMGUnderwater2011; @ThorntonInternalActuationUnderwater2005; @PenaAdvancesDevelopingTelemanipulators2009].
+Others have suggested using CMGs to orient underwater robots to allow attitude control at zero velocity and with less thrusters (initially proposed in 2005 [@ThorntonInternalActuationUnderwater2005], further examples:[@ThorntonZeroGClassUnderwater2007; @YimeDesignCMGUnderwater2011; @PenaAdvancesDevelopingTelemanipulators2009]).
 Others have used reaction wheels instead of CMGs to create small, self assembling robots that move by flipping themselves [@RomanishinMblocksMomentumdrivenMagnetic2013].
 A quite well known example of fun with momentum control is the Cubli, a self balancing cube that also uses reaction wheels [@GajamohanCubliCubeThat2012].
+
+![Other terrestrial applications proposed by researchers. From left to right: human gain stabilization [@ChiuDesignWearableScissoredPair2014], stabilizer for heart surgery [@GagneCardiacMotionCompensation2009; @GagneGyroLockStabilizingHeart2012] and underwater robot [@PenaAdvancesDevelopingTelemanipulators2009].](./figures/other-terrestrial-applications.png){ #fig:other-terrestrial }
 
 ### Crane Applications
 
@@ -210,17 +212,19 @@ The authors also analyzed how the device improved assembly times and reduced dan
 The most impressive improvement came about in tasks that involved the rotation of the load.
 Here the work duration was roughly halved and nearly all work they classified as dangerous was eliminated.
 Their device used the passive stabilization principle during transport and a remote controlled actuation to cause the load rotation.
-Yi et al. have published several works on stabilizing beams during construction work [@YiImplementationGyroActuator1999; @YiAttitudeControlStabilization2000; @SaAttitudeControlStabilization2001].
+Yi et al. have published several works on stabilizing beams during construction work (see @Fig:SaAttitudeControlStabilization2001) and [@YiImplementationGyroActuator1999; @YiAttitudeControlStabilization2000; @SaAttitudeControlStabilization2001].
 Starting with a single CMG hanging from a wire their subsequent publications (one having only the abstract available in english) discuss the addition of an IMU as a rotary encoder attached to the wire is too inaccurate.
 They also run into the same issue as naval CMGs that slow rotations aren't able to overcome the gimbal friction.
 Their last paper adds a clutch to the gimbal to avoid overloading the gimbal motor during passive stabilization.
-In [@LeeAnalysisFieldApplicability2012] the authors use a motorized hook to rotate beams.
+In [@LeeAnalysisFieldApplicability2012] the authors use a motorized hook to rotate beams (see @Fig:LeeAnalysisFieldApplicability2012).
 The authors also filed to patents with regard to ways of powering such a hook, one proposed a clock spring with the other proposing use of the vertical hook travel to power the device.
 They incorrectly discuss [@InouePracticalDevelopmentSuspender1998], stating that the author were only using passive stabilization.
 More recently researchers have once again used a single CMG to stabilize the yaw of a load attached to a model of a jib crane [@KodaniTransportingRotatingControl2017].
 The author run into issues with the singularity and changing orientation of the output torque.
 
-\missingfigure{crane stabilisation papers}
+![Illustration of beam stabilization setup from [@SaAttitudeControlStabilization2001]](./figures/SaAttitudeControlStabilization2001.png){ #fig:SaAttitudeControlStabilization2001 }
+
+![Motorized crane hook experiments. Taken from [@LeeAnalysisFieldApplicability2012]](./figures/LeeAnalysisFieldApplicability2012.png){ #fig:LeeAnalysisFieldApplicability2012 }
 
 ### Summary
 
