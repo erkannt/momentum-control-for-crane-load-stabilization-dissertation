@@ -87,9 +87,13 @@ p span.removed {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.textBtnClose {
-    font-size: 3rem;
-    display: inline-block;
+.navTitle {
+    padding-left: 20px;
+    text-overflow: ellipsis;
+    padding-top: 30px;
+    font-weight: bold;
+    line-height: 30px;
+    font-size: 18px;
 }
 
 .textBtn a:hover {

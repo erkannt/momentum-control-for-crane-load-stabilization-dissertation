@@ -40,16 +40,32 @@
     $header-includes$
     $endfor$
     <script>
+        var navopen = false;
+
+        function toggleTOC() {
+            if (navopen) {
+                closeTOC()
+                navopen = false;
+            }
+            else {
+                openTOC()
+                navopen = true;
+            }
+        }
         /* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
         function openTOC() {
             document.getElementById("TOC").style.width = "30vw";
             document.getElementById("main").style.marginLeft = "30vw";
+            document.getElementById("openTOC").style.left = "30vw";
+            document.getElementById("openTOC").textContent = "X";
         }
 
         /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
         function closeTOC() {
+            document.getElementById("openTOC").textContent = "TOC";
             document.getElementById("TOC").style.width = "0";
             document.getElementById("main").style.margin = "0 auto";
+            document.getElementById("openTOC").style.left = "0";
         } 
 
         /* Highlight current section in TOC */
@@ -108,11 +124,11 @@
 <body>
     $if(toc)$
     <nav>
-        <a href="javascript:void(0)" id="openTOC" class="textBtn" onclick="openTOC()">
+        <a href="javascript:void(0)" id="openTOC" class="textBtn" onclick="toggleTOC()">
             TOC
         </a>
         <div id="$idprefix$TOC">
-            <a href="javascript:void(0)" class="textBtn textBtnClose" onclick="closeTOC()">&times</a>
+            <span class="navTitle">Table of Content</span>
             $toc$
         </div>
     </nav>
