@@ -3,13 +3,13 @@
 
 ![](./figures/munroe-6a.jpg)
 
-> Randal Munroe @GrossmanQuestionsRandallMunroe
+> Randal Munroe [@GrossmanQuestionsRandallMunroe]
 
 Control moment gyroscopes are an established technology in spacecraft design and have also seen some terrestrial application.
 In this chapter I hope to provide a basic understanding of gyroscopic reaction torque before giving an overview of its use in momentum control devices as well as existing sizing guidelines.
 
 The use of CMGs in spacecraft is a mature technology and therefore we can learn a lot for our application from several decades of research, development and active deployment.
-As serendipity goes the start of my research in to crane-stabilization roughly coincided with the publication of the book _Spacecraft Momentum Control Systems_ by Leve, Hamilton and Peck @LeveSpacecraftMomentumControl2015.
+As serendipity goes the start of my research in to crane-stabilization roughly coincided with the publication of the book _Spacecraft Momentum Control Systems_ by Leve, Hamilton and Peck [@LeveSpacecraftMomentumControl2015].
 They did a great job of distilling said decades of research into a very legible book and most of the sizing and dynamics in this chapter are taken from there.
 
 Terrestrial applications of CMGs are less common, with the only commercially available solutions being roll stabilizers for ships.
@@ -66,7 +66,7 @@ Yet since the torque of the CMG also depends on the angular momentum of the spin
 This is were the lever analogy really shines:
 Just like a longer leaver lets us produce a greater output force with the same input force, so can a greater angular momentum (e.g. faster spinning gyroscope) let us produce a larger output torque with the same gimbal motor.
 Since the gyroscopes motor only needs to overcome the bearing friction once it has reached the desired speed, CMGs let us produce very large torques with comparatively small motors.
-Leve et al. mention terrestrial systems capable of output in excess of 100.000 Nm that require only a few kW to operate [@LeveSpacecraftMomentumControl2015, 46].
+Leve et al. mention terrestrial systems capable of output in excess of 100.000 Nm that require only a few kW to operate [@LeveSpacecraftMomentumControl2015, p. 46].
 This is quite a feat when compared with e.g. a Tesla Model S motor which produces 1.250 Nm using 581 KW.
 
 Unfortunately there is a caveat.
@@ -112,7 +112,7 @@ Since redundancy is a must in spaceflight the arrays usually start with four CMG
 The three common arrays are box, pyramid and roof (see @fig:sg-cmg-configurations).
 Leve et. al recommend roof arrays due to their simpler and easier to avoid internal singularities.
 
-![Various configuration options for single gimbal CMGs. Taken from an extensive treatise on the geometric theory of single gimbal CMGs @KurokawaGeometricStudySingle1998.](./figures/sg-cmg-configurations.jpg){#fig:sg-cmg-configurations}
+![Various configuration options for single gimbal CMGs. Taken from an extensive treatise on the geometric theory of single gimbal CMGs [@KurokawaGeometricStudySingle1998].](./figures/sg-cmg-configurations.jpg){#fig:sg-cmg-configurations}
 
 Momentum control devices like reaction wheels, CMGs or magneto-torquers enable spacecraft to adjust and control their orientation without expending fuel.
 This makes them invaluable given weight and volume constraints in spaceflight.
@@ -122,23 +122,23 @@ While the ISS has a remote controlled arm, the control of this arm is not couple
 The ACS simply continues to try and maintain the ISS in the desired orientation.
 This is most likely possible due to the very large moment of inertia that the ISS possesses.
 
-The only other robot arm that has operated in space is that of the ETS VII research satellite (see @Fig:ets-vii-space-robot and @OdaSummaryNASDAETSVII2000).
+The only other robot arm that has operated in space is that of the ETS VII research satellite (see @Fig:ets-vii-space-robot and [@OdaSummaryNASDAETSVII2000]).
 The goal of the this research was to study how one satellite might capture another spacecraft for repairs or even just removal of space debris.
 The missions experiments were performed using both programmed motion and remote control operation with the speed limited 2mm/s.
 Such low speeds were necessary so that the ACS of the spacecraft could maintain its orientation.
-Using the ETS VII satellite Yoshida et al. were able to show the efficacy of reactionless motionplanning using so called reaction-null-space @yoshida_zero_2001.
+Using the ETS VII satellite Yoshida et al. were able to show the efficacy of reactionless motionplanning using so called reaction-null-space [@yoshida_zero_2001].
 These are sets of movement that in theory produce zero reaction torque at the base of the robot.
 Note that the movements would feel ridiculous in the context of earth, as they took over 20 minutes to move less than 50cm.
 
-While the ETS VII is the only such system to actually fly there has been a lot of research into robot arms in space (see @ReintsemaDLRAdvancedTelerobotic2007 for a review), with the first robot arm flying as an experiment aboard the space shuttle Columbia @HirzingerROTEXtheFirstRemotely1994.
-These include the idea of adding a second robot to compensate the torques of the first robot @yoshida_dual_1991.
+While the ETS VII is the only such system to actually fly there has been a lot of research into robot arms in space (see [@ReintsemaDLRAdvancedTelerobotic2007] for a review), with the first robot arm flying as an experiment aboard the space shuttle Columbia [@HirzingerROTEXtheFirstRemotely1994].
+These include the idea of adding a second robot to compensate the torques of the first robot [@yoshida_dual_1991].
 This proved to be a waste of payload as one is in essence creating a low efficiency momentum control device, since the second arm cannot be used as an arm while it is compensating.
-Other works have studied the use of CMG based ACS and optimization techniques to ensure that these can compensate the torques of the arm @li_motion_2013.
-Others have proposed using CMGs as the actuators of the arm to create kinematics capable of moving in space without exerting torques on their host spacecraft @carpenter_reducing_2009.
+Other works have studied the use of CMG based ACS and optimization techniques to ensure that these can compensate the torques of the arm [@li_motion_2013].
+Others have proposed using CMGs as the actuators of the arm to create kinematics capable of moving in space without exerting torques on their host spacecraft [@carpenter_reducing_2009].
 
 \todo{proposals for dealing with forces produced by robots, can't we just model them as torques?}
 
-![Artists rendition of the ETS VII research satellite used to evaluate the use of robot arms to manipulate other satellites (bottom right, taken from JAXA @JAXAEngineeringTest). The satellite during ground tests (left, taken from ESA Bulletin @VisentinTestingSpaceRobotics1999) and overview of its robot setup (top right, taken from @OdaSummaryNASDAETSVII2000)](./figures/ets-collage.png){#fig:ets-vii-space-robot}
+![Artists rendition of the ETS VII research satellite used to evaluate the use of robot arms to manipulate other satellites (bottom right, taken from JAXA [@JAXAEngineeringTest]). The satellite during ground tests (left, taken from ESA Bulletin [@VisentinTestingSpaceRobotics1999]) and overview of its robot setup (top right, taken from [@OdaSummaryNASDAETSVII2000])](./figures/ets-collage.png){#fig:ets-vii-space-robot}
 
 ### Terrestrial Applications
 
@@ -148,8 +148,8 @@ As we have the ground, water and air to push off from we usually can simply use 
 
 So CMGs find terrestrial application where such systems don't work: two wheeled vehicles that should remain upright at slow speeds or a standstill and roll stabilization for ships at rest.
 Looking back there are early examples of both applications.
-For ground vehicles there is a gyrocar commissioned in 1912 by Pyotr Petrovich Shilovsky who also built a monorail and wrote a book on the uses of gyroscopes in 1924 @ShilovskiiGyroscopeItsPractical1924.
-Ships of the same period saw the construction of probably the largest CMGs with the first deployment to a large passenger liner, the Conte di Savoia in 1931 @RexConteDi
+For ground vehicles there is a gyrocar commissioned in 1912 by Pyotr Petrovich Shilovsky who also built a monorail and wrote a book on the uses of gyroscopes in 1924 [@ShilovskiiGyroscopeItsPractical1924].
+Ships of the same period saw the construction of probably the largest CMGs with the first deployment to a large passenger liner, the Conte di Savoia in 1931 [@RexConteDi]
 The gyroscope weighed in 175t and spun at 910 rpm (see @Fig:conte-gyro).
 Given that control engineering or cybernetics hadn't come about yet it is obvious that these systems must have operated on a passive control principle.
 
@@ -164,9 +164,9 @@ Low speeds of motors available back then as well as the much simpler solution of
 There were subsequent attempts at producing gyro cars.
 In the late sixties a team around Thomas Summers who had worked on guidance gyroscopes in the war and the car designer Alex Tremulis, built the Gyro-X prototype.
 The goal was to increase road capacity and improve aerodynamics by slimming a car to two wheels, but the team went bankrupt before they were able to solve the engineering challenges involved in actually keeping the car stable.
-A recent startup called Lit Motors also attempted to produce a two wheeled car in a similar vein and filed multiple patents @KimElectronicControlSystem2013 (see also @Fig:litmotors).
+A recent startup called Lit Motors also attempted to produce a two wheeled car in a similar vein and filed multiple patents [@KimElectronicControlSystem2013] (see also @Fig:litmotors).
 News surrounding the company went silent after an initially flurry of coverage around 2012 and some speculate that they weren't able to reduce noise and vibrations sufficiently to create a usable consumer experience, but they have recently relaunched their [website](https://www.litmotors.com).
-For a discussion as well as a derivation of equations of motion and control system for stabilization of two wheeled vehicles see @SpryGyroscopicStabilisationUnstable2008.
+For a discussion as well as a derivation of equations of motion and control system for stabilization of two wheeled vehicles see [@SpryGyroscopicStabilisationUnstable2008].
 In this paper the authors also extend the equations of motion to use two gyroscopes of opposite spin direction and show how this benefits control performance.
 
 ![Prototype of the Lit Motors C1 gyro-stabilized vehicle being driven on the webseries _Spark_ produced by Maker Studios](./figures/litmotors.gif){ #fig:litmotors }
@@ -178,44 +178,44 @@ It is therefore unsurprising that a naval CMG was used in the recent resurrectio
 It is also worth pointing out that some naval CMGs use the energy stored in the spinning gyroscope to provide additional electrical power during high peaks (caused by the actuation).
 This was also considered for spacecraft, but as spacecraft batteries have reached a similar energy density to high speed flywheels the added weight of the required electronics and challenges of high velocity gyroscopes in space have lead to this idea being scrapped.
 
-![Marketing video for a ship stabilizing gyroscope, taken from @SeakeeperGyroStabilizers. The left boat is being stabilized, the right one is not.](./figures/seakeeper.gif){ #fig:seakeeper }
+![Marketing video for a ship stabilizing gyroscope, taken from [@SeakeeperGyroStabilizers]. The left boat is being stabilized, the right one is not.](./figures/seakeeper.gif){ #fig:seakeeper }
 
 The gyroscopes used in naval CMGs are large enough to warrant running in a vacuum to reduce friction and are actuated using hydraulic systems.
-Filed patent point towards interesting engineering challenges @AdamsGyroscopicRollStabilizer2005 for instance regarding the cooling of the gyroscope bearings @AdamsCoolingBearingsMotors2009.
+Filed patent point towards interesting engineering challenges [@AdamsGyroscopicRollStabilizer2005] for instance regarding the cooling of the gyroscope bearings [@AdamsCoolingBearingsMotors2009].
 Given the passive stabilization principle discussed earlier, one might surmise that no actuation is required.
 The actuation is required to ensure that the gyroscope doesn't reach a singularity, limit the precession speed and thereby the output torque.
 Given the size of the gyroscopes and bearings involved the actuation is also required to assist the gyroscope in overcoming friction.
 This is important during small excitations where the friction might introduce a significant time delay in the systems reaction.
 
 Researchers have also proposed other applications for CMGs.
-The weirdest is most likely the use of a CMG to stabilize a beating heart during surgery @GagneCardiacMotionCompensation2009, @GagneGyroLockStabilizingHeart2012.
-Several researchers have built CMGs into devices aimed at stabilizing human gait to e.g. assist the elderly @ChiuDesignWearableScissoredPair2014, @LiGyroscopicAssistanceHuman2012.
-Others have suggested using CMGs to orient underwater robots to allow for more precise movements and efficient use of thrusters @YimeDesignCMGUnderwater2011, @ThorntonInternalActuationUnderwater2005, @PenaAdvancesDevelopingTelemanipulators2009.
-Others have used reaction wheels instead of CMGs to create small, self assembling robots that move by flipping themselves @RomanishinMblocksMomentumdrivenMagnetic2013.
-A quite well known example of fun with momentum control is the Cubli, a self balancing cube that also uses reaction wheels @GajamohanCubliCubeThat2012.
+The weirdest is most likely the use of a CMG to stabilize a beating heart during surgery [@GagneCardiacMotionCompensation2009; @GagneGyroLockStabilizingHeart2012].
+Several researchers have built CMGs into devices aimed at stabilizing human gait to e.g. assist the elderly [@ChiuDesignWearableScissoredPair2014; @LiGyroscopicAssistanceHuman2012].
+Others have suggested using CMGs to orient underwater robots to allow for more precise movements and efficient use of thrusters [@YimeDesignCMGUnderwater2011; @ThorntonInternalActuationUnderwater2005; @PenaAdvancesDevelopingTelemanipulators2009].
+Others have used reaction wheels instead of CMGs to create small, self assembling robots that move by flipping themselves [@RomanishinMblocksMomentumdrivenMagnetic2013].
+A quite well known example of fun with momentum control is the Cubli, a self balancing cube that also uses reaction wheels [@GajamohanCubliCubeThat2012].
 
 ### Crane Applications
 
 Given that there have been significant efforts to automate construction in Japan and Korea dating back to the 1980s, it is unsurprising that one can find some research into the actuation of cranes from these countries.
 
-A work from 1994 is relevant to cranes but actually on the stabilization of a passenger gondala uses an SPCMG with two 30kg flywheels to compensate wind excitation @KankiDevelopmentCMGActive1994.
-In 1997 a patent was filed on adding a motor to a crane hook to rotate the load @gimseoghoHukeuhoejeonjojeongiGaneunghanKeureinyong1997.
+A work from 1994 is relevant to cranes but actually on the stabilization of a passenger gondala uses an SPCMG with two 30kg flywheels to compensate wind excitation [@KankiDevelopmentCMGActive1994].
+In 1997 a patent was filed on adding a motor to a crane hook to rotate the load [@gimseoghoHukeuhoejeonjojeongiGaneunghanKeureinyong1997].
 In such a case the crane cables resistance to twisting would be what the motor has to push off against.
-A paper from 1998 describes field testing of a device using a single CMG @InouePracticalDevelopmentSuspender1998.
+A paper from 1998 describes field testing of a device using a single CMG [@InouePracticalDevelopmentSuspender1998].
 Interestingly the authors also mention previous work that utilized fans or propellors to actuate a crane's load.
 We have sadly not been able to find a source for this, the language barrier being quite an issue.
 The authors also analyzed how the device improved assembly times and reduced dangerous work.
 The most impressive improvement came about in tasks that involved the rotation of the load.
 Here the work duration was roughly halved and nearly all work they classified as dangerous was eliminated.
 Their device used the passive stabilization principle during transport and a remote controlled actuation to cause the load rotation.
-Yi et al. have published several works on stabilizing beams during construction work @YiImplementationGyroActuator1999, @YiAttitudeControlStabilization2000, @SaAttitudeControlStabilization2001.
+Yi et al. have published several works on stabilizing beams during construction work [@YiImplementationGyroActuator1999; @YiAttitudeControlStabilization2000; @SaAttitudeControlStabilization2001].
 Starting with a single CMG hanging from a wire their subsequent publications (one having only the abstract available in english) discuss the addition of an IMU as a rotary encoder attached to the wire is too inaccurate.
 They also run into the same issue as naval CMGs that slow rotations aren't able to overcome the gimbal friction.
 Their last paper adds a clutch to the gimbal to avoid overloading the gimbal motor during passive stabilization.
-In @LeeAnalysisFieldApplicability2012 the authors use a motorized hook to rotate beams.
+In [@LeeAnalysisFieldApplicability2012] the authors use a motorized hook to rotate beams.
 The authors also filed to patents with regard to ways of powering such a hook, one proposed a clock spring with the other proposing use of the vertical hook travel to power the device.
-They incorrectly discuss @InouePracticalDevelopmentSuspender1998, stating that the author were only using passive stabilization.
-More recently researchers have once again used a single CMG to stabilize the yaw of a load attached to a model of a jib crane @KodaniTransportingRotatingControl2017.
+They incorrectly discuss [@InouePracticalDevelopmentSuspender1998], stating that the author were only using passive stabilization.
+More recently researchers have once again used a single CMG to stabilize the yaw of a load attached to a model of a jib crane [@KodaniTransportingRotatingControl2017].
 The author run into issues with the singularity and changing orientation of the output torque.
 
 \missingfigure{crane stabilisation papers}
@@ -234,8 +234,8 @@ We will have to develop an understanding of crane-cmg dynamics to let us find a 
 
 With the number of spinning parts involved in a CMG the dynamics exhibit a certain complexity.
 To be able to size and control the CMGs for our application we need to understand and model these dynamics.
-This section will therefore introduce and discuss the model derived in great detail in Chapter 4.5 of @LeveSpacecraftMomentumControl2015.
-The resulting expression is the derivative (with respect to time) of the angular momentum of a CMG spacecraft with variable speed gyro-rotors (Eq. 4.81 in @LeveSpacecraftMomentumControl2015):
+This section will therefore introduce and discuss the model derived in great detail in Chapter 4.5 of [@LeveSpacecraftMomentumControl2015].
+The resulting expression is the derivative (with respect to time) of the angular momentum of a CMG spacecraft with variable speed gyro-rotors [@LeveSpacecraftMomentumControl2015, eq. 4.81]:
 
 \begin{eqnarray}
 \frac{^N\text{d}\mathbf{H}}{\text{d}t} &=&
@@ -263,7 +263,7 @@ J_{r,i}
 \right)
 \end{eqnarray}
 
-Leve et al. use vector-dyadic notation for the above and spend a section introducing it in @LeveSpacecraftMomentumControl2015.
+Leve et al. use vector-dyadic notation for the above and spend a section introducing it in [@LeveSpacecraftMomentumControl2015, sec. 4.1].
 For a basic understanding we can ignore the dyadic notation, summations etc. and focus on the following symbols:
 
 - $\mathbf{H}$: angular momentum of the spacecraft
@@ -275,7 +275,7 @@ For a basic understanding we can ignore the dyadic notation, summations etc. and
 
 [^outputtorque]: $\mathbf{\hat{o}} = \mathbf{\hat{g}} \times \mathbf{\hat{s}}$
 
-Using this simplified notation lets us look at the various parts contributing to the changes in angular momentum (for an exact discussion please refer to @LeveSpacecraftMomentumControl2015):
+Using this simplified notation lets us look at the various parts contributing to the changes in angular momentum (for an exact discussion please refer to [@LeveSpacecraftMomentumControl2015, sec. 4.5]):
 
 1. __Rigid-Body Motion:__ These are all terms involving $\mathbf{J}$.
 2. __Gyroscopic Reaction Torques:__   
@@ -316,7 +316,7 @@ Some solutions avoid simulations by simply forbidding the production of certain 
 Furthermore, one can optimize solutions in various ways.
 In spacecraft, as everywhere, different optimization goals exist e.g. torque accuracy, energy consumption or time required for a maneuver.
 Some of these optimizations might produce only local optima or not be able to guarantee torque accuracy between points in a torque trajectory.
-The reader is pointed toward chapter 7 of @LeveSpacecraftMomentumControl2015 for a discussion of CMG steering laws and a selection of literature from a vast field of research.
+The reader is pointed toward [@LeveSpacecraftMomentumControl2015, ch. 7] for a discussion of CMG steering laws and a selection of literature from a vast field of research.
 
 ## CMG Workspaces
 
@@ -345,7 +345,7 @@ Hence given a limited gimbal velocity and acceleration the torque dynamics will 
 
 It is important to understand that the envelope is not a convex hull i.e. it intersects itself and can have additional internal surfaces.
 These are the internal singularities that the steering law must avoid or be able to pass through.
-See @Fig:array-envelopes for an illustration of singularities of different array types taken from @LeveSpacecraftMomentumControl2015 where one can also find a more in depth discussion of the various types of singularities and how the different steering laws are able to take them into account.
+See @Fig:array-envelopes for an illustration of singularities of different array types taken from [@LeveSpacecraftMomentumControl2015] where one can also find a more in depth discussion of the various types of singularities and how the different steering laws are able to take them into account.
 
 \missingfigure{envelopes of pyramid, box and roof arrays}
 
@@ -361,8 +361,8 @@ See @Fig:roof-array-workspace-45deg and @Fig:roof-array-workspace-30deg for a co
 
 ## Sizing of CMGs
 
-Once again Leve et al. provide a good overview regarding the sizing of spacecraft CMG @LeveSpacecraftMomentumControl2015.
-For terrestrial systems the literature is quite barren, but in their wearable SPCMG Chiu et al. do detail their sizing process @ChiuDesignWearableScissoredPair2014.
+Once again Leve et al. provide a good overview regarding the sizing of spacecraft CMG [@LeveSpacecraftMomentumControl2015].
+For terrestrial systems the literature is quite barren, but in their wearable SPCMG Chiu et al. do detail their sizing process [@ChiuDesignWearableScissoredPair2014].
 Generally speaking though, we can note that the main characteristics of a CMG array are the torque it can produce (Nm), the agility of the torque production i.e. its acceleration (Nm/s) and then the amount of torque it can sustain i.e. its momentum envelope (Nms).
 The magnitude of these requirements of course depends on the application for which the CMGs are being sized.
 This application will also pose constraints for instance on torque accuracy, weight, size, vibrations and power requirements.

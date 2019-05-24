@@ -107,19 +107,19 @@ We will also ignore the dynamics of the crane structure itself as well as the fl
 
 \missingfigure{Illustration of 2d hardware setup}
 
-When one reviews the existing crane models (see @Abdel-RahmanDynamicsControlCranes2003 for a review until 2003) one finds a large variety of models that focus on different aspects or different crane types.
+When one reviews the existing crane models (see [@Abdel-RahmanDynamicsControlCranes2003] for a review until 2003) one finds a large variety of models that focus on different aspects or different crane types.
 This lets us copy, mix and adapt to create a model suited for our purpose.
 It also means that our CMG-focused model could be extended relatively easily.
 
 The following sections will develop this model from a two-dimensional double pendulum to a three-dimensional double pendulum and subsequently go from two point masses to a point mass and a distributed mass.
 The generation of equations of motion and subsequent numerical integration are achieved using Python.
-The code builds on the educational example of Christian Hill @HillLearningScientificProgramming2016, the three-dimensional model extends the work of O'Conner and Habibi @OConnorGantryCraneControl2013.
+The code builds on the educational example of Christian Hill [@HillLearningScientificProgramming2016], the three-dimensional model extends the work of O'Conner and Habibi [@OConnorGantryCraneControl2013].
 I hope that this extended discussion and availability of source code will aid others in extending the model to their needs, especially when coming from other disciplines.
 
 ### Basic Double Pendulum { #sec:2dpendulum }
 
 Most rudimentary model: double pendulum modeled as massless rods with point masses.
-Equations of motion commonly known e.g. @HillLearningScientificProgramming2016:
+Equations of motion commonly known e.g. [@HillLearningScientificProgramming2016]:
 
 ![2D double pendulum as point masses on rigid, massless rods.](./figures/2d-pendulum.png)
 
@@ -220,7 +220,7 @@ The effect of this can vary depending of the excitation/initial conditions of th
 ![3D double pendulum using spherical coordinates, under small 2D excitation, illustrating the issues of the use of spherical coordinates. Note how  $\theta_{i2}$ jumps in steps of 180° causing $\theta_{i1}$ to remain negative as well as major spikes in angular velocity. These cause an erroneous dampening of the pendulum.](./figures/3d-model-angle-issues.svg){ #fig:3d-model-angle-issues }
 
 To alleviate this we can change the description of the kinematic constraints to use projected angles instead of spherical coordinates.
-This approach follows that of @OConnorGantryCraneControl2013, where the authors derive the equations of motion for a double pendulum with an attached distributed mass that has two degrees of rotational freedom.
+This approach follows that of [@OConnorGantryCraneControl2013], where the authors derive the equations of motion for a double pendulum with an attached distributed mass that has two degrees of rotational freedom.
 The following extends this to a full three degrees of freedom, to not only closer model realistic crane load motion but also to accommodate our use-case of load rotation.
 
 ![Model of a point-mass double pendulum in three dimensions with a fixed point of suspension, using projected angles instead of spherical coordinates.](./figures/crane-model-projected-angles.png){ #fig:crane-projected-angles }

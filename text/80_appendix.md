@@ -41,7 +41,7 @@ This is a lovely example of numerical inaccuracy in computers and also how minim
 
 !include code/double-pendulum-2d-simulation.py
 
-![Validation of the equations of motion generated using the above SymPy code against those taken from @HillLearningScientificProgramming2016. Note how symbolically equal equations can lead to different result due to numerical inaccuracies in computers.](figures/cas-lit-comparison.svg){ #fig:cas-lit-comparison }
+![Validation of the equations of motion generated using the above SymPy code against those taken from [@HillLearningScientificProgramming2016]. Note how symbolically equal equations can lead to different result due to numerical inaccuracies in computers.](figures/cas-lit-comparison.svg){ #fig:cas-lit-comparison }
 
 ### 2d Pointmass and Distributed Mass
 

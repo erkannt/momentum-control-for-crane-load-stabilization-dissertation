@@ -39,7 +39,7 @@ This would be the case e.g. when the rotation of the part is a programmed action
 Alternatively one could also use a certain rotational velocity as a desired state ($\dot{\theta_{23}}$).
 This would be the case in a remote control scenario, where an operator would control the rotation manually.
 
-As also pointed out in @LeeAnalysisFieldApplicability2012 the inertia of the part to be rotated obviously has a major impact on the torque required to perform the rotation.
+As also pointed out in [@LeeAnalysisFieldApplicability2012] the inertia of the part to be rotated obviously has a major impact on the torque required to perform the rotation.
 Therefore this control loop utilizes our knowledge regarding the torque output by the CMGs and the measured rotational accelleration to estimate the inertia of the part.
 This should improve the performance of the controller when used for programmed rotations but also ensure a consistent remote control experience for the operator as their speed control will be similar, regardless of the part being handled.
 
@@ -94,7 +94,7 @@ It also means that controllers for other under actuated systems are of particula
 
 ## Dampening Controller { #sec:dampening-controller }
 
-Having reviewed the existing research, we design a controller for the basic 2D pendulum model (see @Sec:2dpendulum) using the scheme proposed by @HoangSimpleEnergybasedController2014 for under actuated mechanical systems.
+Having reviewed the existing research, we design a controller for the basic 2D pendulum model (see @Sec:2dpendulum) using the scheme proposed by [@HoangSimpleEnergybasedController2014] for under actuated mechanical systems.
 With the target of both parts of the pendulum hanging vertical ($\theta_{[12]}=0$) this means creating a PD-controller where the error of the two angles is combined as follows:
 
 \begin{equation}

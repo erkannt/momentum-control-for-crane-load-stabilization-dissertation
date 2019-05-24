@@ -18,11 +18,11 @@ It is one of these pictures that gave birth to this work.
 ## The Need for Construction Robots
 
 Construction is and will be facing significant challenges.
-Our urban population is rising @PopulationDivision-UnitedNationsWorldUrbanizationProspects, necessitating not only the creation of significant amounts of new building stock but also the densification and upgrading of existing stock.
+Our urban population is rising [@PopulationDivision-UnitedNationsWorldUrbanizationProspects], necessitating not only the creation of significant amounts of new building stock but also the densification and upgrading of existing stock.
 Furthermore we must reduce the impact that of our buildings and their use on the environment.
 At the same time our lackluster response to climate change has already resulted in increasingly extreme weather conditions and changes to the temperatures that our buildings should handle.
 And ideally we need to surmount all of these challenges while creating a building stock that actually fulfills the needs specific to the locale.
-Many so called developed nations are also facing shortages in skilled construction workers @MorrisonConstructionLaborShortage, not only due to the aging population and unattractive working conditions but also due to the reliance on cheap foreign labour.
+Many so called developed nations are also facing shortages in skilled construction workers [@MorrisonConstructionLaborShortage], not only due to the aging population and unattractive working conditions but also due to the reliance on cheap foreign labour.
 The latter has caused many sectors in construction to stagnate technologically as innovation was more costly than masses of cheap labour.
 
 Luckily the technological advances have led other industries to look to stark individualization and increasing flexibility in their production.
@@ -49,6 +49,7 @@ This flexibility of the rope also means that it requires next to no space when r
 Yet this flexibility also means that we can't use a rope to push, only to pull.
 With the actors of the crane connected to the endeffector (the hook) via such a flexible connection, it isn't possible to produce controlled motion in the face of disturbances.
 If we wish to effectively use robots over the large work area of the construction site we must find a way to control provide them with a stable work platform.
+
 ### Momentum Control Devices
 
 Such a platform must be capable of compensating the torques and forces acting on the base of the robot as it performs it's task.
@@ -64,38 +65,38 @@ The first that comes to mind is parallel tendon kinematics.
 Here instead of a single rope connecting us to the endeffector we have multiple.
 By spanning these tendons from different directions it becomes possible to create stable positions and motions through large spaces.
 Such system are used for cameras in sports stadiums and researchers have proposed their use for a variety of other tasks.
-The RoboCrane was originally a DARPA project at NIST that was proposed for several applications @james1993nist including construction @LytleIntelligentJobSite2003, @GoodwinRoboCraneConstructionBridges1997.
-Other systems such as the Fraunhofer Institutues IPAnema have been aimed at logistics @PottIPAnemaFamilyCableDriven2013.
-More recently there have also been more conceptual proposals for the use of parallel tendon robots on construction sites @SousaSPIDERobotCableRobotSystem2016 as well as large scale 3d-printing efforts @IzardLargescale3DPrinting2017 (see @Fig:parallel-tendon-print).
+The RoboCrane was originally a DARPA project at NIST that was proposed for several applications [@james1993nist] including construction [@LytleIntelligentJobSite2003; @GoodwinRoboCraneConstructionBridges1997].
+Other systems such as the Fraunhofer Institutues IPAnema have been aimed at logistics [@PottIPAnemaFamilyCableDriven2013].
+More recently there have also been more conceptual proposals for the use of parallel tendon robots on construction sites [@SousaSPIDERobotCableRobotSystem2016] as well as large scale 3d-printing efforts [@IzardLargescale3DPrinting2017] (see @Fig:parallel-tendon-print).
 
-![Rendering of a 3d-printing concept for construction sites, taken from @IzardLargescale3DPrinting2017](./figures/parallel-tendon-printing-izard.png){ #fig:parallel-tendon-print }
+![Rendering of a 3d-printing concept for construction sites, taken from [@IzardLargescale3DPrinting2017]](./figures/parallel-tendon-printing-izard.png){ #fig:parallel-tendon-print }
 
 Parallel tendon kinematics come with some challenges and downsides.
 Dealing with tendon elasticity is particularly relevant to vibrations in the system.
 Depending on the size of the the endeffector platform the systems will struggle to produce high torques as these depend on the amount of leverage they have on the platform.
-Some researches have demonstrated the use of momentum control devices to compensate torques in parallel tendon kinematics @WeberActiveVibrationCanceling2014, which points to interesting hybrid approaches with this work (see @Fig:reaction-wheel-tendon).
+Some researches have demonstrated the use of momentum control devices to compensate torques in parallel tendon kinematics [@WeberActiveVibrationCanceling2014], which points to interesting hybrid approaches with this work (see @Fig:reaction-wheel-tendon).
 The bigger issue for construction sites will most likely be the need for the tendons winches to lie around the workspace of the system.
 This means that one would have tendons crossing the large areas of the construction site, which poses significant challenges with regard to collisions as well as worker safety.
 
-![Experiments with dampening a parallel tendon platform using reaction wheels, takes from [@WeberActiveVibrationCanceling2014]. The left is not using the reaction wheels, in the right you can see them being used and rotating at the top of the platform.](./figures/reaction-wheel-tendon-gangloff.gif){ #fig:reaction-wheel-tendon }
+![Experiments with dampening a parallel tendon platform using reaction wheels, takes from [[@WeberActiveVibrationCanceling2014]]. The left is not using the reaction wheels, in the right you can see them being used and rotating at the top of the platform.](./figures/reaction-wheel-tendon-gangloff.gif){ #fig:reaction-wheel-tendon }
 
 Drones are the only system on a construction site with a work envelope larger than cranes.
 They are therefore seeing use as an inspection, surveying and monitoring tool.
 While they have also been proposed as a logistics and robotics platform for infrastructure (see [ARCAS EU Research Project](http://www.arcas-project.eu) and @Fig:flying-robot), their minuscule payload capabilities in comparison to cranes severely limits this approach given the weight of construction materials.
-Note that the building materials of the widely publicized drone based constructions are foam blocks @GramazioKohlerFlightAssembledArchitecture2011, nylon ropes [@MirjanBuildingBridgeFlying2016, @AugugliaroBuildingTensileStructures2013] and carbon fibres @SollyICDITKEResearch2018.
-The use of propulsive systems to rotate or stabilize crane loads crops up and apparently there were experiments made in Japan or Korea @InouePracticalDevelopmentSuspender1998, but sadly we have not been able to find sources to confirm this.
+Note that the building materials of the widely publicized drone based constructions are foam blocks [@GramazioKohlerFlightAssembledArchitecture2011], nylon ropes [@MirjanBuildingBridgeFlying2016; @AugugliaroBuildingTensileStructures2013] and carbon fibres [@SollyICDITKEResearch2018].
+The use of propulsive systems to rotate or stabilize crane loads crops up and apparently there were experiments made in Japan or Korea [@InouePracticalDevelopmentSuspender1998], but sadly we have not been able to find sources to confirm this.
 
 ![Exerpt from the 4th year report of the ARCAS project on collaborative flying robots for maintenance and construction.](./figures/arcas.gif){ #fig:flying-robot }
 
 While mobile platforms in robotics are starting to enter industrial use they aren't able to provide the vertical reach of cranes.
 For small heights linear axes can be added to the mobile platforms to increase the reach of their robot arms.
 Some have proposed attaching industrial robot arms to other system to enhance their reach and construction site mobility.
-One example from research is the Digital Construction Platform by the MIT Media Lab @KeatingCompoundArmApproach2014 (@Fig:dcp-media-lab).
-Others have attached articulated arms to hydraulic remote controlled demolition robots for use in nuclear decommisioning @BurrellFeedbackControlBased2016.
+One example from research is the Digital Construction Platform by the MIT Media Lab [@KeatingCompoundArmApproach2014] (@Fig:dcp-media-lab).
+Others have attached articulated arms to hydraulic remote controlled demolition robots for use in nuclear decommisioning [@BurrellFeedbackControlBased2016].
 Aside from their vertical and horizontal reach a further benefit of cranes can be their small footprint relative to their horizontal reach, while mobile platforms would have to be provided with access via the ground.
 Given that the weight of even small mobile platforms with a payload of 15kg can encroach upon residential floor load limits, this severely reduces the feasibility of mobile platforms on construction sites.
 
-![The Digital Construction Platform that combines an industrial robot with a hydraulic arm to increase its reach. The red line has been drawn by the end of the hydraulic arm and the blue line by the small robot attached to it. Taken from @KeatingCompoundArmApproach2014](./figures/dcp-mit-media-lab.jpg){ #fig:dcp-media-lab }
+![The Digital Construction Platform that combines an industrial robot with a hydraulic arm to increase its reach. The red line has been drawn by the end of the hydraulic arm and the blue line by the small robot attached to it. Taken from [@KeatingCompoundArmApproach2014]](./figures/dcp-mit-media-lab.jpg){ #fig:dcp-media-lab }
 
 ### Potential Applications
 
@@ -103,7 +104,7 @@ Having looked at alternatives to attaching space tech to cranes, lets briefly lo
 Generally speaking we would be adding the ability to produce controlled torques at the hook of a crane.
 This would not only enable us to compensate the torques of a robot or other processes suspended from the hook.
 It would also let us control the rotation of parts during transport with the crane or during assembly operations.
-Furthermore is could add additional actors for the challenge of dampening crane oscillations.
+Furthermore it could add additional actors for the challenge of dampening crane oscillations.
 
 ![Potential applications of for a CMG-stabilized crane. From left to right: process compensation, part rotation and dampening of pendulum oscillations.](./figures/baugrok-applications.gif){ #fig:baugrok-applications }
 
