@@ -110,3 +110,7 @@ Note that these equations do not limit the torque dynamics.
 
 \todo{add code for roofarray calculation}
 
+## EPOS USB vs. CANbus { #sec:epos-canbus-diff }
+
+![Comparison of the gimbal motors behaviour between USB commands from EPOS-Studio and our regular control via CANbus.](./figures/epos-canbus-diff.png)
+

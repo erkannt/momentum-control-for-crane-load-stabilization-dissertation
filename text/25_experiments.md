@@ -139,8 +139,6 @@ This points to some interesting questions regarding control optimized to positio
 
 ### Dynamics of CMG attached to Pendulum
 
-\todo{add Gimbal model and validation}
-
 Recalling the various components of the CMG's torque discussed in @Sec:cmg-dynamics we can plot these components (@Fig:cmg-torque-components-plot) and totals (@Fig:cmg-torque-totals-plot ) for our 2d pendulum simulations.
 
 ![Components of torque produced by a single CMG in a SPCMG array dampening the motion of a double pointmass pendulum.](./figures/cmg-torque-components-plot.svg){ #fig:cmg-torque-components-plot }
@@ -165,6 +163,18 @@ Regarding the gimbal motor sizing the reaction torque due to the base rate domin
 The torque required to overcome the gimbal assemblies inertia might be on the low side.
 For one we are not taking bearing and gearing friction into account, but more importantly the dampening control doesn't require highly dynamic gimbal motions.
 As previously noted the reaction torque due to gimbal rotation in negligible, so we will not include it in our sizing considerations.
+
+### Gimbal Motor Model
+
+The performance of the SPCMG or any CMG array is dependant upon the characteristic of the gimbal motors.
+To ensure realistic torque production in our model we have limited both the velocity and acceleration of our simulated gimbals.
+We do not limit their jerk.
+To validate whether this is a sufficient model as well as the magnitude of the limits, we compared the models behaviour against that of our hardware prototype.
+This was done by feeding the respective velocity targets with step functions and comparing the results.
+As one can see in @Fig:gimbal-validation, the simulation and real gimbals are in agreement.
+One thing to note though, is that we got slightly different performance/behaviour from the gimbal when we ran them from the EPOS-Studio software through USB in comparison to our usual control via CANbus (see @sec:epos-can-diff).
+
+\missingfigure{Gimbal model validation}
 
 ## Robot Tasks
 
