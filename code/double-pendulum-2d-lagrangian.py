@@ -1,4 +1,3 @@
-```python
 from sympy import symbols, Function, Eq
 from sympy import sin, cos
 from sympy import diff, simplify, expand, nonlinsolve
@@ -58,4 +57,3 @@ for solution in solvedeuleq:
     for eqn in solution:
         print(eqn.simplify())
 
-```

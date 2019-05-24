@@ -1,4 +1,3 @@
-```python
 from sympy import symbols, Function, Eq
 from sympy import sin, cos
 from sympy import diff, simplify, expand, solve
@@ -47,4 +46,3 @@ solvedeuleq = solve(euleq, [zdot1, zdot2], simplify=False, rational=False)
 for ddot, eqn in solvedeuleq.items():
     print(ddot, eqn.simplify())
 
-```

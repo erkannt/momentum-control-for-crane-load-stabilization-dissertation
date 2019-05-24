@@ -1,4 +1,3 @@
-```python
 """ Calculate Rotation Matrices for Dist. Mass """
 from sympy import symbols, Matrix
 from sympy import sin, cos
@@ -54,4 +53,3 @@ res = forw(*thetas) * ix
 # pprint(res)
 # pprint(back(*negthetas) * res)
 
-```

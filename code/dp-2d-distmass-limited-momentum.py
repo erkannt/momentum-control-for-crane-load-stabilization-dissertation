@@ -1,4 +1,3 @@
-```python
 """Distributed Mass Double-Pendulum with PDalpha Controller
 """
 import os
@@ -326,4 +325,3 @@ for ax, lbl in zip(axs.T[0], labels):
     ax.yaxis.set_label_coords(-0.1,1.02)
 output_figure(output)
 
-```

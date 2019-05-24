@@ -1,4 +1,3 @@
-```python
 """Simulate Double-Pendulum Motion
 
 Original code by Christian Hill, taken from his website scipython.com.
@@ -229,4 +228,3 @@ np.savez(
     y=y_cas_small,
 )
 
-```

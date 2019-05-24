@@ -1,4 +1,3 @@
-```python
 """Simulate Double-Pendulum Motion
 
 Original code by Christian Hill, taken from his website scipython.com.
@@ -265,4 +264,3 @@ save2file(sol.y, "data4gh")
 # np.savez('../output/distmass-double-pendulum-small_exitation', t=sol.t, y0=y0_small, y=sol.y)
 print("done")
 
-```

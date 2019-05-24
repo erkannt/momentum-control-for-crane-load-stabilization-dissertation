@@ -1,4 +1,3 @@
-```python
 """Distributed Mass Double-Pendulum with PDalpha Controller
 """
 import os
@@ -315,4 +314,3 @@ for sol, name, ax in zip(crane_sol, crane_names, axs):
     plot_pos_vel(sol, ax, title=name)
 output_figure(fig, axs, output)
 
-```

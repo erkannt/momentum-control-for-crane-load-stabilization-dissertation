@@ -22,7 +22,7 @@ bibfile := $(abspath text/references.bib)
 stylefolder := $(abspath style)
 pandoc-html-flags = --verbose \
 	-F pandoc-crossref \
-	-F pandoc-include \
+	-F pandoc-include-code \
 	--bibliography="$(bibfile)" \
 	--include-in-header="$(stylefolder)/style.css" \
 	--include-after-body=$(stylefolder)/anchors.js \
@@ -35,7 +35,7 @@ pandoc-html-flags = --verbose \
 	--number-sections
 pandoc-tex-flags = --verbose \
 	-F pandoc-crossref \
-	-F pandoc-include \
+	-F pandoc-include-code \
 	-H "$(stylefolder)/preamble.tex" \
 	--template="$(stylefolder)/template.tex" \
 	--bibliography="$(bibfile)" \

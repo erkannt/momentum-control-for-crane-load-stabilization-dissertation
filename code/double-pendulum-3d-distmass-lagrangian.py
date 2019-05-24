@@ -1,4 +1,3 @@
-```python
 """ EoM of 3D double pendulum with the second mass distributed """
 from sympy import symbols, Function, Eq, Matrix
 from sympy import sin, cos
@@ -81,4 +80,3 @@ solvedeuleq = solve(
 for ddot, eqn in solvedeuleq.items():
     print(ddot, eqn)
 
-```
