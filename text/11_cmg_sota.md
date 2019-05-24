@@ -355,7 +355,7 @@ It is important to understand that the envelope is not a convex hull i.e. it int
 These are the internal singularities that the steering law must avoid or be able to pass through.
 See @Fig:array-envelopes for an illustration of singularities of different array types taken from [@LeveSpacecraftMomentumControl2015] where one can also find a more in depth discussion of the various types of singularities and how the different steering laws are able to take them into account.
 
-\missingfigure{envelopes of pyramid, box and roof arrays}
+![Momentum envelopes of different single gimbal CMG arrays, i.e. their inner and out singularities. From left to right: box, roof and pyramid array. Taken from [@LeveSpacecraftMomentumControl2015]](./figures/cmg-envelopes.png){ #fig:array-envelopes }
 
 The shape of workspace is some relevance to us as our requirements regarding it won't be uniform in all directions.
 A pendulum will often swing around a single axis, robot tasks might be dominated by torque around certain axes and our part rotations will lie around the axis of the cranes rope.
