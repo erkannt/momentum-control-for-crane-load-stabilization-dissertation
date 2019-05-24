@@ -99,6 +99,7 @@ p span.removed {
 
 .current-nav {
     font-weight: bolder;
+    color: #0074D9 !important;
 }
 
 #title-page {
@@ -151,7 +152,7 @@ p span.removed {
     overflow: hidden;
 }
 #TOC li a:hover {
-    color: #008cff;
+    color: #7fDBFF;
 }
 
 figcaption {
