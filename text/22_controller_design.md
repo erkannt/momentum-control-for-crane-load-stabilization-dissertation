@@ -19,7 +19,8 @@ Let us look at the three applications in ascending control complexity:
 
 ![Control flow for pendulum dampening](./figures/dampening-controller.png){ #fig:dampening-controller width=100% }
 
-\todo{update control flow diagrams to reflect use of inertia estimation}
+\todo{update control flow to reflect use of inertia estimation}
+\todo{add controller to handle forces acting on lower link, assuming knowledge of the center of percussion. Note how if we counter the angular acc the reaction force remains, if the cancel the reaction force the angular acc increases}
 
 In @Fig:dampening-controller we have a very straightforward control loop.
 The desired state of the pendulum ($P_W$) is that all angles are zero.
