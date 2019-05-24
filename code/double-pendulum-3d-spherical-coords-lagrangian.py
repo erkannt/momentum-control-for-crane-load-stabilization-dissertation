@@ -1,3 +1,4 @@
+""" EoM of 3d double pendulum using spherical coordinates """
 from sympy import symbols, Function, Eq
 from sympy import sin, cos
 from sympy import diff, simplify, expand, solve
@@ -53,4 +54,3 @@ solvedeuleq = solve(
 
 for ddot, eqn in solvedeuleq.items():
     print(ddot, eqn.simplify())
-

@@ -23,10 +23,6 @@ Some useful conversions to SI-Units:
 
 ## Equations of Motion and Simulation using Python
 
-\todo{improve docstrings in python code}
-\todo{move to better code include pandoc filter}
-\todo{fit 70chars onto A4 page (reduce fixed font size)}
-
 ### 2D Pointmass Double Pendulum { #sec:2d-pointmass-eom}
 
 Prior to obtaining the equations of motion for more complex cases, I obtained those of a pointmass double pendulum.

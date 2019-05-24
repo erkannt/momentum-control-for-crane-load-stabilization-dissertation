@@ -1,6 +1,7 @@
-"""Simulate Double-Pendulum Motion
+"""Simulate 3D Distributed Mass Double-Pendulum
 
-Original code by Christian Hill, taken from his website scipython.com.
+Uses better ode solver than the original 2d code its based off.
+Dumps results as .npz for visualization in Grasshopper.
 """
 import sys
 import numpy as np
@@ -263,4 +264,3 @@ save2file(sol.y, "data4gh")
 # plot_motion(sol.t, sol.y, title="Small Exitation", save=save_animations)
 # np.savez('../output/distmass-double-pendulum-small_exitation', t=sol.t, y0=y0_small, y=sol.y)
 print("done")
-

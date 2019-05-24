@@ -1,7 +1,8 @@
+""" EoM for 2d distributed mass double pendulum """
 from sympy import symbols, Function, Eq
 from sympy import sin, cos
-from sympy import diff, simplify, expand, solve
-from sympy import init_printing, pprint, latex
+from sympy import diff, simplify, solve
+from sympy import init_printing
 
 init_printing()
 
@@ -45,4 +46,3 @@ solvedeuleq = solve(euleq, [zdot1, zdot2], simplify=False, rational=False)
 
 for ddot, eqn in solvedeuleq.items():
     print(ddot, eqn.simplify())
-

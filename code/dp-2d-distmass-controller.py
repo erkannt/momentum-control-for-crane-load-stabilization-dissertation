@@ -10,18 +10,9 @@ import seaborn as sns
 from matplotlib import rcParams
 
 """ Simulation Setup """
-lab_setup = [5, 1,  # l1, l2
-            1, 10,  # m1, m2
-            1/2 * 10 * 0.4**2 + 10 * 1**2,  # I2
-            ]
-l1_24 = [19, 2*2,  # l1, l2
-             50, 2500,  # m1, m2
-             16484,  # I2
-             ]
-ecb380 = [83, 3.7*2,  # l1, l2
-             300, 15660,  # m1, m2
-             350877,  # I2
-             ]
+lab_setup = [5, 1, 1, 10, 1 / 2 * 10 * 0.4 ** 2 + 10 * 1 ** 2]  # l1, l2  # m1, m2  # I2
+l1_24 = [19, 2 * 2, 50, 2500, 16484]  # l1, l2  # m1, m2  # I2
+ecb380 = [83, 3.7 * 2, 300, 15660, 350877]  # l1, l2  # m1, m2  # I2
 load_dims = [(0.4, 0.4), (5.1, 2.0), (9.3, 3.7)]
 # PDalpha Controller Values
 kp, kd, kalpha = 1.0, 4.0, 0.5
@@ -31,12 +22,9 @@ GRAVITY = 9.81
 TMAX, DT = 25, 0.01
 TIMESTEPS = np.arange(0, TMAX + DT, DT)
 # Initial conditions: theta1, dtheta1/dt, theta2, dtheta2/dt.
-y0_small = np.array([np.pi / 18,  # theta1
-                      0,  # dtheta1
-                      np.pi / 18,  # theta2
-                      0,  # dtheta2
-                      0]  # tau
-                   )
+y0_small = np.array(
+    [np.pi / 18, 0, np.pi / 18, 0, 0]  # theta1  # dtheta1  # theta2  # dtheta2  # tau
+)
 
 """ Use passed args as savepath, otherwise only show plots """
 workdir, _ = os.path.split(os.path.abspath(__file__))
@@ -163,10 +151,10 @@ def animated_pendulum(data, params, dims, title="", save=False, show=True):
     c1 = Circle((0, 0), r, fc="b", ec="b", zorder=10)
     c2 = Circle((0, 0), r, fc="r", ec="r", zorder=10)
     # Box representing the load
-    load, = ax.plot([], [], c='r', lw=2)
+    load, = ax.plot([], [], c="r", lw=2)
     # Scale Bar
-    ax.plot([-pltsize*0.2, -pltsize*0.2], [0, -5], c='gray', lw=5)
-    ax.text(-pltsize*0.2+pltsize*0.01, -5, "3m")
+    ax.plot([-pltsize * 0.2, -pltsize * 0.2], [0, -5], c="gray", lw=5)
+    ax.text(-pltsize * 0.2 + pltsize * 0.01, -5, "3m")
     # Time label
     time_template = "time = %.1fs"
     time_text = ax.text(0.05, 0.9, "", transform=ax.transAxes)
@@ -280,7 +268,11 @@ def output_figure(fig, axs, output):
 saveanim = True
 showanim = not saveanim
 cranes = [lab_setup, l1_24, ecb380]
-crane_names = ['Lab Setup (5m, 10kg)', 'L1-24 (19m, 2400kg)', '380EC-B16 (83m, 15660kg)']
+crane_names = [
+    "Lab Setup (5m, 10kg)",
+    "L1-24 (19m, 2400kg)",
+    "380EC-B16 (83m, 15660kg)",
+]
 crane_sol = []
 for c, name, dims in zip(cranes, crane_names, load_dims):
     params = (*c, kp, kd, kalpha)
@@ -290,8 +282,7 @@ for c, name, dims in zip(cranes, crane_names, load_dims):
     # Create animation when run without args
     # Run before switching on seaborn to avoid slow animation
     if not output:
-        animated_pendulum(sol, params, dims, title=name,
-                          save=saveanim, show=showanim)
+        animated_pendulum(sol, params, dims, title=name, save=saveanim, show=showanim)
 
 """ Set up Seaborn Plots """
 plt.rc("text", usetex=True)
@@ -313,4 +304,3 @@ fig.suptitle("Dampening of Selected Cranes")
 for sol, name, ax in zip(crane_sol, crane_names, axs):
     plot_pos_vel(sol, ax, title=name)
 output_figure(fig, axs, output)
-

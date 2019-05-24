@@ -79,4 +79,3 @@ solvedeuleq = solve(
 
 for ddot, eqn in solvedeuleq.items():
     print(ddot, eqn)
-

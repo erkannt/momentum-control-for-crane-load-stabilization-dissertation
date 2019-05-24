@@ -1,6 +1,6 @@
-"""Simulate Double-Pendulum Motion
+"""Simulate 3D Point Mass Double-Pendulum
 
-Original code by Christian Hill, taken from his website scipython.com.
+Uses better ode solver than the original 2d code its based off.
 """
 import sys
 import numpy as np
@@ -705,4 +705,3 @@ np.savez(
     y0=y0_small,
     y=sol.y,
 )
-

@@ -1,4 +1,4 @@
-"""Distributed Mass Double-Pendulum with PDalpha Controller
+"""Distributed Mass Double-Pendulum w. Torque Limited Controller
 """
 import os
 import sys
@@ -10,10 +10,7 @@ import seaborn as sns
 from matplotlib import rcParams
 
 """ Simulation Setup """
-lab_setup = [5, 1,  # l1, l2
-            1, 10,  # m1, m2
-            1/2 * 10 * 0.4**2 + 10 * 1**2,  # I2
-            ]
+lab_setup = [5, 1, 1, 10, 1 / 2 * 10 * 0.4 ** 2 + 10 * 1 ** 2]  # l1, l2  # m1, m2  # I2
 load_dims = (0.4, 0.4)
 max_moment = [2.5, 5, 10]
 # PDalpha Controller Values
@@ -24,13 +21,16 @@ GRAVITY = 9.81
 TMAX, DT = 25, 0.01
 TIMESTEPS = np.arange(0, TMAX + DT, DT)
 # Initial conditions: theta1, dtheta1/dt, theta2, dtheta2/dt.
-y0_small = np.array([np.pi / 18,  # theta1
-                      0,  # dtheta1
-                      np.pi / 18,  # theta2
-                      0,  # dtheta2
-                      0,  # tau
-                      0]  # h
-                   )
+y0_small = np.array(
+    [
+        np.pi / 18,  # theta1
+        0,  # dtheta1
+        np.pi / 18,  # theta2
+        0,  # dtheta2
+        0,  # tau
+        0,
+    ]  # h
+)
 
 """ Use passed args as savepath, otherwise only show plots """
 workdir, _ = os.path.split(os.path.abspath(__file__))
@@ -162,10 +162,10 @@ def animated_pendulum(data, params, dims, title="", save=False, show=True):
     c1 = Circle((0, 0), r, fc="b", ec="b", zorder=10)
     c2 = Circle((0, 0), r, fc="r", ec="r", zorder=10)
     # Box representing the load
-    load, = ax.plot([], [], c='r', lw=2)
+    load, = ax.plot([], [], c="r", lw=2)
     # Scale Bar
-    ax.plot([-pltsize*0.2, -pltsize*0.2], [0, -5], c='gray', lw=5)
-    ax.text(-pltsize*0.2+pltsize*0.01, -5, "3m")
+    ax.plot([-pltsize * 0.2, -pltsize * 0.2], [0, -5], c="gray", lw=5)
+    ax.text(-pltsize * 0.2 + pltsize * 0.01, -5, "3m")
     # Time label
     time_template = "time = %.1fs"
     time_text = ax.text(0.05, 0.9, "", transform=ax.transAxes)
@@ -259,8 +259,7 @@ def plot_axis_and_torque(data, axs, cid, title=""):
     theta = data["theta2"][trim_data:]
     workspace = np.cumsum(tau) * DT
     for ax, y in zip(axs, [theta, tau, workspace]):
-        ax.plot(t, y, label=title,
-                color=colors[cid], linewidth="0.85")
+        ax.plot(t, y, label=title, color=colors[cid], linewidth="0.85")
 
 
 def fmt_axcol(axs):
@@ -286,7 +285,7 @@ def output_figure(output):
 """ Run Simulations """
 saveanim = True
 showanim = not saveanim
-titles = ['h-max: {} Nms'.format(h) for h in max_moment]
+titles = ["h-max: {} Nms".format(h) for h in max_moment]
 crane_sol = []
 for h, name in zip(max_moment, titles):
     h_cur = 0
@@ -297,8 +296,9 @@ for h, name in zip(max_moment, titles):
     # Create animation when run without args
     # Run before switching on seaborn to avoid slow animation
     if not output:
-        animated_pendulum(sol, params, load_dims, title=name,
-                          save=saveanim, show=showanim)
+        animated_pendulum(
+            sol, params, load_dims, title=name, save=saveanim, show=showanim
+        )
 
 """ Set up Seaborn Plots """
 plt.rc("text", usetex=True)
@@ -321,7 +321,6 @@ for sol, name, axcol, cid in zip(crane_sol, titles, axs.T, range(3)):
     fmt_axcol(axcol)
 labels = [r"$\theta_2 [^\circ]$", r"$\tau [Nm]$", r"h [Nms]"]
 for ax, lbl in zip(axs.T[0], labels):
-    ax.set_ylabel(lbl, rotation='horizontal')
-    ax.yaxis.set_label_coords(-0.1,1.02)
+    ax.set_ylabel(lbl, rotation="horizontal")
+    ax.yaxis.set_label_coords(-0.1, 1.02)
 output_figure(output)
-

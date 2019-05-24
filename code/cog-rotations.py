@@ -1,9 +1,8 @@
-""" Calculate Rotation Matrices for Dist. Mass """
+""" Calculate Rotation Matrices for Dist. Mass Model """
 from sympy import symbols, Matrix
 from sympy import sin, cos
-from sympy import simplify, lambdify
-from sympy import init_printing, pprint, latex
-from math import pi
+from sympy import lambdify
+from sympy import init_printing, latex, pprint
 
 init_printing()
 
@@ -20,15 +19,15 @@ iy = Matrix([0, 1, 0])
 iz = Matrix([0, 0, 1])
 
 """ Define Rotation Matrices for each theta, note negative theta21 """
-Ry = Matrix(
-    [[cos(-theta21), 0, sin(-theta21)], [0, 1, 0], [-sin(-theta21), 0, cos(-theta21)]]
-)
-Rx = Matrix(
-    [[1, 0, 0], [0, cos(theta22), -sin(theta22)], [0, sin(theta22), cos(theta22)]]
-)
-Rz = Matrix(
-    [[cos(theta23), -sin(theta23), 0], [sin(theta23), cos(theta23), 0], [0, 0, 1]]
-)
+Ry = Matrix([[cos(-theta21), 0, sin(-theta21)],
+            [0, 1, 0],
+            [-sin(-theta21), 0, cos(-theta21)]])
+Rx = Matrix([[1, 0, 0],
+            [0, cos(theta22), -sin(theta22)],
+            [0, sin(theta22), cos(theta22)]])
+Rz = Matrix([[cos(theta23), -sin(theta23), 0],
+            [sin(theta23), cos(theta23), 0],
+            [0, 0, 1]])
 
 """ Combined forward and inverse Rotation Matrices """
 R = Ry * Rx * Rz
@@ -52,4 +51,3 @@ back = lambdify([theta21, theta22, theta23], Rinv)
 res = forw(*thetas) * ix
 # pprint(res)
 # pprint(back(*negthetas) * res)
-

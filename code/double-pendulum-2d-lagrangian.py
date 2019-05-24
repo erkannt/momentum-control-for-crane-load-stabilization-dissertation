@@ -1,3 +1,4 @@
+""" EoM for 2d point mass double pendulum """
 from sympy import symbols, Function, Eq
 from sympy import sin, cos
 from sympy import diff, simplify, expand, nonlinsolve
@@ -56,4 +57,3 @@ solvedeuleq = nonlinsolve(euleq, [zdot1, zdot2])
 for solution in solvedeuleq:
     for eqn in solution:
         print(eqn.simplify())
-

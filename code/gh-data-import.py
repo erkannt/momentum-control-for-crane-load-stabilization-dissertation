@@ -1,4 +1,4 @@
-"""Load simulated pendulum data for GH """
+"""Load simulated pendulum data in GH """
 
 import rhinoscriptsyntax as rs
 
@@ -12,4 +12,3 @@ if not reload:
         m1Points.append(rs.coerce3dpoint(vals[:3]))
         m2Planes.append(rs.PlaneFromFrame(vals[3:6], vals[6:9], vals[9:12]))
     f.close()
-
