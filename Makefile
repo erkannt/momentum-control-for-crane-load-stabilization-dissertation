@@ -23,6 +23,7 @@ stylefolder := $(abspath style)
 pandoc-html-flags = --verbose \
 	-F pandoc-crossref \
 	-F pandoc-include-code \
+	-F pandoc-include \
 	--bibliography="$(bibfile)" \
 	--include-in-header="$(stylefolder)/style.css" \
 	--include-after-body=$(stylefolder)/anchors.js \
@@ -36,6 +37,7 @@ pandoc-html-flags = --verbose \
 pandoc-tex-flags = --verbose \
 	-F pandoc-crossref \
 	-F pandoc-include-code \
+	-F pandoc-include \
 	-H "$(stylefolder)/preamble.tex" \
 	--template="$(stylefolder)/template.tex" \
 	--bibliography="$(bibfile)" \
