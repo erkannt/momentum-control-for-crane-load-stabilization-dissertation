@@ -89,8 +89,6 @@ Under actuation simply means that we have a less actuators than degrees of freed
 This makes such crane models interesting to researchers dealing with such systems.
 It also means that controllers for other under actuated systems are of particular interest to us.
 
-\todo{add literature and maybe discuss in greater detail}
-
 ![Illustration of the under actuation of a crane. Modeled as a double pendulum of a point mass and distributed mass, adjustable rope length and a suspension point movable in a plane the crane has eight degrees of freedom. Conventionally we only have three actors to control this. By adding the CMGs we drastically reduce the under actuation.](./figures/crane-8dof.png){ #fig:crane-8dof }
 
 ## Dampening Controller { #sec:dampening-controller }
@@ -148,7 +146,5 @@ Given the current reference frame as determined by the sensors and a target refe
 This is luckily covered by what is known as *attitude control* for air- and spacecraft.
 Given that CMGs are not uncommon in spacecraft, some attitude control systems (ACS) might even make special considerations for CMGs.
 It will be interesting to see how one might combine attitude control techniques with those for crane control.
-Especially since certain issues in ACS, such as singularities arising from the chosen error indicator disappear given the kinematic constraints of the crane-cmg system.
+Especially since certain issues in ACS, such as singularities arising from the chosen error indicator disappear given the kinematic constraints of the crane-cmg system [@OzgorenComparativeStudyAttitude2019].
 Furthermore, since the inertia of spacecraft might also vary with time as they e.g. deploy their solar panels, a decent body of work exists that deals with the estimation of inertia and design of inertia-free controllers.
-
-\todo{cite: Comparative study of attitude control methods based on Euler angles, quaternions, angle–axis pairs and orientation matrices, inertia-free control}

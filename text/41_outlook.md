@@ -51,8 +51,6 @@ Apart from the the reduction of reaction torques the other major question is how
 This work was able to answer this regarding the compensation of torques, leaving the error produced by the forces (which can't be directly compensation through CMGs) to the dampening controller or an optimization of the robots path and controller.
 The extension of the models to include external forces as would be experienced at the robot base is remaining step needed to begin development of robot path optimization as well as robot based compensation strategies and validation of said strategies as well as the efficacy of damping the remaining error.
 
-\todo{read up on how the input to the CMG steering is shaped}
-
 ## Other Work Required
 
 Beyond these critical next steps resides a plethora of interesting research and engineering challenges.

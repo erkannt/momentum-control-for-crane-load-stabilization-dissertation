@@ -271,7 +271,6 @@ The rotations required to transform the reference frame $X_2Y_2Z_2$ that is alig
 ![Sequence of rotations to transform the world aligned reference frame to the reference frame of our distributed mass.](./figures/cog-rotations.png){ #fig:cog-rotations }
 
 \todo{CoG rotations figure}
-\todo{Improve coordinate system notation}
 
 The rotations illustrated in @Fig:cog-rotations can be expressed as:
 
