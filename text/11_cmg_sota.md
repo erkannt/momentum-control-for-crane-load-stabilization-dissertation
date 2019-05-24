@@ -126,17 +126,19 @@ The only other robot arm that has operated in space is that of the ETS VII resea
 The goal of the this research was to study how one satellite might capture another spacecraft for repairs or even just removal of space debris.
 The missions experiments were performed using both programmed motion and remote control operation with the speed limited 2mm/s.
 Such low speeds were necessary so that the ACS of the spacecraft could maintain its orientation.
+Note that such speeds would feel ridiculous in the context of earth.
 Using the ETS VII satellite Yoshida et al. were able to show the efficacy of reactionless motionplanning using so called reaction-null-space [@yoshida_zero_2001].
-These are sets of movement that in theory produce zero reaction torque at the base of the robot.
-Note that the movements would feel ridiculous in the context of earth, as they took over 20 minutes to move less than 50cm.
+These are sets of movement that in produce zero reaction torque at the base of the robot.
+Such movements are very limited for conventional 6 DoF arms, making the approach suitable for arms with kinematic redundancy.
 
 While the ETS VII is the only such system to actually fly there has been a lot of research into robot arms in space (see [@ReintsemaDLRAdvancedTelerobotic2007] for a review), with the first robot arm flying as an experiment aboard the space shuttle Columbia [@HirzingerROTEXtheFirstRemotely1994].
-These include the idea of adding a second robot to compensate the torques of the first robot [@yoshida_dual_1991].
-This proved to be a waste of payload as one is in essence creating a low efficiency momentum control device, since the second arm cannot be used as an arm while it is compensating.
-Other works have studied the use of CMG based ACS and optimization techniques to ensure that these can compensate the torques of the arm [@li_motion_2013].
+Besides the above mentioned motionplanning using reaction-null-space other methods have been proposed to reduce the base reactions caused by the robot movement (see introduction of [@li_motion_2013] for a good summary).
+These include the coordination of a second robot to compensate the torques of the first robot [@yoshida_dual_1991].
+The authors show the efficacy of the approach, also with regard to energy consumption, but one must assume that adding a second arm just to be able to compensate the other would be less efficient than beefier momentum control devices.
+Nevertheless one should keep this work in mind, should one wish to attach more than one robot to a crane especially as it would be able to also help maintain the center of gravity.
+Other works have studied how one might coordinate the ACS and robot actuation to optimize their utilization while while maintaining the satellite's attitude as well as robot path accuracy [@li_motion_2013; @JayakodyRobustAdaptiveCoordination2016; @ShiRobustAttitudeController2016; @WuRobustAntiDisturbanceCoordination2018].
 Others have proposed using CMGs as the actuators of the arm to create kinematics capable of moving in space without exerting torques on their host spacecraft [@carpenter_reducing_2009].
-
-\todo{proposals for dealing with forces produced by robots, can't we just model them as torques?}
+To ensure accurate compensation and robot motion methods for the identification of a systems inertial parameters after launch have been proposed [@XuOnorbitIdentifyingInertia2017].
 
 ![Artists rendition of the ETS VII research satellite used to evaluate the use of robot arms to manipulate other satellites (bottom right, taken from JAXA [@JAXAEngineeringTest]). The satellite during ground tests (left, taken from ESA Bulletin [@VisentinTestingSpaceRobotics1999]) and overview of its robot setup (top right, taken from [@OdaSummaryNASDAETSVII2000])](./figures/ets-collage.png){#fig:ets-vii-space-robot}
 
@@ -227,6 +229,8 @@ Yet having reviewed existing applications it appears that a solution for the ide
 Unlike a satellite or spacecraft we are predominantly interested in maintaining a given position, not in a rotational agility.
 The oscillations and dynamic behavior of cranes will differ from those of ships and unlike ships we have to deal not only with roll, but also pitch and yaw.
 It is this three-dimensional requirement that also sets this challenge apart from the previous experiments with CMGs and cranes.
+The trajectory optimizations proposed for space robotics can most likely be adapted to our usecase, but can't be applied directy due to the stark differences in spacecraft and crane dynamics.
+For instance in space the torques produced by the robot will always only rotate the spacecraft, whereas attached to a crane we will also have to deal with translations caused by excitation by the robot.
 
 We will have to develop an understanding of crane-cmg dynamics to let us find a way to consolidate the different control and sizing requirements of on the one hand a system at rest being excited by e.g. a robot and on the other hand a system in an oscillatory state that needs to be dampened.
 
