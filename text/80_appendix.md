@@ -120,7 +120,10 @@ Note that these equations do not limit the torque dynamics.
 
 ## Roof Array Workspace { #sec:roof-array-workspace}
 
-\todo{add code for roofarray calculation}
+The code below has been exported from an interactive Jupyter notebook that was used to generate the plots of the roof array momentum envelope for different roof angles.
+
+```{.python include=code/momentum-envelope.py}
+```
 
 ## EPOS USB vs. CANbus { #sec:epos-canbus-diff }
 
