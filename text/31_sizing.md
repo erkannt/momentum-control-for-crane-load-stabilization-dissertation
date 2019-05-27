@@ -93,7 +93,7 @@ The various requirements discussed above are illustrated in @Fig:cmg-reqs.
 Having determined the requirements we can move on to understanding the relationships between the various parameters of the CMG array.
 These are illustrated in @Fig:cmg-params.
 
-\missingfigure{Illustration of requirement derivation of the three applications}
+![Illustration of the requirements stemming from the different CMG tasks.](./figures/cmg-reqs.jpg){ #fig:cmg-reqs }
 
 ![Illustration of the relationship between the parameters of a CMG array and crane.](./figures/cmg-param-relationships.jpg){ #fig:cmg-params }
 
