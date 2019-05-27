@@ -223,8 +223,6 @@ The following extends this to a full three degrees of freedom, to not only close
 
 ![Model of a point-mass double pendulum in three dimensions with a fixed point of suspension, using projected angles instead of spherical coordinates.](./figures/crane-model-projected-angles.png){ #fig:crane-projected-angles }
 
-\todo{Projected angle double pendulum figure}
-
 Given the use of projected angles the cartesian expressions become:
 
 \begin{align}
@@ -267,8 +265,6 @@ The inertia tensor in this reference frame then is:
 The rotations required to transform the reference frame $X_2Y_2Z_2$ that is aligned with our world axes to the reference frame $X_3Y_3Z_3$ also let us obtain the rotational velocities $\omega_{X_3Y_3Z_3}$ from our projected angle velocities $\dot{\theta}_{2j}$.
 
 ![Sequence of rotations to transform the world aligned reference frame to the reference frame of our distributed mass.](./figures/cog-rotations.png){ #fig:cog-rotations }
-
-\todo{CoG rotations figure}
 
 The rotations illustrated in @Fig:cog-rotations can be expressed as:
 

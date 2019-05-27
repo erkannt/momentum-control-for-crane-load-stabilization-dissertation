@@ -181,8 +181,6 @@ One thing to note though, is that we got slightly different performance/behaviou
 As described in the modeling chapter we have a set of robot paths and can use both the inverse kinematics as well as a real robot to obtain axis values for the paths.
 Having run the paths at several different speeds, we can feed the axis values into the multi body simulation of the robot to obtain the torques and forces acting at the base of the robot.
 
-\todo{rerun and check robot sims; produce nicer plots}
-
 ![Multi-body robot simulation of the four corners task using values from KUKA|prc. Note how the unlimited acceleration in the inverse solution leads to unrealistically high forces and torques.](./figures/robot-sim-prc.png){ #fig:robot-sim-prc }
 
 ![Multi-body robot simulation of the four corners task using values of a real robot obtained via mxA.](./figures/robot-sim-mxa.png){ #fig:robot-sim-mxa }
