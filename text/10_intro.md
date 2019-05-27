@@ -123,3 +123,6 @@ It often seems to take painfully long for a novel idea or technology to turn int
 Part of this is due to the fact that researchers have to actually build their own tools before they can do any research as the tools they need often don't exist.
 It is once these tools mature and become available to others that things kick into a higher gear.
 With this in mind the following work contains a basic introduction to control moment gyroscopes, models for the simulation of the the crane-cmg-robot system as well tools for the sizing of CMGs for crane applications.
+
+\todo{prior work at chair and patent application}
+\todo{add patent application to citations}
