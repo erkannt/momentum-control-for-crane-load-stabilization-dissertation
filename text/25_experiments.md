@@ -206,7 +206,7 @@ Remember that the CMGs will not be able to compensate the forces acting at the r
 Also, the above model and simulations to do not include forces and torques produced by the process itself.
 So for instance the force needed to press a drill into a wall is not included.
 
-## Simulated Process Compensation
+## Simulated Process Compensation { #sec:robot-comp}
 
 \missingfigure{Simulation of the SPCMG compensating the motion of a KR3 robot. The pendulum is constrained to 2d motion.}
 
