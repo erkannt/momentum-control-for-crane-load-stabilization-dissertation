@@ -210,17 +210,20 @@ So for instance the force needed to press a drill into a wall is not included.
 
 \missingfigure{Deviation of the robots endeffector with and without the SPCMG compensation.}
 
-\todo{discuss simplifications in external forces from robot}
+\todo{discuss accuracy of robot path, also in outlook}
 
-Depending on the settings for the gyroscope's speed and gimbals maximum acceleration the SPCMG is able to perfectly match the torques acting at the robots base.
-Give the inaccuracies of our model, signal as well as processing delays and the all the inaccuracies of the physical setup a perfect compensation is highly unlikely.
-The imperfections in the torque compensation act in addition to the forces (which we can't compensate using CMGs) and cause the robot to swing.
+Depending on the settings for the gyroscope's speed and gimbals maximum acceleration the SPCMG is able to perfectly match the torques acting at the robots base as well as the torque on the lower link stemming from the forces acting at the base.
+Given the inaccuracies of our model, signal as well as processing delays and the all the inaccuracies of the physical setup a perfect compensation is highly unlikely.
+The imperfections in the torque compensation act in addition to the torques on the upper link stemming from forces and cause the robot to swing.
 Here the previously discussed dampening controller kicks in and begins to assist in the dampening of the robot.
 
-Given that we will never be able to compensate the forces with the CMGs and most likely will have errors in the torque compensation it makes sense to consider additional compensation mechanisms for processes.
+Given that we will never be able to fully compensate the effect of external forces with the CMGs and most likely will have errors in the torque compensation it makes sense to consider additional compensation mechanisms for processes.
 Aside from adding thrusters to create compensating forces, one might be able to improve the process path accuracy by using the robot/kinematic to compensate the error.
 This would take careful control engineering so as not to exacerbate the error by introducing further forces and highly dynamic torques.
 Given the availability of the crane and robot model one could imagine a predictive controller that compensates the pendulum motion in coordination with the dampening control of the CMGs or even the crane.
+
+Note that the forces and torques at the base of the robot stem from a simulation of a fixed robot.
+The effect of the oscillating base and hence changing robot orientation is not considered in the above experiments.
 
 ## Hardware Experiments
 
@@ -321,6 +324,8 @@ The interested reader is pointed towards:
 \missingfigure{video of dampening hardware prototype}
 
 \missingfigure{plots of dampening hardware prototype}
+
+\todo{discuss results of hardware dampening tests}
 
 - validation of PDalpha controller
 - tuning of parameters

@@ -7,9 +7,7 @@ We will then discuss existing dampening control strategies for cranes and choose
 
 ## Overall Flow of Information
 
-\todo{update control flow to reflect use of inertia estimation}
-\todo{add controller to balance force comp in lower and upper link}
-\todo{no separate rotation controller, it emerges from dampening controller}
+\todo{update control flow diagrams}
 
 Let us look at the three applications in ascending control complexity:
 
