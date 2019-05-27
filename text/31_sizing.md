@@ -80,7 +80,7 @@ This work provides an example of such a tool with the ability to evaluate the re
 Currently this is still a multi-step process that could certainly be more tightly integrated.
   
 The simulation of the obtainable path accuracy through the use of process compensation currently does not take into account the ability of the robot to adapt to deviations of its base.
-Nevertheless an estimation of the path accuracy without such additional compensation techniques has been shown in @sec:ref-needed and the existing tools let us already obtain the fundamental requirements of Nm, Nm/s and Nms for the process compensation.
+Nevertheless an estimation of the path accuracy without such additional compensation techniques has been shown in @Sec:robot-comp and the existing tools let us already obtain the fundamental requirements of Nm, Nm/s and Nms for the process compensation.
 The interaction with additional robot based compensation might lead to an increase in the torque dynamics requirements, but the torque and envelope requirements should remain similar.
 
 
@@ -89,13 +89,13 @@ The interaction with additional robot based compensation might lead to an increa
 
 ### Parameter Relationships
 
-The various requirements and means for their determination are illustrated in @Fig:ref-needed.
+The various requirements discussed above are illustrated in @Fig:cmg-reqs.
 Having determined the requirements we can move on to understanding the relationships between the various parameters of the CMG array.
-These are illustrated in @fig:ref-needed.
+These are illustrated in @Fig:cmg-params.
 
 \missingfigure{Illustration of requirement derivation of the three applications}
 
-\missingfigure{Illustration of relationship between the various CMG array parameters.}
+![Illustration of the relationship between the parameters of a CMG array and crane.](./figures/cmg-param-relationships.jpg){ #fig:cmg-params }
 
 Beginning with the gyroscopes we have the moment of inertia of the rotor.
 This can be affected by the density of the material as well as the shape and size of the rotor.

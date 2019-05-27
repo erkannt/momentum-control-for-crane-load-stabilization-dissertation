@@ -105,8 +105,6 @@ While one of our applications is the dampening of pendulum motion of the crane t
 We will for now assess the dampening capabilities by inducing a pendulum motion through the chosen initial conditions.
 We will also ignore the dynamics of the crane structure itself as well as the flexibility of the cranes rope.
 
-\missingfigure{Illustration of 2d hardware setup}
-
 When one reviews the existing crane models (see [@Abdel-RahmanDynamicsControlCranes2003] for a review until 2003) one finds a large variety of models that focus on different aspects or different crane types.
 This lets us copy, mix and adapt to create a model suited for our purpose.
 It also means that our CMG-focused model could be extended relatively easily.
