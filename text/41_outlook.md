@@ -13,9 +13,9 @@ Likewise the models in this work make some stark simplifications regarding the c
 
 In no particular order the most significant of these are:
 
-- ropes are modeled as stiff links capable of transmitting torque
+- model uses stiff links capable of transmitting torque  
+  (possible for lower link, unrealistic for upper link)
 - no drag or friction
-- no external forces (including those of robot)
 - no process forces or torque in robot simulations
 - no sensor noise or control loop delay
 
@@ -24,12 +24,8 @@ Most of these assumptions do not limit the conclusion made from the simulations,
 
 ## Next Steps for Development
 
-For the compensation task the most critical model issue is the lacking ability to include external forces acting upon the lower pendulum.
-In a simple pendulum the forces could simply be modeled as additional torques by multiplying the force with the length of the link.
-In a double pendulum though, the forces will also partially cause motion in the upper link, depending on link lengths, weights and inertias.
-We sadly cannot include forces into the Langrangian directly, instead they are additional source terms that need to be added after solving the Euler-Lagrange equations.
-This is what we did for the application of external torques, where we could relatively simply obtain the impact on the angular acceleration.
-For forces though, this is complicated by the factors described above.
+\todo{controller to balance torque comp of lower link and upper link due to external forces}
+\todo{usefulness of explicit 2d models for controller design and proofs}
 
 Given that one will later on wish to also extend the model to include the remainder of the crane, my recommendation would be to move to a modular multibody simulation into which one integrates the model of the CMG dynamics.
 This should be possible in both Modelica or Simulink Simmechanics.
@@ -37,9 +33,8 @@ While the CMG array could also me modeled using this approach I would recommend 
 
 To be able to develop and validate steering and control of the desired four CMG roof array required for the move to 3d, either a new model of the crane as just described or the existing 3d equations of motion could be used.
 The existing model will already allow developments regarding the dampening and rotation applications.
-The new model is required to validate the compensation application in full, due to this application involving external forces in addition to torques.
 
-To move the controller to 3d one will have to translate the error about three axis into a 3d target torque.
+To move the controller to 3d, one will have to translate the error about three axis into a 3d target torque.
 This of course in turn necessitates the extension of the SPCMG model to a four CMG roof array with an implementation of a suitable steering law.
 Once these components are in place it becomes possible to analyze the controllers performance under the limitations resulting from the agility and singularities of the CMG array and the chosen steering law.
 
@@ -48,16 +43,16 @@ Limiting the reaction torque experienced by the CMGs through alignment of moment
 The development described in this section therefore mostly outline the critical path to a state where the efficacy of such a strategy can be validated through simulations.
 
 Apart from the the reduction of reaction torques the other major question is how well a CMG array is able to provide a stable platform for robotic or other processes.
-This work was able to answer this regarding the compensation of torques, leaving the error produced by the forces (which can't be directly compensation through CMGs) to the dampening controller or an optimization of the robots path and controller.
-The extension of the models to include external forces as would be experienced at the robot base is remaining step needed to begin development of robot path optimization as well as robot based compensation strategies and validation of said strategies as well as the efficacy of damping the remaining error.
+The forces and torques applied to the pendulum by the robot used results from a simulation of fixed robot.
+The motion of the robots base, due to oscillations of the platform are therefore not taken into account in the forces and torques.
+To fix this, one needs to integrate the robot multibody simulation into the pendulum model.
+Through the addition of either more realistic inverse kinematics, that take axis accelerations into account, or a HIL setup that uses the actual robot controller, one could then begin development of robot based compensation strategies and validation of said strategies as they work together with the dampening controller.
 
 ## Other Work Required
 
 Beyond these critical next steps resides a plethora of interesting research and engineering challenges.
 
-Once the pendulum, CMG and robot-multibody models have become more tightly integrated one could begin with the development and validation not only of control strategies that utilize the robot to compensate positional errors from pendulum oscillations.
-By integrating the models into robot path planning and by using either the real robot as a hardware-in-the-loop system or a more realistic robot simulator, one could also begin finding optimization strategies that increase the process accuracy through changes to robot paths and execution speeds/accelerations.
-
+Once the pendulum, CMG and robot multibody models as well as inverse kinematics have become more tightly integrated, one could begin studying optimization strategies that increase the process accuracy through changes to robot paths and execution speeds/accelerations.
 In a similar vein, by extending the models to include motion of the suspension point i.e. gantry motion or trolley and gib motion, it becomes possible create control systems that utilize information and actors of both the crane and CMG array.
 This should open up novel control opportunities for dampening and controlled movement as well as better input to the reaction torque reduction and ways to desaturate the CMGs.
 Desaturation goals could also be met by adjusting the control during dampening of large oscillations.

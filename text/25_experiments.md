@@ -212,6 +212,8 @@ So for instance the force needed to press a drill into a wall is not included.
 
 \missingfigure{Deviation of the robots endeffector with and without the SPCMG compensation.}
 
+\todo{discuss simplifications in external forces from robot}
+
 Depending on the settings for the gyroscope's speed and gimbals maximum acceleration the SPCMG is able to perfectly match the torques acting at the robots base.
 Give the inaccuracies of our model, signal as well as processing delays and the all the inaccuracies of the physical setup a perfect compensation is highly unlikely.
 The imperfections in the torque compensation act in addition to the forces (which we can't compensate using CMGs) and cause the robot to swing.

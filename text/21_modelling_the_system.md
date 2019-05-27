@@ -333,7 +333,7 @@ Especially Modelica offers a very clean way of creating new blocks and defining 
 
 ![Rudimentary implementation of our model in Modelica. Note that this lacks connections to input torque from the CMGs and uses a different angle description.](./figures/modelica-example.gif){ #fig:modelica-example }
 
-## Adding the CMGs and External Excitation
+## Adding External Torques
 
 The torques and forces acting upon the system can't be included in the above Langrangian as energies, instead they must be added as source terms to the resulting equations of motion.
 
@@ -392,16 +392,46 @@ Note how this encompasses _all_ torques produced by the CMG, thereby cleanly sep
 \ddot{\theta}_{23}' = & \ddot{\theta}_{23} + \tau_{Z} 
 \end{align}
 
+## Adding External Forces
+
 With the torques covered, let us move to the forces.
 This entails the forces from the robots motion, process forces or things such as wind.
-To include the forces we must know the center of percussion or our lower pendulum link, as reaction of the system depends on where the force acts in relation to said center.
-The center of percussion is the point on a pendulum where perpendicular force leads to zero reaction force at its pivot point, due to the angular and translational acceleration cancelling out (see @Fig:center-of-percussion)
-For a very good explanation of this I recommend the wikipedia article [@CenterPercussion2018].
-So depending on the position of the acting force and the center of percussion the force acting upon the lower link with result in a ratio of angular acceleration of the lower link and a force acting upon the pivot between the upper and the lower link.
-This force will then result in an angular acceleration of the upper link.
-As of this writing this has not been included in our model of the double pendulum.
+Given the way our equations of motion are constructed around the angular motion of the links, we need to translate the external forces into torques.
+Then we can simply add them to the other external torques.
+
+A force acting on a pendulum will cause both a translational acceleration of its center of mass as well as a rotational acceleration around it.
+The magnitude of the former depends on the force and mass of the pendulum, whereas the latter also depends on where the force is acting in relation to the center of mass.
+This leads to the interesting phenomenon of the center of percussion.
+The center of percussion is the point on a pendulum where perpendicular force leads to zero reaction force at its pivot point, due to the angular and translational acceleration cancelling out (see @Fig:center-of-percussion).
+For a very good explanation of this I recommend the wikipedia [article](https://en.wikipedia.org/wiki/Center_of_percussion) about it [@CenterPercussion2018].
 
 ![Illustration of the center of percussion and how it relates to the reaction of a pendulum given the location of a force acting upon it. CC-BY-SA 4.0, Wikipedia user Qwerty123uiop](./figures/center-of-percussion.png){ #fig:center-of-percussion }
+
+In our case, where we are using double pendulum, this means that we have an additional torque acting upon the lower link that depends on the force and its distance to the center of mass of the lower link.
+The force acts on the pivot point of the lower link and thereby on the upper link.
+Here it once again results both an angular as well as translational acceleration.
+As our upper links pivot is assumed as fixed, the translational acceleration has no impact.
+So for our 2d model we can extend the equations of motion as follows:
+
+\begin{align}
+\ddot{{\theta}'}_1 = & \ddot{\theta}_1 + \frac{F_{1x} l_1}{m_1 l_1^2}\\
+\ddot{{\theta}'}_2 = & \ddot{\theta}_2 + \frac{\tau + F_{2x} b}{I_2}
+\end{align}
+
+With $b$ being the distance between the force $F_{2x}$ and the center of mass of the lower link.
+The moment of inertia for the upper link is written explicitly, as we are always using a point mass.
+The moment of inertia for the lower link depends on whether it is being modeled as a point or distributed mass.
+
+Defining the external force as acting in the reference frame of the lower link, the forces $F_{1x}$ and $F_{2x}$ are the components of the external force that act perpendicular to the respective links.
+The force acting upon the upper link is then dependent upon $\theta_1$ and $\theta_2$ (@Fig:external-forces):
+
+\begin{equation}
+\F_{1x} = F_{2x} \cos{\theta_1 + \theta2} + F_{2y} \sin(\theta_1 + \theta_2)
+\end{equation}
+
+It is important to note that the forces acting upon the system due to gravity are already taken into account by the equations of motion derived from the Langrangian.
+
+![Illustration of the external force acting upon the 2d model](./figures/external-forces.png){ #fig:external-forces }
 
 ## Payload Inertia
 
