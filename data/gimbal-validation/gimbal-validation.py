@@ -45,6 +45,8 @@ for ds, col, lt in zip(datasets, colors, linetypes):
              lt, color=col,
              label=ds['title'],
              )
+plt.legend(loc=1, framealpha=1)
+plt.xlim((0,5))
 
 #sns.despine(trim=True, offset={'left':2,'right':2,'top':2,'bottom':2})
 sns.despine(trim=True, offset=5)
