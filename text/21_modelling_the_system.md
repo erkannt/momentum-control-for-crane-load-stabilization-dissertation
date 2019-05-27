@@ -426,7 +426,7 @@ Defining the external force as acting in the reference frame of the lower link, 
 The force acting upon the upper link is then dependent upon $\theta_1$ and $\theta_2$ (@Fig:external-forces):
 
 \begin{equation}
-\F_{1x} = F_{2x} \cos{\theta_1 + \theta2} + F_{2y} \sin(\theta_1 + \theta_2)
+F_{1x} = F_{2x} \cos({theta_1 + \theta_2) + F_{2y} \sin(\theta_1 + \theta_2)
 \end{equation}
 
 It is important to note that the forces acting upon the system due to gravity are already taken into account by the equations of motion derived from the Langrangian.
