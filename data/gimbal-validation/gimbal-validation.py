@@ -52,6 +52,8 @@ plt.xlim((0,5))
 sns.despine(trim=True, offset=5)
 plt.xlabel('Time [s]')
 
-plt.show()
-
-#plt.savefig(output)
+if output:
+    plt.savefig(output)
+else:
+    plt.show()
+    

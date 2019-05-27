@@ -174,7 +174,7 @@ This was done by feeding the respective velocity targets with step functions and
 As one can see in @Fig:gimbal-validation, the simulation and real gimbals are in agreement.
 One thing to note though, is that we got slightly different performance/behaviour from the gimbal when we ran them from the EPOS-Studio software through USB in comparison to our usual control via CANbus (see @sec:epos-can-diff).
 
-\missingfigure{Gimbal model validation}
+![Comparison of simulated and real gimbals given the same input signal. NOTE: this data is not correct, need to check with Kaveh for the correct data.](./figures/gimbal-validation.svg){ #fig:gimbal-validation }
 
 ## Robot Tasks
 
