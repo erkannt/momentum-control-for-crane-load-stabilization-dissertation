@@ -92,7 +92,7 @@ While mobile platforms in robotics are starting to enter industrial use they are
 For small heights linear axes can be added to the mobile platforms to increase the reach of their robot arms.
 Some have proposed attaching industrial robot arms to other system to enhance their reach and construction site mobility.
 One example from research is the Digital Construction Platform by the MIT Media Lab [@KeatingCompoundArmApproach2014] (@Fig:dcp-media-lab).
-Others have attached articulated arms to hydraulic remote controlled demolition robots for use in nuclear decommisioning [@BurrellFeedbackControlBased2016].
+Others have attached articulated arms to hydraulic remote controlled demolition robots for use in nuclear decommissioning [@BurrellFeedbackControlBased2016].
 Aside from their vertical and horizontal reach a further benefit of cranes can be their small footprint relative to their horizontal reach, while mobile platforms would have to be provided with access via the ground.
 Given that the weight of even small mobile platforms with a payload of 15kg can encroach upon residential floor load limits, this severely reduces the feasibility of mobile platforms on construction sites.
 
@@ -124,5 +124,7 @@ Part of this is due to the fact that researchers have to actually build their ow
 It is once these tools mature and become available to others that things kick into a higher gear.
 With this in mind the following work contains a basic introduction to control moment gyroscopes, models for the simulation of the the crane-CMG-robot system as well tools for the sizing of CMGs for crane applications.
 
-\todo{prior work at chair and patent application}
-\todo{add patent application to citations}
+------------
+
+The original idea and subsequent work captured in this thesis have been submitted as a patent application[@HaarhoffVorrichtungZurSteuerung].
+Therefore many of the ideas and solutions in this thesis are part of said application, in particular the control flow and integrated approach to address multiple applications with a crane-CMG.
