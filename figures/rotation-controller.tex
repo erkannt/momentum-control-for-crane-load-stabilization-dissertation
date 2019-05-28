@@ -20,7 +20,7 @@ pinstyle/.style = {pin edge={to-,thin,black}
     \node [sum, right=25mm of rinput] (sum1) {$-$};
     \node [block, right=of sum1, align=center] (rotation-controller) {Rotation\\ Controller};
     \node [input, above left=-2mm and 5mm of rotation-controller.west] (rotation-controller-in2) {};
-    \node [block, below=1em of rotation-controller, align=center] (estimator) {Part Inertia\\ Estimator};
+    \node [block, below=1em of rotation-controller, align=center] (estimator) {Inertia\\ Estimator};
     \node [input, above=2mm of estimator.east] (estimator-in1) {};
     \node [input, above=-2mm of estimator.east] (estimator-in2) {};
     \node [block, right=of rotation-controller, align=center] (cmg-controller) {CMGs\\ \footnotesize{incl. Controller}};
@@ -32,7 +32,7 @@ pinstyle/.style = {pin edge={to-,thin,black}
     \node [output, right=15mm of joint1] (output) {};
     \node [joint, below=15mm of rotation-controller] (tmp1) {};
 
-    \draw [->] (rinput) -- node{$P_W = \theta_{23}$} (sum1);
+    \draw [->] (rinput) -- node{$P_W:  \theta_{23}$} (sum1);
     \draw [->] (sum1) -- node{$P_E$} (rotation-controller);
     \draw [->] (rotation-controller) -- node{$\tau_W$} (cmg-controller);
     \draw [->] (cmg-controller) -- node{$\tau_Y$} (pendulum);

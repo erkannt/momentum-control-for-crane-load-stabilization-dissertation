@@ -32,7 +32,7 @@ This should improve the performance of the controller when used for programmed r
 
 ![Control flow for pendulum dampening as well as rotation of parts.](./figures/dampening-controller.png){ #fig:dampening-controller width=100% }
 
-If we no longer assume that the crane is standing still we move on to a dampening control loop.
+If we no longer assume that the crane is standing still we move on to a dampening control loop (@Fig:dampening-controller).
 This loop is actually nearly identical to the rotation control loop, the only difference being that we extend the desired state of the pendulum ($P_W$) so that all angles are zero, except for $\theta_{23}$, which is set to the desired rotation of the part.
 The challenge in this loop is finding a suitable controller, as unlike with the rotational control loop our CMGs do not have direct control over all state variables.
 If we model the crane as a double pendulum the loop in underactuated due the CMGs only having indirect control of the upper link's state.
@@ -79,7 +79,7 @@ In the following we will discuss the underactuation problem and try to find a su
 
 \todo{implement Sigrid's feedback into the control diagrams}
 
-![Integrated controller](./figures/integrated-controller.png){ #fig:integrated-controller }
+\missingfigure{updated integrated controller}
 
 
 ## Review of Controller Designs

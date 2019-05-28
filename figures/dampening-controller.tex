@@ -8,30 +8,39 @@
 block/.style = {draw, fill=white, rectangle, minimum height=3em, minimum width=6em},
 tmp/.style  = {coordinate}, 
 sum/.style= {draw, fill=white, circle, inner sep=0pt},
-joint/.style= {draw, fill=black, circle, inner sep=0pt, minimum size=0.1cm},
+joint/.style= {inner sep=-2pt},
 input/.style = {coordinate},
 output/.style= {coordinate},
 pinstyle/.style = {pin edge={to-,thin,black}
 }
 }
 
-\begin{tikzpicture}[auto, node distance=9em,>=latex']
+\begin{tikzpicture}[auto, node distance=3em,>=latex']
     \node [input, name=rinput] (rinput) {};
-    \node [sum, right of=rinput, node distance=3.5cm] (sum1) {$-$};
-    \node [block, right of=sum1, align=center] (damp-controller) {Dampening\\ Controller};
-    \node [block, right of=damp-controller, align=center] (cmg-controller) {CMGs\\ \footnotesize{incl. Controller}};
-    \node [block, right of=cmg-controller] (pendulum) {Pendulum};
-    \node [block, below of=pendulum, node distance=1.5cm] (sensor) {Sensor};
-    \node [joint, right of=pendulum, node distance=1.5cm] (joint1) {};
-    \node [output, right of=joint1, node distance=1.5cm] (output) {};
-    \node [tmp, below of=damp-controller, node distance=1.5cm] (tmp1) {};
+    \node [sum, right=25mm of rinput] (sum1) {$-$};
+    \node [block, right=of sum1, align=center] (rotation-controller) {Rot. \& Damp.\\ Controller};
+    \node [input, above left=-2mm and 5mm of rotation-controller.west] (rotation-controller-in2) {};
+    \node [block, below=1em of rotation-controller, align=center] (estimator) {Inertia\\ Estimator};
+    \node [input, above=2mm of estimator.east] (estimator-in1) {};
+    \node [input, above=-2mm of estimator.east] (estimator-in2) {};
+    \node [block, right=of rotation-controller, align=center] (cmg-controller) {CMGs\\ \footnotesize{incl. Controller}};
+    \node [joint, right=of cmg-controller] (joint2) {\textbullet};
+    \node [block, right=of joint2] (pendulum) {Pendulum};
+    \node [joint, right=15mm of pendulum] (joint1) {\textbullet};
+    \node [block, below=15mm of pendulum] (sensor) {Sensor};
+    \node [joint, left=of sensor] (joint3) {\textbullet};
+    \node [output, right=15mm of joint1] (output) {};
+    \node [joint, below=15mm of rotation-controller] (tmp1) {};
 
-    \draw [->] (rinput) -- node{$P_W = \theta_i, \dot{\theta}_i = 0$} (sum1);
-    \draw [->] (sum1) -- node{$P_E$} (damp-controller);
-    \draw [->] (damp-controller) -- node{$\tau_W$} (cmg-controller);
+    \draw [->] (rinput) -- node[align=left, below]{$\theta_{23}=\theta_{23},$ \\ $\theta_{i[12]}=0,$ \\$ \dot\theta_{i[12]}=0$} node{$P_W$} (sum1);
+    \draw [->] (sum1) -- node{$P_E$} (rotation-controller);
+    \draw [->] (rotation-controller) -- node{$\tau_W$} (cmg-controller);
     \draw [->] (cmg-controller) -- node{$\tau_Y$} (pendulum);
     \draw [->] (pendulum) -- (joint1) -- node{$P_Y$} (output);
-    \draw [->] (joint1) |- (sensor) -- node{$P_M$} (tmp1) -| (sum1);
+    \draw [->] (joint1) |- (sensor) -| node{$P_M$} (sum1);
+    \draw [->] (estimator) -| (rotation-controller-in2) -- (rotation-controller-in2 -| rotation-controller.west);
+    \draw [->] (joint2) |- (estimator-in1);
+    \draw [->] (joint3) |- node[pos=0.8]{$\ddot{\theta}_{2[123]}$} (estimator-in2);
 
 \end{tikzpicture}
 

@@ -29,12 +29,20 @@ pinstyle/.style = {pin edge={to-,thin,black}
     \node [input, name=rinput] (rinput) {test};
     \node at (3.5, 0) [sum] (pe-sum) {$-$};
     % Dampening Controller
-    \node [block, right=30mm of pe-sum.center, align=center] (damp-controller) {Dampening\\ Controller};
-    \node [sum, right=of damp-controller] (feedforward-sum) {$-$};
+    \node [block, right=30mm of pe-sum.center, align=center] (damp-controller) {Rot. \& Damp.\\ Controller};
+    \node [input, above left=-2mm and 5mm of damp-controller.west] (damp-controller-in2) {};
+    \node [sum, right=40mm of damp-controller] (feedforward-sum) {$+$};
+    \node [sum, right=10mm of damp-controller] (feedforward-sum2) {$-$};
+    \node [block, below=1em of damp-controller, align=center] (estimator) {Inertia\\ Estimator};
+    \node [input, above=2mm of estimator.east] (estimator-in1) {};
+    \node [input, above=-2mm of estimator.east] (estimator-in2) {};
     % Robot Model
     \node [block, above=18mm of damp-controller.south, align=center] (robot-model) {Robot\\ Model};
+    \node [block, right=30mm of robot-model.center, align=center] (robot-force) {Force \\ Comp.};
     \node [input, above=2mm of robot-model.west] (robot-model-in1) {};
     \node [input, below=2mm of robot-model.west] (robot-model-in2) {};
+    \node [input, above=0mm of robot-model.east] (robot-model-out1) {};
+    \node [input, below=2mm of robot-model.east] (robot-model-out2) {};
     \node [tmp, above left=9mm and 5mm of robot-model.west] (rc-routing) {};
     % Robot Controller
     \node [block, above=18mm of robot-model.south, align=center] (robot-controller) {Robot\\ Controller};
@@ -43,8 +51,8 @@ pinstyle/.style = {pin edge={to-,thin,black}
     \node at (3.5, 3.6) [sum] (re-sum) {$-$};
     \node [block, left=of re-sum, align=center] (robot-path) {Robot\\ Path Planning};
     % CMGs incl Controller
-    \node [block, right=of feedforward-sum, align=center] (cmg-controller) {CMGs\\ \footnotesize{incl. Controller}};
-    \node [sum, right=of cmg-controller] (torque-sum) {$+$};
+    \node [block, right=16mm of feedforward-sum, align=center] (cmg-controller) {CMGs\\ \footnotesize{incl. Controller}};
+    \node [sum, right=16mm of cmg-controller] (torque-sum) {$+$};
     % Robot
     \node [block, above=18mm of cmg-controller.south] (robot) {Robot};
     \node [input, left=5mm of robot.west] (robot-in) {};
@@ -58,17 +66,20 @@ pinstyle/.style = {pin edge={to-,thin,black}
     % Pendulum, Sensors and Output
     \node [block, right of=torque-sum] (pendulum) {Pendulum};
     \node [input, above left=3mm and 5mm of pendulum.west] (pendulum-in1) {};
-    \node [block, below=18mm of pendulum.north, align=center] (sensor1) {Pendulum\\ Sensor};
+    \node [block, below=27mm of pendulum.north, align=center] (sensor1) {Pendulum\\ Sensor};
     \node [block, above=48mm of pendulum.south, align=center] (sensor2) {Pendulum\\ Sensor};
     \node [joint, right=5mm of pendulum.east] (output-joint) {\textbullet};
     \node [output, right=15mm of output-joint, node distance=1.5cm] (output) {};
-    \node at (4.2,-1.8) [joint] (pm-joint) {\textbullet};
+    \node at (4.2,-2.7) [joint] (pm-joint) {\textbullet};
+    \node at (13.7,-2.7) [joint] (pm-joint2) {\textbullet};
+    \node at (13.7,0) [joint] (torque-joint) {\textbullet};
 
 %%% Paths
 % Pendulum Control Loop
-    \draw [->] (rinput) -- node{$P_W = \theta_i, \dot{\theta}_i = 0$} (pe-sum);
+    \draw [->] (rinput) -- node[align=left, below]{$\theta_{23}=\theta_{23},$ \\ $\theta_{i[12]}=0,$ \\$ \dot\theta_{i[12]}=0$} node{$P_W$} (pe-sum);
     \draw [->] (pe-sum) -- node{$P_E$} (damp-controller);
-    \draw [->] (damp-controller) -- (feedforward-sum);
+    \draw [->] (damp-controller) -- (feedforward-sum2);
+    \draw [->] (feedforward-sum2) -- (feedforward-sum);
     \draw [->] (feedforward-sum) -- node{$\tau_W$} (cmg-controller);
     \draw [->] (cmg-controller) -- (torque-sum);
     \draw [->] (torque-sum) -- node{$\tau_Y$} (pendulum);
@@ -76,6 +87,9 @@ pinstyle/.style = {pin edge={to-,thin,black}
     \draw [->] (output-joint) |- (sensor1);
     \draw [->] (sensor1) -| node[pos=0.05]{$P_M$} (pe-sum);
     \draw [->] (output-joint) |- (sensor1);
+    \draw [->] (torque-joint) |- (estimator-in1);
+    \draw [->] (pm-joint2) |- node[pos=0.8]{$\ddot{\theta}_{2[123]}$} (estimator-in2);
+    \draw [->] (estimator) -| (damp-controller-in2) -- (damp-controller-in2 -| damp-controller.west);
 
 % Robot Control Loop
     \draw [->] (robot-path) -- node{$R_W$} (re-sum);
@@ -83,7 +97,9 @@ pinstyle/.style = {pin edge={to-,thin,black}
     \draw [->] (robot-controller) -| node[pos=0.2]{$R_S$} (robot-in) -- (robot);
     \draw [->] (rc-joint) |- (rc-routing) |- (robot-model-in1);
     \draw [->] (pm-joint) |- node[pos=0.7, below]{$P_M$} (robot-model-in2);
-    \draw [->] (robot-model) -| (feedforward-sum);
+    \draw [->] (robot-force) -| node{$\tau$} (feedforward-sum);
+    \draw [->] (robot-model-out1) -- node{$F$} (robot-force);
+    \draw [->] (robot-model-out2) -| node[below, pos=0.35]{$\tau$} (feedforward-sum2);
     \draw [->] (output-joint) |- (sensor2);
     \draw [->] (sensor2) -- node{$P_M$} (coord-model-in1);
     \draw [->] (coord-model) -| node[pos=0.1, above]{$R_M'$} (re-sum);
