@@ -236,7 +236,7 @@ It is this three-dimensional requirement that also sets this challenge apart fro
 The trajectory optimizations proposed for space robotics can most likely be adapted to our usecase, but can't be applied directy due to the stark differences in spacecraft and crane dynamics.
 For instance in space the torques produced by the robot will always only rotate the spacecraft, whereas attached to a crane we will also have to deal with translations caused by excitation by the robot.
 
-We will have to develop an understanding of crane-cmg dynamics to let us find a way to consolidate the different control and sizing requirements of on the one hand a system at rest being excited by e.g. a robot and on the other hand a system in an oscillatory state that needs to be dampened.
+We will have to develop an understanding of crane-CMG dynamics to let us find a way to consolidate the different control and sizing requirements of on the one hand a system at rest being excited by e.g. a robot and on the other hand a system in an oscillatory state that needs to be dampened.
 
 ## Dynamics of CMGs {#sec:cmg-dynamics}
 
@@ -385,4 +385,4 @@ Weight, size power and computational resources are of much smaller concern when 
 Some crane hooks have added weights which are required to ensure that the unloaded hook can overcome the rope friction in the pulley system.
 Furthermore, the slewrate or in our case the rotation speed of loads is only one concern.
 We must also account for the compensation of the robots motion and deal with the oscillations of the crane.
-Hence, as already alluded to during the review of existing applications, we must first develop an understanding of our crane-cmg-robot system, a process discussed in the following chapter.
+Hence, as already alluded to during the review of existing applications, we must first develop an understanding of our crane-CMG-robot system, a process discussed in the following chapter.

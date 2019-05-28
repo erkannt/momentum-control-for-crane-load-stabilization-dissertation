@@ -1,7 +1,7 @@
 
 # Sizing CMGs for Cranes
 
-The models, simulations and experiments of the previous sections provide us with a growing understanding of the behavior of the crane-cmg-process system.
+The models, simulations and experiments of the previous sections provide us with a growing understanding of the behavior of the crane-CMG-process system.
 In this section we try to sum up how how one might go about sizing a CMG array for a given crane or process.
 First we will go through the requirements for the three application categories (dampening, rotation and process compensation) and then move on to describe how the various requirements and system properties interact.
 
@@ -67,7 +67,7 @@ While the optimization of these relationships is over relevance to spacecraft de
 Where $\omega$ is the desired rotation speed of the platform/load/part, $I$ its moment of inertia about the axis in line with the lower link and $h$ the combined angular momentum of the gyroscopes in the CMG array.
 When selecting the desired rotation speed remember to take into account that small rotation angles will fall into the jerk- or acceleration regime.
 Assuming a bang-bang-jerk control one can use the equations in [@LeveSpacecraftMomentumControl2015, sec. 3.1] mentioned above to determine these from the gimbal parameters obtained in the later sizing stages.
-This and and subsequent adjustment of the CMGs sizing should only be necessary when rotation performance is central to the chosen crane-cmg application.
+This and and subsequent adjustment of the CMGs sizing should only be necessary when rotation performance is central to the chosen crane-CMG application.
 Given the relatively slow movement speeds of cranes with loads attached I would assume that this gives one ample time to perform rotations and that high rotation agility will be a rare requirement. 
 
 ### Process Compensation
@@ -197,7 +197,7 @@ Nevertheless I would recommend adding dedicated points of failure for gimbal mot
 Aside from the general sizing of the CMGs I would also like to briefly discuss the shape of the roof array and its relationship to our crane tasks.
 Let us recall that the momentum envelope of a roof array is roughly a cube with spherical protrusions on two sided.
 By changing the roof angle the envelope gets squished together, making it smaller in one dimension while spreading in the others.
-The asymmetry of this envelope can be fitted to best match the requirements of the applications in our crane-cmg system.
+The asymmetry of this envelope can be fitted to best match the requirements of the applications in our crane-CMG system.
 Both dampening and process compensation tasks will have an axis around which more momentum space is required than the other.
 So by orientating the CMG-array accordingly one can align the longest envelope dimension with this higher demand axis.
 If compensation and dampening are the major tasks of the platform the shortest momentum envelope dimension can be aligned with the axis of the crane rope.

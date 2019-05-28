@@ -1,7 +1,7 @@
 
 # Controller Design
 
-To design a control system for our crane-cmg-robot system we will look at the flow of information for the three application scenarios previously described.
+To design a control system for our crane-CMG-robot system we will look at the flow of information for the three application scenarios previously described.
 By understanding the interdependencies of the systems we can create an integrated control approach.
 We will then discuss existing dampening control strategies for cranes and choose one suited for our system.
 
@@ -154,5 +154,5 @@ Given the current reference frame as determined by the sensors and a target refe
 This is luckily covered by what is known as *attitude control* for air- and spacecraft.
 Given that CMGs are not uncommon in spacecraft, some attitude control systems (ACS) might even make special considerations for CMGs.
 It will be interesting to see how one might combine attitude control techniques with those for crane control.
-Especially since certain issues in ACS, such as singularities arising from the chosen error indicator disappear given the kinematic constraints of the crane-cmg system [@OzgorenComparativeStudyAttitude2019].
+Especially since certain issues in ACS, such as singularities arising from the chosen error indicator disappear given the kinematic constraints of the crane-CMG system [@OzgorenComparativeStudyAttitude2019].
 Furthermore, since the inertia of spacecraft might also vary with time as they e.g. deploy their solar panels, a decent body of work exists that deals with the estimation of inertia and design of inertia-free controllers.
