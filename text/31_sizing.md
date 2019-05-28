@@ -194,4 +194,11 @@ This could lead to a stark reduction in the experienced reaction torque in compa
 Combined with limits to winds and crane movements this ought to reduce the gimbal torque requirements significantly.
 Nevertheless I would recommend adding dedicated points of failure for gimbal motor coupling and perhaps even means to mechanically arrest the gimbals motion should a failure of the coupling occur.
 
-\todo{discuss: dampening + rotation envelope can be flat, allowing higher rotation speeds}
+Aside from the general sizing of the CMGs I would also like to briefly discuss the shape of the roof array and its relationship to our crane tasks.
+Let us recall that the momentum envelope of a roof array is roughly a cube with spherical protrusions on two sided.
+By changing the roof angle the envelope gets squished together, making it smaller in one dimension while spreading in the others.
+The asymmetry of this envelope can be fitted to best match the requirements of the applications in our crane-cmg system.
+Both dampening and process compensation tasks will have an axis around which more momentum space is required than the other.
+So by orientating the CMG-array accordingly one can align the longest envelope dimension with this higher demand axis.
+If compensation and dampening are the major tasks of the platform the shortest momentum envelope dimension can be aligned with the axis of the crane rope.
+Likewise, if rotation of parts is the major task one could build the array to that is longest dimension is inline with the axis of rotation.
