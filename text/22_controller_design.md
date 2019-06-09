@@ -7,8 +7,6 @@ We will then discuss existing dampening control strategies for cranes and choose
 
 ## Overall Flow of Information
 
-\todo{update control flow diagrams}
-
 Let us look at the three applications in ascending control complexity:
 
 1. part rotation
