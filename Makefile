@@ -44,6 +44,14 @@ pandoc-tex-flags = --verbose \
 	--number-sections \
 	--metadata date="`date "+%B %e, %Y"`" \
 	--csl="$(stylefolder)/ref_format.csl"
+pandoc-epub-flags = --verbose \
+	-F pandoc-crossref \
+	-F pandoc-include-code \
+	-F pandoc-include \
+	--bibliography="$(bibfile)" \
+	--number-sections \
+	--metadata date="`date "+%B %e, %Y"`" \
+	--csl="$(stylefolder)/ref_format.csl"
 
 # Where make looks for source files
 VPATH := $(wildcard data/*):figures:text
@@ -61,7 +69,8 @@ tex-style := $(wildcard $(stylefolder)/*.tex)
 ref-style = $(stylefolder)/ref_format.csl
 
 # Target collections
-text4tex := $(text:%=$(build)/%)
+text4tex := $(addprefix $(build)/text4tex/, $(notdir $(text)))
+text4epub := $(addprefix $(build)/text4epub/, $(notdir $(text)))
 static := $(images:%=$(build)/%) $(mov:%=$(build)/%)
 
 plots_name := $(basename $(notdir $(plots_py)))
@@ -81,13 +90,17 @@ gif := $(mov_names:%=$(build)/figures/%.gif)
 gifaspng := $(mov_names:%=$(build)/figures/%.png)
 
 # High-Level Targets
-all: html pdf standalone
+all: html pdf standalone epub mobi
 
 html: html-figures $(build)/$(name).html | $(build)
 
 pdf: pdf-figures $(build)/$(name).pdf | $(build)
 
-standalone: $(build)/$(name).standalone.html
+epub: pdf-figures html-figures code4epub $(build)/$(name).epub | $(build)
+
+mobi: epub $(build)/$(name).mobi| $(build)
+
+standalone: $(build)/$(name).standalone.html | html
 
 html-figures: $(plots_svg) $(sketches_png) $(tikz_png) $(gif) $(static) | $(build)/figures
 
@@ -106,11 +119,24 @@ $(build)/$(name).standalone.html: $(build)/$(name).html
 
 # TeX Target
 $(build)/$(name).tex: pdf-figures $(text4tex) $(tex-style) $(ref-style)
-	$(PANDOC) $(build)/text/*.md -o "$(build)/$(name).tex" $(pandoc-tex-flags)
+	$(PANDOC) $(build)/text4tex/*.md -o "$(build)/$(name).tex" $(pandoc-tex-flags)
 
-$(build)/text/%.md: %.md | $(build)/text
+$(build)/text4tex/%.md: %.md | $(build)/text
 	cp $< $@
 	$(SED) 's/\.svg/\.pdf/g' $@
+	$(SED) 's/\.gif/\.png/g' $@
+
+# eBook Targets
+$(build)/$(name).epub: $(text4epub) $(ref-style) | $(build)
+	cd $(build) && \
+	$(PANDOC) text4epub/*.md -o $(notdir $@) $(pandoc-epub-flags)
+
+$(build)/$(name).mobi: $(build)/$(name).epub | $(build)
+	ebook-convert $< $@
+
+$(build)/text4epub/%.md: %.md | $(build)/text
+	cp $< $@
+	#$(SED) 's/\.svg/\.pdf/g' $@
 	$(SED) 's/\.gif/\.png/g' $@
 
 # Required folders
@@ -122,6 +148,8 @@ $(build)/figures:
 
 $(build)/text: 
 	mkdir -p $(build)/text
+	mkdir -p $(build)/text4tex
+	mkdir -p $(build)/text4epub
 
 # Plots from python scripts
 $(build)/figures/%.svg: %.py | $(build)/figures
@@ -141,6 +169,9 @@ $(build)/figures/%.jpg: %.jpg | $(build)/figures
 
 $(build)/figures/%.mp4: %.mp4 | $(build)/figures
 	cp $< $@
+
+code4epub:
+	cp -r code $(build)/code
 
 # sketch >>> TeX
 %.tex: %.sk
@@ -177,10 +208,14 @@ $(build)/figures/%.png: %.mp4 | $(build)/figures
 $(build)/figures/%.gif: %.mp4 | $(build)/figures
 	gifify $< --resize '800:-1' -o $@
 
-clean:
+clean-all:
 	rm -r $(build)
 
 clean-pdf:
 	rm -r $(build)/text
 	rm  $(build)/*.tex
 	rm  $(build)/*.pdf
+
+clean:
+	rm $(build)/diss-haarhoff*
+	rm -r $(build)/text*
