@@ -51,6 +51,7 @@ pandoc-epub-flags = --verbose \
 	--bibliography="$(bibfile)" \
 	--number-sections \
 	--metadata date="`date "+%B %e, %Y"`" \
+	--mathjax \
 	--csl="$(stylefolder)/ref_format.csl"
 
 # Where make looks for source files
@@ -71,6 +72,7 @@ ref-style = $(stylefolder)/ref_format.csl
 # Target collections
 text4tex := $(addprefix $(build)/text4tex/, $(notdir $(text)))
 text4epub := $(addprefix $(build)/text4epub/, $(notdir $(text)))
+text4mobi := $(addprefix $(build)/text4mobi/, $(notdir $(text)))
 static := $(images:%=$(build)/%) $(mov:%=$(build)/%)
 
 plots_name := $(basename $(notdir $(plots_py)))
@@ -98,7 +100,7 @@ pdf: pdf-figures $(build)/$(name).pdf | $(build)
 
 epub: pdf-figures html-figures code4epub $(build)/$(name).epub | $(build)
 
-mobi: epub $(build)/$(name).mobi| $(build)
+mobi: $(build)/$(name).mobi| $(build)
 
 standalone: $(build)/$(name).standalone.html | html
 
@@ -131,13 +133,23 @@ $(build)/$(name).epub: $(text4epub) $(ref-style) | $(build)
 	cd $(build) && \
 	$(PANDOC) text4epub/*.md -o $(notdir $@) $(pandoc-epub-flags)
 
-$(build)/$(name).mobi: $(build)/$(name).epub | $(build)
-	ebook-convert $< $@
+$(build)/$(name).mobi: $(text4mobi) $(ref-style) | $(build)
+	cd $(build) && \
+	$(PANDOC) text4mobi/*.md -o $(name)4mobi.epub $(pandoc-epub-flags) --filter pandoc-tex2svg && \
+	ebook-convert $(name)4mobi.epub $(name).mobi && \
+	rm $(name)4mobi.epub
 
 $(build)/text4epub/%.md: %.md | $(build)/text
 	cp $< $@
-	#$(SED) 's/\.svg/\.pdf/g' $@
 	$(SED) 's/\.gif/\.png/g' $@
+
+$(build)/text4mobi/%.md: %.md | $(build)/text
+	cp $< $@
+	$(SED) 's/\.gif/\.png/g' $@
+	$(SED) 's/\\begin{align}/$$\\begin{align}/g' $@
+	$(SED) 's/\\end{align}/\\end{align}$$/g' $@
+	$(SED) 's/\\begin{eqnarray}/$$\\begin{eqnarray}/g' $@
+	$(SED) 's/\\end{eqnarray}/\\end{eqnarray}$$/g' $@
 
 # Required folders
 $(build):
@@ -150,6 +162,7 @@ $(build)/text:
 	mkdir -p $(build)/text
 	mkdir -p $(build)/text4tex
 	mkdir -p $(build)/text4epub
+	mkdir -p $(build)/text4mobi
 
 # Plots from python scripts
 $(build)/figures/%.svg: %.py | $(build)/figures
@@ -217,5 +230,5 @@ clean-pdf:
 	rm  $(build)/*.pdf
 
 clean:
-	rm $(build)/diss-haarhoff*
 	rm -r $(build)/text*
+	rm $(build)/diss-haarhoff*

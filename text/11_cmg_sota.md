@@ -24,8 +24,8 @@ By delving into the various existing applications this chapter hopes to provide 
 Dealing with gyroscopes can make your head spin.
 Their behavior often runs counter to our intuitions due the relationship between torque, angular velocity and momentum involving the cross product of their vectors, leading to everything constantly being rotated 90°.
 
-Fundamental to understanding gyroscopes is that angular momentum ($\bm{h}$) is a conserved quantity i.e. it remains constant unless a torque ($\bm{\tau}$) is applied to the system.
-Furthermore it helps to remember that therefore a change in angular momentum is a torque ($\bm{\tau} = \frac{d\bm{h}}{dt}$).
+Fundamental to understanding gyroscopes is that angular momentum ($\boldsymbol{h}$) is a conserved quantity i.e. it remains constant unless a torque ($\boldsymbol{\tau}$) is applied to the system.
+Furthermore it helps to remember that therefore a change in angular momentum is a torque ($\boldsymbol{\tau} = \frac{d\boldsymbol{h}}{dt}$).
 When the applied torque is aligned with the angular momentum the momentum simply increases.
 This happens when a motor spins a wheel or we snap our fingers to spin a top and is quite intuitive.
 
@@ -44,7 +44,7 @@ It is this change in orientation in the form of a rotation and its relation to t
 
 Before proceeding I would like to emphasize several points:
 
-- the angular momentum ($\bm{h}$) acts akin to a lever between $\bm{\omega}$ and $\bm{\tau}$
+- the angular momentum ($\boldsymbol{h}$) acts akin to a lever between $\boldsymbol{\omega}$ and $\boldsymbol{\tau}$
 - the speed at which our gyroscope spins is not affected by torque acting orthogonal to its axis of rotation
 - such a torque will instead result in a rotation orthogonal to both angular momentum and said torque
 
@@ -56,10 +56,10 @@ This is illustrated in @Fig:CMG_principle.
 The torque produced by such a gimbal rotation is described by:
 
 \begin{equation}\label{reaction_torque}
-\bm{\tau} = \bm{\omega} \times \bm{h}
+\boldsymbol{\tau} = \boldsymbol{\omega} \times \boldsymbol{h}
 \end{equation}
 
-The beauty of a CMG lies within the fact that the torque required to rotate the gimbal as to produce a given rate $\bm{\omega}$ is independent of the angular momentum $\bm{h}$ of the gyroscope.
+The beauty of a CMG lies within the fact that the torque required to rotate the gimbal as to produce a given rate $\boldsymbol{\omega}$ is independent of the angular momentum $\boldsymbol{h}$ of the gyroscope.
 The gimbal motor only has to overcome the rotational inertia of the gyroscope and the surrounding gimbal bearings etc.
 Yet since the torque of the CMG also depends on the angular momentum of the spinning gyroscope we can increase the output torque of the CMG simply by increasing the spin speed of the gyroscope.
 

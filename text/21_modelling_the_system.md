@@ -276,7 +276,7 @@ R_{2 \rightarrow 3} = & R_Y(\theta_{21})R_X(\theta_{22})R_Z(\theta_{23}) \\
 \left[\begin{matrix}\cos{\left (\theta_{23} \right )} & - \sin{\left (\theta_{23} \right )} & 0\\\sin{\left (\theta_{23} \right )} & \cos{\left (\theta_{23} \right )} & 0\\0 & 0 & 1\end{matrix}\right]
 \end{align}
 
-This lets us express the required rotational velocities as follows. Note that we use $-\theta_{21}$ as its direction is opposite to that of the right-hand-rule.
+This lets us express the required rotational velocities as follows. Note that we use -$\theta_{21}$ as its direction is opposite to that of the right-hand-rule.
 
 \begin{align}
   \omega_3 = & R_{2 \rightarrow 3} \omega_{X_{2}} + R_{2 \rightarrow 3} \omega_{Y_{2}} + \omega_{Z_{3}} \\
