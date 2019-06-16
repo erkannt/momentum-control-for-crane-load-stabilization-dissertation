@@ -59,7 +59,7 @@ VPATH := $(wildcard data/*):figures:text
 
 # Source collections
 text := $(wildcard text/*.md)
-images := $(wildcard figures/*.png) $(wildcard figures/*.jpg)
+images := $(wildcard figures/*.png) $(wildcard figures/*.jpg) $(wildcard figures/*.svg)
 mov := $(wildcard figures/*.mp4)
 plots_py := $(wildcard data/*/*.py)
 sketches := $(wildcard figures/*.sk)
@@ -182,6 +182,12 @@ $(build)/figures/%.jpg: %.jpg | $(build)/figures
 
 $(build)/figures/%.mp4: %.mp4 | $(build)/figures
 	cp $< $@
+
+$(build)/figures/%.svg: %.svg | $(build)/figures
+	cp $< $@
+
+$(build)/figures/%.pdf: %.svg | $(build)/figures
+	convert $< -resize 1200x1200\< $@
 
 code4epub:
 	cp -r code $(build)/code
