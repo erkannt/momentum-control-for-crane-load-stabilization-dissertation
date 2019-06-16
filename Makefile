@@ -92,11 +92,15 @@ gif := $(mov_names:%=$(build)/figures/%.gif)
 gifaspng := $(mov_names:%=$(build)/figures/%.png)
 
 # High-Level Targets
+main: html pdf standalone
+
 all: html pdf standalone epub mobi
 
 html: html-figures $(build)/$(name).html | $(build)
 
 pdf: pdf-figures $(build)/$(name).pdf | $(build)
+
+ebook: epub mobi
 
 epub: pdf-figures html-figures code4epub $(build)/$(name).epub | $(build)
 
@@ -118,6 +122,7 @@ $(build)/$(name).html: $(text) $(html-style) $(ref-style) | $(build)
 $(build)/$(name).standalone.html: $(build)/$(name).html
 	cd $(build) && \
 	$(SINGLEPAGE) $(name).html > $(name).standalone.html
+	$(SED) ''s/<math disp/ <math disp/g' $@
 
 # TeX Target
 $(build)/$(name).tex: pdf-figures $(text4tex) $(tex-style) $(ref-style)
