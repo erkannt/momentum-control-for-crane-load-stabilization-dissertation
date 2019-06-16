@@ -81,7 +81,7 @@ Subsequently we will look at how said singularity avoidance interacts with the d
 The SPCMG is tasked with producing the torque we wish to apply to the lower link of the double pendulum.
 Since the control input of the SPCMG is the speed of its gimbal motors we require a steering law to translate the desired torque in to a gimbal speed.
 
-![Abstract model of a scissored pair control moment gyroscope.](./figures/spcmg-steering.png){ #fig:spcmg-steering }
+![Abstract model of a scissored pair control moment gyroscope.](./figures/spcmg-principle.svg){ #fig:spcmg-steering }
 
 Looking at an abstract view of the SPCMG (@Fig:spcmg-steering) and given that the design of the mirrored pair dictates that $\delta = \delta_1 = \delta_2$ and $h_r = h_1 = h2$ the torque produced by the array can be easily determined:
 
