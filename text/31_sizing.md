@@ -95,7 +95,7 @@ These are illustrated in @Fig:cmg-params.
 
 ![Illustration of the requirements stemming from the different CMG tasks.](./figures/cmg-reqs.jpg){ #fig:cmg-reqs }
 
-![Illustration of the relationship between the parameters of a CMG array and crane.](./figures/cmg-param-relationships.jpg){ #fig:cmg-params }
+![Illustration of the relationship between the parameters of a CMG array and crane.](./figures/cmg-param-relationships.svg){ #fig:cmg-params }
 
 Beginning with the gyroscopes we have the moment of inertia of the rotor.
 This can be affected by the density of the material as well as the shape and size of the rotor.
