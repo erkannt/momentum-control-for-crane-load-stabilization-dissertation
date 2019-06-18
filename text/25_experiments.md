@@ -321,6 +321,8 @@ The interested reader is pointed towards:
 
 ### Tuning Controller on Hardware
 
+![Dampening experiments on hardware prototype.](./figures/Dampening-1000rpm.gif){ #fig:dampening-hardware}
+
 \missingfigure{plots of dampening hardware prototype}
 
 \todo{discuss results of hardware dampening tests}
