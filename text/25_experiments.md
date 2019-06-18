@@ -291,7 +291,7 @@ The speed readout via the microcontroller has been invaluable in ensuring sensib
 The custom PCB has also provided us with a much more reliable prototype due to the addition of high quality plugs.
 These not only make disassembly much easier, but also reduce the uncertainty from loose/unreliable connections, making debugging a lot easier.
 
-\missingfigure{gyro motor alignment mount}
+![Redesigned mount for the gyroscope. Note how the motor can be removed without affecting the alignment of the mount, making it easier to align the gyroscope's shaft with the motor. The coupling is also 3d-printed, after the original one broke, most likely due to misalignment.](./figures/gyro-mount.jpg){ #fig:gyro-mount } 
 
 The speed controllers are not able to bring the motors to their maximum velocity put forth by the datasheet.
 We also had to adjust the velocity measurement by validating the velocities with a tachometer.
@@ -321,7 +321,7 @@ The interested reader is pointed towards:
 
 ### Tuning Controller on Hardware
 
-\missingfigure{video of dampening hardware prototype}
+![Dampening experiments on hardware prototype.](./figures/Dampening-1000rpm.gif){ #fig:dampening-hardware}
 
 \missingfigure{plots of dampening hardware prototype}
 
