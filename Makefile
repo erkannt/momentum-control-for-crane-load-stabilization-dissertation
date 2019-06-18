@@ -122,7 +122,7 @@ $(build)/$(name).html: $(text) $(html-style) $(ref-style) | $(build)
 $(build)/$(name).standalone.html: $(build)/$(name).html
 	cd $(build) && \
 	$(SINGLEPAGE) $(name).html > $(name).standalone.html
-	$(SED) ''s/<math disp/ <math disp/g' $@
+	$(SED) 's/<math disp/ <math disp/g' $@
 
 # TeX Target
 $(build)/$(name).tex: pdf-figures $(text4tex) $(tex-style) $(ref-style)
