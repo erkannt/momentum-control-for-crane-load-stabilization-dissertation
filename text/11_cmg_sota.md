@@ -343,7 +343,7 @@ We can think of this of the workspace of the array whose axes are angular moment
 
 The hull or envelope of this momentum depends on the configuration of the array.
 If one imagines each CMG having a momentum vector that can be gimbaled 360°, the result is a circle lying on the plane orthogonal to the gimbals axis.
-The envelope then is the set of points defined by the sum multiple of such vectors through their rotation (see @Fig:cmg-momentum-envelope).
+The envelope then is the set of points defined by the sum multiple of such vectors through their rotation.
 
 To develop a more intuitive understanding of the momentum envelope one can picture the gyroscopes being gimbaled to move the momentum vector through the volume enclosed by the envelope.
 Remembering that a change in momentum is a torque we can picture how the velocity of the point moving through the momentum space is the output torque of the array.
@@ -354,8 +354,6 @@ So if our velocity in momentum space is in Nm and the distance travelled corresp
 
 Note that close to singularities the gimbals will have to move greater amounts to achieve the same travel in momentum space just like a robots axis have to rotate further close to singularities to achieve the same travel in cartesian space.
 Hence given a limited gimbal velocity and acceleration the torque dynamics will change throughout the momentum envelope.
-
-![Example of a momentum envelope. Taken from @CitationNeeded.](./figures/cmg-momentum-envelope.jpg){#fig:cmg-momentum-envelope}
 
 It is important to understand that the envelope is not a convex hull i.e. it intersects itself and can have additional internal surfaces.
 These are the internal singularities that the steering law must avoid or be able to pass through.
