@@ -479,7 +479,7 @@ The inertia of the robots axes are estimated by distributing the robots mass acc
 
 ![Three robot paths used in our experiments.](./figures/robot-toolpaths.gif){#fig:robot-toolpaths}
 
-![Parametric robot paths programmed using the KUKA|prc plugin for Rhino/Grasshopper.](./figures/robot-path-planning.jpg){#fig:robot-path-planning}
+![Parametric robot path programmed using the KUKA|prc plugin for Rhino/Grasshopper.](./figures/robot-path-planning.jpg){#fig:robot-path-planning}
 
 ![Axis values simulated by KUKA|prc. Note the sharp corners resulting from unlimited acceleration/jerk values making these values ill-suited to simulate the forces and torques at the robot base.](./figures/kuka-prc-axis-values.jpg){#fig:robot-axis-values}
 
