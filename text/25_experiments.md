@@ -264,7 +264,7 @@ The CMGs are attached to a welded steel frame that was sized to also later accom
 The controller and power supplies are mounted to a board inside the frame.
 The frame is suspended from two hooks in the ceiling.
 
-\missingfigure{Image of custom PCB, case and controllers}
+![Custom PCB holding the microcontroller, gyro speed controllers, CAN and Ethernet jacks.](./figures/cmg-pcb.jpg){ #fig:cmg-pcb }
 
 For the SPCMG to work as intended we need to maintain the symmetry between the two giros.
 This is usually achieved by linking the two gimbals mechanically and using a single actuator.
