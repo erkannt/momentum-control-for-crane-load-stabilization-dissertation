@@ -66,7 +66,7 @@ We could also add additional sensors to directly measure the error of the robot 
 Since part of the torque at the robots base stems simply from the pull of gravity on the robots joints, we also have to pipe the current platform angle into our robot model.
 
 Once we move to an actual crane we have to extend the state to include the position of the crane hook in addition to its orientation.
-A central controller would then set targets for both the cranes winches/gantries as well as the CMG (see @Fig:integrated-controller)
+A central controller would then set targets for both the cranes winches/gantries as well as the CMG.
 Depending on how one uses the robot to compensate path deviations, this central controller might also inform the robot's controller.
 Note that other external forces such as wind may also act of the platform and introduce additional error.
 The sensors and controllers might be sufficient to deal with such influences, but one could also imagine additional sensors and predictive model that modify the target torques of CMGs to further increase system performance.
@@ -74,11 +74,6 @@ The sensors and controllers might be sufficient to deal with such influences, bu
 What remains is the challenge of finding and implementing suitable controllers.
 For certain parts of the system conventional PID controllers, Kalman filters etc. will be sufficient, while other parts will require more work.
 In the following we will discuss the underactuation problem and try to find a suitable controller for the dampening of dampening task. 
-
-\todo{implement Sigrid's feedback into the control diagrams}
-
-\missingfigure{updated integrated controller}
-
 
 ## Review of Controller Designs
 
