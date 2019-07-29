@@ -194,6 +194,12 @@ This could lead to a stark reduction in the experienced reaction torque in compa
 Combined with limits to winds and crane movements this ought to reduce the gimbal torque requirements significantly.
 Nevertheless I would recommend adding dedicated points of failure for gimbal motor coupling and perhaps even means to mechanically arrest the gimbals motion should a failure of the coupling occur.
 
+![Interaction of the pendulum motion with the CMGs can lead to strong reaction torques depending on the gimbal angle.](./figures/torque_issue.gif){ #fig:torque-issue }
+
+![When the gyroscope axis are held parallel to the axis of rotation no reaction torque is produced.](./figures/torque_issue_zero_reaction.gif){ #fig:torque-issue-zero }
+
+\todo{discuss torque issue in greater detail w. ref to figures}
+
 Aside from the general sizing of the CMGs I would also like to briefly discuss the shape of the roof array and its relationship to our crane tasks.
 Let us recall that the momentum envelope of a roof array is roughly a cube with spherical protrusions on two sided.
 By changing the roof angle the envelope gets squished together, making it smaller in one dimension while spreading in the others.
