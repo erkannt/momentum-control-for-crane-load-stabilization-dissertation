@@ -258,7 +258,7 @@ The gyroscopes require only a fairly simple speed controller as they shouldn't e
 Therefore we use DEC-40 development boards attached to a custom PCB with an ATTiny microcontroller (see @Fig:cmg-pcb) that lets us set speed and direction over a USB serial interface.
 The same PCB and interface provide us with communication to the BNO055 inertial measurement unit.
 
-\missingfigure{List of hardware components}
+![Main hardware components used in the prototype.](./figures/hw-list.png){ #fig:hw-list }
 
 The CMGs are attached to a welded steel frame that was sized to also later accommodate four CMGs.
 The controller and power supplies are mounted to a board inside the frame.
