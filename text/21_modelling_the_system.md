@@ -456,10 +456,6 @@ These should roughly correspond to positioning/compensation, a continuous task (
 The tasks were programmed using the Rhino/Grasshopper plugin KUKA|prc for a small KUKA KR industrial robot (see @Fig:robot-path-planning).
 Since the programs are parametric one can easily scale them to larger robots.
 
-![KR3 Robot used to obtain realistic axis values.](./figures/KR3.jpg){#fig:kr3}
-
-\todo{replace KR3 picture with our own KR3}
-
 The KUKA|prc plug-in can output the required axis values for a programmed path .
 This inverse kinematic simulation is useful for solving singularity issues in the paths but does not limit the axis accelerations.
 This is obvious when looking at the axis values produced by KUKA|prc in @Fig:robot-axis-values, which have very sharp corners where the robot changes direction.
