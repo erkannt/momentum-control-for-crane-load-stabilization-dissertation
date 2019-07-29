@@ -34,8 +34,6 @@ Beginning with the compact, bottom slewing cranes we go to the highest load cran
 
 ![Key parameters of the selected example cranes L1-24, 71 EC-B, 380 EC-B, 1000 EC-B.](./figures/crane-data.png){ #fig:crane-data }
 
-\todo{obtain hook weights of example cranes}
-
 From the data-sheets of the these cranes we can obtain the parameters relevant to our models (see @Fig:crane-data).
 We are predominantly interested in the parameters that let us estimate the base rate of the CMGs induced by the motion of the crane as this determines the magnitude of the gyroscopic reaction torque that our gimbal motors need to compensate (see @Sec:cmg-dynamics).
 The translational movements of the hook/platform don't contribute to the base rate but as we will see later, the period of the crane-rope/pendulum is of interest here.
@@ -51,8 +49,7 @@ As the potential energy is dependent upon the mass of the pendulum we add the ma
 
 ![Illustration of the velocity and acceleration of a pendulum. CC-BY-SA, Wikipedia User Ruryk](./figures/oscillating_pendulum-ccbysa-ruryk.gif){ #fig:pendulum-velocity }
 
-To estimate the amplitude of the oscillations we can either turn to rules and regulations for the safe operation of cranes that specify a maximum allowed amplitude \todo{Rules and regs re: crane oscillations}.
-Or we can derive it from the maximum crane load, pendulum length and translational velocity caused by slewing the jib or moving the trolley.
+We can derive an estimate for the amplitude of the crane oscillations from the maximum crane load, pendulum length and translational velocity caused by slewing the jib or moving the trolley.
 To determine the translational velocity caused by slewing we also require the jib length i.e. reach of the crane the the maximum load at the tip of the jib:
 
 \begin{align}
@@ -71,6 +68,10 @@ Note that all of the above assumes a regular pendulum.
 As we will see in the following section it might be necessary to model the crane as a double pendulum.
 Here the hook and payload would be considered as separate masses, hence we include the hook weight in the table of crane parameters.
 Note that some hooks are purposely heavy to overcame the rope-drag of the crane pulley when no load is attached.
+
+These estimations provide us with a worst case oscillation that is most likely unrealistic under most conditions.
+The maximum values obtained above stem from a case where the crane is lifting the maximum load possible at the tip of the jib, with the load at ground level.
+With the load the cranes rotates at maximum velocity and then goes into a full stop.
 
 ## Modeling the Crane
 
