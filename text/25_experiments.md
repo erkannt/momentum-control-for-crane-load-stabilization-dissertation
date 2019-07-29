@@ -273,9 +273,34 @@ The use of a mechanical linkage is simple to implement and offers the added bene
 Given that our prototype should later be extended to a four CMG roof array we opted to enforce the SPCMG symmetry with a control loop.
 The controller applies a proportional gain of the difference in angle between the two gimbals to the desired gimbal velocity.
 
+### Initial Experiments with the Prototype
+
+The @Fig:dampening-hardware shows the first dampening experiments with the hardware prototype.
+The top of the video shows the system being excited with the gyroscope axis oriented parallel to the axis of rotation and the control loop deactivated.
+The lower half of the video shows the system given a similar excitation, but with the PD$\alpha$ controller active, and we can see how the motion of the gimbals dampens the initial pendulum motion.
+
+![Dampening experiments on hardware prototype.](./figures/Dampening-1000rpm.gif){ #fig:dampening-hardware}
+
+We can also see a multitude of issues.
+The initial pendulum motion is dampened, but an out of plane pendulum motion is created.
+This has multiple reasons:
+
+- points of suspension are too close together to prevent out of plane motion
+- SPCMGs cannot compensate out of plane motion
+- our control loop is not precise/agile enough to maintain perfect gyroscope symmentry
+
+The aysymetric motion of the gimbals produces minor torques out of alignment with the in plane pendulum motion.
+The inability of the SPCMG/suspension to compensate these leads to the behaviour seen in @Fig:dampening-hardware.
+The dampening also takes considerable time and once it is completed we can observe slightly erratic gimbal motions.
+
+While these initial results are underwhelming, they show the fundamental validity of the approach.
+More importantly they highlight some of the hardware issues that still need to be overcome.
+These are discussed in the subsequent section.
+
+
 ### Hardware Issues and Recommendations
 
-The following is a list of issues we encountered as well as recommendation for improving the setup (if we could do things over ...).
+The following is a list of issues we encountered as well as recommendation for improving the setup.
 
 The attempt at creating a fast-spinning piece of hardware with little to no machining kind of worked.
 The CMGs are very loud and a recent reassembly showed that some of the gyroscope bearing have suffered somewhat and started to stick.
@@ -318,14 +343,3 @@ The interested reader is pointed towards:
 - [Modelica](https://www.modelica.org/), [xcos](https://www.scilab.org/software/xcos) and [X2C](https://x2c.lcm.at/)
 - [OpenRTDynamics](https://openrtdynamics.github.io/)
 - [GRiSP](https://www.grisp.org/) and [Nerves](https://nerves-project.org/)
-
-### Tuning Controller on Hardware
-
-![Dampening experiments on hardware prototype.](./figures/Dampening-1000rpm.gif){ #fig:dampening-hardware}
-
-\missingfigure{plots of dampening hardware prototype}
-
-\todo{discuss results of hardware dampening tests}
-
-- validation of PDalpha controller
-- tuning of parameters
