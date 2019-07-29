@@ -160,10 +160,10 @@ def animated_pendulum(data, params, dims, title="", save=False, show=True):
     line, = ax.plot([], [], c="k", lw=1.5)
     # Circles representing the anchor point of rod 1, and bobs 1 and 2.
     c0 = Circle((0, 0), r / 2, fc="k", zorder=10)
-    c1 = Circle((0, 0), r, fc="b", ec="b", zorder=10)
-    c2 = Circle((0, 0), r, fc="r", ec="r", zorder=10)
+    c1 = Circle((0, 0), r, fc="r", ec="r", zorder=10)
+    c2 = Circle((0, 0), r, fc="b", ec="b", zorder=10)
     # Box representing the load
-    load, = ax.plot([], [], c='r', lw=2)
+    load, = ax.plot([], [], c='b', lw=2)
     # Scale Bar
     ax.plot([-pltsize*0.2, -pltsize*0.2], [0, -5], c='gray', lw=5)
     ax.text(-pltsize*0.2+pltsize*0.01, -5, "3m")
@@ -285,7 +285,7 @@ def output_figure(output):
 
 
 """ Run Simulations """
-saveanim = False
+saveanim = True
 showanim = not saveanim
 cranes = [lab_setup, l1_24, ecb380]
 crane_names = ['Lab Setup (5m, 10kg)', 'L1-24 (19m, 2400kg)', '380EC-B16 (83m, 15660kg)']
