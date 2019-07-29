@@ -202,10 +202,10 @@ A quite well known example of fun with momentum control is the Cubli, a self bal
 
 Given that there have been significant efforts to automate construction in Japan and Korea dating back to the 1980s, it is unsurprising that one can find some research into the actuation of cranes from these countries.
 
-A work from 1994 is relevant to cranes but actually on the stabilization of a passenger gondala uses an SPCMG with two 30kg flywheels to compensate wind excitation [@KankiDevelopmentCMGActive1994].
+A work from 1994 is relevant to cranes but actually on the stabilization of a passenger gondala uses an SPCMG with two 30kg flywheels to compensate wind excitation [@KankiDevelopmentCMGActive1994] (see @Fig:KankiDevelopmentCMGActive1994).
 In 1997 a patent was filed on adding a motor to a crane hook to rotate the load [@gimseoghoHookBlockPossible1997].
 In such a case the crane cables resistance to twisting would be what the motor has to push off against.
-A paper from 1998 describes field testing of a device using a single CMG [@InouePracticalDevelopmentSuspender1998].
+A paper from 1998 describes field testing of a device using a single CMG [@InouePracticalDevelopmentSuspender1998] (see @Fig:InouePracticalDevelopmentSuspender1998).
 Interestingly the authors also mention previous work that utilized fans or propellors to actuate a crane's load.
 We have sadly not been able to find a source for this, the language barrier being quite an issue.
 The authors also analyzed how the device improved assembly times and reduced dangerous work.
@@ -219,12 +219,18 @@ Their last paper adds a clutch to the gimbal to avoid overloading the gimbal mot
 In [@LeeAnalysisFieldApplicability2012] the authors use a motorized hook to rotate beams (see @Fig:LeeAnalysisFieldApplicability2012).
 The authors also filed to patents with regard to ways of powering such a hook, one proposed a clock spring with the other proposing use of the vertical hook travel to power the device.
 They incorrectly discuss [@InouePracticalDevelopmentSuspender1998], stating that the author were only using passive stabilization.
-More recently researchers have once again used a single CMG to stabilize the yaw of a load attached to a model of a jib crane [@KodaniTransportingRotatingControl2017].
+More recently researchers have once again used a single CMG to stabilize the yaw of a load attached to a model of a jib crane [@KodaniTransportingRotatingControl2017] (see @Fig:KodaniTransportingRotatingControl2017).
 The author run into issues with the singularity and changing orientation of the output torque.
 
-![Illustration of beam stabilization setup from [@SaAttitudeControlStabilization2001]](./figures/SaAttitudeControlStabilization2001.png){ #fig:SaAttitudeControlStabilization2001 }
+![CMG pair used to stabilize a gondola against wind excitation, from [@KankiDevelopmentCMGActive1994].](./figures/KankiDevelopmentCMGActive1994.png){ #fig:KankiDevelopmentCMGActive1994 }
 
-![Motorized crane hook experiments. Taken from [@LeeAnalysisFieldApplicability2012]](./figures/LeeAnalysisFieldApplicability2012.png){ #fig:LeeAnalysisFieldApplicability2012 }
+![Single CMG device used in field tests, from [@InouePracticalDevelopmentSuspender1998].](./figures/InouePracticalDevelopmentSuspender1998.png){ #fig:InouePracticalDevelopmentSuspender1998 }
+
+![Illustration of beam stabilization setup from [@SaAttitudeControlStabilization2001].](./figures/SaAttitudeControlStabilization2001.png){ #fig:SaAttitudeControlStabilization2001 }
+
+![Motorized crane hook experiments. Taken from [@LeeAnalysisFieldApplicability2012].](./figures/LeeAnalysisFieldApplicability2012.png){ #fig:LeeAnalysisFieldApplicability2012 }
+
+![Single CMG experiments on a model jib crane. Taken from [@KodaniTransportingRotatingControl2017].](./figures/KodaniTransportingRotatingControl2017.png){ #fig:KodaniTransportingRotatingControl2017 }
 
 ### Summary
 

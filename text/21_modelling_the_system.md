@@ -85,7 +85,7 @@ This lets us understand the basic principles of the CMGs as they interact with t
 We can also study the effect of process torques and forces, by constraining them to the 2d case.
 
 We can continue this mixed approach of a SPCMG and 2d crane into a first hardware prototype.
-By building the crane as a swing that hangs from two ropes spanned, we can roughly constrain the motion to a single plane.
+By building the crane as a swing that hangs from two ropes spanned, we can roughly constrain the motion to a single plane (see @Fig:prototype-sketch).
 This reduces the hardware invest for the first prototype by requiring two instead of four CMGs and still lets us validate CMG behavior.
 It also limits the number of components that could cause issues while developing the controller, sensor and communication systems.
 
@@ -111,6 +111,13 @@ This lets us copy, mix and adapt to create a model suited for our purpose.
 It also means that our CMG-focused model could be extended relatively easily.
 
 The following sections will develop this model from a two-dimensional double pendulum to a three-dimensional double pendulum and subsequently go from two point masses to a point mass and a distributed mass.
+The @Fig:crane-model-overview illustrates how the various parts of the crane, CMG, robot and load correspond to the parts of the model.
+The model ignores motion of the crane's gantry/jib, and therefore the pendulum is supended from a fixed point.
+As first mass is a point mass that includes the mass of the hook and crane rope.
+The lower mass is a distributed mass that includes the CMGs, their plattform and everything attached to it.
+
+![Correspondence of crane/CMG/load components to our model.](./figures/crane-model-overview.png){ #fig:crane-model-overview }
+
 The generation of equations of motion and subsequent numerical integration are achieved using Python.
 The code builds on the educational example of Christian Hill [@HillLearningScientificProgramming2016], the three-dimensional model extends the work of O'Conner and Habibi [@OConnorGantryCraneControl2013].
 I hope that this extended discussion and availability of source code will aid others in extending the model to their needs, especially when coming from other disciplines.
