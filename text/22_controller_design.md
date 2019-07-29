@@ -82,31 +82,48 @@ In the following we will discuss the underactuation problem and try to find a su
 
 ## Review of Controller Designs
 
-Control of cranes as been a long running endeavor, which is obvious from the amount of publications but also commercially available systems.
-Most cranes these days can be fitted with or have as standard systems to reduce oscillations.
-Given the price and complexity of sensors capable of tracking a hooks position these mostly use predetermined actuation paths to reduce the creation of oscillations.
+Control of cranes as been a long running endeavor, which is obvious from the amount of publications but also commercially available systems for gantry and habour cranes in particular (see @Fig:swaycontrol-swf).
+Given the price and complexity of sensors capable of tracking a hooks position, these mostly use predetermined actuation paths to reduce the creation of oscillations.
 This of course if particularly well suited to cranes that perform programmed motions, but can also benefit manual control of cranes.
 
-Given flexible connection between actuators and end effector (the hook), lack of sensors and inherit flex of the cranes structure, they make for interesting control engineering problems.
-Therefor one can find a lot of publications focussing on the creation of controllers that remain robust given parameter and system uncertainty.
+![Sway control in a gantry crane by SWF. Taken from [@SWFKrantechnikGmbHSWFKrantechnikLastpendeldampfung2012].](./figures/swaycontrol-swf.gif){ #fig:swaycontrol-swf }
 
-Once one models the crane and its payload as a double pendulum, the problems become even more interesting as it becomes highly under actuated.
+Given flexible connection between actuators and end effector (the hook), lack of sensors and inherit flex of the cranes structure, they make for interesting control engineering problems.
+The review by Abdehl-Rahman et al. [@Abdel-RahmanDynamicsControlCranes2003] is a good starting point into the literature.
+One can find work focussed on improving the control of cranes without a feedback loop such as that by Singhose, Kim and colleagues [@SinghoseManipulationTowerCranes2007, @SinghoseInputShapingControl2008, @VaughanControlTowerCranes2010] who also evaluated the improved performance of operators using such systems [@KimPerformanceStudiesHuman2010].
+Others have extended input shaping methods to make them more robust towards parameter changes and disturbances [@AbdullahiAdaptiveOutputbasedCommand2018].
+
+Once one models the crane and its payload as a double pendulum, the problems become even more interesting as it becomes highly underactuated.
 Under actuation simply means that we have a less actuators than degrees of freedom (see @Fig:crane-8dof).
 This makes such crane models interesting to researchers dealing with such systems.
-It also means that controllers for other under actuated systems are of particular interest to us.
+It also means that controllers for other underactuated systems are of particular interest to us.
+
+Many different approaches to crane control have been proposed and studied covering a whole range of strategies (e.g. linear, non-linear, sliding mode, fuzzy logic etc.).
+Another approach to controlling cranes and underactuated systems in general is to use energy-based controller design techniques.
+These approaches model the energy of the system and changes to it due to control inputs.
+By applying various techniques and theorems (i.e. Lyapunov, LaSalle invariance) one can construct controllers that are proved to be asymptotically stable.
+The work by Sun et al. applies this approach to the control of the gantry in a small lab setup that emulates a double pendulum crane [@SunNonlinearAntiswingControl2018].
+In this work they show how the derived controller is robust with regard to parameter changes and external disturbances.
+An earlier paper by Hoang and Lee show how such controllers perform on a generic underactuated system and compare it to conventional methods (traditional PD, LQR) and more complex approaches (sliding mode control, partial feedback linearization) [@HoangSimpleEnergybasedController2014].
+Their results indicate that the control approach outperforms the conventional methods and comes close to the performance of more complex methods.
+The authors have subsequently also published a comparative study of several controllers for overhead cranes, derived using energy-based methods [@WonComparativeStudyEnergybased] [^predatory].
+
+[^predatory]: While their former paper was published by Springer, this latter paper appears to be a reworked conference proceeding [@LeeEnergyBasedApproachController2013], both published by predatory publishers. The peer review of the work might therefore be of questionable quality. Nevertheless their work appears to be solid and definitely useful.
 
 ![Illustration of the under actuation of a crane. Modeled as a double pendulum of a point mass and distributed mass, adjustable rope length and a suspension point movable in a plane the crane has eight degrees of freedom. Conventionally we only have three actors to control this. By adding the CMGs we drastically reduce the under actuation.](./figures/crane-8dof.png){ #fig:crane-8dof }
 
 ## Dampening Controller { #sec:dampening-controller }
 
-Having reviewed the existing research, we design a controller for the basic 2D pendulum model (see @Sec:2dpendulum) using the scheme proposed by [@HoangSimpleEnergybasedController2014] for under actuated mechanical systems.
-With the target of both parts of the pendulum hanging vertical ($\theta_{[12]}=0$) this means creating a PD-controller where the error of the two angles is combined as follows:
+Having reviewed the existing research, we design a controller for the basic 2D pendulum model (see @Sec:2dpendulum) emulating the energy based controller designs discussed in the previous section.
+These can be described as PD$\alpha$ controllers, where the PD part is as in a convention PID controller.
+The $\alpha$ indicates the weighted combination of two state variables in the system, in our case these are the two angles of the two pendulum links.
+With the target of both of these hanging vertical ($\theta_{[12]}=0$) this means creating a PD-controller where the error of the two angles is combined as follows:
 
 \begin{equation}
 E = \theta_2 + \alpha \theta_1
 \end{equation}
 
-The efficacy of this approach can be seen in @Fig:controller-comparison-animation and @Fig:controller-comparison-plot where we compare an uncontrolled system, proportional control, PD-control and PD-control that is informed by the state of both the upper and lower link.
+The efficacy of this approach can be seen in @Fig:controller-comparison-animation and @Fig:controller-comparison-plot where we compare an uncontrolled system, proportional control, PD-control and PD$\alpha$-control that is informed by the state of both the upper and lower link.
 
 ![Comparison of various control regimes for a double pendulum with a control torque applied to its lower link. From left to right: a) no control torque b) $k_P  = 10, k_D = 0$ c) $k_P = 1, k_D = 4$ d) $k_P = 1, k_D = 4, \alpha = 0.5$](./figures/controller-comparison-animation.gif){ #fig:controller-comparison-animation }
 
