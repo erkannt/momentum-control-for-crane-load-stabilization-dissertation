@@ -1,7 +1,5 @@
-## An example of kinematics diagram for a 6-DOF robot arm
+## Double pointmass pendulum using spherical coordinates
 ##
-## Author : Alex Dumitrache <alex@cimr.pub.ro>
-## License: GPL
 
 input{./sketch-lib/defaults.sk}
 
