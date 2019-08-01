@@ -12,6 +12,11 @@ def coordsys
     line[arrows=<->, draw=black!50, style=dashed, lay=over](x)(o)(y)
     line[arrows=->, draw=black!50, style=dashed, lay=over](o)(z)
 } 
+<dashed>
+{
+    line[arrows=<->, style=dashed, lay=under](x)(o)(y)
+    line[arrows=->, style=dashed, lay=under](o)(z)
+} 
 <>
 {
     line[arrows=<->, style=thick](x)(o)(y)

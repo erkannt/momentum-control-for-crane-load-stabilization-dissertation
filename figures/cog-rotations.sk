@@ -1,0 +1,115 @@
+## Order of rotations for the distributed mass
+##
+
+input{./sketch-lib/defaults.sk}
+
+def arrowarc
+{
+put{scale(0.5)}{
+    sweep [style=thin]{215, rotate(1, [Z])} (1,0)
+    def p1 (1,0) then rotate(210, [Z])
+    def p2 (1,0) then rotate(210+30, [Z])
+    line [style=thin, style=->] (p1)(p2)
+}
+}
+
+% The main drawing
+put {scale(1)}
+{
+    def style [cull=false, fill=lightgray]
+        input{./sketch-lib/objects.sk}
+
+    put {scale(1)}
+    {
+        # coordsys 2
+        put{scale([3,3,3])} {
+            {coordsys}
+            special |\path
+                #1 node[right] {$Z_2$}
+                #2 node[below] {$X_2$}
+                #3 node[above] {};|(z)(x)(y)(o)
+                special|\draw  #1 -- node[above, sloped, pos=0.8]{$Y_2 = Y_{2a}$} #2;|(o)(y)
+
+                # theta_21
+                line [style=dashed] (y)(0,1.8,0)
+                put {translate([0,1.5,0]) * rotate(90, [X]) * rotate(45, [Z]) * scale(0.2)}{arrowarc}
+                special|\node[above] at #1 {$\theta_{21}$};|(0,1.8,0)
+
+            # coordsys 2a
+            put {rotate(-20, [Y])} {
+                {
+                    def dashed<>
+                    input{./sketch-lib/coordsys}
+                    special |\path
+                        #1 node[left] {$Z_2a$}
+                        #2 node[below] {$X_{2a}$}; |(z)(x)(y)(o)
+                }
+            }
+        }
+
+        # coordsys 2a
+        put{translate([6,3,0]) * scale([3,3,3]) * rotate(-20, [Y])} {
+            {coordsys}
+            special |\path
+                #1 node[right] {$Z_{2a}$}
+                #2 node[below] {}
+                #3 node[above] {$Y_{2a}$};|(z)(x)(y)(o)
+                special|\draw  #1 -- node[below, sloped]{$X_{2a} = X_{2b}$} #2;|(o)(x)
+
+                # theta_22
+                line [style=dashed] (x)(1.4,0,0)
+                put {translate([1.2,0,0]) * rotate(90, [X]) * rotate(45, [Z]) * scale(0.2)}{arrowarc}
+                special|\node[above] at #1 {$\theta_{22}$};|(1.4,0,0)
+
+
+            # coordsys 2b
+            put {rotate(30, [X])} {
+                {
+                    def dashed<>
+                    input{./sketch-lib/coordsys}
+                    special |\path
+                        #1 node[above] {$Z_{2b}$}
+                        #2 node[right] {}
+                        #3 node[above] {$Y_{2b}$};|(z)(x)(y)(o)
+                }
+            }
+        }
+
+        # coordsys 2b
+        put{translate([12,6,0]) * scale([3,3,3]) * rotate(-20, [Y]) * rotate(30, [X])} {
+            {coordsys}
+            special |\path
+                #1 node[right] {}
+                #2 node[below] {$X_{2b}$}
+                #3 node[above] {$Y_{2b}$};|(z)(x)(y)(o)
+                special|\draw  #1 -- node[below, sloped]{$Z_{2b} = Z_{2c}$} #2;|(o)(z)
+
+                # theta_23
+                line [style=dashed] (z)(0,0,1.4)
+                put {translate([0,0,1.2]) * rotate(0, [X]) * rotate(60, [Z]) * scale(0.2)}{arrowarc}
+                special|\node[above] at #1 {$\theta_{23}$};|(0,0,1.4)
+
+
+            # coordsys 2c
+            put {rotate(30, [Z])} {
+                {
+                    def dashed<>
+                    input{./sketch-lib/coordsys}
+                    special |\path
+                        #1 node[above] {}
+                        #2 node[right] {$X_{2c}$}
+                        #3 node[above] {$Y_{2c}$};|(z)(x)(y)(o)
+                }
+            }
+        }
+    }
+}
+
+
+
+global
+{
+    language tikz
+    camera rotate(0, (1,0,0)) * view((1.5,2,1),(0,0,0),[0,0,1]) * rotate(110, (0,0,1))
+}
+
