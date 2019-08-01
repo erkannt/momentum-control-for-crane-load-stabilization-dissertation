@@ -227,9 +227,9 @@ The effect of this can vary depending of the excitation/initial conditions of th
 
 To alleviate this we can change the description of the kinematic constraints to use projected angles instead of spherical coordinates.
 This approach follows that of [@OConnorGantryCraneControl2013], where the authors derive the equations of motion for a double pendulum with an attached distributed mass that has two degrees of rotational freedom.
-The following extends this to a full three degrees of freedom, to not only closer model realistic crane load motion but also to accommodate our use-case of load rotation.
+The following extends this to a full three degrees of freedom (see @Fig:crane-projected-angles), to not only closer model realistic crane load motion but also to accommodate our use-case of load rotation.
 
-![Model of a point-mass double pendulum in three dimensions with a fixed point of suspension, using projected angles instead of spherical coordinates.](./figures/crane-model-projected-angles.png){ #fig:crane-projected-angles }
+![Model of a double pendulum in three dimensions with a fixed point of suspension, using projected angles instead of spherical coordinates. Note that the lower mass is now a distributed mass with three degrees of rotational freedom, while the upper mass is still a point mass with only two rotational degrees of freedom.](./figures/crane-projected.png){ #fig:crane-projected-angles }
 
 Given the use of projected angles the cartesian expressions become:
 
