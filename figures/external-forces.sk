@@ -1,0 +1,105 @@
+## Double pointmass pendulum using projected coordinates
+##
+
+input{./sketch-lib/defaults.sk}
+
+def L1 5
+def J1 -30
+def L2 3
+def J2 30
+
+def hash {
+    line[style=thin] (o)(0.2,0.2)
+}
+
+def orth {
+    put{scale(0.5)}{
+        line (0,1)(1,1)
+        line (1,0)(1,1)
+    }
+}
+
+% The main drawing
+put {scale(1)}
+{
+    def style [cull=false, fill=lightgray]
+        input{./sketch-lib/objects.sk}
+
+    put {scale(1)}
+    {
+        # base
+        put{scale([1.5,1.5,1.5]) * translate([0,0,0])}
+        {
+            line [style=thick, style=->] (o)(x)
+            line [style=thick, style=->] (o)(y)
+            special |\path
+                #1 node[below] {$X$}
+                #2 node[right] {$Y$};|(x)(y)(o)
+        }
+        put{scale([0.1,0.1,0.1])}{
+            def style [fill=black, style=thick]
+            input{./sketch-lib/cylinder}
+            }
+        put{translate([-1,0,0])}{
+            line [style=thick] (o)(2,0)
+            repeat {2/0.2+1, translate([0.2,0,0])} {hash}
+        }
+        line [style=dashed] (o)(0,-L1)
+        put{rotate(-90-30, [Z])}{
+            {
+                def sweepangle 30
+                def sweepdist 2.5
+                input{./sketch-lib/arrowarc}
+                def p1 (sweepdist,0)
+                def p2 (sweepdist,0) then rotate(sweepangle, [Z])
+                special|\path  #1 -- node[above, sloped]{$\theta_1$} #2;|(p1)(p2)
+            }
+        }
+
+
+        # mass 1 coordsys
+        put {rotate(J1, [Z]) * translate([0, -L1, 0])}{
+            # link1
+            line (o)(0, L1, 0)
+            # mass 1
+            put{scale(0.2)}{cylinder}
+            # F1
+            line [style=thick, style=->] (o)(2,0)
+            special|\node[above] at #1 {$F_1$};|(2,0)
+            {orth}
+
+            #mass 2 ref line
+            put {rotate(-J1, [Z])}{
+                line [style=dashed] (o)(0,-L2)
+                put{rotate(-90, [Z])}{
+                    {
+                        def sweepangle 30
+                        def sweepdist 2 
+                        input{./sketch-lib/arrowarc}
+                        def p1 (sweepdist,0)
+                        def p2 (sweepdist,0) then rotate(sweepangle, [Z])
+                        special|\path  #1 -- node[above, sloped]{$\theta_2$} #2;|(p1)(p2)
+                    }
+                }
+            }
+
+            # mass 2 coordsys
+            put {rotate(J2-J1, [Z]) * translate([0, -L2, 0])}{
+                # link2
+                line (o)(0, L2, 0)
+                # mass 2
+                put{scale(0.2)}{cylinder}
+                # F2
+                line [style=thick, style=->] (o)(2,0)
+                special|\node[above] at #1 {$F_2$};|(2,0)
+                {orth}
+            }
+        }
+    }
+}
+
+global
+{
+    language tikz
+}
+

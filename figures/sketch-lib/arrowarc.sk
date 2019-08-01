@@ -1,0 +1,7 @@
+def arrowarc
+{
+    sweep [style=thin]{sweepangle, rotate(1, [Z])} (sweepdist,0)
+    def p1 (sweepdist,0) then rotate(sweepangle*0.95, [Z])
+    def p2 (sweepdist,0) then rotate(sweepangle, [Z])
+    line [style=thin, style=->] (p1)(p2)
+}
