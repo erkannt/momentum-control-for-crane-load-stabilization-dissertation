@@ -1,7 +1,7 @@
 ---
 title: Momentum Control for Crane Stabilization
 author: Daniel Haarhoff
-subtitle: Modeling and Sizing of Control Control Moment Gyroscopes for Cranes
+subtitle: Modeling and Sizing of Control Moment Gyroscopes for Cranes
 bibliography: [./references.bib]
 link-citations: true
 linkReferences: true
