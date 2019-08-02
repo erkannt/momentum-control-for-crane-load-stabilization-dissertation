@@ -74,6 +74,7 @@ text4tex := $(addprefix $(build)/text4tex/, $(notdir $(text)))
 text4epub := $(addprefix $(build)/text4epub/, $(notdir $(text)))
 text4mobi := $(addprefix $(build)/text4mobi/, $(notdir $(text)))
 static := $(images:%=$(build)/%) $(mov:%=$(build)/%)
+svgaspdf := $(static:.svg=.pdf)
 
 plots_name := $(basename $(notdir $(plots_py)))
 plots_pdf := $(plots_name:%=$(build)/figures/%.pdf)
@@ -110,7 +111,7 @@ standalone: $(build)/$(name).standalone.html | html
 
 html-figures: $(plots_svg) $(sketches_png) $(tikz_png) $(gif) $(static) | $(build)/figures
 
-pdf-figures: $(plots_pdf) $(sketches_pdf) $(tikz_png) $(gifaspng) $(static) | $(build)/figures
+pdf-figures: $(plots_pdf) $(sketches_pdf) $(tikz_png) $(gifaspng) $(static) $(svgaspdf) | $(build)/figures
 
 # HTML Targets
 $(build)/$(name).html: $(text) $(html-style) $(ref-style) | $(build)
