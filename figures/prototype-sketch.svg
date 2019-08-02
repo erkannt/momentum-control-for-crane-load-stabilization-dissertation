@@ -7,6 +7,7 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="230.99168mm"
@@ -25,11 +26,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.49497475"
-     inkscape:cx="498.0121"
-     inkscape:cy="116.88698"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="288.19912"
+     inkscape:cy="121.44927"
      inkscape:document-units="mm"
-     inkscape:current-layer="g1999"
+     inkscape:current-layer="layer1"
      showgrid="false"
      fit-margin-top="3"
      fit-margin-right="3"
@@ -39,7 +40,12 @@
      inkscape:window-height="723"
      inkscape:window-x="0"
      inkscape:window-y="1"
-     inkscape:window-maximized="1" />
+     inkscape:window-maximized="1"
+     inkscape:pagecheckerboard="true">
+    <inkscape:grid
+       type="xygrid"
+       id="grid2236" />
+  </sodipodi:namedview>
   <metadata
      id="metadata1038">
     <rdf:RDF>
@@ -57,6 +63,54 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(-20.43276,-133.33387)">
+    <image
+       y="133.26706"
+       x="20.43276"
+       id="image2233"
+       xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA5YAAAF7CAYAAACpThQLAAAABHNCSVQICAgIfAhkiAAACH9JREFU
+eJzt1zENgDAAAMFC8O8MH0hgKx74oWlyp+DXP+accwAAAMA/77m6AAAAgL0ZSwAAABJjCQAAQGIs
+AQAASIwlAAAAibEEAAAgMZYAAAAkxhIAAIDEWAIAAJAYSwAAABJjCQAAQGIsAQAASIwlAAAAibEE
+AAAgMZYAAAAkxhIAAIDEWAIAAJAYSwAAABJjCQAAQGIsAQAASIwlAAAAibEEAAAgMZYAAAAkxhIA
+AIDEWAIAAJAYSwAAABJjCQAAQGIsAQAASIwlAAAAibEEAAAgMZYAAAAkxhIAAIDEWAIAAJAYSwAA
+ABJjCQAAQGIsAQAASIwlAAAAibEEAAAgMZYAAAAkxhIAAIDEWAIAAJAYSwAAABJjCQAAQGIsAQAA
+SIwlAAAAibEEAAAgMZYAAAAkxhIAAIDEWAIAAJAYSwAAABJjCQAAQGIsAQAASIwlAAAAibEEAAAg
+MZYAAAAkxhIAAIDEWAIAAJAYSwAAABJjCQAAQGIsAQAASIwlAAAAibEEAAAgMZYAAAAkxhIAAIDE
+WAIAAJAYSwAAABJjCQAAQGIsAQAASIwlAAAAibEEAAAgMZYAAAAkxhIAAIDEWAIAAJAYSwAAABJj
+CQAAQGIsAQAASIwlAAAAibEEAAAgMZYAAAAkxhIAAIDEWAIAAJAYSwAAABJjCQAAQGIsAQAASIwl
+AAAAibEEAAAgMZYAAAAkxhIAAIDEWAIAAJAYSwAAABJjCQAAQGIsAQAASIwlAAAAibEEAAAgMZYA
+AAAkxhIAAIDEWAIAAJAYSwAAABJjCQAAQGIsAQAASIwlAAAAibEEAAAgMZYAAAAkxhIAAIDEWAIA
+AJAYSwAAABJjCQAAQGIsAQAASIwlAAAAibEEAAAgMZYAAAAkxhIAAIDEWAIAAJAYSwAAABJjCQAA
+QGIsAQAASIwlAAAAibEEAAAgMZYAAAAkxhIAAIDEWAIAAJAYSwAAABJjCQAAQGIsAQAASIwlAAAA
+ibEEAAAgMZYAAAAkxhIAAIDEWAIAAJAYSwAAABJjCQAAQGIsAQAASIwlAAAAibEEAAAgMZYAAAAk
+xhIAAIDEWAIAAJAYSwAAABJjCQAAQGIsAQAASIwlAAAAibEEAAAgMZYAAAAkxhIAAIDEWAIAAJAY
+SwAAABJjCQAAQGIsAQAASIwlAAAAibEEAAAgMZYAAAAkxhIAAIDEWAIAAJAYSwAAABJjCQAAQGIs
+AQAASIwlAAAAibEEAAAgMZYAAAAkxhIAAIDEWAIAAJAYSwAAABJjCQAAQGIsAQAASIwlAAAAibEE
+AAAgMZYAAAAkxhIAAIDEWAIAAJAYSwAAABJjCQAAQGIsAQAASIwlAAAAibEEAAAgMZYAAAAkxhIA
+AIDEWAIAAJAYSwAAABJjCQAAQGIsAQAASIwlAAAAibEEAAAgMZYAAAAkxhIAAIDEWAIAAJAYSwAA
+ABJjCQAAQGIsAQAASIwlAAAAibEEAAAgMZYAAAAkxhIAAIDEWAIAAJAYSwAAABJjCQAAQGIsAQAA
+SIwlAAAAibEEAAAgMZYAAAAkxhIAAIDEWAIAAJAYSwAAABJjCQAAQGIsAQAASIwlAAAAibEEAAAg
+MZYAAAAkxhIAAIDEWAIAAJAYSwAAABJjCQAAQGIsAQAASIwlAAAAibEEAAAgMZYAAAAkxhIAAIDE
+WAIAAJAYSwAAABJjCQAAQGIsAQAASIwlAAAAibEEAAAgMZYAAAAkxhIAAIDEWAIAAJAYSwAAABJj
+CQAAQGIsAQAASIwlAAAAibEEAAAgMZYAAAAkxhIAAIDEWAIAAJAYSwAAABJjCQAAQGIsAQAASIwl
+AAAAibEEAAAgMZYAAAAkxhIAAIDEWAIAAJAYSwAAABJjCQAAQGIsAQAASIwlAAAAibEEAAAgMZYA
+AAAkxhIAAIDEWAIAAJAYSwAAABJjCQAAQGIsAQAASIwlAAAAibEEAAAgMZYAAAAkxhIAAIDEWAIA
+AJAYSwAAABJjCQAAQGIsAQAASIwlAAAAibEEAAAgMZYAAAAkxhIAAIDEWAIAAJAYSwAAABJjCQAA
+QGIsAQAASIwlAAAAibEEAAAgMZYAAAAkxhIAAIDEWAIAAJAYSwAAABJjCQAAQGIsAQAASIwlAAAA
+ibEEAAAgMZYAAAAkxhIAAIDEWAIAAJAYSwAAABJjCQAAQGIsAQAASIwlAAAAibEEAAAgMZYAAAAk
+xhIAAIDEWAIAAJAYSwAAABJjCQAAQGIsAQAASIwlAAAAibEEAAAgMZYAAAAkxhIAAIDEWAIAAJAY
+SwAAABJjCQAAQGIsAQAASIwlAAAAibEEAAAgMZYAAAAkxhIAAIDEWAIAAJAYSwAAABJjCQAAQGIs
+AQAASIwlAAAAibEEAAAgMZYAAAAkxhIAAIDEWAIAAJAYSwAAABJjCQAAQGIsAQAASIwlAAAAibEE
+AAAgMZYAAAAkxhIAAIDEWAIAAJAYSwAAABJjCQAAQGIsAQAASIwlAAAAibEEAAAgMZYAAAAkxhIA
+AIDEWAIAAJAYSwAAABJjCQAAQGIsAQAASIwlAAAAibEEAAAgMZYAAAAkxhIAAIDEWAIAAJAYSwAA
+ABJjCQAAQGIsAQAASIwlAAAAibEEAAAgMZYAAAAkxhIAAIDEWAIAAJAYSwAAABJjCQAAQGIsAQAA
+SIwlAAAAibEEAAAgMZYAAAAkxhIAAIDEWAIAAJAYSwAAABJjCQAAQGIsAQAASIwlAAAAibEEAAAg
+MZYAAAAkxhIAAIDEWAIAAJAYSwAAABJjCQAAQGIsAQAASIwlAAAAibEEAAAgMZYAAAAkxhIAAIDE
+WAIAAJAYSwAAABJjCQAAQGIsAQAASIwlAAAAibEEAAAgMZYAAAAkxhIAAIDEWAIAAJBcY4x7dQQA
+AADbej5DMgmhaKAdEgAAAABJRU5ErkJggg==
+"
+       preserveAspectRatio="none"
+       height="87.145493"
+       width="230.99168" />
     <g
        id="g1756"
        transform="translate(-0.83951211)">
@@ -240,7 +294,7 @@
          cy="193.83397"
          cx="103.16604"
          id="circle1737"
-         style="opacity:0.98999999;fill:#b7b7b7;fill-opacity:0.98431373;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         style="opacity:0.98999999;fill:#b7b7b7;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          transform="translate(-54.285348,4.2333327)" />
       <circle
          style="opacity:0.98999999;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.15000936;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -261,7 +315,7 @@
            transform="translate(-5.8208334,4.2333335)"
            id="g1725">
           <circle
-             style="opacity:0.98999999;fill:#b6b6b6;fill-opacity:0.99215686;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             style="opacity:0.98999999;fill:#b6b6b6;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
              id="path1710"
              cx="103.16604"
              cy="193.83397"
@@ -476,7 +530,7 @@
            id="path1875"
            inkscape:connector-curvature="0" />
         <rect
-           style="opacity:0.98999999;fill:#b7b7b7;fill-opacity:0.98431373;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           style="opacity:0.98999999;fill:#b7b7b7;fill-opacity:0.9848485;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
            id="rect1965"
            width="7.8176336"
            height="14.398"

@@ -27,11 +27,11 @@
      inkscape:window-height="723"
      inkscape:window-width="1366"
      showgrid="false"
-     inkscape:current-layer="layer3"
+     inkscape:current-layer="layer1"
      inkscape:document-units="mm"
-     inkscape:cy="137.69453"
-     inkscape:cx="211.58805"
-     inkscape:zoom="1.4142136"
+     inkscape:cy="294.68058"
+     inkscape:cx="418.71311"
+     inkscape:zoom="0.3535534"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0.0"
      borderopacity="1.0"
@@ -259,7 +259,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -267,8 +267,14 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-8.8191051,-158.06461)"
-     sodipodi:insensitive="true">
+     transform="translate(-8.8191051,-158.06461)">
+    <rect
+       style="opacity:0.98999999;fill:#ffffff;fill-opacity:0.98431373;stroke:none;stroke-width:0.32020909;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect7968"
+       width="125.0304"
+       height="99.150543"
+       x="8.8191051"
+       y="158.06462" />
     <g
        id="g4513"
        transform="rotate(-90,71.334301,207.63988)">
@@ -384,7 +390,7 @@
   </g>
   <g
      id="g2898"
-     transform="matrix(1.5268929,0,0,1.5268929,6.5430847,-43.861659)">
+     transform="matrix(1.5268929,0,0,1.5268929,6.5430847,-43.861662)">
     <g
        word-spacing="normal"
        letter-spacing="normal"
@@ -404,7 +410,7 @@
          style="fill:#000000;stroke-width:0" /></g>  </g>
   <g
      id="g3282"
-     transform="matrix(1.5268929,0,0,1.5268929,6.2424629,-21.91615)">
+     transform="matrix(1.5268929,0,0,1.5268929,6.2424629,-21.916153)">
     <g
        id="g3280"
        transform="matrix(0.14164363,0,0,-0.14164363,-24.787636,93.7728)"
@@ -428,7 +434,7 @@
          style="fill:#000000;stroke-width:0" /></g>  </g>
   <g
      id="g3428"
-     transform="matrix(1.5268929,0,0,1.5268929,-14.330824,-40.399102)">
+     transform="matrix(1.5268929,0,0,1.5268929,-14.330824,-40.399105)">
     <g
        word-spacing="normal"
        letter-spacing="normal"
@@ -456,7 +462,7 @@
          style="fill:#000000;stroke-width:0" /></g>  </g>
   <g
      id="g3581"
-     transform="matrix(1.5268929,0,0,1.5268929,-24.080887,-7.057374)">
+     transform="matrix(1.5268929,0,0,1.5268929,-24.080887,-7.0573772)">
     <g
        id="g3579"
        transform="matrix(0.14164363,0,0,-0.14164363,-24.787636,93.7728)"
@@ -480,7 +486,7 @@
          style="fill:#000000;stroke-width:0" /></g>  </g>
   <g
      id="g3741"
-     transform="matrix(1.5268929,0,0,1.5268929,16.226131,-7.057374)">
+     transform="matrix(1.5268929,0,0,1.5268929,16.226131,-7.0573772)">
     <g
        word-spacing="normal"
        letter-spacing="normal"
@@ -507,7 +513,8 @@
      id="layer2"
      inkscape:label="Layer 2"
      style="display:none"
-     sodipodi:insensitive="true">
+     sodipodi:insensitive="true"
+     transform="translate(0,-3.2128906e-6)">
     <g
        id="g3018"
        transform="matrix(1.5268929,0,0,1.5268929,-38.186524,29.941446)">
@@ -561,7 +568,7 @@
      inkscape:groupmode="layer"
      id="layer3"
      inkscape:label="Layer 3"
-     sodipodi:insensitive="true">
+     transform="translate(0,-3.2128906e-6)">
     <g
        id="g980"
        transform="matrix(1.5012764,0,0,1.5012764,46.041056,22.827266)">
