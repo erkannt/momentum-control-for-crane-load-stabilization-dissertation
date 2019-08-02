@@ -237,7 +237,7 @@ The plan was to begin with a SPCMG array that could be suspended so as to limit 
 Later it should be possible to extend the array to a four CMG roof.
 Also given the youth of the chair and lack of facilities we designed the prototype to use as many off the shelf and low cost components as possible.
 
-![Sketch of the hardware prototype. The way it is suspended is to ensure as close to 2d a motion as possible without having to resort to rigid links and large bearings.](./figures/prototype-sketch.jpg){ #fig:prototype-sketch}
+![Sketch of the hardware prototype. The way it is suspended is to ensure as close to 2d a motion as possible without having to resort to rigid links and large bearings.](./figures/prototype-sketch.svg){ #fig:prototype-sketch}
 
 ![Hardware SPCMG prototype with robot attached to it. Gyros are in the aluminum cases with the gyro motors mounted on their sides. The gimbal motors hang underneath the gyros. The motor controller and power supply are mounted underneath the platform. The gyro controller, IMU and communication interface for these are mounted on top. Note that the rope suspension was rotated by 90° for the picture.](./figures/KR3_seitlich.jpg){ #fig:prototype-sideview }
 
