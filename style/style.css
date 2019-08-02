@@ -168,14 +168,11 @@ figure img {
     margin-right: auto;
     max-width: 95%;
     max-height: 60vh;
+    cursor: pointer;
 }
 
 figure:hover {
     opacity: 70%;
-}
-
-figure {
-    cursor: pointer;
 }
 
 .sourceCode {

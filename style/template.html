@@ -103,14 +103,14 @@
 
         /* Fullscreen Modal for figures */
         window.onload = function () {
-            var figures = document.getElementsByTagName('figure');
+            var figures = document.getElementsByTagName('img');
             for(var i = 0; i < figures.length; i++) {
                 var fig = figures[i];
                 fig.onclick = function() {
                     var modal = document.getElementById('figureModal');
                     var modalcontent = modal.getElementsByClassName('modal-content')[0];
                     modal.style.display = "block";
-                    modalcontent.innerHTML = this.innerHTML;
+                    modalcontent.innerHTML = this.parentElement.innerHTML;
                 }
             }
         }
