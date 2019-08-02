@@ -34,7 +34,7 @@ Since no component of the torque is in line with the angular momentum its size a
 Therefore the change in angular momentum takes the form of a change in the orientation of the angular momentum.
 This is illustrated in @Fig:gyroscopic_torque.
 
-![Illustration of how a torque that lies orthogonal to an angular momentum corresponds to a rotation of the angular momentums orientation instead of a change in its size.](./figures/gyroscopic_torque.png){#fig:gyroscopic_torque }
+![Illustration of how a torque that lies orthogonal to an angular momentum causes to a rotation of the angular momentums orientation instead of a change in its size. Here $h$ denotes the angular momentum and $\omega$ is the rotational velocity that this vector is experiencing.](./figures/gyroscopic_torque.png){#fig:gyroscopic_torque }
 
 It is this change in orientation in the form of a rotation and its relation to the torque via the size of the angular momentum that lets us understand everything from simple toys (@Fig:precession) to the momentum control systems of the International Space Station (@Fig:iss).
 
@@ -51,7 +51,7 @@ Before proceeding I would like to emphasize several points:
 The last point is key to understanding CMGs where we do the inverse: rotate an angular momentum and thereby create a reaction torque.
 This is illustrated in @Fig:CMG_principle.
 
-![Principle of a CMG. By rotating a gyroscope orthogonally to its spin axis we create a reaction torque orthogonal to the gimbal axis and the gyroscopes spin axis.](./figures/CMG_principle.png){#fig:CMG_principle }
+![Principle of a CMG. A spinning mass i.e. a gyroscope ($\Omega$ denoting its angular velocity) has a angular momentum ($h$). By applying an angular velocity ($\omega$) orthogonal to the gyroscope's spin axis we create a reaction torque ($\tau$) orthogonal to both the gimbal axis and the gyroscopes spin axis.](./figures/CMG_principle.png){#fig:CMG_principle }
 
 The torque produced by such a gimbal rotation is described by:
 
