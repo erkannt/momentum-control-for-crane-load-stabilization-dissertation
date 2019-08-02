@@ -160,7 +160,7 @@ Given that control engineering or cybernetics hadn't come about yet it is obviou
 The way that such passive stabilization with gyroscopes works is as follows:
 The tipping vehicle exerts a torque orthogonal to the gyroscopes momentum and the gimbals axis.
 This causes the gyroscope to precess around the gimbal axis, a movement that in turn causes a reaction torque counter to the tipping motion of the vehicle.
-If the gimbal resists the precession for instance through friction this torque also acts agains the the exciting torque.
+If the gimbal resists the precession for instance through friction this torque also acts agains the exciting torque.
 
 Low speeds of motors available back then as well as the much simpler solution of adding further wheels or putting a foot on the ground are why gyroscopically stabilized ground vehicles didn't take off.
 There were subsequent attempts at producing gyro cars.
@@ -175,7 +175,7 @@ In this paper the authors also extend the equations of motion to use two gyrosco
 
 While roll stabilizing gyroscopes went out of fashion for ships as hull and fin designs improved, they have become a commercial product offered by multiple companies (see @Fig:seakeeper for an example).
 Their target audience are yachts as well as commercial vessels, where roll stabilization at rest or slow speeds is of greater import.
-The CMGs here are the the largest CMGs commercially available, since satellites require much lower torques.
+The CMGs here are the largest CMGs commercially available, since satellites require much lower torques.
 It is therefore unsurprising that a naval CMG was used in the recent resurrection of the Gyro-X at the Lane Motor Museum.
 It is also worth pointing out that some naval CMGs use the energy stored in the spinning gyroscope to provide additional electrical power during high peaks (caused by the actuation).
 This was also considered for spacecraft, but as spacecraft batteries have reached a similar energy density to high speed flywheels the added weight of the required electronics and challenges of high velocity gyroscopes in space have lead to this idea being scrapped.

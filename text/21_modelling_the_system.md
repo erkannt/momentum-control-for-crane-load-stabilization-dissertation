@@ -50,7 +50,7 @@ As the potential energy is dependent upon the mass of the pendulum we add the ma
 ![Illustration of the velocity and acceleration of a pendulum. CC-BY-SA, Wikipedia User Ruryk](./figures/oscillating_pendulum-ccbysa-ruryk.gif){ #fig:pendulum-velocity }
 
 We can derive an estimate for the amplitude of the crane oscillations from the maximum crane load, pendulum length and translational velocity caused by slewing the jib or moving the trolley.
-To determine the translational velocity caused by slewing we also require the jib length i.e. reach of the crane the the maximum load at the tip of the jib:
+To determine the translational velocity caused by slewing we also require the jib length i.e. reach of the crane the maximum load at the tip of the jib:
 
 \begin{align}
 v_{trolley} =& N_T / 60 \\
@@ -326,7 +326,7 @@ See the appendix (@Sec:distributed-mass-eom) for equations of motion and all cod
 ![Visualization of simulated 3D double pendulum with the lower mass as a distributed mass. The lower mass begins with a small angular velocity around the link axis. Visualized using Rhino/Grasshopper.](./figures/gh-screenrecording.gif){ #fig:sim-gh }
 
 This process can be continued to add further aspects like wind or a movable point of suspension.
-In the following section we will see that certain aspects can be added relatively easy by modifying the state of the the system.
+In the following section we will see that certain aspects can be added relatively easy by modifying the state of the system.
 Other aspects, such as a movable point of suspension would require a new Langrangian, as they introduce new terms to the kinetic or potential energy.
 
 An alternative would be to use multi body simulation tools as are available in Modelica or Simulink.
@@ -440,7 +440,7 @@ It is important to note that the forces acting upon the system due to gravity ar
 The payload inertia is of relevance to all of our applications.
 For our models we will therefore create a set of example inertia that follow the parameter space set forth by our selected example cranes.
 
-For each crane we will model a slab of concrete whose weight matches the maximum load of the the crane.
+For each crane we will model a slab of concrete whose weight matches the maximum load of the crane.
 The proportions of the slabs will be constant.
 Let us assume the density of concrete as 2,400 kg/m$^3$ and the slab proportions as 5, 0.1, 2 in X, Y, Z respectively.
 Since the center of gravity of the payload wont lie in the point of rotation (the hook) we assume an offset equal to the size in Z.

@@ -35,7 +35,7 @@ Therefore I expect there to be a way to estimate the number of oscillations a CM
 I am guessing that the estimation will relate the momentum envelope of the array with the angular momentum of the two links.
 This momentum in turn depends on the moment of inertia and maximum rotational velocity of the two links.
 
-The developed models at least permit us to estimate the dampening performance and vary the momentum envelope (@Fig:limited-momentum-animation and @Fig:limited-momentum-plot, for code see sec:2d-dp-wcontroller-limit) and thereby derive the necessary requirements for the subsequent sizing of the the CMG array.
+The developed models at least permit us to estimate the dampening performance and vary the momentum envelope (@Fig:limited-momentum-animation and @Fig:limited-momentum-plot, for code see sec:2d-dp-wcontroller-limit) and thereby derive the necessary requirements for the subsequent sizing of the CMG array.
 These simulations also provide us with a useful intuition/rule of thumb for the dampening performance: doubling the momentum envelope halves the number of swings it takes to dampen the crane.
 Given that the frequency of a pendulum is straightforward for small oscillations the number of swings immediately give us the dampening duration.
 
@@ -51,7 +51,7 @@ Alternatively, as discussed in the controller design section, one could maybe de
 ### Part Rotation
 
 Rotating a load around the axis of the lower link is very much like trying to orient a spacecraft using momentum control devices.
-The sizing is fairly straightforward and we can look the the spacecraft literature.
+The sizing is fairly straightforward and we can look the spacecraft literature.
 
 For satellite as with part rotation the speed of rotation is usually not the core interest, instead we are interested in how long it will take us to rotate to the desired position.
 This of course also depends on the rotation speed, but also on the maximum acceleration and maximum jerk (derivative of acceleration).
@@ -105,7 +105,7 @@ At high velocities rotors can experience significant forces, which needs to be t
 
 The moment of inertia and rotor speed give us the momentum for each gyroscope in the array.
 A naive approximation of the size of the momentum envelope can be obtained by summing the moments of all gyroscopes of the array.
-The actual envelope shape depends on the the chosen array type and parameters.
+The actual envelope shape depends on the chosen array type and parameters.
 As discussed in the section on CMG envelopes we create asymmetric envelopes to match asymmetric torque requirements.
 An array tasked predominantly with large part rotation could be designed to have its largest extend in the Z-axis whereas an array tasked with dampening would do the inverse.
 

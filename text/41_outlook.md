@@ -44,7 +44,7 @@ A priority for the development of the 3d controller should be the inclusion of t
 Limiting the reaction torque experienced by the CMGs through alignment of momentum and rotation axis is the critical component required to make CMGs useful for crane based applications.
 The development described in this section therefore mostly outline the critical path to a state where the efficacy of such a strategy can be validated through simulations.
 
-Apart from the the reduction of reaction torques the other major question is how well a CMG array is able to provide a stable platform for robotic or other processes.
+Apart from the reduction of reaction torques the other major question is how well a CMG array is able to provide a stable platform for robotic or other processes.
 While torques acting upon the platform itself can be compensated by the CMGs, forces acting on it end up acting on its pivot point and therefore the link from which the platform is hanging.
 This can only be compensated by the CMGs indirectly i.e. by tilting the platform.
 This is not taken into account in the currently implemented controller.
