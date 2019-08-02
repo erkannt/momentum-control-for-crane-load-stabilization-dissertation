@@ -31,14 +31,14 @@ torquecomponents = {'matfile' : '165ad54_pmdpspcm_24-Jan-2019_13-32-16__converte
              'svgname' : 'cmg-torque-totals-plot'}
 datasets = [torquecomponents]
 
-titles = [r'Base Torque [Nm]',
-          r'Motor Torque [Nm]',
+titles = [r'Torque Acting on Mounting Base of CMG[Nm]',
+          r'Torque Acting along Gimbal Motor Axis[Nm]',
          ]
-varnames = [['tau_base_x', 'tau_base_y', 'tau_base_z', 'tau_W'],
-            ['tau_motor_1', 'tau_motor_gimbal', 'tau_motor_reaction', 'tau_motor_reaction_gimbal'],
+varnames = [['tau_W', 'tau_base_x', 'tau_base_y', 'tau_base_z'],
+            ['tau_motor_1', 'tau_motor_reaction', 'tau_motor_gimbal'],
            ]
-labels = [['X', 'Y', 'Z', 'Target Z'],
-          ['Total', 'Gimbal Inertia', 'Gyro Reaction', 'Gimbal Reaction'],
+labels = [[ 'Target Z', 'X', 'Y', 'Z'],
+          ['Total', 'Gyroscopic Reaction Torque', 'Overcoming CMG Assembly Inertia'],
          ]
 ylims = [[-2, 2],
          [],
