@@ -30,7 +30,7 @@ datasets = [fastgyros]
 
 titles = [r'Pendulum Angle $\theta$ [deg]',
           r'CMG Torque $\tau$ [Nm]',
-          r'Gimbal Velocity [rad/s]',
+          r'Gimbal Velocity $\dot\delta$ [rad/s]',
           r'Gimbal Position $\delta$ [deg]',
          ]
 varnames = [['theta1', 'theta2'],
