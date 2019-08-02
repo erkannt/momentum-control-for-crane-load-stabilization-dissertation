@@ -14,6 +14,7 @@ LATEXRUN := $(abspath tools/latexrun)
 LATEX=pdflatex
 BIB=biber
 SINGLEPAGE=singlepage
+PDF2SVG=pdf2svg
 
 # Project Settings
 build = _build
@@ -109,7 +110,7 @@ mobi: $(build)/$(name).mobi| $(build)
 
 standalone: $(build)/$(name).standalone.html | html
 
-html-figures: $(plots_svg) $(sketches_png) $(tikz_png) $(gif) $(static) | $(build)/figures
+html-figures: $(plots_pdf) $(plots_svg) $(sketches_png) $(tikz_png) $(gif) $(static) | $(build)/figures
 
 pdf-figures: $(plots_pdf) $(sketches_pdf) $(tikz_png) $(gifaspng) $(static) $(svgaspdf) | $(build)/figures
 
@@ -170,12 +171,13 @@ $(build)/text:
 	mkdir -p $(build)/text4epub
 	mkdir -p $(build)/text4mobi
 
-# Plots from python scripts
-$(build)/figures/%.svg: %.py | $(build)/figures
-	$(PYTHON) $< $@
+# Convert pdf plots to svg as matplotlib borks tex symbols in svg
+$(build)/figures/%.svg: $(build)/figures/%.pdf | $(build)/figures
+	$(PDF2SVG) $< $@
 	$(SED) 's/width.*pt\"//g' $@
 	$(SED) 's/height.*pt\"//g' $@
 
+# Plots from python scripts
 $(build)/figures/%.pdf: %.py | $(build)/figures
 	$(PYTHON) $< $@
 
