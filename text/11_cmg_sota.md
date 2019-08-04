@@ -221,7 +221,7 @@ Their device used the passive stabilization principle during transport and a rem
 [^langbarrier]: We have sadly not been able to find a source for this. The language barrier might be the reason for this.
 
 Yi et al. have published several works on stabilizing beams during construction work (see @Fig:SaAttitudeControlStabilization2001) and [@YiImplementationGyroActuator1999; @YiAttitudeControlStabilization2000; @SaAttitudeControlStabilization2001].
-Starting with a single CMG hanging from a wire, their subsequent publications (one having only the abstract available in english) discuss the addition of an IMU since the rotary encoder attached to the wire was too inaccurate.
+Starting with a single CMG hanging from a single rope, their subsequent publications (one having only the abstract available in english) discuss the addition of an IMU since the rotary encoder attached to the single rope was too inaccurate.
 They also run into the same issue as naval CMGs, that slow rotations aren't able to overcome the gimbal friction.
 Their last paper adds a clutch to the gimbal to avoid overloading the gimbal motor during passive stabilization.
 In [@LeeAnalysisFieldApplicability2012] the authors use a motorized hook to rotate beams (see @Fig:LeeAnalysisFieldApplicability2012).
@@ -301,7 +301,7 @@ For a basic understanding we can ignore the dyadic notation, summations etc. and
 
 Using this simplified notation let us look at the various parts contributing to the changes in angular momentum (for an exact discussion please refer to [@LeveSpacecraftMomentumControl2015, sec. 4.5]):
 
-1. __Rigid-Body Motion:__ These are all terms involving $\mathbf{J}$.
+1. __Rigid-Body Motion:__ all terms involving $\mathbf{J}$
 2. __Gyroscopic Reaction Torques:__   
    Caused by either the motion of the spacecraft or gimbal rotating an angular momentum vector.
    a. $J_r \Omega \dot{\delta} \mathbf{\hat{o}} \quad$: Gimbal and spinning rotor
@@ -388,7 +388,7 @@ See @Fig:roof-array-workspace-45deg and @Fig:roof-array-workspace-30deg for a co
 ## Sizing of CMGs
 
 Once again Leve et al. provide a good overview regarding the sizing of spacecraft CMG [@LeveSpacecraftMomentumControl2015].
-For terrestrial systems the literature is quite barren, but in their paper on a wearable SPCMG Chiu et al. do detail their sizing process [@ChiuDesignWearableScissoredPair2014].
+For terrestrial systems the literature is quite barren, but in their paper on a wearable SPCMG Chiu et al. detail their sizing process [@ChiuDesignWearableScissoredPair2014].
 Generally speaking though, we can note that the main characteristics of a CMG array are the torque it can produce (Nm), the agility of the torque production i.e. its acceleration (Nm/s) and then the amount of torque it can sustain i.e. its momentum envelope (Nms).
 The magnitude of these requirements of course depends on the application for which the CMGs are being sized.
 This application will also pose constraints regarding torque accuracy, weight, size, vibrations and power consumption.
