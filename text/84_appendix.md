@@ -41,7 +41,7 @@ This is a lovely example of numerical inaccuracy in computers and also how minim
 
 ![Validation of the equations of motion generated using the above SymPy code against those taken from [@HillLearningScientificProgramming2016]. Note how symbolically equal equations can lead to different result due to numerical inaccuracies in computers.](figures/cas-lit-comparison.svg){ #fig:cas-lit-comparison }
 
-### 2d Pointmass and Distributed Mass
+### 2d Pointmass and Distributed Mass { #sec:2d-distmass-eom }
 
 The following code derives the equations of motion for a double pendulum where the second pendulum is a distributed mass.
 Note that this assumes that the rotational inertia `I2` is provided relative to the axis of rotation lying in `m1`.
