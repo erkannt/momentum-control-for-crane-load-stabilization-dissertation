@@ -75,7 +75,7 @@ Given the relatively slow movement speeds of cranes with loads attached I would 
 Process compensation brings with it the most complex and demanding requirements.
 As discussed in the simulations of the robot paths, we need to look at the peak torque, torque dynamics and total torque consumption.
 By optimizing our robot paths or trading dynamics for consumption the design of the process can majorly change the requirements.
-It is therefor most likely beneficial to develop tools that provide close feedback loops to the process designers.
+It is therefore most likely beneficial to develop tools that provide close feedback loops to the process designers.
 This work provides an example of such a tool with the ability to evaluate the requirements of a parametric robot path made with KUKAprc.
 Currently this is still a multi-step process that could certainly be more tightly integrated.
   
@@ -162,7 +162,7 @@ The spreadsheet does not take friction or the exact shape of the momentum envelo
 The actual inertia of a gimbal assembly will of course also be higher than the inertia of just the gyroscopes rotor.
 All of this can most likely be roughly taken into account with scaling factors, once one has some prototypes to base them off.
 
-### Sizing CMGs for Cranes
+### Sizing CMGs for Cranes { #sec:sizing_for_cranes }
 
 The challenge of sizing CMGs for cranes is the unique combination of requirements arising from the three application cases we have identified in this work.
 While commercial applications and sizing experience exist for spacecraft control (similar to our part rotation) and roll stabilization (similar to our dampening) the addition of process compensation as well as the need to operate around three axis creates novel challenges.
@@ -193,12 +193,6 @@ It should therefore be possible to add a switching behavior or otherwise modify 
 This could lead to a stark reduction in the experienced reaction torque in comparison to the worst case scenario.
 Combined with limits to winds and crane movements this ought to reduce the gimbal torque requirements significantly.
 Nevertheless I would recommend adding dedicated points of failure for gimbal motor coupling and perhaps even means to mechanically arrest the gimbals motion should a failure of the coupling occur.
-
-![Interaction of the pendulum motion with the CMGs can lead to strong reaction torques depending on the gimbal angle.](./figures/torque_issue.gif){ #fig:torque-issue }
-
-![When the gyroscope axis are held parallel to the axis of rotation no reaction torque is produced.](./figures/torque_issue_zero_reaction.gif){ #fig:torque-issue-zero }
-
-\todo{discuss torque issue in greater detail w. ref to figures}
 
 Aside from the general sizing of the CMGs I would also like to briefly discuss the shape of the roof array and its relationship to our crane tasks.
 Let us recall that the momentum envelope of a roof array is roughly a cube with spherical protrusions on two sided.

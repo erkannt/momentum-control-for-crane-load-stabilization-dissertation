@@ -83,7 +83,7 @@ Given their properties CMGs have a very narrow field of utility.
 With most of the research surrounding CMGs coming from the space exploration, a brief historic romp through CMGs in space will illustrate how our understanding of the fundamental principles of CMGs has evolved.
 The subsequent section covers the few terrestrial fields of application and serves to illustrate some of the challenges and limitations of CMGs.
 
-### Development of CMG Technology and Spacecraft Application
+### Development of CMG Technology and Spacecraft Application { #sec:space-cmg-sota }
 
 The need to produce a torque without having something to push off from does not occur frequently.
 Even a plane can push off of the air surrounding it, given sufficient speed.

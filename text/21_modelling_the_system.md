@@ -403,7 +403,7 @@ Note how this encompasses _all_ torques produced by the CMG, thereby cleanly sep
 \ddot{\theta}_{23}' = & \ddot{\theta}_{23} + \tau_{Z} 
 \end{align}
 
-## Adding External Forces
+## Adding External Forces { #sec:external-forces }
 
 With the torques covered, let us move to the forces.
 This entails the forces from the robot's motion, process forces or disturbances such as wind.

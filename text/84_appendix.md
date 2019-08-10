@@ -124,8 +124,3 @@ The code below has been exported from an interactive Jupyter notebook that was u
 
 ```{.python include=code/momentum-envelope.py}
 ```
-
-## EPOS USB vs. CANbus { #sec:epos-can-diff }
-
-![Comparison of the gimbal motors behaviour between USB commands from EPOS-Studio and our regular control via CANbus.](./figures/epos-canbus-diff.png)
-
