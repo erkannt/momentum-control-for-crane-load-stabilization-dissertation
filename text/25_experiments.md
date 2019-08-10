@@ -136,7 +136,7 @@ This points to some interesting questions regarding control optimized to positio
 
 ![Singularity avoidance mechanism for the scissored pair configuration at higher gyroscope speed. Note that the maximum acceleration of the gimbals is lower than the maximum attainable with our prototype. This not only helps illustrate the singularity avoidance mechanism but also reduces the axis torque introduced by the gimbaling motion (see discussion in following section).](figures/spcmg-avoidance-5000rpm-plot.svg){ #fig:spcmg-avoidance-5000rpm-plot }
 
-### Dynamics of CMG attached to Pendulum
+### Dynamics of CMG attached to Pendulum { #sec:cmg-pendulum-interaction }
 
 Recalling the various components of the CMG's torque discussed in @Sec:cmg-dynamics we can plot these components (@Fig:cmg-torque-components-plot) and totals (@Fig:cmg-torque-totals-plot ) for our 2d pendulum simulations.
 
@@ -177,8 +177,6 @@ In the extreme case of the gimbal aligning the gyroscope's axis with the rotatio
 This consequences of this interaction are discussed in the sizing section (@Sec:sizing_for_cranes).
 
 ![Interaction of the pendulum motion with the CMGs can lead to strong reaction torques depending on the gimbal angle. The blue arrow is the angular momentum of the gyroscope, it therefore remains constant. The green arrow is the angular velocity that the CMG experiences due to the pendulum's oscillations, i.e. the baserate. The red arrow is the cross product of these two vectors, i.e. the reaction torque around the gimbal axis. The magnitude of the reaction torque experienced by the gimbal assembly is denoted by its color (green being zero, red being the maximum). The semicircular bar denotes in color the reaction torque that the gimbal axis would experience at the other gimbal angles given the current base rate.](./figures/torque_issue.gif){ #fig:torque-issue }
-
-![Illustration of the potential reaction torque acting on the gimbal, depending on the current base rate and gimbal angle. Note how as the gimbal axes are held parallel to the axis of rotation no reaction torque is produced. See @Fig:torque-issue for further description of the animation.](./figures/torque_issue_zero_reaction.gif){ #fig:torque-issue-zero }
 
 ### Gimbal Motor Model
 
