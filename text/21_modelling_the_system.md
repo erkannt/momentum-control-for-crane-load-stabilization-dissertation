@@ -92,7 +92,7 @@ It also limits the number of components that could cause issues while developing
 ![Sketch of the hardware prototype. The way it is suspended should ensure as close to 2d a motion as possible without having to resort to rigid links and large bearings.](./figures/prototype-sketch.svg){ #fig:prototype-sketch}
 
 The essence of a crane, a hook/load hanging from a rope, is a pendulum.
-But unlike the basic point-mass pendulum a crane has several important differences.
+But unlike the basic point mass pendulum a crane has several important differences.
 Most importantly the suspension point of the rope exhibits its own dynamics, causing excitation of the pendulum.
 These can stem from controlled movement of the trolley, jib or gantry but beyond this the entire crane structure often exhibits significant flex.
 Then the rope itself might actually be a set of ropes, is not rigid and also stretches under load.
@@ -134,7 +134,7 @@ For this the equations of motion commonly known, see e.g. [@HillLearningScientif
 
 ![2D double pendulum as point masses on rigid, massless rods.](./figures/2d-pendulum.png){ #fig:pm-double-pendulum }
 
-The Langrangian ($\mathcal{L} = KE - PE$) is balance of potential energy (PE) and kinetic energy (KE) that describes our system:
+The Langrangian ($\mathcal{L} = KE - PE$) is the balance of potential energy (PE) and kinetic energy (KE) that describes our system:
 
 \begin{align}
 \mathcal{L} = & \tfrac{1}{2}(m_1+m_2)l_1^2\dot{\theta}_1^2 + \tfrac{1}{2}m_2l_2^2\dot{\theta}_2^2 + m_1l_1l_2\dot{\theta}_1\dot{\theta}_2\cos(\theta_1 - \theta_2) \\
@@ -163,10 +163,10 @@ Nevertheless the double-pendulum makes sense as a basis for our models for sever
 - large payloads and their motions
 - CMGs control motion by exerting torque
 
-The first point is obvious, but requires us to extend the model from a point-mass to a distributed mass model (at least for the second mass i.e. the payload/CMG plattform/robot).
+The first point is obvious, but requires us to extend the model from a point mass to a distributed mass model (at least for the second mass i.e. the payload/CMG plattform/robot).
 We will do this in a later section since the stabilization and controlled movement of payloads is one of the goals of this work.
 
-The second point can already be illustrated by the point-mass model.
+The second point can already be illustrated by the point mass model.
 In @Fig:dp-oscillations-animation and @Fig:dp-oscillations we can see how for small angles and velocities the double pendulums position is close to a regular pendulum.
 But looking at the velocity and especially the accelerations we can see the interaction between the two parts of the pendulum.
 We can expect the impact of the lower pendulum to increase as we move to a distributed mass.
@@ -195,9 +195,9 @@ These extensions are implemented in @Sec:2d-distmass-eom.
 
 ### The 3D Model { #sec:3d-pendulum }
 
-![Model of a point-mass double pendulum in three dimensions with a fixed point of suspension.](./figures/crane-spherical.png){ #fig:crane-spherical }
+![Model of a point mass double pendulum in three dimensions with a fixed point of suspension.](./figures/crane-spherical.png){ #fig:crane-spherical }
 
-If we extend our point-mass model to three dimension we require two angles to describe the location of each point.
+If we extend our point mass model to three dimension we require two angles to describe the location of each point.
 In the 3D model of the double pendulum (@Fig:crane-spherical) $\theta_{i1}$ are the polar angles and $\theta_{i2}$ the azimuthal angles.
 This model can be extended to include basic crane dynamics by making the $x_0$ and $y_0$ coordinates of the suspension point as well as $l1$ variable.
 
@@ -228,7 +228,7 @@ From this we can obtain the Euler-Lagrange equations for $\theta_{ij}$ and subse
 Given their complexity this is done using a computer algebra system.
 See appendix @Sec:3d-pointmass-eom for the resulting equations and SymPy code used to obtain them.
 
-Sadly the use of spherical coordinates to describe the kinematic constraints of the system leads to numerical issues during simulation.
+Sadly, the use of spherical coordinates to describe the kinematic constraints of the system leads to numerical issues during simulation.
 The issues arise due to the fact that we can arrive at the same coordinates by flipping the azimuthal angle by 180° and flipping the sign of the polar angle (@Fig:3d-model-angle-issues).
 While such jumps do not cause issues regarding the position of the pendulum, the spikes in angular velocity incorrectly represent the kinetic energy in the system.
 The effect of this can vary depending of the excitation/initial conditions of the simulation (see @Fig:2d-3d-comparison-large-exitation-spherical and @Fig:2d-3d-comparison-small-exitation in the appendix).
@@ -241,7 +241,7 @@ The following extends this to a full three degrees of freedom (see @Fig:crane-pr
 
 ![Model of a double pendulum in three dimensions with a fixed point of suspension and using projected angles instead of spherical coordinates. Note that the lower mass is now a distributed mass with three degrees of rotational freedom, while the upper mass is still a point mass with only two rotational degrees of freedom.](./figures/crane-projected.png){ #fig:crane-projected-angles }
 
-Given the use of projected angles the cartesian expressions become:
+With the use of projected angles the cartesian expressions become:
 
 \begin{align}
 x_0 = & 0 \\
@@ -255,7 +255,7 @@ y_2 = & y_1 + l_2 \cdot \cos(\theta_{21}) \cdot \sin(\theta_{22}) \\
 z_2 = & z_1 - l_2 \cdot \cos(\theta_{21}) \cdot \cos(\theta_{22}) \\
 \end{align}
 
-Assuming a point-mass pendulum the Langrangian would be the same as before:
+Assuming a point mass pendulum the Langrangian would be the same as before:
 
 \begin{align}
 PE = & m_1 \cdot g \cdot z_1 + m_2 \cdot g \cdot z_2 \\
@@ -264,10 +264,10 @@ KE = & ^1/_2 \cdot m_1 \cdot \dot{x}_1^2 + \dot{y}_1^2 + \dot{z}_1^2 + \\
 \mathcal{L} = & KE - PE
 \end{align}
 
-Since we want to model the lower mass (our platform and load) as a distributed mass we have to add the kinetic energy of the rotating mass to our Langrangian.
+Since we want to model the lower mass (our platform and load) as a distributed mass, we have to add the kinetic energy of the rotating mass to our Langrangian.
 For this we need to express the rotational velocities and inertia of the mass in a common reference frame.
-We define this to be the center of gravity hanging a distance $l_2$ from our point-mass $m_1$.
-Should the center of gravity change due to e.g. robot motion this difference will be modeled as an external torque acting upon the platform.
+We define this to be the center of gravity, hanging a distance $l_2$ from our point mass $m_1$.
+Should the center of gravity change due to e.g. robot motion, this difference will be modeled as an external torque acting upon the platform.
 The inertia tensor in this reference frame then is:
 
 \begin{align}
@@ -295,7 +295,7 @@ R_{2 \rightarrow 3} = & R_Y(\theta_{21})R_X(\theta_{22})R_Z(\theta_{23}) \\
 \end{align}
 
 This lets us express the required rotational velocities as follows.
-Note that we use -$\theta_{21}$, as its direction is opposite to that of the right-hand-rule.
+Note that we use -$\theta_{21}$, as its rotation direction runs counter to the right-hand-rule.
 
 \begin{align}
   \omega_3 = & R_{2 \rightarrow 3} \omega_{X_{2}} + R_{2 \rightarrow 3} \omega_{Y_{2}} + \omega_{Z_{3}} \\
@@ -329,7 +329,7 @@ KE_\omega = & ^1/_2 \cdot \omega_3 \cdot I_{m2} \cdot \omega_3 \\
 \end{align}
 
 The equations of motion can then once again be obtained using a computer algebra system.
-Since the 3D plotting of Matplotlib is slightly limited I switched to Rhino/Grasshopper for visualization (@Fig:sim-gh).
+Since the 3D plotting of Matplotlib is slightly limited, the following animation is made using Rhino/Grasshopper (@Fig:sim-gh).
 For this the state-vectors of the simulation are transformed to cartesian points for the masses as well as a X- and Y-vector for the reference frame of our mass.
 See the appendix (@Sec:distributed-mass-eom) for equations of motion and all code.
 
@@ -337,10 +337,10 @@ See the appendix (@Sec:distributed-mass-eom) for equations of motion and all cod
 
 This process can be continued to add further aspects like wind or a movable point of suspension.
 In the following section we will see that certain aspects can be added relatively easy by modifying the state of the system.
-Other aspects, such as a movable point of suspension would require a new Langrangian, as they introduce new terms to the kinetic or potential energy.
+Other aspects, such as a movable point of suspension, would require a new Langrangian, as they introduce new terms to the kinetic or potential energy.
 
 An alternative would be to use multi body simulation tools as are available in Modelica or Simulink.
-Here individual blocks that contain e.g. a distributed mass or a rotary joint can be connected with each other (see @Fig:modelica-example).
+Here, individual blocks that contain e.g. a distributed mass or a rotary joint can be connected with each other (see @Fig:modelica-example).
 
 ![Rudimentary implementation of our model in Modelica. Note that this lacks connections to input torque from the CMGs and uses a different angle description.](./figures/modelica-example.gif){ #fig:modelica-example }
 
@@ -357,8 +357,8 @@ For the two-dimensional model the necessary modifications to the equations of mo
 \end{align}
 
 The three-dimensional model is slightly more complex due to our choice of angles.
-The torque produced by the CMGs in expressed in the reference frame of the distributed mass.
-Our $\tau_{Z}$ is aligned with the link and therefore with the axis of rotation for $\theta_{23}$, ergo having no impact on $\ddot{\theta}_{2[12]}$.
+The torque produced by the CMGs is expressed in the reference frame of the distributed mass.
+The torque $\tau_{Z}$ is aligned with the link and therefore with the axis of rotation for $\theta_{23}$, ergo having no impact on $\ddot{\theta}_{2[12]}$.
 To obtain $\ddot{\theta}_{2[12]}$ we first transform $\tau_{[XY]}$ into the reference frame $XYZ_2$ using the inverse of the rotation used above.
 The results are then projected onto $X_2$ and $Y_2$ to obtain $\ddot{\theta}_{22}$ and $\ddot{\theta}_{22}$ respectively.
 Once again note the sign change for $\theta_{21}$.
@@ -454,14 +454,14 @@ For our models we will therefore create a set of example inertia derived from th
 For each crane we will model a slab of concrete whose weight matches the maximum load of the crane.
 The proportions of the slabs will be constant.
 Let us assume the density of concrete as 2,400 kg/m$^3$ and the slab proportions as 5, 0.1, 2 in X, Y, Z respectively.
-Since the center of gravity of the payload won't lie in the point of rotation (the hook) we assume an offset equal to the size in Z.
-Using the parallel axis theorem this gives us the inertia listed in @Fig:inertia-data.
+Since the center of gravity of the payload won't lie in the point of rotation (the hook) the following assumes an offset equal to the size in Z.
+Using the parallel axis theorem this results in the inertia listed in @Fig:inertia-data.
 
 ![Example payload inertia assuming constant density (2,400 kg/m^3), proportions (5, 0.1, 2) and a weight stemming from the max load of the associated crane. We also assume the CoG to be offset by the Z-size from the point of rotation.](./figures/inertia-data.png){ #fig:inertia-data }
 
 ## Process Torques and Forces
 
-Given the initial motivation of this work to hang a robot from a crane, we use a robot as the model for a process generating torques and forces to be compensated by the CMGs.
+Given the initial motivation of this work to stabilize a robot hanging from a crane, we use a robot as the model for a process generating torques and forces to be compensated by the CMGs.
 Since a robot is a generic motion provider that can provide a wide set of movements, several paths were created in an attempt to provide a representative set.
 These paths are:
 
@@ -474,7 +474,7 @@ These should roughly correspond to positioning/compensation, a continuous task (
 The tasks were programmed using the Rhino/Grasshopper plugin KUKA|prc for a small KUKA KR industrial robot (see @Fig:robot-path-planning).
 Since the programs are parametric one can easily scale them to larger robots.
 
-The KUKA|prc plug-in can output the required axis values for a programmed path .
+The KUKA|prc plug-in can output the required axis values for a programmed path.
 This inverse kinematic simulation is useful for solving singularity issues in the paths but does not limit the axis accelerations.
 This is obvious when looking at the axis values produced by KUKA|prc in @Fig:robot-axis-values, which have very sharp corners where the robot changes direction.
 

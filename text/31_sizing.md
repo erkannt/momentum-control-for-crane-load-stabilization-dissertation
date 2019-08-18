@@ -27,16 +27,16 @@ Generally speaking though the sizing will be informed by:
 - max duration/swings until dampened
 
 The section on modeling cranes and loads (@sec:crane-params) covers ways how one might estimate the relevant parameters, including the amount of excitation one can expect.
-The chaotic interaction inherent to a double pendulum makes it difficult to create a way of determining/estimating the time it will taken a given CMG array to to dampen an excitation.
+The chaotic interaction inherent to a double pendulum makes it difficult to create a way of determining/estimating the time it will take a given CMG array to dampen an excitation.
 Looking at the dampening simulations of different capacity CMGs (@fig:spcmg-avoidance-animation) we can nevertheless understand the basic behavior during dampening.
 
 The dampening controller will generate torque until the CMGs saturates i.e. its capacity (Nms) is consumed in one direction.
 As the pendulum reverses direction the CMGs move out of saturation as the commanded torque also reverses direction.
 
 Therefore I expect there to be a way to estimate the number of oscillations a CMG array requires to dampen a given pendulum.
-I am guessing that the estimation will relate the momentum envelope of the array with the angular momentum of the two links.
+My guess would be that the estimation will relate the momentum envelope of the array to the angular momentum of the two links.
 This momentum in turn depends on the moment of inertia and maximum rotational velocity of the two links.
-The developed models permit us to at least estimate the dampening performance by varying the momentum envelope and observing dampening performance (@Fig:limited-momentum-animation and @Fig:limited-momentum-plot, for code see sec:2d-dp-wcontroller-limit)
+The developed models nevertheless permit us to estimate the dampening performance by varying the momentum envelope and observing dampening performance (@Fig:limited-momentum-animation and @Fig:limited-momentum-plot, for code see sec:2d-dp-wcontroller-limit)
 and thereby derive the necessary requirements for the subsequent sizing of the CMG array.
 These simulations also provide a useful rule of thumb for the dampening performance: doubling the momentum envelope halves the number of swings it takes to dampen the crane.
 
@@ -47,17 +47,17 @@ These simulations also provide a useful rule of thumb for the dampening performa
 Depending on the cause of excitation one might have to further increase the momentum envelope.
 In the discussed dampening simulations one can see that dampening can leave the CMG array in a state away from the center of its momentum envelope.
 If the processes compensations require a certain volume of momentum, one could increase the envelope to ensure sufficient volume remains after dampening.
-Alternatively, as discussed in the controller design section, one could develop dampening control that extends the dampening duration but leaves the CMG array closer to the center of it momentum envelope. 
+Alternatively, as discussed in the controller design section, one could develop dampening control that extends the dampening duration but leaves the CMG array closer to the center of its momentum envelope. 
 
 ### Part Rotation
 
-Rotating a load around the axis of the lower link is very much like trying to orient a spacecraft using momentum control devices.
+Rotating a load around the axis of the lower link is akin oriention of a spacecraft using momentum control devices.
 The sizing is fairly straightforward and we can look to the spacecraft literature.
 
 For satellites as well as part rotation the speed of rotation is usually not the main concern.
 Instead we are interested in how long it will take to rotate to the desired position.
 This of course depends on the rotation speed, but also on the maximum acceleration and jerk (derivative of acceleration).
-This is particularly true for short rotations where one might not reach the maximum speed before having to begin decelleration.
+This is particularly true for short rotations where one might not reach the maximum speed before decellerating.
 See [@LeveSpacecraftMomentumControl2015, sec. 3.1] for an in depth discussion of this and how the duration of the jerk- and acceleration-limited regime can be derived from the relationship between maximum jerk, acceleration and velocity.
 
 While the optimization of these relationships is of great relevance to spacecraft design, for the part rotation on cranes we can assume that rotation performance is mostly concerned with large rotations.
@@ -129,12 +129,11 @@ Since the torque produced by the CMG also depends on the momentum of the gyrosco
 $$ \frac{\omega_{gimbal}}{\omega_{system}} = \frac{\tau_{system}}{\tau_{gimbal}} $${#eq:torque-velocity-relation}
 
 In spacecraft this relationship is highly critical as the torque of a motor is strongly linked to its weight.
-As a terrestrial application we have more flexibility regarding weight.
+As previously noted, for crane-CMG systems weight will be of little concern, certainly muss less so than with space applications.
 Furthermore, unlike space applications in our case the baserate is (apart from part rotation) not the desired output of the CMGs.
 Instead the baserate originates from the oscillatory nature of the crane as a pendulum.
 The relevance of this difference will be discussed in the following section.
 
-The parameters, system characteristics and requirements create connected graph.
 To make sizing easier we can place all equations involved in a spreadsheet (see @Fig:cmg-sizing).
 This way one can quickly run through various parameters.
 
@@ -146,12 +145,12 @@ This would lead to the gimbal motor having to overcome the entire reaction torqu
 To illustrate this the spreadsheet subtracts the reaction torque from the maximum torque of the gimbal motor.
 
 To provide a better intuition of the characteristics of the CMGs the spreadsheet also calculates the angle of rotation required by the gimbal motor to reach its maximum speed from a standstill.
-In an SPCMG array one will run into a singularity after 90° when starting from a neutral position, therefore this value gets highlighted yellow once it goes above 90°.
+In an SPCMG array one will encounter a singularity after rotation the gimbal 90° when starting from a neutral position, therefore this value gets highlighted yellow once it goes above 90°.
 In other arrays the singularities will be different, but one will most likely struggle to achieve the maximum gimbal velocity if one requires more than 90° to reach it.
 
 The spreadsheet does not take friction or the exact shape of the momentum envelope into account.
 The actual inertia of a gimbal assembly will also be higher than the inertia of just the gyroscope's rotor.
-All of this can most likely be taken into account with scaling factors, once one has some prototypes to base them off.
+All of this can most likely be taken into account with scaling factors, once one has some prototypes providing data points.
 
 ### Sizing CMGs for Cranes { #sec:sizing_for_cranes }
 
@@ -164,10 +163,10 @@ The relationship of torques and velocities in a CMG (see @Eq:torque-velocity-rel
 Unlike the case of crane dampening, the reaction torque here is self inflicted.
 Also, since most maneuvers will produce a net change of zero in the CMG array's momentum, the size requirements regarding the envelope are much smaller than in our cases, where we have to soak up external influences.
 
-While the base rate in ship stabilization is more akin to our base rate, we can't imitate their solutions.
+While the base rate in ship stabilization is more akin to our base rate, we can't imitate their sizing approaches.
 In ship stabilization the base rate i.e. the roll is actually utilized, as the precession causes exactly the gimbal movement necessary to produce torque counteracting the roll of the ship.
 Gimbal actuation is only used to assist the gyroscope in overcoming friction, limit the response and avoid hitting the singularities.
-In our case though, we also want to be able to use the same CMGs to provide torque compensation while at the same time dampening oscillations.
+In our case though, we also have to use the same CMGs to provide torque compensation while simultaneously dampening oscillations.
 
 Given the requirements for dampening and process compensation previously discussed, the size of the momentum envelope is paramount to the usefulness of the CMGs for crane applications.
 Obviously, the size of the envelope is governed by the momentum of the gyroscopes.
@@ -193,5 +192,5 @@ It is also important to note that the direction of reaction torque is in line wi
 Under a well designed control regime the maximum allowable reaction torque might lie above the maximum torque rating of the motor and other part of the gimbal assembly.
 As the motor and reaction torque are pushing in the same direction during the dampening process, the limits might actually lie in the current limits and electronics design of the controllers.
 
-All of this could lead to a stark reduction in the impact of the reaction torque as compared to the the worst case scenario assumed in the sizing spreadsheet.
-Nevertheless I would recommend adding dedicated points of failure for gimbal motor couplings and perhaps even means to mechanically arrest the gimbals' motion should a failure of the coupling occur.
+All of this could lead to a stark reduction in the impact of the reaction torque as compared to the worst case scenario assumed in the sizing spreadsheet.
+Nevertheless, I would recommend adding dedicated points of failure for gimbal motor couplings and perhaps even means to mechanically arrest the gimbals' motion should a failure of the coupling occur.

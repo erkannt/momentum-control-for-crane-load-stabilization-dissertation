@@ -26,7 +26,7 @@ Both controller and hardware design as well as validation can more easily be und
 
 A priority for the development of the 3d controller should be the inclusion of the reaction torque limiting strategy discussed at the end of the previous chapter on sizing (@sec:sizing_for_cranes).
 Limiting the reaction torque experienced by the CMGs through alignment of momentum and rotation axis is the critical component required to make CMGs useful for crane based applications.
-The development described in this section therefore mostly outline the critical path to a state where the efficacy of such a strategy can be validated through simulations.
+The development described in this section therefore mostly outlines the critical path to a state where the efficacy of such a strategy can be validated through simulations.
 
 The existing explicit equations of motion together with the SymPy code used for their derivation should hopefully prove useful in the design and stability proofs of the needed controllers.
 To be able to develop and also validate steering and control of the four CMG roof array (required for the move to 3DoF hardware prototype), either a new modular model or the existing 3d equations of motion could be used.
@@ -50,12 +50,12 @@ A controller that reduces the error produced by the force acting on the upper li
 Furthermore the forces and torques applied to the pendulum during the simulated compensation assumed a fixed robot.
 The motion of the robots base, due to oscillations of the platform are therefore not taken into account in the forces and torques.
 To fix this, one needs to integrate the robot multibody simulation into the pendulum model.
-Through the addition of either more realistic inverse kinematics, that take axis accelerations into account, or a hardware-in-the-loop setup that uses the actual robot controller, one could then begin development of robot based compensation strategies and validation of said strategies as they work together with the dampening controller.
+Through the addition of either more realistic inverse kinematics, that take axis accelerations into account, or a hardware-in-the-loop setup that uses the actual robot controller, one could then develop robot based compensation strategies and validate said strategies as they work in coordination with the dampening controller.
 
 Given that one will later on wish to also extend the model to include the remainder of the crane, my recommendation would be to implement a modular multibody simulation into which one integrates the model of the CMG dynamics.
 This should be possible in Modelica, Simulink Simmechanics or other toolkits.
 While the CMG array could also be modeled using this approach, I would recommend the use of the explicit model used in this work, as it makes it possible to distinguish the various torque components.
-This proved to be of great value in understanding the the gyroscopic system.
+This proved to be of great value in understanding the gyroscopic system.
 
 ## Other Work Required
 
@@ -106,9 +106,9 @@ Given the relevance of the base rate on the sizing of CMGs the work also include
 This in particular will require validation as the base rates will change depending on the control of the crane and excitation sources present during operation.
 
 To understand the interaction of the crane-CMG system, I chose to limit the crane to a 2d model but left the CMG model 3d.
-This is necessary, due to the cross product involved in gyroscopic systems.
+This is necessary, due to the cross product involved in gyroscopic systems (@eq:reaction_torque).
 By implementing the equations that describe the dynamics of a scissored pair CMG and attaching it to the obtained equations of motion for the crane/pendulum, I was able to develop an understanding of the system much quicker than with a physical prototype.
-In the physical prototype our view inside the system is limited by the sensors, noise, signal delay and of course bugs.
+In the physical prototype our view into the system is limited by the sensors, noise, signal delay and of course bugs.
 The simulation models also include an implementation of a steering law for the SPCMG with singularity avoidance and a model of the gimbal dynamics that limit acceleration and velocity of the gimbal.
 
 The simulations and subsequent development of control as well as sizing approaches were systemized through the definition of three crane-CMG applications: dampening, part rotation and process compensation.
@@ -125,7 +125,7 @@ The process compensation utilizes the fact that the process is known in advance 
 By simulating the torques produced by the process in advance it should therefore become possible to compensate these torques, that would otherwise excite the pendulum.
 The rotation controller arises naturally from the dampening controller, once one extends the system to three dimensions.
 All of these controllers require an understanding of the moment of inertia of the platform and load.
-This might be estimated using conventional techniques from the understanding of the torque being produced and the observed accelerations of the system.
+This might be estimated using conventional techniques (e.g. a Kalman filter) that utilize the understanding of the torque being produced and the observed accelerations of the system.
 
 The simulations created the understanding required to develop the sizing of CMGs for cranes.
 The interaction of the applications' requirements and various parameters of CMGs are discussed in the chapter on sizing.

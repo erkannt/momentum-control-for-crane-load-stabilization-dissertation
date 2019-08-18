@@ -51,7 +51,7 @@ But the key to their success is also the reason holding back their automation.
 Using a rope as the last link of their kinematic chain, cranes are able to cover height with a minimum of material.
 The flexibility of the rope also means that it requires next to no space when retracted, as it can be coiled and wrapped.
 Yet this flexibility also means that we can't use a rope to push, only to pull.
-With the actors (the motors) of the crane connected to the endeffector (the hook) via such a flexible connection, it isn't possible to produce controlled motion in the face of disturbances.
+With the actors (the motors) of the crane connected to the end effector (the hook) via such a flexible connection, it isn't possible to produce controlled motion in the face of disturbances.
 If we wish to effectively use robots over the large work area of the construction site, we must find a way to provide them with a stable work platform.
 
 ### Momentum Control Devices
@@ -67,7 +67,7 @@ This feat is achieved through momentum control devices and this work will discus
 Prior to looking at momentum control devices in greater detail, this section will cover some of the alternatives for large workspace kinematics.
 
 The first systems that comes to mind are parallel tendon kinematics.
-Here instead of a single rope positioning the endeffector, multiple ropes/tendons are used.
+Here instead of a single rope positioning the end effector, multiple ropes/tendons are used.
 By spanning these tendons from different directions it becomes possible to create stable positions and motions over large spaces.
 Such system are commercially available for cameras in sports stadiums and researchers have proposed their use for a variety of other tasks.
 
@@ -79,7 +79,7 @@ More recently there have also been further conceptual proposals for the use of p
 
 Parallel tendon kinematics come with some challenges and downsides.
 Dealing with tendon elasticity is particularly relevant to vibrations in the system.
-Depending on the size of the endeffector platform, the systems will also struggle to produce high torques, as these depend on the amount of leverage that the tendons have on the platform.
+Depending on the size of the end effector platform, the systems will also struggle to produce high torques, as these depend on the amount of leverage that the tendons have on the platform.
 Some researches have therefore added momentum control devices to compensate torques in parallel tendon kinematics [@WeberActiveVibrationCanceling2014], which points to interesting hybrid approaches (see @Fig:reaction-wheel-tendon).
 The bigger issue for construction sites will most likely be the need for the tendon's winches to lie around the workspace of the system.
 This means that one would have tendons crossing large areas of the construction site, which poses significant challenges with regard to collisions, setup costs as well as worker safety.

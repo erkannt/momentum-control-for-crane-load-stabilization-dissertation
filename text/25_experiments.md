@@ -1,11 +1,17 @@
 
 # Experiments
 
+The majority of experiments discussed in this chapter revolve around the interaction between the crane (modelled as a double pendulum) and a CMG array.
+The simulations reveal the various interactions between the systems and the challenges that arise from them.
+Prior to this, the first section covers the validation of the 2d and 3d double pendulum models as well as the chosen $PD\alpha$ controller's performance in dampening the 2d model.
+The latter three sections of this chapter cover the simulated robot tasks, their integration into the pendulum-CMG simulations as well as the preliminary hardware prototype.
+Apart from the 3d double pendulum model, the experiments utilize setup limited to a single axis of pendulum motion (see @Fig:prototype-sketch).
+
 ## Pendulum Simulation
 
 ### 2d Model
 
-We've already seen some of the interaction that occurs with a double pendulum in @Sec:2dpendulum, with the lower pendulum causing an overlay of higher frequency oscillations.
+We've already seen some of the interaction that occurs within a double pendulum in @Sec:2dpendulum, with the lower pendulum causing an overlay of higher frequency oscillations.
 In @Fig:distmass-impact-animation and @Fig:distmass-impact-plot we can see how the rotational inertia of the lower mass changes the interaction of the two parts of the pendulum.
 
 ![Difference between an double pendulum with two point masses and one where the lower mass is modeled as a distributed mass.](./figures/impact-of-rotational-inertia.gif){ #fig:distmass-impact-animation }
@@ -13,7 +19,7 @@ In @Fig:distmass-impact-animation and @Fig:distmass-impact-plot we can see how t
 ![Angles and angular velocity comparison of point mass and distributed mass pendulum.](./figures/dp-2d-distmass-inertias.svg){ #fig:distmass-impact-plot }
 
 The rotational inertia of the lower link significantly changes the movement of the system.
-Of note is how the lower link now pushes the upper link a lot more, instead of only hanging below it.
+Of note is how the lower link pushes the upper link a lot more, instead of only hanging below it.
 This is important as a rope cannot transmit such a force.
 This means that the CMG platform should use stiff links instead of ropes to attach to the hook of the crane.
 This also points to a limitation of the model, as the upper link is modeled as a rod, not a flexible rope.
@@ -43,18 +49,18 @@ The break from the 2d plane occurs immediately, which is most likely due to the 
 In @Sec:dampening-controller we saw that a rudimentary PD$\alpha$ controller was able to dampen our double pendulum.
 We now apply the same controller to a selection of models whose parameters have been set to reflect our lab setup, a small fast deployment crane and a large tower crane.
 The lower links are modeled as having a load attached to them according to our inertia estimates (see @Fig:inertia-data).
-Note that this is quite a worst case scenario, as we are assuming the maximum crane load and also the largest excitation.
+Note that this is a worst case scenario, as we are assuming the maximum crane load and also the largest excitation.
 The largest excitation estimate does not stem from the maximum load, but instead from a jib rotation at maximum speed with the load hanging from the very tip of the crane.
 In reality the load capacity at the tip is significantly lower than the maximum load (see @Fig:crane-data).
 
 These models are then each excited by 10°, which roughly fits the various base-rate estimates (see @Fig:crane-base-rates).
-In @Fig:crane-dampening-comparison-animation and @Fig:crane-dampening-comparison-plot we can see how the controller proves effective for each crane, dampening the motion over the course of a few oscillations.
+In @Fig:crane-dampening-comparison-animation and @Fig:crane-dampening-comparison-plot we can see how the controller works for all cranes, dampening the motion over the course of a few oscillations.
 This is predominantly due to the fact that we are scaling the control gains with the inertia of the lower link (see @Fig:crane-dampening-comparison-torques).
 This results in up to 50.000 Nm of torque being applied to dampen the largest crane.
 While probably possible, it is questionable whether this is economically sensible.
 We can also see that the requirements with regard to torque dynamics and workspace scale with the torque requirements.
 
-![Dampening of three different model cranes using the same PD$\alpha$ controller. From left to right: approximate dimensions of our lab setup, a small fast deployment crane and a fairly large tower crane. The parameters are taken from @Fig:crane-data and @Fig:inertia-data. Controller setting: $k_P=1.0 \cdot I_2, k_D=4.0 \cdot I_2, \alpha=0.5$. Initial excitation is 10°, approximating the determined base rates (see @Fig:crane-base-rates)](./figures/crane-dampening-comparison.gif){ #fig:crane-dampening-comparison-animation }
+![Dampening of three different model cranes using the same PD$\alpha$ controller. From left to right: approximate dimensions of our lab setup, a small fast deployment crane and a large tower crane. The parameters are taken from @Fig:crane-data and @Fig:inertia-data. Controller setting: $k_P=1.0 \cdot I_2, k_D=4.0 \cdot I_2, \alpha=0.5$. Initial excitation is 10°, approximating the determined base rates (see @Fig:crane-base-rates)](./figures/crane-dampening-comparison.gif){ #fig:crane-dampening-comparison-animation }
 
 ![Angles and velocities of the cranes during the dampening comparison.](./figures/dp-2d-distmass-controller.svg){ #fig:crane-dampening-comparison-plot }
 
@@ -72,7 +78,7 @@ The code used for the above simulations can be found in the appendix in @Sec:2d-
 
 ## Pendulum-CMG Interaction
 
-As our prototype uses an SPCMG array, we will attach a model of said array to our double pendulum to look into the interactions between the CMGs and the pendulum.
+As the 2d model only requires torque production around a single axis for stabilisation, we will attach a model of said array to our double pendulum to look into the interactions between CMGs and the pendulum.
 The following section therefore briefly introduces the steering law and singularity avoidance for the SPCMG.
 Subsequently the interaction of said singularity avoidance with the dampening controller is simulated.
 
@@ -123,7 +129,7 @@ In @Fig:spcmg-avoidance-animation we see a double pendulum approximating our lab
 The difference between the two simulations lies in the velocity of their gyroscopes (1000 rpm and 5000 rpm respectively).
 We can see that the dampening is effective for both cases, but the lower gyroscope speed leads to the CMGs having a smaller torque workspace.
 So we can clearly observe the behavior outlined in our previous section on the dampening controller.
-As the pendulum oscillates, the SPCMG alternates between its two singularities, but in between is able to repeatedly produce torque to dampen the oscillation.
+As the pendulum oscillates, the SPCMG alternates between its two singularities, repeatedly producing torque in between, to dampen the oscillation.
 
 It is interesting to see the difference in final gimbal angles (see @Fig:spcmg-avoidance-1000rpm-plot and @Fig:spcmg-avoidance-5000rpm-plot), once the respective models have come to rest.
 The slow gyroscopes result in an end state closer to the center of the SPCMGs workspace.
@@ -140,19 +146,19 @@ This points to some interesting questions regarding control optimized to positio
 
 Recalling the various components of the CMG's torque discussed in @Sec:cmg-dynamics we can plot these components (@Fig:cmg-torque-components-plot) and totals (@Fig:cmg-torque-totals-plot ) for our 2d pendulum simulations.
 
-![Components of torque produced by a single CMG in a SPCMG array dampening the motion of a double pointmass pendulum.](./figures/cmg-torque-components-plot.svg){ #fig:cmg-torque-components-plot }
+![Components of torque produced by a single CMG in a SPCMG array dampening the motion of a double point mass pendulum.](./figures/cmg-torque-components-plot.svg){ #fig:cmg-torque-components-plot }
 
 ![Total torques experienced by the platform and gimbal motor due to a single CMG in a SPCMG (same simulation as @Fig:cmg-torque-components-plot).](./figures/cmg-torque-totals-plot.svg){ #fig:cmg-torque-totals-plot }
 
 There a several observations that can be made from the above plots.
-First, there are a few fairly SPCMG specific behaviors.
+First, there are a few SPCMG specific behaviors.
 In our model the desired torque output should be produced around the Z-axis.
-As the gyroscope's rotations are mirrored, the output torque in Z is the sum of the respective output of the two CMGs.
+As the two gyroscope's rotate in opposite directions, the output torque in Z is the sum of the respective output of the two CMGs.
 The gimbal rotates around the Y-axis, ergo this is where the gimbal motor torque acts.
 As the CMGs move from their center position towards the singularities, the torque being produced increasingly acts around the X-axis instead of the desired Z-axis.
-This is why as we approach the singularity the gimbals speed up to maintain the Z-output.
+This is why as we approach the singularity, the gimbals speed up to maintain the output around the Z-axis.
 Inversely, the reaction torque stemming from the baserate of the lower link interacting with the gyroscopes inertia is strongest when the CMGs are in the center position and goes to zero as they approach the singularity.
-Note how the maximum reaction torque occurs as the pendulum passes through vertical the second time, where the baserate is highest and the CMGs are also roughly in their center position.
+Note how the maximum reaction torque occurs as the pendulum passes through the vertical for the second time, as here the baserate is highest and the CMGs are also roughly in their center position.
 
 In the case of the SPCMG both the motor torques and reaction torques cancel out, which is why the above figures plot an individual CMG.
 In other arrays the interactions will be more complex, but similar in principle.
@@ -207,12 +213,12 @@ Moving to the simulations based on the real axis values (@Fig:robot-sim-mxa) we 
 
 Comparing the values of the same path run at different speeds (@Fig:robot-load-speedcomparison-plot) we can make several observations.
 We have to deal with two types of torque from the robot: the torque caused by its movement and that caused by its center of mass moving out from underneath the base.
-The latter being is why we see lower Nms values for the faster robot, as it spends less time out of balance.
+The latter being is why we see lower angular momentum values (Nms) for the faster robot, as it spends less time out of balance.
 On the other hand the faster robot motion leads to higher torques and more importantly higher torque dynamics.
 This is one area where one might optimize robot paths to accommodate the capabilities of the CMGs (see discussion of space robots in @Sec:space-cmg-sota).
 
-Should processes cause the robot, load or kinematic in general to be out of balance for a longer duration, it might make sense to add a sliding or pivoting weight to the platform.
-This would not only reduce the workspace requirements of the CMGs, but could also be used to desaturate the CMGs, as it would provide a unagile but infinite source of torque. 
+Should processes cause the robot, load or kinematic in general to be out of balance for a longer duration, adding a sliding or pivoting weight to the platform could be beneficial.
+This would not only reduce the workspace requirements of the CMGs, but could also be used to desaturate the CMGs, as it would provide an unagile but infinite source of torque. 
 
 Note that the CMGs can not directly compensate the forces acting at the robot's base (see @Sec:external-forces).
 Also, the above model and simulations to do not include forces and torques produced by the process itself.
@@ -222,18 +228,18 @@ So for instance the force needed to press a drill into a wall is not included.
 
 \missingfigure{Simulation of the SPCMG compensating the motion of a KR3 robot. The pendulum is constrained to 2d motion.}
 
-\missingfigure{Deviation of the robots endeffector with and without the SPCMG compensation.}
+\missingfigure{Deviation of the robots end effector with and without the SPCMG compensation.}
 
 TODO: add animations of stabilized and un-stabilized robot motion
 
 Depending on the settings for the gyroscopes' speed and the gimbals' maximum acceleration, the SPCMG is able to perfectly match the torques acting at the robots base as well as the torque on the lower link stemming from the forces acting at the base.
-Given the inaccuracies of the model, signal as well as processing delays and inaccuracies of any physical setup, a perfect compensation is highly unlikely.
-The imperfections in the torque compensation act in addition to the the torques and forces that can not be directly compensated by the CMGs.
+Given the inaccuracies of the model, signal as well as processing delays and inaccuracies of any physical setup, a perfect compensation is unattainable.
+The imperfections in the torque compensation act in addition to the torques and forces that can not be directly compensated by the CMGs.
 In the above simulation this is limited to the torques acting on the upper link stemming from forces acting on the lower link.
 In reality their would also be e.g. wind and gantry motions.
 The resulting oscillations are addressed by the dampening controller.
 
-Given that one will never be able to maintain perfect platform stability with the CMGs it makes sense to consider additional compensation mechanisms for processes.
+Given that one will never be able to maintain perfect platform stability with the CMGs one should consider additional compensation mechanisms for processes.
 Aside from adding thrusters to create compensating forces, one might be able to improve the process path accuracy by using the robot/kinematic to compensate the error.
 This would take careful control engineering so as not to exacerbate the error by introducing further forces and highly dynamic torques.
 Given the availability of the crane and robot model one could imagine a predictive controller that compensates the pendulum motion in coordination with the dampening control of the CMGs or even the crane.
@@ -245,13 +251,13 @@ The effect of the oscillating base and hence changing robot orientation is not c
 
 ### Prototype Setup
 
-Development of a first hardware prototype began early on and ran alongside the remaining project.
-The hope was to rapidly validate the theoretical work to avoid dead ends.
+Development of the first hardware prototype began early on and ran alongside the remaining project.
+The goal was to rapidly validate the theoretical work to avoid dead ends.
 The size of the prototype was supposed to be large enough to handle the torques of the smaller robots of the chair while requiring only a modest hardware budget.
 
 The plan was to begin with a SPCMG array that could be suspended so as to limit the motion to a single plane i.e. 2d motion (see @Fig:prototype-sketch).
 Later it should be possible to extend the array to a four CMG roof array.
-Given the youth of the chair and lack of workshop facilities the design uses as many off the shelf and low cost components as possible.
+Given the limited manufacturing facilities of the chair, the design uses as many off the shelf and low cost components as possible.
 
 ![Hardware SPCMG prototype with robot attached to it. Gyros are in the aluminum cases with the gyro motors mounted on their sides. The gimbal motors hang underneath the gyros. The motor controller and power supply are mounted underneath the platform. The gyro controller, IMU and communication interface for these are mounted on top. Note that the rope suspension was rotated by 90° for the picture.](./figures/KR3_seitlich.jpg){ #fig:prototype-sideview }
 
@@ -281,7 +287,7 @@ The frame is suspended from two hooks in the ceiling.
 ![Custom PCB holding the microcontroller, gyro speed controllers, CAN and Ethernet jacks.](./figures/cmg-pcb.jpg){ #fig:cmg-pcb }
 
 For the SPCMG to work as intended we need to maintain symmetry between the two gyroscopes.
-This is usually achieved by linking the two gimbals mechanically and using a single actuator to drive them.
+This is generally achieved by linking the two gimbals mechanically and using a single actuator to drive them.
 The use of a mechanical linkage is simple to implement and offers the added benefit of dealing with the reaction torque caused by motion of the base system (see discussion in @Sec:cmg-dynamics).
 
 Given that the prototype should later be extended to a four CMG roof array we opted to enforce the SPCMG symmetry with a control loop.
@@ -321,10 +327,10 @@ The CMGs are very loud and a recent reassembly showed that some of the gyroscope
 This is partially due to the axle having the wrong thread (typo in our order), leading to standard locknuts not fitting.
 Should one manufacture/order new axles, slight changes could also create more space in the case which would ease assembly.
 
-During tests we managed to break two of the gyroscope couplings.
-This was mostly likely due to misalignment of the motor and gyroscope.
+During tests two of the gyroscope couplings broke.
+This was most likely due to misalignment of the motor and gyroscope.
 Having acquired a 3d-printer we have reworked the gyroscope motor mount to ease with alignment (@Fig:gyro-mount).
-The sticky bearings and misaligned axis are also the most likely culprits for the gyroscopes taking different amounts of time to reach their set speed.
+The sticky bearings and misaligned axis are also the most likely culprits for the gyroscopes taking different durations reach their set speed.
 The integrated speed readout via the microcontroller has proven very useful.
 The custom PCB has also increased the reliability of the prototype by introducing high quality plugs.
 These not only make disassembly much easier, but also reduce the uncertainty from loose/unreliable connections, making debugging easier.
@@ -345,7 +351,7 @@ Given these issues and pricepoints of the industrial grade motors, interface car
 Since the start of the project opensource hardware solutions such as the ODrive have emerged.
 The ODrive can combine lower cost hobby brushless motors, that have become very powerful due to drones, e-scooters etc., with encoders to create much more affordable servos.
 Together with beltdrives or cycloidal gears one could produce backlash free drives using mostly 3d-printed parts.
-Generally speaking, the ubiquity of low-cost 3d-printers is a game changer and our prototype could probably be replicated at lower cost if one were to make greater use of printed parts.
+Generally speaking, the prototype could probably be replicated at lower cost if one were to make greater use of printed parts and consumer grade hardware.
 
 Alternatives to Simulink and specialized target PCs for projects like ours are also emerging.
 The microcontroller on our custom PCB is most likely enough to create a UDP to CAN bridge.

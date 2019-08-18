@@ -59,10 +59,10 @@ The only way to counteract the effect of this torque is to cause a rotation of t
 Therefore rotation and dampening controller ought to be extended.
 The goal being to balance the error produced by the upper link with the error caused by the lower link moving to dampen said error in the upper link.
 
-Since our CMGs won't be perfect and in any case can't fully compensate the impact of external forces, we have to assume that the robot's motion will cause the pendulum to swing.
+Since our real CMGs won't resemble their idealized model counterparts and in any case can't fully compensate the impact of external forces, we have to assume that the robot's motion will cause the pendulum to swing.
 This is the measured position of the robot ($R_M$) and the pendulum ($P_M'$) is fed into a second simple model that provides an actual position of the robot end effector ($R_M'$).
 This position is subtracted from the target position coming from the path planning, so that the robot controller may attempt to compensate the error.
-One could also add additional sensors to directly measure the error of the robot endeffector.
+One could also add additional sensors to directly measure the error of the robot end effector.
 Since part of the torque at the robot's base stems simply from the pull of gravity on the robots joints, we also have to pipe the current platform angle into the robot model.
 
 Once we move to an actual crane the state has to be extended to include the position of the crane hook in addition to its orientation.
@@ -113,7 +113,7 @@ Having reviewed the existing research, we design a controller for the basic 2D p
 These can be described as PD$\alpha$ controllers, where the PD part is akin to those parts of a conventional PID controller.
 The $\alpha$ indicates the weighted combination of two state variables of the system.
 In our case these are the two angles of the two pendulum links.
-With the target of both of these hanging vertical ($\theta_{[12]}=0$) this means creating a PD-controller where the error of the two angles is combined as follows:
+With the target of both of these hanging vertically ($\theta_{[12]}=0$) this means creating a PD-controller where the error of the two angles is combined:
 
 \begin{equation}
 E = \theta_2 + \alpha \theta_1
@@ -123,7 +123,7 @@ The efficacy of this approach can be seen in @Fig:controller-comparison-animatio
 
 ![Comparison of various control regimes for a double pendulum with a control torque applied to its lower link. From left to right: a) no control torque b) $k_P  = 10, k_D = 0$ c) $k_P = 1, k_D = 4$ d) $k_P = 1, k_D = 4, \alpha = 0.5$](./figures/controller-comparison-animation.gif){ #fig:controller-comparison-animation }
 
-![Swing angles (in degrees) of the two links ($\theta_1$ and $\theta_2$) of double pendulum with various control regimes applied.](./figures/controller-comparison-plot.svg){ #fig:controller-comparison-plot }
+![Swing angles (in degrees) of the two links ($\theta_1$ and $\theta_2$) of double pendulum with various control regimes applied. See @Fig:controller-comparison-animation for animation.](./figures/controller-comparison-plot.svg){ #fig:controller-comparison-plot }
 
 ## Inertia Estimation Controller
 
@@ -135,14 +135,14 @@ Thereby we have all parts needed to calculate the rotational inertia:
 \dot\omega \tau = I
 \end{equation}
 
-Since sensors are noisy and we want to avoid unnecessary jumps and hence jerks in our torque it would make sense to use some kind of state observer.
-These come in various ilks, but generally take an estimate of the measurement variance as well as the historic variance of the estimation into account.
+Since sensors are noisy and we want to avoid unnecessary jumps the inertia estimate and hence jerks in our torque it makes sense to use a state observer.
+These come in various forms, but generally take an estimate of the measurement variance as well as the variance of previous estimations into account.
 
 The above calculation of inertia assumes that we are trying to measure the inertia of our payload and platform around the Z-axis, while the pendulum is hanging still.
 As soon as the pendulum isn't still we have to make adjustments to the way the inertia is estimated.
 This is because as soon as the pendulum's kinetic or potential energy are not zero the acceleration it experiences also depends on said energies in addition to the torque exerted by our CMGs.
 Luckily we have already developed a model of the system that can provide us with an estimate of the amount of acceleration caused by these energies.
-This estimate can be utilized by certain classes of estimator more complex than the ones suited for our estimation at rest.
+This estimate can be utilized by certain types of estimator more complex than the ones suited for our estimation at rest.
 
 The benefits of including such an estimator are twofold:
 For one it allows for a unification of the dampening and rotation controller.
@@ -161,7 +161,7 @@ For the 2d case the target and error are simply $\theta_i = 0$ and $-\theta_i$, 
 In the 3d case we have the reference frame/coordinate system at the center of mass of the payload which is also the reference frame for our CMG's torque.
 Given the current reference frame as determined by the sensors and a target reference frame (and maybe rotational velocities at that frame) one needs to find a measure of the error between the two and how to process them in the controller.
 
-This is luckily covered by what is known as *attitude control* for air- and spacecraft.
+This is covered by what is known as *attitude control* for air- and spacecraft.
 Given that CMGs are not uncommon in spacecraft, some attitude control systems (ACS) might even make special considerations for CMGs.
 It will be interesting to see how attitude control techniques can be combined with those for crane control.
 Especially since certain issues in ACS, such as singularities arising from the chosen error indicator, disappear given the kinematic constraints of the crane-CMG system [@OzgorenComparativeStudyAttitude2019].

@@ -56,9 +56,7 @@ This is illustrated in @Fig:CMG_principle.
 
 The torque produced by such a gimbal rotation is described by:
 
-\begin{equation}\label{reaction_torque}
-\boldsymbol{\tau} = \boldsymbol{\omega} \times \boldsymbol{h}
-\end{equation}
+$$ \boldsymbol{\tau} = \boldsymbol{\omega} \times \boldsymbol{h} $${#eq:reaction_torque}
 
 The beauty of a CMG lies within the fact that the torque required to rotate the gimbal so as to produce a given rate $\boldsymbol{\omega}$ is independent of the angular momentum $\boldsymbol{h}$ of the gyroscope.
 The gimbal motor only has to overcome the rotational inertia of the gyroscope and the surrounding gimbal bearings etc.
@@ -396,7 +394,7 @@ This application will also pose constraints regarding torque accuracy, weight, s
 Looking at the sizing methods used for spacecraft, the requirements usually stem from the agility demanded of the spacecraft, also called slewrate.
 Given the moment of inertia of the spacecraft, the slewrate requirement will provide a required torque and duration that must be provided.
 The given slewrate also results in a base rate whose reaction torque must be handled by the gimbal motors.
-From this the sizing of the CMGs can proceed and will subsequently be governed by the harsh constraints of of spaceflight hardware. 
+From this the sizing of the CMGs can proceed and will subsequently be governed by the harsh constraints of spaceflight hardware. 
 
 This in particular is where our sizing process will diverge from spacecraft CMG design.
 Weight, size, power and computational resources are of much smaller concern when the goal is hanging the CMGs from a crane.
