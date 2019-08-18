@@ -124,12 +124,9 @@ The required torque agility $\dot\tau_{B}$ depends on the momentum of CMG array,
 
 The reaction torque depends on the momentum of the gyroscope and baserate i.e. the angular velocity experienced by the platform.
 Since our CMG arrays should operate in three dimensions and under diverse loads we must assume the worst case i.e. that the momentum vector of the gyroscope will lie orthogonal to the angular velocity.
-Since the torque produced by the CMG also depends on the momentum of the gyroscope but on the gimbal velocity instead of the base rate, the following relationship holds true (see section 3.2.6 of [@LeveSpacecraftMomentumControl2015]) for full discussion): 
+Since the torque produced by the CMG also depends on the momentum of the gyroscope but on the gimbal velocity instead of the base rate, the following relationship  holds true (see section 3.2.6 of [@LeveSpacecraftMomentumControl2015]) for full discussion): 
 
-{ #eqn:torque-velocity-relation}
-\begin{equation}
-\frac{\omega_{gimbal}}{\omega_{system}} = \frac{\tau_{system}}{\tau_{gimbal}}
-\end{equation}
+$$ \frac{\omega_{gimbal}}{\omega_{system}} = \frac{\tau_{system}}{\tau_{gimbal}} $${#eq:torque-velocity-relation}
 
 In spacecraft this relationship is highly critical as the torque of a motor is strongly linked to its weight.
 As a terrestrial application we have more flexibility regarding weight.
@@ -163,7 +160,7 @@ While commercial applications and sizing experience exist for spacecraft control
 The core challenge is the high base rate that our CMGs experience when they are attached to a swinging crane.
 
 In a spacecraft the baserate is dictated by the agility requirements, which in turn leads to requirements regarding the output torque of the CMGs.
-The relationship of torques and velocities in a CMG (@eqn:torque-velocity-relation) lead the sizing of the gimbal and gyroscope motor.
+The relationship of torques and velocities in a CMG (see @Eq:torque-velocity-relation) lead the sizing of the gimbal and gyroscope motor.
 Unlike the case of crane dampening, the reaction torque here is self inflicted.
 Also, since most maneuvers will produce a net change of zero in the CMG array's momentum, the size requirements regarding the envelope are much smaller than in our cases, where we have to soak up external influences.
 
