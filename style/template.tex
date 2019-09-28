@@ -211,9 +211,12 @@ $if(title)$
 \maketitle
 $endif$
 $if(abstract)$
-\begin{abstract}
+\addchap*{Abstract}
 $abstract$
-\end{abstract}
+$endif$
+$if(abstractde)$
+\addchap*{Zusammenfassung}
+$abstractde$
 $endif$
 
 $for(include-before)$

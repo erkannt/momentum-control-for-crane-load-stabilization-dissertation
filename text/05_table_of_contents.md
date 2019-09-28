@@ -4,6 +4,8 @@
 
 \newpage
 
+\listoffigures
+
 \cleardoublepage
 
 \pagenumbering{arabic}
