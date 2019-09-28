@@ -33,9 +33,9 @@ In @fig:3D-projected-large-exitation it can be seen that the motion remains in t
 It should be noted that the movement is not identical to that of the 2D model, due to the fact that minuscule numerical errors lead to noticeable changes in a chaotic system such as a double pendulum (see discussion in appendix @sec:2d-pointmass-eom).
 This is also most probably the reason that once the plane of excitation is rotated (@Fig:3D-projected-large-exitation-diagonal), the motion breaks out of the plane at some point.
 
-![Large excitation of double pendulum modeled with equations of motion derived using projected angles. From left to right: front, side and top view. Note how the path begins to differ strongly when compared to the simulation using the 2D model. This is a prime example of how minor changes can cause large differences in chaotic systems such as a double pendulum.](figures/double_pendulum_3d_large_exitation.gif){ #fig:3d-projected-large-exitation }
+![Large excitation of double pendulum modeled with equations of motion derived using projected angles. From left to right: front, side and top view. Note how the path begins to differ strongly when compared to the simulation using the 2D model. This is a prime example of how minor changes can cause large differences in chaotic systems such as a double pendulum.](figures/double_pendulum_3d_large_exitation.gif){ #fig:3D-projected-large-exitation }
 
-![Large out of plane excitation of the same pendulum. From left to right: front, side and top view. Note how the small inaccuracies cause motion outside of the original plane of excitation. These deviations quickly become chaotic for larger excitations.](figures/double_pendulum_3d_Large_Exitation-diagonal.gif){ #fig:3d-projected-large-exitation-diagonal }
+![Large out of plane excitation of the same pendulum. From left to right: front, side and top view. Note how the small inaccuracies cause motion outside of the original plane of excitation. These deviations quickly become chaotic for larger excitations.](figures/double_pendulum_3d_Large_Exitation-diagonal.gif){ #fig:3D-projected-large-exitation-diagonal }
 
 In the case of the 3D model with distributed mass, another effect occurs.
 In @Fig:distmass-sim-gh the pendulum was given a 2D excitation but the mass was also given an angular velocity around the axis of suspension.

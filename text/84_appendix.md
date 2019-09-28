@@ -70,7 +70,7 @@ Note that these equations do not limit the torque dynamics.
 ```{.python include=code/dp-2d-distmass-limited-momentum.py}
 ```
 
-## 3D Point Mass Double Pendulum { #sec:3d-pointmass-eom}
+## 3D Point Mass Double Pendulum { #sec:3D-pointmass-eom}
 
 ```{.python include=code/double-pendulum-3d-simulation.py}
 ```
@@ -87,7 +87,7 @@ Note that these equations do not limit the torque dynamics.
 
 ![Large exitation of double pendulum modelled with equations of motion derived using spherical coordinates. From left to right: front, side and top view. Note how the issues of spherical coordinates cause disturbances that quickly lead to chaotic out of plane motion.](figures/double_pendulum_3d_large_exitation_spherical.gif){ #fig:3d-spherical-large-exitation }
 
-![Comparison of 2D and 3D double point mass pendulum given a large 2D exitation. Note how they are identical until for roughly the first five seconds and then begin to strongly deviate as the 3D pendulum begins to leave the plane of exitation. This is due to the issues discussed in @Sec:3d-pendulum and illustrated in @Fig:3d-model-angle-issues.](figures/2d-3d-comparison-large-exitation-spherical-coords.svg){ #fig:2d-3d-comparison-large-exitation-spherical }
+![Comparison of 2D and 3D double point mass pendulum given a large 2D exitation. Note how they are identical until for roughly the first five seconds and then begin to strongly deviate as the 3D pendulum begins to leave the plane of exitation. This is due to the issues discussed in @Sec:3d-pendulum and illustrated in @Fig:3d-model-angle-issues.](figures/2d-3d-comparison-large-exitation-spherical-coords.svg){ #fig:2D-3D-comparison-large-excitation-spherical}
 
 ### Projected Angles
 
@@ -97,9 +97,9 @@ Note that these equations do not limit the torque dynamics.
 ```{.txt include=code/double-pendulum-3d-pointmass.txt}
 ```
 
-![3D double pendulum using projected angles under small 2D exitation. Note how we no longer have the jumps in the second angle observerd in the simulations using spherical coordinates. The motion remains entirely in the XZ-plane. Note that this is no longer the case when the planar exitation lies in a plane outside of the XZ- or YZ-plane (see @Fig:3d-projected-large-exitation-diagonal).](./figures/3d-model-angle-issues-solution.svg){ #fig:3d-model-angle-issues-solution }
+![3D double pendulum using projected angles under small 2D exitation. Note how we no longer have the jumps in the second angle observerd in the simulations using spherical coordinates. The motion remains entirely in the XZ-plane. Note that this is no longer the case when the planar exitation lies in a plane outside of the XZ- or YZ-plane (see @Fig:3D-projected-large-exitation-diagonal).](./figures/3d-model-angle-issues-solution.svg){ #fig:3D-model-angle-issues-solution }
 
-![Comparison of 2D and 3D model (projected angles) of double pendulum with small planar exitation. Note the stark decrease in difference and lack of dampening when compared with the spherical coordinate model.](figures/2d-3d-comparison-small-exitation.svg){ #fig:2d-3d-comparison-small-exitation }
+![Comparison of 2D and 3D model (projected angles) of double pendulum with small planar exitation. Note the stark decrease in difference and lack of dampening when compared with the spherical coordinate model.](figures/2d-3d-comparison-small-exitation.svg){ #fig:2D-3D-comparison-small-excitation }
 
 ## 3D Distributed Mass Pendulum{ #sec:distributed-mass-eom }
 
