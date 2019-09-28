@@ -41,7 +41,7 @@ This is a lovely example of numerical inaccuracy in computers and also how minim
 
 ![Validation of the equations of motion generated using the above SymPy code against those taken from [@HillLearningScientificProgramming2016]. Note how symbolically equal equations can lead to different result due to numerical inaccuracies in computers.](figures/cas-lit-comparison.svg){ #fig:cas-lit-comparison }
 
-### 2d Point Mass and Distributed Mass { #sec:2d-distmass-eom }
+### 2D Point Mass and Distributed Mass { #sec:2d-distmass-eom }
 
 The following code derives the equations of motion for a double pendulum where the second pendulum is a distributed mass.
 Note that this assumes that the rotational inertia `I2` is provided relative to the axis of rotation lying in `m1`.
@@ -52,7 +52,7 @@ Note that this assumes that the rotational inertia `I2` is provided relative to 
 ```{.txt include=code/double_pendulum-2d-distmass-eom.txt}
 ```
 
-### 2d Double Pendulum with Controller { #sec:2d-dp-wcontroller }
+### 2D Double Pendulum with Controller { #sec:2d-dp-wcontroller }
 
 The following code extends the python simulation to include the PD$\alpha$ controller by including it in the equations of motion.
 It also allows for the visualization of the load as a moving and rotating box.
@@ -61,7 +61,7 @@ The code was also cleaned up in comparison to the other simulation code.
 ```{.python include=code/dp-2d-distmass-controller.py}
 ```
 
-### 2d Double Pendulum with Controller and Momentum Limit{ #sec:2d-dp-wcontroller-limit }
+### 2D Double Pendulum with Controller and Momentum Limit{ #sec:2d-dp-wcontroller-limit }
 
 The following is a crude extension of the equations of motion to include a momentum envelope limit.
 This is useful for simulating the effect of different sized CMGs on dampening.
