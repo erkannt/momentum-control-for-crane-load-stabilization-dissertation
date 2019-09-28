@@ -207,6 +207,7 @@ $header-includes$
 $endfor$
 
 \begin{document}
+\pagenumbering{gobble}
 $if(title)$
 \maketitle
 $endif$
@@ -223,23 +224,17 @@ $for(include-before)$
 $include-before$
 
 $endfor$
-$if(toc)$
-\cleardoubleoddpage
-{
-\hypersetup{linkcolor=black}
-\setcounter{tocdepth}{$toc-depth$}
+
+\cleardoublepage
 \tableofcontents
-}
-$endif$
-$if(lot)$
-\cleardoubleoddpage
-\listoftables
-$endif$
-$if(lof)$
-\cleardoubleoddpage
+\newpage
+\cleardoublepage
 \listoffigures
-$endif$
+\cleardoublepage
+\pagenumbering{arabic}
+\setcounter{page}{1}
 \cleardoubleoddpage
+
 $body$
 
 $if(natbib)$

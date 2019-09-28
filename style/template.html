@@ -174,18 +174,18 @@
             $lot$
         </div>
         $endif$
-        <p>
-            $if(abstract)$
-            $abstract$
-            $endif$
-        </p>
-        <p>
-            <em>
-                $if(abstractde)$
+        $if(abstract)$
+            <h1 class="unnumbered">Abstract</h1>
+            <p>
+                $abstract$
+            </p>
+        $endif$
+        $if(abstractde)$
+            <h1 class="unnumbered">Zusammenfassung</h1>
+            <p>
                 $abstractde$
-                $endif$
-            </em>
-        </p>
+            </p>
+        $endif$
         $body$
         $for(include-after)$
         $include-after$
