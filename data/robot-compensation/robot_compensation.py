@@ -27,6 +27,7 @@ def output_figure(output):
 def fmt_axcol(axs):
     for ax in axs:
         ax.grid(axis="y")
+        ax.set_ylabel("X Pos [m]")
     for ax in axs[0:-1]:
         ax.get_xaxis().set_visible(False)
         ax.spines["bottom"].set_visible(False)
@@ -60,8 +61,8 @@ for i, (ax, data, title) in enumerate(zip(axs, [no_comp_data, with_comp_data], t
     time = data['time']
     x_target = data['tool_pos_fixed_robot_X']
     x_sim = data['tool_pos_pendulum_robot_X']
-    ax.plot(time, x_target, '--', linewidth='0.85', color='C1', label=r'Target Pos')
-    ax.plot(time, x_sim, linewidth='0.85', color='C0', label=r'$Actual Pos$')
+    ax.plot(time, x_target, '--', linewidth='0.85', color='C1', label=r'Fixed Robot')
+    ax.plot(time, x_sim, linewidth='0.85', color='C0', label=r'Attached to Pendulum')
     ax.set_title(title, loc='left', pad=0)
 
 fmt_axcol(axs)

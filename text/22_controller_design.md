@@ -1,5 +1,5 @@
 
-# Controller Design
+# Controller Design { #sec:controller-design }
 
 To design a control system for this crane-CMG robot system, first the flow of information will be described for the three application scenarios previously mentioned.
 By understanding the interdependencies of the systems an integrated control approach can be created.

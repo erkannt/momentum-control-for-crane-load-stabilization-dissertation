@@ -219,24 +219,38 @@ So, for example, the force needed to press a drill into a wall is not included.
 
 ## Simulated Process Compensation { #sec:robot-comp}
 
+To ascertain the principle feasibility of stabilizing a robot with CMGs the robot model is attached to the pendulum-SPCMG model.
+The base frame of the robot model is attached to the frame in the center of the SPCMG platform so that it moves with the platform.
+A second copy of the robot model is placed in the same position, but with its base fixed in space.
+The torques simulated at the base of this latter robot model are fed into the equations of motion of the double pendulum.
+They therefore act in addition to any torques produced by the CMGs.
+The same robot torque values are also fed into the control loop for the CMGs as described in the previous section on controller design (@Sec:controller-design).
+As such a simulation does not include any external forces, it should ideally lead to the CMGs perfectly compensating the torques produced by the robot and lead to a static platform.
+
 ![Simulation a robot hanging from the SPCMP platform. The left shows how robot deviates from the desired path (transparent red robot) as its motion causes the pendulum to swing. The right shows the active compensation by the SPCMGs. Their torque output is informed by a simulated robot model in addition to the pendulum angles. Note how the limited acceleration of the gimbals prohibits the CMGs from perfectly compensating the robot.](./figures/robot_comp.gif){#fig:robot-comp-animation}
 
-![Comparison of the robot's endeffector position while hanging from the pendulum with the programmed target value.](./figures/robot_compensation.svg){#fig:robot-comp-plot}
+![Comparison of the robot's endeffector position while hanging from the pendulum with the programmed target value for simulations with and without compensation by the CMGs.](./figures/robot_compensation.svg){#fig:robot-comp-plot}
 
-Depending on the settings for the gyroscopes' speed and the gimbals' maximum acceleration, the SPCMG is able to perfectly match the torques acting at the robot’s base as well as the torque on the lower link stemming from the forces acting at the base.
-Given the inaccuracies of the model, signal as well as processing delays and inaccuracies of any physical setup, perfect compensation is unattainable.
-The imperfections in the torque compensation act in addition to the torques and forces that cannot be directly compensated by the CMGs.
-In the above simulation this is limited to the torques acting on the upper link stemming from forces acting on the lower link.
-In reality there would also be e.g. wind and gantry motions.
-The resulting oscillations are addressed by the dampening controller.
+The @Fig:robot-comp-animation and @Fig:robot-comp-plot illustrate the impact of the CMG stabilization on the robot's path accuracy.
+In the animation the fixed robot is displayed as a transparent red overlay.
+It can be seen that the CMG stabilization significantly improves the accuracy of the robot, but does not succeed in maintaining perfect stability.
+This is due to the limited gimbal acceleration, which prohibits the CMGs from perfectly following sharp accelerations of the robot arm.
+Nevertheless, the dampening controller is able to successfully re-stabilize the platform in short order.
 
-Given that it will never be possible to maintain perfect platform stability with the CMGs, additional compensation mechanisms for processes should be considered.
-Aside from adding thrusters to create compensating forces, the process path accuracy might be able to be improved by using the robot or other kinematic system to compensate the error.
+A further challenge to CMG stabilization of the robot's motion can also be seen in the above simulations.
+As soon as the robot arm moves its center of mass out from under the center of mass of the pendulum, the CMGs have to constantly rotate to produce the necessary torque to compensate this.
+Even in the relatively short path simulated here the CMGs move close to their singularity, where they would no longer be able to produce the torque necessary to maintain the stable position.
+
+These simulations therefore aptly illustrate both the potential of CMG stabilization for robot motion as well as its challenges.
+Robot stabilization necessitates careful matching of robot trajectories to the gimbal agility and momentum envelope of the CMGs.
+For instance, in the case above, path optimization could reduce the acceleration spikes in the robot's movement, thereby improving the path accuracy without requiring stronger gimbal motors.
+Likewise, by moving the robot arm to the left side between targets the CMGs would be moved away from the singularity, thereby providing greater momentum workspace for subsequent operations.
+
+Limited gimbal acceleration, forces from the robot and other external sources as well as sensor and model inaccuracies will ensure that perfect stability will never be attainable.
+Additional compensation mechanisms for processes should therefore be considered.
+Aside from adding thrusters to create compensating forces, the process path accuracy might be able to be improved by using the robot or other kinematic systems to compensate the error.
 This would take careful control engineering so as not to exacerbate the error by introducing further forces and highly dynamic torques.
-Given the availability of the crane and robot model, it could become possible to create a predictive controller that compensates the pendulum motion in coordination with the dampening control of the CMGs or even the crane.
-
-Note that the forces and torques at the base of the robot stem from a simulation of a fixed robot.
-The effect of the oscillating base and hence changing robot orientation is not considered in the above experiments.
+Given the availability of the crane and robot model, it could be possible to create a predictive controller that compensates the pendulum motion in coordination with the dampening control of the CMGs or even the crane.
 
 ## Hardware Experiments
 
