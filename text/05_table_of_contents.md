@@ -4,7 +4,6 @@
 
 \newpage
 
-\listoftodos
 \cleardoublepage
 
 \pagenumbering{arabic}

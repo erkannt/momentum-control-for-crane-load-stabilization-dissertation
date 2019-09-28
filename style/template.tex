@@ -178,13 +178,30 @@ $if(lang)$
 \fi
 $endif$
 
+% === Titlepage
 $if(title)$
 \title{$title$$if(subtitle)$\\\vspace{0.5em}{\large $subtitle$}$endif$}
 $endif$
-$if(author)$
-\author{$for(author)$$author$$sep$ \and $endfor$}
+$if(facultyblurb)$
+\subject{\textnormal{\textsc{Dissertation}}}
+\author{\parbox{\textwidth}{\normalsize\centering
+  { $facultyblurb$ }}}
 $endif$
 \date{$date$}
+\publishers{\normalsize%
+  $if(facultyblurb)$
+  vorgelegt von\\
+  $endif$
+  {\Large \textsc{$author$}\\[.5ex]}
+  $if(born)$
+  aus $born$\\
+  $endif$
+%  \vskip 4mm
+%  \textsc{Berichter:}\\
+%  Prof. Dr. Andreas Offenhäusser\\
+%  Prof. Dr. Jörg Fitter \\
+  }
+  
 $for(header-includes)$
 $header-includes$
 $endfor$
