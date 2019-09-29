@@ -235,6 +235,9 @@ $(build)/figures/%.png: %.mp4 | $(build)/figures
 $(build)/figures/%.gif: %.mp4 | $(build)/figures
 	gifify $< --resize '800:-1' -o $@
 
+$(build)/figures/robot_comp.gif: robot_comp.mp4 | $(build)/figures
+	gifify $< --resize '800:-1' --fps 30 --colors 160 -o $@
+
 clean-all:
 	rm -r $(build)
 
