@@ -156,7 +156,7 @@ While most of these lie outside the scope of this work, there are a few consider
 
 One of these is how to move the dampening controller from 2D to 3D.
 While the principle control approach will most likely hold true for the 3D case, the question arises as to the target and calculation of the error.
-For the 2D case the target and error are simply $\theta_{i} = 0$ and $-\theta_{i}$, respectively.
+For the 2D case the target and error are simply $\theta_{i} = 0$ and $-$$\theta_{i}$, respectively.
 In the 3D case there is the reference frame/coordinate system at the center of mass of the payload which is also the reference frame for the CMG's torque.
 Given the current reference frame as determined by the sensors and a target reference frame (and maybe rotational velocities at that frame), it is necessary to find a measure of the error between the two and how to process them in the controller.
 
