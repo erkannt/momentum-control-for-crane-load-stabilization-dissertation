@@ -53,8 +53,14 @@ pandoc-epub-flags = --verbose \
 	--number-sections \
 	--metadata date="`date "+%B %e, %Y"`" \
 	--mathjax \
+	--epub-cover-image cover.jpeg \
 	--csl="$(stylefolder)/ref_format.csl"
-
+ghostscript-flags: = -sDEVICE=pdfwrite \
+  -dCompatibilityLevel=1.4 \
+  -dPDFSETTINGS=/printer \
+	-dNOPAUSE \
+	-dQUIET \
+	-dBATCH
 # Where make looks for source files
 VPATH := $(wildcard data/*):figures:text
 
@@ -96,7 +102,7 @@ gifaspng := $(mov_names:%=$(build)/figures/%.png)
 # High-Level Targets
 main: html pdf standalone
 
-all: html pdf standalone epub mobi
+all: html pdf standalone epub mobi zip
 
 html: html-figures $(build)/$(name).html | $(build)
 
@@ -109,6 +115,8 @@ epub: pdf-figures html-figures code4epub $(build)/$(name).epub | $(build)
 mobi: $(build)/$(name).mobi| $(build)
 
 standalone: $(build)/$(name).standalone.html | html
+
+zip: $(build)/$(name).zip
 
 html-figures: $(plots_pdf) $(plots_svg) $(sketches_png) $(tikz_png) $(gif) $(static) | $(build)/figures
 
@@ -135,8 +143,16 @@ $(build)/text4tex/%.md: %.md | $(build)/text
 	$(SED) 's/\.svg/\.pdf/g' $@
 	$(SED) 's/\.gif/\.png/g' $@
 
+# ZIP of all
+$(build)/$(name).zip: html pdf standalone epub mobi
+	cd $(build) && \
+	cp $(name).pdf $(name).orig.pdf && \
+	gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/printer -dNOPAUSE -dQUIET -dBATCH -sOutputFile=$(name).pdf $(name).orig.pdf && \
+	zip -r $(name).zip $(name).pdf $(name).standalone.html $(name).epub $(name).mobi
+
 # eBook Targets
 $(build)/$(name).epub: $(text4epub) $(ref-style) | $(build)
+	cp cover.jpeg $(build)/cover.jpeg && \
 	cd $(build) && \
 	$(PANDOC) text4epub/*.md -o $(notdir $@) $(pandoc-epub-flags)
 
