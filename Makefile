@@ -55,7 +55,7 @@ pandoc-epub-flags = --verbose \
 	--mathjax \
 	--epub-cover-image cover.jpeg \
 	--csl="$(stylefolder)/ref_format.csl"
-ghostscript-flags: = -sDEVICE=pdfwrite \
+ghostscript-flags = -sDEVICE=pdfwrite \
   -dCompatibilityLevel=1.4 \
   -dPDFSETTINGS=/printer \
 	-dNOPAUSE \
