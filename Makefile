@@ -211,7 +211,7 @@ $(build)/figures/%.svg: %.svg | $(build)/figures
 	cp $< $@
 
 $(build)/figures/%.pdf: %.svg | $(build)/figures
-	convert $< -resize 1200x1200\< $@
+	rsvg-convert --zoom=3.0 -f pdf -o $@ $<
 
 code4epub:
 	cp -r code $(build)/code
