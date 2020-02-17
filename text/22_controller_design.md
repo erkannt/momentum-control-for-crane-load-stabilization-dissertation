@@ -84,7 +84,7 @@ This of course is particularly well suited to cranes that perform programmed mot
 
 Given the flexible connection (ropes) between actuators (winches) and end effector (the hook), lack of sensors and inherent flex of the crane’s structure, they make for interesting control engineering problems.
 The review by Abdehl-Rahman et al. [@Abdel-RahmanDynamicsControlCranes2003] is a good starting point into the literature.
-One can find work focussed on improving the control of cranes without a feedback loop such as that by Singhose, Kim and colleagues [@SinghoseManipulationTowerCranes2007, @SinghoseInputShapingControl2008, @VaughanControlTowerCranes2010] who also evaluated the improved performance of operators using such systems [@KimPerformanceStudiesHuman2010].
+One can find work focussed on improving the control of cranes without a feedback loop such as that by Singhose, Kim and colleagues [@SinghoseManipulationTowerCranes2007; @SinghoseInputShapingControl2008; @VaughanControlTowerCranes2010] who also evaluated the improved performance of operators using such systems [@KimPerformanceStudiesHuman2010].
 Others have extended input shaping methods to make them more robust towards parameter changes and disturbances [@AbdullahiAdaptiveOutputbasedCommand2018].
 
 Once the crane and its payload are modeled as a double pendulum, the problems become even more interesting, as it becomes highly underactuated.
