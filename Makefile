@@ -79,7 +79,6 @@ ref-style = $(stylefolder)/ref_format.csl
 # Target collections
 text4tex := $(addprefix $(build)/text4tex/, $(notdir $(text)))
 text4epub := $(addprefix $(build)/text4epub/, $(notdir $(text)))
-text4mobi := $(addprefix $(build)/text4mobi/, $(notdir $(text)))
 static := $(images:%=$(build)/%) $(mov:%=$(build)/%)
 svgaspdf := $(static:.svg=.pdf)
 
@@ -102,17 +101,15 @@ gifaspng := $(mov_names:%=$(build)/figures/%.png)
 # High-Level Targets
 main: html pdf standalone
 
-all: html pdf standalone epub mobi zip
+all: html pdf standalone epub zip
 
 html: html-figures $(build)/$(name).html | $(build)
 
 pdf: pdf-figures $(build)/$(name).pdf | $(build)
 
-ebook: epub mobi
+ebook: epub
 
 epub: pdf-figures html-figures code4epub $(build)/$(name).epub | $(build)
-
-mobi: $(build)/$(name).mobi| $(build)
 
 standalone: $(build)/$(name).standalone.html | html
 
@@ -144,11 +141,11 @@ $(build)/text4tex/%.md: %.md | $(build)/text
 	$(SED) 's/\.gif/\.png/g' $@
 
 # ZIP of all
-$(build)/$(name).zip: html pdf standalone epub mobi
+$(build)/$(name).zip: html pdf standalone epub
 	cd $(build) && \
 	cp $(name).pdf $(name).orig.pdf && \
 	gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/printer -dNOPAUSE -dQUIET -dBATCH -sOutputFile=$(name).pdf $(name).orig.pdf && \
-	zip -r $(name).zip $(name).pdf $(name).standalone.html $(name).epub $(name).mobi
+	zip -r $(name).zip $(name).pdf $(name).standalone.html $(name).epub
 
 # eBook Targets
 $(build)/$(name).epub: $(text4epub) $(ref-style) | $(build)
@@ -156,23 +153,9 @@ $(build)/$(name).epub: $(text4epub) $(ref-style) | $(build)
 	cd $(build) && \
 	$(PANDOC) text4epub/*.md -o $(notdir $@) $(pandoc-epub-flags)
 
-$(build)/$(name).mobi: $(text4mobi) $(ref-style) | $(build)
-	cd $(build) && \
-	$(PANDOC) text4mobi/*.md -o $(name)4mobi.epub $(pandoc-epub-flags) --filter pandoc-tex2svg && \
-	ebook-convert $(name)4mobi.epub $(name).mobi && \
-	rm $(name)4mobi.epub
-
 $(build)/text4epub/%.md: %.md | $(build)/text
 	cp $< $@
 	$(SED) 's/\.gif/\.png/g' $@
-
-$(build)/text4mobi/%.md: %.md | $(build)/text
-	cp $< $@
-	$(SED) 's/\.gif/\.png/g' $@
-	$(SED) 's/\\begin{align}/$$\\begin{align}/g' $@
-	$(SED) 's/\\end{align}/\\end{align}$$/g' $@
-	$(SED) 's/\\begin{eqnarray}/$$\\begin{eqnarray}/g' $@
-	$(SED) 's/\\end{eqnarray}/\\end{eqnarray}$$/g' $@
 
 # Required folders
 $(build):
@@ -185,7 +168,6 @@ $(build)/text:
 	mkdir -p $(build)/text
 	mkdir -p $(build)/text4tex
 	mkdir -p $(build)/text4epub
-	mkdir -p $(build)/text4mobi
 
 # Convert pdf plots to svg as matplotlib borks tex symbols in svg
 $(build)/figures/%.svg: $(build)/figures/%.pdf | $(build)/figures
