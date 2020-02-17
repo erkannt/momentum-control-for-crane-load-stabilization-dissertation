@@ -9,13 +9,15 @@ RUN cabal update \
     pandoc-citeproc \
     pandoc-include-code
 
+FROM golang AS singlepage-build
+RUN go get arp242.net/singlepage
 
 FROM debian:10-slim
-RUN apt-get update && apt-get install -y \
-  git \
+RUN apt-get update && apt-get install -y --no-install-recommends \
+  curl \
   dh-autoreconf \
   python3-pip \
-  golang-go \
+  python3-setuptools \
   imagemagick \
   ffmpeg \
   pdf2svg \
@@ -23,7 +25,7 @@ RUN apt-get update && apt-get install -y \
   sketch \
   && apt-get autoremove && apt-get autoclean \
   && rm -rf /var/lib/apt/lists/*
-RUN go get arp242.net/singlepage
+
 RUN pip3 install --no-cache-dir \
   scipy \
   matplotlib \
@@ -39,21 +41,28 @@ RUN cd /tmp \
   && make install
 
 RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
-RUN apt-get install -y nodejs
+RUN apt-get install -y --no-install-recommends nodejs
 RUN npm install -g gifify
 
 COPY ImageMagick-policy.xml /etc/ImageMagick-6/policy.xml
 
 RUN apt-get install -y \
-  texlive-full
-
-COPY --from=pandoc-build /root/.cabal/bin /root/.cabal/bin
-COPY --from=pandoc-build /root/.cabal/share /root/.cabal/share
-ENV PATH="/root/go/bin:/root/.cabal/bin:${PATH}"
-
+  texlive-fonts-recommended \
+  texlive-latex-extra \
+  texlive-lang-korean \
+  texlive-science \
+  texlive-extra-utils \
+  texlive-base \
+  && apt-get autoremove && apt-get autoclean \
+  && rm -rf /var/lib/apt/lists/*
 # latexrun can't handle linebreaks in latex output
 ENV max_print_line=1000
 ENV error_line=254
 ENV half_error_line=238
+
+COPY --from=pandoc-build /root/.cabal/bin /root/.cabal/bin
+COPY --from=pandoc-build /root/.cabal/share /root/.cabal/share
+COPY --from=singlepage-build /go/bin/singlepage /usr/local/bin/singlepage
+ENV PATH="/root/.cabal/bin:${PATH}"
 
 WORKDIR /src
