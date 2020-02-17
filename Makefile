@@ -101,7 +101,7 @@ gifaspng := $(mov_names:%=$(build)/figures/%.png)
 # High-Level Targets
 main: html pdf standalone
 
-all: html pdf standalone epub zip
+all: html pdf standalone epub bigzip
 
 html: html-figures $(build)/$(name).html | $(build)
 
@@ -114,6 +114,8 @@ epub: pdf-figures html-figures code4epub $(build)/$(name).epub | $(build)
 standalone: $(build)/$(name).standalone.html | html
 
 zip: $(build)/$(name).zip
+
+bigzip: $(build)/$(name).zip
 
 html-figures: $(plots_pdf) $(plots_svg) $(sketches_png) $(tikz_png) $(gif) $(static) | $(build)/figures
 
@@ -145,7 +147,7 @@ $(build)/$(name).zip: html pdf standalone epub
 	cd $(build) && \
 	cp $(name).pdf $(name).orig.pdf && \
 	gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/printer -dNOPAUSE -dQUIET -dBATCH -sOutputFile=$(name).pdf $(name).orig.pdf && \
-	zip -r $(name).zip $(name).pdf $(name).standalone.html $(name).epub
+	zip -r $(name).zip $(name).pdf $(name).standalone.html $(name).epub $(name).html figures
 
 # eBook Targets
 $(build)/$(name).epub: $(text4epub) $(ref-style) | $(build)
