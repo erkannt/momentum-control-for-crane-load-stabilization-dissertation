@@ -3,8 +3,7 @@
 
 This work was made possible, supported and accompanied by many great people.
 
-A massive thank you to Sigrid for giving me this bizarre and wonderfully challenging project, for setting the bar high and trusting in me.
-You gave me incredible opportunities and room to learn and grow.
+A massive thank you to Prof. Dr. Brell-Cokcan for giving me this bizarre and wonderfully challenging project, for setting the bar high and trusting in me.
 
 Thank you to all of my fellow researchers, colleagues and student assistants at our chair. Amazing amounts of talent and ideas -- it was inspiring to work with you all.
 In particular I want to thank Elisa and Sven for being there through thick and thin.
