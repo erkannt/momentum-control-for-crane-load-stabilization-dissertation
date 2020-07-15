@@ -12,7 +12,8 @@ RUN cabal update \
     pandoc-include-code-1.5.0.0
 
 FROM golang AS singlepage-build
-RUN go get arp242.net/singlepage
+RUN git clone https://github.com/arp242/singlepage.git
+RUN cd singlepage && go build -o /go/bin/singlepage
 
 FROM debian:10-slim
 RUN apt-get update && apt-get install -y --no-install-recommends \
