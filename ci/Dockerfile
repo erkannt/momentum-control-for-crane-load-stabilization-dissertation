@@ -1,13 +1,15 @@
 FROM debian:10-slim AS pandoc-build
 RUN apt-get update && apt-get install -y \
   cabal-install \
+  libghc-regex-pcre-dev \
+  libexpat1-dev \
   libghc-zlib-dev
 RUN cabal update \
   && cabal install -j4 \
-    pandoc \
-    pandoc-crossref \
-    pandoc-citeproc \
-    pandoc-include-code
+    pandoc-2.9.2.1 \
+    pandoc-crossref-0.3.6.4 \
+    pandoc-citeproc-0.17.0.1 \
+    pandoc-include-code-1.5.0.0
 
 FROM golang AS singlepage-build
 RUN go get arp242.net/singlepage
