@@ -26,6 +26,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   pdf2svg \
   librsvg2-bin \
   sketch \
+  dvipng \
   && apt-get autoremove && apt-get autoclean \
   && rm -rf /var/lib/apt/lists/*
 
@@ -56,6 +57,7 @@ RUN apt-get install -y \
   texlive-science \
   texlive-extra-utils \
   texlive-base \
+  cm-super \
   && apt-get autoremove && apt-get autoclean \
   && rm -rf /var/lib/apt/lists/*
 # latexrun can't handle linebreaks in latex output
