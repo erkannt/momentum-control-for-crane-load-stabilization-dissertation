@@ -1,10 +1,10 @@
 # OS specific sed
 UNAME := $(shell uname)
 ifeq ($(UNAME), Linux)
-SED=sed -i 
+SED=sed -i
 endif
 ifeq ($(UNAME), Darwin)
-SED=sed -i "" 
+SED=sed -i ""
 endif
 
 # Required executables
@@ -163,10 +163,10 @@ $(build)/text4epub/%.md: %.md | $(build)/text
 $(build):
 	mkdir -p $(build)
 
-$(build)/figures: 
+$(build)/figures:
 	mkdir -p $(build)/figures
 
-$(build)/text: 
+$(build)/text:
 	mkdir -p $(build)/text
 	mkdir -p $(build)/text4tex
 	mkdir -p $(build)/text4epub
@@ -226,11 +226,8 @@ $(build)/figures/%.png: %.pdf | $(build)/figures
 	convert -flatten -density 300 -define profile:skip=ICC $< -quality 90 $@
 
 $(build)/figures/%.png: %.mp4 | $(build)/figures
-	ffmpeg -y -ss 00:00:00 -i $< -vframes 1 -q:v 2 -vf scale=1024:-2 $@ && \
-	width=`identify -format %w $@`; \
-  convert -background Orange -fill Black -gravity center -size `identify -format %w $@`x60 \
-          caption:'This should be a video. Please see HTML-version of this document.' \
-          $@ +swap -gravity south -composite  $@
+	ffmpeg -y -ss 00:00:00 -i $< -vframes 1 -q:v 2 -vf scale=1024:-2 $@
+	convert $@ -gravity south -undercolor black -fill white -font Lato-Regular -pointsize 18 -annotate +0+0 "This should be a video. Please see HTML-version of this document." $@
 
 $(build)/figures/%.gif: %.mp4 | $(build)/figures
 	gifify $< --resize '800:-1' -o $@
