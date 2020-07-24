@@ -2,10 +2,10 @@
   kind: pipeline
   type: docker
   name: default
-  
+
   steps:
   - name: build
-    image: rknt/dissertation_builder
+    image: rknt/dissertation_builder:0.4
     commands:
     - make all
   
@@ -14,4 +14,3 @@
     commands:
       - npm install -g link-checker
       - link-checker _build/diss-haarhoff.html --url-ignore='http://www.arcas-project.eu'
-  
