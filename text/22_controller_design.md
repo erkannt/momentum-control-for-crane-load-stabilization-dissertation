@@ -13,7 +13,7 @@ These are the three applications in ascending order of control complexity:
 2. dampening
 3. process compensation
 
-![Control flow for part rotation](./figures/rotation-controller.png){ #fig:rotation-controller }
+![Control flow for part rotation](./figures/rotation-controller.png){ #fig:rotation-controller short-caption="Control flow for part rotation"}
 
 In @Fig:rotation-controller there is a simple control loop for rotating a part with the CMGs, assuming that the crane is standing still.
 The desired state is a certain rotational position around the yaw-axis of the platform/load.
@@ -28,7 +28,7 @@ As also pointed out in [@LeeAnalysisFieldApplicability2012], the inertia of the 
 Therefore this control loop utilizes acquired knowledge regarding the torque output of the CMGs and the measured rotational acceleration to estimate the inertia of the part.
 This should improve the performance of the controller when used for programmed rotations but also ensure a consistent remote control experience for the operator, as their speed control will be similar, regardless of the part being handled.
 
-![Control flow for pendulum dampening as well as rotation of parts.](./figures/dampening-controller.png){ #fig:dampening-controller width=100% }
+![Control flow for pendulum dampening as well as rotation of parts.](./figures/dampening-controller.png){ #fig:dampening-controller width=100% short-caption="Control flow for dampening and part rotation"}
 
 If one no longer assumes that the crane is standing still, the next matter to consider is dampening control loop (@Fig:dampening-controller).
 This loop is actually nearly identical to the rotation control loop, the only difference being that the desired state of the pendulum ($P_W$) is extended so that all angles are zero, except for $\theta_{23}$, which is set to the desired rotation of the part.
@@ -39,7 +39,7 @@ It will be seen in the experiments performed with the physical prototype that se
 
 As the rotational inertia previously mentioned also scales the impact of our CMG torques during dampening, it becomes clear that an estimation of the rotational inertia is beneficial to any dampening control.
 
-![Control flow for the compensation of process torques](./figures/process-controller.png){ #fig:process-controller }
+![Control flow for the compensation of process torques](./figures/process-controller.png){ #fig:process-controller short-caption="Control flow for process torque compensation"}
 
 Finally @Fig:process-controller shows the more complex flow of information for the compensation of process torques.
 At its base lies the dampening/rotation controller, which is needed to dampen any oscillations that result from torques and forces that the CMG was not able to compensate.
@@ -80,7 +80,7 @@ Control of cranes has been a long-running endeavor, which is obvious from the am
 Given the price and complexity of sensors capable of tracking the position of a hook, these mostly use predetermined actuation paths to reduce the creation of oscillations.
 This of course is particularly well suited to cranes that perform programmed motions, but can also benefit manual control of cranes.
 
-![Sway control in a gantry crane by SWF [@SWFKrantechnikGmbHSWFKrantechnikLastpendeldampfung2012].](./figures/swaycontrol-swf.gif){ #fig:swaycontrol-swf }
+![Sway control in a gantry crane by SWF [@SWFKrantechnikGmbHSWFKrantechnikLastpendeldampfung2012].](./figures/swaycontrol-swf.gif){ #fig:swaycontrol-swf short-caption="Commercial sway control of gantry crane"}
 
 Given the flexible connection (ropes) between actuators (winches) and end effector (the hook), lack of sensors and inherent flex of the crane’s structure, they make for interesting control engineering problems.
 The review by Abdehl-Rahman et al. [@Abdel-RahmanDynamicsControlCranes2003] is a good starting point into the literature.
@@ -104,7 +104,7 @@ The authors have subsequently also published a comparative study of several cont
 
 [^predatory]: This paper appears to be a reworked conference proceeding [@LeeEnergyBasedApproachController2013]. Both the proceedings and paper are published by predatory publishers. The peer review of the work might therefore be of questionable quality. Nevertheless the work is valid and useful.
 
-![Illustration of the underactuation of a crane. Modeled as a double pendulum of a point mass and distributed mass, adjustable rope length and a suspension point movable in a plane, the crane has eight degrees of freedom. Conventionally there are only three actors to control this. By adding the CMGs the underactuation is drastically reduced.](./figures/crane-8dof.png){ #fig:crane-8dof }
+![Illustration of the underactuation of a crane. Modeled as a double pendulum of a point mass and distributed mass, adjustable rope length and a suspension point movable in a plane, the crane has eight degrees of freedom. Conventionally there are only three actors to control this. By adding the CMGs the underactuation is drastically reduced.](./figures/crane-8dof.png){ #fig:crane-8dof short-caption="Illustration of underaction in cranes"}
 
 ## Dampening Controller { #sec:dampening-controller }
 
@@ -120,9 +120,9 @@ E = \theta_2 + \alpha \theta_1
 
 The efficacy of this approach can be seen in @Fig:controller-comparison-animation and @Fig:controller-comparison-plot where an uncontrolled system, proportional control, PD-control and PD$\alpha$-control that is informed by the state of both the upper and lower link are compared.
 
-![Comparison of various control regimes for a double pendulum with a control torque applied to its lower link. From left to right: a) no control torque b) $k_P  = 10, k_D = 0$ c) $k_P = 1, k_D = 4$ d) $k_P = 1, k_D = 4, \alpha = 0.5$](./figures/controller-comparison-animation.gif){ #fig:controller-comparison-animation }
+![Comparison of various control regimes for a double pendulum with a control torque applied to its lower link. From left to right: a) no control torque b) $k_P  = 10, k_D = 0$ c) $k_P = 1, k_D = 4$ d) $k_P = 1, k_D = 4, \alpha = 0.5$](./figures/controller-comparison-animation.gif){ #fig:controller-comparison-animation short-caption="Comparison of basic control regimes for double pendulum"}
 
-![Swing angles (in degrees) of the two links ($\theta_1$ and $\theta_2$) of double pendulum with various control regimes applied. See @Fig:controller-comparison-animation for animation.](./figures/controller-comparison-plot.svg){ #fig:controller-comparison-plot }
+![Swing angles (in degrees) of the two links ($\theta_1$ and $\theta_2$) of double pendulum with various control regimes applied. See @Fig:controller-comparison-animation for animation.](./figures/controller-comparison-plot.svg){ #fig:controller-comparison-plot short-caption="Comparison of basic control regimes for double pendulum (plot)"}
 
 ## Inertia Estimation Controller
 

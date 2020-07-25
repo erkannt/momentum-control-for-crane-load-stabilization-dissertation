@@ -33,13 +33,13 @@ Since no component of the torque is in line with the angular momentum, its magni
 Therefore, the change in angular momentum takes the form of a change in the orientation of the angular momentum.
 This is illustrated in @Fig:gyroscopic_torque.
 
-![Illustration of how a torque that lies orthogonal to an angular momentum causes a rotation of the angular momentum’s orientation instead of a change in its size. Here $h$ denotes the angular momentum and $\omega$ is the rotational velocity that this vector is experiencing.](./figures/gyroscopic_torque.png){#fig:gyroscopic_torque }
+![Illustration of how a torque that lies orthogonal to an angular momentum causes a rotation of the angular momentum’s orientation instead of a change in its size. Here $h$ denotes the angular momentum and $\omega$ is the rotational velocity that this vector is experiencing.](./figures/gyroscopic_torque.png){#fig:gyroscopic_torque short-caption="Principle of gyroscopic reaction torque"}
 
 It is this change in orientation in the form of a rotation and its relation to the torque via the size of the angular momentum that lets us understand everything from simple toys (@Fig:precession) to the momentum control systems of the International Space Station (@Fig:iss).
 
-![Precession of a gyroscope. Gravity would usually cause the object to topple over. Instead, the conservation of angular momentum leads to a precession, whose motion causes a torque that balances out the torque caused by gravity.(Lucas Vieira, Public Domain)](./figures/Gyroscope_precession.gif){#fig:precession }
+![Precession of a gyroscope. Gravity would usually cause the object to topple over. Instead, the conservation of angular momentum leads to a precession, whose motion causes a torque that balances out the torque caused by gravity.(Lucas Vieira, Public Domain)](./figures/Gyroscope_precession.gif){#fig:precession short-caption="Gyroscopic precession"}
 
-![Astronaut Dave Williams replacing one of the four dual gimbal CMGs on the ISS. (Public Domain, NASA Photo ID: S118-E-06998)](./figures/ISS-CMG.jpg){#fig:iss }
+![Astronaut Dave Williams replacing one of the four dual gimbal CMGs on the ISS. (Public Domain, NASA Photo ID: S118-E-06998)](./figures/ISS-CMG.jpg){#fig:iss short-caption="CMG replacment spacewalk on the ISS"}
 
 Before proceeding, I would like to emphasize three key points:
 
@@ -50,7 +50,7 @@ Before proceeding, I would like to emphasize three key points:
 The last point is essential to understanding CMGs where we do the inverse: rotate an angular momentum and thereby create a reaction torque.
 This is illustrated in @Fig:CMG_principle.
 
-![Principle of a CMG. A spinning mass i.e. a gyroscope ($\Omega$ denoting its angular velocity) has an angular momentum ($h$). By applying an angular velocity ($\omega$) orthogonal to the gyroscope's spin axis we create a reaction torque ($\tau$) orthogonal to both the gimbal axis and the gyroscope's spin axis.](./figures/CMG_principle.png){#fig:CMG_principle }
+![Principle of a CMG. A spinning mass i.e. a gyroscope ($\Omega$ denoting its angular velocity) has an angular momentum ($h$). By applying an angular velocity ($\omega$) orthogonal to the gyroscope's spin axis we create a reaction torque ($\tau$) orthogonal to both the gimbal axis and the gyroscope's spin axis.](./figures/CMG_principle.png){#fig:CMG_principle short-caption="Principle of a CMG"}
 
 The torque produced by such a gimbal rotation is described by:
 
@@ -112,7 +112,7 @@ Since redundancy is imperative in space flight, the arrays usually use four CMGs
 The three common arrays for CMGs are box, pyramid and roof (see @Fig:sg-cmg-configurations).
 Leve et. al recommend roof arrays due to their simpler and easier to avoid internal singularities.
 
-![Various configuration options for single gimbal CMGs [@KurokawaGeometricStudySingle1998], an extensive treatise on the geometric theory of single gimbal CMGs.](./figures/sg-cmg-configurations.jpg){#fig:sg-cmg-configurations}
+![Various configuration options for single gimbal CMGs [@KurokawaGeometricStudySingle1998]](./figures/sg-cmg-configurations.jpg){#fig:sg-cmg-configurations short-caption="Configurations for single gimabl CMGs"}
 
 Momentum control devices such as reaction wheels, CMGs or magneto-torquers[^magnetotorquers] enable spacecraft to adjust and control their orientation without expending fuel.
 This makes them invaluable, given weight and volume constraints in space flight.
@@ -143,7 +143,7 @@ Other works have studied how one might coordinate the ACS and robot actuation to
 Others have proposed using CMGs as the actuators of the arm to create kinematics capable of moving in space without exerting torques on their host spacecraft [@carpenter_reducing_2009].
 To ensure accurate compensation and robot motion, methods for the identification of a systems inertial parameters after launch have been proposed [@XuOnorbitIdentifyingInertia2017].
 
-![Artists rendition of the ETS VII research satellite used to evaluate the use of robot arms to manipulate other satellites (bottom right, source: JAXA [@JAXAEngineeringTest]). The satellite during ground tests (left, source: ESA Bulletin [@VisentinTestingSpaceRobotics1999]) and overview of its robot setup (top right,[@OdaSummaryNASDAETSVII2000])](./figures/ets-collage.png){#fig:ets-vii-space-robot}
+![Artists rendition of the ETS VII research satellite used to evaluate the use of robot arms to manipulate other satellites (bottom right, source: JAXA [@JAXAEngineeringTest]). The satellite during ground tests (left, source: ESA Bulletin [@VisentinTestingSpaceRobotics1999]) and overview of its robot setup (top right,[@OdaSummaryNASDAETSVII2000])](./figures/ets-collage.png){#fig:ets-vii-space-robot short-caption="The ETS VII research satellite"}
 
 ### Terrestrial Applications
 
@@ -158,7 +158,7 @@ Ships of the same period saw the construction of probably the largest ever CMGs 
 The gyroscope weighed in 175t and spun at 910 rpm (see @Fig:conte-gyro).
 Given that control engineering or cybernetics had not yet been established, these systems presumably operated on a passive control principle.
 
-![Gyro stabilizer aboard the Conte di Savoia passenger liner launched in 1934.](./figures/conte-di-savoia.jpg){ #fig:conte-gyro }
+![Gyro stabilizer aboard the Conte di Savoia passenger liner launched in 1934.](./figures/conte-di-savoia.jpg){ #fig:conte-gyro short-caption="Gyroscopic stabilizer for a passenger ship"}
 
 The way that such passive stabilization with gyroscopes works is as follows:
 The tipping vehicle exerts a torque orthogonal to the gyroscope’s momentum and the gimbal’s axis.
@@ -175,7 +175,7 @@ News surrounding the company went silent after an initial flurry of coverage aro
 For a discussion as well as a derivation of equations of motion and control systems for stabilization of two-wheeled vehicles see [@SpryGyroscopicStabilisationUnstable2008].
 In this paper the authors also extend the equations of motion to use two gyroscopes of opposite spin direction and show how this benefits control performance.
 
-![Prototype of the Lit Motors C1 gyro-stabilized vehicle being driven on the webseries _Spark_ produced by Maker Studios](./figures/litmotors.gif){ #fig:litmotors }
+![Prototype of the Lit Motors C1 gyro-stabilized vehicle being driven on the webseries _Spark_ produced by Maker Studios](./figures/litmotors.gif){ #fig:litmotors short-caption="Lit Motors gyro-stabilized two-wheeler prototype"}
 
 Even though roll stabilizing gyroscopes went out of fashion for ships as hull and fin designs improved, they have become a commercial product offered by multiple companies (see @Fig:seakeeper for an example).
 Their target market are yachts as well as commercial vessels, where roll stabilization at rest or slow speeds is of greater importance.
@@ -184,7 +184,7 @@ It is therefore unsurprising that a naval CMG was used in the recent resurrectio
 It is also worth pointing out that some naval CMGs use the energy stored in the spinning gyroscope to provide additional electrical power during peaks in electrical load caused by the actuation.
 This was also considered for spacecraft, but as spacecraft batteries have reached a similar energy density to high-speed flywheels, the added weight of the required electronics and challenges of high velocity gyroscopes in space have led to this idea being discarded.
 
-![Marketing video for a ship-stabilizing gyroscope [@SeakeeperGyroStabilizers]. The left boat is being stabilized, the right one is not.](./figures/seakeeper.gif){ #fig:seakeeper }
+![Marketing video for a ship-stabilizing gyroscope [@SeakeeperGyroStabilizers]. The left boat is being stabilized, the right one is not.](./figures/seakeeper.gif){ #fig:seakeeper short-caption="Current ship stabilizing gyroscopes"}
 
 The gyroscopes used in naval CMGs are large enough to warrant a vacuum to reduce friction and are actuated using hydraulic systems.
 Filed patents point towards interesting engineering challenges [@AdamsGyroscopicRollStabilizer2005], for instance regarding the cooling of the gyroscope bearings [@AdamsCoolingBearingsMotors2009].
@@ -201,7 +201,7 @@ Others have suggested using CMGs to orient underwater robots to allow attitude c
 Others have used reaction wheels instead of CMGs to create small, self-assembling robots that move by flipping themselves [@RomanishinMblocksMomentumdrivenMagnetic2013].
 A quite well known example of momentum control is the Cubli, a self-balancing cube that also uses reaction wheels [@GajamohanCubliCubeThat2012].
 
-![Other terrestrial applications proposed by researchers. From left to right: human gain stabilization [@ChiuDesignWearableScissoredPair2014], stabilizer for heart surgery [@GagneCardiacMotionCompensation2009; @GagneGyroLockStabilizingHeart2012] and underwater robot [@PenaAdvancesDevelopingTelemanipulators2009].](./figures/other-terrestrial-applications.png){ #fig:other-terrestrial }
+![Other terrestrial applications proposed by researchers. From left to right: human gain stabilization [@ChiuDesignWearableScissoredPair2014], stabilizer for heart surgery [@GagneCardiacMotionCompensation2009; @GagneGyroLockStabilizingHeart2012] and underwater robot [@PenaAdvancesDevelopingTelemanipulators2009].](./figures/other-terrestrial-applications.png){ #fig:other-terrestrial short-caption="Other proposed terrestrial CMG applications"}
 
 ### Crane Applications
 
@@ -230,15 +230,15 @@ They incorrectly discuss [@InouePracticalDevelopmentSuspender1998], stating that
 More recently researchers have once again used a single CMG to stabilize the yaw of a load attached to a model jib crane [@KodaniTransportingRotatingControl2017] (see @Fig:KodaniTransportingRotatingControl2017).
 The authors run into difficulties with the singularity and changing orientation of the output torque.
 
-![CMG pair used to stabilize a gondola against wind excitation [@KankiDevelopmentCMGActive1994].](./figures/KankiDevelopmentCMGActive1994.png){ #fig:KankiDevelopmentCMGActive1994 }
+![CMG pair used to stabilize a gondola against wind excitation [@KankiDevelopmentCMGActive1994].](./figures/KankiDevelopmentCMGActive1994.png){ #fig:KankiDevelopmentCMGActive1994 short-caption="CMG based gondola stabilization"}
 
-![Single CMG device used in field tests [@InouePracticalDevelopmentSuspender1998].](./figures/InouePracticalDevelopmentSuspender1998.png){ #fig:InouePracticalDevelopmentSuspender1998 }
+![Single CMG device used in field tests [@InouePracticalDevelopmentSuspender1998].](./figures/InouePracticalDevelopmentSuspender1998.png){ #fig:InouePracticalDevelopmentSuspender1998 short-caption="Single CMG crane stabilization field test"}
 
-![Illustration of beam stabilization setup from [@SaAttitudeControlStabilization2001].](./figures/SaAttitudeControlStabilization2001.png){ #fig:SaAttitudeControlStabilization2001 }
+![Illustration of beam stabilization setup from [@SaAttitudeControlStabilization2001].](./figures/SaAttitudeControlStabilization2001.png){ #fig:SaAttitudeControlStabilization2001 short-caption="Illustration of beam stabilization with CMG"}
 
-![Motorized crane hook experiments [@LeeAnalysisFieldApplicability2012].](./figures/LeeAnalysisFieldApplicability2012.png){ #fig:LeeAnalysisFieldApplicability2012 }
+![Motorized crane hook experiments [@LeeAnalysisFieldApplicability2012].](./figures/LeeAnalysisFieldApplicability2012.png){ #fig:LeeAnalysisFieldApplicability2012 short-caption="Motorized crane hook experiments"}
 
-![Single CMG experiments on a model jib crane [@KodaniTransportingRotatingControl2017].](./figures/KodaniTransportingRotatingControl2017.png){ #fig:KodaniTransportingRotatingControl2017 }
+![Single CMG experiments on a model jib crane [@KodaniTransportingRotatingControl2017].](./figures/KodaniTransportingRotatingControl2017.png){ #fig:KodaniTransportingRotatingControl2017 short-caption="CMG stabilization of jib crane model"}
 
 The concept of using CMGs to rotate a load hanging from a crane has recently been turned into a commercially available product by the Australian company Verton.
 Founded in 2014 they published a patent regarding the rotational control of a crane load with gyroscopes in 2017 [@THOMSONMaterialsManagementSystems2017].
@@ -250,7 +250,7 @@ The introduction of the patent discusses the issue of how reaction torque interf
 Given the use of two gyroscopes I would assume they are using a scissored pair array.
 By rotating the two gimbals in the same direction (as opposed to mirrored) it should be possible to align the gyroscopes' axes of rotation with that of the load without exerting any torque on it, thereby placing the device in a state that does not interfere with manual rotation.
 
-![The R-Series is a commercially available load rotation device that uses gyroscopes and was launched by the Australian company Verton in 2019. (Picture by Rod Pilbeam)](./figures/Verton_20180115_082.jpg){ #fig:verton }
+![The R-Series is a commercially available load rotation device that uses gyroscopes and was launched by the Australian company Verton in 2019. (Picture by Rod Pilbeam)](./figures/Verton_20180115_082.jpg){ #fig:verton short-caption="Commercially available load rotation device"}
 
 ### Summary
 
@@ -388,7 +388,7 @@ These are the internal singularities that a steering law must avoid or be able t
 See @Fig:array-envelopes for an illustration of singularities of different array types.
 Leve et al. also include a more in-depth discussion of the various types of singularities and how they are taken into account by different steering laws.
 
-![Momentum envelopes of different single gimbal CMG arrays, i.e. their inner and outer singularities. From left to right: box, roof and pyramid array [@LeveSpacecraftMomentumControl2015]](./figures/cmg-envelopes.png){ #fig:array-envelopes }
+![Momentum envelopes of different single gimbal CMG arrays, i.e. their inner and outer singularities. From left to right: box, roof and pyramid array [@LeveSpacecraftMomentumControl2015]](./figures/cmg-envelopes.png){ #fig:array-envelopes short-caption="Momentum envelopes of CMG arrays"}
 
 The shape of the workspace is of relevance to this work as the requirements will not be uniform in all directions.
 A pendulum will often swing around a single axis, robot tasks might be dominated by torque around certain axes and part rotations will lie around the axis of the crane's rope.
@@ -396,9 +396,9 @@ Therefore it is of note that the shape the workspace of an array can be changed 
 In a roof array, the critical parameter is the angle of the roof.
 See @Fig:roof-array-workspace-45deg and @Fig:roof-array-workspace-30deg for a comparison of different roof angles generated with the code provided in @sec:roof-array-workspace.
 
-![Outer (green) and inner (orange) singularities for a four-CMG roof array with a roof angle of 45°.](./figures/roof-array-workspace-45deg.jpg){#fig:roof-array-workspace-45deg}
+![Outer (green) and inner (orange) singularities for a four-CMG roof array with a roof angle of 45°.](./figures/roof-array-workspace-45deg.jpg){#fig:roof-array-workspace-45deg short-caption="Envelope of CMG roof array at 45°"}
 
-![Outer (green) and inner (orange) singularities for a four-CMG roof array with a roof angle of 30°.](./figures/roof-array-workspace-30deg.jpg){#fig:roof-array-workspace-30deg}
+![Outer (green) and inner (orange) singularities for a four-CMG roof array with a roof angle of 30°.](./figures/roof-array-workspace-30deg.jpg){#fig:roof-array-workspace-30deg short-caption="Envelope of CMG roof array at 30°"}
 
 ## Sizing of CMGs
 

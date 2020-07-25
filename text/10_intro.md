@@ -19,7 +19,7 @@ TODO: introduce topic and structure of thesis
 The original idea and subsequent work contained in this thesis have been submitted as a patent application [@HaarhoffVorrichtungZurSteuerung].
 Therefore many of the ideas and solutions in this thesis are part of that application, in particular the integrated approach of using CMGs to turn cranes into stable plattforms for automation.
 
-![Photomontage of robots suspended from a tower crane performing facade assembly. Taken and adapted from the (rejected) SEED-Fund application that initiated this work. Photomontage by Elisa Lublasser.](./figures/crane-robot-montage.jpg)
+![Photomontage of robots suspended from a tower crane performing facade assembly. Taken and adapted from the (rejected) SEED-Fund application that initiated this work. Photomontage by Elisa Lublasser.](./figures/crane-robot-montage.jpg){short-caption="Photomontage of robots suspended from a tower crane"}
 
 ## The Need for Construction Robots
 
@@ -81,7 +81,7 @@ The RoboCrane was originally a DARPA project at NIST that was proposed for sever
 Other systems such as the Fraunhofer Institute’s IPAnema have been aimed at logistics [@PottIPAnemaFamilyCableDriven2013].
 More recently there have also been further conceptual proposals for the use of parallel tendon robots on construction sites [@SousaSPIDERobotCableRobotSystem2016] as well as large scale 3D-printing efforts that utilize parallel tendon research prototypes [@IzardLargescale3DPrinting2017] (see @Fig:parallel-tendon-print).
 
-![Rendering of a 3D-printing concept for construction sites [@IzardLargescale3DPrinting2017]](./figures/parallel-tendon-printing-izard.png){ #fig:parallel-tendon-print }
+![Rendering of a 3D-printing concept for construction sites [@IzardLargescale3DPrinting2017]](./figures/parallel-tendon-printing-izard.png){ #fig:parallel-tendon-print short-caption="Rendering of a 3D-printing construction site concept"}
 
 Parallel tendon kinematics come with some challenges and disadvantages.
 Dealing with tendon elasticity is particularly relevant to vibrations in the system.
@@ -90,7 +90,7 @@ Some researchers have therefore added momentum control devices to compensate tor
 The bigger issue for construction sites will most likely be the need for the tendon's winches to be placed around the workspace of the system.
 This means that tendons would be required to cross large areas of the construction site, which again would pose significant challenges with regard to collisions, setup costs as well as worker safety.
 
-![Experiments with dampening a parallel tendon platform using reaction wheels [@WeberActiveVibrationCanceling2014]. The left example is not using the reaction wheels. On the right, one can see them being used and rotating at the top of the platform.](./figures/reaction-wheel-tendon-gangloff.gif){ #fig:reaction-wheel-tendon }
+![Experiments with dampening a parallel tendon platform using reaction wheels [@WeberActiveVibrationCanceling2014]. The left example is not using the reaction wheels. On the right, one can see them being used and rotating at the top of the platform.](./figures/reaction-wheel-tendon-gangloff.gif){ #fig:reaction-wheel-tendon short-caption="Parallel tendon plattform damplened with reaction wheels"}
 
 Drones are the only system on a construction site with a workspace larger than cranes.
 They are therefore seeing use as an inspection, surveying and monitoring tool.
@@ -100,7 +100,7 @@ Their need to compromise flight time with battery weight is an additional constr
 It seems relevant to point out that the building materials of some widely publicized drone-based constructions are foam blocks [@GramazioKohlerFlightAssembledArchitecture2011], nylon ropes [@MirjanBuildingBridgeFlying2016; @AugugliaroBuildingTensileStructures2013] and carbon fibers [@SollyICDITKEResearch2018].
 The use of propulsive systems (e.g. propellors) to rotate or stabilize crane loads has been mentioned in the literature and apparently there were experiments made in Japan or Korea [@InouePracticalDevelopmentSuspender1998], but sadly the results of these experiments are not available.
 
-![Excerpt from the 4th year report of the ARCAS project on collaborative flying robots for maintenance and construction. The consortium also performed experiments with a kerosine-fueled drone/helicopter capable of carrying a DLR LBR robot arm.](./figures/arcas.gif){ #fig:flying-robot }
+![Excerpt from the 4th year report of the ARCAS project on collaborative flying robots for maintenance and construction. The consortium also performed experiments with a kerosine-fueled drone/helicopter capable of carrying a DLR LBR robot arm.](./figures/arcas.gif){ #fig:flying-robot short-caption="EU ARCAS project on flying robots"}
 
 While mobile platforms in robotics are starting to enter industrial use, they are not able to provide the vertical reach of cranes.
 For small heights, linear axes can be added to the mobile platforms to increase the reach of their robot arms.
@@ -110,7 +110,7 @@ Others have attached articulated arms to hydraulic remote controlled demolition 
 Apart from their vertical and horizontal reach, a further benefit of cranes can be their small footprint relative to their horizontal reach.
 Mobile platforms, on the other hand, would have to be provided with access via the ground.
 
-![The Digital Construction Platform that combines an industrial robot with a hydraulic arm to increase its reach. The red line has been drawn by the end of the hydraulic arm and the blue line by the small robot attached to it. [@KeatingCompoundArmApproach2014]](./figures/dcp-mit-media-lab.jpg){ #fig:dcp-media-lab }
+![The Digital Construction Platform that combines an industrial robot with a hydraulic arm to increase its reach. The red line has been drawn by the end of the hydraulic arm and the blue line by the small robot attached to it. [@KeatingCompoundArmApproach2014]](./figures/dcp-mit-media-lab.jpg){ #fig:dcp-media-lab short-caption="Digital Construction Platform by the MIT MediaLab"}
 
 ### Potential Applications
 
@@ -120,4 +120,4 @@ The control moment gyroscopes would allow for the compensation of the torques pr
 They would also provide control over the rotation of parts during transport and assembly operations.
 Furthermore they could assist in dampening crane oscillations.
 
-![Potential applications of a CMG-stabilized crane. From left to right: process compensation, part rotation and dampening of pendulum oscillations.](./figures/baugrok-applications.gif){ #fig:baugrok-applications }
+![Potential applications of a CMG-stabilized crane. From left to right: process compensation, part rotation and dampening of pendulum oscillations.](./figures/baugrok-applications.gif){ #fig:baugrok-applications short-caption="Potential applicans of a CMG-stabilized crane"}

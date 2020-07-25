@@ -14,9 +14,9 @@ Apart from the 3D double pendulum model, the experiments utilize a setup limited
 Some of the interaction that occurs within a double pendulum has already been shown in @Sec:2dpendulum, with the lower pendulum causing an overlay of higher frequency oscillations.
 The @Fig:distmass-impact-animation and @Fig:distmass-impact-plot show how the rotational inertia of the lower mass changes the interaction of the two parts of the pendulum.
 
-![Difference between a double pendulum with two point masses and one where the lower mass is modeled as a distributed mass.](./figures/impact-of-rotational-inertia.gif){ #fig:distmass-impact-animation }
+![Difference between a double pendulum with two point masses and one where the lower mass is modeled as a distributed mass.](./figures/impact-of-rotational-inertia.gif){ #fig:distmass-impact-animation short-caption="Comparison of point and distributed mass double pendulum"}
 
-![Angles and angular velocity comparison of point mass and distributed mass pendulum.](./figures/dp-2d-distmass-inertias.svg){ #fig:distmass-impact-plot }
+![Angles and angular velocity comparison of point mass and distributed mass pendulum.](./figures/dp-2d-distmass-inertias.svg){ #fig:distmass-impact-plot short-caption="Comparison of point and distributed mass double pendulum (plot)"}
 
 It is significant that the lower link pushes the upper link considerably more, instead of only hanging below it.
 This is important, as a rope cannot transmit such a force.
@@ -33,15 +33,15 @@ In @fig:3D-projected-large-exitation it can be seen that the motion remains in t
 It should be noted that the movement is not identical to that of the 2D model, due to the fact that minuscule numerical errors lead to noticeable changes in a chaotic system such as a double pendulum (see discussion in appendix @sec:2d-pointmass-eom).
 This is also most probably the reason that once the plane of excitation is rotated (@Fig:3D-projected-large-exitation-diagonal), the motion breaks out of the plane at some point.
 
-![Large excitation of double pendulum modeled with equations of motion derived using projected angles. From left to right: front, side and top view. Note how the path begins to differ strongly when compared to the simulation using the 2D model. This is a prime example of how minor changes can cause large differences in chaotic systems such as a double pendulum.](figures/double_pendulum_3d_large_exitation.gif){ #fig:3D-projected-large-exitation }
+![Large excitation of double pendulum modeled with equations of motion derived using projected angles. From left to right: front, side and top view. Note how the path begins to differ strongly when compared to the simulation using the 2D model. This is a prime example of how minor changes can cause large differences in chaotic systems such as a double pendulum.](figures/double_pendulum_3d_large_exitation.gif){ #fig:3D-projected-large-exitation short-caption="Comparison of 2D and 3D double pendulum"}
 
-![Large out of plane excitation of the same pendulum. From left to right: front, side and top view. Note how the small inaccuracies cause motion outside of the original plane of excitation. These deviations quickly become chaotic for larger excitations.](figures/double_pendulum_3d_Large_Exitation-diagonal.gif){ #fig:3D-projected-large-exitation-diagonal }
+![Large out of plane excitation of the same pendulum. From left to right: front, side and top view. Note how the small inaccuracies cause motion outside of the original plane of excitation. These deviations quickly become chaotic for larger excitations.](figures/double_pendulum_3d_Large_Exitation-diagonal.gif){ #fig:3D-projected-large-exitation-diagonal short-caption="3D double pendulum after out of plane excitation"}
 
 In the case of the 3D model with distributed mass, another effect occurs.
 In @Fig:distmass-sim-gh the pendulum was given a 2D excitation but the mass was also given an angular velocity around the axis of suspension.
 The break from the 2D plane occurs immediately, which is most likely due to the impact of gyroscopic reaction from the interaction of pendulum motion and inertia around the axis of suspension.
 
-![Simulation of a distributed mass hanging from a point mass. Initial excitation lies in a plane, but the mass is also given an angular velocity. Note how the pendulum breaks out the of the plane, most likely due to gyroscopic effects.](./figures/distmass-sim-gh.gif){ #fig:distmass-sim-gh }
+![Simulation of a distributed mass hanging from a point mass. Initial excitation lies in a plane, but the mass is also given an angular velocity. Note how the pendulum breaks out the of the plane, most likely due to gyroscopic effects.](./figures/distmass-sim-gh.gif){ #fig:distmass-sim-gh short-caption="Impact of distributed mass on double pendulum"}
 
 ### Dampening Controller
 
@@ -59,11 +59,11 @@ This results in up to 50.000 Nm of torque being applied to dampen the largest cr
 While technically possible, it is questionable whether this is economically sensible.
 It can also be seen that the requirements with regard to torque dynamics and workspace scale with the torque requirements. 
 
-![Dampening of three different model cranes using the same PD$\alpha$ controller. From left to right: approximate dimensions of the lab setup, a small fast deployment crane and a large tower crane. The parameters are taken from @Fig:crane-data and @Fig:inertia-data. Controller setting: $k_P=1.0 \cdot I_2, k_D=4.0 \cdot I_2, \alpha=0.5$. Initial excitation is 10°, approximating the determined base rates (see @Fig:crane-base-rates)](./figures/crane-dampening-comparison.gif){ #fig:crane-dampening-comparison-animation }
+![Dampening of three different model cranes using the same PD$\alpha$ controller. From left to right: approximate dimensions of the lab setup, a small fast deployment crane and a large tower crane. The parameters are taken from @Fig:crane-data and @Fig:inertia-data. Controller setting: $k_P=1.0 \cdot I_2, k_D=4.0 \cdot I_2, \alpha=0.5$. Initial excitation is 10°, approximating the determined base rates (see @Fig:crane-base-rates)](./figures/crane-dampening-comparison.gif){ #fig:crane-dampening-comparison-animation short-caption="Dampening of example cranes"}
 
-![Angles and velocities of the cranes during the dampening comparison.](./figures/dp-2d-distmass-controller.svg){ #fig:crane-dampening-comparison-plot }
+![Angles and velocities of the cranes during the dampening comparison.](./figures/dp-2d-distmass-controller.svg){ #fig:crane-dampening-comparison-plot short-caption="Dampening of example cranes (plot)"}
 
-![Torque used in dampening of the above cranes.](./figures/dp-2d-distmass-controller-torques.svg){ #fig:crane-dampening-comparison-torques }
+![Torque used in dampening of the above cranes.](./figures/dp-2d-distmass-controller-torques.svg){ #fig:crane-dampening-comparison-torques short-caption="Torque usage during dampening"}
 
 Were one to use a CMG-array incapable of providing the desired torque the dampening would take longer to stabilize the crane, but importantly it would still work.
 This is due to the oscillatory nature of the dampening problem.
@@ -85,7 +85,7 @@ Subsequently the interaction of said singularity avoidance with the dampening co
 The SPCMG is tasked with producing the torque that is to be applied to the lower link of the double pendulum.
 Since the control input of the SPCMG is the speed of its gimbal motors, a steering law is required to translate the desired torque into a gimbal speed.
 
-![Abstract model of a scissored pair control moment gyroscope.](./figures/spcmg-principle.svg){ #fig:spcmg-steering }
+![Abstract model of a scissored pair control moment gyroscope.](./figures/spcmg-principle.svg){ #fig:spcmg-steering short-caption="Model of scissored pair CMG (SPCMG)"}
 
 Looking at an abstract view of the SPCMG (@Fig:spcmg-steering) and given that the design of the mirrored pair dictates that $\delta = \delta_1 = \delta_2$ and $h_r = h_1 = h2$, the torque produced by the array can be easily determined:
 
@@ -134,19 +134,19 @@ The slow gyroscopes result in an end state closer to the center of the SPCMGs wo
 This is due to the asymmetric torque targets that result from the much faster dampening in the model with the faster gyroscopes.
 This points to some interesting questions regarding control optimized to position the CMGs in an advantageous position within their workspace.
 
-![Comparison of SPCMG singularity avoidance with different gyroscope speeds (1000 rpm and 5000 rpm). The narrow cylinder pointing out of the disc indicates the direction of the angular momentum vector of the gyroscope.](./figures/spcmg-avoidance-animation.gif){ #fig:spcmg-avoidance-animation }
+![Comparison of SPCMG singularity avoidance with different gyroscope speeds (1000 rpm and 5000 rpm). The narrow cylinder pointing out of the disc indicates the direction of the angular momentum vector of the gyroscope.](./figures/spcmg-avoidance-animation.gif){ #fig:spcmg-avoidance-animation short-caption="SPCMG singularity avoidance at different gyroscope speeds"}
 
-![Behavior of the singularity avoidance mechanism for the scissored pair configuration. Note that the speed of the gyroscopes and the maximum acceleration of the gimbals have been set to extremely low values to better illustrate the singularity avoidance.](./figures/spcmg-avoidance-1000rpm-plot.svg){ #fig:spcmg-avoidance-1000rpm-plot }
+![Behavior of the singularity avoidance mechanism for the scissored pair configuration. Note that the speed of the gyroscopes and the maximum acceleration of the gimbals have been set to extremely low values to better illustrate the singularity avoidance.](./figures/spcmg-avoidance-1000rpm-plot.svg){ #fig:spcmg-avoidance-1000rpm-plot short-caption="SPCMG singularity avoidance at 1000 rpm"}
 
-![Singularity avoidance mechanism for the scissored pair configuration at higher gyroscope speed. Note that the maximum acceleration of the gimbals is lower than the maximum attainable with the prototype. This not only helps illustrate the singularity avoidance mechanism but also reduces the axis torque introduced by the gimbaling motion (see discussion in following section).](figures/spcmg-avoidance-5000rpm-plot.svg){ #fig:spcmg-avoidance-5000rpm-plot }
+![Singularity avoidance mechanism for the scissored pair configuration at higher gyroscope speed. Note that the maximum acceleration of the gimbals is lower than the maximum attainable with the prototype. This not only helps illustrate the singularity avoidance mechanism but also reduces the axis torque introduced by the gimbaling motion (see discussion in following section).](figures/spcmg-avoidance-5000rpm-plot.svg){ #fig:spcmg-avoidance-5000rpm-plot short-caption="SPCMG singularity avoidance at 5000 rpm"}
 
 ### Dynamics of CMG attached to Pendulum { #sec:cmg-pendulum-interaction }
 
 Recalling the various components of the CMG's torque discussed in @Sec:cmg-dynamics, these components (@Fig:cmg-torque-components-plot) and totals (@Fig:cmg-torque-totals-plot ) can be plotted for the 2D pendulum simulations.
 
-![Components of torque produced by a single CMG in a SPCMG array dampening the motion of a double point mass pendulum.](./figures/cmg-torque-components-plot.svg){ #fig:cmg-torque-components-plot }
+![Components of torque produced by a single CMG in a SPCMG array dampening the motion of a double point mass pendulum.](./figures/cmg-torque-components-plot.svg){ #fig:cmg-torque-components-plot short-caption="Torque components produced by single CMG during dampening"}
 
-![Total torques experienced by the platform and gimbal motor due to a single CMG in a SPCMG (same simulation as @Fig:cmg-torque-components-plot).](./figures/cmg-torque-totals-plot.svg){ #fig:cmg-torque-totals-plot }
+![Total torques experienced by the platform and gimbal motor due to a single CMG in a SPCMG (same simulation as @Fig:cmg-torque-components-plot).](./figures/cmg-torque-totals-plot.svg){ #fig:cmg-torque-totals-plot short-caption="Total torque acting on platform and motor"}
 
 There are several observations that can be made from the above plots.
 First, there are a few SPCMG specific behaviors.
@@ -181,7 +181,7 @@ The @Fig:torque-issue-zero illustrates how control is maintained over the experi
 In the extreme case of the gimbal aligning the gyroscope's axis with the rotation of the pendulum, the reaction torque will always be zero, regardless of the magnitude of the base rate.
 The consequences of this interaction are discussed in the sizing section (@Sec:sizing_for_cranes).
 
-![Interaction of the pendulum motion with the CMGs can lead to strong reaction torques depending on the gimbal angle. The blue arrow is the angular momentum of the gyroscope, it therefore remains constant. The green arrow is the angular velocity that the CMG experiences due to the pendulum's oscillations, i.e. the base rate. The red arrow is the cross product of these two vectors, i.e. the reaction torque around the gimbal axis. The magnitude of the reaction torque experienced by the gimbal assembly is denoted by its color (green being zero, red being the maximum). The semicircular bar denotes in color the reaction torque that the gimbal axis would experience at the other gimbal angles given the current base rate.](./figures/torque_issue.gif){ #fig:torque-issue }
+![Interaction of the pendulum motion with the CMGs can lead to strong reaction torques depending on the gimbal angle. The blue arrow is the angular momentum of the gyroscope, it therefore remains constant. The green arrow is the angular velocity that the CMG experiences due to the pendulum's oscillations, i.e. the base rate. The red arrow is the cross product of these two vectors, i.e. the reaction torque around the gimbal axis. The magnitude of the reaction torque experienced by the gimbal assembly is denoted by its color (green being zero, red being the maximum). The semicircular bar denotes in color the reaction torque that the gimbal axis would experience at the other gimbal angles given the current base rate.](./figures/torque_issue.gif){ #fig:torque-issue short-caption="Interaction of pendulum motion and CMG"}
 
 ### Gimbal Motor Model
 
@@ -194,16 +194,16 @@ Their jerk is not limited.
 As described in the modeling chapter, a set of robot paths and both the inverse kinematics as well as a real robot can be used to obtain axis values for the paths.
 Having run the paths at several speeds, the axis values can be fed into the multi body simulation of the robot to obtain the torques and forces acting at the base of the robot.
 
-![Multi-body robot simulation of the four corners task using values from KUKA|prc. Note how the unlimited acceleration in the inverse solution leads to unrealistically high forces and torques.](./figures/robot-sim-prc.png){ #fig:robot-sim-prc }
+![Multi-body robot simulation of the four corners task using values from KUKA|prc. Note how the unlimited acceleration in the inverse solution leads to unrealistically high forces and torques.](./figures/robot-sim-prc.png){ #fig:robot-sim-prc short-caption="Robot simulation based on KUKA|prc axis values"}
 
-![Multi-body robot simulation of the four corners task using values of a real robot obtained via mxAutomation.](./figures/robot-sim-mxa.png){ #fig:robot-sim-mxa }
+![Multi-body robot simulation of the four corners task using values of a real robot obtained via mxAutomation.](./figures/robot-sim-mxa.png){ #fig:robot-sim-mxa short-caption="Robot simulation based on real robot motion"}
 
 @Fig:robot-sim-prc shows the axis values, base forces and torques as well as the torque dynamics and workspace for a simulation using the axis values from KUKA|prc.
 As previously noted, the axis values produced by KUKA|prc produce unrealistic values as they assume unlimited acceleration.
 Moving to the simulations based on the real axis values (@Fig:robot-sim-mxa), the much smoother axis values are obvious.
 It should be mentioned here that more realistic robot simulation tools exist.
 
-![Comparison of the base torques for the same path performed at two different speeds. At low speeds the longer time spent out of balance requires a larger momentum envelope while higher robot speeds require greater gimbal agility to achieve the momentum dynamics.](./figures/robot-load-speedcomparison-plot.jpg){#fig:robot-load-speedcomparison-plot}
+![Comparison of the base torques for the same path performed at two different speeds. At low speeds the longer time spent out of balance requires a larger momentum envelope while higher robot speeds require greater gimbal agility to achieve the momentum dynamics.](./figures/robot-load-speedcomparison-plot.jpg){#fig:robot-load-speedcomparison-plot short-caption="Torques at robot base at different speeds"}
 
 Comparing the values of the same path run at different speeds (@Fig:robot-load-speedcomparison-plot) several observations can be made.
 Two types of torque from the robot have to be dealt with: the torque caused by its movement and that caused by its center of mass moving out from underneath the base.
@@ -228,9 +228,9 @@ They therefore act in addition to any torques produced by the CMGs.
 The same robot torque values are also fed into the control loop for the CMGs as described in the previous section on controller design (@Sec:controller-design).
 As such a simulation does not include any external forces, it should ideally lead to the CMGs perfectly compensating the torques produced by the robot and lead to a static platform.
 
-![Simulation a robot hanging from the SPCMP platform. The left shows how robot deviates from the desired path (transparent robot) as its motion causes the pendulum to swing. The right shows the active compensation by the SPCMGs. Their torque output is informed by a simulated robot model in addition to the pendulum angles. Note how the limited acceleration of the gimbals prohibits the CMGs from perfectly compensating the robot.](./figures/robot_comp.gif){#fig:robot-comp-animation}
+![Simulation a robot hanging from the SPCMG platform. The left shows how robot deviates from the desired path (transparent robot) as its motion causes the pendulum to swing. The right shows the active compensation by the SPCMGs. Their torque output is informed by a simulated robot model in addition to the pendulum angles. Note how the limited acceleration of the gimbals prohibits the CMGs from perfectly compensating the robot.](./figures/robot_comp.gif){#fig:robot-comp-animation short-caption="Simulation of robot hanging from SPCMG platform"}
 
-![Comparison of the robot's endeffector position while hanging from the pendulum with the programmed target value for simulations with and without compensation by the CMGs.](./figures/robot_compensation.svg){#fig:robot-comp-plot}
+![Comparison of the robot's endeffector position while hanging from the pendulum with the programmed target value for simulations with and without compensation by the CMGs.](./figures/robot_compensation.svg){#fig:robot-comp-plot short-caption="Simulation of robot hanging from SPCMG platform" short-caption="Target deviation with/without SPCMG stabilization"}
 
 The @Fig:robot-comp-animation and @Fig:robot-comp-plot illustrate the impact of the CMG stabilization on the robot's path accuracy.
 In the animation, the fixed robot is displayed as a transparent overlay.
@@ -264,9 +264,9 @@ The plan was to begin with a SPCMG array that could be suspended so as to limit 
 Later the intention was to extend the array to a four CMG roof array.
 Given the limited manufacturing facilities, the design uses as many readily available and low cost components as possible.
 
-![Hardware SPCMG prototype with attached robot. Gyros are in the aluminum cases with the gyro motors mounted on their sides. The gimbal motors hang underneath the gyros. The motor controller and power supply are mounted underneath the platform. The gyro controller, IMU and communication interface for these are mounted on top. Note that the rope suspension was rotated by 90° for the picture.](./figures/KR3_seitlich.jpg){ #fig:prototype-sideview }
+![Hardware SPCMG prototype with attached robot. Gyros are in the aluminum cases with the gyro motors mounted on their sides. The gimbal motors hang underneath the gyros. The motor controller and power supply are mounted underneath the platform. The gyro controller, IMU and communication interface for these are mounted on top. Note that the rope suspension was rotated by 90° for the picture.](./figures/KR3_seitlich.jpg){ #fig:prototype-sideview short-caption="Hardware prototype of SPCMG platform with robot"}
 
-![CMGs used in the hardware prototype. The design has only two custom parts (gyro wheel, mounting flange) with the rest being catalog components (incl. made to measure shafts).](./figures/CMG-sidebyside.jpg){ #fig:cmg-plans }
+![CMGs used in the hardware prototype. The design has only two custom parts (gyro wheel, mounting flange) with the rest being catalog components (incl. made to measure shafts).](./figures/CMG-sidebyside.jpg){ #fig:cmg-plans short-caption="Plans of CMGs used in prototype"}
 
 @Fig:prototype-sideview shows the completed SPCMG prototype with the KR3 robot hanging underneath.
 The gyroscopes are housed in the aluminum cases and have their motors attached to the side with risers to accommodate the couplings.
@@ -283,13 +283,13 @@ The gyroscopes require a simpler speed controller as they should not experience 
 Therefore DEC-40 development boards were used attached to a custom PCB with an ATTiny microcontroller (see @Fig:cmg-pcb) that provides a serial interface for speed and direction of the gyroscopes.
 The same PCB and interface provide communication to the BNO055 inertial measurement unit.
 
-![Main hardware components used in the prototype.](./figures/hw-list.png){ #fig:hw-list }
+![Main hardware components used in the prototype.](./figures/hw-list.png){ #fig:hw-list short-caption="Prototype hardware component list"}
 
 The CMGs are attached to a welded steel frame that was sized to also later accommodate four CMGs.
 The controller and power supplies are mounted to a board inside the frame.
 The frame is suspended from two hooks in the ceiling.
 
-![Custom PCB holding the microcontroller, gyro speed controllers, CAN and Ethernet jacks.](./figures/cmg-pcb.jpg){ #fig:cmg-pcb }
+![Custom PCB holding the microcontroller, gyro speed controllers, CAN and Ethernet jacks.](./figures/cmg-pcb.jpg){ #fig:cmg-pcb short-caption="Custom PCB used in prototype"}
 
 For the SPCMG to work as intended, it is necessary to maintain symmetry between the two gyroscopes.
 This is generally achieved by linking the two gimbals mechanically and using a single actuator to drive them.
@@ -307,7 +307,7 @@ The top of the video shows the system being excited with the gyroscope axis orie
 The lower half of the video shows the system given a similar excitation, but with the PD$\alpha$ controller active.
 It can be seen how the motion of the gimbals dampens the initial pendulum motion.
 
-![Dampening experiments on hardware prototype.](./figures/Dampening-1000rpm.gif){ #fig:dampening-hardware}
+![Dampening experiments on hardware prototype.](./figures/Dampening-1000rpm.gif){ #fig:dampening-hardware short-caption="Dampening experiment with hardware prototype"}
 
 Yet, also a multitude of problematic issues can be observed.
 Firstly, the initial pendulum motion is dampened, but an out of plane pendulum motion is created.
@@ -343,7 +343,7 @@ The integrated speed readout via the microcontroller has proven very useful.
 The custom PCB has also increased the reliability of the prototype by introducing high quality plugs.
 These not only make disassembly much easier, but also reduce the uncertainty from loose/unreliable connections, making debugging easier.
 
-![Redesigned mount for the gyroscope. Note how the motor can be removed without affecting the alignment of the mount, making it easier to align the gyroscope's shaft with the motor. The coupling is also 3D-printed, since the original broke, most likely due to misalignment.](./figures/gyro-mount.jpg){ #fig:gyro-mount } 
+![Redesigned mount for the gyroscope. Note how the motor can be removed without affecting the alignment of the mount, making it easier to align the gyroscope's shaft with the motor. The coupling is also 3D-printed, since the original broke, most likely due to misalignment.](./figures/gyro-mount.jpg){ #fig:gyro-mount short-caption="3D printed mount and coupling for gyroscoped"}
 
 The speed controllers are not able to bring the motors to their maximum velocity expressed by the datasheet.
 It was also necessary to adjust their velocity measurement by validating the velocities with a tachometer.

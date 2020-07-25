@@ -34,9 +34,9 @@ This work therefore focusses on the parameter space of tower cranes.
 @Fig:lbc-cranes shows a selection of tower cranes manufactured by Liebherr.
 Going from the compact, bottom-slewing crane, to one of the highest load cranes, two intermediate steps are also considered
 
-![Cranes used to estimate parameter space of construction cranes. From left to right (increasing payload): L1-24, 71 EC-B, 380 EC-B, 1000 EC-B. ](./figures/cranes.png){ #fig:lbc-cranes }
+![Cranes used to estimate parameter space of construction cranes. From left to right (increasing payload): L1-24, 71 EC-B, 380 EC-B, 1000 EC-B. ](./figures/cranes.png){ #fig:lbc-cranes short-caption="Cranes used to estimate parameter space of construction cranes"}
 
-![Key parameters of the selected example cranes L1-24, 71 EC-B, 380 EC-B, 1000 EC-B.](./figures/crane-data.png){ #fig:crane-data }
+![Key parameters of the selected example cranes L1-24, 71 EC-B, 380 EC-B, 1000 EC-B.](./figures/crane-data.png){ #fig:crane-data short-caption="Key parameters of selected sample cranes"}
 
 From the data-sheets of these cranes the parameters relevant to the models can be obtained(see @Fig:crane-data).
 The parameters that enable an estimation of the base rate of the CMGs induced by the motion of the crane are of particular interest, as this determines the magnitude of the gyroscopic reaction torque that the gimbal motors need to compensate (see @Sec:cmg-dynamics).
@@ -51,7 +51,7 @@ In the zero crossing where the pendulum is aligned with gravity the potential en
 When the pendulum is at its highest points, the inverse is true.
 As the potential energy is dependent upon the mass of the pendulum, the maximum payload of the cranes is added to the parameter list.
 
-![Illustration of the velocity and acceleration of a pendulum. CC-BY-SA, Wikipedia User Ruryk](./figures/oscillating_pendulum-ccbysa-ruryk.gif){ #fig:pendulum-velocity }
+![Illustration of the velocity and acceleration of a pendulum. CC-BY-SA, Wikipedia User Ruryk](./figures/oscillating_pendulum-ccbysa-ruryk.gif){ #fig:pendulum-velocity short-caption="Illustration of velocity and acceleration of a pendulum"}
 
 An estimate of the amplitude of the crane oscillations can be derived from the maximum crane load, pendulum length and translational velocity caused by slewing the jib or moving the trolley.
 To determine the translational velocity caused by slewing, the jib length i.e. reach of the crane and the maximum load at the tip of the jib are also required:
@@ -66,7 +66,7 @@ h_{\text{max}} =& \frac{mv^2}{2mg} \\
 
 With $v$ being the translational speed of the hook, $N_T$ the trolley speed in m/min, $N_R$ the jib's rotational speed in rpm, $r$ the reach of the jib, $\omega=\dot\theta$ the angular velocity of the pendulum i.e. base rate of the hook, $l$ the length of the pendulum, $h$ the elevation of the hook relative to its lowest position and $\theta$ the angle of the pendulum.
 
-![Base rates and maximum excitation of the selected example cranes L1-24, 71 EC-B, 380 EC-B, 1000 EC-B from the above derivations.](./figures/crane-base-rates.png){ #fig:crane-base-rates }
+![Base rates and maximum excitation of the selected example cranes L1-24, 71 EC-B, 380 EC-B, 1000 EC-B from the above derivations.](./figures/crane-base-rates.png){ #fig:crane-base-rates short-caption="Base rates and max. excitation of sample cranes"}
 
 Note that all of the above assume a regular pendulum.
 As will be seen in the following section, it can be necessary to model the crane as a double pendulum.
@@ -91,7 +91,7 @@ It is also possible to study the effect of process torques and forces by constra
 This simplification was carried over to the hardware prototype.
 By building the crane as a swing that hangs from two diagonally spanned ropes, the motion can be mostly constrained to a single plane (see @Fig:prototype-sketch).
 
-![Sketch of the hardware prototype. The way it is suspended should ensure as close to 2D a motion as possible without having to resort to rigid links and large bearings.](./figures/prototype-sketch.svg){ #fig:prototype-sketch}
+![Sketch of the hardware prototype. The way it is suspended should ensure as close to 2D a motion as possible without having to resort to rigid links and large bearings.](./figures/prototype-sketch.svg){ #fig:prototype-sketch short-caption="Sketch of the hardware prototype"}
 
 The essence of a crane, a hook/load hanging from a rope, is a pendulum.
 However, in contrast to the basic point mass pendulum, a crane has several important differences.
@@ -120,7 +120,7 @@ The model ignores motion of the crane's gantry/jib, and therefore the pendulum i
 The upper mass is a point mass that includes the mass of the hook and crane rope.
 The lower mass is a distributed mass that includes the CMGs, their platform and everything attached to it e.g. robot, load and other kinematics.
 
-![Correspondence of crane/CMG/load components to our model.](./figures/crane-model-overview.png){ #fig:crane-model-overview }
+![Correspondence of crane/CMG/load components to the model.](./figures/crane-model-overview.png){ #fig:crane-model-overview short-caption="Correspondance of crane/CMG/load to model"}
 
 The generation of equations of motion and subsequent numerical integration are achieved using Python.
 The code builds on the educational example of Christian Hill [@HillLearningScientificProgramming2016] [^hillwebsite], the three-dimensional model extends the work of O'Connor and Habibi [@OConnorGantryCraneControl2013].
@@ -135,7 +135,7 @@ As such the following sections and appendix offer an extended discussion and the
 This section uses the most basic double pendulum (massless rods with point masses, @Fig:pm-double-pendulum) as a starting point.
 For this the equations of motion are commonly known, see e.g. [@HillLearningScientificProgramming2016]:
 
-![2D double pendulum as point masses on rigid, massless rods.](./figures/2d-pendulum.png){ #fig:pm-double-pendulum }
+![2D double pendulum as point masses on rigid, massless rods.](./figures/2d-pendulum.png){ #fig:pm-double-pendulum short-caption="2D double pendulum with rigid, massless links"}
 
 The Langrangian ($\mathcal{L} = KE - PE$) is the balance of potential energy (PE) and kinetic energy (KE) that describes our system:
 
@@ -158,7 +158,7 @@ This step can be performed using computer algebra systems (see code in  @Sec:2d-
 
 When these are solved through numerical integration (see code in @Sec:2d-pointmass-eom) the familiar chaotic motion is obtained, see @Fig:chaotic-dp.
 
-![Chaotic motion of a double pendulum.](./figures/double_pendulum.gif){ #fig:chaotic-dp }
+![Chaotic motion of a double pendulum.](./figures/double_pendulum.gif){ #fig:chaotic-dp short-caption="Chaotic motion of a double pendulum"}
 
 In the crane-CMG scenario, angles and velocities sufficient to create such motion outside of catastrophic failure events should not be encountered.
 Nevertheless the double-pendulum makes sense as a basis for the models for several reasons:
@@ -175,9 +175,9 @@ However, the interaction between the two parts of the pendulum can be seen by lo
 The impact of the lower pendulum can be expected to increase as the move is made to a distributed mass.
 As the CMGs exert torque on their platform, this impact of the lower link on the upper link will have an even greater effect.
 
-![Oscillations of a double pendulum at small angles and velocities.](./figures/dp-oscillations-animation.gif){ #fig:dp-oscillations-animation }
+![Oscillations of a double pendulum at small angles and velocities.](./figures/dp-oscillations-animation.gif){ #fig:dp-oscillations-animation short-caption="Oscillations of double pendulum at small angles"}
 
-![Oscillations of a double pendulum at small angles and velocities showing a) how the position for such parameters comes close to a simple pendulum and b) how the two parts of the pendulum interact.](./figures/dp-oscillations.svg){ #fig:dp-oscillations }
+![Oscillations of a double pendulum at small angles and velocities showing a) how the position for such parameters comes close to a simple pendulum and b) how the two parts of the pendulum interact.](./figures/dp-oscillations.svg){ #fig:dp-oscillations short-caption="Oscillations of double pendulam at small angles (plot)"}
 
 Until now the model has been using a point mass for both links.
 When the lower mass is replaced with a distributed mass, it is necessary to add a term to the kinetic energy to capture the rotational energy of the moving mass:
@@ -198,7 +198,7 @@ These extensions are implemented in @Sec:2d-distmass-eom.
 
 ### The 3D Model { #sec:3d-pendulum }
 
-![Model of a point mass double pendulum in three dimensions with a fixed point of suspension.](./figures/crane-spherical.png){ #fig:crane-spherical }
+![Model of a point mass double pendulum in three dimensions with a fixed point of suspension.](./figures/crane-spherical.png){ #fig:crane-spherical short-caption="Point mass double pendulum in three dimensions"}
 
 If the point mass model is extended to three dimensions, two angles are required to describe the location of each point.
 In the 3D model of the double pendulum (@Fig:crane-spherical) $\theta_{i1}$ are the polar angles and $\theta_{i2}$ the azimuthal angles.
@@ -236,13 +236,13 @@ The issues arise due to the fact that the same coordinates can be arrived at by 
 While such jumps do not cause issues regarding the position of the pendulum, the spikes in angular velocity represent the kinetic energy in the system incorrectly.
 The effect of this can vary depending on the excitation/initial conditions of the simulation (see @Fig:2D-3D-comparison-large-excitation-spherical and @Fig:2D-3D-comparison-small-excitation in the appendix).
 
-![3D double pendulum using spherical coordinates under small 2D excitation illustrating the issues of the use of spherical coordinates. Note how $\theta_{i2}$ jumps in steps of 180° causing $\theta_{i1}$ to remain negative. It also causes the spikes in angular velocity. These cause an erroneous dampening of the pendulum.](./figures/3D-model-angle-issues.svg){ #fig:3d-model-angle-issues }
+![3D double pendulum using spherical coordinates under small 2D excitation illustrating the issues of the use of spherical coordinates. Note how $\theta_{i2}$ jumps in steps of 180° causing $\theta_{i1}$ to remain negative. It also causes the spikes in angular velocity. These cause an erroneous dampening of the pendulum.](./figures/3D-model-angle-issues.svg){ #fig:3d-model-angle-issues short-caption="Issues with spherical coordinates in double pendulum model"}
 
 To alleviate this, the description of the kinematic constraints can be changed to use projected angles instead of spherical coordinates.
 This approach follows that of [@OConnorGantryCraneControl2013], where the authors derive the equations of motion for a double pendulum with an attached distributed mass that has two degrees of rotational freedom.
 The following extends this to a full three degrees of freedom (see @Fig:crane-projected-angles), not only to model realistic crane load motion more closely but also to accommodate the load rotation use-case.
 
-![Model of a double pendulum in three dimensions with a fixed point of suspension and using projected angles instead of spherical coordinates. Note that the lower mass is now a distributed mass with three degrees of rotational freedom, while the upper mass is still a point mass with only two rotational degrees of freedom.](./figures/crane-projected.png){ #fig:crane-projected-angles }
+![Model of a double pendulum in three dimensions with a fixed point of suspension and using projected angles instead of spherical coordinates. Note that the lower mass is now a distributed mass with three degrees of rotational freedom, while the upper mass is still a point mass with only two rotational degrees of freedom.](./figures/crane-projected.png){ #fig:crane-projected-angles short-caption="Double pendulum in three dimensions using projected angles"}
 
 With the use of projected angles the cartesian expressions become:
 
@@ -285,7 +285,7 @@ The inertia tensor in this reference frame then is:
 
 The rotations required to transform the reference frame $X_2Y_2Z_2$ that is aligned with the world axes to the reference frame $X_3Y_3Z_3$ also enable the rotational velocities $\omega_{X_3Y_3Z_3}$ to be obtained from the projected angle velocities $\dot{\theta}_{2j}$.
 
-![Sequence of rotations to transform the world aligned reference frame to the reference frame of the distributed mass.](./figures/cog-rotations.png){ #fig:cog-rotations }
+![Sequence of rotations to transform the world aligned reference frame to the reference frame of the distributed mass.](./figures/cog-rotations.png){ #fig:cog-rotations short-caption="Sequence of rotations for distributed mass reference frame"}
 
 The rotations illustrated in @Fig:cog-rotations can be expressed as:
 
@@ -336,7 +336,7 @@ Since the 3D plotting of Matplotlib is slightly limited, the following animation
 For this the state-vectors of the simulation are transformed to cartesian points for the masses as well as an X and Y vector for the reference frame of our mass.
 See the appendix (@Sec:distributed-mass-eom) for equations of motion and code.
 
-![Visualization of simulated 3D double pendulum with the lower mass as a distributed mass. The lower mass begins with a small angular velocity around the link axis. Visualized using Rhino/Grasshopper.](./figures/gh-screenrecording.gif){ #fig:sim-gh }
+![Visualization of simulated 3D double pendulum with the lower mass as a distributed mass. The lower mass begins with a small angular velocity around the link axis. Visualized using Rhino/Grasshopper.](./figures/gh-screenrecording.gif){ #fig:sim-gh short-caption="Animation of distributed mass, 3D double pendulum"}
 
 This process can be continued to add further aspects such as wind or a movable point of suspension.
 The following section covers how such aspects can be added relatively easily by modifying the state of the system.
@@ -345,7 +345,7 @@ Other aspects such as a movable point of suspension would require a new Langrang
 An alternative would be to use multi-body simulation tools as are available in Modelica or Simulink.
 Here, individual blocks that contain e.g. a distributed mass or a rotary joint can be connected with each other (see @Fig:modelica-example).
 
-![Rudimentary implementation of this model in Modelica. Note that this lacks connections to input torque from the CMGs and uses a different angle description.](./figures/modelica-example.gif){ #fig:modelica-example }
+![Rudimentary implementation of this model in Modelica. Note that this lacks connections to input torque from the CMGs and uses a different angle description.](./figures/modelica-example.gif){ #fig:modelica-example short-caption="Rudimentary double pendulum in Modelica"}
 
 ## Adding External Torques
 
@@ -422,7 +422,7 @@ This being the point on a pendulum where a perpendicular force leads to zero rea
 
 [^center-of-percussion]: For further reading the [wikipedia article](https://en.wikipedia.org/wiki/Center_of_percussion) offers an excellent explanation of this phenomenon.
 
-![Illustration of the center of percussion and how it relates to the reaction of a pendulum given the location of a force acting upon it. CC-BY-SA 4.0, Wikipedia user Qwerty123uiop](./figures/center-of-percussion.png){ #fig:center-of-percussion }
+![Illustration of the center of percussion and how it relates to the reaction of a pendulum given the location of a force acting upon it. CC-BY-SA 4.0, Wikipedia user Qwerty123uiop](./figures/center-of-percussion.png){ #fig:center-of-percussion short-caption="Illustration of the Center of Percussion"}
 
 In this case, where a double pendulum is being used, this means that there is an additional torque acting upon the lower link that depends on the force and its distance to the center of mass of the lower link.
 The force acts on the pivot point of the lower link and thereby on the upper link.
@@ -448,7 +448,7 @@ F_{1x} = F_{2x} \cos(\theta_1 + \theta_2) + F_{2y} \sin(\theta_1 + \theta_2)
 
 It is important to note that the forces acting upon the system due to gravity are already taken into account by the equations of motion derived from the Langrangian.
 
-![Illustration of the external force acting upon the 2D model](./figures/external-forces.png){ #fig:external-forces }
+![Illustration of the external force acting upon the 2D model](./figures/external-forces.png){ #fig:external-forces short-caption="External forces acting upon 2D model"}
 
 ## Payload Inertia
 
@@ -461,7 +461,7 @@ The density of concrete is assumed to be 2,400 kg/m$^3$.
 Since the center of gravity of the payload will not lie in the point of rotation (the hook), the following assumes an offset equal to the size in Z.
 Using the parallel axis theorem, this results in the inertia listed in @Fig:inertia-data.
 
-![Example payload inertia assuming constant density (2,400 kg/m$^3$), proportions (5, 0.1, 2) and a weight stemming from the max load of the associated crane. It is also assumed that the CoG is to be offset by the Z-size from the point of rotation.](./figures/inertia-data.png){ #fig:inertia-data }
+![Example payload inertia assuming constant density (2,400 kg/m$^3$), proportions (5, 0.1, 2) and a weight stemming from the max load of the associated crane. It is also assumed that the CoG is to be offset by the Z-size from the point of rotation.](./figures/inertia-data.png){ #fig:inertia-data short-caption="Example payload inertias"}
 
 ## Process Torques and Forces
 
@@ -493,10 +493,10 @@ The CAD files from the robot manufacturer are imported into SolidWorks and rotat
 From this a Simmechanics file can be exported using the export plug-in provided by Mathworks and subsequently adapted to receive the recorded axis values and output the torques and forces experienced at the robot base (see @Fig:kr3-simmechanics).
 The inertia of the robot's axes are estimated by distributing the robot’s mass according the volume of each link, which assumes a homogeneous density of the robot.
 
-![Three robot paths used in these experiments.](./figures/robot-toolpaths.gif){#fig:robot-toolpaths}
+![Three robot paths used in these experiments.](./figures/robot-toolpaths.gif){#fig:robot-toolpaths short-caption="Example robot paths for experiments"}
 
-![Parametric robot path programmed using the KUKA|prc plugin for Rhino/Grasshopper.](./figures/robot-path-planning.jpg){#fig:robot-path-planning}
+![Parametric robot path programmed using the KUKA|prc plugin for Rhino/Grasshopper.](./figures/robot-path-planning.jpg){#fig:robot-path-planning short-caption="Parametric robot path programming in KUKA|prc"}
 
-![Axis values simulated by KUKA|prc. Note the sharp corners resulting from unlimited acceleration/jerk values making these values ill-suited to simulate the forces and torques at the robot base.](./figures/kuka-prc-axis-values.jpg){#fig:robot-axis-values}
+![Axis values simulated by KUKA|prc. Note the sharp corners resulting from unlimited acceleration/jerk values making these values ill-suited to simulate the forces and torques at the robot base.](./figures/kuka-prc-axis-values.jpg){#fig:robot-axis-values short-caption="Axis values simulated by KUKA|prc"}
 
-![Body simulation of the KR3. The masses of the axes have been estimated from the total mass of the robot and the volume of the respective axes.](./figures/kr3-simmechanics-vis.png){ #fig:kr3-simmechanics }
+![Body simulation of the KR3. The masses of the axes have been estimated from the total mass of the robot and the volume of the respective axes.](./figures/kr3-simmechanics-vis.png){ #fig:kr3-simmechanics short-caption="Body simulation of robot in SimMechanics"}

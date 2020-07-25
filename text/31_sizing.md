@@ -39,9 +39,9 @@ This momentum in turn depends on the moment of inertia and maximum rotational ve
 The developed models nevertheless permit the estimation of the dampening performance by varying the momentum envelope and observing dampening performance (@Fig:limited-momentum-animation and @Fig:limited-momentum-plot, for code see sec:2d-dp-wcontroller-limit) and thereby derive the necessary requirements for the subsequent sizing of the CMG array.
 These simulations also provide a useful rule of thumb for the dampening performance: doubling the momentum envelope halves the number of swings it takes to dampen the crane.
 
-![Simulation of dampening with differently sized momentum envelopes i.e. CMG workspace sizes.](./figures/dp-controller-limited-momentum.gif){ #fig:limited-momentum-animation}
+![Simulation of dampening with differently sized momentum envelopes i.e. CMG workspace sizes.](./figures/dp-controller-limited-momentum.gif){ #fig:limited-momentum-animation short-caption="Simulated dampening with restricted momentum envelope"}
 
-![Lower link angle, torque used and position in momentum envelope for dampening with different sized momentum envelopes i.e. CMG workspace sizes.](./figures/dp-2d-distmass-limited-momentum.svg){ #fig:limited-momentum-plot}
+![Lower link angle, torque used and position in momentum envelope for dampening with different sized momentum envelopes i.e. CMG workspace sizes.](./figures/dp-2d-distmass-limited-momentum.svg){ #fig:limited-momentum-plot short-caption="Simulated dampening with restricted momentum envelope (plot)"}
 
 Depending on the cause of excitation, it might be necessary to further increase the momentum envelope.
 In the discussed dampening simulations, it can be seen that dampening can leave the CMG array in a state away from the center of its momentum envelope.
@@ -89,9 +89,9 @@ The various requirements discussed above are illustrated in @Fig:cmg-reqs.
 Having determined the requirements the next step is to understand the relationships between the various parameters of the CMG array.
 These are illustrated in @Fig:cmg-params.
 
-![Illustration of the requirements stemming from the different CMG tasks.](./figures/cmg-reqs.png){ #fig:cmg-reqs }
+![Illustration of the requirements stemming from the different CMG tasks.](./figures/cmg-reqs.png){ #fig:cmg-reqs short-caption="CMG requirements for various tasks"}
 
-![Illustration of the relationship between the parameters of a CMG array and crane.](./figures/cmg-param-relationships.svg){ #fig:cmg-params }
+![Illustration of the relationship between the parameters of a CMG array and crane.](./figures/cmg-param-relationships.svg){ #fig:cmg-params short-caption="Relationship of crane and CMG parameters"}
 
 Beginning with the gyroscopes, there is the moment of inertia of the rotor.
 This can be affected by the density of the material as well as by the shape and size of the rotor.
@@ -138,7 +138,7 @@ The relevance of this difference will be discussed in the following section.
 To make sizing easier, all equations involved can be entered in a spreadsheet (see @Fig:cmg-sizing).
 Using this method, various parameters can be run through quite quickly.
 
-![Spreadsheet of the most relevant CMG parameters including the equations that link them together.](./figures/cmg-sizing.png){ #fig:cmg-sizing }
+![Spreadsheet of the most relevant CMG parameters including the equations that link them together.](./figures/cmg-sizing.png){ #fig:cmg-sizing short-caption="CMG sizing spreadsheet"}
 
 The spreadsheet makes a distinction between torque dynamics at rest and those during the worst case.
 In such a case the momentum of the gyroscopes would be aligned with the axis of rotation of the array/base and the controller would be trying to move the gimbal in the opposite direction of the precession caused by the gyroscopic reaction.
@@ -188,7 +188,7 @@ In the current configuration, the gimbal experiences zero reaction torque throug
 However, as the gimbal is not moving, there is also no torque produced to dampen the oscillation.
 Assuming that yellow denotes a reaction torque harmful to the gimbal assembly, the challenge is to rotate the gimbal past the midpoint prior to it turning yellow.
 
-![Illustration of the potential reaction torque acting on the gimbal, depending on the current base rate and gimbal angle. Note how, as the gimbal axes are held parallel to the axis of rotation, no reaction torque is produced. The blue arrow is the angular momentum of the gyroscope, it therefore remains constant. The green arrow is the angular velocity that the CMG experiences due to the pendulum's oscillations, i.e. the base rate. The semicircular bar denotes in color the reaction torque that the gimbal axis would experience at the various gimbal angles.](./figures/torque_issue_zero_reaction.gif){ #fig:torque-issue-zero }
+![Illustration of the potential reaction torque acting on the gimbal, depending on the current base rate and gimbal angle. Note how, as the gimbal axes are held parallel to the axis of rotation, no reaction torque is produced. The blue arrow is the angular momentum of the gyroscope, it therefore remains constant. The green arrow is the angular velocity that the CMG experiences due to the pendulum's oscillations, i.e. the base rate. The semicircular bar denotes in color the reaction torque that the gimbal axis would experience at the various gimbal angles.](./figures/torque_issue_zero_reaction.gif){ #fig:torque-issue-zero short-caption="Reaction torque acting on gimbal during dampening"}
 
 It is also important to note that the direction of reaction torque is in line with the desired rotation of the gimbal.
 Under a well-designed control regime, the maximum allowable reaction torque might lie above the maximum torque rating of the motor and other parts of the gimbal assembly.
