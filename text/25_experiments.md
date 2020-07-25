@@ -80,7 +80,7 @@ As the 2D model only requires torque production around a single axis for stabili
 The following section therefore briefly introduces the steering law and singularity avoidance for the SPCMG.
 Subsequently the interaction of said singularity avoidance with the dampening controller is simulated.
 
-### Scissored Pair CMGs Steering and Singularity avoidance { #sec:spcmg-steering }
+### Scissored Pair CMGs Steering and Singularity Avoidance { #sec:spcmg-steering }
 
 The SPCMG is tasked with producing the torque that is to be applied to the lower link of the double pendulum.
 Since the control input of the SPCMG is the speed of its gimbal motors, a steering law is required to translate the desired torque into a gimbal speed.
