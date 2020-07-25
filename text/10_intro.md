@@ -81,7 +81,7 @@ The RoboCrane was originally a DARPA project at NIST that was proposed for sever
 Other systems such as the Fraunhofer Institute’s IPAnema have been aimed at logistics [@PottIPAnemaFamilyCableDriven2013].
 More recently there have also been further conceptual proposals for the use of parallel tendon robots on construction sites [@SousaSPIDERobotCableRobotSystem2016] as well as large scale 3D-printing efforts that utilize parallel tendon research prototypes [@IzardLargescale3DPrinting2017] (see @Fig:parallel-tendon-print).
 
-![Rendering of a 3D-printing concept for construction sites, taken from [@IzardLargescale3DPrinting2017]](./figures/parallel-tendon-printing-izard.png){ #fig:parallel-tendon-print }
+![Rendering of a 3D-printing concept for construction sites [@IzardLargescale3DPrinting2017]](./figures/parallel-tendon-printing-izard.png){ #fig:parallel-tendon-print }
 
 Parallel tendon kinematics come with some challenges and disadvantages.
 Dealing with tendon elasticity is particularly relevant to vibrations in the system.
@@ -90,7 +90,7 @@ Some researchers have therefore added momentum control devices to compensate tor
 The bigger issue for construction sites will most likely be the need for the tendon's winches to be placed around the workspace of the system.
 This means that tendons would be required to cross large areas of the construction site, which again would pose significant challenges with regard to collisions, setup costs as well as worker safety.
 
-![Experiments with dampening a parallel tendon platform using reaction wheels, taken from [@WeberActiveVibrationCanceling2014]. The left example is not using the reaction wheels. On the right, one can see them being used and rotating at the top of the platform.](./figures/reaction-wheel-tendon-gangloff.gif){ #fig:reaction-wheel-tendon }
+![Experiments with dampening a parallel tendon platform using reaction wheels [@WeberActiveVibrationCanceling2014]. The left example is not using the reaction wheels. On the right, one can see them being used and rotating at the top of the platform.](./figures/reaction-wheel-tendon-gangloff.gif){ #fig:reaction-wheel-tendon }
 
 Drones are the only system on a construction site with a workspace larger than cranes.
 They are therefore seeing use as an inspection, surveying and monitoring tool.
@@ -110,7 +110,7 @@ Others have attached articulated arms to hydraulic remote controlled demolition 
 Apart from their vertical and horizontal reach, a further benefit of cranes can be their small footprint relative to their horizontal reach.
 Mobile platforms, on the other hand, would have to be provided with access via the ground.
 
-![The Digital Construction Platform that combines an industrial robot with a hydraulic arm to increase its reach. The red line has been drawn by the end of the hydraulic arm and the blue line by the small robot attached to it. Taken from [@KeatingCompoundArmApproach2014]](./figures/dcp-mit-media-lab.jpg){ #fig:dcp-media-lab }
+![The Digital Construction Platform that combines an industrial robot with a hydraulic arm to increase its reach. The red line has been drawn by the end of the hydraulic arm and the blue line by the small robot attached to it. [@KeatingCompoundArmApproach2014]](./figures/dcp-mit-media-lab.jpg){ #fig:dcp-media-lab }
 
 ### Potential Applications
 

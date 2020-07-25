@@ -80,7 +80,7 @@ Control of cranes has been a long-running endeavor, which is obvious from the am
 Given the price and complexity of sensors capable of tracking the position of a hook, these mostly use predetermined actuation paths to reduce the creation of oscillations.
 This of course is particularly well suited to cranes that perform programmed motions, but can also benefit manual control of cranes.
 
-![Sway control in a gantry crane by SWF. Taken from [@SWFKrantechnikGmbHSWFKrantechnikLastpendeldampfung2012].](./figures/swaycontrol-swf.gif){ #fig:swaycontrol-swf }
+![Sway control in a gantry crane by SWF [@SWFKrantechnikGmbHSWFKrantechnikLastpendeldampfung2012].](./figures/swaycontrol-swf.gif){ #fig:swaycontrol-swf }
 
 Given the flexible connection (ropes) between actuators (winches) and end effector (the hook), lack of sensors and inherent flex of the crane’s structure, they make for interesting control engineering problems.
 The review by Abdehl-Rahman et al. [@Abdel-RahmanDynamicsControlCranes2003] is a good starting point into the literature.
