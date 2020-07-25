@@ -97,7 +97,7 @@ Note that these equations do not limit the torque dynamics.
 ```{.txt include=code/double-pendulum-3d-pointmass.txt}
 ```
 
-![3D double pendulum using projected angles under small 2D exitation. Note how we no longer have the jumps in the second angle observerd in the simulations using spherical coordinates. The motion remains entirely in the XZ-plane. Note that this is no longer the case when the planar exitation lies in a plane outside of the XZ- or YZ-plane (see @Fig:3D-projected-large-exitation-diagonal).](./figures/3d-model-angle-issues-solution.svg){ #fig:3D-model-angle-issues-solution short-caption="Evalution of projected angle model"}
+![3D double pendulum using projected angles under small 2D exitation. Note how we no longer have the jumps in the second angle observerd in the simulations using spherical coordinates. The motion remains entirely in the XZ-plane. Note that this is no longer the case when the planar exitation lies in a plane outside of the XZ- or YZ-plane (see @Fig:3D-projected-large-exitation-diagonal).](./figures/3d-model-angle-issues-solution.svg){ #fig:3d-model-angle-issues-solution short-caption="Evalution of projected angle model"}
 
 ![Comparison of 2D and 3D model (projected angles) of double pendulum with small planar exitation. Note the stark decrease in difference and lack of dampening when compared with the spherical coordinate model.](figures/2d-3d-comparison-small-exitation.svg){ #fig:2D-3D-comparison-small-excitation short-caption="Comparison of projected angle model with 2D model"}
 

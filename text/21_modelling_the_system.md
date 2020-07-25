@@ -236,7 +236,7 @@ The issues arise due to the fact that the same coordinates can be arrived at by 
 While such jumps do not cause issues regarding the position of the pendulum, the spikes in angular velocity represent the kinetic energy in the system incorrectly.
 The effect of this can vary depending on the excitation/initial conditions of the simulation (see @Fig:2D-3D-comparison-large-excitation-spherical and @Fig:2D-3D-comparison-small-excitation in the appendix).
 
-![3D double pendulum using spherical coordinates under small 2D excitation illustrating the issues of the use of spherical coordinates. Note how $\theta_{i2}$ jumps in steps of 180° causing $\theta_{i1}$ to remain negative. It also causes the spikes in angular velocity. These cause an erroneous dampening of the pendulum.](./figures/3D-model-angle-issues.svg){ #fig:3d-model-angle-issues short-caption="Issues with spherical coordinates in double pendulum model"}
+![3D double pendulum using spherical coordinates under small 2D excitation illustrating the issues of the use of spherical coordinates. Note how $\theta_{i2}$ jumps in steps of 180° causing $\theta_{i1}$ to remain negative. It also causes the spikes in angular velocity. These cause an erroneous dampening of the pendulum.](./figures/3d-model-angle-issues.svg){ #fig:3d-model-angle-issues short-caption="Issues with spherical coordinates in double pendulum model"}
 
 To alleviate this, the description of the kinematic constraints can be changed to use projected angles instead of spherical coordinates.
 This approach follows that of [@OConnorGantryCraneControl2013], where the authors derive the equations of motion for a double pendulum with an attached distributed mass that has two degrees of rotational freedom.
