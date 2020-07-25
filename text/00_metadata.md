@@ -18,6 +18,7 @@ abstract:
   Through a variety of simulations, this model is validated and used to understand the critical interactions between the various systems.
   The simulations not only show the potential of the approach, but also allow the work to develop sizing guidelines and identify critical areas for future research.
   The work therefore closes by laying out the critical path to bringing this approach to the construction site.
+  TODO extend abstract, give more context
 abstractde:
   Die Digitalisierung der Planungs- und Ausführungsphasen der Bauindustrie sowie Fortschritte in der Automatisierungstechnik haben zu einer Renaissance der Baurobotik geführt.
   Die aktuellen Bemühungen zur Bereitstellung von Robotern für die Ausführung digitaler Baupläne drehen sich entweder um die Anpassung von Industrierobotern für die Baustelle, hochspezialisierte Sonderroboter oder die Digitalisierung bestehender Baumaschinen.

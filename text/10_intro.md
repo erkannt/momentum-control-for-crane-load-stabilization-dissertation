@@ -12,6 +12,8 @@ Therefore this thesis aims not only to be of use to other engineers well versed 
 Instead the intention is that, by covering certain fundamentals in greater detail, this work will be of use to architects, civil engineers and roboticists alike enabling them to understand the potentials and challenges of hanging a robot from a crane.
 With this in mind, the following work contains a basic introduction to control moment gyroscopes, models for the simulation of the crane-CMG robot system as well as tools for the sizing of CMGs for crane applications.
 
+TODO: introduce topic and structure of thesis
+
 ------------
 
 The original idea and subsequent work contained in this thesis have been submitted as a patent application [@HaarhoffVorrichtungZurSteuerung].
@@ -53,13 +55,18 @@ Yet this flexibility also means that the rope cannot be used to push, only to pu
 With the actors (the motors) of the crane connected to the end effector (the hook) via a flexible connection, it is difficult to produce controlled motion in the event of disturbances.
 If robots are to be used over the large work area of the construction site effectively, they must be provided with a stable work platform.
 
+TODO: elaborate on instability and how a robot introduces disturbance
+TODO: figure of robot on crane with forces
+
 ### Momentum Control Devices
 
 Such a platform must be capable of compensating the torques and forces acting on the base of the robot as it performs its task.
 If we wish to use the proven technology of construction cranes, we need to find a way of creating counteracting forces and torques in the middle of space.
 Fortunately, spacecraft face a similar issues, having to maneuver without having land or air to push off from.
-Whilst it would certainly be spectacular to attach rocket engines to a crane and robot, spacecraft also have the means of producing torque without expending fuel (a valuable skill in a place where a resupply used to cost 75k $/kg [@JonesMuchLowerLaunch2017]).
-This feat is achieved through momentum control devices and this work will discuss the feasibility of using a specific type of these, called control moment gyroscopes, to attain our goal of construction robots for the largest of scales.
+Whilst spacecraft are usually known for their use of rocket and other propulsive devices, they also usually have means of producing torque without expending fuel.
+This feat is achieved through momentum control devices and this work will discuss the feasibility of using a specific type of these, called control moment gyroscopes, to enable construction robots for large work envelopes.
+
+TODO: note which chapter will discuss what
 
 ### Alternative Approaches
 
