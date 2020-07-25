@@ -1,3 +1,5 @@
+-- copied from https://github.com/pandoc/lua-filters
+
 if FORMAT ~= "latex" then
   return
 end
