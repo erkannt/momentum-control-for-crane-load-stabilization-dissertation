@@ -39,6 +39,7 @@ pandoc-tex-flags = --verbose \
 	-F pandoc-crossref \
 	-F pandoc-include-code \
 	-F pandoc-include \
+	--lua-filter=tools/short-captions.lua \
 	-H "$(stylefolder)/preamble.tex" \
 	--template="$(stylefolder)/template.tex" \
 	--bibliography="$(bibfile)" \
