@@ -1,5 +1,5 @@
 ---
-title: Momentum Control for Crane-Load Stabilization
+title: Momentum Control for Crane Load Stabilization
 author: Daniel A. Haarhoff
 born: Dachau
 subtitle: Modeling and Sizing of Control Moment Gyroscopes for Cranes
