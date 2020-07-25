@@ -483,9 +483,9 @@ This inverse kinematic simulation is useful for solving singularity issues in th
 This is obvious when looking at the axis values produced by KUKA|prc in @Fig:robot-axis-values, which have very sharp corners where the robot changes direction.
 
 While more realistic robot simulation packages exist, for this project real axis values can be used to simplify matters.
-These can be obtained using the mxAutomation (mxA) option of the plugin-in, mxA being a protocol intended for interfacing programmable logic controllers (PLC) with KUKA controllers.
+These can be obtained using the mxAutomation option of the plugin-in, mxAutomation being a protocol intended for interfacing programmable logic controllers (PLC) with KUKA controllers.
 The KUKA|prc software uses this protocol via UDP over a conventional Ethernet connection with the controller.
-Using mxA, the robot path can be streamed to the controller and actual axis values are sent back.
+Using mxAutomation, the robot path can be streamed to the controller and actual axis values are sent back.
 Time-stamped recordings of these can be used as input for a multi-body simulation.
 
 The multi-body simulation is set up using the Simmechanics package in Simulink.

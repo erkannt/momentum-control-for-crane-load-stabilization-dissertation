@@ -14,7 +14,7 @@ Recalling the properties of a CMG array, there are three main requirements:
 - dynamics of the torque (Nm/s)
 - torque capacity i.e. momentum envelope (Nms)
 
-One thing to remember is that the envelope does not have to be symmetric and that the other properties are not homogenous within the envelope.
+The created envelope does not have to be symmetric and the dynamic performance is not homogenous within the envelope.
 The steering law for the array will also change the torque availability depending on the chosen singularity avoidance techniques.
 
 ### Dampening
@@ -26,15 +26,15 @@ Generally, however, the sizing will be informed by:
 - crane and load parameters
 - max duration/swings until dampened
 
-The section on modeling cranes and loads (@sec:crane-params) covers how it might be possible to estimate the relevant parameters, including the amount of excitation to be expected.
+The section on modeling cranes and loads (@sec:crane-params) covers a model to estimate the relevant parameters, including the amount of excitation to be expected.
 The chaotic interaction inherent to a double pendulum makes it difficult to create a way of determining/estimating the time it will take a given CMG array to dampen an excitation.
 Looking at the dampening simulations of different capacity CMGs (@fig:spcmg-avoidance-animation), the basic behavior during dampening can nevertheless be understood.
 
 The dampening controller will generate torque until the CMGs saturates i.e. its capacity (Nms) is consumed in one direction.
 As the pendulum reverses direction, the CMGs move out of saturation as the commanded torque also reverses direction.
 
-Therefore I expect there will be a way to estimate the number of oscillations a CMG array requires to dampen a given pendulum.
-My guess would be that the estimation will relate the momentum envelope of the array to the angular momentum of the two links.
+This indicates a potential to estimate the number of oscillations a CMG array requires to dampen a given pendulum.
+The estimation will probably relate the momentum envelope of the array to the angular momentum of the two links.
 This momentum in turn depends on the moment of inertia and maximum rotational velocity of the two links.
 The developed models nevertheless permit the estimation of the dampening performance by varying the momentum envelope and observing dampening performance (@Fig:limited-momentum-animation and @Fig:limited-momentum-plot, for code see sec:2d-dp-wcontroller-limit) and thereby derive the necessary requirements for the subsequent sizing of the CMG array.
 These simulations also provide a useful rule of thumb for the dampening performance: doubling the momentum envelope halves the number of swings it takes to dampen the crane.
@@ -75,7 +75,7 @@ As discussed in the simulations of the robot paths, it is necessary to look at t
 By optimizing the robot paths or trading dynamics for consumption, the design of the process can change the requirements significantly.
 It will therefore be beneficial to develop tools that provide a short feedback loop for the process designers.
 
-This work provides an example of such a tool with the ability to evaluate the requirements of a parametric robot path made with KUKAprc.
+This work provides an example of such a tool with the ability to evaluate the requirements of a parametric robot path made with KUKA|prc.
 Currently this is still a multi-step process that could certainly be more tightly integrated.
 The simulation of the obtainable path accuracy through the use of process compensation currently does not take into account the ability of the robot to adapt to deviations of its base.
 Nevertheless an estimation of the path accuracy without such additional compensation techniques has been shown in @Sec:robot-comp and the existing tools can already provide the fundamental requirements of Nm, Nm/s and Nms for the process compensation.
@@ -96,7 +96,7 @@ These are illustrated in @Fig:cmg-params.
 Beginning with the gyroscopes, there is the moment of inertia of the rotor.
 This can be affected by the density of the material as well as by the shape and size of the rotor.
 The simplest forms are cylinders with cylindrical shells providing better mass utilization.
-Another common design are spherical rotors which have a side benefit of causing less changes to the moment of inertia in the array/platform/spacecraft when rotated about their gimbal axis.
+Another common design are spherical rotors which have the added benefit of causing less changes to the moment of inertia in the array/platform/spacecraft when rotated about their gimbal axis.
 At high velocities rotors can experience significant forces, and this needs to be taken into consideration when selecting the material and sizing the rotor.
 
 The moment of inertia and rotor speed provide the momentum for each gyroscope in the array.
@@ -125,7 +125,7 @@ The reaction torque depends on the momentum of the gyroscope and base rate i.e. 
 Since the CMG arrays should operate in three dimensions and under diverse loads, the worst case must be assumed i.e. that the momentum vector of the gyroscope will lie orthogonal to the angular velocity.
 Both the desired output torque produced by the CMG as well as the reaction torque  depend on the momentum of the gyroscope.
 But while the output torque depends on the gimbal velocity the reaction torque depends on the base rate
-Therefore the following relationship holds true (see section 3.2.6 of [@LeveSpacecraftMomentumControl2015]) for full discussion): 
+Therefore, the following relationship holds true [@LeveSpacecraftMomentumControl2015, Sec. 3.2.6]: 
 
 $$ \frac{\omega_{gimbal}}{\omega_{system}} = \frac{\tau_{system}}{\tau_{gimbal}} $${#eq:torque-velocity-relation}
 

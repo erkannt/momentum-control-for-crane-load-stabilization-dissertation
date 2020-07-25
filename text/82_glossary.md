@@ -18,3 +18,6 @@ Jacobian
 
 Pseudo-Inverse
 :  def
+
+Center of Percussion
+: def
