@@ -30,6 +30,7 @@ h4 {
 }
 p {
     text-align: justify;
+    hyphens: auto;
 }
 p a {
     word-wrap: break-word;
@@ -219,6 +220,11 @@ figure:hover {
     margin: 0 auto;
     margin-top: 2em;
     padding: 1em;
+}
+
+.references p a[href] {
+  word-wrap:break-all;
+  white-space: pre-line;
 }
 
 </style>
