@@ -13,4 +13,4 @@
     image: node:alpine
     commands:
       - npm install -g link-checker
-      - link-checker _build/diss-haarhoff.html --url-ignore='http://www.arcas-project.eu'
+      - link-checker --http-redirects 3 _build/diss-haarhoff.html --url-ignore='http://www.arcas-project.eu'
