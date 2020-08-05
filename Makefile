@@ -19,7 +19,7 @@ PDF2SVG=pdf2svg
 # Project Settings
 build = _build
 name = diss-haarhoff
-bibfile := $(abspath text/references.bib)
+bibfile := $(abspath text/bibliography.yaml)
 stylefolder := $(abspath style)
 pandoc-html-flags = --verbose \
 	-F pandoc-crossref \

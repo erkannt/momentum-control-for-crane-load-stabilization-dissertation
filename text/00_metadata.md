@@ -32,7 +32,7 @@ abstractde:
   Durch eine Reihe von Simulationen wird dieses Modell validiert und verwendet, um die kritischen Wechselwirkungen zwischen den verschiedenen Systemen zu verstehen.
   Die Simulationen zeigen nicht nur das Potenzial des Ansatzes, sondern ermöglichen es auch, Dimensionierungsrichtlinien zu entwickeln und kritische Bereiche für die zukünftige Forschung zu identifizieren.
   Die Arbeit schließt daher mit der Ausarbeitung des kritischen Pfades, um diesen Ansatz auf die Baustelle zu bringen.
-bibliography: [./references.bib]
+bibliography: [./bibliography.yaml]
 link-citations: true
 linkReferences: true
 documentclass: scrbook
