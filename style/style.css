@@ -45,6 +45,11 @@ blockquote {
     padding-left: 20px;
 }
 
+dt {
+    font-weight: bold;
+    padding-top: 1rem;
+}
+
 ::selection {
     background-color: #E4E4E4;
 }
