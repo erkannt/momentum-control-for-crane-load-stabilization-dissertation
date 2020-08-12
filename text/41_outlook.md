@@ -57,9 +57,9 @@ This should be possible in Modelica, Simulink Simmechanics or other toolkits.
 While the CMG array could also be modeled using this approach, I would recommend the use of the explicit model used in this work, as it makes it possible to distinguish the various torque components.
 This proved to be of great value in understanding the gyroscopic system.
 
-## Other Work Required
+## Future Work Required
 
-Beyond these critical next steps there is a plethora of research and engineering challenges.
+Beyond the critical next steps outlined above, there is a plethora of research and engineering challenges.
 
 Once the pendulum, CMG and robot multibody models as well as the inverse kinematics have become more tightly integrated, optimization strategies to increase process accuracy through changes to robot paths and execution speeds/accelerations could then be studied.
 Similarly, by extending the models to include motion of the suspension point i.e. gantry motion or trolley and gib motion, control systems become possible that utilize information and actors of both the crane and CMG array.
@@ -153,5 +153,6 @@ Their dampening capabilities could lead to high speed, stable crane movements an
 
 ------------
 
-Controlled motion is the foundation for automation, and, with the addition of CMGs, cranes could become a motion provider for workspaces of unprecedented size and payload.
+Controlled motion is the foundation for automation.
+With the addition of CMGs, cranes could become a motion provider for workspaces of unprecedented size and payload.
 It is my hope that the explanations, models, code, tools and discussions of this work will prove a useful for others pursuing this potential.

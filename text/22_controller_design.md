@@ -2,8 +2,8 @@
 # Controller Design { #sec:controller-design }
 
 To design a control system for this crane-CMG robot system, first the flow of information will be described for the three application scenarios previously mentioned.
-By understanding the interdependencies of the systems an integrated control approach can be created.
-Then existing dampening control strategies for cranes will be discussed and one suited to our system will be selected.
+The interdependencies of the systems are analysed to create an integrated control approach.
+Finally existing dampening control strategies for cranes are discussed and one suited to the selected for evaluation.
 
 ## Overall Flow of Information
 
@@ -13,7 +13,7 @@ These are the three applications in ascending order of control complexity:
 2. dampening
 3. process compensation
 
-![Control flow for part rotation](./figures/rotation-controller.png){ #fig:rotation-controller }
+![Control flow for part rotation](./figures/rotation-controller.png){ #fig:rotation-controller short-caption="Control flow for part rotation"}
 
 In @Fig:rotation-controller there is a simple control loop for rotating a part with the CMGs, assuming that the crane is standing still.
 The desired state is a certain rotational position around the yaw-axis of the platform/load.
@@ -28,7 +28,7 @@ As also pointed out in [@LeeAnalysisFieldApplicability2012], the inertia of the 
 Therefore this control loop utilizes acquired knowledge regarding the torque output of the CMGs and the measured rotational acceleration to estimate the inertia of the part.
 This should improve the performance of the controller when used for programmed rotations but also ensure a consistent remote control experience for the operator, as their speed control will be similar, regardless of the part being handled.
 
-![Control flow for pendulum dampening as well as rotation of parts.](./figures/dampening-controller.png){ #fig:dampening-controller width=100% }
+![Control flow for pendulum dampening as well as rotation of parts.](./figures/dampening-controller.png){ #fig:dampening-controller width=100% short-caption="Control flow for dampening and part rotation"}
 
 If one no longer assumes that the crane is standing still, the next matter to consider is dampening control loop (@Fig:dampening-controller).
 This loop is actually nearly identical to the rotation control loop, the only difference being that the desired state of the pendulum ($P_W$) is extended so that all angles are zero, except for $\theta_{23}$, which is set to the desired rotation of the part.
@@ -39,7 +39,7 @@ It will be seen in the experiments performed with the physical prototype that se
 
 As the rotational inertia previously mentioned also scales the impact of our CMG torques during dampening, it becomes clear that an estimation of the rotational inertia is beneficial to any dampening control.
 
-![Control flow for the compensation of process torques](./figures/process-controller.png){ #fig:process-controller }
+![Control flow for the compensation of process torques](./figures/process-controller.png){ #fig:process-controller short-caption="Control flow for process torque compensation"}
 
 Finally @Fig:process-controller shows the more complex flow of information for the compensation of process torques.
 At its base lies the dampening/rotation controller, which is needed to dampen any oscillations that result from torques and forces that the CMG was not able to compensate.
@@ -80,7 +80,7 @@ Control of cranes has been a long-running endeavor, which is obvious from the am
 Given the price and complexity of sensors capable of tracking the position of a hook, these mostly use predetermined actuation paths to reduce the creation of oscillations.
 This of course is particularly well suited to cranes that perform programmed motions, but can also benefit manual control of cranes.
 
-![Sway control in a gantry crane by SWF. Taken from [@SWFKrantechnikGmbHSWFKrantechnikLastpendeldampfung2012].](./figures/swaycontrol-swf.gif){ #fig:swaycontrol-swf }
+![Sway control in a gantry crane by SWF [@SWFKrantechnikGmbHSWFKrantechnikLastpendeldampfung2012].](./figures/swaycontrol-swf.gif){ #fig:swaycontrol-swf short-caption="Commercial sway control of gantry crane"}
 
 Given the flexible connection (ropes) between actuators (winches) and end effector (the hook), lack of sensors and inherent flex of the crane’s structure, they make for interesting control engineering problems.
 The review by Abdehl-Rahman et al. [@Abdel-RahmanDynamicsControlCranes2003] is a good starting point into the literature.
@@ -90,7 +90,7 @@ Others have extended input shaping methods to make them more robust towards para
 Once the crane and its payload are modeled as a double pendulum, the problems become even more interesting, as it becomes highly underactuated.
 Underactuation simply means that we have fewer actuators than degrees of freedom (see @Fig:crane-8dof).
 This makes such crane models interesting to researchers dealing with underactuated systems.
-It also means that controllers for other underactuated systems can be of interest to us.
+Controllers for other underactuated systems are also relevant for further investigations.
 
 Many different approaches to crane control have been proposed and studied, covering a whole range of methods (e.g. linear, non-linear, sliding mode, fuzzy logic etc.).
 Another approach to controlling cranes and underactuated systems in general is to use energy-based controller design techniques.
@@ -102,9 +102,9 @@ An earlier paper by Hoang and Lee shows how such controllers perform on a generi
 Their results indicate that the control approach outperforms conventional methods and comes close to the performance of more complex methods.
 The authors have subsequently also published a comparative study of several controllers for overhead cranes derived using energy-based methods [@WonComparativeStudyEnergybased] [^predatory].
 
-[^predatory]: While their former paper was published by Springer, this latter paper appears to be a reworked conference proceeding [@LeeEnergyBasedApproachController2013], both published by predatory publishers. The peer review of the work might therefore be of questionable quality. Nevertheless their work appears to be solid and definitely useful.
+[^predatory]: This paper appears to be a reworked conference proceeding [@LeeEnergyBasedApproachController2013]. Both the proceedings and paper are published by predatory publishers. The peer review of the work might therefore be of questionable quality. Nevertheless the work is valid and useful.
 
-![Illustration of the underactuation of a crane. Modeled as a double pendulum of a point mass and distributed mass, adjustable rope length and a suspension point movable in a plane, the crane has eight degrees of freedom. Conventionally there are only three actors to control this. By adding the CMGs the underactuation is drastically reduced.](./figures/crane-8dof.png){ #fig:crane-8dof }
+![Illustration of the underactuation of a crane. Modeled as a double pendulum of a point mass and distributed mass, adjustable rope length and a suspension point movable in a plane, the crane has eight degrees of freedom. Conventionally there are only three actors to control this. By adding the CMGs the underactuation is drastically reduced.](./figures/crane-8dof.png){ #fig:crane-8dof short-caption="Illustration of underaction in cranes"}
 
 ## Dampening Controller { #sec:dampening-controller }
 
@@ -120,9 +120,9 @@ E = \theta_2 + \alpha \theta_1
 
 The efficacy of this approach can be seen in @Fig:controller-comparison-animation and @Fig:controller-comparison-plot where an uncontrolled system, proportional control, PD-control and PD$\alpha$-control that is informed by the state of both the upper and lower link are compared.
 
-![Comparison of various control regimes for a double pendulum with a control torque applied to its lower link. From left to right: a) no control torque b) $k_P  = 10, k_D = 0$ c) $k_P = 1, k_D = 4$ d) $k_P = 1, k_D = 4, \alpha = 0.5$](./figures/controller-comparison-animation.gif){ #fig:controller-comparison-animation }
+![Comparison of various control regimes for a double pendulum with a control torque applied to its lower link. From left to right: a) no control torque b) $k_P  = 10, k_D = 0$ c) $k_P = 1, k_D = 4$ d) $k_P = 1, k_D = 4, \alpha = 0.5$](./figures/controller-comparison-animation.gif){ #fig:controller-comparison-animation short-caption="Comparison of basic control regimes for double pendulum"}
 
-![Swing angles (in degrees) of the two links ($\theta_1$ and $\theta_2$) of double pendulum with various control regimes applied. See @Fig:controller-comparison-animation for animation.](./figures/controller-comparison-plot.svg){ #fig:controller-comparison-plot }
+![Swing angles (in degrees) of the two links ($\theta_1$ and $\theta_2$) of double pendulum with various control regimes applied. See @Fig:controller-comparison-animation for animation.](./figures/controller-comparison-plot.svg){ #fig:controller-comparison-plot short-caption="Comparison of basic control regimes for double pendulum (plot)"}
 
 ## Inertia Estimation Controller
 
@@ -134,7 +134,8 @@ Thereby all parts needed to calculate the rotational inertia can be ascertained:
 \dot\omega \tau = I
 \end{equation}
 
-Since sensors are noisy, which can lead to unwanted jumps in the controller response, it makes sense to use a state observer for the inertia estimation.
+Sensor data is often noisy, which can lead to unwanted jumps in the controller response.
+It therefore makes sense to use a state observer for the inertia estimation.
 These come in various forms, but generally take an estimate of the measurement variance as well as the variance of previous estimations into account.
 
 The above calculation of inertia assumes that the inertia of the payload and platform around the Z-axis are to be measured while the pendulum is hanging still.
@@ -143,11 +144,12 @@ This is because when the pendulum's kinetic or potential energy are not zero, th
 Fortunately we already have a model of the system that can provide us with an estimate of the amount of acceleration caused by these energies.
 This estimate can be utilized by certain types of estimator more complex than the ones suited for the estimation at rest.
 
-The benefits of including an estimator in general are twofold:
+The benefits of including an estimator are twofold:
 Firstly it allows for a unification of the dampening and rotation controller.
 More importantly it would make the controller robust to changes in the inertia of the platform/payload.
 This is critical to making such a system useful and usable in the real world, as it creates a flexibility in application.
 Furthermore it creates a more consistent user experience, as operator inputs result in similar motions as the estimator adjusts the control response.
+It should be noted that estimator introduce their own complexities and issues.
 
 ## Considerations for the 3D Case
 
@@ -161,6 +163,6 @@ In the 3D case there is the reference frame/coordinate system at the center of m
 Given the current reference frame as determined by the sensors and a target reference frame (and maybe rotational velocities at that frame), it is necessary to find a measure of the error between the two and how to process them in the controller.
 
 This is covered by what is known as *attitude control* for aircraft and spacecraft.
-Given that CMGs are not uncommon in spacecraft, some attitude control systems (ACS) might even make special considerations for CMGs.
+Given that CMGs are not uncommon in spacecraft, attitude control systems (ACS) often take the limitations of CMGs into account.
 It will be interesting to see how attitude control techniques can be combined with those for crane control, especially since certain issues in ACS, such as singularities arising from the chosen error indicator, disappear given the kinematic constraints of the crane-CMG system [@OzgorenComparativeStudyAttitude2019].
 Furthermore, since the inertia of spacecraft might also vary with time as they e.g. deploy their solar panels, a considerable body of work exists that deals with the estimation of inertia and design of inertia-free controllers.

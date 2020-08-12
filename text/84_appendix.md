@@ -39,7 +39,7 @@ This is a lovely example of numerical inaccuracy in computers and also how minim
 ```{.python include=code/double-pendulum-2d-simulation.py}
 ```
 
-![Validation of the equations of motion generated using the above SymPy code against those taken from [@HillLearningScientificProgramming2016]. Note how symbolically equal equations can lead to different result due to numerical inaccuracies in computers.](figures/cas-lit-comparison.svg){ #fig:cas-lit-comparison }
+![Validation of the equations of motion generated using the above SymPy code against those taken from [@HillLearningScientificProgramming2016]. Note how symbolically equal equations can lead to different result due to numerical inaccuracies in computers.](figures/cas-lit-comparison.svg){ #fig:cas-lit-comparison short-caption="Validation of SymPy derived equations of motion against literature"}
 
 ### 2D Point Mass and Distributed Mass { #sec:2d-distmass-eom }
 
@@ -83,11 +83,11 @@ Note that these equations do not limit the torque dynamics.
 ```{.txt include=code/double-pendulum-eom-3d-pointmass-spherical-coords.txt}
 ```
 
-![Comparison of 2D and 3D double point mass pendulum given a small 2D exitation. As also discussed in @Sec:3d-pendulum the description of the kinematics using spherical coordinates leads to the model flipping between nearly identical solutions that cause major steps in the azimuthal angle. While the position of the pendulum is not visibly affected this does lead very high azimuthal angular velocities. The kinetic energy associated with these leads to the dampening of the oscillation we can observe in this plot. Note that the signs of $\theta_{1j}$ have been flipped where $|\theta_{2j}| > \frac{\pi}{10}$ to ease comparison of the two models.](figures/2d-3d-comparison-small-exitation-spherical-coords.svg){ #fig:2d-3d-comparison-small-exitation-spherical }
+![Comparison of 2D and 3D double point mass pendulum given a small 2D exitation. As also discussed in @Sec:3d-pendulum the description of the kinematics using spherical coordinates leads to the model flipping between nearly identical solutions that cause major steps in the azimuthal angle. While the position of the pendulum is not visibly affected this does lead very high azimuthal angular velocities. The kinetic energy associated with these leads to the dampening of the oscillation we can observe in this plot. Note that the signs of $\theta_{1j}$ have been flipped where $|\theta_{2j}| > \frac{\pi}{10}$ to ease comparison of the two models.](figures/2d-3d-comparison-small-exitation-spherical-coords.svg){ #fig:2d-3d-comparison-small-exitation-spherical short-caption="2D and 3D pointmass double pendulums under small excitation"}
 
-![Large exitation of double pendulum modelled with equations of motion derived using spherical coordinates. From left to right: front, side and top view. Note how the issues of spherical coordinates cause disturbances that quickly lead to chaotic out of plane motion.](figures/double_pendulum_3d_large_exitation_spherical.gif){ #fig:3d-spherical-large-exitation }
+![Large exitation of double pendulum modelled with equations of motion derived using spherical coordinates. From left to right: front, side and top view. Note how the issues of spherical coordinates cause disturbances that quickly lead to chaotic out of plane motion.](figures/double_pendulum_3d_large_exitation_spherical.gif){ #fig:3d-spherical-large-exitation short-caption="Large excitation of spherical coordinate model"}
 
-![Comparison of 2D and 3D double point mass pendulum given a large 2D exitation. Note how they are identical until for roughly the first five seconds and then begin to strongly deviate as the 3D pendulum begins to leave the plane of exitation. This is due to the issues discussed in @Sec:3d-pendulum and illustrated in @Fig:3d-model-angle-issues.](figures/2d-3d-comparison-large-exitation-spherical-coords.svg){ #fig:2D-3D-comparison-large-excitation-spherical}
+![Comparison of 2D and 3D double point mass pendulum given a large 2D exitation. Note how they are identical until for roughly the first five seconds and then begin to strongly deviate as the 3D pendulum begins to leave the plane of exitation. This is due to the issues discussed in @Sec:3d-pendulum and illustrated in @Fig:3d-model-angle-issues.](figures/2d-3d-comparison-large-exitation-spherical-coords.svg){ #fig:2D-3D-comparison-large-excitation-spherical short-caption="Comparison of spherical coordinate model with 2D model"}
 
 ### Projected Angles
 
@@ -97,9 +97,9 @@ Note that these equations do not limit the torque dynamics.
 ```{.txt include=code/double-pendulum-3d-pointmass.txt}
 ```
 
-![3D double pendulum using projected angles under small 2D exitation. Note how we no longer have the jumps in the second angle observerd in the simulations using spherical coordinates. The motion remains entirely in the XZ-plane. Note that this is no longer the case when the planar exitation lies in a plane outside of the XZ- or YZ-plane (see @Fig:3D-projected-large-exitation-diagonal).](./figures/3d-model-angle-issues-solution.svg){ #fig:3D-model-angle-issues-solution }
+![3D double pendulum using projected angles under small 2D exitation. Note how we no longer have the jumps in the second angle observerd in the simulations using spherical coordinates. The motion remains entirely in the XZ-plane. Note that this is no longer the case when the planar exitation lies in a plane outside of the XZ- or YZ-plane (see @Fig:3D-projected-large-exitation-diagonal).](./figures/3d-model-angle-issues-solution.svg){ #fig:3d-model-angle-issues-solution short-caption="Evalution of projected angle model"}
 
-![Comparison of 2D and 3D model (projected angles) of double pendulum with small planar exitation. Note the stark decrease in difference and lack of dampening when compared with the spherical coordinate model.](figures/2d-3d-comparison-small-exitation.svg){ #fig:2D-3D-comparison-small-excitation }
+![Comparison of 2D and 3D model (projected angles) of double pendulum with small planar exitation. Note the stark decrease in difference and lack of dampening when compared with the spherical coordinate model.](figures/2d-3d-comparison-small-exitation.svg){ #fig:2D-3D-comparison-small-excitation short-caption="Comparison of projected angle model with 2D model"}
 
 ## 3D Distributed Mass Pendulum{ #sec:distributed-mass-eom }
 

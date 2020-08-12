@@ -1,16 +1,19 @@
 FROM debian:10-slim AS pandoc-build
 RUN apt-get update && apt-get install -y \
   cabal-install \
+  libghc-regex-pcre-dev \
+  libexpat1-dev \
   libghc-zlib-dev
 RUN cabal update \
   && cabal install -j4 \
-    pandoc \
-    pandoc-crossref \
-    pandoc-citeproc \
-    pandoc-include-code
+    pandoc-2.9.2.1 \
+    pandoc-crossref-0.3.6.4 \
+    pandoc-citeproc-0.17.0.1 \
+    pandoc-include-code-1.5.0.0
 
 FROM golang AS singlepage-build
-RUN go get arp242.net/singlepage
+RUN git clone https://github.com/arp242/singlepage.git
+RUN cd singlepage && go build -o /go/bin/singlepage
 
 FROM debian:10-slim
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -23,6 +26,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   pdf2svg \
   librsvg2-bin \
   sketch \
+  dvipng \
   && apt-get autoremove && apt-get autoclean \
   && rm -rf /var/lib/apt/lists/*
 
@@ -53,6 +57,7 @@ RUN apt-get install -y \
   texlive-science \
   texlive-extra-utils \
   texlive-base \
+  cm-super \
   && apt-get autoremove && apt-get autoclean \
   && rm -rf /var/lib/apt/lists/*
 # latexrun can't handle linebreaks in latex output

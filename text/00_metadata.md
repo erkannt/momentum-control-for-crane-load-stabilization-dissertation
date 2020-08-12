@@ -1,10 +1,10 @@
 ---
-title: Momentum Control for Crane Stabilization
+title: Momentum Control for Crane Load Stabilization
 author: Daniel A. Haarhoff
 born: Dachau
 subtitle: Modeling and Sizing of Control Moment Gyroscopes for Cranes
 facultyblurb: Der Fakultät für Architektur der Rheinisch-Westfälischen Technischen Hochschule Aachen vorgelegte Dissertation zur Erlangung des akademischen Grades eines Doktors der Ingenieurwissenschaften.
-abstract: 
+abstract:
   The digitalization of the construction industries planning and execution phases, coupled with advances in automation technology has led to a renaissance for construction robotics.
   Current efforts to provide robots for the execution of digital construction plans revolve around either the adaptation of industrial robots for the construction site, highly specialized custom robots or the digitalization of existing construction equipment.
   However, there is currently no robotics approach that addresses the very large work envelope that constitutes a construction site.
@@ -18,6 +18,7 @@ abstract:
   Through a variety of simulations, this model is validated and used to understand the critical interactions between the various systems.
   The simulations not only show the potential of the approach, but also allow the work to develop sizing guidelines and identify critical areas for future research.
   The work therefore closes by laying out the critical path to bringing this approach to the construction site.
+  TODO extend abstract, give more context
 abstractde:
   Die Digitalisierung der Planungs- und Ausführungsphasen der Bauindustrie sowie Fortschritte in der Automatisierungstechnik haben zu einer Renaissance der Baurobotik geführt.
   Die aktuellen Bemühungen zur Bereitstellung von Robotern für die Ausführung digitaler Baupläne drehen sich entweder um die Anpassung von Industrierobotern für die Baustelle, hochspezialisierte Sonderroboter oder die Digitalisierung bestehender Baumaschinen.
@@ -30,11 +31,10 @@ abstractde:
   Die folgende Arbeit entwickelt Bewegungsgleichungen und ein Modell für das Kran-CMG-Roboter-System.
   Durch eine Reihe von Simulationen wird dieses Modell validiert und verwendet, um die kritischen Wechselwirkungen zwischen den verschiedenen Systemen zu verstehen.
   Die Simulationen zeigen nicht nur das Potenzial des Ansatzes, sondern ermöglichen es auch, Dimensionierungsrichtlinien zu entwickeln und kritische Bereiche für die zukünftige Forschung zu identifizieren.
-  Die Arbeit schließt daher mit der Ausarbeitung des kritischen Pfades, um diesen Ansatz auf die Baustelle zu bringen. 
-bibliography: [./references.bib]
+  Die Arbeit schließt daher mit der Ausarbeitung des kritischen Pfades, um diesen Ansatz auf die Baustelle zu bringen.
+bibliography: [./bibliography.yaml]
 link-citations: true
 linkReferences: true
-lang: english
 documentclass: scrbook
 fontsize: 11pt
 papersize: a4

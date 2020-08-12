@@ -1,0 +1,4406 @@
+---
+references:
+- id: 08120393Dynamics
+  accessed:
+    - year: 2018
+      month: 11
+      day: 19
+  title: '[0812.0393] Dynamics of a double pendulum with distributed mass'
+  type: webpage
+  URL: 'https://arxiv.org/abs/0812.0393'
+
+- id: Abdel-RahmanDynamicsControlCranes2003
+  author:
+    - family: Abdel-Rahman
+      given: Eihab M
+    - family: Nayfeh
+      given: Ali H
+    - family: Masoud
+      given: Ziyad N
+  container-title: Modal Analysis
+  issue: '7'
+  issued:
+    - year: 2003
+  page: 863–908
+  title: 'Dynamics and control of cranes: A review'
+  type: article-journal
+  URL: 'https://journals.sagepub.com/doi/pdf/10.1177/1077546303009007007'
+  volume: '9'
+
+- id: AbdullahiAdaptiveOutputbasedCommand2018
+  abstract: >-
+    Payload hoisting and wind disturbance during crane operations are among the
+    challenging factors that affect a payload sway and thus, affect the crane’s
+    performance. This paper proposes a new online adaptive output-based command
+    shaping (AOCS) technique for an effective payload sway reduction of an
+    overhead crane under the influence of those effects. This technique enhances
+    the previously developed output-based command shaping (OCS) which was
+    effective only for a fixed system and without external disturbances. Unlike
+    the conventional input shaping design technique which requires the system’s
+    natural frequency and damping ratio, the proposed technique is designed by
+    using the output signal and thus, an online adaptive algorithm can be
+    formulated. To test the effectiveness of the AOCS, experiments are carried
+    out using a laboratory overhead crane with a payload hoisting in the
+    presence of wind, and with different payloads. The superiority of the method
+    is confirmed by 82% and 29% reductions in the overall sway and the maximum
+    transient sway respectively, when compared to the OCS, and two robust input
+    shapers namely Zero Vibration Derivative-Derivative and Extra-Insensitive
+    shapers. Furthermore, the method demonstrates a uniform crane’s performance
+    under all conditions. It is envisaged that the proposed method can be very
+    useful in designing an effective controller for a crane system with an
+    unknown payload and under the influence of external disturbances.
+  accessed:
+    - year: 2019
+      month: 3
+      day: 14
+  author:
+    - family: Abdullahi
+      given: Auwalu M.
+    - family: Mohamed
+      given: Z.
+    - family: Selamat
+      given: H.
+    - family: Pota
+      given: Hemanshu R.
+    - family: Zainal Abidin
+      given: M. S.
+    - family: Ismail
+      given: F. S.
+    - family: Haruna
+      given: A.
+  container-title: Mechanical Systems and Signal Processing
+  container-title-short: Mechanical Systems and Signal Processing
+  DOI: 10.1016/j.ymssp.2017.04.034
+  ISSN: 0888-3270
+  issued:
+    - year: 2018
+      month: 1
+      day: 1
+  page: 157-172
+  source: ScienceDirect
+  title: >-
+    Adaptive output-based command shaping for sway control of a 3D overhead
+    crane with payload hoisting and wind disturbance
+  type: article-journal
+  URL: 'http://www.sciencedirect.com/science/article/pii/S0888327017302273'
+  volume: '98'
+
+- id: AdamsCoolingBearingsMotors2009
+  accessed:
+    - year: 2018
+      month: 10
+      day: 10
+  author:
+    - family: Adams
+      given: John D.
+    - family: McKenney
+      given: Shepard W.
+  call-number: US11330896
+  issued:
+    - year: 2009
+      month: 6
+      day: 16
+  language: en
+  number: US7546782B2
+  submitted:
+    date-parts:
+      - - '2006'
+        - 1
+        - 12
+  title: 'Cooling bearings, motors and other rotating heat generating components'
+  type: patent
+  URL: >-
+    https://patents.google.com/patent/US7546782B2/en?assignee=seakeeper&oq=seakeeper
+
+- id: AdamsGyroscopicRollStabilizer2005
+  accessed:
+    - year: 2018
+      month: 10
+      day: 10
+  author:
+    - family: Adams
+      given: John D.
+    - family: McKenney
+      given: Shepard W.
+  call-number: US10454905
+  issued:
+    - year: 2005
+      month: 12
+      day: 13
+  language: en
+  number: US6973847B2
+  submitted:
+    date-parts:
+      - - '2003'
+        - 6
+        - 4
+  title: Gyroscopic roll stabilizer for boats
+  type: patent
+  URL: >-
+    https://patents.google.com/patent/US6973847B2/en?assignee=seakeeper&oq=seakeeper
+
+- id: AdamsGyroscopicRollStabilizer2005a
+  accessed:
+    - year: 2019
+      month: 1
+      day: 22
+  author:
+    - family: Adams
+      given: John D.
+    - family: McKenney
+      given: Shepard W.
+  call-number: US10454905
+  issued:
+    - year: 2005
+      month: 12
+      day: 13
+  language: en
+  number: US6973847B2
+  submitted:
+    date-parts:
+      - - '2003'
+        - 6
+        - 4
+  title: Gyroscopic roll stabilizer for boats
+  type: patent
+  URL: 'https://patents.google.com/patent/US6973847B2/en?assignee=Seakeeper+Inc'
+
+- id: AngermannEntkopplungMehrgroessensystemenDurch
+  author:
+    - family: Angermann
+      given: A
+  language: de
+  source: Zotero
+  title: >-
+    Entkopplung von Mehrgrößensystemen durch Vorsteuerung am Beispiel von
+    kontinuierlichen Fertigungsanlagen
+  type: thesis
+
+- id: AnnualAmericanControlConference2018AnnualAmerican2018
+  accessed:
+    - year: 2018
+      month: 10
+      day: 30
+  author:
+    - literal: Annual American Control Conference
+    - literal: American Automatic Control Council
+    - literal: Annual American Control Conference
+    - literal: American Control Conference
+    - literal: ACC
+    - literal: Annual Conference of the American Automatic Control Council (AACC)
+  ISBN: 978-1-5386-5428-6 978-1-5386-5427-9 978-1-5386-5429-3
+  issued:
+    - year: 2018
+  language: English
+  note: 'OCLC: 1057336772'
+  source: Open WorldCat
+  title: >-
+    2018 Annual American Control Conference (ACC) June 27-29, 2018, Wisconsin
+    Center, Milwaukee, USA
+  type: book
+  URL: 'http://ieeexplore.ieee.org/servlet/opac?punumber=8410068'
+
+- id: ArntzDigitalisierungUndZukunft
+  author:
+    - family: Arntz
+      given: Dr Melanie
+    - family: Gregory
+      given: Dr Terry
+    - family: Zierahn
+      given: Dr Ulrich
+  language: de
+  page: '144'
+  publisher: Zentrum für Euroäische Wirtschaftsforschung GmbH
+  source: Zotero
+  title: >-
+    Digitalisierung und die Zukunft der Arbeit: Makroökonomische Auswirkungen
+    auf Beschäftigung, Arbeitslosigkeit und Löhne von morgen.
+  type: report
+
+- id: article
+  author:
+    - family: Won
+      given: In-Sik
+    - family: Hoang
+      given: Nguyen
+    - family: Geul Lee
+      given: Soon
+    - family: Kwan Ryu
+      given: Jae
+  container-title: International Robotics & Automation Journal
+  DOI: 10.15406/iratj.2018.04.00122
+  issued:
+    - year: 2018
+      month: 6
+  title: Comparative study of energy-based control design for overhead cranes
+  type: article-journal
+  volume: '4'
+
+- id: AtaeiControlDoublependulumSystem2007
+  abstract: >-
+    In this paper, the control of a double mass and spring system as a physical
+    model of a flexible arm robot is considered. The main goal of design is to
+    use an appropriate control method that produces suitable external torques
+    such that the whole system can be completely stabilized and controlled. For
+    this purpose, mathematical model of the system is required which is achieved
+    by Lagrange's equations in the first part of the paper. Since the controller
+    design in this paper is based on state space description, these dynamical
+    equations are re-written in the form of state-space equations and are
+    linearized about an operating state. After examining the controllability of
+    the system, a state feedback controller and also a Linear Quadratic
+    Regulator (LQR) are designed. Moreover, since in these controllers the
+    states of the system are required, a suitable full-order state estimator is
+    developed as well. Finally, simulation results are provided to show the
+    effectiveness of the proposed controllers.
+  author:
+    - family: Ataei
+      given: Mohammad
+    - family: Kiyoumarsi
+      given: Arash
+    - family: Isfahani
+      given: Mehdi Torabian
+    - family: Mirzaeian-Dehkordi
+      given: Bezad
+  container-title: '2007 International Conference on Control, Automation and Systems'
+  DOI: 10.1109/ICCAS.2007.4407033
+  event: '2007 International Conference on Control, Automation and Systems'
+  issued:
+    - year: 2007
+      month: 10
+  page: 912-916
+  source: IEEE Xplore
+  title: The control of a double-pendulum system
+  type: paper-conference
+
+- id: AugugliaroBuildingTensileStructures2013
+  abstract: >-
+    This paper presents the building of lightweight tensile structures with
+    quadrocopters. The construction elements (such as ropes, cables, and wires)
+    in this kind of structure are subject to tension forces. This paper
+    identifies the basic building elements (nodes, links) required for the
+    construction of tensile structures, and translates them into meaningful
+    trajectories for quadrocopters. The use of a library of building elements is
+    suggested. Hybrid force-position control strategies based on admittance
+    control are exploited. Prototypical tensile structures are built by
+    quadrocopters to validate the proposed approach. An accompanying video shows
+    the building process.
+  author:
+    - family: Augugliaro
+      given: F.
+    - family: Mirjan
+      given: A.
+    - family: Gramazio
+      given: F.
+    - family: Kohler
+      given: M.
+    - family: D'Andrea
+      given: R.
+  container-title: 2013 IEEE/RSJ International Conference on Intelligent Robots and Systems
+  DOI: 10.1109/IROS.2013.6696853
+  event: 2013 IEEE/RSJ International Conference on Intelligent Robots and Systems
+  issued:
+    - year: 2013
+      month: 11
+  page: 3487-3492
+  source: IEEE Xplore
+  title: Building tensile structures with flying machines
+  type: paper-conference
+
+- id: bedrossian_redundant_1990
+  author:
+    - family: Bedrossian
+      given: Nazareth S
+    - family: Paradiso
+      given: Joseph
+    - family: Bergmann
+      given: Edward V
+    - family: Rowell
+      given: Derek
+  container-title: 'Journal of Guidance, Control, and Dynamics'
+  issue: '6'
+  issued:
+    - year: 1990
+  page: 1096-1101
+  title: ç
+  type: article-journal
+  volume: '13'
+
+- id: BockConstructionRobotsElementary2016
+  author:
+    - family: Bock
+      given: Thomas
+    - family: Linner
+      given: Thomas
+  DOI: 10.1017/CBO9781139872041
+  issued:
+    - year: 2016
+  publisher: Cambridge University Press
+  title: >-
+    Construction Robots: Elementary Technologies and Single-Task Construction
+    Robots
+  type: book
+  volume: '3'
+
+- id: BockRoboticIndustrializationAutomation2015
+  author:
+    - family: Bock
+      given: Thomas
+    - family: Linner
+      given: Thomas
+  DOI: 10.1017/CBO9781139924153
+  issued:
+    - year: 2015
+  publisher: Cambridge University Press
+  title: >-
+    Robotic Industrialization: Automation and Robotic Technologies for
+    Customized Component, Module, and Building Prefabrication
+  type: book
+
+- id: BockSiteAutomationAutomated2016
+  author:
+    - family: Bock
+      given: Thomas
+    - family: Linner
+      given: Thomas
+  DOI: 10.1017/CBO9781139872027
+  issued:
+    - year: 2016
+  publisher: Cambridge University Press
+  title: 'Site Automation: Automated/Robotic On-Site Factories'
+  type: book
+
+- id: BostelmanAPPLICATIONSNISTROBOCRANE
+  abstract: >-
+    The Robot Systems Division of the National Institute of Standards and
+    Technology (NIST) has recently been experimenting with a variety of
+    applications for the NIST ROBOCRANE. The ROBOCRANE design utilizes the basic
+    idea of the Stewart Platform parallel link manipulator. The unique feature
+    of the NIST approach is to use cables as the parallel links and to use
+    winches as the actuators. Depending on what is suspended from its work
+    platform, the ROBOCRANE has land, air, water, and space applications. A
+    2-meter version and a 6-meter version of the ROBOCRANE have been built and
+    critical performance characteristics analyzed. Through these and other
+    conceptual models, example applications for ROBOCRANE are:
+    flexible-structure mobility, heavy material handling, and flexible fixturing
+    on land; rescue and personnel/ equipment maneuverability in air; subsea
+    pipe-laying/removal, lifting, and salvage from stable or unstable references
+    on water; and lightweight, long distance lunar rover capabilites in space.
+    All applications of ROBOCRANE include a large work volume, six
+    degree-of-freedom control, precision maneuverability, and enhanced crane
+    capabilities. This paper describes ROBOCRANE's present and future
+    performance measurements, control system designs, and the conceptual designs
+    for a multitude of applications.
+  author:
+    - family: Bostelman
+      given: Roger
+    - family: Albus
+      given: James
+    - family: Dagalakis
+      given: Nicholas
+    - family: Jacoff
+      given: Adam
+    - family: Gross
+      given: John
+  language: en
+  page: '9'
+  source: Zotero
+  title: APPLICATIONS OF THE NIST ROBOCRANE
+  type: article-journal
+
+- id: BostelmanApplicationsNISTRoboCrane1994
+  abstract: >-
+    The Robot Systems Division of the National Institute of Standards and
+    Technology (NIST) has recently been experimenting with a variety of
+    applications for the...
+  accessed:
+    - year: 2019
+      month: 5
+      day: 23
+  author:
+    - family: Bostelman
+      given: Roger V.
+    - family: Albus
+      given: James S.
+    - family: Dagalakis
+      given: Nicholas G.
+    - family: Jacoff
+      given: Adam S.
+    - family: Gross
+      given: J.
+  event: 5th International Symposium on Robotics and Manufacturing
+  issued:
+    - year: 1994
+      month: 8
+      day: 18
+  language: en
+  source: www.nist.gov
+  title: Applications of the NIST RoboCrane
+  type: paper-conference
+  URL: 'https://www.nist.gov/publications/applications-nist-robocrane'
+  volume: '5'
+
+- id: brown_control_2008
+  author:
+    - family: Brown
+      given: Daniel
+  container-title: 'Proceedings of the AIAA Guidance, Navigation, and Control Conference'
+  issued:
+    - year: 2008
+  title: Control Moment Gyros as Space-Robotics Actuators
+  type: paper-conference
+
+- id: brown_energetics_2009
+  author:
+    - family: Brown
+      given: Daniel
+    - family: Peck
+      given: Mason
+  container-title: 'Journal of guidance, control, and dynamics'
+  issue: '6'
+  issued:
+    - year: 2009
+  page: 1871-1883
+  title: Energetics of control moment gyroscopes as joint actuators
+  type: article-journal
+  volume: '32'
+
+- id: bruckmann_auslegung_2010
+  author:
+    - family: Bruckmann
+      given: Tobias
+  genre: phdthesis
+  issued:
+    - year: 2010
+  publisher: >-
+    Universität Duisburg-Essen, Fakultät für Ingenieurwissenschaften
+    guillemotright Maschinenbau und Verfahrenstechnik guillemotright Institut
+    für Mechatronik und Systemdynamik
+  title: Auslegung und Betrieb redundanter paralleler Seilroboter
+  type: thesis
+
+- id: BurrellFeedbackControlBased2016
+  abstract: >-
+    The article develops two novel feedback control-based Inverse Kinematics
+    (IK) solvers. They are evaluated for a dual-manipulator mobile robotic
+    system with application to nuclear decommissioning. The first algorithm has
+    similarities to other feedback control based solvers, and borrows ideas from
+    the Cyclic Coordinate Decent and the Jacobian Transpose methods. This yields
+    a particularly straightforward algorithm with tunable
+    Proportional-Integral-Derivative (PID) gains to determine performance. The
+    second approach utilises a discrete-time state space modelling framework to
+    solve the IK problem. Although the second solver is more complex to
+    implement, preliminary simulation results for the case study example, show
+    that it can converge quicker, and has improved immunity to the kinematic
+    singularities that can occur in Jacobian based methods.
+  accessed:
+    - year: 2019
+      month: 5
+      day: 23
+  author:
+    - family: Burrell
+      given: Thomas
+    - family: Montazeri
+      given: Allahyar
+    - family: Monk
+      given: Stephen
+    - family: Taylor
+      given: C. James
+  collection-title: 7th IFAC Symposium on Mechatronic Systems MECHATRONICS 2016
+  container-title: IFAC-PapersOnLine
+  container-title-short: IFAC-PapersOnLine
+  DOI: 10.1016/j.ifacol.2016.10.541
+  ISSN: 2405-8963
+  issue: '21'
+  issued:
+    - year: 2016
+      month: 1
+      day: 1
+  page: 177-184
+  source: ScienceDirect
+  title: >-
+    Feedback Control—Based Inverse Kinematics Solvers for a Nuclear
+    Decommissioning Robot
+  type: article-journal
+  URL: 'http://www.sciencedirect.com/science/article/pii/S2405896316321310'
+  volume: '49'
+
+- id: carpenter_dynamics_2008
+  author:
+    - family: Carpenter
+      given: Michele D
+    - family: Peck
+      given: Mason
+    - literal: others
+  container-title: 'Robotics, IEEE Transactions on'
+  issue: '3'
+  issued:
+    - year: 2008
+  page: 666-675
+  title: 'Dynamics of a high-agility, low-power imaging payload'
+  type: article-journal
+  volume: '24'
+
+- id: carpenter_reducing_2009
+  author:
+    - family: Carpenter
+      given: Michele D
+    - family: Peck
+      given: Mason
+    - literal: others
+  container-title: 'Robotics, IEEE Transactions on'
+  issue: '6'
+  issued:
+    - year: 2009
+  page: 1262-1270
+  title: Reducing base reactions with gyroscopic actuation of space-robotic systems
+  type: article-journal
+  volume: '25'
+
+- id: CenterPercussion2018
+  abstract: >-
+    The center of percussion is the point on an extended massive object attached
+    to a pivot where a perpendicular impact will produce no reactive shock at
+    the pivot.   Translational and rotational motions cancel at the pivot when
+    an impulsive blow is struck at the center of percussion.   The center of
+    percussion is often discussed in the context of a bat, racquet, door, sword
+    or other extended object held at one end. 
+
+    The same point is called the center of oscillation for the object suspended
+    from the pivot as a pendulum, meaning that a simple pendulum with all its
+    mass concentrated at that point will have the same period of oscillation as
+    the compound pendulum.  In sports, the center of percussion of a bat or
+    racquet is related to the so-called "sweet spot", but the latter is also
+    related to vibrational bending of the object.
+  accessed:
+    - year: 2019
+      month: 5
+      day: 24
+  container-title: Wikipedia
+  issued:
+    - year: 2018
+      month: 10
+      day: 24
+  language: en
+  note: 'Page Version ID: 865575573'
+  source: Wikipedia
+  title: Center of percussion
+  type: entry-encyclopedia
+  URL: >-
+    https://en.wikipedia.org/w/index.php?title=Center_of_percussion&oldid=865575573
+
+- id: ChiuDesignWearableScissoredPair2014
+  abstract: >-
+    Our research examines the feasibility of usign a wearable scissored-pair
+    control moment gyroscope (CMG) for human balance assist. The CMG is a
+    momentum exchange device consisting of a fast spinning flywheel mounted on a
+    gimbal. The gimbal motion changes the direction of the flywheel rotation
+    axis, which generates a reactionless torque. A scissored-pair CMG has the
+    additional advantage of isolating the output torque to a single axis, where
+    off-axis torques are canceled out. A properly designed CMG device worn as a
+    backpack can apply a torque in the sagittal plane of the human trunk. This
+    can help in restoring postural balance and in fall mitigation.This paper
+    describes the complete design process of a scissored-pair CMG device with
+    constraints on size, mass and dynamic properties for human wearability. A
+    prototype of this device is built, utilizing a novel dual-flywheel design;
+    it weighs about 8kg and is able to generate over 20Nm of torque. A custom
+    hardware is built specifically for verifying the torque output of the
+    device. To our knowledge this is the only device that generates the range of
+    reactionless torque given its weight and size.
+  accessed:
+    - year: 2017
+      month: 3
+      day: 14
+  author:
+    - family: Chiu
+      given: Jimmy
+    - family: Goswami
+      given: Ambarish
+  DOI: 10.1115/DETC2014-35539
+  issued:
+    - year: 2014
+      month: 8
+      day: 17
+  page: V05AT08A023
+  source: Silverchair
+  title: >-
+    Design of a Wearable Scissored-Pair Control Moment Gyroscope (SP-CMG) for
+    Human Balance Assist
+  type: article-journal
+  URL: 'http://dx.doi.org/10.1115/DETC2014-35539'
+
+- id: CibicikModelingControlBifilar2018
+  author:
+    - family: Cibicik
+      given: Andrej
+    - family: Myhre
+      given: Torstein A.
+    - family: Egeland
+      given: Olav
+  event: 2018 Annual American Control Conference (ACC)
+  event-place: 'Wisconsin Center, Milwaukee, USA'
+  issued:
+    - year: 2018
+      month: 6
+      day: 27
+    - year: 2018
+      month: 6
+      day: 29
+  publisher-place: 'Wisconsin Center, Milwaukee, USA'
+  title: Modeling and Control of a Bifilar Crane Payload
+  type: paper-conference
+
+- id: DaviesQuestPut19672017
+  abstract: >-
+    Jeff Lane spent years reviving the gyroscopically balanced Gyro-X back to
+    life.
+  accessed:
+    - year: 2019
+      month: 5
+      day: 21
+  author:
+    - family: Davies
+      given: Alex
+  container-title: Wired
+  ISSN: 1059-1028
+  issued:
+    - year: 2017
+      month: 9
+      day: 10
+  source: www.wired.com
+  title: The Quest to Put a 1967 Self-Balancing 'Car' Back on Its Feet
+  type: article-magazine
+  URL: 'https://www.wired.com/story/gyro-x-lane-motor-museum/'
+
+- id: DingLieGroupEuler2018
+  abstract: >-
+    The Euler methods on Lie group are developed for the differential–algebraic
+    equations of multibody system dynamics with holonomic constraints. The
+    implicit Euler method is used to solve the differential–algebraic equations
+    as Euler–Lagrange equations on Lie group with indices 1, 2, and 3 and the
+    case of overdetermined differential–algebraic equations mixing with
+    configuration space. The symplectic Euler method is used to solve the
+    differential–algebraic equations as constrained Hamilton equations on Lie
+    group. For the discrete mapping between Lie group and Lie algebra, the
+    canonical coordinates of the second kind for implicit first-order
+    Crouch–Grossman Euler methods of differential–algebraic equations are used.
+    A single pendulum and a double pendulum in the space are used to verify the
+    accuracy of the Lie group Euler methods.
+  accessed:
+    - year: 2018
+      month: 11
+      day: 27
+  author:
+    - family: Ding
+      given: Jieyu
+    - family: Pan
+      given: Zhenkuan
+  container-title: Advances in Mechanical Engineering
+  container-title-short: Advances in Mechanical Engineering
+  DOI: 10.1177/1687814018764154
+  ISSN: 1687-8140
+  issue: '4'
+  issued:
+    - year: 2018
+      month: 4
+      day: 1
+  language: en
+  page: '1687814018764154'
+  source: SAGE Journals
+  title: >-
+    The Lie group Euler methods of multibody system dynamics with holonomic
+    constraints
+  type: article-journal
+  URL: 'https://doi.org/10.1177/1687814018764154'
+  volume: '10'
+
+- id: DubbelTaschenbuchFurMaschinenbau2011
+  edition: '23., neu bearb. und erw. Aufl'
+  editor:
+    - family: Dubbel
+      given: Heinrich
+    - family: Grote
+      given: Karl-Heinrich
+    - family: Feldhusen
+      given: Jörg
+  event-place: Berlin
+  ISBN: 978-3-642-17306-6 978-3-642-17305-9
+  issued:
+    - year: 2011
+  language: ger
+  note: 'OCLC: 740985320'
+  number-of-pages: '1984'
+  publisher: Springer
+  publisher-place: Berlin
+  source: Gemeinsamer Bibliotheksverbund ISBN
+  title: 'Taschenbuch für den Maschinenbau: mit Tabellen'
+  title-short: Taschenbuch für den Maschinenbau
+  type: book
+
+- id: dubowsky_kinematics_1993
+  author:
+    - family: Dubowsky
+      given: Steven
+    - family: Papadopoulos
+      given: Evangelos
+  container-title: 'Robotics and Automation, IEEE Transactions on'
+  issue: '5'
+  issued:
+    - year: 1993
+  page: 531-543
+  title: >-
+    The kinematics, dynamics, and control of free-flying and free-floating space
+    robotic systems
+  type: article-journal
+  volume: '9'
+
+- id: GagneCardiacMotionCompensation2009
+  abstract: >-
+    The difficulties encountered in preventing the cardiac motion is a hindrance
+    to the development of recent less invasive techniques in the field of
+    beating heart surgery. Some solutions were developed already in order to
+    solve this problem, inducing specific and cumbersome equipment. The
+    alternative described herein is based on a compact simple device using
+    gyroscopic effect, intended to be adaptable to existing equipment and which
+    is non-grounded. The presented work is a preliminary study of such a system.
+    After exposing the principle and dynamical equations we present the device
+    design process which was carried out and finally discuss the control
+    strategy based on Linear Quadratic Regulator (LQR) synthesis and its
+    simulation results.
+  accessed:
+    - year: 2018
+      month: 10
+      day: 10
+  author:
+    - family: Gagne
+      given: J.
+    - family: Piccin
+      given: O.
+    - family: Laroche
+      given: E.
+    - family: Gangloff
+      given: J.
+  collection-title: 9th IFAC Symposium on Robot Control
+  container-title: IFAC Proceedings Volumes
+  container-title-short: IFAC Proceedings Volumes
+  DOI: 10.3182/20090909-4-JP-2010.00086
+  ISSN: 1474-6670
+  issue: '16'
+  issued:
+    - year: 2009
+      month: 1
+      day: 1
+  page: 505-510
+  source: ScienceDirect
+  title: A cardiac motion compensation device based on gyroscopic effect
+  type: article-journal
+  URL: 'http://www.sciencedirect.com/science/article/pii/S1474667015306868'
+  volume: '42'
+
+- id: GagneGyroLockStabilizingHeart2012
+  abstract: >-
+    We present herein an original solution to actively stabilize the epicardium
+    in the context of beating-heart coronary artery bypass grafting. Our
+    solution uses a control moment gyroscope to generate the compensation torque
+    and an accelerometer for sensing. This approach makes the designed system
+    completely independent from the stabilizing instrument, as well as
+    independent from any external measurement. We compare two control approaches
+    in a simulation: The first one uses a Kalman filter with a harmonic
+    disturbance model, and the second one uses an adaptive algorithm. Results
+    highlight the superiority of the adaptive control for our application. The
+    first in vivo assessments are presented, showing the efficiency of the
+    principle under real conditions. Using only accelerometric measurements,
+    targeted cardiac motion harmonics are reduced on the order of 68%. With an
+    optical sensor, the reduction exceeds 90%. This constitutes an improvement
+    compared with prior solutions, despite the presence of nonnegligible
+    uncertainties and distant sensing.
+  author:
+    - family: Gagne
+      given: J.
+    - family: Piccin
+      given: O.
+    - family: Laroche
+      given: É
+    - family: Diana
+      given: M.
+    - family: Gangloff
+      given: J.
+  container-title: IEEE Transactions on Robotics
+  DOI: 10.1109/TRO.2012.2188162
+  ISSN: 1552-3098
+  issue: '4'
+  issued:
+    - year: 2012
+      month: 8
+  page: 942-954
+  source: IEEE Xplore
+  title: >-
+    GyroLock: Stabilizing the Heart With Control Moment Gyroscope (CMG)—From
+    Concept to First In Vivo Assessments
+  title-short: GyroLock
+  type: article-journal
+  volume: '28'
+
+- id: GajamohanCubliCubeThat2012
+  abstract: >-
+    This paper introduces the Cubli, a 15×15×15 cm cube that can jump up and
+    balance on a corner. Momentum wheels mounted on three faces of the cube
+    (Fig. 1) rotate at high angular velocities and then brake suddenly, causing
+    the Cubli to jump up. Once the Cubli has almost reached the corner stand-up
+    position, controlled motor torques are applied to make it balance on its
+    corner. This paper tracks the development of the Cubli's one dimensional
+    prototype at ETH Zurich and presents preliminary results.
+  author:
+    - family: Gajamohan
+      given: M.
+    - family: Merz
+      given: M.
+    - family: Thommen
+      given: I.
+    - family: D'Andrea
+      given: R.
+  container-title: 2012 IEEE/RSJ International Conference on Intelligent Robots and Systems
+  DOI: 10.1109/IROS.2012.6385896
+  event: 2012 IEEE/RSJ International Conference on Intelligent Robots and Systems
+  issued:
+    - year: 2012
+      month: 10
+  page: 3722-3727
+  source: IEEE Xplore
+  title: 'The Cubli: A cube that can jump up and balance'
+  title-short: The Cubli
+  type: paper-conference
+
+- id: gimseoghoHookBlockPossible1997
+  accessed:
+    - year: 2019
+      month: 1
+      day: 22
+  author:
+    - family: 김석호
+      given: ''
+    - family: 정삼용
+      given: ''
+    - family: 손양현
+      given: ''
+  call-number: KR19940020935A
+  issued:
+    - year: 1997
+      month: 3
+      day: 18
+  language: ko
+  number: KR970003509B1
+  submitted:
+    date-parts:
+      - - '1994'
+        - 8
+        - 24
+  title: Hook block of possible rotary adjusting
+  type: patent
+  URL: >-
+    https://patents.google.com/patent/KR970003509B1/en?q=Hook&q=Block&q=Possible&q=Rotary&q=Adjusting&oq=Hook+Block+of+Possible+Rotary+Adjusting
+
+- id: GoodJobsProject
+  abstract: >-
+    Convinced that not enough is known about the transformation of the non-BA
+    economy or about how workers without BAs can leverage economic opportunity,
+    we explore the job market for these workers and focus on good jobs which
+    provide family-sustaining earnings.
+  accessed:
+    - year: 2019
+      month: 5
+      day: 23
+  container-title: The Good Jobs Project
+  language: en-US
+  title: The Good Jobs Project | Good Jobs That Pay without a BA
+  type: webpage
+  URL: 'https://goodjobsdata.org/'
+
+- id: GoodwinRoboCraneConstructionBridges1997
+  abstract: >-
+    The National Institute of Standards and Technology (NIST) has developed
+    conceptual designs, laboratory scale models, and computer
+    simulations/animation of several configurations of remotely operated cranes
+    to assemble highway bridges. NIST’s designs have been patented and
+    trademarked as “RoboCrane.” Major opportunities exist to develop fullscale
+    cranes and demonstrate construction of temporary bridges, causeways across
+    wetlands, and overpasses for traffic management over repair sites. Remotely
+    operated, mobile, lightweight cranes can put modular bridge sections in
+    place and provide better control of loads. This could result in faster
+    assembly and less environmental disturbance. RoboCrane configurations that
+    are well suited for bridge assembly and their potential savings in time and
+    cost are discussed.
+  accessed:
+    - year: 2019
+      month: 5
+      day: 23
+  author:
+    - family: Goodwin
+      given: Ken
+  container-title: Transportation Research Record
+  container-title-short: Transportation Research Record
+  DOI: 10.3141/1575-06
+  ISSN: 0361-1981
+  issue: '1'
+  issued:
+    - year: 1997
+      month: 1
+      day: 1
+  language: en
+  page: 42-46
+  source: SAGE Journals
+  title: RoboCrane Construction of Bridges
+  type: article-journal
+  URL: 'https://doi.org/10.3141/1575-06'
+  volume: '1575'
+
+- id: GramazioKohlerFlightAssembledArchitecture2011
+  abstract: >-
+    [02/12/2011 - 19/02/2012] FRAC Centre Orl&eacute;ans A project by Gramazio
+    &amp; Kohler and Raffaello d&#039;Andrea, in cooperation with ETH Zurich 
+    http://www.frac-centre.fr/expositions/l-historique-des-expositions/rub/gramazio-kohler-raffaello-andrea/gramazio-amp-kohler-raffaello-andrea-179.html 
+    http://www.frac-centre.fr/collection-art-architecture/gramazio-kohler-raffaello-andrea/flight-assembled-architecture-64.html?authID=304&amp;ensembleID=1082 
+    http://www.frac-centre.fr/collection-art-architecture/rub/rubauteurs-58.html?authID=304
+    __________  Suivre&hellip;
+  accessed:
+    - year: 2019
+      month: 5
+      day: 23
+  dimensions: PT00H07M56S
+  issued:
+    - year: 2011
+      month: 12
+      day: 15
+  source: Vimeo
+  title: Flight Assembled Architecture
+  type: motion_picture
+  URL: 'https://vimeo.com/33713231'
+
+- id: GrossmanQuestionsRandallMunroe
+  abstract: The cartoonist draws his own conclusions
+  accessed:
+    - year: 2018
+      month: 10
+      day: 10
+  author:
+    - family: Grossman
+      given: Lev
+  container-title: Time
+  language: en-us
+  title: 7 Questions With Randall Munroe
+  type: webpage
+  URL: 'http://time.com/4116921/randall-munroe-draws-his-own-conclusions/'
+
+- id: GuDistanceMeasurementTower2012
+  abstract: >-
+    Aiming at the anti-collision monitoring of tower crane, the models of state
+    equation and observation equation for obstacle are established, and distance
+    measurement method based on ultrasonic sensor for tower crane obstacle is
+    proposed. According to the multi-sensor information fusion theory and
+    obstacle kinematic model, Kalman filter principle is used to respectively
+    deal with single ultrasonic sensor information and multi-ultrasonic sensor
+    information fusion, then those simulation and experiments results are
+    analyzed and contrasted. The results show that multi-sensor distance
+    measurement is more accurate and stable than single sensor distance
+    measurement, and verify the feasibility and superiority of multi-sensor
+    information fusion theory in tower crane anti-collision applications.
+  author:
+    - family: Gu
+      given: L.
+    - family: Kou
+      given: X.
+    - family: Jia
+      given: J.
+  container-title: >-
+    2012 IEEE International Conference on Automation Science and Engineering
+    (CASE)
+  DOI: 10.1109/CoASE.2012.6386344
+  event: >-
+    2012 IEEE International Conference on Automation Science and Engineering
+    (CASE)
+  issued:
+    - year: 2012
+      month: 8
+  page: 1028-1032
+  source: IEEE Xplore
+  title: >-
+    Distance measurement for tower crane obstacle based on multi-ultrasonic
+    sensors
+  type: paper-conference
+
+- id: HaarhoffActuatorDesignStabilizing2016
+  abstract: >-
+    In this paper we illustrate the feasibility of using control moment
+    gyroscopes (CMGs) for the stabilization of free swinging robots hanging from
+    single tendons. Such systems may provide robotic workspaces of unprecedented
+    size, especially in the vertical. Taking typical base reaction forces of
+    industrial robots we show that control moment gyroscopes may provide means
+    for compensation. From the basic principles of CMGs we derive design
+    criteria for a free swinging robot platform. These criteria are illustrated
+    in the design of a scissored pair CMG for a single DoF demonstrator.
+  author:
+    - family: Haarhoff
+      given: D.
+    - family: Kolditz
+      given: M.
+    - family: Abel
+      given: D.
+    - family: Brell-Cokcan
+      given: S.
+  collection-title: Mechanisms and Machine Science
+  container-title: >-
+    New Advances in Mechanisms, Mechanical Transmissions and Robotics:
+    Proceedings of The Joint International Conference of the XII International
+    Conference on Mechanisms and Mechanical Transmissions (MTM) and the XXIII
+    International Conference on Robotics (Robotics ’16)
+  DOI: 10.1007/978-3-319-45450-4_37
+  editor:
+    - family: Corves
+      given: Burkhard
+    - family: Lovasz
+      given: Erwin-Christian
+    - family: Hüsing
+      given: Mathias
+    - family: Maniu
+      given: Inocentiu
+    - family: Gruescu
+      given: Corina
+  ISBN: 978-3-319-45450-4
+  issued:
+    - year: 2016
+      month: 10
+      day: 26
+  language: en
+  page: 371-378
+  publisher: Springer International Publishing
+  source: link.springer.com
+  title: Actuator Design for Stabilizing Single Tendon Platforms
+  type: chapter
+  URL: 'http://dx.doi.org/10.1007/978-3-319-45450-4_37'
+  volume: '46'
+
+- id: HaarhoffVorrichtungZurSteuerung
+  author:
+    - family: Haarhoff
+      given: Daniel
+    - family: Brell-Cokcan
+      given: Sigrid
+  call-number: '800705929'
+  event-place: RWTH Aachen University
+  publisher-place: RWTH Aachen University
+  status: Submitted
+  submitted:
+    date-parts:
+      - - '2019'
+        - 4
+        - 12
+  title: Vorrichtung zur Steuerung einer an einem Strang hängenden Last
+  type: patent
+
+- id: HillLearningScientificProgramming2016
+  author:
+    - family: Hill
+      given: Christian
+  edition: 1st
+  ISBN: 978-1-107-42822-5
+  issued:
+    - year: 2016
+  number-of-pages: '460'
+  publisher: Cambridge University Press
+  title: Learning Scientific Programming with Python
+  type: book
+
+- id: HirzingerROTEXtheFirstRemotely1994
+  abstract: >-
+    In April 1993 for the first time in the history of space flight, a small
+    multisensory robot performed a number of prototype tasks on-board a
+    spacecraft (spacelab D2 on shuttle COLUMBIA) in different operational modes
+    that are feasible today, namely preprogrammed remotely controlled operations
+    by the astronauts using a control ball and a stereo TV-monitor, as well as
+    remotely controlled from ground via the human operator and machine
+    intelligence. In these operational modes the robot successfully closed and
+    opened connector plugs (bayonet closure), assembled structures from single
+    parts and captured a free-floating object. Several key technologies have
+    made this space robot technology experiment ROTEX a big success:
+    multisensory gripper technology, local (shared autonomy) sensory feedback
+    control concepts, and the powerful delay-compensating 3D-graphics simulation
+    (predictive simulation) in the telerobotic ground station. This paper
+    focusses on the tele-sensor-programming approach and the predictive
+    simulation used for remote ground control.<>
+  author:
+    - family: Hirzinger
+      given: G.
+    - family: Brunner
+      given: B.
+    - family: Dietrich
+      given: J.
+    - family: Heindl
+      given: J.
+  container-title: >-
+    Proceedings of the 1994 IEEE International Conference on Robotics and
+    Automation
+  DOI: 10.1109/ROBOT.1994.351121
+  event: >-
+    Proceedings of the 1994 IEEE International Conference on Robotics and
+    Automation
+  issued:
+    - year: 1994
+      month: 5
+  page: 2604-2611 vol.3
+  source: IEEE Xplore
+  title: ROTEX-the first remotely controlled robot in space
+  type: paper-conference
+
+- id: HoangSimpleEnergybasedController2014
+  abstract: >-
+    This paper proposes a simple energy-based controller for a class of
+    underactuated mechanical systems. The mechanical systems considered in this
+    study are modeled with two degrees of freedom, driven by only one actuator,
+    and easily excited to oscillate. The proposed controller is designed by
+    exploiting the passivity of the system. The energy storage function is
+    constructed such that the control input is passive, with a combined output
+    of actuated and unactuated variables. The target position of the closed-loop
+    system is proven to be asymptotically stable using Lyapunov techniques and
+    LaSalle’s invariance theorem. The proposed control law has a simple
+    structure and is independent of system parameters. Numerical simulations and
+    experiments demonstrate the superior performance of the proposed control
+    method over a number of traditional controllers as well as its robustness
+    against parameter uncertainties. These advantages point to the promising
+    practical application of the proposed control method in
+    control-underactuated systems, such as overhead cranes, single-link
+    flexible-joint manipulators, and flexible Cartesian manipulators.
+  accessed:
+    - year: 2018
+      month: 11
+      day: 28
+  author:
+    - family: Hoang
+      given: Nguyen Quang
+    - family: Lee
+      given: Soon-Geul
+    - family: Kim
+      given: Jae-Jun
+    - family: Kim
+      given: Byung Soo
+  container-title: International Journal of Precision Engineering and Manufacturing
+  container-title-short: Int. J. Precis. Eng. Manuf.
+  DOI: 10.1007/s12541-014-0501-z
+  ISSN: 2005-4602
+  issue: '8'
+  issued:
+    - year: 2014
+      month: 8
+      day: 1
+  language: en
+  page: 1529-1536
+  source: Springer Link
+  title: >-
+    Simple energy-based controller for a class of underactuated mechanical
+    systems
+  type: article-journal
+  URL: 'https://doi.org/10.1007/s12541-014-0501-z'
+  volume: '15'
+
+- id: HubbardForcedDampedPendulum
+  abstract: >-
+    We show that a “simple ” differential equation modeling a garden-variety
+    damped forced pendulum can exhibit extraordinarily complicated and unstable
+    behavior. While instability and control might at first glance appear
+    contradictory, we can use the pendulum’s instability to control it. Such
+    results are vital in robotics: the forced pendulum is a basic subsystem of
+    any robot. Most of the mathematical methods used in this paper were
+    initially developed in celestial mechanics, largely by Poincaré. The
+    literature of the field tends to be quite advanced indeed (see [1, 11]); one
+    object of this paper is to show that computer programs, properly used, can
+    make these advanced topics transparent. All the computer-generated pictures
+    in this paper were produced by the programs Planar Systems and Planar
+    Iterations [6], both written by Ben Hinkle (now at Maple). 1. Some parallels
+    in celestial mechanics When I was a graduate student, I was amazed by the
+    results of Alekseev concerning a system formed by three bodies obeying
+    Newton’s law of gravitation; see [1] and [11]. As shown in Figure 1, two
+    massive bodies of equal mass move in a plane P on ellipses
+  author:
+    - family: Hubbard
+      given: John H.
+  source: CiteSeer
+  title: '1 The Forced Damped Pendulum: Chaos, Complication and Control.'
+  title-short: 1 The Forced Damped Pendulum
+  type: book
+
+- id: HubbardForcedDampedPenduluma
+  author:
+    - family: Hubbard
+      given: John H
+  language: en
+  page: '19'
+  source: Zotero
+  title: 'The Forced Damped Pendulum: Chaos, Complication and Control.'
+  type: article-journal
+
+- id: ImaidaGroundspaceBilateralTeleoperation2004
+  abstract: >-
+    A bilateral teleoperation experiment with Engineering Test Satellite 7
+    (ETS-VII) was conducted on November 22, 1999. Round-trip time for
+    communication between the National Space Development Agency of Japan ground
+    station and the ETS-VII was approximately seven seconds. We constructed a
+    bilateral teleoperator that is stable, even under such a long time delay.
+    Several experiments, such as slope-tracing task and peg-in-hole task, were
+    carried out. Task performance was compared between the bilateral mode and
+    the unilateral mode with force telemetry data visually displayed on a
+    screen. All tasks were possible by bilateral control without any visual
+    information. Experimental results showed that kinesthetic force feedback to
+    the operator is helpful even under such a long time delay, and improves the
+    performance of the task.
+  author:
+    - family: Imaida
+      given: T.
+    - family: Yokokohji
+      given: Y.
+    - family: Doi
+      given: T.
+    - family: Oda
+      given: M.
+    - family: Yoshikawa
+      given: T.
+  container-title: IEEE Transactions on Robotics and Automation
+  DOI: 10.1109/TRA.2004.825271
+  ISSN: 1042-296X
+  issue: '3'
+  issued:
+    - year: 2004
+      month: 6
+  page: 499-511
+  source: IEEE Xplore
+  title: >-
+    Ground-space bilateral teleoperation of ETS-VII robot arm by direct
+    bilateral coupling under 7-s time delay condition
+  type: article-journal
+  volume: '20'
+
+- id: InouePracticalDevelopmentSuspender1998
+  abstract: >-
+    In the transportation of construction material using tower cranes, the
+    hanging loads are frequently rotated by external disturbances. This lowers
+    the efficiency and the safety of this kind of work. For the purpose of
+    reducing load rotation and dangerous works, a suspender device activated by
+    a gyroscope has been developed This device controls load rotation via two
+    different modes of the gyroscopic moment. In the active control mode, the
+    load turns in high response to commands issued by the controller and can be
+    correctly set in position at the desired angle. In the passive control mode,
+    the load can be kept in position regardless of crane movement or outer
+    disturbance. As a result of applying the suspender device to construction
+    work, the cycle time for load transporting is effectively reduced and
+    shortening of construction period is carried out. The operations are
+    preciously regulated by wireless remote control, and dangerous manipulation
+    works are drastically reduced This device generates no noise and guarantees
+    a comfortable and safe construction environment.
+  accessed:
+    - year: 2019
+      month: 2
+      day: 8
+  author:
+    - family: Inoue
+      given: Fumihiro
+    - family: Wiuanabe
+      given: Kouji
+    - family: Ikeda
+      given: Yuichi
+    - family: Wakisaka
+      given: Tatuya
+    - family: Wakabayashi
+      given: Akira
+    - family: Nekomoto
+      given: Yoshitsugu
+  DOI: 10.22260/ISARC1998/0036
+  event: 15th International Symposium on Automation and Robotics in Construction
+  event-place: 'Munich, Germany'
+  issued:
+    - year: 1998
+      month: 4
+      day: 1
+  language: en
+  publisher-place: 'Munich, Germany'
+  source: Crossref
+  title: >-
+    A Practical Development of the Suspender Device that Controls Load Rotation
+    by Gyroscopic Moments
+  type: paper-conference
+  URL: >-
+    http://www.iaarc.org/publications/proceedings_of_the_15th_isarc/a_practical_development_of_the_suspender_device_that_controls_load_rotation_by_gyroscopic_moments.html
+
+- id: >-
+    InternationalConferenceDynamicalSystemsTheoryandApplicationsDynamicalSystemsControl2015
+  author:
+    - family: International Conference Dynamical Systems Theory and Applications
+      given: ''
+  editor:
+    - family: Awrejcewicz
+      given: Jan
+    - family: Kaźmierczak
+      given: Marek
+    - family: Mrozowski
+      given: Jerzy
+    - family: Olejnik
+      given: Pawel
+  event-place: Łódź
+  ISBN: 978-83-7283-708-0
+  issued:
+    - year: 2015
+  language: en
+  note: 'OCLC: ocn934696368'
+  number-of-pages: '628'
+  publisher: 'Department of Automation, Biomechanics and Mechatronics'
+  publisher-place: Łódź
+  source: Gemeinsamer Bibliotheksverbund ISBN
+  title: 'Dynamical systems. 3: Control and stability'
+  title-short: Dynamical systems. 3
+  type: book
+
+- id: IzardLargescale3DPrinting2017
+  abstract: >-
+    Gantry robots and anthropomorphic arms of various sizes have already been
+    studied and, while they are in use in some parts of the world for automated
+    construction, a new kind of wide workspace machinery, cable-driven parallel
+    robots (CDPR), has emerged. These robots are capable of automated movement
+    in a very wide workspace, using cables reeled in and out by winches as
+    actuation members, the other elements being easily stacked for easy
+    relocation and reconfiguration, which is critical for on-site construction.
+    The motivation of this paper is to showcase the potential of a CDPR
+    operating solely on motor position sensors and showing limited collisions
+    from the cables for large-scale applications in the building industry
+    relevant for additive manufacturing, without risk of collisions between the
+    cables and the building. The combination of the Cogiro CDPR (Tecnalia,
+    LIRMM-CNRS 2010) with the extruder and material of the Pylos project (IAAC
+    2013) opens the opportunity to a 3D printing machine with a workspace of
+    13.6 × 9.4 × 3.3 m. The design patterns for printing on such a large scale
+    are disclosed, as well as the modifications that were necessary for both the
+    Cogiro robot and Pylos extruder and material. Two prints, with different
+    patterns, have been achieved with the Pylos extruder mounted on Cogiro: the
+    first spanning 3.5 m in length, the second, reaching a height of 0.86 m.
+    Based on this initial experiment, plans for building larger parts and
+    buildings are discussed, as well as other possible applications for CDPRs in
+    construction, such as the manipulation of assembly processes (windows,
+    lintels, beams, floor elements, curtain wall modules, etc.) or brick laying.
+  accessed:
+    - year: 2019
+      month: 5
+      day: 23
+  author:
+    - family: Izard
+      given: Jean-Baptiste
+    - family: Dubor
+      given: Alexandre
+    - family: Hervé
+      given: Pierre-Elie
+    - family: Cabay
+      given: Edouard
+    - family: Culla
+      given: David
+    - family: Rodriguez
+      given: Mariola
+    - family: Barrado
+      given: Mikel
+  container-title: Construction Robotics
+  container-title-short: Constr Robot
+  DOI: 10.1007/s41693-017-0008-0
+  ISSN: 2509-8780
+  issue: '1'
+  issued:
+    - year: 2017
+      month: 12
+      day: 1
+  language: en
+  page: 69-76
+  source: Springer Link
+  title: Large-scale 3D printing with cable-driven parallel robots
+  type: article-journal
+  URL: 'https://doi.org/10.1007/s41693-017-0008-0'
+  volume: '1'
+
+- id: james1993nist
+  author:
+    - family: James
+      given: Albus
+    - family: Roger
+      given: Bostelman
+    - family: Nicholas
+      given: Dagalakis
+  container-title: Journal of Robotic Systems
+  issue: '5'
+  issued:
+    - year: 1993
+  page: 709-724
+  title: The NIST robocrane
+  type: article-journal
+  volume: '10'
+
+- id: JAXAEngineeringTest
+  abstract: >-
+    Get information on the Engineering Test Satellite VII "KIKU-7" (ETS-VII).
+    The Japan Aerospace Exploration Agency (JAXA) performs various activities
+    related to aerospace as an organization, from basic research in the
+    aerospace field to development and utilization.
+  accessed:
+    - year: 2019
+      month: 5
+      day: 23
+  container-title: JAXA | Japan Aerospace Exploration Agency
+  language: en
+  title: JAXA | Engineering Test Satellite VII "KIKU-7" (ETS-VII)
+  type: webpage
+  URL: 'https://global.jaxa.jp/projects/sat/ets7/'
+
+- id: JayakodyRobustAdaptiveCoordination2016
+  abstract: >-
+    Free-flying robotic spacecraft play a significant role in the space industry
+    today. Unlike ground-based robots, the manipulator motion in a space robot
+    can cause undesirable disturbances to the spacecraft platform, causing its
+    attitude to change, potentially disrupting communication and solar energy
+    collection processes as a result. Thus, coordinated control of both the
+    spacecraft attitude and the manipulator motion become essential for
+    successful space operations. Though past research has developed dynamic
+    models for spacecraft manipulators, the contribution of reaction wheels to
+    the angular momentum of the entire system needs further consideration. This
+    paper reformulates the dynamic equations of a free-flying space robot by
+    taking the aspect of reaction wheels into account. A diagonalization method
+    is introduced to decouple the highly nonlinear multi-input/multi-output
+    system model. A novel adaptive variable structure control method is then
+    applied to implement a robust coordination controller for the space robot
+    subjected to system uncertainties. Simulations are carried out on a
+    spacecraft model with a 3-degree-of-freedom manipulator mounted on it to
+    demonstrate the robustness of the proposed approach. Comparisons with
+    sliding mode control show that the new controller results in faster settling
+    times, which leads to maintaining uninterrupted communication links and
+    efficient solar energy harvesting.
+  accessed:
+    - year: 2019
+      month: 5
+      day: 24
+  author:
+    - family: Jayakody
+      given: Hiranya S.
+    - family: Shi
+      given: Lingling
+    - family: Katupitiya
+      given: Jay
+    - family: Kinkaid
+      given: Nathan
+  container-title: 'Journal of Guidance, Control, and Dynamics'
+  DOI: 10.2514/1.G002145
+  ISSN: 0731-5090
+  issue: '12'
+  issued:
+    - year: 2016
+  page: 2699-2711
+  source: American Institute of Aeronautics and Astronautics
+  title: >-
+    Robust Adaptive Coordination Controller for a Spacecraft Equipped with a
+    Robotic Manipulator
+  type: article-journal
+  URL: 'https://doi.org/10.2514/1.G002145'
+  volume: '39'
+
+- id: JonesMuchLowerLaunch2017
+  author:
+    - family: Jones
+      given: Harry W
+  issued:
+    - year: 2017
+  title: >-
+    Much Lower Launch Costs Make Resupply Cheaper than Recycling for Space Life
+    Support
+  type: article-journal
+
+- id: KankiDevelopmentCMGActive1994
+  abstract: J-STAGE
+  accessed:
+    - year: 2019
+      month: 2
+      day: 8
+  author:
+    - family: Kanki
+      given: Hiroshi
+    - family: Nekomoto
+      given: Yoshitsugu
+    - family: Monobe
+      given: Hiroyuki
+    - family: Ogura
+      given: Hironobu
+    - family: Kobayashi
+      given: Kiichi
+  container-title: >-
+    JSME international journal. Ser. C, Dynamics, control, robotics, design and
+    manufacturing
+  container-title-short: >-
+    JSME international journal. Ser. C, Dynamics, control, robotics, design and
+    manufacturing
+  DOI: 10.1299/jsmec1993.37.468
+  ISSN: 1340-8062
+  issue: '3'
+  issued:
+    - year: 1994
+      month: 9
+      day: 15
+  language: en
+  page: 468-470
+  source: www.jstage.jst.go.jp
+  title: Development of CMG Active Vibration Control Device for Gondola
+  type: article-journal
+  URL: >-
+    https://www.jstage.jst.go.jp/article/jsmec1993/37/3/37_3_468/_article/-char/ja/
+  volume: '37'
+
+- id: KeatingCompoundArmApproach2014
+  abstract: >-
+    We introduce a novel large-scale Digital Construction Platform (DCP) for
+    on-site sensing, analysis, and fabrication. The DCP is an in-progress
+    research project consisting of a compound robotic arm system comprised of a
+    5-axis Altec hydraulic mobile boom arm attached to a 6-axis KUKA robotic
+    arm. Akin to the biological model of human shoulder and hand this compound
+    system utilizes the large boom arm for gross positioning and the small
+    robotic arm for fine positioning and oscillation correction respectively.
+    The platform is based on a fully mobile truck vehicle with a working reach
+    diameter of over 80 feet. It can handle a 1,500 lb lift capacity and a 20 lb
+    manipulation capacity. We report on the progress of the DCP and speculate on
+    potential applications including fabrication of non-standard architectural
+    forms, integration of real-time on-site sensing data, improvements in
+    construction efficiency, enhanced resolution, lower error rates, and
+    increased safety. We report on a case study for platform demonstration
+    through large-scale 3D printing of insulative formwork for castable
+    structures. We discuss benefits and potential future applications.
+  accessed:
+    - year: 2019
+      month: 5
+      day: 23
+  author:
+    - family: Keating
+      given: Steven
+    - family: Spielberg
+      given: Nathan A.
+    - family: Klein
+      given: John
+    - family: Oxman
+      given: Neri
+  container-title: 'Robotic Fabrication in Architecture, Art and Design 2014'
+  DOI: 10.1007/978-3-319-04663-1_7
+  editor:
+    - family: McGee
+      given: Wes
+    - family: Ponce de Leon
+      given: Monica
+  event-place: Cham
+  ISBN: 978-3-319-04663-1
+  issued:
+    - year: 2014
+  language: en
+  page: 99-110
+  publisher: Springer International Publishing
+  publisher-place: Cham
+  source: Springer Link
+  title: A Compound Arm Approach to Digital Construction
+  type: chapter
+  URL: 'https://doi.org/10.1007/978-3-319-04663-1_7'
+
+- id: KimDynamicallyBalancedFlywheel2013
+  accessed:
+    - year: 2019
+      month: 1
+      day: 22
+  author:
+    - family: Kim
+      given: Daniel Kee Young
+  call-number: US13777919
+  issued:
+    - year: 2013
+      month: 9
+      day: 12
+  language: en
+  number: US20130233100A1
+  submitted:
+    date-parts:
+      - - '2013'
+        - 2
+        - 26
+  title: Dynamically balanced flywheel
+  type: patent
+  URL: >-
+    https://patents.google.com/patent/US20130233100A1/en?inventor=Daniel+Kee+Young+Kim
+
+- id: KimElectronicControlSystem2011
+  accessed:
+    - year: 2019
+      month: 1
+      day: 22
+  author:
+    - family: Kim
+      given: Daniel Kee Young
+    - family: Bretney
+      given: Kevin
+    - family: Shao
+      given: Andrew
+    - family: Tsang
+      given: Andrew L.
+  call-number: US12875047
+  issued:
+    - year: 2011
+      month: 9
+      day: 22
+  language: en
+  number: US20110231085A1
+  submitted:
+    date-parts:
+      - - '2010'
+        - 9
+        - 2
+  title: Electronic control system for gyroscopic stabilized vehicle
+  type: patent
+  URL: >-
+    https://patents.google.com/patent/US20110231085A1/en?inventor=Daniel+Kee+Young+Kim
+
+- id: KimElectronicControlSystem2013
+  abstract: >-
+    Embodiments of the invention describe receiving vehicle information data
+    from a plurality of sensors. This vehicle information data may indicate at
+    least orientation of a frame of a vehicle, orientation of a front wheel of
+    the vehicle with respect to the frame, orientation and rotational speed of a
+    flywheel included in a gyroscope coupled to the frame, and speed of frame.
+    Based on the received data, a vehicle state may be determined. Based at
+    least on this determination, at least one of the orientation and rotational
+    speed of the flywheel may be adjusted. This adjustment may be further based
+    on an input to change at least one of speed and direction of the vehicle.
+  accessed:
+    - year: 2018
+      month: 10
+      day: 10
+  author:
+    - family: Kim
+      given: Daniel Kee Young
+    - family: Bretney
+      given: Kevin
+    - family: Shao
+      given: Andrew
+    - family: Tsang
+      given: Andrew L.
+  call-number: US12875047
+  issued:
+    - year: 2013
+      month: 9
+      day: 10
+  language: en
+  number: US8532915B2
+  submitted:
+    date-parts:
+      - - '2010'
+        - 9
+        - 2
+  title: Electronic control system for gyroscopic stabilized vehicle
+  type: patent
+  URL: 'https://patents.google.com/patent/US8532915B2/en'
+
+- id: KimGyroscopicSystemVehicle2014
+  accessed:
+    - year: 2019
+      month: 1
+      day: 22
+  author:
+    - family: Kim
+      given: Daniel Kee Young
+    - family: Miller
+      given: Eric
+  call-number: US13974942
+  issued:
+    - year: 2014
+      month: 2
+      day: 27
+  language: en
+  number: US20140054867A1
+  submitted:
+    date-parts:
+      - - '2013'
+        - 8
+        - 23
+  title: Gyroscopic system in vehicle suspension
+  type: patent
+  URL: >-
+    https://patents.google.com/patent/US20140054867A1/en?inventor=Daniel+Kee+Young+Kim
+
+- id: KimHyperfluxFlywheelMotor2015
+  accessed:
+    - year: 2019
+      month: 1
+      day: 22
+  author:
+    - family: Kim
+      given: Daniel Kee Young
+  call-number: US14453432
+  issued:
+    - year: 2015
+      month: 3
+      day: 5
+  language: en
+  number: US20150060163A1
+  submitted:
+    date-parts:
+      - - '2014'
+        - 8
+        - 6
+  title: Hyper-flux flywheel motor system
+  type: patent
+  URL: >-
+    https://patents.google.com/patent/US20150060163A1/en?inventor=Daniel+Kee+Young+Kim&page=1
+
+- id: KimMultipleAxisRotary2013
+  accessed:
+    - year: 2019
+      month: 1
+      day: 22
+  author:
+    - family: Kim
+      given: Daniel Kee Young
+    - family: Basso
+      given: Brandon
+  call-number: US13777939
+  issued:
+    - year: 2013
+      month: 10
+      day: 17
+  language: en
+  number: US20130274995A1
+  submitted:
+    date-parts:
+      - - '2013'
+        - 2
+        - 26
+  title: Multiple axis rotary gyroscope for vehicle attitude control
+  type: patent
+  URL: >-
+    https://patents.google.com/patent/US20130274995A1/en?inventor=Daniel+Kee+Young+Kim
+
+- id: KimPerformanceStudiesHuman2010
+  abstract: >-
+    Oscillation of crane payloads makes it challenging to manipulate payloads
+    quickly, accurately, and safely. The problem is compounded when the payload
+    creates a double-pendulum effect. This paper evaluates an input-shaping
+    control method for reducing double-pendulum oscillations. Human operator
+    performance testing on a 10-ton industrial bridge crane is used to verify
+    the effectiveness and robustness of the method. Fifty operators drove the
+    crane with a standard control pendent, as well as a wireless touchscreen
+    interface. Data from these experiments show that human operators drive the
+    crane much faster and safer with the input-shaping control scheme.
+    Furthermore, considerably less operator effort is required when input
+    shaping is used to limit the oscillation. Additional tests required the
+    operators to drive the crane numerous times over a period of eight days.
+    These experiments show that significant learning occurred when operators did
+    not have the aid of input shaping. However, the performance never approached
+    that achieved by untrained operators using input shaping.
+  accessed:
+    - year: 2018
+      month: 11
+      day: 20
+  author:
+    - family: Kim
+      given: Dooroo
+    - family: Singhose
+      given: William
+  container-title: Control Engineering Practice
+  container-title-short: Control Engineering Practice
+  DOI: 10.1016/j.conengprac.2010.01.011
+  ISSN: 0967-0661
+  issue: '6'
+  issued:
+    - year: 2010
+      month: 6
+      day: 1
+  page: 567-576
+  source: ScienceDirect
+  title: Performance studies of human operators driving double-pendulum bridge cranes
+  type: article-journal
+  URL: 'http://www.sciencedirect.com/science/article/pii/S0967066110000195'
+  volume: '18'
+
+- id: KodaniTransportingRotatingControl2017
+  abstract: >-
+    This paper describes an approach of the transporting and suppressing control
+    of a rotating cargo for a jib crane. First, we show that the angle of the
+    twisting cargo is measured using inertial measurement unit, and next
+    proposed the gyro system with a control moment gyro implemented on the
+    cargo. In experiments, we confirmed to transport the cargo with preventing
+    the translational and twist sway using the gyro system.
+  author:
+    - family: Kodani
+      given: N.
+    - family: Ouchi
+      given: S.
+    - family: Takahashi
+      given: K.
+  container-title: >-
+    IECON 2017 - 43rd Annual Conference of the IEEE Industrial Electronics
+    Society
+  DOI: 10.1109/IECON.2017.8217456
+  event: >-
+    IECON 2017 - 43rd Annual Conference of the IEEE Industrial Electronics
+    Society
+  issued:
+    - year: 2017
+      month: 10
+  page: 8297-8302
+  source: IEEE Xplore
+  title: Transporting and rotating control of a jib crane by control moment gyro
+  type: paper-conference
+
+- id: KressExperimentalImplementationRobust14
+  author:
+    - family: Kress
+      given: Reid L.
+    - family: Jansen
+      given: J. F.
+    - family: Noakes
+      given: M. W.
+  container-title: Fifth International Symposium on Robotics and Manufacturing
+  event-place: 'Maui, Hawaii, USA'
+  issued:
+    - year: 14
+    - year: 1994
+      month: 8
+      day: 17
+  publisher-place: 'Maui, Hawaii, USA'
+  title: >-
+    Experimental Implementation of a Robust Damped-Oscillation Control Algorithm
+    on a Full-Sized, Two-Degree-of-Freedom, AC Induction Motor-Driven Crane
+  type: paper-conference
+
+- id: KurokawaGeometricStudySingle1998
+  author:
+    - family: Kurokawa
+      given: Haruhisa
+  collection-title: Report of Mechanical Engineering Laboratory
+  issued:
+    - year: 1998
+  number: '175'
+  page: 108ff
+  publisher: 'Agency of Industrial Technology and Science, Japan'
+  title: >-
+    A Geometric Study of Single Gimbal Control Moment Gyros - Singularity
+    Problem and Steering Law
+  type: report
+
+- id: lappas_attitude_2002
+  author:
+    - family: Lappas
+      given: VJ
+    - family: Steyn
+      given: WH
+    - family: Underwood
+      given: CI
+  container-title: Acta Astronautica
+  issue: '1'
+  issued:
+    - year: 2002
+  page: 101-111
+  title: Attitude control for small satellites using control moment gyros
+  type: article-journal
+  volume: '51'
+
+- id: lappas_control_2001
+  author:
+    - family: Lappas
+      given: VJ
+    - family: Steyn
+      given: WH
+    - family: Underwood
+      given: CI
+  container-title: 'AIAA Guidance, Navigation and Control Conference, Montreal, Quebec, Canada'
+  issued:
+    - year: 2001
+  title: >-
+    Control moment gyro gimbal angle compensation using magnetic control during
+    external disturbances
+  type: paper-conference
+
+- id: LeeAnalysisFieldApplicability2012
+  abstract: >-
+    The rotation-controllable tower-crane hook block can control the horizontal
+    rotation angle of a steel beam being lifted by a tower crane using a
+    mechanical apparatus. It is expected that the mechanized hook block can
+    relieve safety concerns; however, at the same time, there are several
+    concerns: Is precise control of the rotation angle possible? Won't it be
+    slower than rotating a beam by hand? If a mechanized system is faster, how
+    fast is it? In order to test these, experiments were conducted. The
+    precision of the rotating angle and the time for rotating and stopping the
+    rotation controllable hook block were measured using an orientation sensor
+    and a laser point. The results were compared to those of the conventional
+    manual method. Since a steel beam usually has a symmetrical shape, π/2rad
+    (=90°) is the maximum angle for placing a beam in the target location. The
+    experiment results showed that a steel beam stopped after it moved 7π/600rad
+    (=2.1°) and 9π/200rad (=8.1°) more, on average, due to inertia when the
+    steel beam was rotated π/12rad (=15°) and π/2rad (=90°), respectively.
+    However, it appeared that when an operator became used to the remote
+    controller, the operator could reduce the rotation speed to stop a steel
+    beam in the target location by reversing the motor direction. In terms of
+    time, it took 5.80s, 8.69s, and 17.12s, on average, to rotate a steel beam
+    π/12rad (=15°), π/4rad (=45°), and π/2rad (=90°), respectively. The time for
+    rotating steel beams using the conventional manual method at a construction
+    site was also measured for comparison. The rotation time using the
+    conventional manual method ranged from 11.96s to 91.00s depending on how
+    easy it was for workers to reach and rotate a beam because workers rotate
+    beams while hanging on a column. The results showed that the deviation could
+    be reduced and work efficiency could be improved when a mechanized hook
+    block is adopted on a construction site.
+  accessed:
+    - year: 2018
+      month: 11
+      day: 21
+  author:
+    - family: Lee
+      given: Chijoo
+    - family: Lee
+      given: Ghang
+    - family: Park
+      given: Suyeul
+    - family: Cho
+      given: Joonbeom
+  container-title: Automation in Construction
+  container-title-short: Automation in Construction
+  DOI: 10.1016/j.autcon.2011.05.015
+  ISSN: 0926-5805
+  issued:
+    - year: 2012
+      month: 1
+      day: 1
+  page: 81-88
+  source: ScienceDirect
+  title: >-
+    Analysis of field applicability of the rotation-controllable tower-crane
+    hook block
+  type: article-journal
+  URL: 'http://www.sciencedirect.com/science/article/pii/S0926580511000999'
+  volume: '21'
+
+- id: LeeEfficientVisualFeedback2014
+  abstract: >-
+    This paper presents an efficient method to capture the dynamic movement of a
+    three-dimensional (3-D) overhead crane, enabling it to be controlled by
+    visual feedback in real time with two cheap handy cameras. Two tracking
+    areas and one positioning block in each frame are used to search image
+    features and determine the useful vision information. The depth information
+    of 3-D crane system in images can be also obtained by a tag on the dynamic
+    plant. The presented visual tracking method involves comparison of the
+    lightest or darkest points in the tracking or positioning area of a dynamic
+    object and then computes the necessary trolley position and load swing in
+    3-D space. Upon tracking, the sensing data are sent to an adaptive fuzzy
+    sliding-mode controller (AFSMC) to derive control power for the crane
+    system. Accordingly, the merits of this AFSMC approach, including robustness
+    of the sliding-mode control and the model-free property of the fuzzy logic
+    for the 3-D crane system, are confirmed. Experimental results verify the
+    improvement of the proposed methodology.
+  author:
+    - family: Lee
+      given: L.
+    - family: Huang
+      given: C.
+    - family: Ku
+      given: S.
+    - family: Yang
+      given: Z.
+    - family: Chang
+      given: C.
+  container-title: IEEE Transactions on Industrial Electronics
+  DOI: 10.1109/TIE.2013.2286565
+  ISSN: 0278-0046
+  issue: '8'
+  issued:
+    - year: 2014
+      month: 8
+  page: 4073-4083
+  source: IEEE Xplore
+  title: >-
+    Efficient Visual Feedback Method to Control a Three-Dimensional Overhead
+    Crane
+  type: article-journal
+  volume: '61'
+
+- id: LeeEnergyBasedApproachController2013
+  author:
+    - family: Lee
+      given: Soon-Geul
+    - family: Hoang
+      given: Nguyen
+  container-title: Applied Mechanics and Materials
+  DOI: 10.4028/www.scientific.net/AMM.365-366.784
+  issued:
+    - year: 2013
+      month: 6
+  page: 784-787
+  title: >-
+    Energy-Based Approach for Controller Design of Overhead Cranes: A
+    Comparative Study
+  type: article-journal
+  volume: '365'
+
+- id: LeveSpacecraftMomentumControl2015
+  abstract: >-
+    The goal of this book is to serve both as a practical technical reference
+    and a resource for gaining a fuller understanding of the state of the art of
+    spacecraft momentum control systems, specifically looking at control moment
+    gyroscopes (CMGs). As a result, the subject matter includes theory,
+    technology, and systems engineering. The authors combine material on
+    system-level architecture of spacecraft that feature momentum-control
+    systems with material about the momentum-control hardware and software. This
+    also encompasses material on the theoretical and algorithmic approaches to
+    the control of space vehicles with CMGs. In essence, CMGs are the
+    attitude-control actuators that make contemporary highly agile spacecraft
+    possible. The rise of commercial Earth imaging, the advances in privately
+    built spacecraft (including small satellites), and the growing popularity of
+    the subject matter in academic circles over the past decade argues that now
+    is the time for an in-depth treatment of the topic. CMGs are augmented by
+    reaction wheels and related algorithms for steering all such actuators,
+    which together comprise the field of spacecraft momentum control systems.
+    The material is presented at a level suitable for practicing engineers and
+    those with an undergraduate degree in mechanical, electrical, and/or
+    aerospace engineering.
+  accessed:
+    - year: 2018
+      month: 10
+      day: 4
+  author:
+    - family: Leve
+      given: Frederick A.
+    - family: Hamilton
+      given: Brian J.
+    - family: Peck
+      given: Mason A.
+  collection-title: Space Technology Library
+  ISBN: 978-3-319-22562-3
+  issued:
+    - year: 2015
+  language: en
+  publisher: Springer International Publishing
+  source: www.springer.com
+  title: Spacecraft Momentum Control Systems
+  type: book
+  URL: //www.springer.com/de/book/9783319225623
+
+- id: li_motion_2013
+  author:
+    - family: Li
+      given: Zhenyu
+    - family: Liu
+      given: Hong
+    - family: Wang
+      given: Bin
+  container-title: 'Robotics and Biomimetics (ROBIO), 2013 IEEE International Conference on'
+  issued:
+    - year: 2013
+  page: 1151-1156
+  publisher: IEEE
+  title: >-
+    Motion planning and coordination control of space robot using methods of
+    calculated momentum
+  type: paper-conference
+
+- id: LiGyroscopicAssistanceHuman2012
+  abstract: >-
+    Falls are an urgent challenge in aging societies, and balance dysfunction is
+    a major risk factor. Current robotic technology that assists human
+    locomotion, however, aims at versatile functionality, particularly in the
+    assistance of weak muscles. Such versatile design leads to heavy, bulky
+    devices that are impractical in daily life for most elderly subjects. In
+    this paper, we investigate the use of minimalistic robotic technology that
+    focuses exclusively on stabilizing human balance during gait. This
+    task-specific device is novel in its combination of portability and
+    simplicity. Our initial simulations show that it is possible to return a
+    person to a vertical position from an engagement angle of 10 degrees from
+    vertical.
+  author:
+    - family: Li
+      given: D.
+    - family: Vallery
+      given: H.
+  container-title: 2012 12th IEEE International Workshop on Advanced Motion Control (AMC)
+  DOI: 10.1109/AMC.2012.6197144
+  event: 2012 12th IEEE International Workshop on Advanced Motion Control (AMC)
+  issued:
+    - year: 2012
+      month: 3
+  page: 1-6
+  source: IEEE Xplore
+  title: Gyroscopic assistance for human balance
+  type: paper-conference
+
+- id: LiRapidReorientationManeuvers1998
+  accessed:
+    - year: 2019
+      month: 2
+      day: 8
+  author:
+    - family: Li
+      given: Feiyue
+    - family: Bainum
+      given: Peter M.
+    - family: Creamer
+      given: N. Glenn
+    - family: Fisher
+      given: Shalom
+  container-title: 'Journal of Guidance, Control, and Dynamics'
+  DOI: 10.2514/2.4213
+  ISSN: '0731-5090, 1533-3884'
+  issue: '1'
+  issued:
+    - year: 1998
+      month: 1
+  language: en
+  page: 164-171
+  source: Crossref
+  title: >-
+    Rapid Reorientation Maneuvers of Experimental Spacecraft with a Pendulum
+    Appendage
+  type: article-journal
+  URL: 'http://arc.aiaa.org/doi/10.2514/2.4213'
+  volume: '21'
+
+- id: locusmagCoryDoctorowTerra2019
+  abstract: >-
+    In 1660, John Locke published his Two Treatises of Government, where he set
+    out to resolve the seeming conflict between individual property rights
+    (which he valorized) and the Bible (ditto), which …
+  accessed:
+    - year: 2019
+      month: 5
+      day: 21
+  author:
+    - literal: locusmag
+  container-title: Locus Online
+  issued:
+    - year: 2019
+      month: 3
+      day: 4
+  language: en-US
+  title: 'Cory Doctorow: Terra Nullius'
+  title-short: Cory Doctorow
+  type: post-weblog
+  URL: 'https://locusmag.com/2019/03/cory-doctorow-terra-nullius/'
+
+- id: LudwickiAxiallyExcitedSpatial2015
+  abstract: >-
+    Analysis of a 3D spatial double physical pendulum system, coupled by two
+    universal joints is performed. External excitation of the mechanism is
+    realized by axial periodic rotations of the first joint of the pendulum.
+    System of ODEs is solved numerically and obtained data are analyzed by a
+    standard approach, including time series, phase plots and Poincaré sections.
+    Additionally, FFT (Fast Fourier Transform and the wavelet transformation
+    algorithms have been applied. Various wavelet basic functions have been
+    compared to find the best fit, e.g. Morlet, Mexican Hat and Gabor wavelets.
+    The so far obtained results allowed for detection of a number of non-linear
+    effects, including chaos, quasi-periodic and periodic dynamics, as well the
+    numerous and different bifurcations. Scenarios of transition from regular to
+    chaotic dynamics have been also illustrated and studied.
+  author:
+    - family: Ludwicki
+      given: Michał
+    - family: Kudra
+      given: Grzegorz
+    - family: Awrejcewicz
+      given: Jan
+  collection-title: DSTA
+  container-title: 'Dynamical Systems: Theory and Applications'
+  event: 'Dynamical Systems: Theory and Applications'
+  event-place: 'Łódź, Poland'
+  ISBN: 978-83-7283-708-0
+  issued:
+    - year: 2015
+  language: en
+  page: 385-400
+  publisher: 'Department of Automation, Biomechanics and Mechatronics'
+  publisher-place: 'Łódź, Poland'
+  source: Zotero
+  title: Axially excited spatial double pendulum nonlinear dynamics
+  type: paper-conference
+  volume: '13'
+
+- id: LytleIntelligentJobSite2003
+  abstract: >-
+    The NIST Construction Metrology and Automation Group, in cooperation with
+    the NIST Intelligent Systems Division, is researching robotic structural
+    steel placement through an ongoing program entitled “Performance of
+    Innovative Technologies for Automated Steel Construction.” This program,
+    initiated in response to an American Institute of Steel Construction request
+    for a 25 % reduction in time to erect steel structures, focuses on the
+    development of an Automated Steel Construction Test Bed to research advanced
+    concepts in crane automation, laser-based site metrology, laser radar
+    (LADAR) imaging, construction component tracking, and web-enabled
+    3D-visualization. This test facility also provides a mechanism to
+    investigate paths towards an Intelligent Job Site as described in the
+    FIATECH Capital Projects Technology Roadmap.
+  accessed:
+    - year: 2019
+      month: 5
+      day: 23
+  author:
+    - family: Lytle
+      given: Alan M.
+    - family: Saidi
+      given: Kamel S.
+    - family: Stone
+      given: William C.
+    - family: Scott
+      given: Nicholas A.
+  DOI: 10.22260/ISARC2003/0036
+  event: 20th International Symposium on Automation and Robotics in Construction
+  event-place: 'Eindhoven, The Netherlands'
+  issued:
+    - year: 2003
+      month: 9
+      day: 24
+  language: en
+  publisher-place: 'Eindhoven, The Netherlands'
+  source: DOI.org (Crossref)
+  title: >-
+    Towards an Intelligent Job Site: Status of the NIST Automated Steel
+    Construction Test Bed
+  title-short: Towards an Intelligent Job Site
+  type: paper-conference
+  URL: >-
+    http://www.iaarc.org/publications/proceedings_of_the_20th_isarc/towards_an_intelligent_job_site_status_of_the_nist_automated_steel_construction_test_bed.html
+
+- id: MargonoOptimierungBewegungsablaufenMit2004
+  author:
+    - family: Margono
+      given: Buntoro Sandhy
+  issued:
+    - year: 2004
+      month: 10
+      day: 14
+  publisher: >-
+    Universität Duisburg-Essen, Fakultät für Ingenieurwissenschaften, Abteilung
+    Maschinenbau
+  title: >-
+    Optimierung von Bewegungsabläufen mit schwingungsfreien Endpositionen zur
+    Verkürzung der Arbeitszyklen von Container-Schnellumschlaganlagen
+  type: thesis
+
+- id: MarguliesG.GeometricTheorySingleGimbal1978
+  author:
+    - family: 'Margulies, G.'
+      given: ''
+    - family: 'Aubrun, J.'
+      given: ''
+  container-title: The Journal of the Astronautical Sciences
+  ISSN: 0021-9142
+  issue: '2'
+  issued:
+    - year: 1978
+  page: 159-191
+  title: Geometric Theory of Single-Gimbal Control Moment Gyro Systems
+  type: article-journal
+  volume: '26'
+
+- id: MirjanBuildingBridgeFlying2016
+  abstract: >-
+    The research presented here investigates techniques and tools for design and
+    fabrication of tensile structures with flying robots. Tensile aggregations
+    are described as a concatenation of nodes and links. Computational tools
+    provide the designer of such a structure with the necessary aid to simulate,
+    sequence and evaluate a design before fabrication. Using a prototypical
+    suspension footbridge as an example, this paper describes the techniques and
+    challenges for implementing the construction method on a full-scale,
+    loadbearing, architectural artefact. Firstly, a series of tensile links is
+    fabricated at defined lengths between two distant support structures to
+    build the primary elements of the bridge. Secondly, cooperating flying
+    robots brace the assembly by braiding the primary elements to one another.
+    And finally, the structure is stabilized through the fabrication of
+    additional connections by robots flying around existing elements within the
+    porous structure.
+  accessed:
+    - year: 2019
+      month: 5
+      day: 23
+  author:
+    - family: Mirjan
+      given: Ammar
+    - family: Augugliaro
+      given: Federico
+    - family: D’Andrea
+      given: Raffaello
+    - family: Gramazio
+      given: Fabio
+    - family: Kohler
+      given: Matthias
+  container-title: 'Robotic Fabrication in Architecture, Art and Design 2016'
+  DOI: 10.1007/978-3-319-26378-6_3
+  editor:
+    - family: Reinhardt
+      given: Dagmar
+    - family: Saunders
+      given: Rob
+    - family: Burry
+      given: Jane
+  event-place: Cham
+  ISBN: 978-3-319-26378-6
+  issued:
+    - year: 2016
+  language: en
+  page: 34-47
+  publisher: Springer International Publishing
+  publisher-place: Cham
+  source: Springer Link
+  title: Building a Bridge with Flying Robots
+  type: chapter
+  URL: 'https://doi.org/10.1007/978-3-319-26378-6_3'
+
+- id: mitsushige_motion_1997
+  author:
+    - family: Mitsushige
+      given: Oda
+  container-title: Acta Astronautica
+  issue: '11'
+  issued:
+    - year: 1997
+  page: 739-750
+  title: >-
+    Motion control of the satellite mounted robot arm which assures satellite
+    attitude stability
+  type: article-journal
+  volume: '41'
+
+- id: MorrisonConstructionLaborShortage
+  abstract: >-
+    The construction labor shortage has resulted in well-paying, stable careers
+    for high school graduates who aren't interested in going to college as well
+    as college grads interested in the trades.
+  accessed:
+    - year: 2019
+      month: 5
+      day: 23
+  author:
+    - family: Morrison
+      given: Jim
+  container-title: Forbes
+  language: en
+  title: Construction Labor Shortage Creates Increasingly Lucrative Career Paths
+  type: webpage
+  URL: >-
+    https://www.forbes.com/sites/jimmorrison/2018/08/05/construction-labor-shortage-creates-increasingly-lucrative-career-paths/
+
+- id: muehlebach_nonlinear_2013
+  author:
+    - family: Muehlebach
+      given: Michael
+    - family: Mohanarajah
+      given: Gajamohan
+    - family: D'Andrea
+      given: Raffaello
+  container-title: 'Decision and Control (CDC), 2013 IEEE 52nd Annual Conference on'
+  issued:
+    - year: 2013
+  page: 1283-1288
+  publisher: IEEE
+  title: >-
+    Nonlinear analysis and control of a reaction wheel-based 3d inverted
+    pendulum
+  type: paper-conference
+
+- id: NovelOnlineMotion
+  accessed:
+    - year: 2018
+      month: 11
+      day: 20
+  title: >-
+    A novel online motion planning method for double-pendulum overhead cranes |
+    SpringerLink
+  type: webpage
+  URL: 'https://link.springer.com/article/10.1007/s11071-016-2745-x'
+
+- id: OConnorGantryCraneControl2013
+  abstract: >-
+    <p><strong>Abstract.</strong> The overhead trolley of a gantry crane can be
+    moved in two directions in the plane. The trolley is attempting to control
+    the motion of a suspended, rigid-body, distributed mass load, supported by a
+    hook, modelled as a lumped mass, in turn connected to the trolley by a light
+    flexible cable. This flexible system has six degrees of freedom, four
+    variables describing the flexible, hanging load dynamics and two (directly
+    controlled) input variables for the trolley position. The equations of
+    motion are developed and the crane model is verified. Then a form of
+    wave-based control (WBC) is applied to determine what trolley motion should
+    be used to achieve a reference motion of the load, with minimum swing during
+    complex manoeuvres. Despite the trolley's limited control authority over the
+    complex, flexible 3-D dynamics, WBC enables the trolley to achieve very good
+    motion control of the load, in a simple, robust and rapid way, using little
+    sensor information, with all measurements taken at or close to the
+    trolley.</p>
+  accessed:
+    - year: 2018
+      month: 11
+      day: 27
+  author:
+    - family: O'Connor
+      given: W.
+    - family: Habibi
+      given: H.
+  container-title: Mechanical Sciences
+  DOI: 'https://doi.org/10.5194/ms-4-251-2013'
+  ISSN: 2191-9151
+  issue: '2'
+  issued:
+    - year: 2013
+      month: 7
+      day: 1
+  language: English
+  page: 251-261
+  source: www.mech-sci.net
+  title: >-
+    Gantry crane control of a double-pendulum, distributed-mass load, using
+    mechanical wave concepts
+  type: article-journal
+  URL: 'https://www.mech-sci.net/4/251/2013/'
+  volume: '4'
+
+- id: oda_coordinated_1997
+  author:
+    - family: Oda
+      given: Mitsushige
+    - family: Ohkami
+      given: 'Y'
+  container-title: Control Engineering Practice
+  issue: '1'
+  issued:
+    - year: 1997
+  page: 11-21
+  title: Coordinated control of spacecraft attitude and space manipulators
+  type: article-journal
+  volume: '5'
+
+- id: OdaSummaryNASDAETSVII2000
+  abstract: >-
+    Title: Summary of NASDA’s ETS-VII robot satellite mission | Keywords: Space
+    robot, Teleoperation, Rendezvous docking, Dynamics and control, ETS-VII |
+    Author: Mitsushige Oda
+  accessed:
+    - year: 2019
+      month: 5
+      day: 23
+  author:
+    - family: Oda
+      given: Mitsushige
+  container-title: Journal of Robotics and Mechatronics
+  DOI: 10.20965/jrm.2000.p0417
+  issue: '4'
+  issued:
+    - year: 2000
+      month: 8
+      day: 20
+  page: 417-424
+  source: www.fujipress.jp
+  title: Summary of NASDA’s ETS-VII robot satellite mission
+  type: article-journal
+  URL: 'https://www.fujipress.jp/jrm/rb/robot001200040417/'
+  volume: '12'
+
+- id: OzgorenComparativeStudyAttitude2019
+  abstract: >-
+    This paper presents a comparative study about the attitude control methods
+    based on four commonly used error indicators, namely the triad of 3-2-1
+    deviational Euler angles, the error quaternion, the deviational angle–axis
+    pair and the orientation error matrix. These error indicators are used here
+    with the same backstepping control law to have a common basis of comparison.
+    This control law makes the controller track a restoring angular velocity
+    generated here specifically for each error indicator. This comparative study
+    shows that all these error indicators can be used satisfactorily even in the
+    critical orientations associated with them by taking special measures. For
+    the deviational Euler angle triad, a critical orientation is a singularity,
+    at which the angles become indefinite. Unless the vehicle is stationary,
+    this indefiniteness is resolved here by applying L’Hopital’s Rule on the
+    angular velocity information. The Euler angle triad has also a multiplicity
+    problem. It is solved here by using the novel criterion of minimal deviation
+    angles. For the other error indicators, a critical orientation is an
+    antipodal orientation, which is opposite to the desired one. In an antipodal
+    orientation, the error quaternion and the deviational angle–axis pair cannot
+    be determined through the customary formulas. They are determined here by
+    using the novel specially introduced formulas. Besides, they may suffer from
+    the unwinding phenomenon in an ordinary orientation. This phenomenon is
+    prevented here by keeping the scalar part of the error quaternion
+    non-negative and the deviation angle between 0° and 180°. For the
+    orientation error matrix, a stationary and undisturbed antipodal orientation
+    is an unstable equilibrium, in which the ordinary backstepping control law
+    becomes ineffective for driving the system into action. This problem is
+    solved here by adding an extra term to the ordinary backstepping control
+    law.
+  accessed:
+    - year: 2019
+      month: 5
+      day: 24
+  author:
+    - family: Ozgoren
+      given: M Kemal
+  container-title: Transactions of the Institute of Measurement and Control
+  container-title-short: Transactions of the Institute of Measurement and Control
+  DOI: 10.1177/0142331218773519
+  ISSN: 0142-3312
+  issue: '5'
+  issued:
+    - year: 2019
+      month: 3
+      day: 1
+  language: en
+  page: 1189-1206
+  source: SAGE Journals
+  title: >-
+    Comparative study of attitude control methods based on Euler angles,
+    quaternions, angle–axis pairs and orientation matrices
+  type: article-journal
+  URL: 'https://doi.org/10.1177/0142331218773519'
+  volume: '41'
+
+- id: PatarticsApplicationLaserSlot2015
+  abstract: >-
+    The load of overhead cranes are attached to the mechanical structure with a
+    rope, consequently the trajectory of the load cannot be actuated directly.
+    This results in an unwanted oscillatory behaviour, which needs to be damped
+    for the effective and safe transportation. In existing automated cranes,
+    control solutions suggest state-feedback law. In previous work we proposed
+    an estimation algorithm employing the unscented Kalman filter for the
+    calculation of the unmeasured states. Because of the stiction, this method
+    becomes inaccurate when the trolley does not move. In this paper we suggest
+    the application of a pair of laser slot sensors for detecting when the rope
+    is close to the vertical. Incremental encoders are used to measure the
+    displacement of the trolley and the length of the rope. Since the detection
+    of the vertical rope angle is asynchronous w.r.t. the sampling instant, an
+    appropriate sensor fusion technique is provided. The effectiveness of the
+    estimation method is verified on a real laboratory crane setup.
+  author:
+    - family: Patartics
+      given: B.
+    - family: Kiss
+      given: B.
+  container-title: 2015 20th International Conference on Process Control (PC)
+  DOI: 10.1109/PC.2015.7169994
+  event: 2015 20th International Conference on Process Control (PC)
+  issued:
+    - year: 2015
+      month: 6
+  page: 387-392
+  source: IEEE Xplore
+  title: >-
+    Application of laser slot sensors for the state estimation of overhead
+    cranes
+  type: paper-conference
+
+- id: peck_lowpower_2005
+  author:
+    - family: Peck
+      given: Mason A
+  container-title: 'AIAA Guidance, Navigation, and Control Conference and Exhibit'
+  issued:
+    - year: 2005
+  title: 'Low-power, high-agility space robotics'
+  type: paper-conference
+  volume: '6243'
+
+- id: PenaAdvancesDevelopingTelemanipulators2009
+  author:
+    - family: Peña
+      given: C
+    - family: Aracil
+      given: R
+    - family: Saltaren
+      given: R
+    - family: Yime
+      given: E
+    - family: Cardenas
+      given: P
+    - family: Quintero
+      given: J
+  container-title: OCEANS 2009-EUROPE
+  issued:
+    - year: 2009
+  page: 1-8
+  publisher: IEEE
+  title: Advances in developing telemanipulators for an underwater robot-Remo II
+  type: paper-conference
+
+- id: PopulationDivision-UnitedNationsWorldUrbanizationProspects
+  accessed:
+    - year: 2019
+      month: 5
+      day: 23
+  author:
+    - family: Population Division - United Nations
+      given: ''
+  title: World Urbanization Prospects
+  type: map
+  URL: 'https://population.un.org/wup/'
+
+- id: PottIPAnemaFamilyCableDriven2013
+  abstract: >-
+    Nowadays there are very little robot systems in operation in the field of
+    medium to large-scale handling and assembly mostly due to lack of repetitive
+    processes or shortcomings in programming and...
+  accessed:
+    - year: 2019
+      month: 5
+      day: 23
+  author:
+    - family: Pott
+      given: Andreas
+    - family: Mütherich
+      given: Hendrick
+    - family: Kraus
+      given: Werner
+    - family: Schmidt
+      given: Valentine
+    - family: Miermeister
+      given: Philipp
+    - family: Verl
+      given: Alexander
+  container-title: Cable-Driven Parallel Robots
+  DOI: 10.1007/978-3-642-31988-4_8
+  issued:
+    - year: 2013
+  language: en
+  page: 119-134
+  source: link.springer.com
+  title: >-
+    IPAnema: A family of Cable-Driven Parallel Robots for Industrial
+    Applications
+  title-short: IPAnema
+  type: article-journal
+  URL: 'https://link.springer.com/chapter/10.1007/978-3-642-31988-4_8'
+
+- id: quinn_base_1994
+  author:
+    - family: Quinn
+      given: Roger D
+    - family: Chen
+      given: Jiunn L
+    - family: Lawrence
+      given: Chuck
+  container-title: 'Journal of guidance, control, and dynamics'
+  issue: '2'
+  issued:
+    - year: 1994
+  page: 263-270
+  title: >-
+    Base reaction control for space-based robots operating in microgravity
+    environment
+  type: article-journal
+  volume: '17'
+
+- id: RafatDynamicsDoublePendulum2009
+  abstract: >-
+    We investigate a variation of the simple double pendulum in which the two
+    point masses are replaced by square plates. The double square pendulum
+    exhibits richer behavior than the simple double pendulum and provides a
+    convenient demonstration of nonlinear dynamics and chaos. It is also an
+    example of an asymmetric compound double pendulum, which has not been
+    studied in detail. We obtain the equilibrium configurations and normal modes
+    of oscillation and derive the equations of motion, which are solved
+    numerically to produce Poincaré sections. We show how the behavior varies
+    from regular motion at low energies, to chaos at intermediate energies, and
+    back to regular motion at high energies. We also show that the onset of
+    chaos occurs at a significantly lower energy than for the simple double
+    pendulum.
+  accessed:
+    - year: 2018
+      month: 11
+      day: 19
+  author:
+    - family: Rafat
+      given: M. Z.
+    - family: Wheatland
+      given: M. S.
+    - family: Bedding
+      given: T. R.
+  container-title: American Journal of Physics
+  container-title-short: American Journal of Physics
+  DOI: 10.1119/1.3052072
+  ISSN: 0002-9505
+  issue: '3'
+  issued:
+    - year: 2009
+      month: 2
+      day: 12
+  page: 216-223
+  source: aapt.scitation.org (Atypon)
+  title: Dynamics of a double pendulum with distributed mass
+  type: article-journal
+  URL: 'https://aapt.scitation.org/doi/10.1119/1.3052072'
+  volume: '77'
+
+- id: RafatDynamicsDoublePendulum2009a
+  abstract: >-
+    We investigate a variation of the simple double pendulum in which the two
+    point masses are replaced by square plates. The double square pendulum
+    exhibits richer behavior than the simple double pendulum and provides a
+    convenient demonstration of nonlinear dynamics and chaos. It is also an
+    example of an asymmetric compound double pendulum, which has not been
+    studied in detail. We obtain the equilibrium configurations and normal modes
+    of oscillation and derive the equations of motion, which are solved
+    numerically to produce Poincar\'{e} sections. We show how the behavior
+    varies from regular motion at low energies, to chaos at intermediate
+    energies, and back to regular motion at high energies. We also show that the
+    onset of chaos occurs at a significantly lower energy than for the simple
+    double pendulum.
+  accessed:
+    - year: 2018
+      month: 11
+      day: 19
+  author:
+    - family: Rafat
+      given: M. Z.
+    - family: Wheatland
+      given: M. S.
+    - family: Bedding
+      given: T. R.
+  container-title: American Journal of Physics
+  DOI: 10.1119/1.3052072
+  ISSN: '0002-9505, 1943-2909'
+  issue: '3'
+  issued:
+    - year: 2009
+      month: 3
+  page: 216-223
+  source: arXiv.org
+  title: Dynamics of a double pendulum with distributed mass
+  type: article-journal
+  URL: 'http://arxiv.org/abs/0812.0393'
+  volume: '77'
+
+- id: ReintsemaDLRAdvancedTelerobotic2007
+  abstract: >-
+    SummarySpace robotics will become a key technology for the exploration of
+    outer space and the operation and maintenance of space stations, satellites
+    and other platforms, saving costs and relieving man from dangerous tasks.
+    But we do not have to wait until robots are really autonomous or
+    intelligent, since by modern teleoperation and telepresence we are able to
+    remotely control robot systems from the ground in the sense of “prolonging
+    man’s arm into space”. Humans, with their several hundred thousand years of
+    evolution, will not adapt themselves to the hostile space environment,
+    whilst robots, which have only been developed for just over 40 years, can be
+    much more easily adapted to such an environment. As presented within this
+    work, few pioneering telerobotic experiments like ROTEX, the first remotely
+    controlled space robot system, ETS-VII, the first free-floating space robot
+    experiment, or ROKVISS, Germany’s recent advanced space robot experiment on
+    the International Space Station, have been proposed and conducted on the way
+    towards a space robot assistant system for the usage as an artificial
+    astronaut to perform On-Orbit Servicing (OOS) tasks.
+  accessed:
+    - year: 2019
+      month: 5
+      day: 23
+  author:
+    - family: Reintsema
+      given: Detlef
+    - family: Landzettel
+      given: Klaus
+    - family: Hirzinger
+      given: Gerd
+  collection-title: Springer Tracts in Advanced Robotics
+  container-title: Advances in Telerobotics
+  DOI: 10.1007/978-3-540-71364-7_20
+  editor:
+    - family: Ferre
+      given: Manuel
+    - family: Buss
+      given: Martin
+    - family: Aracil
+      given: Rafael
+    - family: Melchiorri
+      given: Claudio
+    - family: Balaguer
+      given: Carlos
+  event-place: 'Berlin, Heidelberg'
+  ISBN: 978-3-540-71364-7
+  issued:
+    - year: 2007
+  language: en
+  page: 323-345
+  publisher: Springer Berlin Heidelberg
+  publisher-place: 'Berlin, Heidelberg'
+  source: Springer Link
+  title: DLR’s Advanced Telerobotic Concepts and Experiments for On-Orbit Servicing
+  type: chapter
+  URL: 'https://doi.org/10.1007/978-3-540-71364-7_20'
+
+- id: RexConteDi
+  accessed:
+    - year: 2019
+      month: 5
+      day: 23
+  title: The Rex and the Conte di Savoia
+  type: webpage
+  URL: 'https://www.shippingwondersoftheworld.com/rex.html'
+
+- id: RomanishinMblocksMomentumdrivenMagnetic2013
+  author:
+    - family: Romanishin
+      given: John W
+    - family: Gilpin
+      given: Kyle
+    - family: Rus
+      given: Daniela
+  container-title: >-
+    Intelligent Robots and Systems (IROS), 2013 IEEE/RSJ International
+    Conference on
+  issued:
+    - year: 2013
+  page: 4288-4295
+  publisher: IEEE
+  title: 'M-blocks: Momentum-driven, magnetic modular robots'
+  type: paper-conference
+
+- id: SaAttitudeControlStabilization2001
+  abstract: >-
+    In this study, the CMG (control moment gyro) subsystem, a new type of
+    construction machinery using the mechanism of CMG, for the attitude control
+    of an unstructured object such as a beam carried by a tower crane, is
+    designed and implemented. The CMG subsystem consists of one motor for
+    spinning the wheel, and the other motor for turning the outer gimbal. As an
+    input of the system, applying force to the spin axis of the wheel leads the
+    torque about the axis, whereas the wheel is spinning at high speed. This
+    torque is used to control the attitude of the unstructured object in this
+    study. For the stabilizer function, in addition, holding the load at the
+    current position, the power applied to the gimbal motor of CMG will be cut,
+    which results in a braking force to stop the load by the gyro effect. The
+    CMG subsystem the authors developed consists of the mechanical system, a
+    remote controller, a servo controller and control software for the system.
+    The authors also present experimental results to show that the system they
+    proposed is useful as construction machinery which can control the attitude
+    of the beam hanging from a tower crane.
+  author:
+    - family: Sa
+      given: Young Ho
+    - family: Yi
+      given: Keon Young
+    - family: Kim
+      given: Jin-Oh
+  container-title: >-
+    ISIE 2001. 2001 IEEE International Symposium on Industrial Electronics
+    Proceedings (Cat. No.01TH8570)
+  DOI: 10.1109/ISIE.2001.931569
+  event: >-
+    ISIE 2001. 2001 IEEE International Symposium on Industrial Electronics
+    Proceedings (Cat. No.01TH8570)
+  issued:
+    - year: 2001
+      month: 6
+  page: 792-797 vol.2
+  source: IEEE Xplore
+  title: >-
+    An attitude control and stabilization of an unstructured object using
+    balancing beam, new construction machinery
+  type: paper-conference
+  volume: '2'
+
+- id: SeakeeperGyroStabilizers
+  accessed:
+    - year: 2019
+      month: 5
+      day: 23
+  title: Seakeeper Gyro Stabilizers on Sealine Yachts - YouTube
+  type: webpage
+  URL: 'https://www.youtube.com/watch?v=f4vZtk1jZ5Q'
+
+- id: SearchResultsTopper
+  accessed:
+    - year: 2018
+      month: 12
+      day: 13
+  title: Search results for "topper" | John Lewis & Partners
+  type: webpage
+  URL: >-
+    https://www.johnlewis.com/search?search-term=topper&showInStockOnly=true&sortBy=priceLow
+
+- id: ShilovskiiGyroscopeItsPractical1924
+  accessed:
+    - year: 2019
+      month: 5
+      day: 21
+  author:
+    - family: Shīlovskīĭ
+      given: Petr Petrovīch
+  event-place: London; New York
+  issued:
+    - year: 1924
+  language: English
+  note: 'OCLC: 561997688'
+  publisher: E. & F.N. Spon; Spon & Chamberlain
+  publisher-place: London; New York
+  source: Open WorldCat
+  title: >-
+    The gyroscope its practical construction and application, treating of the
+    physics and experimental mechanics of the gyroscope, and explaining the
+    method of its application to the stabilization of monorailways, ships,
+    aeroplanes, marine guns, etc.,
+  type: book
+  URL: 'http://catalog.hathitrust.org/api/volumes/oclc/9511173.html'
+
+- id: ShiRobustAttitudeController2016
+  abstract: >-
+    It is essential to have the ability to control the attitude of a spacecraft
+    while an onboard robotic manipulator is operating. The paper presents a
+    comprehensive dynamic model for a reaction wheel actuated spacecraft and a
+    robust controller that can maintain the attitude of the spacecraft as
+    required while the manipulator follows the desired trajectory. Unlike
+    previous work, this paper reformulates the dynamic equation of a Free-Flying
+    Space Robot (FFSR) with actuating Reaction Wheels (RWs) by taking into
+    account the contribution of RWs to the angular momentum of the entire
+    system. Given strong nonlinearities and multiple inputs of the system,
+    diagonalization is first used to transform the strongly coupled problem into
+    multiple single-input problems by introducing virtual torques. When
+    involving system uncertainties, the defined virtual torque is accurately
+    associated with the actual torque using nominal value of the uncertain
+    inertia matrix in order to guarantee stability of original system. Smoothed
+    Sliding Mode (SMC) controllers are designed for each single-input system
+    provided that the bounds of uncertainties can be estimated. A spacecraft
+    mounted with a 3-DOF manipulator is used in simulation to demonstrate the
+    robustness of the control law when applied to space manipulators.
+  author:
+    - family: Shi
+      given: L.
+    - family: Katupitiya
+      given: J.
+    - family: Kinkaid
+      given: N.
+  container-title: 2016 American Control Conference (ACC)
+  DOI: 10.1109/ACC.2016.7526140
+  event: 2016 American Control Conference (ACC)
+  issued:
+    - year: 2016
+      month: 7
+  page: 4966-4971
+  source: IEEE Xplore
+  title: >-
+    A robust attitude controller for a spacecraft equipped with a robotic
+    manipulator
+  type: paper-conference
+
+- id: SinghoseInputShapingControl2008
+  accessed:
+    - year: 2018
+      month: 10
+      day: 30
+  author:
+    - family: Singhose
+      given: William
+    - family: Kim
+      given: Dooroo
+    - family: Kenison
+      given: Michael
+  container-title: 'Journal of Dynamic Systems, Measurement, and Control'
+  DOI: 10.1115/1.2907363
+  ISSN: '00220434'
+  issue: '3'
+  issued:
+    - year: 2008
+  language: en
+  page: '034504'
+  source: Crossref
+  title: Input Shaping Control of Double-Pendulum Bridge Crane Oscillations
+  type: article-journal
+  URL: >-
+    http://DynamicSystems.asmedigitalcollection.asme.org/article.aspx?articleid=1475737
+  volume: '130'
+
+- id: SinghoseInputShapingControl2008a
+  abstract: >-
+    Large amplitude oscillation of crane payloads is detrimental to safe and
+    efficient operation. Under certain conditions, the problem is compounded
+    when the payload creates a double-pendulum effect. Most crane control
+    research to date has focused on single-pendulum dynamics. Several
+    researchers have shown that single-mode oscillations can be greatly reduced
+    by properly shaping the inputs to the crane motors. This paper builds on
+    those previous developments to create a method for suppressing
+    double-pendulum payload oscillations. The input shaping controller is
+    designed to have robustness to changes in the two operating frequencies.
+    Experiments performed on a portable bridge crane are used to verify the
+    effectiveness of this method and the robustness of the input shaper.
+  accessed:
+    - year: 2018
+      month: 11
+      day: 20
+  author:
+    - family: Singhose
+      given: William
+    - family: Kim
+      given: Dooroo
+    - family: Kenison
+      given: Michael
+  container-title: 'Journal of Dynamic Systems, Measurement, and Control'
+  container-title-short: 'J. Dyn. Sys., Meas., Control'
+  DOI: 10.1115/1.2907363
+  ISSN: 0022-0434
+  issue: '3'
+  issued:
+    - year: 2008
+      month: 5
+      day: 1
+  page: 034504-034504-7
+  source: Silverchair
+  title: Input Shaping Control of Double-Pendulum Bridge Crane Oscillations
+  type: article-journal
+  URL: 'http://dx.doi.org/10.1115/1.2907363'
+  volume: '130'
+
+- id: SinghoseManipulationTowerCranes2007
+  abstract: >-
+    The payload oscillation inherent to all cranes makes it challenging for
+    human operators to manipulate pay-loads quickly, accurately, and safely.
+    Under certain conditions, the problem is compounded when the payload creates
+    a double-pendulum effect. This paper presents an input-shaping control
+    method for suppressing double-pendulum payload oscillations. Local and
+    teleoperation experiments performed on a portable tower crane are used to
+    verify the effectiveness of the method. Data from these experiments show
+    that operators performed manipulation tasks faster and safer when input
+    shaping was utilized to reduce payload sway. Furthermore, the teleoperation
+    delays did not degrade the input shaping effectiveness.
+  author:
+    - family: Singhose
+      given: W.
+    - family: Kim
+      given: D.
+  container-title: Proceedings 2007 IEEE International Conference on Robotics and Automation
+  DOI: 10.1109/ROBOT.2007.364180
+  event: Proceedings 2007 IEEE International Conference on Robotics and Automation
+  issued:
+    - year: 2007
+      month: 4
+  page: 4550-4555
+  source: IEEE Xplore
+  title: Manipulation with Tower Cranes Exhibiting Double-Pendulum Oscillations
+  type: paper-conference
+
+- id: SollyICDITKEResearch2018
+  accessed:
+    - year: 2019
+      month: 5
+      day: 23
+  author:
+    - family: Solly
+      given: James
+    - family: Frueh
+      given: Nikolas
+    - family: Saffarian
+      given: Saman
+    - family: Prado
+      given: Marshall
+    - family: Vasey
+      given: Lauren
+    - family: Felbrich
+      given: Benjamin
+    - family: Reist
+      given: Daniel
+    - family: Knippers
+      given: Jan
+    - family: Menges
+      given: Achim
+  genre: Text
+  issued:
+    - year: 2018
+      month: 7
+      day: 16
+  language: en
+  title: >-
+    ICD/ITKE Research Pavilion 2016/2017: Integrative Design of a Composite
+    Lattice Cantilever
+  title-short: ICD/ITKE Research Pavilion 2016/2017
+  type: webpage
+  URL: >-
+    https://www.ingentaconnect.com/content/iass/piass/2018/00002018/00000008/art00009
+
+- id: SousaSPIDERobotCableRobotSystem2016
+  abstract: >-
+    The use of robots in architectural construction has been a research field
+    since the 1980s. Driven by both productive and creative concerns, different
+    systems have been devised based on large-scale robotic structures, mobile
+    robotic units or flying robotic vehicles. By analyzing these approaches and
+    discussing their advantages and limitations, this paper presents an
+    alternative strategy to automate the building construction processes in
+    on-site scenarios. The SPIDERobot is a cable-robot system developed to
+    perform assembly operations, which is driven by a specific Feedback Dynamic
+    Control System (FDCS) based on a vision system. By describing and
+    illustrating this research work, the authors argue about the advantages of
+    this cable robot system to deal with the complexity and the scale of
+    building construction in architecture.
+  accessed:
+    - year: 2019
+      month: 5
+      day: 23
+  author:
+    - family: Sousa
+      given: José Pedro
+    - family: Palop
+      given: Cristina Gassó
+    - family: Moreira
+      given: Eduardo
+    - family: Pinto
+      given: Andry Maykol
+    - family: Lima
+      given: José
+    - family: Costa
+      given: Paulo
+    - family: Costa
+      given: Pedro
+    - family: Veiga
+      given: Germano
+    - family: Paulo Moreira
+      given: A.
+  container-title: 'Robotic Fabrication in Architecture, Art and Design 2016'
+  DOI: 10.1007/978-3-319-26378-6_17
+  editor:
+    - family: Reinhardt
+      given: Dagmar
+    - family: Saunders
+      given: Rob
+    - family: Burry
+      given: Jane
+  event-place: Cham
+  ISBN: 978-3-319-26378-6
+  issued:
+    - year: 2016
+  language: en
+  page: 230-239
+  publisher: Springer International Publishing
+  publisher-place: Cham
+  source: Springer Link
+  title: >-
+    The SPIDERobot: A Cable-Robot System for On-site Construction in
+    Architecture
+  title-short: The SPIDERobot
+  type: chapter
+  URL: 'https://doi.org/10.1007/978-3-319-26378-6_17'
+
+- id: SpryGyroscopicStabilisationUnstable2008
+  abstract: >-
+    We consider active gyroscopic stabilisation of unstable bodies such as
+    two-wheeled monorails, two-wheeled cars, or unmanned bicycles. It has been
+    speculated that gyroscopically stabilised monorail cars would have economic
+    advantages with respect to birail cars, enabling the cars to take sharper
+    curves and traverse steeper terrain, with lower installation and maintenance
+    costs. A two-wheeled, gyro-stabilised car was actually constructed in 1913.
+    The dynamic stabilisation of a monorail car or two-wheeled automobile
+    requires that a torque acting on the car from the outside be neutralised by
+    a torque produced within the car by a gyroscope. The gyroscope here is used
+    as an actuator, not a sensor, by using precession forces generated by the
+    gyroscope. When torque is applied to an axis normal to the spin axis,
+    causing the gyroscope to precess, a moment is produced about a third axis,
+    orthogonal to both the torque and spin axes. As the vehicle tilts from
+    vertical, a precession-inducing torque is applied to the gyroscope cage such
+    that the resulting gyroscopic reaction moment will tend to right the
+    vehicle. The key idea is that motion of the gyroscope relative to the body
+    is actively controlled in order to generate a stabilising moment. This
+    problem was considered in 1905 by Louis Brennan (1905, see ref. 1). Many
+    extensions were later developed, including the work by Shilovskii (1924, see
+    ref. 2), and several prototypes were built. The differences in the various
+    schemes lie in the number of gyroscopes employed, the direction of the spin
+    axes relative to the rail, and in the method used to produce precession of
+    the spin axes. We start by deriving the equations of motion for a case where
+    the system is formed of a vehicle, a load placed on the vehicle, the
+    gyroscope wheel, and a gyroscope cage. We allow for track curvature and
+    vehicle speed. We then derive the equations for a similar system with two
+    gyroscopes, spinning in opposite directions and such that the precession
+    angles are opposite. We linearise the dynamics about a set of equilibrium
+    points and develop a linearised model. We study the stability of the
+    linearised systems and show simulation results. Finally, we discuss a scaled
+    gyrovehicle model and testing.
+  accessed:
+    - year: 2019
+      month: 5
+      day: 9
+  author:
+    - family: Spry
+      given: Stephen C.
+    - family: Girard
+      given: Anouck R.
+  container-title: Vehicle System Dynamics
+  DOI: 10.1080/00423110801935863
+  ISSN: 0042-3114
+  issue: sup1
+  issued:
+    - year: 2008
+      month: 9
+      day: 1
+  page: 247-260
+  source: Taylor and Francis+NEJM
+  title: >-
+    Gyroscopic stabilisation of unstable vehicles: configurations, dynamics, and
+    control
+  title-short: Gyroscopic stabilisation of unstable vehicles
+  type: article-journal
+  URL: 'https://doi.org/10.1080/00423110801935863'
+  volume: '46'
+
+- id: SteinmannHowGyrostabilizersWork
+  author:
+    - family: Steinmann
+      given: Paul
+  language: en
+  page: '32'
+  source: Zotero
+  title: How Gyrostabilizers Work
+  type: article-journal
+
+- id: SunAmplitudeSaturatedNonlinearOutput2017
+  accessed:
+    - year: 2018
+      month: 10
+      day: 30
+  author:
+    - family: Sun
+      given: Ning
+    - family: Fang
+      given: Yongchun
+    - family: Chen
+      given: He
+    - family: Lu
+      given: Biao
+  container-title: IEEE Transactions on Industrial Electronics
+  DOI: 10.1109/TIE.2016.2623258
+  ISSN: '0278-0046, 1557-9948'
+  issue: '3'
+  issued:
+    - year: 2017
+      month: 3
+  page: 2135-2146
+  source: Crossref
+  title: >-
+    Amplitude-Saturated Nonlinear Output Feedback Antiswing Control for
+    Underactuated Cranes With Double-Pendulum Cargo Dynamics
+  type: article-journal
+  URL: 'http://ieeexplore.ieee.org/document/7725990/'
+  volume: '64'
+
+- id: SunNonlinearAntiswingControl2018
+  abstract: >-
+    In practical applications, industrial cranes may exhibit double-pendulum
+    swing effects, due to many factors, such as large payload scales and
+    non-negligible hook masses. Currently, for double-pendulum cranes, most
+    available methods are open-loop controllers designed based on linearized
+    crane dynamics; even for existing closed-loop approaches, they are also
+    mostly developed using linearized dynamics and require the exact knowledge
+    of system parameters, which makes them sensitive to parametric
+    uncertainties. To handle these issues, we present an adaptive antiswing
+    control strategy for crane systems with double-pendulum swing effects and
+    uncertain/unknown parameters, which can make the trolley accurately reach
+    the target position with reduced overshoots and effectively eliminate the
+    double-pendulum swing angles at the same time. A complete stability
+    analysis, based upon the full nonlinear dynamics (i.e., without linearizing
+    the dynamics), is included to support the theoretical derivations. We
+    present hardware experimental results to demonstrate that the proposed
+    controller achieves better performance than existing ones and exhibits good
+    robustness.
+  author:
+    - family: Sun
+      given: N.
+    - family: Wu
+      given: Y.
+    - family: Fang
+      given: Y.
+    - family: Chen
+      given: H.
+  container-title: IEEE Transactions on Automation Science and Engineering
+  DOI: 10.1109/TASE.2017.2723539
+  ISSN: 1545-5955
+  issue: '3'
+  issued:
+    - year: 2018
+      month: 7
+  page: 1413-1422
+  source: IEEE Xplore
+  title: >-
+    Nonlinear Antiswing Control for Crane Systems with Double-Pendulum Swing
+    Effects and Uncertain Parameters: Design and Experiments
+  title-short: >-
+    Nonlinear Antiswing Control for Crane Systems With Double-Pendulum Swing
+    Effects and Uncertain Parameters
+  type: article-journal
+  volume: '15'
+
+- id: SunNonlinearAntiswingControl2018a
+  accessed:
+    - year: 2018
+      month: 10
+      day: 30
+  author:
+    - family: Sun
+      given: Ning
+    - family: Wu
+      given: Yiming
+    - family: Fang
+      given: Yongchun
+    - family: Chen
+      given: He
+  container-title: IEEE Transactions on Automation Science and Engineering
+  DOI: 10.1109/TASE.2017.2723539
+  ISSN: '1545-5955, 1558-3783'
+  issue: '3'
+  issued:
+    - year: 2018
+      month: 7
+  page: 1413-1422
+  source: Crossref
+  title: >-
+    Nonlinear Antiswing Control for Crane Systems with Double-Pendulum Swing
+    Effects and Uncertain Parameters: Design and Experiments
+  title-short: >-
+    Nonlinear Antiswing Control for Crane Systems With Double-Pendulum Swing
+    Effects and Uncertain Parameters
+  type: article-journal
+  URL: 'https://ieeexplore.ieee.org/document/7990578/'
+  volume: '15'
+
+- id: SWFKrantechnikGmbHSWFKrantechnikLastpendeldampfung2012
+  abstract: >-
+    elektronische Lastpendeldämpfung für Brückenkrane
+
+
+    - Verhindert schädliche Lastspitzen, verringert die Belastung von
+    elektrischen und mechanischen Bauteilen (geringerer Wartungsaufwand)
+
+    - Kran ist einfach zu steuern mit optimaler Platzierung der Last
+
+    - Kranfahrer konzentriert sich rein auf die Last, nicht mehr zusätzlich auf
+    Katz- und Kranfahrt
+
+    - Es geht keine Zeit durch Lastpendeln verloren 
+
+
+
+    electronic sway control for bridge cranes
+
+
+    - Avoids harmful load peaks. Mechanical stress on electrical and mechanical
+    parts is reduced (less maintenance)
+
+    - Crane is easy to operate with optimal crane movements
+
+    - Operator's focus is in controlling the load movement and not the hoist or
+    crane movement
+
+    - Time is not lost because of  increased load swing and extended time to
+    place the load, the load handling is therefore more efficient
+  accessed:
+    - year: 2019
+      month: 7
+      day: 29
+  dimensions: 68 seconds
+  director:
+    - literal: SWF Krantechnik GmbH
+  issued:
+    - year: 2012
+      month: 8
+      day: 8
+  source: YouTube
+  title: SWF Krantechnik - Lastpendeldämpfung - Sway Control
+  type: motion_picture
+  URL: 'https://www.youtube.com/watch?v=Wid0DKa2HtY'
+
+- id: THOMSONMaterialsManagementSystems2017
+  accessed:
+    - year: 2019
+      month: 9
+      day: 21
+  author:
+    - family: THOMSON
+      given: Stanley
+    - family: Miller
+      given: Andrew
+  call-number: PCT/AU2016/050941
+  issued:
+    - year: 2017
+      month: 4
+      day: 13
+  language: en
+  number: WO2017059493A1
+  submitted:
+    date-parts:
+      - - '2016'
+        - 10
+        - 7
+  title: Materials management systems and methods
+  type: patent
+  URL: 'https://patents.google.com/patent/WO2017059493A1/en?oq=verton'
+
+- id: ThorntonInternalActuationUnderwater2005
+  author:
+    - family: Thornton
+      given: Blair
+    - family: Ura
+      given: Tamaki
+    - family: Nose
+      given: Yushiake
+    - family: Turnock
+      given: Stephen
+  container-title: Oceans 2005-Europe
+  issued:
+    - year: 2005
+  page: 591-598
+  publisher: IEEE
+  title: Internal actuation of underwater robots using control moment gyros
+  type: paper-conference
+  volume: '1'
+
+- id: ThorntonZeroGClassUnderwater2007
+  abstract: >-
+    The "Zero-G" is designated as a new class of underwater robot that is
+    capable of unrestricted attitude control. A novel control scheme based on
+    internal actuation using control moment gyros (CMGs) is developed to provide
+    Zero-G class autonomous underwater vehicles (AUVs) with this unique freedom
+    in control. This is implemented in the CMG-actuated Zero-G class internal
+    kinematic underwater robot actuation (IKURA) system that was developed as
+    part of this research. A series of experiments are performed to demonstrate
+    the practical application of CMGs and verify the associated theoretical
+    developments. The ability to actively stabilize the translational dynamics
+    of the robot is assessed and unrestricted attitude control is demonstrated
+    in an experiment that involves vertically pitched diving and surfacing in
+    surge. Finally, potential applications for Zero-G class AUVs are discussed.
+  author:
+    - family: Thornton
+      given: B.
+    - family: Ura
+      given: T.
+    - family: Nose
+      given: Y.
+    - family: Turnock
+      given: S.
+  container-title: IEEE Journal of Oceanic Engineering
+  DOI: 10.1109/JOE.2007.899274
+  ISSN: 0364-9059
+  issue: '3'
+  issued:
+    - year: 2007
+      month: 7
+  page: 565-583
+  source: IEEE Xplore
+  title: >-
+    Zero-G Class Underwater Robots: Unrestricted Attitude Control Using Control
+    Moment Gyros
+  title-short: Zero-G Class Underwater Robots
+  type: article-journal
+  volume: '32'
+
+- id: ToddDynamicalMeasurementsShip1997
+  abstract: >-
+    Logistics operations such as ship-to-ship cargo transfer on the high seas
+    can be impaired by dangerous crane load oscillations induced by the
+    prevailing sea state. In efforts to measure and characterize the ship and
+    crane load motions for potential control algorithm identification, a system
+    of fiber optic (FO) high-performance, low-frequency accelerometers and an
+    optical radar are used. Data from these subsystems are concatenated,
+    controlled, and analyzed in the LabVIEW virtual instrument environment. A
+    1:24 scale model test of the cargo transfer scenario was conducted, and some
+    results from a preliminary (dry) test are presented in this work. Results
+    indicate the existence of relatively long transient dynamics modes and
+    complex chaotic behavior in a region near primary crane load swing
+    resonance, Brief mention is also given of a phase-sensitive detection
+    technique that can be used to analyze the data.
+  author:
+    - family: Todd
+      given: M. D.
+    - family: Vohra
+      given: S. T.
+    - family: Leban
+      given: F.
+  container-title: Oceans '97. MTS/IEEE Conference Proceedings
+  DOI: 10.1109/OCEANS.1997.624171
+  event: Oceans '97. MTS/IEEE Conference Proceedings
+  issued:
+    - year: 1997
+      month: 10
+  page: 1230-1236 vol.2
+  source: IEEE Xplore
+  title: Dynamical measurements of ship crane load pendulation
+  type: paper-conference
+  volume: '2'
+
+- id: TuanSlidingModeControls2013
+  abstract: >-
+    This study focuses on the design of robust nonlinear controllers based on
+    both conventional and hierarchical sliding mode techniques for
+    double-pendulum overhead crane systems. In the first approach, a first-order
+    sliding surface is provided and a proper control scheme is generated to
+    stabilize the surface. In the second approach, two levels of sliding
+    surfaces are proposed and the control scheme is designed based on the
+    stability of the second-level surface. We also prove the stability of the
+    first-level sliding surface. To verify the quality of the proposed
+    controllers, simulation for a particular type of overhead crane systems is
+    implemented. Simulation results show that all state trajectories
+    asymptotically converged to desired values.
+  accessed:
+    - year: 2018
+      month: 11
+      day: 20
+  author:
+    - family: Tuan
+      given: Le Anh
+    - family: Lee
+      given: Soon-Geul
+  container-title: Journal of Mechanical Science and Technology
+  container-title-short: J Mech Sci Technol
+  DOI: 10.1007/s12206-013-0437-8
+  ISSN: 1976-3824
+  issue: '6'
+  issued:
+    - year: 2013
+      month: 6
+      day: 1
+  language: en
+  page: 1863-1873
+  source: Springer Link
+  title: Sliding mode controls of double-pendulum crane systems
+  type: article-journal
+  URL: 'https://doi.org/10.1007/s12206-013-0437-8'
+  volume: '27'
+
+- id: TuanSlidingModeControls2013a
+  abstract: >-
+    This study focuses on the design of robust nonlinear controllers based on
+    both conventional and hierarchical sliding mode techniques for
+    double-pendulum overhead crane systems. In the first approach, a first-order
+    sliding surface is provided and a proper control scheme is generated to
+    stabilize the surface. In the second approach, two levels of sliding
+    surfaces are proposed and the control scheme is designed based on the
+    stability of the second-level surface. We also prove the stability of the
+    first-level sliding surface. To verify the quality of the proposed
+    controllers, simulation for a particular type of overhead crane systems is
+    implemented. Simulation results show that all state trajectories
+    asymptotically converged to desired values.
+  accessed:
+    - year: 2018
+      month: 11
+      day: 20
+  author:
+    - family: Tuan
+      given: Le Anh
+    - family: Lee
+      given: Soon-Geul
+  container-title: Journal of Mechanical Science and Technology
+  container-title-short: J Mech Sci Technol
+  DOI: 10.1007/s12206-013-0437-8
+  ISSN: 1976-3824
+  issue: '6'
+  issued:
+    - year: 2013
+      month: 6
+      day: 1
+  language: en
+  page: 1863-1873
+  source: Springer Link
+  title: Sliding mode controls of double-pendulum crane systems
+  type: article-journal
+  URL: 'https://doi.org/10.1007/s12206-013-0437-8'
+  volume: '27'
+
+- id: vadali_feedback_1991
+  author:
+    - family: Vadali
+      given: S
+  container-title: J. Astronaut. Sci
+  issue: '2'
+  issued:
+    - year: 1991
+  page: 183-203
+  title: >-
+    Feedback control and steering laws for spacecraft using single gimbal
+    control moment gyros
+  type: article-journal
+  volume: '39'
+
+- id: VadimAssessmentCoriolisForce2016
+  abstract: >-
+    In this paper, issues of the Coriolis force impact on the operation of the
+    tower crane swing mechanism during the starting period under combination of
+    working motions (boom swing and outreach increase) are considered.
+    Quantitative dependencies of the parameters characterizing the mechanism
+    starting mode on the velocity of load trolley travel along the boom and wind
+    load are provided. Diagrams of these dependencies conveniently illustrate a
+    noticeable decrease in the crane output upon adverse combination of factors
+    related to the occurring Coriolis acceleration. More specically, if the
+    perpendicularly directed heavy wind load inuences the boom in case of
+    combination of working motions of the boom swing and outreach change, the
+    starting time constituting the most part of the operating time of the swing
+    mechanism can increase by 20 and more percent. The corresponding methodology
+    of the calculation investigation is also stated in the paper
+  accessed:
+    - year: 2018
+      month: 11
+      day: 20
+  author:
+    - family: Vadim
+      given: Aleynik
+    - family: Sergey
+      given: Repin
+    - family: Constantine
+      given: Rulis
+  container-title: Architecture and Engineering
+  issue: '4'
+  issued:
+    - year: 2016
+  source: cyberleninka.ru
+  title: >-
+    Assessment of the Coriolis force impact on the operation of the tower crane
+    swing mechanism
+  type: article-journal
+  URL: >-
+    https://cyberleninka.ru/article/n/assessment-of-the-coriolis-force-impact-on-the-operation-of-the-tower-crane-swing-mechanism
+  volume: '1'
+
+- id: VaughanControlTowerCranes2010
+  abstract: >-
+    The usefulness of cranes is limited because the payload is supported by an
+    overhead suspension cable that allows oscillation to occur during crane
+    motion. Under certain conditions, the payload dynamics may introduce an
+    additional oscillatory mode that creates a double pendulum. This paper
+    presents an analysis of this effect on tower cranes. This paper also reviews
+    a command generation technique to suppress the oscillatory dynamics with
+    robustness to frequency changes. Experimental results are presented to
+    verify that the proposed method can improve the ability of crane operators
+    to drive a double-pendulum tower crane. The performance improvements
+    occurred during both local and teleoperated control.
+  author:
+    - family: Vaughan
+      given: J.
+    - family: Kim
+      given: D.
+    - family: Singhose
+      given: W.
+  container-title: IEEE Transactions on Control Systems Technology
+  DOI: 10.1109/TCST.2010.2040178
+  ISSN: 1063-6536
+  issue: '6'
+  issued:
+    - year: 2010
+      month: 11
+  page: 1345-1358
+  source: IEEE Xplore
+  title: Control of Tower Cranes With Double-Pendulum Payload Dynamics
+  type: article-journal
+  volume: '18'
+
+- id: VaughanControlTowerCranes2010a
+  accessed:
+    - year: 2018
+      month: 10
+      day: 30
+  author:
+    - family: Vaughan
+      given: Joshua
+    - family: Kim
+      given: Dooroo
+    - family: Singhose
+      given: William
+  container-title: IEEE Transactions on Control Systems Technology
+  DOI: 10.1109/TCST.2010.2040178
+  ISSN: '1063-6536, 1558-0865'
+  issued:
+    - year: 2010
+      month: 11
+  source: Crossref
+  title: Control of Tower Cranes With Double-Pendulum Payload Dynamics
+  type: article-journal
+  URL: 'http://ieeexplore.ieee.org/document/5422812/'
+
+- id: VereindeutscherIngenieureVDI4468Elektronische
+  author:
+    - family: Verein deutscher Ingenieure
+      given: ''
+  title: VDI 4468 - Elektronische Pendeldämpfung für Krane
+  type: article
+
+- id: verhoeven_analysis_2004
+  author:
+    - family: Verhoeven
+      given: Richard
+  genre: phdthesis
+  issued:
+    - year: 2004
+  publisher: >-
+    Universität Duisburg-Essen, Fakultät für Ingenieurwissenschaften
+    guillemotright Maschinenbau und Verfahrenstechnik
+  title: Analysis of the workspace of tendon-based Stewart platforms
+  type: thesis
+
+- id: VisentinTestingSpaceRobotics1999
+  author:
+    - family: Visentin
+      given: G
+    - family: Didot
+      given: F
+  issued:
+    - year: 1999
+  language: en
+  page: '5'
+  source: Zotero
+  title: Testing Space Robotics on the Japanese ETS-VII Satellite
+  type: article-journal
+
+- id: WagnerHebezeugeUndKrane2011
+  accessed:
+    - year: 2018
+      month: 10
+      day: 25
+  author:
+    - family: Wagner
+      given: G.
+    - family: Scholten
+      given: J.
+  container-title: Dubbel
+  DOI: 10.1007/978-3-642-17306-6_223
+  editor:
+    - family: Grote
+      given: Karl-Heinrich
+    - family: Feldhusen
+      given: Jörg
+  event-place: 'Berlin, Heidelberg'
+  ISBN: 978-3-642-17305-9 978-3-642-17306-6
+  issued:
+    - year: 2011
+  language: de
+  page: U32-U44
+  publisher: Springer Berlin Heidelberg
+  publisher-place: 'Berlin, Heidelberg'
+  source: Crossref
+  title: Hebezeuge und Krane
+  type: chapter
+  URL: 'http://link.springer.com/10.1007/978-3-642-17306-6_223'
+
+- id: WeberActiveVibrationCanceling2014
+  abstract: >-
+    Cable-driven parallel robots allow for fast motions and huge workspaces,
+    using relatively lightweight moving masses and low-power actuation. This
+    kind of structure yields usually very cost-effective solutions. However, the
+    wider the workspace, the lower the equivalent stiffness of the end-effector
+    yielding inaccuracies due mainly to unwanted vibrations. In this paper, we
+    propose a new approach to compensate for these vibrations. Reaction wheels
+    are used to cancel rotational oscillations of the platform. A planar
+    cable-driven robot built with cheap and lightweight Lego Mindstorms parts is
+    used to validate the concept.
+  author:
+    - family: Weber
+      given: X.
+    - family: Cuvillon
+      given: L.
+    - family: Gangloff
+      given: J.
+  container-title: 2014 IEEE/RSJ International Conference on Intelligent Robots and Systems
+  DOI: 10.1109/IROS.2014.6942787
+  event: 2014 IEEE/RSJ International Conference on Intelligent Robots and Systems
+  issued:
+    - year: 2014
+      month: 9
+  page: 1724-1729
+  source: IEEE Xplore
+  title: >-
+    Active vibration canceling of a cable-driven parallel robot using reaction
+    wheels
+  type: paper-conference
+
+- id: WeberActiveVibrationCanceling2015
+  abstract: >-
+    Compared to other parallel robots, cable-driven parallel robots can achieve
+    bigger workspace, higher dynamics with lighter parts and fewer energy while
+    being economically competitive. However, such robots with big workspaces are
+    affected either by cable sagging or by a very low end-effector stiffness,
+    both causing positioning errors. With lightweight cables, the very low
+    stiffness yields disturbing vibrations. In this paper, we address the
+    problem of decoupled active canceling of those vibrations in the modal
+    space. In modal space, vibrations are decomposed in orthogonal signals which
+    allows to use simple SISO control methods to build an active vibration
+    canceling algorithm for the end-effector. As the modal space depends on the
+    end-effector position, better performances are achieved if the controller is
+    tuned for the current robot position. The proposed method is tested both on
+    a realistic simulation and on a 8-cables and 6-degrees of freedom robot.
+  author:
+    - family: Weber
+      given: X.
+    - family: Cuvillon
+      given: L.
+    - family: Gangloff
+      given: J.
+  container-title: 2015 IEEE International Conference on Robotics and Automation (ICRA)
+  DOI: 10.1109/ICRA.2015.7139402
+  event: 2015 IEEE International Conference on Robotics and Automation (ICRA)
+  issued:
+    - year: 2015
+      month: 5
+  page: 1599-1604
+  source: IEEE Xplore
+  title: Active vibration canceling of a cable-driven parallel robot in modal space
+  type: paper-conference
+
+- id: WhatAreSingularities
+  abstract: >-
+    This tutorial describes the singularities a typical six-axis industrial
+    robot arms.
+  accessed:
+    - year: 2020
+      month: 8
+      day: 12
+  language: en
+  title: What are singularities in a six-axis robot arm?
+  type: webpage
+  URL: 'https://www.mecademic.com/resources/Singularities/Singularities'
+
+- id: WieSingularityAnalysisVisualization2004
+  accessed:
+    - year: 2017
+      month: 6
+      day: 1
+  author:
+    - family: Wie
+      given: Bong
+  container-title: 'Journal of Guidance, Control, and Dynamics'
+  DOI: 10.2514/1.9167
+  ISSN: 0731-5090
+  issue: '2'
+  issued:
+    - year: 2004
+  page: 271-282
+  source: American Institute of Aeronautics and Astronautics
+  title: >-
+    Singularity Analysis and Visualization for Single-Gimbal Control Moment Gyro
+    Systems
+  type: article-journal
+  URL: 'http://dx.doi.org/10.2514/1.9167'
+  volume: '27'
+
+- id: WonComparativeStudyEnergybased
+  abstract: >-
+    This paper presents a position control problem for an under actuated
+    overhead crane system, which has two degrees of freedom with only one
+    actuator for trolley driving. An overhead crane transfers a work piece to a
+    desired position while keeping the swing angle of the work piece small
+    during this process. The rope should not have a swing angle at the load
+    destination. In this paper, five controllers (i.e., linear and nonlinear
+    controllers) are derived based on the passivity of the system. The total
+    energy of the system and its square are used in a Lyapunov candidate
+    function to design the controllers. The equilibrium point of the closed loop
+    is proven asymptotically stable by the Lyapunov technique and LaSalle
+    invariance theorem. The optimal linear controller is combined to force the
+    swing angle to converge rapidly to zero by reaching the trolley location.
+    Numerical simulations and experiments are conducted by using the test bed
+    model to evaluate the controllers.
+  author:
+    - family: Won
+      given: In-Sik
+  container-title: International Robotics & Automation Journal
+  issue: '3'
+  language: en
+  page: '7'
+  source: Zotero
+  title: Comparative study of energy-based control design for overhead cranes
+  type: article-journal
+  volume: '4'
+
+- id: WuRobustAntiDisturbanceCoordination2018
+  abstract: >-
+    This paper is concerned with the coordination tracking control for space
+    manipulator system with internal model uncertainties and external
+    environment disturbances. A novel robust anti -disturbance coordination
+    control scheme is proposed to realize feed-forward control of the base
+    satellite attitude and precise trajectory tracking of the manipulator. The
+    composite controller is composed of disturbance observer based controller
+    (DOBC), H∞ feedback controller and computed-momentum based reaction
+    compensation (CMRC) controller; where the DOBC estimate and compensate the
+    external disturbances, the H∞ feedback controller attenuate the internal
+    model uncertainties, then the computed-momentum based reaction compensation
+    (CMRC) controller is designed as a feed-forward coordination controller to
+    actively anticipate the manipulator reaction and compensate for it in
+    advance. Numerical simulations are performed on a two-link free-flying space
+    manipulator system to demonstrate the effectiveness and validity of the
+    proposed control scheme.
+  author:
+    - family: Wu
+      given: H.
+    - family: Qiao
+      given: J.
+    - family: Chen
+      given: Y.
+    - family: Li
+      given: Z.
+  container-title: 2018 37th Chinese Control Conference (CCC)
+  DOI: 10.23919/ChiCC.2018.8483202
+  event: 2018 37th Chinese Control Conference (CCC)
+  issued:
+    - year: 2018
+      month: 7
+  page: 2601-2606
+  source: IEEE Xplore
+  title: >-
+    Robust Anti-Disturbance Coordination Control for Space Manipulator Systems
+    with Multiple Disturbances
+  type: paper-conference
+
+- id: XinjilefuHybridStabilizingControl2010
+  abstract: >-
+    The spatial double inverted pendulum actuated at the hip, but not at the
+    foot, may be considered to be a model of standing creatures and robots.
+    Moving in-space, as opposed to in-plane, poses new control problems which,
+    for the most part, are still open. In this paper, a hybrid approach where an
+    energy-shaping, passivity-based swing-up controller hands oﬀ the control to
+    a linear-quadratic-regulator in the vicinity of the unstable upright
+    equilibrium is proposed. A direct approach and a pre-compensated approach
+    are described, discussed, and illustrated by means of examples in
+    simulation.
+  accessed:
+    - year: 2018
+      month: 11
+      day: 19
+  author:
+    - literal: Xinjilefu
+    - family: Hayward
+      given: Vincent
+    - family: Michalska
+      given: Hannah
+  collection-editor:
+    - family: Kacprzyk
+      given: Janusz
+  container-title: 'Brain, Body and Machine'
+  DOI: 10.1007/978-3-642-16259-6_16
+  editor:
+    - family: Angeles
+      given: Jorge
+    - family: Boulet
+      given: Benoit
+    - family: Clark
+      given: James J.
+    - family: Kövecses
+      given: József
+    - family: Siddiqi
+      given: Kaleem
+  event-place: 'Berlin, Heidelberg'
+  ISBN: 978-3-642-16258-9 978-3-642-16259-6
+  issued:
+    - year: 2010
+  language: en
+  page: 201-215
+  publisher: Springer Berlin Heidelberg
+  publisher-place: 'Berlin, Heidelberg'
+  source: Crossref
+  title: Hybrid Stabilizing Control for the Spatial Double Inverted Pendulum
+  type: chapter
+  URL: 'http://link.springer.com/10.1007/978-3-642-16259-6_16'
+  volume: '83'
+
+- id: XuOnorbitIdentifyingInertia2017
+  abstract: >-
+    After being launched into space to perform some tasks, the inertia
+    parameters of a space robotic system may change due to fuel consumption,
+    hardware reconfiguration, target capturing, and so on. For precision control
+    and simulation, it is required to identify these parameters on orbit. This
+    paper proposes an effective method for identifying the complete inertia
+    parameters (including the mass, inertia tensor and center of mass position)
+    of a space robotic system. The key to the method is to identify two types of
+    simple dynamics systems: equivalent single-body and two-body systems. For
+    the former, all of the joints are locked into a designed configuration and
+    the thrusters are used for orbital maneuvering. The object function for
+    optimization is defined in terms of acceleration and velocity of the
+    equivalent single body. For the latter, only one joint is unlocked and
+    driven to move along a planned (exiting) trajectory in free-floating mode.
+    The object function is defined based on the linear and angular momentum
+    equations. Then, the parameter identification problems are transformed into
+    non-linear optimization problems. The Particle Swarm Optimization (PSO)
+    algorithm is applied to determine the optimal parameters, i.e. the complete
+    dynamic parameters of the two equivalent systems. By sequentially unlocking
+    the 1st to nth joints (or unlocking the nth to 1st joints), the mass
+    properties of body 0 to n (or n to 0) are completely identified. For the
+    proposed method, only simple dynamics equations are needed for
+    identification. The excitation motion (orbit maneuvering and joint motion)
+    is also easily realized. Moreover, the method does not require prior
+    knowledge of the mass properties of any body. It is general and practical
+    for identifying a space robotic system on-orbit.
+  accessed:
+    - year: 2019
+      month: 3
+      day: 14
+  author:
+    - family: Xu
+      given: Wenfu
+    - family: Hu
+      given: Zhonghua
+    - family: Zhang
+      given: Yu
+    - family: Liang
+      given: Bin
+  container-title: Acta Astronautica
+  container-title-short: Acta Astronautica
+  DOI: 10.1016/j.actaastro.2016.12.031
+  ISSN: 0094-5765
+  issued:
+    - year: 2017
+      month: 3
+      day: 1
+  page: 131-142
+  source: ScienceDirect
+  title: >-
+    On-orbit identifying the inertia parameters of space robotic systems using
+    simple equivalent dynamics
+  type: article-journal
+  URL: 'http://www.sciencedirect.com/science/article/pii/S0094576516302934'
+  volume: '132'
+
+- id: YangDynamicModellingAdaptive2018
+  abstract: >-
+    In this paper, both the closed-form dynamics and adaptive robust tracking
+    control of a space robot with two-link flexible manipulators under unknown
+    disturbances are developed. The dynamic model of the system is described
+    with assumed modes approach and Lagrangian method. The flexible manipulators
+    are represented as Euler–Bernoulli beams. Based on singular perturbation
+    technique, the displacements/joint angles and flexible modes are modelled as
+    slow and fast variables, respectively. A sliding mode control is designed
+    for trajectories tracking of the slow subsystem under unknown but bounded
+    disturbances, and an adaptive sliding mode control is derived for slow
+    subsystem under unknown slowly time-varying disturbances. An optimal linear
+    quadratic regulator method is proposed for the fast subsystem to damp out
+    the vibrations of the flexible manipulators. Theoretical analysis validates
+    the stability of the proposed composite controller. Numerical simulation
+    results demonstrate the performance of the closed-loop flexible space robot
+    system.
+  accessed:
+    - year: 2019
+      month: 3
+      day: 7
+  author:
+    - family: Yang
+      given: Xinxin
+    - family: Ge
+      given: Shuzhi Sam
+    - family: He
+      given: Wei
+  container-title: International Journal of Control
+  DOI: 10.1080/00207179.2017.1300837
+  ISSN: 0020-7179
+  issue: '4'
+  issued:
+    - year: 2018
+      month: 4
+      day: 3
+  page: 969-988
+  source: Taylor and Francis+NEJM
+  title: >-
+    Dynamic modelling and adaptive robust tracking control of a space robot with
+    two-link flexible manipulators under unknown disturbances
+  type: article-journal
+  URL: 'https://doi.org/10.1080/00207179.2017.1300837'
+  volume: '91'
+
+- id: YetkinGyroscopicStabilizationUnmanned2014
+  abstract: >-
+    There are two theoretical methods by which a two wheeled vehicle oriented in
+    tandem can be stabilized: dynamic stabilization and control moment gyroscope
+    (CMG) stabilization. Dynamic stabilization utilizes tactical steering
+    techniques to trigger a lean in the vehicle in the intended direction for
+    balancing, while CMG stabilization employs the reactive precession torque of
+    a high speed flywheel about an axis that will act to balance the vehicle. Of
+    these two, CMG stabilization offers greater advantages for static vehicles.
+    This paper proposes a first order sliding mode controller (SMC) design to
+    control the CMG and stabilize a bicycle at zero-forward velocity. This study
+    also compares the SMC method to a PID controller to validate the advantages
+    of the SMC controller for the highly non-linear system dynamics of static
+    stabilization. The result of two experimental setups are presented and
+    discussed. The first experimental platform is a single degree of freedom
+    (DOF) inverted pendulum and the second is a three DOF bicycle.
+  author:
+    - family: Yetkin
+      given: H.
+    - family: Kalouche
+      given: S.
+    - family: Vernier
+      given: M.
+    - family: Colvin
+      given: G.
+    - family: Redmill
+      given: K.
+    - family: Ozguner
+      given: U.
+  container-title: 2014 American Control Conference
+  DOI: 10.1109/ACC.2014.6859392
+  event: 2014 American Control Conference
+  issued:
+    - year: 2014
+      month: 6
+  page: 4549-4554
+  source: IEEE Xplore
+  title: Gyroscopic stabilization of an unmanned bicycle
+  type: paper-conference
+
+- id: YiAttitudeControlStabilization2000
+  abstract: >-
+    An Attitude Control and Stabilization of an Unstructured Object using CMG
+    Subsystem CMG;Gyro actuator;gyro effect;piezoelectric vibrating gyroscope
+    sensor;PID control; In this paper, we propose an attitude controller for an
+    unstructured object using CMG(Control Moment of Gyro) subsystem, which has a
+    stabilizer function. The CMG subsystem consists of one motor for spinning
+    the wheel and the other motor for turning the outer gimbal. While the wheel
+    of CMG subsystem is spinning at high speed, applying force to the spin axis
+    of the wheel leads the torque about the vertical axis. We utilize the torque
+    to control the attitude of object in this study. For the stabilizer
+    function, in additiion, holding the load at the current position, the power
+    applied to the gimbal motor of CMG will be cut, which result in the braking
+    force to stop the load by gyro effect. However, due to the gear reduction
+    connected to outer gimbal, slow load motion cannot generate the braking
+    force. Thus, in this study, we are willing to make a holding force by
+    applying control power to the gimbal motor from the signal of piezoelectric
+    gyroscopic sensor that detected the angular velocity of the load. These two
+    features are demonstrated in experiment, carrying a beam with crane. As a
+    result, load was started to rotate by controlling gimbal positiion and was
+    stopped by turning off the gimbal power. Moreover, slow movement of the load
+    was also rejected by additional control with gyroscopic sensor.
+  accessed:
+    - year: 2019
+      month: 2
+      day: 8
+  author:
+    - family: Yi
+      given: Keon Young
+    - family: Gwon
+      given: Man-Oh
+  container-title: The Transactions of the Korean Institute of Electrical Engineers D
+  ISSN: 1229-6287
+  issue: '8'
+  issued:
+    - year: 2000
+  language: kor
+  page: 459-466
+  source: www.koreascience.or.kr
+  title: >-
+    An Attitude Control and Stabilization of an Unstructured Object using CMG
+    Subsystem
+  type: article-journal
+  URL: 'http://www.koreascience.or.kr/article/JAKO200011919588608.page'
+  volume: '49'
+
+- id: YiImplementationGyroActuator1999
+  abstract: >-
+    It is well known that the attitude control of an object hanging with wire is
+    not easy by using usual actuators. Even though an actuator such as a fan can
+    be used for controlling the object it is difficult to meet the desired
+    control objective. For these reasons, we propose a gyro actuator constructed
+    with two motors. The first motor is responsible for spinning the wheel at
+    high speed and the second motor is used to turn the outer gimbal. By
+    applying the torque to the second motor, which results in the turn of the
+    outer gimbal, the torque about the vertical axis can be obtained while the
+    wheel of the gyro is spinning constantly. This torque is used to control the
+    attitude of the object attached. The aim of this paper is to derive the
+    transfer function of the actuator and show the usefulness. Experiments to
+    the prototype model using a state feedback control and PID control are
+    conducted to show the usefulness of the proposed gyro actuator.
+  author:
+    - family: Yi
+      given: Keon Young
+    - family: Chung
+      given: Young Gu
+  container-title: >-
+    Proceedings 1999 IEEE International Conference on Robotics and Automation
+    (Cat. No.99CH36288C)
+  DOI: 10.1109/ROBOT.1999.772592
+  event: >-
+    Proceedings 1999 IEEE International Conference on Robotics and Automation
+    (Cat. No.99CH36288C)
+  issued:
+    - year: 1999
+      month: 5
+  page: 1626-1631 vol.2
+  source: IEEE Xplore
+  title: >-
+    An implementation of a gyro actuator for the attitude control of an
+    unstructured object
+  type: paper-conference
+  volume: '2'
+
+- id: yime_new_2009
+  author:
+    - family: Yime
+      given: Eugenio
+    - family: Quintero
+      given: Jaqueline
+    - family: Saltaren
+      given: Roque
+    - family: Aracil
+      given: Rafael
+  container-title: 'Control Conference (ECC), 2009 European'
+  issued:
+    - year: 2009
+  page: 3899-3903
+  publisher: IEEE
+  title: >-
+    A new approach to avoid internal singularities in CMG with pyramidal shape
+    using sliding control
+  type: paper-conference
+
+- id: YimeDesignCMGUnderwater2011
+  author:
+    - family: Yime
+      given: Eugenio
+    - family: Moreno
+      given: Héctor
+    - family: Saltarén
+      given: Roque
+    - family: Aracil
+      given: Rafael
+  container-title: OCEANS 2011 IEEE-Spain
+  issued:
+    - year: 2011
+  title: Design of a CMG for underwater robots
+  type: chapter
+
+- id: yoshida_dual_1991
+  author:
+    - family: Yoshida
+      given: Kazuya
+    - family: Kurazume
+      given: Ryo
+    - family: Umetani
+      given: Yoji
+  container-title: >-
+    Robotics and Automation, 1991. Proceedings., 1991 IEEE International
+    Conference on
+  issued:
+    - year: 1991
+  page: 2516-2521
+  publisher: IEEE
+  title: Dual arm coordination in space free-flying robot
+  type: paper-conference
+
+- id: yoshida_zero_2001
+  author:
+    - family: Yoshida
+      given: Kayuya
+    - family: Hashizume
+      given: Kenichi
+    - family: Abiko
+      given: Satoko
+  container-title: >-
+    Robotics and Automation, 2001. Proceedings 2001 ICRA. IEEE International
+    Conference on
+  issued:
+    - year: 2001
+  page: 441-446
+  publisher: IEEE
+  title: >-
+    Zero reaction maneuver: flight validation with ETS-VII space robot and
+    extension to kinematically redundant arm
+  type: paper-conference
+  volume: '1'
+
+- id: YoungImplementationBalanceBeam2003
+  abstract: >-
+    An Implementation of Balance Beam Controller(New Construction Machinery) for
+    an Attitude Control and Stabilization of an Unstructured Object - CMG;Gyro
+    actuator;gyro effect;balance beam;construction machinery;PID control;
+  accessed:
+    - year: 2018
+      month: 11
+      day: 21
+  author:
+    - family: Young
+      given: Yi Keon
+    - family: Jin-Oh
+      given: Kim
+  container-title: The Transactions of the Korean Institute of Electrical Engineers D
+  ISSN: 1229-6287
+  issue: '1'
+  issued:
+    - year: 2003
+  language: kor
+  page: 38-44
+  source: www.koreascience.or.kr
+  title: >-
+    An Implementation of Balance Beam Controller(New Construction Machinery) for
+    an Attitude Control and Stabilization of an Unstructured Object
+  type: article-journal
+  URL: >-
+    http://www.koreascience.or.kr/article/ArticleFullRecord.jsp?cn=DHJGG7_2003_v52n1_38
+  volume: '52'
+
+- id: ZhangDifferentialflatnessbasedFinitetimeAntiswing2017
+  abstract: >-
+    In this paper, we consider the finite-time regulation controller for the
+    underactuated crane systems in 2-dimensional (2D) space with both constant
+    cable length and varying cable length. The differential-flatness-based
+    approach is applied to the development of finite-time control laws. The
+    elegantly designed controller can simultaneously suppress the payload swing
+    and regulate the trolley to the desired destination within a finite time for
+    the 2D bridge crane system in the case of constant cable length. Considering
+    cable length variation, the flatness-based tracking controller is presented
+    meticulously in a separately two-step program. Specifically, the finite-time
+    technique is first used to achieve the simultaneous motion regulation and
+    payload swing suppression and elimination within a finite time. Then, we
+    propose a Lyapunov-based tracking control method, under which the cable can
+    track a predefined trajectory. Simulation results are provided to
+    demonstrate both the efficiency and the robustness against external
+    disturbances of the addressed control algorithms.
+  accessed:
+    - year: 2018
+      month: 11
+      day: 20
+  author:
+    - family: Zhang
+      given: Zhongcai
+    - family: Wu
+      given: Yuqiang
+    - family: Huang
+      given: Jinming
+  container-title: Nonlinear Dynamics
+  container-title-short: Nonlinear Dyn
+  DOI: 10.1007/s11071-016-3149-7
+  ISSN: 1573-269X
+  issue: '3'
+  issued:
+    - year: 2017
+      month: 2
+      day: 1
+  language: en
+  page: 1749-1761
+  source: Springer Link
+  title: >-
+    Differential-flatness-based finite-time anti-swing control of underactuated
+    crane systems
+  type: article-journal
+  URL: 'https://doi.org/10.1007/s11071-016-3149-7'
+  volume: '87'
+
+- id: ZhangNovelOnlineMotion2016
+  abstract: >-
+    In this paper, a novel online motion planning method for double-pendulum
+    overhead cranes is proposed. The proposed trajectory is made up of two
+    parts: anti-sway component and trolley positioning component. The objective
+    of the first part is to suppress and eliminate the swings of hook and
+    payload. Lyapunov techniques, LaSalle’s invariance theorem, and Barbalat’s
+    lemma are used to demonstrate that the trolley can be driven to arrive at
+    the desired position, while the unexpected hook swing and payload swing are
+    damped out simultaneously with the proposed trajectory. Numerical simulation
+    results indicate that the proposed control trajectory achieves superior
+    performance and admits strong robustness against parameter variations and
+    external disturbances.
+  accessed:
+    - year: 2018
+      month: 11
+      day: 20
+  author:
+    - family: Zhang
+      given: Menghua
+    - family: Ma
+      given: Xin
+    - family: Chai
+      given: Hui
+    - family: Rong
+      given: Xuewen
+    - family: Tian
+      given: Xincheng
+    - family: Li
+      given: Yibin
+  container-title: Nonlinear Dynamics
+  container-title-short: Nonlinear Dyn
+  DOI: 10.1007/s11071-016-2745-x
+  ISSN: 1573-269X
+  issue: '2'
+  issued:
+    - year: 2016
+      month: 7
+      day: 1
+  language: en
+  page: 1079-1090
+  source: Springer Link
+  title: A novel online motion planning method for double-pendulum overhead cranes
+  type: article-journal
+  URL: 'https://doi.org/10.1007/s11071-016-2745-x'
+  volume: '85'
+...
