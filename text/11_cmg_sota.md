@@ -84,8 +84,7 @@ Dual gimbal CMGs are less efficient than single gimbal CMGs, as the torque produ
 However there are several reasons why Skylab and many subsequent spacecraft including the ISS use dual gimbal CMGs.
 
 As a gimbal rotates to produce torque with the gyroscope, so does the orientation of the output torque vector.
-This gives rise to complex steering laws and issues with singularities.
-TODO: explain singularity
+This gives rise to complex steering laws and issues with singularities (See @Sec:glossary for explaination of singularities).
 The Apollo program did not use CMGs, but did use three gyroscopes for inertial measurement of the spacecraft’s orientation.
 These gyroscopes were suspended in three nested gimbals, providing feedback regarding the spacecraft's yaw, pitch and roll.
 The decision only to use three gimbals led to more frequent issues with gimbal lock (a singularity where the gimbal axis align) than was expected during multiple Apollo missions[^collinsxmas].

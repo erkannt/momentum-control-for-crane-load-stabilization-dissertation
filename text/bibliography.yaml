@@ -3825,6 +3825,19 @@ references:
   title: Active vibration canceling of a cable-driven parallel robot in modal space
   type: paper-conference
 
+- id: WhatAreSingularities
+  abstract: >-
+    This tutorial describes the singularities a typical six-axis industrial
+    robot arms.
+  accessed:
+    - year: 2020
+      month: 8
+      day: 12
+  language: en
+  title: What are singularities in a six-axis robot arm?
+  type: webpage
+  URL: 'https://www.mecademic.com/resources/Singularities/Singularities'
+
 - id: WieSingularityAnalysisVisualization2004
   accessed:
     - year: 2017
