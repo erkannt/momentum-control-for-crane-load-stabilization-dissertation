@@ -78,15 +78,13 @@ Staying some distance away from them also reduces the accelerations required in 
 Furthermore steering laws might also respect the gimbal limits regarding jerk, torque and speed.
 Alternatively they can leave this to the inner control loops of the gimbal.
 
-Most arrays consist of at least four CMGs, permitting null space motion,
-that is gimbal motions that produce a net output torque of zero.
-TODO: elaborate on null space motion
-Such motions can be used by the steering law to avoid singularities without introducing an error torque.
+Most arrays consist of at least four CMGs, permitting null space motion, that is gimbal motions that produce a net output torque of zero(see @Sec:glossary for explanation).
+Such motions can be used by the steering law to avoid singularities without introducing an error torque(see @Sec:glossary for explanation).
 TODO: explain error torque
 Other steering laws actually enable passing through singularities and are categorized as singularity escaping.
 These methods introduce torque inaccuracies.
 
-The fundamental principle of CMG steering laws lies in creating an inverse to the actuator Jacobian.
+The fundamental principle of CMG steering laws lies in creating an inverse to the actuator Jacobian (see @Sec:glossary for explanation).
 That is, given the Jacobian i.e. the matrix describing the impact of the various gimbals’ rates on the output torque, its inverse provides us with a set of target gimbal rates needed to obtain the desired torque.
 Depending on the nature of the singularities, different approaches exist for the creation of a pseudo-inverse.
 Some solutions avoid singularities by simply forbidding the production of certain torques, reducing the workspace of the array to guarantee singularity-free operation.

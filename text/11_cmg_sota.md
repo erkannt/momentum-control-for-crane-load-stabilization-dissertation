@@ -7,7 +7,7 @@ The applications have been split into three parts: spaceflight, general terrestr
 
 By investigating the various existing applications, this chapter hopes to provide a deeper understanding of the potentials and limitations of CMGs, to thereby motivate the subsequent work of this dissertation.
 
-## Gyroscopic Reaction Torque
+## Gyroscopic Reaction Torque {#sec:reaction-torque}
 
 The behavior of gyroscopes often runs counter to intuition due the relationship between torque, angular velocity and momentum.
 As it involves the cross product of their vectors, everything is constantly being rotated 90°.

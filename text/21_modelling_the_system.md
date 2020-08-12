@@ -417,12 +417,7 @@ Subsequently they can be added to the other external torques.
 A force acting on a pendulum will cause both a translational acceleration of its center of mass as well as a rotational acceleration around it.
 The magnitude of the translational acceleration depends on the force and mass of the pendulum.
 The rotational acceleration also depends on where the force is acting in relation to the center of mass.
-This leads to the interesting phenomenon of the center of percussion.
-This being the point on a pendulum where a perpendicular force leads to zero reaction force at its pivot point, due to the angular and translational acceleration cancelling each other out (see @Fig:center-of-percussion) [^center-of-percussion].
-
-[^center-of-percussion]: For further reading the [wikipedia article](https://en.wikipedia.org/wiki/Center_of_percussion) offers an excellent explanation of this phenomenon.
-
-![Illustration of the center of percussion and how it relates to the reaction of a pendulum given the location of a force acting upon it. CC-BY-SA 4.0, Wikipedia user Qwerty123uiop](./figures/center-of-percussion.png){ #fig:center-of-percussion short-caption="Illustration of the Center of Percussion"}
+This leads to the interesting phenomenon of the center of percussion (see @Sec:glossary for explanation).
 
 In this case, where a double pendulum is being used, this means that there is an additional torque acting upon the lower link that depends on the force and its distance to the center of mass of the lower link.
 The force acts on the pivot point of the lower link and thereby on the upper link.
