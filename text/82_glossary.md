@@ -22,6 +22,9 @@ In CMG arrays this means the output torque isn't affected by the motions of the 
 Another way of describing it, is that given a desired target e.g. torque, position, path there exist multiple solutions.
 This redundancy can be used to optimize motions of the system while still producing exactly the desired output.
 
+Error Torque
+:  In the context of momentum control devices any deviation of the output torque from the target i.e. desired torque.
+
 Jacobian
 :  In the context of engineering the Jacobian matrix is the matrix of partial differential equations that describes the relationship between changes in a systems state and the systems output i.e. with $\boldsymbol{J}$ as the Jacobian, $\boldsymbol{x}$ as the output vector and $\boldsymbol{q}$ as the state vector:
 

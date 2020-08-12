@@ -80,7 +80,6 @@ Alternatively they can leave this to the inner control loops of the gimbal.
 
 Most arrays consist of at least four CMGs, permitting null space motion, that is gimbal motions that produce a net output torque of zero(see @Sec:glossary for explanation).
 Such motions can be used by the steering law to avoid singularities without introducing an error torque(see @Sec:glossary for explanation).
-TODO: explain error torque
 Other steering laws actually enable passing through singularities and are categorized as singularity escaping.
 These methods introduce torque inaccuracies.
 
