@@ -1,5 +1,5 @@
 
-# Theory of CMGs
+# Theory of CMGs {#sec:cmg-theory}
 
 This chapter covers various theoretical aspects of CMGs, starting with their dynamics.
 Subsequently a brief introduction is given regarding their steering, workspaces and sizing.

@@ -1,5 +1,5 @@
 
-# Sizing CMGs for Cranes
+# Sizing CMGs for Cranes {#sec:sizing}
 
 The models, simulations and experiments of the previous chapters provide a basis for understanding the behavior of the crane-CMG-robot/process system.
 This chapter attempts to summarize the insights gained regarding the sizing of the CMGs for such a system. 

@@ -2,26 +2,14 @@
 # Introduction
 
 The following is a documentation of efforts to understand whether it would be possible to operate a robot hanging from a crane.
-Instead of using parallel tendon kinematics, i.e. additional ropes, this work studies how the hook might be stabilized using control moment gyroscopes and the torque they can provide.
+Given the desire of increasing automation in the construction industry the ability to extend the working area of conventional industrial robots by hanging them from cranes could be of great use and impact.
 
-This project was initiated by and took place at the relatively young chair for _Individualized Production in Architecture_.
-The chair is part of the architecture faculty, but also includes researchers from computer science, mechanical as well as civil engineering disciplines.
-We believe the interaction between such interdisciplinary capabilities to be essential to solving many of the problems facing our built environment.
+This introduction begins with a summary of why construction robots are of interest, their current availability and abilities.
+The second section elaborates why hanging robots from cranes is of interest.
+It briefly introduces the focus of this work on momentum control devices and this compares to other approaches that use parallel tendon kinematics or flying drones.
+The potential abilities and applications of the approach taken in this work are also outlined.
 
-Therefore this thesis aims not only to be of use to other engineers well versed in dynamic systems and their control.
-Instead the intention is that, by covering certain fundamentals in greater detail, this work will be of use to architects, civil engineers and roboticists alike enabling them to understand the potentials and challenges of hanging a robot from a crane.
-With this in mind, the following work contains a basic introduction to control moment gyroscopes, models for the simulation of the crane-CMG robot system as well as tools for the sizing of CMGs for crane applications.
-
-TODO: introduce topic and structure of thesis
-
-------------
-
-The original idea and subsequent work contained in this thesis have been submitted as a patent application [@HaarhoffVorrichtungZurSteuerung].
-Therefore many of the ideas and solutions in this thesis are part of that application, in particular the integrated approach of using CMGs to turn cranes into stable plattforms for automation.
-
-A theoretical validation of the fundamental approach was published as part of the MTM Robotics 2016 [@HaarhoffActuatorDesignStabilizing2016].
-
-![Photomontage of robots suspended from a tower crane performing facade assembly. Taken and adapted from the (rejected) SEED-Fund application that initiated this work. Photomontage by Elisa Lublasser.](./figures/crane-robot-montage.jpg){short-caption="Photomontage of robots suspended from a tower crane"}
+Finally the structure and content of this work is introduced.
 
 ## The Need for Construction Robots
 
@@ -36,7 +24,7 @@ Fortunately, technological advances have led other industries to develop means f
 Looking at earlier attempts at automating construction (particularly in Japan and Korea during the 80s), one can see how the technology of the day was unable to provide said individualization and flexibility required in construction [@BockConstructionRobotsElementary2016; @BockRoboticIndustrializationAutomation2015; @BockSiteAutomationAutomated2016].
 With robots, sensors and fast computing becoming more ubiquitous, we are finally seeing the emergence of construction robotics.
 
-The first examples of these new on-site, commercially available robots were [SAM100](https://www.construction-robotics.com/) the brick-laying robot and [Tybot](https://www.tybotllc.com/) the rebar-tying robot for bridge decks.
+First examples of these new on-site, commercially available robots are [SAM100](https://www.construction-robotics.com/) the brick-laying robot and [Tybot](https://www.tybotllc.com/) the rebar-tying robot for bridge decks.
 Robots have also entered the preproduction of buildings and we are slowly seeing more direct links between digital planning and individualized robotic execution.
 As industrial robots enter the construction industry, the existing construction machinery is also becoming more sophisticated.
 Dump trucks are already driving autonomously in open pit mines and excavators and other machines are being fitted with sensors and digital controls.
@@ -49,7 +37,7 @@ Yet one aspect of the construction site is not addressed by the existing range o
 ## Turning Cranes into Robots
 
 The ability of cranes to provide logistics over large spans and at great heights has transformed construction since antiquity.
-They are the kinematic systems of choice for the large of scale of construction sites, naval operations and large scale assembly tasks.
+They are the kinematic systems of choice for the large scale of construction sites, naval operations and large scale assembly tasks.
 However, the key to their success is also the reason for the limitation of their automation.
 Using a rope as the last link of their kinematic chain, cranes are able to cover height with a minimum of material.
 The flexibility of the rope also means that it requires extremely little space when retracted, as it can be coiled and wound around winches.
@@ -67,15 +55,11 @@ Such a platform must be capable of compensating the torques and forces acting on
 If we wish to use the proven technology of construction cranes, we need to find a way of creating counteracting forces and torques in the middle of space.
 Fortunately, spacecraft face a similar issues, having to maneuver without having land or air to push off from.
 Whilst spacecraft are usually known for their use of rocket and other propulsive devices, they also usually have means of producing torque without expending fuel.
-This feat is achieved through momentum control devices and this work will discuss the feasibility of using a specific type of these, called control moment gyroscopes, to enable construction robots for large work envelopes.
-
-TODO: note which chapter will discuss what
+This feat is achieved through momentum control devices and this work will discuss the feasibility of using a specific type of these, called control moment gyroscopes (CMG), to enable construction robots for large work envelopes.
 
 ### Alternative Approaches
 
-Prior to looking at momentum control devices in greater detail, this section will cover some of the alternatives for large workspace kinematics.
-
-A well studied approach are parallel tendon kinematics.
+A well studied approach for large workspaces are parallel tendon kinematics.
 Here, instead of a single rope positioning the end effector, multiple ropes/tendons are used.
 By spanning these tendons from different directions, it becomes possible to create stable positions and motions over large spaces.
 Such systems are commercially available for cameras in sports stadiums and researchers have proposed their use for a variety of other tasks.
@@ -132,3 +116,45 @@ Examples of these applications are illustrated in @Fig:indoor-and-outdoor.
 ![Abilities of a CMG-stabilized crane. From left to right: process compensation, part rotation and dampening of pendulum oscillations.](./figures/baugrok-applications.gif){ #fig:baugrok-applications short-caption="Abilities of a CMG-stabilized crane"}
 
 ![Potential applications of a CMG-stabilized crane. From left to right: part transport with gantry cranes, transport and assembly of components on a construction site, mobile industrial robots.](./figures/indoor-and-outdoor-applications.png){ #fig:indoor-and-outdoor short-caption="Potential applicans of a CMG-stabilized crane"}
+
+## Outline of work
+
+The focus of this work is understanding the potential of CMG-based crane stabilization.
+[Chapter @Sec:cmg-sota] therefore introduces the fundamental principle of CMGs.
+It then goes on to discuss their use in spaceflight as well as terrestrial systems for maneuvering and stabilization.
+The idea to utilize gyroscopes to stabilize cranes is not new and so special attention is given to previous research in this field.
+This chapter thereby motivates this work by identifying areas not covered by existing research.
+
+Following this, [chapter @Sec:cmg-theory] summarizes the existing theory on CMGs as it pertains to this work.
+The majority of this chapter is spent on introducing and explaining the dynamics of CMGs before moving on to the sizing and steering of them.
+The chapter thereby outlines the constraints of CMGs and limits of the existing models.
+
+With the fundamentals of CMGs covered, [chapter @Sec:modeling-cmg-crane] develops the models required for assessing the core question of this work: how do the crane, robot and CMGs interact.
+The chapter begins by identifying and approximating the parameters of a crane that affect the crane-CMG-robot interaction.
+Following this a model is derived that approximates the crane and its load as a double pendulum.
+The load in this case being the CMGs, any kinematic systems and or any payloads hanging from them.
+To model the CMG, robot and other external forces the double pendulum model is then further extended.
+
+[Chapter @Sec:controller-design] describes and structures the control problems of the crane-CMG system in its various applications.
+After an overview regarding crane control theory a simple controller for dampening osciallations is choosen and described.
+
+The [chapter @Sec:experiments] on experiments begins by validating the double pendulum model's behaviour through simulations before evaluating the choosen dampening controller.
+The second section investigates the interaction of the dampening controller with the steering law of CMGs using a scissored pair CMG array as an example.
+The previously developed model allows for an analysis of how the different torques interact, which is of great importance when it comes to sizing consideration.
+The third section covers the generation of example forces and torques as generated by a robot's motion.
+These forces and torques are used in the subsequent section to simulate the motion of a robot hanging from a crane and how the use of CMGs can reduce the deviation from the target path.
+The chapter closes with a discussion of the hardware prototype built in parallel to this work.
+
+Building upon the insights gained from the the modelling and experimental chapters, [chapter @Sec:sizing] develops a sizing methodology for the CMGs in a crane-CMG system.
+It begins by discussing how the sizing requirements and constraints arise from the various use cases of CMGs for crane stabilization.
+Subsequently the relationships between the constraints are discusses and how the sizing for crane-CMG systems differs from other CMG applications.
+
+The insights gained during this work are summarized in [chapter @Sec:outlook] and used to derive the key challenges for further work.
+
+Some specialized terminology is explainind in a glossary ([chapter @Sec:glossary]) and the appendix ([chapter @Sec:appendix]) includes the python implementations of the models.
+
+--------------------
+
+Construction robotics is a field heavily reliant on interdiscplinary collaboration.
+Therefore this thesis aims not only to be of use to engineers interested in dynamic systems and their control.
+Instead the intention is that, by covering certain fundamentals in greater detail, this work will be of use to architects, civil engineers and roboticists alike enabling them to understand the potentials and challenges of hanging a robot from a crane.

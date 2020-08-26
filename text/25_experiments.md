@@ -1,5 +1,5 @@
 
-# Experiments
+# Experiments {#sec:experiments}
 
 The majority of experiments discussed in this chapter revolve around simulations of the combination of a crane (modeled as a double pendulum) and a CMG array.
 The simulations reveal the various interactions between the systems and the challenges that arise from them.

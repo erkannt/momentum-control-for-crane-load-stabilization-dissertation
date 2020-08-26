@@ -1,5 +1,5 @@
 
-# Control Moment Gyroscope Applications
+# Control Moment Gyroscope Applications {#sec:cmg-sota}
 
 Control moment gyroscopes are an established technology in spacecraft design and have also seen some commercial terrestrial application.
 This chapter starts with a brief explanation of gyroscopic reaction torque before giving an overview of historic and current applications of momentum control devices in general and CMGs in particular.

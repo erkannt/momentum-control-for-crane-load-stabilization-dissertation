@@ -1,5 +1,5 @@
 
-# Modeling the Crane-CMG Application Systems
+# Modeling the Crane-CMG Application Systems {#sec:modeling-cmg-crane}
 
 > "The problem is, we don't understand the problem." -- Paul MacCready
 

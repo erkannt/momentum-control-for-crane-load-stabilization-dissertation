@@ -1,5 +1,5 @@
 
-# Appendix
+# Appendix {#sec:appendix}
 
 ## CMG Variables
 
