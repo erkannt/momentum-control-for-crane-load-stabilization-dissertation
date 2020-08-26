@@ -33,8 +33,8 @@ Many so called developed nations are also facing shortages in skilled constructi
 The latter has caused many sectors in construction to stagnate technologically as innovation was more costly than masses of cheap labour [@ArntzDigitalisierungUndZukunft].
 
 Fortunately, technological advances have led other industries to develop means for greater individualization and increased flexibility in their production.
-Looking at earlier attempts at automating construction (particularly in Japan and Korea during the 80s), one can see how the technology of the day was unable to provide said individualization and flexibility required in construction[@BockConstructionRobotsElementary2016, @BockRoboticIndustrializationAutomation2015, @BockSiteAutomationAutomated2016].
-With robots, sensors and fast computing becoming more ubiquitous, we are finally seeing the renaissance of construction robotics.
+Looking at earlier attempts at automating construction (particularly in Japan and Korea during the 80s), one can see how the technology of the day was unable to provide said individualization and flexibility required in construction[@BockConstructionRobotsElementary2016; @BockRoboticIndustrializationAutomation2015; @BockSiteAutomationAutomated2016].
+With robots, sensors and fast computing becoming more ubiquitous, we are finally seeing the emergence of construction robotics.
 
 The first examples of these new on-site, commercially available robots were [SAM100](https://www.construction-robotics.com/) the brick-laying robot and [Tybot](https://www.tybotllc.com/) the rebar-tying robot for bridge decks.
 Robots have also entered the preproduction of buildings and we are slowly seeing more direct links between digital planning and individualized robotic execution.
