@@ -58,7 +58,8 @@ With the actors (the motors) of the crane connected to the end effector (the hoo
 If robots are to be used over the large work area of the construction site effectively, they must be provided with a stable work platform.
 
 TODO: elaborate on instability and how a robot introduces disturbance
-TODO: figure of robot on crane with forces
+
+![Overview of forces preventing stable operation of e.g. a robot suspended from a crane: a) center of gravity (CoG) of the hook/platform moves out of equilibrium, b) robot CoG gets moved out of equilibrium, c) forces and torques acting at robot base due to motion of robot, d) forces and torques stemming from interaction with external objects, e) external forces e.g. wind. Note that these all interact.](./figures/crane-robot-forces.svg){short-caption="Forces acting on a robot hanging from a crane"}
 
 ### Momentum Control Devices
 
