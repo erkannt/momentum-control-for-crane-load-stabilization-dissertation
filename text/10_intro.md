@@ -117,10 +117,18 @@ Mobile platforms, on the other hand, would have to be provided with access via t
 
 ### Potential Applications
 
-In comparison to the alternatives covered above, @Fig:baugrok-applications illustrates the potential use cases for the proposed system of stabilizing a crane hook with momentum control devices.
+In comparison to the alternatives covered above, @Fig:baugrok-applications illustrates the potential abilities of the proposed system of stabilizing a crane hook with momentum control devices.
 Generally speaking, it would add the ability to produce controlled torques at the hook of a crane without requiring any additional ropes or other kinematics.
 The control moment gyroscopes would allow for the compensation of the torques produced by a robot's motion or other processes suspended from the hook.
 They would also provide control over the rotation of parts during transport and assembly operations.
 Furthermore they could assist in dampening crane oscillations.
 
-![Potential applications of a CMG-stabilized crane. From left to right: process compensation, part rotation and dampening of pendulum oscillations.](./figures/baugrok-applications.gif){ #fig:baugrok-applications short-caption="Potential applicans of a CMG-stabilized crane"}
+These abilities could result in novel applications of cranes, not only on construction sites.
+Components could be moved with greater control for logistics and assembly operations.
+By increasing the control of the motion safe automation of such tasks becomes possible.
+The ability to compensate provess torques also make it possible to use additional kinematic systems, be they specialized or general purpose e.g. industrial robots.
+Examples of these applications are illustrated in @Fig:indoor-and-outdoor.
+
+![Abilities of a CMG-stabilized crane. From left to right: process compensation, part rotation and dampening of pendulum oscillations.](./figures/baugrok-applications.gif){ #fig:baugrok-applications short-caption="Abilities of a CMG-stabilized crane"}
+
+![Potential applications of a CMG-stabilized crane. From left to right: part transport with gantry cranes, transport and assembly of components on a construction site, mobile industrial robots.](./figures/indoor-and-outdoor-applications.png){ #fig:indoor-and-outdoor short-caption="Potential applicans of a CMG-stabilized crane"}
