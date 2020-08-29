@@ -64,6 +64,7 @@ pandoc-epub-flags = --verbose \
 ghostscript-flags = -sDEVICE=pdfwrite \
   -dCompatibilityLevel=1.4 \
   -dPDFSETTINGS=/printer \
+  -dPrinted=false \
 	-dNOPAUSE \
 	-dQUIET \
 	-dBATCH
