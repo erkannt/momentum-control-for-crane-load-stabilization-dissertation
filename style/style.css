@@ -36,6 +36,11 @@ p a {
     word-wrap: break-word;
     white-space: pre;
 }
+
+a {
+    color: #0074D9;
+}
+
 code {
     word-wrap: break-word;
 }
