@@ -1207,7 +1207,7 @@ references:
       day: 29
   title: HOME | ARCAS Project
   type: webpage
-  URL: 'http://www.arcas-project.eu/'
+  URL: 'http://www.arcas-project.eu/project-overview'
 
 - id: HubbardForcedDampedPendulum
   abstract: >-
@@ -2086,7 +2086,7 @@ references:
   source: www.springer.com
   title: Spacecraft Momentum Control Systems
   type: book
-  URL: //www.springer.com/de/book/9783319225623
+  URL: 'https://www.springer.com/de/book/9783319225623'
 
 - id: li_motion_2013
   author:
@@ -2396,7 +2396,7 @@ references:
   title: Construction Labor Shortage Creates Increasingly Lucrative Career Paths
   type: webpage
   URL: >-
-    https://www.forbes.com/sites/jimmorrison/2018/08/05/construction-labor-shortage-creates-increasingly-lucrative-career-paths/
+    https://www.forbes.com/sites/jimmorrison/2018/08/05/construction-labor-shortage-creates-increasingly-lucrative-career-paths
 
 - id: muehlebach_nonlinear_2013
   author:
@@ -3880,7 +3880,7 @@ references:
   language: en
   title: What are singularities in a six-axis robot arm?
   type: webpage
-  URL: 'https://www.mecademic.com/resources/Singularities/Singularities'
+  URL: 'https://www.mecademic.com/resources/Singularities/Robot-singularities'
 
 - id: WieSingularityAnalysisVisualization2004
   accessed:
