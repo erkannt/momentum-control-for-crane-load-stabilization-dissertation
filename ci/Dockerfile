@@ -27,6 +27,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   librsvg2-bin \
   sketch \
   dvipng \
+  git \
   && apt-get autoremove && apt-get autoclean \
   && rm -rf /var/lib/apt/lists/*
 

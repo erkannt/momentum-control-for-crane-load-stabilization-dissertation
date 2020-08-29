@@ -5,7 +5,7 @@
 
   steps:
   - name: build
-    image: rknt/dissertation_builder:0.4
+    image: rknt/dissertation_builder:0.5
     commands:
     - make all
   

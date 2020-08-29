@@ -194,7 +194,11 @@ $if(facultyblurb)$
 \author{\parbox{\textwidth}{\normalsize\centering
   { $facultyblurb$ }}}
 $endif$
+$if(version)$
+\date{$date$\\$version$}
+$else$
 \date{$date$}
+$endif$
 \publishers{\normalsize%
   $if(facultyblurb)$
   vorgelegt von\\
