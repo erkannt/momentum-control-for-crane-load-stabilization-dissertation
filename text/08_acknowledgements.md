@@ -26,7 +26,7 @@ And above all, thank you Eva.
 --------------------------------------
 
 The original idea and subsequent work contained in this thesis have been submitted as a patent application [@HaarhoffVorrichtungZurSteuerung].
-Therefore many of the ideas and solutions in this thesis are part of that application, in particular the integrated approach of using CMGs to turn cranes into stable plattforms for automation.
+Therefore many of the ideas and solutions in this thesis are part of that application, in particular the integrated approach of using CMGs to turn cranes into stable platforms for automation.
 
 A theoretical validation of the fundamental approach was published as part of the MTM Robotics 2016 [@HaarhoffActuatorDesignStabilizing2016].
 

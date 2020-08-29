@@ -104,7 +104,7 @@ The authors have subsequently also published a comparative study of several cont
 
 [^predatory]: This paper appears to be a reworked conference proceeding [@LeeEnergyBasedApproachController2013]. Both the proceedings and paper are published by predatory publishers. The peer review of the work might therefore be of questionable quality. Nevertheless the work is valid and useful.
 
-![Illustration of the underactuation of a crane. Modeled as a double pendulum of a point mass and distributed mass, adjustable rope length and a suspension point movable in a plane, the crane has eight degrees of freedom. Conventionally there are only three actors to control this. By adding the CMGs the underactuation is drastically reduced.](./figures/crane-8dof.png){ #fig:crane-8dof short-caption="Illustration of underaction in cranes"}
+![Illustration of the underactuation of a crane. Modeled as a double pendulum of a point mass and distributed mass, adjustable rope length and a suspension point movable in a plane, the crane has eight degrees of freedom. Conventionally there are only three actors to control this. By adding the CMGs the underactuation is drastically reduced.](./figures/crane-8dof.png){ #fig:crane-8dof short-caption="Illustration of underactuation in cranes"}
 
 ## Dampening Controller { #sec:dampening-controller }
 

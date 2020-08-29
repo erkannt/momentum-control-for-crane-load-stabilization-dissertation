@@ -9,7 +9,7 @@ Their goals are, respectively:
 1. derivation of abstracted inputs to the sizing
 2. simulation of the designed system
 
-Simulations of the system are needed to not only validate the sizing, but also to understand the system behaviour.
+Simulations of the system are needed to not only validate the sizing, but also to understand the system behavior.
 
 The models need to cover three application scenarios for the CMG-crane system:
 
@@ -29,7 +29,7 @@ Finally an interface for the application of external forces is created.
 
 ## Parameter Space of Construction Cranes { #sec:crane-params }
 
-Tower cranes play a central role in contruction.
+Tower cranes play a central role in construction.
 This work therefore focusses on the parameter space of tower cranes.
 @Fig:lbc-cranes shows a selection of tower cranes manufactured by Liebherr.
 Going from the compact, bottom-slewing crane, to one of the highest load cranes, two intermediate steps are also considered
@@ -120,7 +120,7 @@ The model ignores motion of the crane's gantry/jib, and therefore the pendulum i
 The upper mass is a point mass that includes the mass of the hook and crane rope.
 The lower mass is a distributed mass that includes the CMGs, their platform and everything attached to it e.g. robot, load and other kinematics.
 
-![Correspondence of crane/CMG/load components to the model.](./figures/crane-model-overview.png){ #fig:crane-model-overview short-caption="Correspondance of crane/CMG/load to model"}
+![Correspondence of crane/CMG/load components to the model.](./figures/crane-model-overview.png){ #fig:crane-model-overview short-caption="Correspondence of crane/CMG/load to model"}
 
 The generation of equations of motion and subsequent numerical integration are achieved using Python.
 The code builds on the educational example of Christian Hill [@HillLearningScientificProgramming2016] [^hillwebsite], the three-dimensional model extends the work of O'Connor and Habibi [@OConnorGantryCraneControl2013].
@@ -177,7 +177,7 @@ As the CMGs exert torque on their platform, this impact of the lower link on the
 
 ![Oscillations of a double pendulum at small angles and velocities.](./figures/dp-oscillations-animation.gif){ #fig:dp-oscillations-animation short-caption="Oscillations of double pendulum at small angles"}
 
-![Oscillations of a double pendulum at small angles and velocities showing a) how the position for such parameters comes close to a simple pendulum and b) how the two parts of the pendulum interact.](./figures/dp-oscillations.svg){ #fig:dp-oscillations short-caption="Oscillations of double pendulam at small angles (plot)"}
+![Oscillations of a double pendulum at small angles and velocities showing a) how the position for such parameters comes close to a simple pendulum and b) how the two parts of the pendulum interact.](./figures/dp-oscillations.svg){ #fig:dp-oscillations short-caption="Oscillations of double pendulum at small angles (plot)"}
 
 Until now the model has been using a point mass for both links.
 When the lower mass is replaced with a distributed mass, it is necessary to add a term to the kinetic energy to capture the rotational energy of the moving mass:

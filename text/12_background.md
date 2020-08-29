@@ -37,7 +37,7 @@ With the actors (the motors) of the crane connected to the end effector (the hoo
 
 ![Overview of forces preventing stable operation of e.g. a robot suspended from a crane: a) center of gravity (CoG) of the hook/platform moves out of equilibrium, b) robot CoG gets moved out of equilibrium, c) forces and torques acting at robot base due to motion of robot, d) forces and torques stemming from interaction with external objects, e) external forces e.g. wind. Note that these all interact.](./figures/crane-robot-forces.svg){#fig:crane-robot-forces short-caption="Forces acting on a robot hanging from a crane"}
 
-The ability of robots and other digitally controlled automation technology to perform accurate and repeatable movements is key to their usefulnes.
+The ability of robots and other digitally controlled automation technology to perform accurate and repeatable movements is key to their usefulness.
 Hanging a robot from a crane to increase its work envelope needs to maintain this ability.
 The hypothetical assembly in @Fig:crane-robot-forces illustrates the various forces at play that could create disturbances, moving the crane's hook, attached platform and hence the robot, leading to deviations in its intended movement.
 
@@ -83,7 +83,7 @@ Some researchers have therefore added momentum control devices to compensate tor
 The bigger issue for construction sites will most likely be the need for the tendon's winches to be placed around the workspace of the system.
 This means that tendons would be required to cross large areas of the construction site, which poses significant challenges with regard to collisions, setup costs as well as worker safety.
 
-![Experiments with dampening a parallel tendon platform using reaction wheels [@WeberActiveVibrationCanceling2014]. The left example is not using the reaction wheels. On the right, one can see them being used and rotating at the top of the platform.](./figures/reaction-wheel-tendon-gangloff.gif){ #fig:reaction-wheel-tendon short-caption="Parallel tendon plattform damplened with reaction wheels"}
+![Experiments with dampening a parallel tendon platform using reaction wheels [@WeberActiveVibrationCanceling2014]. The left example is not using the reaction wheels. On the right, one can see them being used and rotating at the top of the platform.](./figures/reaction-wheel-tendon-gangloff.gif){ #fig:reaction-wheel-tendon short-caption="Parallel tendon platform dampened with reaction wheels"}
 
 Drones are the only system on a construction site with a workspace larger than cranes.
 They are therefore seeing use as an inspection, surveying and monitoring tool.
@@ -121,4 +121,4 @@ Examples of these applications are illustrated in @Fig:indoor-and-outdoor.
 
 ![Abilities of a CMG-stabilized crane. From left to right: process compensation, part rotation and dampening of pendulum oscillations.](./figures/baugrok-applications.gif){ #fig:baugrok-applications short-caption="Abilities of a CMG-stabilized crane"}
 
-![Potential applications of a CMG-stabilized crane. From left to right: part transport with gantry cranes, transport and assembly of components on a construction site, mobile industrial robots.](./figures/indoor-and-outdoor-applications.png){ #fig:indoor-and-outdoor short-caption="Potential applicans of a CMG-stabilized crane"}
+![Potential applications of a CMG-stabilized crane. From left to right: part transport with gantry cranes, transport and assembly of components on a construction site, mobile industrial robots.](./figures/indoor-and-outdoor-applications.png){ #fig:indoor-and-outdoor short-caption="Potential applications of a CMG-stabilized crane"}

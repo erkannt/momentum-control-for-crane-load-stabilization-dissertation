@@ -28,7 +28,7 @@ It is this change in orientation in the form of a rotation and its relation to t
 
 ![Precession of a gyroscope. Gravity would usually cause the object to topple over. Instead, the conservation of angular momentum leads to a precession, whose motion causes a torque that balances out the torque caused by gravity.(Lucas Vieira, Public Domain)](./figures/Gyroscope_precession.gif){#fig:precession short-caption="Gyroscopic precession"}
 
-![Astronaut Dave Williams replacing one of the four dual gimbal CMGs on the ISS. (Public Domain, NASA Photo ID: S118-E-06998)](./figures/ISS-CMG.jpg){#fig:iss short-caption="CMG replacment spacewalk on the ISS"}
+![Astronaut Dave Williams replacing one of the four dual gimbal CMGs on the ISS. (Public Domain, NASA Photo ID: S118-E-06998)](./figures/ISS-CMG.jpg){#fig:iss short-caption="CMG replacement spacewalk on the ISS"}
 
 Before proceeding, I would like to emphasize three key points:
 
@@ -84,7 +84,7 @@ Dual gimbal CMGs are less efficient than single gimbal CMGs, as the torque produ
 However there are several reasons why Skylab and many subsequent spacecraft including the ISS use dual gimbal CMGs.
 
 As a gimbal rotates to produce torque with the gyroscope, so does the orientation of the output torque vector.
-This gives rise to complex steering laws and issues with singularities (See @Sec:glossary for explaination of singularities).
+This gives rise to complex steering laws and issues with singularities (See @Sec:glossary for explanation of singularities).
 The Apollo program did not use CMGs, but did use three gyroscopes for inertial measurement of the spacecraft’s orientation.
 These gyroscopes were suspended in three nested gimbals, providing feedback regarding the spacecraft's yaw, pitch and roll.
 The decision only to use three gimbals led to more frequent issues with gimbal lock (a singularity where the gimbal axis align) than was expected during multiple Apollo missions[^collinsxmas].
@@ -102,7 +102,7 @@ Since redundancy is imperative in space flight, the arrays usually use four CMGs
 The three common arrays for CMGs are box, pyramid and roof (see @Fig:sg-cmg-configurations).
 Leve et. al recommend roof arrays due to their simpler and easier to avoid internal singularities.
 
-![Various configuration options for single gimbal CMGs [@KurokawaGeometricStudySingle1998]](./figures/sg-cmg-configurations.jpg){#fig:sg-cmg-configurations short-caption="Configurations for single gimabl CMGs"}
+![Various configuration options for single gimbal CMGs [@KurokawaGeometricStudySingle1998]](./figures/sg-cmg-configurations.jpg){#fig:sg-cmg-configurations short-caption="Configurations for single gimbal CMGs"}
 
 Momentum control devices such as reaction wheels, CMGs or magneto-torquers[^magnetotorquers] enable spacecraft to adjust and control their orientation without expending fuel.
 This makes them invaluable, given weight and volume constraints in space flight.

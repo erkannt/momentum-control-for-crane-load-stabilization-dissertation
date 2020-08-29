@@ -343,7 +343,7 @@ The integrated speed readout via the microcontroller has proven very useful.
 The custom PCB has also increased the reliability of the prototype by introducing high quality plugs.
 These not only make disassembly much easier, but also reduce the uncertainty from loose/unreliable connections, making debugging easier.
 
-![Redesigned mount for the gyroscope. Note how the motor can be removed without affecting the alignment of the mount, making it easier to align the gyroscope's shaft with the motor. The coupling is also 3D-printed, since the original broke, most likely due to misalignment.](./figures/gyro-mount.jpg){ #fig:gyro-mount short-caption="3D printed mount and coupling for gyroscoped"}
+![Redesigned mount for the gyroscope. Note how the motor can be removed without affecting the alignment of the mount, making it easier to align the gyroscope's shaft with the motor. The coupling is also 3D-printed, since the original broke, most likely due to misalignment.](./figures/gyro-mount.jpg){ #fig:gyro-mount short-caption="3D printed mount and coupling for gyroscopes"}
 
 The speed controllers are not able to bring the motors to their maximum velocity expressed by the datasheet.
 It was also necessary to adjust their velocity measurement by validating the velocities with a tachometer.
