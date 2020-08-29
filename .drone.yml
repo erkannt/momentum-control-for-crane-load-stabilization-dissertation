@@ -10,7 +10,7 @@
     - make all
   
   - name: test_links
-    image: node:alpine
+    image: becheran/mlc
     commands:
-      - npm install -g link-checker
-      - link-checker --http-redirects 3 _build/diss-haarhoff.html --url-ignore='http://www.arcas-project.eu'
+    - mlc -t html --ignore-links "http*://doi.org*" --ignore-path "./_build/diss-haarhoff.standalone.html"
+
