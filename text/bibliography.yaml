@@ -1200,6 +1200,15 @@ references:
   URL: 'https://doi.org/10.1007/s12541-014-0501-z'
   volume: '15'
 
+- id: HOMEARCASProject
+  accessed:
+    - year: 2020
+      month: 8
+      day: 29
+  title: HOME | ARCAS Project
+  type: webpage
+  URL: 'http://www.arcas-project.eu/'
+
 - id: HubbardForcedDampedPendulum
   abstract: >-
     We show that a “simple ” differential equation modeling a garden-variety
@@ -2157,6 +2166,15 @@ references:
   URL: 'http://arc.aiaa.org/doi/10.2514/2.4213'
   volume: '21'
 
+- id: LitMotors
+  accessed:
+    - year: 2020
+      month: 8
+      day: 29
+  title: Lit Motors
+  type: webpage
+  URL: 'https://www.litmotors.com/'
+
 - id: locusmagCoryDoctorowTerra2019
   abstract: >-
     In 1660, John Locke published his Two Treatises of Government, where he set
@@ -2763,6 +2781,22 @@ references:
   URL: 'http://arxiv.org/abs/0812.0393'
   volume: '77'
 
+- id: RebarTyingRobotPittsburgh
+  abstract: >-
+    TyBot is an autonomous rebar-tying robot from Pittsburgh, PA that can
+    augment and reduce labor need in the most critical path activity of bridge
+    deck construction. It is designed and developed by Advanced Construction
+    Robotics and is one of the top innovations in construction.
+  accessed:
+    - year: 2020
+      month: 8
+      day: 29
+  container-title: tybot
+  language: en
+  title: 'Rebar-Tying Robot | Pittsburgh, PA | TyBot, LLC'
+  type: webpage
+  URL: 'https://www.tybotllc.com'
+
 - id: ReintsemaDLRAdvancedTelerobotic2007
   abstract: >-
     SummarySpace robotics will become a key technology for the exploration of
@@ -2888,6 +2922,16 @@ references:
     balancing beam, new construction machinery
   type: paper-conference
   volume: '2'
+
+- id: SAM100ConstructionRobotics
+  accessed:
+    - year: 2020
+      month: 8
+      day: 29
+  language: en-US
+  title: SAM100 – Construction Robotics
+  type: webpage
+  URL: 'https://www.construction-robotics.com/sam100/'
 
 - id: SeakeeperGyroStabilizers
   accessed:

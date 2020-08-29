@@ -74,7 +74,7 @@ What remains is the challenge of finding and implementing suitable controllers.
 For certain parts of the system conventional PID controllers, Kalman filters etc. will be sufficient, while other parts will require more work.
 The following discusses the underactuation problem and a suitable controller for the dampening task. 
 
-## Review of Controller Designs
+## Review of Controller Designs {#sec:controller-review}
 
 Control of cranes has been a long-running endeavor, which is obvious from the amount of publications and commercially available systems for gantry and harbor cranes in particular (see e.g. @Fig:swaycontrol-swf).
 Given the price and complexity of sensors capable of tracking the position of a hook, these mostly use predetermined actuation paths to reduce the creation of oscillations.
