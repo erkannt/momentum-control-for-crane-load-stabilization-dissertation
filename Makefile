@@ -126,7 +126,7 @@ bigzip: $(build)/$(name).zip
 
 html-figures: $(plots_pdf) $(plots_svg) $(sketches_png) $(tikz_png) $(gif) $(static) | $(build)/figures
 
-pdf-figures: $(plots_pdf) $(sketches_pdf) $(tikz_png) $(gifaspng) $(static) $(svgaspdf) | $(build)/figures
+pdf-figures: $(plots_pdf) $(sketches_png) $(tikz_png) $(gifaspng) $(static) $(svgaspdf) | $(build)/figures
 
 # HTML Targets
 $(build)/$(name).html: $(text) $(html-style) $(ref-style) | $(build)
