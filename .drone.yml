@@ -8,6 +8,7 @@
     image: rknt/dissertation_builder:0.5
     commands:
     - make all
+    - chmod -R 777 _build
   
   - name: test_links
     image: becheran/mlc
