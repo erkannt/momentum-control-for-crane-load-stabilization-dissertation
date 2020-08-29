@@ -161,7 +161,7 @@ There have, however, been subsequent attempts at producing gyro cars.
 In the late sixties a team around Thomas Summers, who had worked on guidance gyroscopes in the war, and the car designer Alex Tremulis, built the Gyro-X prototype.
 The goal was to increase road capacity and improve aerodynamics by slimming a car to two wheels, but the team went bankrupt before they were able to solve the engineering challenges involved in actually keeping the car stable.
 A recent startup called Lit Motors also attempted to produce a similar two-wheeled car and filed multiple patents [@KimElectronicControlSystem2013] (see also @Fig:litmotors).
-News surrounding the company went silent after an initial flurry of coverage around 2012 and some speculate that they were not able to reduce noise and vibrations sufficiently to create a usable consumer experience, but they have recently relaunched their [website](https://www.litmotors.com).
+News surrounding the company went silent after an initial flurry of coverage around 2012 and some speculate that they were not able to reduce noise and vibrations sufficiently to create a usable consumer experience, but they have recently relaunched their [@LitMotors].
 For a discussion as well as a derivation of equations of motion and control systems for stabilization of two-wheeled vehicles see [@SpryGyroscopicStabilisationUnstable2008].
 In this paper the authors also extend the equations of motion to use two gyroscopes of opposite spin direction and show how this benefits control performance.
 
