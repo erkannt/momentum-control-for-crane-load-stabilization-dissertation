@@ -148,6 +148,8 @@ $(build)/text4tex/%.md: %.md | $(build)/text
 	cp $< $@
 	$(SED) 's/\.svg/\.pdf/g' $@
 	$(SED) 's/\.gif/\.png/g' $@
+	$(SED) 's/^```{.*/CODE LISTING REMOVED FROM PDF -- /g' $@
+	$(SED) 's/^```/AVAILABLE IN HTML FILE/g' $@
 
 # ZIP of all
 $(build)/$(name).zip: html pdf standalone epub
