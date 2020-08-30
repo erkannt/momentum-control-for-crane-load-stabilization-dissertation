@@ -29,5 +29,3 @@ The original idea and subsequent work contained in this thesis have been submitt
 Therefore many of the ideas and solutions in this thesis are part of that application, in particular the integrated approach of using CMGs to turn cranes into stable platforms for automation.
 
 A theoretical validation of the fundamental approach was published as part of the MTM Robotics 2016 [@HaarhoffActuatorDesignStabilizing2016].
-
-![Photomontage of robots suspended from a tower crane performing facade assembly. Taken and adapted from the (rejected) SEED-Fund application that initiated this work. Photomontage by Elisa Lublasser.](./figures/crane-robot-montage.jpg){short-caption="Photomontage of robots suspended from a tower crane"}
