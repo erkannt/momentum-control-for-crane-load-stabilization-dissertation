@@ -32,7 +32,7 @@ $$ d\boldsymbol{x} = \boldsymbol{J} \cdot d\boldsymbol{q} $$
 
 Pseudo-Inverse
 :  A generalization of the inverse of a matrix that accommodates non-invertable matrices.
-TODO: read Leve at al on their use of pseudo inverses
+The most common example of this is known as the Moore-Penrose inverse. See [@LeveSpacecraftMomentumControl2015, ch. 7] for a discussion of how alternative pseudo-inverses are designed to optimize CMG steering laws in different ways.
 
 Center of Percussion
 : The point on a pendulum where a perpendicular force leads to zero reaction force at its pivot point, due to the angular and translational acceleration cancelling each other out.
