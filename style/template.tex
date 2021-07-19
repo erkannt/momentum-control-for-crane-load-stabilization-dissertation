@@ -207,10 +207,14 @@ $endif$
   $if(born)$
   aus $born$\\
   $endif$
-%  \vskip 4mm
-%  \textsc{Berichter:}\\
-%  Prof. Dr. Andreas Offenhäusser\\
-%  Prof. Dr. Jörg Fitter \\
+  $if(bestanden)$
+    \vskip 4mm
+    Berichter:\\
+    $berichter1$\\
+    $berichter2$
+    \vskip 4mm
+    Diese Dissertation ist auf den Internetseiten der Universitätsbibliothek online verfügbar.
+  $endif$
   }
   
 $for(header-includes)$

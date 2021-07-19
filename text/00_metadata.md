@@ -3,7 +3,11 @@ title: Momentum Control for Crane Load Stabilization
 author: Daniel A. Haarhoff
 born: Dachau
 subtitle: Modeling and Sizing of Control Moment Gyroscopes for Cranes
-facultyblurb: Der Fakultät für Architektur der Rheinisch-Westfälischen Technischen Hochschule Aachen vorgelegte Dissertation zur Erlangung des akademischen Grades eines Doktors der Ingenieurwissenschaften.
+facultyblurb: Von der Fakultät für Architektur der Rheinisch-Westfälischen Technischen Hochschule Aachen zur Erlangung des akademischen Grades einer Doktorin bzw. eines Doktors der Ingenieurwissenschaften genehmigte Dissertation.
+bestanden: true
+examdate: 13. Juli 2021
+berichter1: Univ.-Prof. Dr. techn. Sigrid Brell-Cokcan
+berichter2: Univ.-Prof. Dr.-Ing. Robert Schmitt
 abstract: |
   The digitalization of the construction industries planning and execution phases, coupled with advances in automation technology has led to a renaissance for construction robotics.
   Current efforts to provide robots for the execution of digital construction plans revolve around either the adaptation of industrial robots for the construction site, highly specialized custom robots or the digitalization of existing construction equipment.

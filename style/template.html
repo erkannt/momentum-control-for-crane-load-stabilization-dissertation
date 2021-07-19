@@ -147,7 +147,7 @@
                 $if(facultyblurb)$
                 <h4>$facultyblurb$</h4>
                 $endif$
-                $for(author)$
+                $if(author)$
                 <h2 class="author">
                 $if(facultyblurb)$
                 Vorgelegt von:
@@ -156,8 +156,18 @@
                 $if(born)$
                 aus $born$
                 $endif$
+                $endif$
                 </h2>
-                $endfor$
+                $if(bestanden)$
+                <h4>
+                    Berichter:
+                    <ul>
+                        <li>$berichter1$</li>
+                        <li>$berichter2$</li>
+                    </ul>
+                    Tag der mündlichen Prüfung: $examdate$
+                </h4>
+                $endif$
                 $if(date)$
                 <h3 class="date">$date$</h3>
                 $endif$

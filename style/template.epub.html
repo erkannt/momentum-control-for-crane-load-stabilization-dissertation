@@ -52,6 +52,16 @@ $endfor$
 $for(creator)$
   <p class="$creator.role$">$creator.text$</p>
 $endfor$
+$if(bestanden)$
+<p>
+    Berichter:
+    <ul>
+        <li>$berichter1$</li>
+        <li>$berichter2$</li>
+    </ul>
+    Tag der mündlichen Prüfung: $examdate$
+</p>
+$endif$
 $if(publisher)$
   <p class="publisher">$publisher$</p>
 $endif$
