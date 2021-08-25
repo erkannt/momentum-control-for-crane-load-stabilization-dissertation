@@ -35,8 +35,6 @@ pandoc-html-flags = --verbose \
 	--standalone \
 	--csl="$(stylefolder)/ref_format.csl" \
 	--toc \
-	--metadata date="$(date)" \
-	--metadata version="$(version)" \
 	--number-sections
 pandoc-tex-flags = --verbose \
 	-F pandoc-crossref \
@@ -47,8 +45,6 @@ pandoc-tex-flags = --verbose \
 	--template="$(stylefolder)/template.tex" \
 	--bibliography="$(bibfile)" \
 	--number-sections \
-	--metadata date="$(date)" \
-	--metadata version="$(version)" \
 	--csl="$(stylefolder)/ref_format.csl"
 pandoc-epub-flags = --verbose \
 	-F pandoc-crossref \
@@ -57,8 +53,6 @@ pandoc-epub-flags = --verbose \
 	--template="$(stylefolder)/template.epub.html" \
 	--bibliography="$(bibfile)" \
 	--number-sections \
-	--metadata date="$(date)" \
-	--metadata version="$(version)" \
 	--mathjax \
 	--epub-cover-image cover.jpeg \
 	--csl="$(stylefolder)/ref_format.csl"

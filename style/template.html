@@ -148,16 +148,18 @@
                 <h4>$facultyblurb$</h4>
                 $endif$
                 $if(author)$
-                <h2 class="author">
+                <h4 class="author">
                 $if(facultyblurb)$
-                Vorgelegt von:
+                vorgelegt von:
                 $endif$
+                <h2>
                 $author$
+                </h2>
                 $if(born)$
                 aus $born$
                 $endif$
                 $endif$
-                </h2>
+                </h4>
                 $if(bestanden)$
                 <h4>
                     Berichter:
@@ -167,9 +169,6 @@
                     </ul>
                     Tag der mündlichen Prüfung: $examdate$
                 </h4>
-                $endif$
-                $if(version)$
-                <h3 class="version">$version$</h3>
                 $endif$
             </div>
             $endif$

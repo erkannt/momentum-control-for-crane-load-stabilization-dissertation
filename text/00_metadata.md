@@ -1,9 +1,8 @@
 ---
 title: Momentum Control for Crane Load Stabilization
 author: Daniel A. Haarhoff
-born: Dachau
 subtitle: Modeling and Sizing of Control Moment Gyroscopes for Cranes
-facultyblurb: Von der Fakultät für Architektur der Rheinisch-Westfälischen Technischen Hochschule Aachen zur Erlangung des akademischen Grades einer Doktorin bzw. eines Doktors der Ingenieurwissenschaften genehmigte Dissertation.
+facultyblurb: Von der Fakultät für Architektur der Rheinisch-Westfälischen Technischen Hochschule Aachen zur Erlangung des akademischen Grades eines Doktors der Ingenieurwissenschaften genehmigte Dissertation
 bestanden: true
 examdate: 13. Juli 2021
 berichter1: Univ.-Prof. Dr. techn. Sigrid Brell-Cokcan

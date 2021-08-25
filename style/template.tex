@@ -190,18 +190,13 @@ $if(title)$
 \title{$title$$if(subtitle)$\\\vspace{0.5em}{\large $subtitle$}$endif$}
 $endif$
 $if(facultyblurb)$
-\subject{\textnormal{\textsc{Dissertation}}}
 \author{\parbox{\textwidth}{\normalsize\centering
   { $facultyblurb$ }}}
-$endif$
-$if(version)$
-\date{$version$}
-$else$
-\date{$date$}
+\date{}  % disable the date
 $endif$
 \publishers{\normalsize%
   $if(facultyblurb)$
-  vorgelegt von\\
+  vorgelegt von:\\
   $endif$
   {\Large \textsc{$author$}\\[.5ex]}
   $if(born)$
