@@ -20,6 +20,7 @@ PDF2SVG=pdf2svg
 build = _build
 name = diss-haarhoff
 version := $(shell ./tools/pretty_git_sha.sh)
+date := $(shell git log -1 --date=short --format=%cd)
 bibfile := $(abspath text/bibliography.yaml)
 stylefolder := $(abspath style)
 pandoc-html-flags = --verbose \
@@ -34,7 +35,7 @@ pandoc-html-flags = --verbose \
 	--standalone \
 	--csl="$(stylefolder)/ref_format.csl" \
 	--toc \
-	--metadata date="`date "+%B %e, %Y"`" \
+	--metadata date="$(date)" \
 	--metadata version="$(version)" \
 	--number-sections
 pandoc-tex-flags = --verbose \
@@ -46,7 +47,7 @@ pandoc-tex-flags = --verbose \
 	--template="$(stylefolder)/template.tex" \
 	--bibliography="$(bibfile)" \
 	--number-sections \
-	--metadata date="`date "+%B %e, %Y"`" \
+	--metadata date="$(date)" \
 	--metadata version="$(version)" \
 	--csl="$(stylefolder)/ref_format.csl"
 pandoc-epub-flags = --verbose \
@@ -56,7 +57,7 @@ pandoc-epub-flags = --verbose \
 	--template="$(stylefolder)/template.epub.html" \
 	--bibliography="$(bibfile)" \
 	--number-sections \
-	--metadata date="`date "+%B %e, %Y"`" \
+	--metadata date="$(date)" \
 	--metadata version="$(version)" \
 	--mathjax \
 	--epub-cover-image cover.jpeg \

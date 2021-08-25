@@ -8,9 +8,10 @@ function git_is_clean {
 }
 
 sha=$(git rev-parse --short HEAD)
+date=$(git log -1 --date=short --format=%cd)
 
 if git_is_clean ; then
-    echo "Version:" ${sha}
+    echo "Version:" ${date} "("${sha}")"
 else
-    echo "Version:" ${sha}" (unclean -- WIP)"
+    echo "Version:" ${date} "(unclean -- WIP)"
 fi
