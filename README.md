@@ -12,6 +12,10 @@ Other formats available:
 - [PDF with hyperlinks](https://public.rknt.de/diss-haarhoff/diss-haarhoff.orig.pdf)
 - [singlefile HTML version](https://public.rknt.de/diss-haarhoff/diss-haarhoff.standalone.html) (all media, stylesheets etc. inlined in the HTML as base64 string; 150MB)
 
+To cite the thesis use: [10.18154/RWTH-2021-08190](https://doi.org/10.18154/RWTH-2021-08190)
+
+To cite this repo use: [10.5281/zenodo.5841504](https://doi.org/10.5281/zenodo.5841504)
+
 ## Abstract
 
 > The digitalization of the construction industries planning and execution phases, coupled with advances in automation technology has led to a renaissance for construction robotics. Current efforts to provide robots for the execution of digital construction plans revolve around either the adaptation of industrial robots for the construction site, highly specialized custom robots or the digitalization of existing construction equipment. However, there is currently no robotics approach that addresses the very large work envelope that constitutes a construction site.
